@@ -1,6 +1,6 @@
-# Morrow — DESIGN.md + Tailwind demo
+# Bento UI Admin — DESIGN.md + Tailwind demo
 
-Morrow is a responsive React/Vite bento dashboard driven by `DESIGN.md` and styled with Tailwind CSS v4.
+Bento UI Admin is a responsive React/Vite bento dashboard driven by `DESIGN.md` and styled with Tailwind CSS v4.
 
 ## Design-token workflow
 
@@ -22,6 +22,11 @@ Do not edit generated files. Update `DESIGN.md`, validate it, and regenerate bot
 pnpm dev
 pnpm lint
 pnpm build
+pnpm check
 ```
 
 Tailwind uses its official Vite plugin. The application CSS entrypoint is `src/index.css`, which imports Tailwind and the generated theme and defines the class-driven dark mode.
+
+Inter weights 400–700 are self-hosted through the pinned `@fontsource/inter`
+package. The dark-mode mapping is a demo extension rather than a supported
+design-system theme.

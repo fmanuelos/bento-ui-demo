@@ -1,4 +1,5 @@
 @theme {
+  --color-primary: #155eef;
   --color-background-primary: #ffffff;
   --color-background-secondary: #f8fafc;
   --color-background-tertiary: #f1f5f9;
@@ -150,6 +151,22 @@
   --text-data-lg: 28px;
   --text-data-md: 20px;
   --text-data-sm: 14px;
+  --leading-display-lg: 1.08;
+  --leading-heading-h1: 1.15;
+  --leading-heading-h2: 1.2;
+  --leading-heading-h3: 1.3;
+  --leading-heading-h4: 1.35;
+  --leading-body-lg: 1.6;
+  --leading-body-md: 1.5;
+  --leading-body-sm: 1.45;
+  --leading-body-xs: 1.4;
+  --leading-label-lg: 1.4;
+  --leading-label-md: 1.4;
+  --leading-label-sm: 1.35;
+  --leading-caption: 1.4;
+  --leading-data-lg: 1.2;
+  --leading-data-md: 1.3;
+  --leading-data-sm: 1.4;
   --tracking-display-lg: -0.02em;
   --tracking-heading-h1: -0.02em;
   --tracking-heading-h2: -0.01em;
@@ -177,7 +194,6 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-full: 9999px;
-  --spacing-none: 0px;
   --spacing-xxs: 2px;
   --spacing-xs: 4px;
   --spacing-sm: 8px;

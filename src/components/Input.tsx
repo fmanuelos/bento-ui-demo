@@ -21,20 +21,20 @@ export function Input({
   const messageId = `${inputId}-message`
 
   return (
-    <label className="grid gap-2 text-sm font-bold text-primary dark:text-white" htmlFor={inputId}>
+    <label className="grid gap-sm text-label-md font-semibold text-text-primary" htmlFor={inputId}>
       <span className="flex items-baseline justify-between gap-4">
         {label}
-        {hint && <span className="text-xs font-normal text-muted dark:text-dark-muted">{hint}</span>}
+        {hint && <span className="text-body-xs font-normal text-text-secondary">{hint}</span>}
       </span>
       <input
         id={inputId}
         aria-describedby={helperText || error ? messageId : undefined}
         aria-invalid={Boolean(error)}
         className={[
-          'h-12 w-full rounded-md border bg-surface px-4 text-sm font-normal text-primary outline-none transition',
-          'placeholder:text-muted/60 dark:bg-dark-surface dark:text-white dark:placeholder:text-dark-muted/60',
-          'focus:border-coral focus:ring-3 focus:ring-coral/20',
-          error ? 'border-coral' : 'border-line dark:border-dark-line',
+          'h-control-height-lg w-full rounded-md border bg-surface-primary px-md text-body-sm font-normal text-text-primary outline-none transition',
+          'placeholder:text-text-tertiary disabled:border-border-disabled disabled:bg-background-disabled disabled:text-text-disabled',
+          'focus:border-border-focus focus:ring-3 focus:ring-focus-ring/20',
+          error ? 'border-border-danger' : 'border-border-primary',
           className,
         ].join(' ')}
         {...props}
@@ -42,7 +42,7 @@ export function Input({
       {(error || helperText) && (
         <span
           id={messageId}
-          className={`text-xs font-normal ${error ? 'text-coral' : 'text-muted dark:text-dark-muted'}`}
+          className={`text-body-xs font-normal ${error ? 'text-text-danger' : 'text-text-secondary'}`}
         >
           {error ?? helperText}
         </span>

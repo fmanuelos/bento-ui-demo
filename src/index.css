@@ -6,9 +6,9 @@
 @layer base {
   :root {
     color-scheme: light;
-    font-family: var(--font-body), Arial, Helvetica, sans-serif;
-    color: var(--color-primary);
-    background: var(--color-paper);
+    font-family: var(--font-body-md, Inter), Arial, Helvetica, sans-serif;
+    color: var(--color-text-primary);
+    background: var(--color-background-secondary);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -16,8 +16,23 @@
 
   :root[data-theme='dark'] {
     color-scheme: dark;
-    color: var(--color-white);
-    background: var(--color-primary);
+    --color-background-primary: var(--color-background-inverse);
+    --color-background-secondary: var(--color-background-inverse);
+    --color-background-tertiary: var(--color-navigation-sidebar-item-hover);
+    --color-surface-primary: var(--color-surface-inverse);
+    --color-surface-secondary: var(--color-navigation-sidebar-item-hover);
+    --color-surface-raised: var(--color-navigation-sidebar-item-hover);
+    --color-surface-sunken: var(--color-background-inverse);
+    --color-text-primary: var(--color-text-inverse);
+    --color-text-secondary: var(--color-navigation-sidebar-foreground);
+    --color-text-tertiary: var(--color-navigation-sidebar-foreground);
+    --color-border-primary: var(--color-border-inverse);
+    --color-border-secondary: var(--color-border-inverse);
+    --color-border-subtle: var(--color-navigation-sidebar-item-hover);
+    --color-focus-ring-offset: var(--color-background-inverse);
+    --color-action-tertiary-background-hover: var(--color-navigation-sidebar-item-hover);
+    --color-action-tertiary-background-active: var(--color-border-inverse);
+    --color-action-tertiary-foreground: var(--color-text-inverse);
   }
 
   * {
