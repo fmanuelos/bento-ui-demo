@@ -19,6 +19,7 @@
     --color-background-primary: var(--color-background-inverse);
     --color-background-secondary: var(--color-background-inverse);
     --color-background-tertiary: var(--color-navigation-sidebar-item-hover);
+    --color-background-accent: var(--color-navigation-sidebar-item-hover);
     --color-surface-primary: var(--color-surface-inverse);
     --color-surface-secondary: var(--color-navigation-sidebar-item-hover);
     --color-surface-raised: var(--color-navigation-sidebar-item-hover);
@@ -26,10 +27,25 @@
     --color-text-primary: var(--color-text-inverse);
     --color-text-secondary: var(--color-navigation-sidebar-foreground);
     --color-text-tertiary: var(--color-navigation-sidebar-foreground);
+    --color-text-accent: var(--color-focus-ring);
+    --color-text-link: var(--color-focus-ring);
     --color-border-primary: var(--color-border-inverse);
     --color-border-secondary: var(--color-border-inverse);
     --color-border-subtle: var(--color-navigation-sidebar-item-hover);
+    --color-border-accent: var(--color-focus-ring);
     --color-focus-ring-offset: var(--color-background-inverse);
+    --color-navigation-topbar-background: var(--color-background-inverse);
+    --color-navigation-topbar-border: var(--color-border-inverse);
+    --color-table-header-background: var(--color-navigation-sidebar-item-hover);
+    --color-table-row-background: var(--color-background-inverse);
+    --color-table-row-hover: var(--color-navigation-sidebar-item-hover);
+    --color-table-row-selected: var(--color-navigation-sidebar-item-hover);
+    --color-table-border: var(--color-border-inverse);
+    --color-selection-background: var(--color-navigation-sidebar-item-selected);
+    --color-selection-foreground: var(--color-navigation-sidebar-item-selected-foreground);
+    --color-action-link-default: var(--color-focus-ring);
+    --color-action-link-hover: var(--color-border-accent);
+    --color-action-link-active: var(--color-text-inverse);
     --color-action-tertiary-background-hover: var(--color-navigation-sidebar-item-hover);
     --color-action-tertiary-background-active: var(--color-border-inverse);
     --color-action-tertiary-foreground: var(--color-text-inverse);
@@ -51,7 +67,9 @@
 
   button,
   a,
-  input {
+  input,
+  select,
+  textarea {
     font: inherit;
   }
 
@@ -61,6 +79,18 @@
 
   svg {
     display: block;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: var(--spacing-xxs) solid Highlight !important;
+  }
+
+  [aria-current='page'],
+  [aria-selected='true'],
+  [aria-checked='true'] {
+    forced-color-adjust: auto;
   }
 }
 

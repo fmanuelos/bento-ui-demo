@@ -1,12 +1,15 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
 
-type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'destructive'
-type ButtonSize = 'sm' | 'md' | 'icon'
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'destructive'
+export type ButtonSize = 'sm' | 'md' | 'icon'
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant
   size?: ButtonSize
   icon?: ReactNode
+  iconPosition?: 'start' | 'end'
+  loading?: boolean
+  loadingLabel?: string
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -31,9 +34,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     variant = 'primary',
     size = 'md',
     icon,
+    iconPosition = 'end',
+    loading = false,
+    loadingLabel = 'Working',
     className = '',
     children,
     type = 'button',
+    disabled,
     ...props
   },
   ref,
@@ -42,10 +49,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     <button
       ref={ref}
       type={type}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
       className={[
         'inline-flex items-center justify-center gap-sm rounded-md border font-semibold transition duration-200',
         'focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-focus-ring',
-        'disabled:pointer-events-none',
+        'disabled:cursor-not-allowed',
         'active:translate-y-px',
         variantClasses[variant],
         sizeClasses[size],
@@ -53,8 +62,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       ].join(' ')}
       {...props}
     >
+      {loading && <span className="size-4 animate-spin rounded-full border-2 border-current border-r-transparent motion-reduce:animate-none" aria-hidden="true" />}
+      {!loading && iconPosition === 'start' && icon}
       {children}
-      {icon}
+      {loading && <span className="sr-only">{loadingLabel}</span>}
+      {!loading && iconPosition === 'end' && icon}
     </button>
   )
 })

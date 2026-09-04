@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Modal } from './components/Modal'
+import { docsRoutes } from './docs/routes'
 
 const ArrowUpRight = ({ className = 'size-5' }: { className?: string }) => (
   <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -18,7 +20,7 @@ const Spark = ({ className = 'size-5' }: { className?: string }) => (
 const labelClasses = 'text-label-sm font-semibold uppercase leading-normal tracking-[.08em] text-text-secondary'
 const cardClasses = 'relative overflow-hidden rounded-lg border border-border-subtle bg-surface-primary'
 
-function App() {
+function DemoPage() {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('bento-ui-admin-theme') === 'dark')
   const [modalOpen, setModalOpen] = useState(false)
   const [sessionActive, setSessionActive] = useState(false)
@@ -188,4 +190,6 @@ function App() {
   )
 }
 
-export default App
+export default function App() {
+  return <Routes>{docsRoutes}<Route path="/" element={<DemoPage />} /><Route path="*" element={<DemoPage />} /></Routes>
+}

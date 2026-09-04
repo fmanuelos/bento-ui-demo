@@ -1,0 +1,66 @@
+import { forwardRef, useId, type ReactNode, type SelectHTMLAttributes } from 'react'
+import { FieldFrame, type FieldSize, type FieldStatus } from './internal/Field'
+import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'
+
+export type SelectOption = { value: string; label: string; disabled?: boolean }
+
+export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'> & {
+  label: string
+  hint?: string
+  helperText?: string
+  error?: string
+  status?: FieldStatus
+  size?: FieldSize
+  options: readonly SelectOption[]
+  placeholder?: string
+  leadingIcon?: ReactNode
+}
+
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select({
+  id,
+  label,
+  hint,
+  helperText,
+  error,
+  status = error ? 'invalid' : 'default',
+  size = 'standard',
+  options,
+  placeholder,
+  className = '',
+  required,
+  leadingIcon,
+  ...props
+}, ref) {
+  const generatedId = useId()
+  const selectId = id ?? generatedId
+  const messageId = `${selectId}-message`
+
+  return (
+    <FieldFrame id={selectId} label={label} hint={hint} helperText={helperText} error={error} status={status} required={required}>
+      <span className="relative block">
+        {leadingIcon && <span className="pointer-events-none absolute inset-y-0 left-md grid place-items-center text-text-secondary">{leadingIcon}</span>}
+        <select
+          ref={ref}
+          id={selectId}
+          required={required}
+          aria-describedby={helperText || error ? messageId : undefined}
+          aria-errormessage={error ? messageId : undefined}
+          aria-invalid={Boolean(error) || status === 'invalid'}
+          className={[
+            fieldControlBase,
+            'appearance-none pr-10',
+            size === 'compact' ? 'h-control-height-md py-0' : 'h-control-height-lg py-0',
+            leadingIcon ? 'pl-10' : '',
+            fieldStatusClasses[error ? 'invalid' : status],
+            className,
+          ].join(' ')}
+          {...props}
+        >
+          {placeholder && <option value="" disabled={required}>{placeholder}</option>}
+          {options.map((option) => <option key={option.value} value={option.value} disabled={option.disabled}>{option.label}</option>)}
+        </select>
+        <svg className="pointer-events-none absolute right-md top-1/2 size-4 -translate-y-1/2 text-text-secondary" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+      </span>
+    </FieldFrame>
+  )
+})
