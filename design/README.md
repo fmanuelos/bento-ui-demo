@@ -1,6 +1,14 @@
-# Design workflow
+# Design repository workflow
 
-`DESIGN.md` is the only hand-edited source of design tokens. It combines exact YAML values with the reasoning that explains how those values should be used.
+This file documents the current repository integration. It is non-normative:
+packages, commands, generated formats, and runtime structure may change without
+changing the meaning of the Bento UI Admin design contract.
+
+[`DESIGN.md`](../DESIGN.md) is the only hand-edited source of exact token values.
+Its Markdown body, the [`component contracts`](components/), and the
+[`experience patterns`](patterns/) define intended use. The
+[`adapter documentation`](adapters/) translates that contract for specific
+platforms and tools.
 
 ## Generated files
 
@@ -28,12 +36,20 @@ and production build checks.
 
 `src/index.css` imports Tailwind first and the generated theme second. It may contain application-wide base styles and the class-driven dark-mode variant, but token values belong in `DESIGN.md`.
 
+The dark-mode variant is a demo extension, not a supported system theme. Do not
+use it as the source for a future dark semantic mapping.
+
 ## Component documentation
 
-The files in `design/components/` describe component intent, anatomy, states, and accessibility. The matching React implementations live in `src/components/`.
+The files in `design/components/` describe component intent, anatomy, states,
+behavior, and accessibility. The matching React demo implementations, where they
+exist, live in `src/components/`.
 
 Use the [`component index`](components/README.md) to track which contracts are
 implemented. A component token in `DESIGN.md` is not implementation evidence.
+
+Runtime paths and framework coverage in that index are non-normative. A runtime
+component conforms only when it satisfies the complete contract.
 
 ## Export limitations
 
@@ -41,3 +57,33 @@ With the pinned CLI, Tailwind and DTCG exports omit component entries. Unitless
 typography line heights remain quoted in YAML because CLI 0.4.0 otherwise drops
 numeric YAML values during export. Re-check this workaround and the component
 limitation whenever the CLI version changes.
+
+## Known lint baseline
+
+With `@google/design.md` 0.4.0, the current document has zero lint errors and 63
+warnings. Five are contrast warnings:
+
+| Finding | Interpretation | Review rule |
+| --- | --- | --- |
+| Primary, secondary, and destructive disabled buttons | The linter applies its standard text contrast check to disabled components. | Confirm that disabled controls remain identifiable without relying on low contrast alone; do not change tokens only to silence the warning. |
+| Transparent tertiary button | The linter cannot resolve the permitted surface through a transparent background. | Verify the foreground on every supported surface listed in `DESIGN.md`. |
+| Transparent tab | The linter cannot resolve the permitted surface through a transparent background. | Verify default and state foregrounds on every supported surface. |
+
+The remaining warnings identify color tokens that are not referenced by a
+supported component property. Many are intentionally consumed by prose-defined
+borders, focus indicators, charts, page backgrounds, or other concepts that the
+current component schema cannot encode. Review them whenever the schema or
+exporter changes; do not add misleading component mappings to suppress them.
+
+Treat this as a comparison baseline, not an allowed-error budget. A change must
+not add `broken-ref`, `unknown-key`, `token-like-ignored`, `section-order`, or
+unknown component-property findings.
+
+## Documentation validation
+
+For a documentation-only change that does not alter token values, run
+`pnpm design:lint` and verify local links. Do not regenerate outputs merely because
+prose or component contracts changed.
+
+If frontmatter token values change, follow the generated-file workflow above and
+review the generated diffs in a separate implementation-aware change.

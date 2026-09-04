@@ -2,7 +2,8 @@
 
 ## Status
 
-Specified; no reusable React component exists.
+Contract complete. Current implementation evidence is tracked in the
+[`component index`](README.md).
 
 ## Intent
 
@@ -21,13 +22,31 @@ foreground, background, and border.
 ## States and responsive behavior
 
 Dismissible alerts require a labelled close button and visible focus. Actions
-stack below the message when horizontal space is insufficient.
+stack below the message when horizontal space is insufficient. Support appearing,
+current, busy, resolved, and dismissed states as relevant. Dismissal does not
+discard an unresolved error or the only recovery path.
+
+## Behavior
+
+Classify each message as urgent or non-urgent before choosing announcement
+behavior. Announce a newly inserted message once. Do not repeatedly announce the
+same content after unrelated renders or updates. Moving focus to an alert is
+reserved for tasks that require immediate review or correction. Persistent
+messages provide an explicit recovery action when one exists.
 
 ## Accessibility
 
-Use `role="alert"` only for urgent, dynamically inserted information. Use a
-labelled region or `role="status"` for non-urgent updates. Keep essential text in
-the accessibility tree and never rely on color alone.
+Expose severity, message, current status, actions, and dismissal without relying
+on color. Urgent and non-urgent messages produce appropriately different
+announcements. A dismissal control has a name that includes enough context when
+more than one alert is present.
+
+### Web adapter
+
+Use `role="alert"` only for urgent, dynamically inserted information. Use
+`role="status"` or a labelled region for non-urgent updates. Keep essential text
+in the accessibility tree and avoid recreating a live region when its message has
+not changed.
 
 ## Example
 

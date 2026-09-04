@@ -2,7 +2,8 @@
 
 ## Status
 
-Specified; the demo uses inline card markup but no reusable React component.
+Contract complete. Current implementation evidence is tracked in the
+[`component index`](README.md).
 
 ## Intent
 
@@ -22,7 +23,15 @@ the default wrapper for every dashboard region.
 ## States
 
 A static card has no hover state. An interactive card needs a single clear action,
-visible hover and focus, and semantic link or button behavior.
+visible hover and focus, and the platform semantic that matches its action. Focus
+remains visible independently of any nested control. Loading, empty, and error
+states follow the applicable data-display pattern.
+
+## Behavior
+
+A whole-card action has one destination or action. It must not conflict with
+nested controls. When a card contains multiple actions, keep the container static
+and expose each action separately. Visual elevation does not imply interactivity.
 
 ## Responsive behavior
 
@@ -32,7 +41,16 @@ stack before values or labels become difficult to scan.
 ## Accessibility
 
 Use semantic headings and preserve reading order. Do not make nested interactive
-controls part of a conflicting whole-card action.
+controls part of a conflicting whole-card action. Grouping, heading, value,
+metadata, and action relationships remain understandable without the visual
+boundary.
+
+### Web adapter
+
+Use an ordinary section or article for static grouped content when appropriate.
+Use a link for a whole-card destination and a button for a whole-card action, but
+do not nest other interactive elements inside that control. Preserve a valid
+heading hierarchy.
 
 ## Example
 

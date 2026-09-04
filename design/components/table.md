@@ -2,12 +2,15 @@
 
 ## Status
 
-Specified; no reusable React component exists.
+Contract complete for a static data table. Interactive data grids use the
+separate [`data-grid contract`](data-grid.md). Current implementation evidence is
+tracked in the [`component index`](README.md).
 
 ## Intent
 
-Tables support comparison and scanning across repeated records. Do not replace a
-relational dataset with decorative cards by default.
+Tables support comparison and scanning across repeated records. A table is not a
+managed-focus composite widget. Do not replace a relational dataset with
+decorative cards by default.
 
 ## Anatomy and variants
 
@@ -25,7 +28,16 @@ desktop datasets.
 
 Hover indicates scan assistance or an available row interaction; selected means
 actual selection. Sorting, selection, pagination, and row actions require visible
-focus and explicit state.
+focus and explicit state. Support loading, empty, partial, error, and stale-data
+states where data is dynamic. Loading does not remove headers or erase usable
+data, and empty is distinct from failure.
+
+## Behavior
+
+Sorting communicates the active key and direction. Pagination preserves table
+context and moves focus only when necessary to continue the task. Selection is
+available without selecting the whole row as an ambiguous action. Updating or
+removing a focused row places focus at the nearest logical control.
 
 ## Responsive behavior
 
@@ -34,9 +46,17 @@ records, or a dedicated detail view. Do not compress every desktop column.
 
 ## Accessibility
 
-Use native table elements for tabular data. Indicate sortable state with
-`aria-sort`; label selection controls and row actions; keep numeric columns
-consistently aligned.
+Expose the caption, row and column relationships, headers, sort state, selection
+controls, and row actions programmatically. Reading order follows the meaningful
+column order. Numeric columns remain consistently aligned, and essential content
+has a non-truncated representation.
+
+### Web adapter
+
+Use native table elements for tabular data. Associate headers with cells and use
+`aria-sort` on the active sortable header. Label selection controls and row
+actions with their record context. Do not apply the ARIA grid pattern unless the
+managed-focus behavior in `data-grid.md` is implemented.
 
 ## Example
 

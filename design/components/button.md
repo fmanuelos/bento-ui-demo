@@ -2,7 +2,8 @@
 
 ## Status
 
-Implemented in `src/components/Button.tsx`.
+Contract complete. Current implementation evidence is tracked in the
+[`component index`](README.md).
 
 ## Intent
 
@@ -34,7 +35,27 @@ means horizontal padding.
 
 ## States
 
-All buttons have hover, active, disabled, and keyboard-focus states defined by the matching `action-*` and `focus-ring` tokens. Disabled buttons do not respond to pointer or keyboard activation. Loading behavior is not yet part of the component contract.
+| State | Support | Contract |
+| --- | --- | --- |
+| Default | Required | Presents the variant's action hierarchy. |
+| Hover | Required when hover is available | Enhances affordance but does not reveal otherwise unavailable content. |
+| Focus | Required | Remains visible when combined with pressed, expanded, loading, or destructive states. |
+| Active | Required | Appears only while activation is in progress. |
+| Loading or busy | Optional | Preserves the label or an equivalent status, prevents repeated activation, and does not imply completion. |
+| Disabled | Optional | Is identifiable, unavailable to activation, and not used when a reason or recovery action must remain discoverable. |
+| Pressed | Toggle buttons only | Exposes the on/off state without changing the control's accessible name. |
+| Expanded | Menu or disclosure buttons only | Exposes whether the controlled content is open. |
+
+Visual states use the matching `action-*` and `focus-ring` tokens. Shared state
+precedence is defined in [`DESIGN.md`](../../DESIGN.md#shared-state-model).
+
+## Behavior
+
+One completed activation produces one action. Loading prevents duplicate actions.
+When an action opens or closes another component, focus follows that component's
+contract. A destructive label states the action rather than relying on color.
+Buttons trigger actions; controls whose purpose is navigation use the platform's
+navigation semantic instead.
 
 ## Responsive behavior
 
@@ -43,7 +64,17 @@ standard or icon size when touch is expected.
 
 ## Accessibility
 
-Use visible text whenever space permits. Icon-only buttons require an `aria-label`. Never use a button for navigation.
+Use visible text whenever space permits. An icon-only button has a
+programmatically determinable name that communicates the action. Name, role,
+pressed or expanded state, availability, and busy status are exposed to assistive
+technology. Activation is possible without pointer input.
+
+### Web adapter
+
+Use a native `button` where possible. Enter and Space activate it. Toggle buttons
+expose `aria-pressed`; controls that reveal content expose the appropriate
+expanded and controlled relationships. An icon-only button may use visible text,
+`aria-label`, or `aria-labelledby`. Use a link, not a button, for navigation.
 
 ## Example
 
