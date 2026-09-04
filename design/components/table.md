@@ -3,8 +3,7 @@
 ## Status
 
 Contract complete for a static data table. Interactive data grids use the
-separate [`data-grid contract`](data-grid.md). Current implementation evidence is
-tracked in the [`component index`](README.md).
+separate [`data-grid contract`](data-grid.md).
 
 ## Intent
 

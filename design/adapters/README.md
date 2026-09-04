@@ -9,7 +9,6 @@ token, state, component, or behavior to fit an implementation limitation.
 | --- | --- |
 | [Web](web.md) | HTML semantics, ARIA mappings, CSS/SVG mechanisms, user preferences, and browser behavior |
 | [Tailwind](tailwind.md) | Current token export and system-range mapping |
-| [React demo](react-demo.md) | Current repository implementation evidence |
 
 An adapter documents:
 

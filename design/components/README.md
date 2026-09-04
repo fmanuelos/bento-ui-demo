@@ -7,30 +7,31 @@ entry or runtime component does not by itself prove conformance.
 
 ## Status
 
-| Component | Contract status | Current demo evidence — non-normative |
-| --- | --- | --- |
-| [Button](button.md) | Complete | `src/components/Button.tsx` |
-| [Text field](input.md) | Complete | `src/components/Input.tsx`; compact and search variants are not reusable. |
-| [Textarea](textarea.md) | Complete | No reusable component. |
-| [Select](select.md) | Complete | No reusable component. |
-| [Listbox](listbox.md) | Complete | No reusable component. |
-| [Combobox](combobox.md) | Complete | No reusable component. |
-| [Checkbox](checkbox.md) | Complete | No reusable component. |
-| [Radio group](radio.md) | Complete | No reusable component. |
-| [Switch](switch.md) | Complete | No reusable component. |
-| [Dialog and modal](modal.md) | Complete | `src/components/Modal.tsx` |
-| [Tabs](tabs.md) | Complete | Demo navigation is not a tab implementation. |
-| [Data table](table.md) | Complete | No reusable component. |
-| [Data grid](data-grid.md) | Complete | No reusable component. |
-| [Status badge](status-badge.md) | Complete | Inline demo example only. |
-| [Alert](alert.md) | Complete | No reusable component. |
-| [Popup surface and dropdown patterns](dropdown.md) | Complete | No reusable component. |
-| [Navigation shell](navigation.md) | Complete | Inline top navigation; no reusable sidebar. |
-| [Card](card.md) | Complete | Inline demo examples only. |
+| Component | Contract status |
+| --- | --- |
+| [Button](button.md) | Complete |
+| [Text field](input.md) | Complete |
+| [Textarea](textarea.md) | Complete |
+| [Select](select.md) | Complete |
+| [Listbox](listbox.md) | Complete |
+| [Combobox](combobox.md) | Complete |
+| [Checkbox](checkbox.md) | Complete |
+| [Radio group](radio.md) | Complete |
+| [Switch](switch.md) | Complete |
+| [Dialog and modal](modal.md) | Complete |
+| [Tabs](tabs.md) | Complete |
+| [Data table](table.md) | Complete |
+| [Data grid](data-grid.md) | Complete |
+| [Status badge](status-badge.md) | Complete |
+| [Alert](alert.md) | Complete |
+| [Popup surface and dropdown patterns](dropdown.md) | Complete |
+| [Navigation shell](navigation.md) | Complete |
+| [Card](card.md) | Complete |
 
-`Complete` means the technology-neutral contract is ready for implementation.
-The last column records repository evidence only. Runtime coverage does not
-change the normative component definition.
+`Complete` means the technology-neutral written contract contains the required
+design, state, behavior, responsive, and accessibility requirements and is ready
+for implementation. It does not mean that a reusable implementation exists or
+that any implementation has passed conformance review.
 
 ## Required sections
 
@@ -48,7 +49,7 @@ Every specification includes:
 9. Web-specific semantics in a clearly labelled adapter subsection.
 10. A representative example.
 
-Update the status and runtime path in this index whenever coverage changes.
+Update the contract status when its normative requirements materially change.
 
 ## Shared requirements
 

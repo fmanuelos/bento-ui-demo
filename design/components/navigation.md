@@ -2,8 +2,7 @@
 
 ## Status
 
-Contract complete for the navigation-shell pattern. Current implementation
-evidence is tracked in the [`component index`](README.md).
+Contract complete for the navigation-shell pattern.
 
 ## Intent
 

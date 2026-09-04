@@ -2,8 +2,7 @@
 
 ## Status
 
-Contract complete for a modal dialog. Current implementation evidence is tracked
-in the [`component index`](README.md).
+Contract complete for a modal dialog.
 
 ## Intent
 

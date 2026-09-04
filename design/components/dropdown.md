@@ -3,8 +3,7 @@
 ## Status
 
 Shared visual contract complete. Action menu, listbox, combobox, and disclosure
-remain distinct behavioral contracts. Current implementation evidence is tracked
-in the [`component index`](README.md).
+remain distinct behavioral contracts.
 
 ## Intent
 

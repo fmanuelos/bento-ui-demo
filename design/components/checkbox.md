@@ -2,8 +2,7 @@
 
 ## Status
 
-Contract complete. Current implementation evidence is tracked in the
-[`component index`](README.md).
+Contract complete.
 
 ## Intent
 

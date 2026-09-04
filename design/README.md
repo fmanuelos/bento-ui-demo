@@ -42,14 +42,14 @@ use it as the source for a future dark semantic mapping.
 ## Component documentation
 
 The files in `design/components/` describe component intent, anatomy, states,
-behavior, and accessibility. The matching React demo implementations, where they
-exist, live in `src/components/`.
+behavior, and accessibility without depending on a UI framework.
 
-Use the [`component index`](components/README.md) to track which contracts are
-implemented. A component token in `DESIGN.md` is not implementation evidence.
+Use the [`component index`](components/README.md) to track contract maturity. A
+component token in `DESIGN.md` does not prove that an implementation exists or
+conforms.
 
-Runtime paths and framework coverage in that index are non-normative. A runtime
-component conforms only when it satisfies the complete contract.
+Application implementation inventories belong in application or source-code
+documentation rather than the design-system contract.
 
 ## Export limitations
 

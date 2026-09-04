@@ -2,8 +2,7 @@
 
 ## Status
 
-Contract complete for a single-line text field. Current implementation evidence
-is tracked in the [`component index`](README.md). See the separate contracts for
+Contract complete for a single-line text field. See the separate contracts for
 [textarea](textarea.md), [select](select.md), [combobox](combobox.md),
 [checkbox](checkbox.md), [radio group](radio.md), and [switch](switch.md).
 

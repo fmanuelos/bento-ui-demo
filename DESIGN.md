@@ -619,7 +619,7 @@ deprecation window before the first stable release.
 
 ### Current repository adapters — non-normative
 
-The current repository includes web, Tailwind, DTCG, and React demo integrations.
+The current repository includes web, Tailwind, and DTCG integrations.
 Their packages, commands, generated files, workarounds, and support limitations
 are documented in [`design/README.md`](design/README.md) and
 [`design/adapters/`](design/adapters/). They may translate this contract but must
@@ -1001,11 +1001,10 @@ The [`pattern index`](design/patterns/README.md) defines forms and validation,
 asynchronous feedback, destructive actions, navigation shells, data display, and
 responsive density. Component implementations must follow applicable patterns.
 
-### Implementation tracking — non-normative
+### Component contract index
 
-The [`component index`](design/components/README.md) records specification and
-current demo coverage. Runtime paths and framework status are implementation
-evidence only; they do not alter the component contract.
+The [`component index`](design/components/README.md) records contract maturity
+only.
 
 ## Do's and Don'ts
 
