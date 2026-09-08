@@ -4,22 +4,25 @@ export function DocsSection({
   id,
   title,
   children,
-  unstyled,
+  preview = false,
 }: {
   id: string
   title: string
   children?: ReactNode
-  unstyled?: ReactNode
+  preview?: boolean
 }) {
   return (
     <section id={id} className="min-w-0 scroll-mt-24 border-t border-border-secondary pt-2xl">
       <h2 className="mb-lg mt-0 text-heading-h3 font-semibold text-text-primary">{title}</h2>
-      {children ? (
+      {preview ? (
+        <div className="rounded-lg border border-border-secondary bg-surface-primary p-lg sm:p-xl">
+          {children}
+        </div>
+      ) : (
         <div className="min-w-0 text-body-md leading-relaxed text-text-secondary [&_a]:font-semibold [&_a]:text-text-link [&_code]:rounded-sm [&_code]:bg-background-tertiary [&_code]:px-xs [&_code]:py-xxs [&_li+li]:mt-sm [&_ul]:list-disc [&_ul]:pl-xl [&_ol]:list-decimal [&_ol]:pl-xl">
           {children}
         </div>
-      ) : null}
-      {unstyled}
+      )}
     </section>
   )
 }
