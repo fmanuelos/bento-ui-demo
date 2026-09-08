@@ -41,7 +41,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
     path: '/docs/foundations/typography', title: 'Typography', summary: 'Inter provides a legible hierarchy from public-facing display text to compact labels and tabular data.',
     sections: [
       { title: 'Type roles', body: <div className="overflow-hidden rounded-lg border border-border-secondary">{typeRoles.map(([role, classes]) => <div key={role} className="grid gap-sm border-b border-border-secondary p-lg last:border-0 sm:grid-cols-[10rem_1fr]"><code className="text-body-xs text-text-secondary">{role}</code><span className={classes}>Bento makes complex work feel calm.</span></div>)}</div> },
-      { title: 'Usage', body: <ul><li>Use body-md for public surfaces and body-sm for readable dashboard content.</li><li>Use labels for controls and navigation, captions for metadata, and data roles for metrics.</li><li>Use tabular numerals for aligned values; typography does not replace semantic heading structure.</li></ul> },
+      { title: 'Usage', body: <ul className="list-disc"><li>Use body-md for public surfaces and body-sm for readable dashboard content.</li><li>Use labels for controls and navigation, captions for metadata, and data roles for metrics.</li><li>Use tabular numerals for aligned values; typography does not replace semantic heading structure.</li></ul> },
       { title: 'Resilience', body: <p>Text must remain readable at 200% zoom and with increased text spacing. Allow labels and translated content to wrap; truncate only nonessential values while preserving access to the complete text.</p> },
     ],
   },
@@ -49,7 +49,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
     path: '/docs/foundations/spacing', title: 'Spacing & layout', summary: 'A primarily 4px rhythm controls grouping, density, gutters, widths, navigation dimensions, and touch targets.',
     sections: [
       { title: 'Base scale', body: <div className="grid gap-md">{spacingRoles.map(([role, width]) => <div key={role} className="grid grid-cols-[4rem_1fr] items-center gap-md"><code className="text-body-xs">{role}</code><span className={`block h-sm max-w-full rounded-full bg-action-primary-background-default ${width}`} /></div>)}</div> },
-      { title: 'Content widths', body: <ul><li><code>content-narrow</code> supports authentication and focused forms.</li><li><code>content-readable</code> supports prose and guidance.</li><li><code>content-standard</code> supports general applications.</li><li><code>content-dashboard</code> supports dense workspaces.</li></ul> },
+      { title: 'Content widths', body: <ul className="list-disc"><li><code>content-narrow</code> supports authentication and focused forms.</li><li><code>content-readable</code> supports prose and guidance.</li><li><code>content-standard</code> supports general applications.</li><li><code>content-dashboard</code> supports dense workspaces.</li></ul> },
       { title: 'Density and targets', body: <p>Small controls belong in dense pointer-oriented tools. Medium controls are the dashboard default; large controls are for forms and touch contexts. Touch layouts preserve the 44px minimum target.</p> },
     ],
   },
@@ -81,7 +81,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
   {
     path: '/docs/foundations/accessibility', title: 'Accessibility', summary: 'Supported web experiences target WCAG 2.2 Level AA and a stronger 44px touch target where the component contract requires it.',
     sections: [
-      { title: 'Interaction baseline', body: <ul><li>Expose name, role, value, state, relationships, descriptions, and errors.</li><li>Support complete keyboard operation without a trap and retain visible focus.</li><li>Keep pointer actions cancellable until release unless immediate activation is essential.</li></ul> },
+      { title: 'Interaction baseline', body: <ul className="list-disc"><li>Expose name, role, value, state, relationships, descriptions, and errors.</li><li>Support complete keyboard operation without a trap and retain visible focus.</li><li>Keep pointer actions cancellable until release unless immediate activation is essential.</li></ul> },
       { title: 'Content resilience', body: <p>Preserve meaningful reading and focus order through responsive changes. Support zoom, increased text spacing, long translations, right-to-left direction, and complete values without clipping essential information.</p> },
       { title: 'State and announcements', body: <p>Never rely on color alone. Announce meaningful dynamic feedback once at the correct urgency, keep routine refreshes quiet, and avoid moving focus unless it materially helps recovery or continuation.</p> },
       { title: 'Testing', body: <p>Verify keyboard-only input, screen-reader browsing and interaction, touch, 200% text size, high zoom reflow, increased text spacing, reduced motion, and forced colors in rendered context.</p> },

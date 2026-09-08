@@ -1,7 +1,27 @@
 import { type ReactNode } from 'react'
 
-export function DocsSection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
-  return <section id={id} className="min-w-0 scroll-mt-24 border-t border-border-secondary pt-2xl"><h2 className="mb-lg mt-0 text-heading-h3 font-semibold text-text-primary">{title}</h2><div className="min-w-0 text-body-md leading-relaxed text-text-secondary [&_a]:font-semibold [&_a]:text-text-link [&_code]:rounded-sm [&_code]:bg-background-tertiary [&_code]:px-xs [&_code]:py-xxs [&_li+li]:mt-sm [&_ul]:pl-xl [&_ol]:pl-xl">{children}</div></section>
+export function DocsSection({
+  id,
+  title,
+  children,
+  unstyled,
+}: {
+  id: string
+  title: string
+  children?: ReactNode
+  unstyled?: ReactNode
+}) {
+  return (
+    <section id={id} className="min-w-0 scroll-mt-24 border-t border-border-secondary pt-2xl">
+      <h2 className="mb-lg mt-0 text-heading-h3 font-semibold text-text-primary">{title}</h2>
+      {children ? (
+        <div className="min-w-0 text-body-md leading-relaxed text-text-secondary [&_a]:font-semibold [&_a]:text-text-link [&_code]:rounded-sm [&_code]:bg-background-tertiary [&_code]:px-xs [&_code]:py-xxs [&_li+li]:mt-sm [&_ul]:list-disc [&_ul]:pl-xl [&_ol]:list-decimal [&_ol]:pl-xl">
+          {children}
+        </div>
+      ) : null}
+      {unstyled}
+    </section>
+  )
 }
 
 export function PageIntro({ eyebrow, title, summary }: { eyebrow: string; title: string; summary: string }) {
