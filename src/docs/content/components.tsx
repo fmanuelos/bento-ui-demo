@@ -29,7 +29,7 @@ export const componentDocs = [
     props: [
       {
         name: 'variant',
-        type: "'primary' | 'secondary' | 'tertiary' | 'destructive'",
+        type: "'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'",
         defaultValue: "'primary'",
         description: 'Sets the semantic action hierarchy.',
       },
@@ -58,7 +58,7 @@ export const componentDocs = [
       classNameProp,
     ],
     variants: [
-      'Primary, secondary, tertiary, and destructive hierarchy.',
+      'Primary, secondary, outline, ghost, and destructive treatments.',
       'Compact, standard, and icon sizes.',
       'Default, hover, focus, active, loading, disabled, pressed, and expanded states.',
     ],
@@ -874,8 +874,7 @@ export const componentDocs = [
     ],
     responsive:
       'The menu sizes to content; use a dialog or bottom sheet if touch targets cannot fit the viewport.',
-    theme:
-      'Uses raised surface, quiet boundary, tertiary hover/focus, danger text, and focus tokens.',
+    theme: 'Uses raised surface, quiet boundary, ghost hover/focus, danger text, and focus tokens.',
     mistakes: [
       'Dropdown is not one universal behavior.',
       'Use Listbox for selection and Combobox for editable suggestions.',

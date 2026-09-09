@@ -103,7 +103,7 @@ export function Modal({
         </div>
         <Button
           ref={closeButtonRef}
-          variant="tertiary"
+          variant="ghost"
           size="icon"
           aria-label="Close modal"
           onClick={onClose}

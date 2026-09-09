@@ -70,7 +70,7 @@ function ModalExample() {
         description="Add a clear name now; details can follow."
         footer={
           <>
-            <Button variant="tertiary" onClick={() => setOpen(false)}>
+            <Button variant="outline" onClick={() => setOpen(false)}>
               Cancel
             </Button>
             <Button onClick={() => setOpen(false)}>Create project</Button>
@@ -155,7 +155,8 @@ export const componentExamples: Record<string, ReactNode> = {
     <div className="flex flex-wrap gap-md">
       <Button>Primary</Button>
       <Button variant="secondary">Secondary</Button>
-      <Button variant="tertiary">Tertiary</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
       <Button variant="destructive">Delete project</Button>
       <Button size="sm">Compact</Button>
       <Button loading>Save changes</Button>
@@ -313,7 +314,7 @@ export const componentExamples: Record<string, ReactNode> = {
     <div className="grid gap-lg sm:grid-cols-2">
       <Card
         heading={<h3 className="m-0 text-heading-h4">Project brief</h3>}
-        footer={<Button variant="tertiary">View details</Button>}
+        footer={<Button variant="outline">View details</Button>}
       >
         <p className="m-0 text-body-sm text-text-secondary">
           A bounded group for related content and actions.

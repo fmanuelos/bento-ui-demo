@@ -50,22 +50,33 @@ colors:
   action-primary-background-disabled: '#E2E8F0'
   action-primary-foreground: '#FFFFFF'
   action-primary-foreground-disabled: '#98A2B3'
+  action-primary-border: '#155EEF'
+  action-primary-border-disabled: '#98A2B3'
 
-  action-secondary-background-default: '#FFFFFF'
-  action-secondary-background-hover: '#F8FAFC'
-  action-secondary-background-active: '#F1F5F9'
-  action-secondary-background-disabled: '#FFFFFF'
-  action-secondary-foreground: '#344054'
+  action-secondary-background-default: '#EFF4FF'
+  action-secondary-background-hover: '#D1E0FF'
+  action-secondary-background-active: '#B2CCFF'
+  action-secondary-background-disabled: '#F8FAFC'
+  action-secondary-foreground: '#0040C1'
   action-secondary-foreground-disabled: '#98A2B3'
-  action-secondary-border: '#D0D5DD'
-  action-secondary-border-disabled: '#EAECF0'
+  action-secondary-border: 'transparent'
+  action-secondary-border-disabled: 'transparent'
 
-  action-tertiary-background-default: 'transparent'
-  action-tertiary-background-hover: '#F1F5F9'
-  action-tertiary-background-active: '#E2E8F0'
-  action-tertiary-background-disabled: 'transparent'
-  action-tertiary-foreground: '#344054'
-  action-tertiary-foreground-disabled: '#98A2B3'
+  action-outline-background-default: 'transparent'
+  action-outline-background-hover: '#F8FAFC'
+  action-outline-background-active: '#F1F5F9'
+  action-outline-background-disabled: 'transparent'
+  action-outline-foreground: '#344054'
+  action-outline-foreground-disabled: '#98A2B3'
+  action-outline-border: '#64748B'
+  action-outline-border-disabled: '#CBD5E1'
+
+  action-ghost-background-default: 'transparent'
+  action-ghost-background-hover: '#F1F5F9'
+  action-ghost-background-active: '#E2E8F0'
+  action-ghost-background-disabled: 'transparent'
+  action-ghost-foreground: '#344054'
+  action-ghost-foreground-disabled: '#98A2B3'
 
   action-destructive-background-default: '#D92D20'
   action-destructive-background-hover: '#B42318'
@@ -313,22 +324,39 @@ components:
     backgroundColor: '{colors.action-secondary-background-disabled}'
     textColor: '{colors.action-secondary-foreground-disabled}'
 
-  button-tertiary:
-    backgroundColor: '{colors.action-tertiary-background-default}'
-    textColor: '{colors.action-tertiary-foreground}'
+  button-outline:
+    backgroundColor: '{colors.action-outline-background-default}'
+    textColor: '{colors.action-outline-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
     height: '{spacing.control-height-lg}'
-  button-tertiary-hover:
-    backgroundColor: '{colors.action-tertiary-background-hover}'
-    textColor: '{colors.action-tertiary-foreground}'
-  button-tertiary-active:
-    backgroundColor: '{colors.action-tertiary-background-active}'
-    textColor: '{colors.action-tertiary-foreground}'
-  button-tertiary-disabled:
-    backgroundColor: '{colors.action-tertiary-background-default}'
-    textColor: '{colors.action-tertiary-foreground-disabled}'
+  button-outline-hover:
+    backgroundColor: '{colors.action-outline-background-hover}'
+    textColor: '{colors.action-outline-foreground}'
+  button-outline-active:
+    backgroundColor: '{colors.action-outline-background-active}'
+    textColor: '{colors.action-outline-foreground}'
+  button-outline-disabled:
+    backgroundColor: '{colors.action-outline-background-disabled}'
+    textColor: '{colors.action-outline-foreground-disabled}'
+
+  button-ghost:
+    backgroundColor: '{colors.action-ghost-background-default}'
+    textColor: '{colors.action-ghost-foreground}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-lg}'
+  button-ghost-hover:
+    backgroundColor: '{colors.action-ghost-background-hover}'
+    textColor: '{colors.action-ghost-foreground}'
+  button-ghost-active:
+    backgroundColor: '{colors.action-ghost-background-active}'
+    textColor: '{colors.action-ghost-foreground}'
+  button-ghost-disabled:
+    backgroundColor: '{colors.action-ghost-background-disabled}'
+    textColor: '{colors.action-ghost-foreground-disabled}'
 
   button-destructive:
     backgroundColor: '{colors.action-destructive-background-default}'
@@ -430,7 +458,7 @@ components:
     padding: '{spacing.md}'
     height: '{spacing.control-height-md}'
   tab-hover:
-    backgroundColor: '{colors.action-tertiary-background-hover}'
+    backgroundColor: '{colors.action-ghost-background-hover}'
     textColor: '{colors.text-primary}'
   tab-selected:
     backgroundColor: '{colors.background-accent}'
@@ -685,8 +713,8 @@ focus treatments as needed while preserving meaning and operability.
 
 ### Actions, feedback, and status
 
-Primary, secondary, tertiary, destructive, and link tokens express action
-hierarchy. They must not be used to communicate system status.
+Primary, secondary, outline, ghost, destructive, and link tokens express action
+hierarchy or treatment. They must not be used to communicate system status.
 
 Feedback describes an event or result:
 
@@ -743,9 +771,9 @@ its real context. Transparent components must declare the surfaces on which they
 may appear. Text, essential icons, component boundaries, selection indicators,
 and state changes are evaluated separately.
 
-Transparent tertiary actions and tabs are supported on the default light page
-and surface backgrounds. In other themes or on inverse surfaces, use an explicit
-theme mapping rather than assuming the transparent token remains legible.
+Transparent outline and ghost actions and tabs are supported on the default light
+page and surface backgrounds. In other themes or on inverse surfaces, use an
+explicit theme mapping rather than assuming transparent tokens remain legible.
 
 Use `focus-ring` for visible focus and `focus-ring-offset` when separation from the
 surface is necessary. Focus must not rely only on an internal color change. Its
@@ -982,9 +1010,9 @@ reduced-motion modes. Platform-specific semantics belong in adapters.
 
 ### Shared rules
 
-- Use `primary`, `secondary`, `tertiary`, and `destructive` consistently.
-  The canonical low-emphasis name is `tertiary`; do not introduce `ghost` as an
-  alias without documenting its compatibility purpose.
+- Use `primary`, `secondary`, `outline`, `ghost`, and `destructive` consistently.
+  Outline describes a bordered alternative; ghost is the canonical transparent,
+  low-emphasis treatment. Do not reintroduce `tertiary` as an alias.
 - Inputs require visible labels; placeholders are examples, not labels.
 - Validation includes a text description and, when useful, an icon in addition
   to color.

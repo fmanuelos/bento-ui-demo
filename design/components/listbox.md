@@ -21,7 +21,7 @@ commands.
 Single- and multi-selection are distinct variants.
 
 Use `surface-raised`, `text-primary`, `rounded.md`, and `spacing.sm` for a popup
-surface. Options use tertiary action roles for hover and focus and selection roles
+surface. Options use ghost action roles for hover and focus and selection roles
 for selected state.
 
 ## States and behavior

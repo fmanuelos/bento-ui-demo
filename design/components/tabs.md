@@ -16,7 +16,7 @@ navigation or represent sequential steps.
 3. Selected indicator
 4. Associated tab panel
 
-Default tabs use `text-secondary`; hover uses the tertiary action surface; the
+Default tabs use `text-secondary`; hover uses the ghost action surface; the
 selected tab uses `background-accent` and `text-accent` plus a non-color
 indicator.
 

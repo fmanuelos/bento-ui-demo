@@ -18,7 +18,7 @@ export function CodeBlock({ code, label = 'Example code' }: CodeBlockProps) {
           {label}
         </span>
         <Button
-          variant="tertiary"
+          variant="ghost"
           size="sm"
           className="text-text-inverse hover:bg-navigation-sidebar-item-hover"
           onClick={() => void copy()}

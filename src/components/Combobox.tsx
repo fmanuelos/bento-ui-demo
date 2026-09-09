@@ -179,7 +179,7 @@ export function Combobox({
                   onMouseDown={(event) => event.preventDefault()}
                   onMouseMove={() => !option.disabled && setActiveIndex(index)}
                   onClick={() => commit(option)}
-                  className={`rounded-md px-md py-sm ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${activeIndex === index ? 'bg-action-tertiary-background-hover' : ''} ${currentValue === option.value ? 'font-semibold text-text-accent' : ''}`}
+                  className={`rounded-md px-md py-sm ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${activeIndex === index ? 'bg-action-ghost-background-hover' : ''} ${currentValue === option.value ? 'font-semibold text-text-accent' : ''}`}
                 >
                   {option.label}
                 </div>

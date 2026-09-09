@@ -115,7 +115,7 @@ export function DocsLayout() {
       >
         <Button
           ref={menuButtonRef}
-          variant="tertiary"
+          variant="ghost"
           size="icon"
           className="lg:hidden"
           aria-label="Open documentation navigation"
@@ -145,12 +145,12 @@ export function DocsLayout() {
         </NavLink>
         <a
           href="/"
-          className="ml-auto hidden rounded-md px-md py-sm text-label-md font-semibold text-text-secondary hover:bg-action-tertiary-background-hover sm:block"
+          className="ml-auto hidden rounded-md px-md py-sm text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block"
         >
           View demo
         </a>
         <Button
-          variant="tertiary"
+          variant="ghost"
           size="icon"
           aria-label={darkMode ? 'Use light mode' : 'Use dark mode'}
           onClick={() => setDarkMode((value) => !value)}
@@ -204,7 +204,7 @@ export function DocsLayout() {
             <div className="sticky top-0 z-10 flex h-topbar-height items-center justify-between border-b border-border-inverse bg-navigation-sidebar-background px-lg font-bold text-navigation-sidebar-foreground-strong">
               <span>Documentation</span>
               <Button
-                variant="tertiary"
+                variant="ghost"
                 size="icon"
                 className="text-navigation-sidebar-foreground"
                 aria-label="Close documentation navigation"

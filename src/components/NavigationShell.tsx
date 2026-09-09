@@ -113,7 +113,7 @@ export function NavigationShell({
       >
         <Button
           ref={mobileTriggerRef}
-          variant="tertiary"
+          variant="ghost"
           size="icon"
           className="lg:hidden"
           aria-label="Open navigation"
@@ -141,7 +141,7 @@ export function NavigationShell({
         <div className="flex h-topbar-height items-center justify-between gap-sm border-b border-border-inverse px-md text-navigation-sidebar-foreground-strong">
           <div className="min-w-0 overflow-hidden">{brand}</div>
           <Button
-            variant="tertiary"
+            variant="ghost"
             size="icon"
             className="shrink-0 text-navigation-sidebar-foreground"
             aria-label={collapsed ? 'Expand navigation' : 'Collapse navigation'}
@@ -183,7 +183,7 @@ export function NavigationShell({
             <div className="flex h-topbar-height items-center justify-between border-b border-border-inverse px-md text-navigation-sidebar-foreground-strong">
               <div>{brand}</div>
               <Button
-                variant="tertiary"
+                variant="ghost"
                 size="icon"
                 className="text-navigation-sidebar-foreground"
                 aria-label="Close navigation"

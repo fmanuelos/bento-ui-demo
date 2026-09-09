@@ -6,7 +6,7 @@ Contract complete.
 
 ## Intent
 
-Buttons trigger an immediate action. Use one primary button for the most important action in a region; use secondary or tertiary buttons for supporting actions.
+Buttons trigger an immediate action. Use one primary button for the most important action in a region; use secondary, outline, or ghost buttons for supporting actions.
 
 ## Anatomy
 
@@ -16,8 +16,9 @@ Buttons trigger an immediate action. Use one primary button for the most importa
 ## Variants
 
 - **Primary:** Cobalt action background with inverse text; used for the main commitment.
-- **Secondary:** Surface background with an outlined edge.
-- **Tertiary:** Transparent background for low-emphasis actions.
+- **Secondary:** Tinted cobalt background with dark cobalt text for a prominent supporting action.
+- **Outline:** Transparent background with a visible neutral edge for an alternative action.
+- **Ghost:** Transparent background without an edge for utilities and low-emphasis actions.
 - **Destructive:** Danger background for actions involving removal or irreversible loss.
 - **Icon:** A square control with an accessible name.
 
@@ -77,5 +78,5 @@ expanded and controlled relationships. An icon-only button may use visible text,
 
 ## Example
 
-Use one primary action and a secondary or tertiary alternative in a decision
-area. Use destructive only when the outcome involves removal or loss.
+Use one primary action and a secondary, outline, or ghost alternative in a
+decision area. Use destructive only when the outcome involves removal or loss.

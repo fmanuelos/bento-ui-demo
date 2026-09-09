@@ -70,13 +70,13 @@ function DemoPage() {
               Overview
             </a>
             <a
-              className="rounded-md px-lg py-sm text-label-sm font-semibold text-text-secondary hover:bg-action-tertiary-background-hover hover:text-text-primary"
+              className="rounded-md px-lg py-sm text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
               href="#schedule"
             >
               Schedule
             </a>
             <a
-              className="rounded-md px-lg py-sm text-label-sm font-semibold text-text-secondary hover:bg-action-tertiary-background-hover hover:text-text-primary"
+              className="rounded-md px-lg py-sm text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
               href="#projects"
             >
               Projects
@@ -84,7 +84,7 @@ function DemoPage() {
           </nav>
           <div className="flex items-center gap-3 justify-self-end">
             <Button
-              variant="tertiary"
+              variant="ghost"
               size="icon"
               aria-label={darkMode ? 'Use light mode' : 'Use dark mode'}
               onClick={() => setDarkMode((value) => !value)}
@@ -192,7 +192,7 @@ function DemoPage() {
                   <p className={labelClasses}>Weekly focus</p>
                   <h3 className="mt-1.5 text-heading-h3 font-semibold">Quiet progress</h3>
                 </div>
-                <Button variant="tertiary" size="icon" aria-label="Open weekly focus">
+                <Button variant="ghost" size="icon" aria-label="Open weekly focus">
                   <ArrowUpRight />
                 </Button>
               </div>
@@ -354,7 +354,7 @@ function DemoPage() {
         description="Name the one outcome that deserves your clearest attention."
         footer={
           <>
-            <Button variant="tertiary" onClick={closeModal}>
+            <Button variant="outline" onClick={closeModal}>
               Cancel
             </Button>
             <Button

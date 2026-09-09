@@ -88,7 +88,7 @@ export function Alert({
       </div>
       {dismissible && (
         <Button
-          variant="tertiary"
+          variant="ghost"
           size="icon"
           className="-m-sm size-8 text-current"
           aria-label={`Dismiss ${typeof title === 'string' ? title : 'alert'}`}

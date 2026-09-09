@@ -60,13 +60,13 @@ limitation whenever the CLI version changes.
 
 ## Known lint baseline
 
-With `@google/design.md` 0.4.0, the current document has zero lint errors and 63
-warnings. Five are contrast warnings:
+With `@google/design.md` 0.4.0, the current document has zero lint errors and 67
+warnings. Six are contrast warnings:
 
 | Finding                                              | Interpretation                                                                    | Review rule                                                                                                                                 |
 | ---------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | Primary, secondary, and destructive disabled buttons | The linter applies its standard text contrast check to disabled components.       | Confirm that disabled controls remain identifiable without relying on low contrast alone; do not change tokens only to silence the warning. |
-| Transparent tertiary button                          | The linter cannot resolve the permitted surface through a transparent background. | Verify the foreground on every supported surface listed in `DESIGN.md`.                                                                     |
+| Transparent outline and ghost buttons                | The linter cannot resolve the permitted surface through a transparent background. | Verify each foreground and outline border on every supported surface listed in `DESIGN.md`.                                                 |
 | Transparent tab                                      | The linter cannot resolve the permitted surface through a transparent background. | Verify default and state foregrounds on every supported surface.                                                                            |
 
 The remaining warnings identify color tokens that are not referenced by a
