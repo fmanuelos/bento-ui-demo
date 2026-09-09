@@ -16,6 +16,11 @@
 
   :root[data-theme='dark'] {
     color-scheme: dark;
+    --color-brand-background: var(--color-dark-brand-background);
+    --color-brand-background-subtle: var(--color-dark-brand-background-subtle);
+    --color-brand-foreground: var(--color-dark-brand-foreground);
+    --color-brand-on-background: var(--color-dark-brand-on-background);
+    --color-brand-border: var(--color-dark-brand-border);
     --color-background-primary: var(--color-dark-background-primary);
     --color-background-secondary: var(--color-dark-background-secondary);
     --color-background-tertiary: var(--color-dark-background-tertiary);

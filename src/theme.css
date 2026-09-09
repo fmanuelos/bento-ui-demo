@@ -1,5 +1,10 @@
 @theme {
   --color-primary: #155eef;
+  --color-brand-background: #155eef;
+  --color-brand-background-subtle: #eff4ff;
+  --color-brand-foreground: #155eef;
+  --color-brand-on-background: #ffffff;
+  --color-brand-border: #b2ccff;
   --color-background-primary: #ffffff;
   --color-background-secondary: #f8fafc;
   --color-background-tertiary: #f1f5f9;
@@ -130,6 +135,11 @@
   --color-chart-negative: #d92d20;
   --color-chart-gridline: #e2e8f0;
   --color-chart-axis: #64748b;
+  --color-dark-brand-background: #155eef;
+  --color-dark-brand-background-subtle: #172554;
+  --color-dark-brand-foreground: #84adff;
+  --color-dark-brand-on-background: #ffffff;
+  --color-dark-brand-border: #528bff;
   --color-dark-background-primary: #020617;
   --color-dark-background-secondary: #0f172a;
   --color-dark-background-tertiary: #1e293b;

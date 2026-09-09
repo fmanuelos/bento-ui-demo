@@ -5,6 +5,12 @@ description: A semantic design system for public websites, web applications, and
 colors:
   primary: '#155EEF'
 
+  brand-background: '#155EEF'
+  brand-background-subtle: '#EFF4FF'
+  brand-foreground: '#155EEF'
+  brand-on-background: '#FFFFFF'
+  brand-border: '#B2CCFF'
+
   background-primary: '#FFFFFF'
   background-secondary: '#F8FAFC'
   background-tertiary: '#F1F5F9'
@@ -153,6 +159,12 @@ colors:
 
   # Dark-theme semantic aliases. The alpha DESIGN.md schema has no theme-mode
   # group, so the theme qualifier remains part of each flat token name.
+  dark-brand-background: '#155EEF'
+  dark-brand-background-subtle: '#172554'
+  dark-brand-foreground: '#84ADFF'
+  dark-brand-on-background: '#FFFFFF'
+  dark-brand-border: '#528BFF'
+
   dark-background-primary: '#020617'
   dark-background-secondary: '#0F172A'
   dark-background-tertiary: '#1E293B'
@@ -1021,13 +1033,15 @@ DESIGN.md schema has no theme-mode group, dark-theme aliases add the flat
 changes the theme mapping, not the token's purpose.
 
 Use semantic names in implementations. The required `primary` token is the Bento
-blue brand seed for DESIGN.md consumers; components should normally use the more
-specific semantic action, text, surface, or border tokens.
+blue brand seed for DESIGN.md consumers; product code should normally use the
+more specific semantic brand, action, text, surface, or border tokens.
 
 ### Token families
 
 - `background-*` defines page and workspace canvases; `surface-*` defines local
   containers placed on them.
+- `brand-*` defines non-interactive identity and branded presentation, including
+  marks, decorative graphics, and branded content surfaces.
 - `text-*` defines neutral hierarchy and semantic messaging.
 - `border-*` defines structural, focus, disabled, and semantic boundaries.
 - `action-*` defines interactive hierarchy and state.
@@ -1041,6 +1055,12 @@ Standalone semantic text or icons use `text-success`, `text-warning`,
 `text-danger`, or `text-info`. Control validation uses `border-success`,
 `border-warning`, or `border-danger`; contained messages and statuses use their
 more specific `feedback-*` or `status-*` families.
+
+Use `brand-background` with `brand-on-background` and use
+`brand-background-subtle` with `brand-foreground`. `brand-border` separates
+branded decoration from adjacent content. Brand roles do not express
+interactivity: buttons, links, and other controls continue to use `action-*`
+roles even when a brand and action token currently share the same value.
 
 ### Theme scope
 

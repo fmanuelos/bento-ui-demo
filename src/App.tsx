@@ -57,7 +57,7 @@ function DemoPage() {
             href="#top"
             aria-label="Bento UI Admin home"
           >
-            <span className="grid size-7 place-items-center rounded-full bg-action-primary-background-default text-action-primary-foreground">
+            <span className="grid size-7 place-items-center rounded-full bg-brand-background text-brand-on-background">
               <Spark className="size-4" />
             </span>
             Bento UI Admin
@@ -115,7 +115,7 @@ function DemoPage() {
               )}
             </Button>
             <div
-              className="grid size-control-height-lg place-items-center rounded-full border-2 border-border-accent bg-action-primary-background-default text-label-md font-bold text-action-primary-foreground"
+              className="grid size-control-height-lg place-items-center rounded-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background"
               aria-label="Profile for Mira"
             >
               M
@@ -177,7 +177,7 @@ function DemoPage() {
               >
                 <div className="absolute top-10 right-[-82px] size-[330px] rounded-full border border-border-inverse max-sm:top-0 max-sm:right-[-55px] max-sm:size-[250px]" />
                 <div className="absolute top-[88px] right-[-34px] size-[235px] rounded-full border border-border-inverse max-sm:top-12 max-sm:right-[-7px] max-sm:size-[155px]" />
-                <div className="absolute top-[132px] right-2.5 grid size-[148px] place-items-center rounded-full bg-background-accent text-text-accent ring-12 ring-background-accent/10 max-sm:top-[68px] max-sm:right-4 max-sm:size-28">
+                <div className="absolute top-[132px] right-2.5 grid size-[148px] place-items-center rounded-full bg-brand-background-subtle text-brand-foreground ring-12 ring-brand-background-subtle/10 max-sm:top-[68px] max-sm:right-4 max-sm:size-28">
                   <Spark className="size-12 max-sm:size-9" />
                 </div>
                 <div className="absolute right-37 bottom-12 grid size-[90px] rotate-[-8deg] place-content-center rounded-full bg-status-info-background text-center text-body-sm leading-none font-bold text-status-info-foreground max-sm:bottom-6 max-sm:left-9">
@@ -269,7 +269,7 @@ function DemoPage() {
                 <div className="flex" aria-label="Three collaborators">
                   {['R', 'J', 'N'].map((person) => (
                     <span
-                      className="-ml-2 grid size-8 place-items-center rounded-full border-2 border-background-inverse bg-background-accent text-label-sm font-bold text-text-accent"
+                      className="-ml-2 grid size-8 place-items-center rounded-full border-2 border-background-inverse bg-brand-background-subtle text-label-sm font-bold text-brand-foreground"
                       key={person}
                     >
                       {person}
@@ -322,7 +322,7 @@ function DemoPage() {
                 aria-label="Theme colors"
               >
                 {[
-                  'bg-action-primary-background-default',
+                  'bg-brand-background',
                   'bg-chart-series-3',
                   'bg-chart-series-4',
                   'bg-chart-series-5',
