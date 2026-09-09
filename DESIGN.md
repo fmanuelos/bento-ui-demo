@@ -916,8 +916,9 @@ describes the current reference experience rather than limiting the system to
 authenticated surfaces.
 
 The visual direction is calm, professional, highly legible, and operational.
-Cobalt blue signals interaction, slate neutrals establish hierarchy, and green,
-amber, red, and blue communicate status or feedback.
+Primary action tokens establish interactive hierarchy, brand tokens express
+identity, slate neutrals establish visual hierarchy, and semantic feedback and
+status tokens communicate meaning.
 
 Public websites are spacious and content-led. Admin experiences are compact,
 structured, and information-led. Density should change through spacing,
@@ -1032,9 +1033,12 @@ DESIGN.md schema has no theme-mode group, dark-theme aliases add the flat
 `dark-text-primary` and `dark-action-primary-background-hover`. The qualifier
 changes the theme mapping, not the token's purpose.
 
-Use semantic names in implementations. The required `primary` token is the Bento
-blue brand seed for DESIGN.md consumers; product code should normally use the
-more specific semantic brand, action, text, surface, or border tokens.
+Use semantic token names in product code. The `primary` token is required for
+DESIGN.md compatibility and stores the Bento brand color, but it should not be
+used directly. Instead, choose tokens based on purpose: use action tokens for
+interactive elements, brand tokens for visual identity, and the appropriate
+semantic tokens for text, surfaces, borders, feedback, status, navigation,
+selection, and charts.
 
 ### Token families
 
@@ -1161,9 +1165,9 @@ alone is insufficient. Focus must not be fully obscured by sticky or overlay
 content.
 
 In dark mode, use `dark-focus-ring` with `dark-focus-ring-offset`. Preserve the
-offset as a contrasting inner separation when the ring is adjacent to a cobalt,
-selected, semantic, or inverse surface; do not remove it merely because the
-outer ring is visible on the page canvas.
+offset as a contrasting inner separation when the ring is adjacent to a primary
+action, selected, semantic, or inverse surface; do not remove it merely because
+the outer ring is visible on the page canvas.
 
 Disabled controls may use reduced contrast, but must remain identifiable through
 more than color and must not respond to activation. High-contrast adapters must
