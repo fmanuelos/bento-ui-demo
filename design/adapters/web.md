@@ -18,6 +18,14 @@ implementation guidance, not the conceptual definitions of the design system.
 Component files contain their specific HTML and ARIA mappings under `Web adapter`
 subsections.
 
+## Theme selection
+
+The document's `data-theme` value selects the authored light or dark theme. Set
+the corresponding `color-scheme` value so native controls and browser-rendered
+UI use the same mode. Theme selection must not change semantics, reading order,
+focus order, or available actions, and it must not briefly expose a mismatched
+foreground and background while the page initializes.
+
 ## Focus and high contrast
 
 - Render a persistent focus indicator for keyboard focus. Do not remove the user

@@ -27,3 +27,16 @@ system range names and content-driven transformation rules.
 
 Do not hand-edit generated files or rename semantic roles to fit a utility name.
 Re-evaluate every mapping and workaround when the exporter version changes.
+
+## Theme mapping
+
+The alpha DESIGN.md schema does not define nested theme modes. Bento UI Admin
+therefore stores the default light colors under unqualified semantic names and
+the dark colors under flat `dark-*` semantic names. The exporter emits both sets
+as CSS custom properties.
+
+The web entrypoint activates dark mode by remapping ordinary runtime variables to
+their exported dark counterparts under `data-theme="dark"`, for example
+`--color-surface-primary: var(--color-dark-surface-primary)`. The selector
+contains no raw color values. Component code continues to consume the ordinary
+semantic variable and does not branch on token names.

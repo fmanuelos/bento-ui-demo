@@ -16,53 +16,166 @@
 
   :root[data-theme='dark'] {
     color-scheme: dark;
-    --color-background-primary: var(--color-background-inverse);
-    --color-background-secondary: var(--color-background-inverse);
-    --color-background-tertiary: var(--color-navigation-sidebar-item-hover);
-    --color-background-accent: var(--color-navigation-sidebar-item-hover);
-    --color-surface-primary: var(--color-surface-inverse);
-    --color-surface-secondary: var(--color-navigation-sidebar-item-hover);
-    --color-surface-raised: var(--color-navigation-sidebar-item-hover);
-    --color-surface-sunken: var(--color-background-inverse);
-    --color-text-primary: var(--color-text-inverse);
-    --color-text-secondary: var(--color-navigation-sidebar-foreground);
-    --color-text-tertiary: var(--color-navigation-sidebar-foreground);
-    --color-text-placeholder: var(--color-navigation-sidebar-foreground);
-    --color-text-accent: var(--color-focus-ring);
-    --color-text-link: var(--color-focus-ring);
-    --color-border-primary: var(--color-border-inverse);
-    --color-border-secondary: var(--color-border-inverse);
-    --color-border-subtle: var(--color-navigation-sidebar-item-hover);
-    --color-border-accent: var(--color-focus-ring);
-    --color-focus-ring-offset: var(--color-background-inverse);
-    --color-navigation-topbar-background: var(--color-background-inverse);
-    --color-navigation-topbar-border: var(--color-border-inverse);
-    --color-table-header-background: var(--color-navigation-sidebar-item-hover);
-    --color-table-row-background: var(--color-background-inverse);
-    --color-table-row-hover: var(--color-navigation-sidebar-item-hover);
-    --color-table-row-selected: var(--color-navigation-sidebar-item-hover);
-    --color-table-border: var(--color-border-inverse);
-    --color-selection-background: var(--color-navigation-sidebar-item-selected);
-    --color-selection-foreground: var(--color-navigation-sidebar-item-selected-foreground);
-    --color-action-link-default: var(--color-focus-ring);
-    --color-action-link-hover: var(--color-border-accent);
-    --color-action-link-active: var(--color-text-inverse);
-    --color-action-secondary-background-default: #172554;
-    --color-action-secondary-background-hover: #1e3a8a;
-    --color-action-secondary-background-active: #1e40af;
-    --color-action-secondary-background-disabled: var(--color-navigation-sidebar-item-hover);
-    --color-action-secondary-foreground: #dbeafe;
-    --color-action-secondary-foreground-disabled: var(--color-border-strong);
-    --color-action-outline-background-hover: var(--color-navigation-sidebar-item-hover);
-    --color-action-outline-background-active: #334155;
-    --color-action-outline-foreground: var(--color-text-inverse);
-    --color-action-outline-foreground-disabled: var(--color-border-strong);
-    --color-action-outline-border: #94a3b8;
-    --color-action-outline-border-disabled: var(--color-border-strong);
-    --color-action-ghost-background-hover: var(--color-navigation-sidebar-item-hover);
-    --color-action-ghost-background-active: #334155;
-    --color-action-ghost-foreground: var(--color-text-inverse);
-    --color-action-ghost-foreground-disabled: var(--color-border-strong);
+    --color-background-primary: var(--color-dark-background-primary);
+    --color-background-secondary: var(--color-dark-background-secondary);
+    --color-background-tertiary: var(--color-dark-background-tertiary);
+    --color-background-inverse: var(--color-dark-background-inverse);
+    --color-background-accent: var(--color-dark-background-accent);
+    --color-background-disabled: var(--color-dark-background-disabled);
+    --color-background-overlay: var(--color-dark-background-overlay);
+    --color-surface-primary: var(--color-dark-surface-primary);
+    --color-surface-secondary: var(--color-dark-surface-secondary);
+    --color-surface-raised: var(--color-dark-surface-raised);
+    --color-surface-sunken: var(--color-dark-surface-sunken);
+    --color-surface-inverse: var(--color-dark-surface-inverse);
+    --color-text-primary: var(--color-dark-text-primary);
+    --color-text-secondary: var(--color-dark-text-secondary);
+    --color-text-tertiary: var(--color-dark-text-tertiary);
+    --color-text-placeholder: var(--color-dark-text-placeholder);
+    --color-text-inverse: var(--color-dark-text-inverse);
+    --color-text-disabled: var(--color-dark-text-disabled);
+    --color-text-accent: var(--color-dark-text-accent);
+    --color-text-link: var(--color-dark-text-link);
+    --color-text-success: var(--color-dark-text-success);
+    --color-text-warning: var(--color-dark-text-warning);
+    --color-text-danger: var(--color-dark-text-danger);
+    --color-text-info: var(--color-dark-text-info);
+    --color-border-primary: var(--color-dark-border-primary);
+    --color-border-secondary: var(--color-dark-border-secondary);
+    --color-border-subtle: var(--color-dark-border-subtle);
+    --color-border-strong: var(--color-dark-border-strong);
+    --color-border-inverse: var(--color-dark-border-inverse);
+    --color-border-disabled: var(--color-dark-border-disabled);
+    --color-border-focus: var(--color-dark-border-focus);
+    --color-border-accent: var(--color-dark-border-accent);
+    --color-border-success: var(--color-dark-border-success);
+    --color-border-warning: var(--color-dark-border-warning);
+    --color-border-danger: var(--color-dark-border-danger);
+    --color-action-primary-background-default: var(--color-dark-action-primary-background-default);
+    --color-action-primary-background-hover: var(--color-dark-action-primary-background-hover);
+    --color-action-primary-background-active: var(--color-dark-action-primary-background-active);
+    --color-action-primary-background-disabled: var(
+      --color-dark-action-primary-background-disabled
+    );
+    --color-action-primary-foreground: var(--color-dark-action-primary-foreground);
+    --color-action-primary-foreground-disabled: var(
+      --color-dark-action-primary-foreground-disabled
+    );
+    --color-action-primary-border: var(--color-dark-action-primary-border);
+    --color-action-primary-border-disabled: var(--color-dark-action-primary-border-disabled);
+    --color-action-secondary-background-default: var(
+      --color-dark-action-secondary-background-default
+    );
+    --color-action-secondary-background-hover: var(--color-dark-action-secondary-background-hover);
+    --color-action-secondary-background-active: var(
+      --color-dark-action-secondary-background-active
+    );
+    --color-action-secondary-background-disabled: var(
+      --color-dark-action-secondary-background-disabled
+    );
+    --color-action-secondary-foreground: var(--color-dark-action-secondary-foreground);
+    --color-action-secondary-foreground-disabled: var(
+      --color-dark-action-secondary-foreground-disabled
+    );
+    --color-action-secondary-border: var(--color-dark-action-secondary-border);
+    --color-action-secondary-border-disabled: var(--color-dark-action-secondary-border-disabled);
+    --color-action-outline-background-default: var(--color-dark-action-outline-background-default);
+    --color-action-outline-background-hover: var(--color-dark-action-outline-background-hover);
+    --color-action-outline-background-active: var(--color-dark-action-outline-background-active);
+    --color-action-outline-background-disabled: var(
+      --color-dark-action-outline-background-disabled
+    );
+    --color-action-outline-foreground: var(--color-dark-action-outline-foreground);
+    --color-action-outline-foreground-disabled: var(
+      --color-dark-action-outline-foreground-disabled
+    );
+    --color-action-outline-border: var(--color-dark-action-outline-border);
+    --color-action-outline-border-disabled: var(--color-dark-action-outline-border-disabled);
+    --color-action-ghost-background-default: var(--color-dark-action-ghost-background-default);
+    --color-action-ghost-background-hover: var(--color-dark-action-ghost-background-hover);
+    --color-action-ghost-background-active: var(--color-dark-action-ghost-background-active);
+    --color-action-ghost-background-disabled: var(--color-dark-action-ghost-background-disabled);
+    --color-action-ghost-foreground: var(--color-dark-action-ghost-foreground);
+    --color-action-ghost-foreground-disabled: var(--color-dark-action-ghost-foreground-disabled);
+    --color-action-destructive-background-default: var(
+      --color-dark-action-destructive-background-default
+    );
+    --color-action-destructive-background-hover: var(
+      --color-dark-action-destructive-background-hover
+    );
+    --color-action-destructive-background-active: var(
+      --color-dark-action-destructive-background-active
+    );
+    --color-action-destructive-background-disabled: var(
+      --color-dark-action-destructive-background-disabled
+    );
+    --color-action-destructive-foreground: var(--color-dark-action-destructive-foreground);
+    --color-action-destructive-foreground-disabled: var(
+      --color-dark-action-destructive-foreground-disabled
+    );
+    --color-action-link-default: var(--color-dark-action-link-default);
+    --color-action-link-hover: var(--color-dark-action-link-hover);
+    --color-action-link-active: var(--color-dark-action-link-active);
+    --color-action-link-visited: var(--color-dark-action-link-visited);
+    --color-action-link-disabled: var(--color-dark-action-link-disabled);
+    --color-feedback-success-background: var(--color-dark-feedback-success-background);
+    --color-feedback-success-foreground: var(--color-dark-feedback-success-foreground);
+    --color-feedback-success-border: var(--color-dark-feedback-success-border);
+    --color-feedback-warning-background: var(--color-dark-feedback-warning-background);
+    --color-feedback-warning-foreground: var(--color-dark-feedback-warning-foreground);
+    --color-feedback-warning-border: var(--color-dark-feedback-warning-border);
+    --color-feedback-danger-background: var(--color-dark-feedback-danger-background);
+    --color-feedback-danger-foreground: var(--color-dark-feedback-danger-foreground);
+    --color-feedback-danger-border: var(--color-dark-feedback-danger-border);
+    --color-feedback-info-background: var(--color-dark-feedback-info-background);
+    --color-feedback-info-foreground: var(--color-dark-feedback-info-foreground);
+    --color-feedback-info-border: var(--color-dark-feedback-info-border);
+    --color-status-positive-background: var(--color-dark-status-positive-background);
+    --color-status-positive-foreground: var(--color-dark-status-positive-foreground);
+    --color-status-positive-border: var(--color-dark-status-positive-border);
+    --color-status-warning-background: var(--color-dark-status-warning-background);
+    --color-status-warning-foreground: var(--color-dark-status-warning-foreground);
+    --color-status-warning-border: var(--color-dark-status-warning-border);
+    --color-status-negative-background: var(--color-dark-status-negative-background);
+    --color-status-negative-foreground: var(--color-dark-status-negative-foreground);
+    --color-status-negative-border: var(--color-dark-status-negative-border);
+    --color-status-info-background: var(--color-dark-status-info-background);
+    --color-status-info-foreground: var(--color-dark-status-info-foreground);
+    --color-status-info-border: var(--color-dark-status-info-border);
+    --color-status-neutral-background: var(--color-dark-status-neutral-background);
+    --color-status-neutral-foreground: var(--color-dark-status-neutral-foreground);
+    --color-status-neutral-border: var(--color-dark-status-neutral-border);
+    --color-navigation-sidebar-background: var(--color-dark-navigation-sidebar-background);
+    --color-navigation-sidebar-foreground: var(--color-dark-navigation-sidebar-foreground);
+    --color-navigation-sidebar-foreground-strong: var(
+      --color-dark-navigation-sidebar-foreground-strong
+    );
+    --color-navigation-sidebar-item-hover: var(--color-dark-navigation-sidebar-item-hover);
+    --color-navigation-sidebar-item-selected: var(--color-dark-navigation-sidebar-item-selected);
+    --color-navigation-sidebar-item-selected-foreground: var(
+      --color-dark-navigation-sidebar-item-selected-foreground
+    );
+    --color-navigation-topbar-background: var(--color-dark-navigation-topbar-background);
+    --color-navigation-topbar-border: var(--color-dark-navigation-topbar-border);
+    --color-table-header-background: var(--color-dark-table-header-background);
+    --color-table-row-background: var(--color-dark-table-row-background);
+    --color-table-row-hover: var(--color-dark-table-row-hover);
+    --color-table-row-selected: var(--color-dark-table-row-selected);
+    --color-table-border: var(--color-dark-table-border);
+    --color-selection-background: var(--color-dark-selection-background);
+    --color-selection-foreground: var(--color-dark-selection-foreground);
+    --color-focus-ring: var(--color-dark-focus-ring);
+    --color-focus-ring-offset: var(--color-dark-focus-ring-offset);
+    --color-chart-series-1: var(--color-dark-chart-series-1);
+    --color-chart-series-2: var(--color-dark-chart-series-2);
+    --color-chart-series-3: var(--color-dark-chart-series-3);
+    --color-chart-series-4: var(--color-dark-chart-series-4);
+    --color-chart-series-5: var(--color-dark-chart-series-5);
+    --color-chart-series-6: var(--color-dark-chart-series-6);
+    --color-chart-positive: var(--color-dark-chart-positive);
+    --color-chart-negative: var(--color-dark-chart-negative);
+    --color-chart-gridline: var(--color-dark-chart-gridline);
+    --color-chart-axis: var(--color-dark-chart-axis);
   }
 
   * {

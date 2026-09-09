@@ -151,6 +151,154 @@ colors:
   chart-gridline: '#E2E8F0'
   chart-axis: '#64748B'
 
+  # Dark-theme semantic aliases. The alpha DESIGN.md schema has no theme-mode
+  # group, so the theme qualifier remains part of each flat token name.
+  dark-background-primary: '#020617'
+  dark-background-secondary: '#0F172A'
+  dark-background-tertiary: '#1E293B'
+  dark-background-inverse: '#020617'
+  dark-background-accent: '#172554'
+  dark-background-disabled: '#1E293B'
+  dark-background-overlay: 'rgba(0, 0, 0, 0.72)'
+
+  dark-surface-primary: '#0F172A'
+  dark-surface-secondary: '#1E293B'
+  dark-surface-raised: '#1E293B'
+  dark-surface-sunken: '#020617'
+  dark-surface-inverse: '#020617'
+
+  dark-text-primary: '#F8FAFC'
+  dark-text-secondary: '#CBD5E1'
+  dark-text-tertiary: '#94A3B8'
+  dark-text-placeholder: '#94A3B8'
+  dark-text-inverse: '#FFFFFF'
+  dark-text-disabled: '#94A3B8'
+  dark-text-accent: '#84ADFF'
+  dark-text-link: '#84ADFF'
+  dark-text-success: '#75E0A7'
+  dark-text-warning: '#FEC84B'
+  dark-text-danger: '#FDA29B'
+  dark-text-info: '#84CAFF'
+
+  dark-border-primary: '#64748B'
+  dark-border-secondary: '#475569'
+  dark-border-subtle: '#334155'
+  dark-border-strong: '#94A3B8'
+  dark-border-inverse: '#475569'
+  dark-border-disabled: '#334155'
+  dark-border-focus: '#84ADFF'
+  dark-border-accent: '#528BFF'
+  dark-border-success: '#17B26A'
+  dark-border-warning: '#DC6803'
+  dark-border-danger: '#F04438'
+
+  dark-action-primary-background-default: '#155EEF'
+  dark-action-primary-background-hover: '#2563EB'
+  dark-action-primary-background-active: '#004EEB'
+  dark-action-primary-background-disabled: '#1E293B'
+  dark-action-primary-foreground: '#FFFFFF'
+  dark-action-primary-foreground-disabled: '#94A3B8'
+  dark-action-primary-border: '#155EEF'
+  dark-action-primary-border-disabled: '#334155'
+
+  dark-action-secondary-background-default: '#172554'
+  dark-action-secondary-background-hover: '#1E3A8A'
+  dark-action-secondary-background-active: '#1E40AF'
+  dark-action-secondary-background-disabled: '#1E293B'
+  dark-action-secondary-foreground: '#B2CCFF'
+  dark-action-secondary-foreground-disabled: '#94A3B8'
+  dark-action-secondary-border: 'transparent'
+  dark-action-secondary-border-disabled: 'transparent'
+
+  dark-action-outline-background-default: 'transparent'
+  dark-action-outline-background-hover: '#1E293B'
+  dark-action-outline-background-active: '#334155'
+  dark-action-outline-background-disabled: 'transparent'
+  dark-action-outline-foreground: '#CBD5E1'
+  dark-action-outline-foreground-disabled: '#94A3B8'
+  dark-action-outline-border: '#64748B'
+  dark-action-outline-border-disabled: '#334155'
+
+  dark-action-ghost-background-default: 'transparent'
+  dark-action-ghost-background-hover: '#1E293B'
+  dark-action-ghost-background-active: '#334155'
+  dark-action-ghost-background-disabled: 'transparent'
+  dark-action-ghost-foreground: '#CBD5E1'
+  dark-action-ghost-foreground-disabled: '#94A3B8'
+
+  dark-action-destructive-background-default: '#D92D20'
+  dark-action-destructive-background-hover: '#B42318'
+  dark-action-destructive-background-active: '#912018'
+  dark-action-destructive-background-disabled: '#3F1D1B'
+  dark-action-destructive-foreground: '#FFFFFF'
+  dark-action-destructive-foreground-disabled: '#94A3B8'
+
+  dark-action-link-default: '#84ADFF'
+  dark-action-link-hover: '#B2CCFF'
+  dark-action-link-active: '#C7D7FE'
+  dark-action-link-visited: '#BDB4FE'
+  dark-action-link-disabled: '#94A3B8'
+
+  dark-feedback-success-background: '#052E16'
+  dark-feedback-success-foreground: '#75E0A7'
+  dark-feedback-success-border: '#17B26A'
+  dark-feedback-warning-background: '#422006'
+  dark-feedback-warning-foreground: '#FEC84B'
+  dark-feedback-warning-border: '#DC6803'
+  dark-feedback-danger-background: '#450A0A'
+  dark-feedback-danger-foreground: '#FDA29B'
+  dark-feedback-danger-border: '#F04438'
+  dark-feedback-info-background: '#082F49'
+  dark-feedback-info-foreground: '#84CAFF'
+  dark-feedback-info-border: '#2E90FA'
+
+  dark-status-positive-background: '#052E16'
+  dark-status-positive-foreground: '#75E0A7'
+  dark-status-positive-border: '#17B26A'
+  dark-status-warning-background: '#422006'
+  dark-status-warning-foreground: '#FEC84B'
+  dark-status-warning-border: '#DC6803'
+  dark-status-negative-background: '#450A0A'
+  dark-status-negative-foreground: '#FDA29B'
+  dark-status-negative-border: '#F04438'
+  dark-status-info-background: '#082F49'
+  dark-status-info-foreground: '#84CAFF'
+  dark-status-info-border: '#2E90FA'
+  dark-status-neutral-background: '#1E293B'
+  dark-status-neutral-foreground: '#CBD5E1'
+  dark-status-neutral-border: '#64748B'
+
+  dark-navigation-sidebar-background: '#020617'
+  dark-navigation-sidebar-foreground: '#CBD5E1'
+  dark-navigation-sidebar-foreground-strong: '#F8FAFC'
+  dark-navigation-sidebar-item-hover: '#1E293B'
+  dark-navigation-sidebar-item-selected: '#155EEF'
+  dark-navigation-sidebar-item-selected-foreground: '#FFFFFF'
+  dark-navigation-topbar-background: '#0F172A'
+  dark-navigation-topbar-border: '#334155'
+
+  dark-table-header-background: '#1E293B'
+  dark-table-row-background: '#0F172A'
+  dark-table-row-hover: '#1E293B'
+  dark-table-row-selected: '#172554'
+  dark-table-border: '#334155'
+
+  dark-selection-background: '#1E40AF'
+  dark-selection-foreground: '#F8FAFC'
+  dark-focus-ring: '#84ADFF'
+  dark-focus-ring-offset: '#020617'
+
+  dark-chart-series-1: '#528BFF'
+  dark-chart-series-2: '#9B8AFB'
+  dark-chart-series-3: '#2ED3B7'
+  dark-chart-series-4: '#F79009'
+  dark-chart-series-5: '#EE46BC'
+  dark-chart-series-6: '#94A3B8'
+  dark-chart-positive: '#32D583'
+  dark-chart-negative: '#F97066'
+  dark-chart-gridline: '#334155'
+  dark-chart-axis: '#94A3B8'
+
 typography:
   display-lg:
     fontFamily: Inter
@@ -544,6 +692,185 @@ components:
     textColor: '{colors.text-primary}'
     rounded: '{rounded.xl}'
     padding: '{spacing.xl}'
+
+  # Dark entries override the color properties of the matching unqualified
+  # component or state. Typography, shape, size, and spacing remain shared.
+  button-primary-dark:
+    backgroundColor: '{colors.dark-action-primary-background-default}'
+    textColor: '{colors.dark-action-primary-foreground}'
+  button-primary-hover-dark:
+    backgroundColor: '{colors.dark-action-primary-background-hover}'
+    textColor: '{colors.dark-action-primary-foreground}'
+  button-primary-active-dark:
+    backgroundColor: '{colors.dark-action-primary-background-active}'
+    textColor: '{colors.dark-action-primary-foreground}'
+  button-primary-disabled-dark:
+    backgroundColor: '{colors.dark-action-primary-background-disabled}'
+    textColor: '{colors.dark-action-primary-foreground-disabled}'
+  button-primary-compact-dark:
+    backgroundColor: '{colors.dark-action-primary-background-default}'
+    textColor: '{colors.dark-action-primary-foreground}'
+
+  button-secondary-dark:
+    backgroundColor: '{colors.dark-action-secondary-background-default}'
+    textColor: '{colors.dark-action-secondary-foreground}'
+  button-secondary-hover-dark:
+    backgroundColor: '{colors.dark-action-secondary-background-hover}'
+    textColor: '{colors.dark-action-secondary-foreground}'
+  button-secondary-active-dark:
+    backgroundColor: '{colors.dark-action-secondary-background-active}'
+    textColor: '{colors.dark-action-secondary-foreground}'
+  button-secondary-disabled-dark:
+    backgroundColor: '{colors.dark-action-secondary-background-disabled}'
+    textColor: '{colors.dark-action-secondary-foreground-disabled}'
+
+  button-outline-dark:
+    backgroundColor: '{colors.dark-action-outline-background-default}'
+    textColor: '{colors.dark-action-outline-foreground}'
+  button-outline-hover-dark:
+    backgroundColor: '{colors.dark-action-outline-background-hover}'
+    textColor: '{colors.dark-action-outline-foreground}'
+  button-outline-active-dark:
+    backgroundColor: '{colors.dark-action-outline-background-active}'
+    textColor: '{colors.dark-action-outline-foreground}'
+  button-outline-disabled-dark:
+    backgroundColor: '{colors.dark-action-outline-background-disabled}'
+    textColor: '{colors.dark-action-outline-foreground-disabled}'
+
+  button-ghost-dark:
+    backgroundColor: '{colors.dark-action-ghost-background-default}'
+    textColor: '{colors.dark-action-ghost-foreground}'
+  button-ghost-hover-dark:
+    backgroundColor: '{colors.dark-action-ghost-background-hover}'
+    textColor: '{colors.dark-action-ghost-foreground}'
+  button-ghost-active-dark:
+    backgroundColor: '{colors.dark-action-ghost-background-active}'
+    textColor: '{colors.dark-action-ghost-foreground}'
+  button-ghost-disabled-dark:
+    backgroundColor: '{colors.dark-action-ghost-background-disabled}'
+    textColor: '{colors.dark-action-ghost-foreground-disabled}'
+
+  button-destructive-dark:
+    backgroundColor: '{colors.dark-action-destructive-background-default}'
+    textColor: '{colors.dark-action-destructive-foreground}'
+  button-destructive-hover-dark:
+    backgroundColor: '{colors.dark-action-destructive-background-hover}'
+    textColor: '{colors.dark-action-destructive-foreground}'
+  button-destructive-active-dark:
+    backgroundColor: '{colors.dark-action-destructive-background-active}'
+    textColor: '{colors.dark-action-destructive-foreground}'
+  button-destructive-disabled-dark:
+    backgroundColor: '{colors.dark-action-destructive-background-disabled}'
+    textColor: '{colors.dark-action-destructive-foreground-disabled}'
+
+  input-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-primary}'
+  input-compact-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-primary}'
+  input-focus-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-primary}'
+  input-placeholder-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-placeholder}'
+  input-disabled-dark:
+    backgroundColor: '{colors.dark-background-disabled}'
+    textColor: '{colors.dark-text-disabled}'
+
+  search-field-dark:
+    backgroundColor: '{colors.dark-surface-secondary}'
+    textColor: '{colors.dark-text-primary}'
+
+  card-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-primary}'
+  card-compact-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-primary}'
+  stat-card-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-primary}'
+
+  sidebar-dark:
+    backgroundColor: '{colors.dark-navigation-sidebar-background}'
+    textColor: '{colors.dark-navigation-sidebar-foreground}'
+  sidebar-collapsed-dark:
+    backgroundColor: '{colors.dark-navigation-sidebar-background}'
+    textColor: '{colors.dark-navigation-sidebar-foreground}'
+  sidebar-item-dark:
+    backgroundColor: 'transparent'
+    textColor: '{colors.dark-navigation-sidebar-foreground}'
+  sidebar-item-hover-dark:
+    backgroundColor: '{colors.dark-navigation-sidebar-item-hover}'
+    textColor: '{colors.dark-navigation-sidebar-foreground-strong}'
+  sidebar-item-selected-dark:
+    backgroundColor: '{colors.dark-navigation-sidebar-item-selected}'
+    textColor: '{colors.dark-navigation-sidebar-item-selected-foreground}'
+
+  topbar-dark:
+    backgroundColor: '{colors.dark-navigation-topbar-background}'
+    textColor: '{colors.dark-text-primary}'
+
+  tab-dark:
+    backgroundColor: 'transparent'
+    textColor: '{colors.dark-text-secondary}'
+  tab-hover-dark:
+    backgroundColor: '{colors.dark-action-ghost-background-hover}'
+    textColor: '{colors.dark-text-primary}'
+  tab-selected-dark:
+    backgroundColor: '{colors.dark-background-accent}'
+    textColor: '{colors.dark-text-accent}'
+
+  table-header-dark:
+    backgroundColor: '{colors.dark-table-header-background}'
+    textColor: '{colors.dark-text-secondary}'
+  table-row-dark:
+    backgroundColor: '{colors.dark-table-row-background}'
+    textColor: '{colors.dark-text-primary}'
+  table-row-hover-dark:
+    backgroundColor: '{colors.dark-table-row-hover}'
+    textColor: '{colors.dark-text-primary}'
+  table-row-selected-dark:
+    backgroundColor: '{colors.dark-table-row-selected}'
+    textColor: '{colors.dark-text-primary}'
+
+  badge-positive-dark:
+    backgroundColor: '{colors.dark-status-positive-background}'
+    textColor: '{colors.dark-status-positive-foreground}'
+  badge-warning-dark:
+    backgroundColor: '{colors.dark-status-warning-background}'
+    textColor: '{colors.dark-status-warning-foreground}'
+  badge-negative-dark:
+    backgroundColor: '{colors.dark-status-negative-background}'
+    textColor: '{colors.dark-status-negative-foreground}'
+  badge-info-dark:
+    backgroundColor: '{colors.dark-status-info-background}'
+    textColor: '{colors.dark-status-info-foreground}'
+  badge-neutral-dark:
+    backgroundColor: '{colors.dark-status-neutral-background}'
+    textColor: '{colors.dark-status-neutral-foreground}'
+
+  alert-success-dark:
+    backgroundColor: '{colors.dark-feedback-success-background}'
+    textColor: '{colors.dark-feedback-success-foreground}'
+  alert-warning-dark:
+    backgroundColor: '{colors.dark-feedback-warning-background}'
+    textColor: '{colors.dark-feedback-warning-foreground}'
+  alert-danger-dark:
+    backgroundColor: '{colors.dark-feedback-danger-background}'
+    textColor: '{colors.dark-feedback-danger-foreground}'
+  alert-info-dark:
+    backgroundColor: '{colors.dark-feedback-info-background}'
+    textColor: '{colors.dark-feedback-info-foreground}'
+
+  dropdown-dark:
+    backgroundColor: '{colors.dark-surface-raised}'
+    textColor: '{colors.dark-text-primary}'
+  modal-dark:
+    backgroundColor: '{colors.dark-surface-raised}'
+    textColor: '{colors.dark-text-primary}'
 ---
 
 # Bento UI Admin
@@ -611,7 +938,7 @@ substitute one semantic role for another.
 
 | Concern                              | Authoritative source                       | Update rule                                                              |
 | ------------------------------------ | ------------------------------------------ | ------------------------------------------------------------------------ |
-| Exact light-theme token values       | This file's frontmatter                    | Edit here first.                                                         |
+| Exact light- and dark-theme values   | This file's frontmatter                    | Edit here first.                                                         |
 | System-wide rationale and usage      | This document body                         | Avoid repeating exact values.                                            |
 | Component behavior and accessibility | [`design/components/`](design/components/) | Update with contract changes.                                            |
 | Cross-component experience patterns  | [`design/patterns/`](design/patterns/)     | Keep outcomes independent of implementation technology.                  |
@@ -675,6 +1002,12 @@ Record each decision before relying on it in implementation.
 Color tokens follow `category-role-property-state`. Segments may be omitted when
 they do not add meaning.
 
+The default light theme uses unqualified semantic names. Because the alpha
+DESIGN.md schema has no theme-mode group, dark-theme aliases add the flat
+`dark-` qualifier before the same semantic name, such as
+`dark-text-primary` and `dark-action-primary-background-hover`. The qualifier
+changes the theme mapping, not the token's purpose.
+
 Use semantic names in implementations. The required `primary` token is the Bento
 blue brand seed for DESIGN.md consumers; components should normally use the more
 specific semantic action, text, surface, or border tokens.
@@ -699,17 +1032,28 @@ more specific `feedback-*` or `status-*` families.
 
 ### Theme scope
 
-Frontmatter values define the default light theme. A dark theme must remap roles,
-not invert literals mechanically, and must re-check every supported foreground,
-surface, border, focus, feedback, status, and chart combination.
+Unqualified frontmatter values define the default light theme. The flat `dark-*`
+values define the supported dark theme by remapping the same roles rather than
+inverting literals mechanically. Components use unqualified entries in light
+mode and the corresponding `*-dark` entries in dark mode. Dark component entries
+override color properties only; typography, shape, size, and spacing remain
+shared with the unqualified component.
 
-Dark mode is not a supported Bento UI Admin system theme during the Draft phase.
-The current overrides are demo-specific and must not be reused as a complete
-semantic palette.
+Adapters activate one complete theme at a time. They may translate the flat
+theme qualifier into a platform mode or selector, but exact dark values must
+continue to originate in this frontmatter. Product code must not combine light
+and dark values ad hoc or treat the dark aliases as a general color palette.
 
-Inverse surfaces are a supported local mode, not a complete dark theme. Platform
-high-contrast or forced-color modes may replace authored colors, borders, and
-focus treatments as needed while preserving meaning and operability.
+Inverse tokens describe a stable deep-ink emphasis surface rather than the
+opposite luminance of the active theme. They remain dark in both themes and
+deepen in dark mode to preserve local separation. Pair inverse background or
+surface roles only with the matching inverse foreground and border roles; do not
+use inverse tokens as substitutes for the complete dark theme.
+
+Every supported foreground, surface, border, focus, feedback, status, and chart
+combination must be checked in both themes. Platform high-contrast or
+forced-color modes may replace authored colors, borders, and focus treatments as
+needed while preserving meaning and operability.
 
 ### Actions, feedback, and status
 
@@ -745,8 +1089,10 @@ distinct semantic meaning.
 - Icons beside text inherit that text color.
 - Standalone neutral icons use `text-primary`, `text-secondary`, or
   `text-tertiary` according to emphasis.
-- Icons on dark surfaces use `text-inverse` unless their component specifies a
-  more precise foreground.
+- Icons on inverse surfaces use the active theme's matching inverse foreground
+  unless their component specifies a more precise role. Ordinary dark-theme
+  surfaces use the corresponding `dark-text-*` mapping rather than an inverse
+  role.
 - Disabled icons inherit their component's disabled foreground.
 - Semantic icon colors are used only when the icon communicates that meaning.
 - Icons inside actions, feedback, status, navigation, or selection inherit the
@@ -781,6 +1127,11 @@ rendered area, contrast, and placement must remain perceivable on every supporte
 surface; an adapter must add or retain a platform focus indicator when the token
 alone is insufficient. Focus must not be fully obscured by sticky or overlay
 content.
+
+In dark mode, use `dark-focus-ring` with `dark-focus-ring-offset`. Preserve the
+offset as a contrasting inner separation when the ring is adjacent to a cobalt,
+selected, semantic, or inverse surface; do not remove it merely because the
+outer ring is visible on the page canvas.
 
 Disabled controls may use reduced contrast, but must remain identifiable through
 more than color and must not respond to activation. High-contrast adapters must
@@ -916,6 +1267,14 @@ Reserve shadows for content that genuinely floats. Exact shadow values are not
 yet tokenized. Borders and tonal separation are the stable alternative until an
 elevation scale is adopted.
 
+In dark mode, a raised popup uses `dark-surface-raised`, its documented quiet
+border, and `0 8px 24px rgba(0, 0, 0, 0.40)`. A modal uses the same raised
+surface above `dark-background-overlay` with
+`0 24px 48px rgba(0, 0, 0, 0.56)`. These shadow values are normative visual
+guidance in prose until the DESIGN.md schema supports an elevation token group;
+the visible edge and tonal step remain necessary because shadow alone can
+disappear on a dark canvas.
+
 Layer content in this order: page, sticky navigation, popover, blocking overlay
 and dialog, then tooltip. Numeric z-index values remain application-local; do not
 invent new layers when an existing semantic layer fits.
@@ -945,6 +1304,13 @@ by the current DESIGN.md schema. They are not an implementation inventory, and
 export support does not determine whether a contract is valid. Borders, focus
 treatment, elevation, behavior, and accessibility belong in the component
 specifications when the frontmatter cannot express them.
+
+An unqualified component entry defines the default light-theme colors. Its
+related `*-dark` entry defines the dark-theme `backgroundColor` and `textColor`
+override and inherits every non-color property from the unqualified entry. State
+and theme qualifiers stay explicit, for example `button-primary-hover-dark`.
+This flat convention keeps both themes machine-readable without adding an
+unsupported nested theme group.
 
 ### Component contract
 

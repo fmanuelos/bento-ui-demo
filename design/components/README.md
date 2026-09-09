@@ -70,6 +70,11 @@ the current DESIGN.md component schema. No duplicate entries are added for state
 whose only requirements are behavior, boundary, focus indicator, announcement,
 or motion.
 
+Each supported light-theme color entry has a related `*-dark` entry for dark-mode
+contrast validation. Dark entries override `backgroundColor` and `textColor`
+only; typography, shape, spacing, sizing, behavior, and accessibility remain
+shared with the unqualified component or state.
+
 | Component family          | Frontmatter coverage                      | Contract-only coverage                                                                                                                       |
 | ------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Buttons                   | Default, compact, hover, active, disabled | Focus, loading, pressed, expanded, activation behavior                                                                                       |

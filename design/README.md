@@ -34,10 +34,11 @@ and production build checks.
 
 ## CSS entrypoint
 
-`src/index.css` imports Tailwind first and the generated theme second. It may contain application-wide base styles and the class-driven dark-mode variant, but token values belong in `DESIGN.md`.
-
-The dark-mode variant is a demo extension, not a supported system theme. Do not
-use it as the source for a future dark semantic mapping.
+`src/index.css` imports Tailwind first and the generated theme second. It contains
+application-wide base styles and the class-driven dark-mode adapter mapping.
+Exact light and dark values belong in `DESIGN.md`; the adapter only maps each
+unqualified runtime variable to its exported `dark-*` semantic counterpart under
+`data-theme="dark"`.
 
 ## Component documentation
 
@@ -58,9 +59,14 @@ typography line heights remain quoted in YAML because CLI 0.4.0 otherwise drops
 numeric YAML values during export. Re-check this workaround and the component
 limitation whenever the CLI version changes.
 
+The alpha DESIGN.md schema has no theme-mode group. Dark colors therefore use
+flat `dark-*` semantic names that both current exporters preserve. Do not nest
+light and dark maps under `colors`: the current Tailwind exporter turns nested
+paths into invalid dotted CSS identifiers.
+
 ## Known lint baseline
 
-With `@google/design.md` 0.4.0, the current document has zero lint errors and 67
+With `@google/design.md` 0.4.0, the current document has zero lint errors and 128
 warnings. Six are contrast warnings:
 
 | Finding                                              | Interpretation                                                                    | Review rule                                                                                                                                 |
@@ -69,11 +75,12 @@ warnings. Six are contrast warnings:
 | Transparent outline and ghost buttons                | The linter cannot resolve the permitted surface through a transparent background. | Verify each foreground and outline border on every supported surface listed in `DESIGN.md`.                                                 |
 | Transparent tab                                      | The linter cannot resolve the permitted surface through a transparent background. | Verify default and state foregrounds on every supported surface.                                                                            |
 
-The remaining warnings identify color tokens that are not referenced by a
-supported component property. Many are intentionally consumed by prose-defined
-borders, focus indicators, charts, page backgrounds, or other concepts that the
-current component schema cannot encode. Review them whenever the schema or
-exporter changes; do not add misleading component mappings to suppress them.
+The remaining warnings identify light or dark color tokens that are not
+referenced by a supported component property. Many are intentionally consumed by
+prose-defined borders, focus indicators, charts, page backgrounds, theme adapter
+mappings, or other concepts that the current component schema cannot encode.
+Review them whenever the schema or exporter changes; do not add misleading
+component mappings to suppress them.
 
 Treat this as a comparison baseline, not an allowed-error budget. A change must
 not add `broken-ref`, `unknown-key`, `token-like-ignored`, `section-order`, or
