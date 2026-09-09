@@ -20,10 +20,13 @@ Do not edit generated files. Update `DESIGN.md`, validate it, and regenerate bot
 
 ```sh
 pnpm dev
-pnpm lint
-pnpm build
+pnpm format
 pnpm check
 ```
+
+Run `pnpm format` to format the project and sort Tailwind classes. Run `pnpm check`
+before submitting changes; it verifies formatting, the design system, lint rules,
+TypeScript, and the production build.
 
 Tailwind uses its official Vite plugin. The application CSS entrypoint is `src/index.css`, which imports Tailwind and the generated theme and defines the class-driven dark mode.
 

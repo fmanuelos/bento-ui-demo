@@ -62,7 +62,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       ].join(' ')}
       {...props}
     >
-      {loading && <span className="size-4 animate-spin rounded-full border-2 border-current border-r-transparent motion-reduce:animate-none" aria-hidden="true" />}
+      {loading && (
+        <span
+          className="size-4 animate-spin rounded-full border-2 border-current border-r-transparent motion-reduce:animate-none"
+          aria-hidden="true"
+        />
+      )}
       {!loading && iconPosition === 'start' && icon}
       {children}
       {loading && <span className="sr-only">{loadingLabel}</span>}

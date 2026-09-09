@@ -39,13 +39,20 @@ export function FieldFrame({
       <label className="flex items-baseline justify-between gap-lg" htmlFor={id}>
         <span>
           {label}
-          {required && <span className="ml-xs text-text-danger" aria-hidden="true">*</span>}
+          {required && (
+            <span className="ml-xs text-text-danger" aria-hidden="true">
+              *
+            </span>
+          )}
         </span>
         {hint && <span className="text-body-xs font-normal text-text-secondary">{hint}</span>}
       </label>
       {children}
       {message && (
-        <p id={`${id}-message`} className={`m-0 text-body-xs font-normal ${statusTextClasses[messageStatus]}`}>
+        <p
+          id={`${id}-message`}
+          className={`m-0 text-body-xs font-normal ${statusTextClasses[messageStatus]}`}
+        >
           {message}
         </p>
       )}

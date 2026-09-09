@@ -26,16 +26,16 @@ Inputs collect short, structured text. Every input has a visible label; placehol
 
 ## States
 
-| State | Support | Contract |
-| --- | --- | --- |
-| Empty or populated | Required | Label and instructions remain available in either state. |
-| Hover | Required when hover is available | Does not replace focus or validation cues. |
-| Focus | Required | Uses `border-focus` and the global `focus-ring`. |
-| Read-only | Required | Remains focusable when review or copying is useful and is distinct from disabled. |
-| Invalid | Required | Uses danger boundary and text roles plus a written error. |
-| Warning or success | Optional | Uses the corresponding semantic role and a non-color cue. |
-| Loading or busy | Optional | Communicates that a related lookup or validation is pending without discarding input. |
-| Disabled | Optional | Keeps its label, exposes unavailability, and uses disabled background, boundary, and text roles. |
+| State              | Support                          | Contract                                                                                         |
+| ------------------ | -------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Empty or populated | Required                         | Label and instructions remain available in either state.                                         |
+| Hover              | Required when hover is available | Does not replace focus or validation cues.                                                       |
+| Focus              | Required                         | Uses `border-focus` and the global `focus-ring`.                                                 |
+| Read-only          | Required                         | Remains focusable when review or copying is useful and is distinct from disabled.                |
+| Invalid            | Required                         | Uses danger boundary and text roles plus a written error.                                        |
+| Warning or success | Optional                         | Uses the corresponding semantic role and a non-color cue.                                        |
+| Loading or busy    | Optional                         | Communicates that a related lookup or validation is pending without discarding input.            |
+| Disabled           | Optional                         | Keeps its label, exposes unavailability, and uses disabled background, boundary, and text roles. |
 
 The default boundary uses `border-primary`. Shared state precedence is defined in
 [`DESIGN.md`](../../DESIGN.md#shared-state-model).

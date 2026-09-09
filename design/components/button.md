@@ -23,27 +23,27 @@ Buttons trigger an immediate action. Use one primary button for the most importa
 
 ## Sizes
 
-| Size | Height | Horizontal padding | Typography | Use |
-| --- | --- | --- | --- | --- |
-| Compact | `control-height-sm` | `spacing.sm` | `label-sm` | Dense desktop utilities |
-| Standard | `control-height-lg` | `spacing.md` | `label-md` | Forms, primary flows, and touch contexts |
-| Icon | `control-height-lg` square | None | Inherited | Icon-only action |
+| Size     | Height                     | Horizontal padding | Typography | Use                                      |
+| -------- | -------------------------- | ------------------ | ---------- | ---------------------------------------- |
+| Compact  | `control-height-sm`        | `spacing.sm`       | `label-sm` | Dense desktop utilities                  |
+| Standard | `control-height-lg`        | `spacing.md`       | `label-md` | Forms, primary flows, and touch contexts |
+| Icon     | `control-height-lg` square | None               | Inherited  | Icon-only action                         |
 
 Buttons use `rounded.md`. Because height is fixed, component-token `padding`
 means horizontal padding.
 
 ## States
 
-| State | Support | Contract |
-| --- | --- | --- |
-| Default | Required | Presents the variant's action hierarchy. |
-| Hover | Required when hover is available | Enhances affordance but does not reveal otherwise unavailable content. |
-| Focus | Required | Remains visible when combined with pressed, expanded, loading, or destructive states. |
-| Active | Required | Appears only while activation is in progress. |
-| Loading or busy | Optional | Preserves the label or an equivalent status, prevents repeated activation, and does not imply completion. |
-| Disabled | Optional | Is identifiable, unavailable to activation, and not used when a reason or recovery action must remain discoverable. |
-| Pressed | Toggle buttons only | Exposes the on/off state without changing the control's accessible name. |
-| Expanded | Menu or disclosure buttons only | Exposes whether the controlled content is open. |
+| State           | Support                          | Contract                                                                                                            |
+| --------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Default         | Required                         | Presents the variant's action hierarchy.                                                                            |
+| Hover           | Required when hover is available | Enhances affordance but does not reveal otherwise unavailable content.                                              |
+| Focus           | Required                         | Remains visible when combined with pressed, expanded, loading, or destructive states.                               |
+| Active          | Required                         | Appears only while activation is in progress.                                                                       |
+| Loading or busy | Optional                         | Preserves the label or an equivalent status, prevents repeated activation, and does not imply completion.           |
+| Disabled        | Optional                         | Is identifiable, unavailable to activation, and not used when a reason or recovery action must remain discoverable. |
+| Pressed         | Toggle buttons only              | Exposes the on/off state without changing the control's accessible name.                                            |
+| Expanded        | Menu or disclosure buttons only  | Exposes whether the controlled content is open.                                                                     |
 
 Visual states use the matching `action-*` and `focus-ring` tokens. Shared state
 precedence is defined in [`DESIGN.md`](../../DESIGN.md#shared-state-model).

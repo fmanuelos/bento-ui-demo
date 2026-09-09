@@ -7,26 +7,26 @@ entry or runtime component does not by itself prove conformance.
 
 ## Status
 
-| Component | Contract status |
-| --- | --- |
-| [Button](button.md) | Complete |
-| [Text field](input.md) | Complete |
-| [Textarea](textarea.md) | Complete |
-| [Select](select.md) | Complete |
-| [Listbox](listbox.md) | Complete |
-| [Combobox](combobox.md) | Complete |
-| [Checkbox](checkbox.md) | Complete |
-| [Radio group](radio.md) | Complete |
-| [Switch](switch.md) | Complete |
-| [Dialog and modal](modal.md) | Complete |
-| [Tabs](tabs.md) | Complete |
-| [Data table](table.md) | Complete |
-| [Data grid](data-grid.md) | Complete |
-| [Status badge](status-badge.md) | Complete |
-| [Alert](alert.md) | Complete |
-| [Popup surface and dropdown patterns](dropdown.md) | Complete |
-| [Navigation shell](navigation.md) | Complete |
-| [Card](card.md) | Complete |
+| Component                                          | Contract status |
+| -------------------------------------------------- | --------------- |
+| [Button](button.md)                                | Complete        |
+| [Text field](input.md)                             | Complete        |
+| [Textarea](textarea.md)                            | Complete        |
+| [Select](select.md)                                | Complete        |
+| [Listbox](listbox.md)                              | Complete        |
+| [Combobox](combobox.md)                            | Complete        |
+| [Checkbox](checkbox.md)                            | Complete        |
+| [Radio group](radio.md)                            | Complete        |
+| [Switch](switch.md)                                | Complete        |
+| [Dialog and modal](modal.md)                       | Complete        |
+| [Tabs](tabs.md)                                    | Complete        |
+| [Data table](table.md)                             | Complete        |
+| [Data grid](data-grid.md)                          | Complete        |
+| [Status badge](status-badge.md)                    | Complete        |
+| [Alert](alert.md)                                  | Complete        |
+| [Popup surface and dropdown patterns](dropdown.md) | Complete        |
+| [Navigation shell](navigation.md)                  | Complete        |
+| [Card](card.md)                                    | Complete        |
 
 `Complete` means the technology-neutral written contract contains the required
 design, state, behavior, responsive, and accessibility requirements and is ready
@@ -70,15 +70,15 @@ the current DESIGN.md component schema. No duplicate entries are added for state
 whose only requirements are behavior, boundary, focus indicator, announcement,
 or motion.
 
-| Component family | Frontmatter coverage | Contract-only coverage |
-| --- | --- | --- |
-| Buttons | Default, compact, hover, active, disabled | Focus, loading, pressed, expanded, activation behavior |
-| Text field | Default, compact, search, focus, disabled | Boundary mappings, read-only, invalid, warning, success, validation behavior |
-| Other form controls | None | Textarea, select, listbox, combobox, checkbox, radio, and switch contracts; add frontmatter only when supported visual mappings are approved |
-| Navigation and tabs | Default, hover, selected, collapsed shell | Focus, current semantics, expanded behavior, disabled tabs |
-| Table | Header, row, hover, selected | Focus, sorting, loading, empty, stale, error, grid behavior |
-| Alerts and badges | Semantic variants | Announcement, dismissal, dynamic-status behavior |
-| Popup and dialog surfaces | Base surfaces | Open/closed, focus, selection, dismissal, modal behavior |
+| Component family          | Frontmatter coverage                      | Contract-only coverage                                                                                                                       |
+| ------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Buttons                   | Default, compact, hover, active, disabled | Focus, loading, pressed, expanded, activation behavior                                                                                       |
+| Text field                | Default, compact, search, focus, disabled | Boundary mappings, read-only, invalid, warning, success, validation behavior                                                                 |
+| Other form controls       | None                                      | Textarea, select, listbox, combobox, checkbox, radio, and switch contracts; add frontmatter only when supported visual mappings are approved |
+| Navigation and tabs       | Default, hover, selected, collapsed shell | Focus, current semantics, expanded behavior, disabled tabs                                                                                   |
+| Table                     | Header, row, hover, selected              | Focus, sorting, loading, empty, stale, error, grid behavior                                                                                  |
+| Alerts and badges         | Semantic variants                         | Announcement, dismissal, dynamic-status behavior                                                                                             |
+| Popup and dialog surfaces | Base surfaces                             | Open/closed, focus, selection, dismissal, modal behavior                                                                                     |
 
 Adding an unsupported component property only to reference an otherwise orphaned
 token would create a misleading mapping and is prohibited.

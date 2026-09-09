@@ -3,229 +3,228 @@ version: alpha
 name: Bento UI Admin
 description: A semantic design system for public websites, web applications, and admin dashboards using the Google Labs DESIGN.md format.
 colors:
+  primary: '#155EEF'
 
-  primary: "#155EEF"
+  background-primary: '#FFFFFF'
+  background-secondary: '#F8FAFC'
+  background-tertiary: '#F1F5F9'
+  background-inverse: '#0F172A'
+  background-accent: '#EFF4FF'
+  background-disabled: '#E2E8F0'
+  background-overlay: 'rgba(15, 23, 42, 0.64)'
 
-  background-primary: "#FFFFFF"
-  background-secondary: "#F8FAFC"
-  background-tertiary: "#F1F5F9"
-  background-inverse: "#0F172A"
-  background-accent: "#EFF4FF"
-  background-disabled: "#E2E8F0"
-  background-overlay: "rgba(15, 23, 42, 0.64)"
+  surface-primary: '#FFFFFF'
+  surface-secondary: '#F8FAFC'
+  surface-raised: '#FFFFFF'
+  surface-sunken: '#F1F5F9'
+  surface-inverse: '#0F172A'
 
-  surface-primary: "#FFFFFF"
-  surface-secondary: "#F8FAFC"
-  surface-raised: "#FFFFFF"
-  surface-sunken: "#F1F5F9"
-  surface-inverse: "#0F172A"
+  text-primary: '#0F172A'
+  text-secondary: '#475569'
+  text-tertiary: '#64748B'
+  text-placeholder: '#64748B'
+  text-inverse: '#FFFFFF'
+  text-disabled: '#475569'
+  text-accent: '#155EEF'
+  text-link: '#155EEF'
+  text-success: '#067647'
+  text-warning: '#854A0E'
+  text-danger: '#B42318'
+  text-info: '#175CD3'
 
-  text-primary: "#0F172A"
-  text-secondary: "#475569"
-  text-tertiary: "#64748B"
-  text-placeholder: "#64748B"
-  text-inverse: "#FFFFFF"
-  text-disabled: "#475569"
-  text-accent: "#155EEF"
-  text-link: "#155EEF"
-  text-success: "#067647"
-  text-warning: "#854A0E"
-  text-danger: "#B42318"
-  text-info: "#175CD3"
+  border-primary: '#CBD5E1'
+  border-secondary: '#E2E8F0'
+  border-subtle: '#F1F5F9'
+  border-strong: '#64748B'
+  border-inverse: '#475569'
+  border-disabled: '#E2E8F0'
+  border-focus: '#84ADFF'
+  border-accent: '#B2CCFF'
+  border-success: '#75E0A7'
+  border-warning: '#FEC84B'
+  border-danger: '#FDA29B'
 
-  border-primary: "#CBD5E1"
-  border-secondary: "#E2E8F0"
-  border-subtle: "#F1F5F9"
-  border-strong: "#64748B"
-  border-inverse: "#475569"
-  border-disabled: "#E2E8F0"
-  border-focus: "#84ADFF"
-  border-accent: "#B2CCFF"
-  border-success: "#75E0A7"
-  border-warning: "#FEC84B"
-  border-danger: "#FDA29B"
+  action-primary-background-default: '#155EEF'
+  action-primary-background-hover: '#004EEB'
+  action-primary-background-active: '#0040C1'
+  action-primary-background-disabled: '#E2E8F0'
+  action-primary-foreground: '#FFFFFF'
+  action-primary-foreground-disabled: '#98A2B3'
 
-  action-primary-background-default: "#155EEF"
-  action-primary-background-hover: "#004EEB"
-  action-primary-background-active: "#0040C1"
-  action-primary-background-disabled: "#E2E8F0"
-  action-primary-foreground: "#FFFFFF"
-  action-primary-foreground-disabled: "#98A2B3"
+  action-secondary-background-default: '#FFFFFF'
+  action-secondary-background-hover: '#F8FAFC'
+  action-secondary-background-active: '#F1F5F9'
+  action-secondary-background-disabled: '#FFFFFF'
+  action-secondary-foreground: '#344054'
+  action-secondary-foreground-disabled: '#98A2B3'
+  action-secondary-border: '#D0D5DD'
+  action-secondary-border-disabled: '#EAECF0'
 
-  action-secondary-background-default: "#FFFFFF"
-  action-secondary-background-hover: "#F8FAFC"
-  action-secondary-background-active: "#F1F5F9"
-  action-secondary-background-disabled: "#FFFFFF"
-  action-secondary-foreground: "#344054"
-  action-secondary-foreground-disabled: "#98A2B3"
-  action-secondary-border: "#D0D5DD"
-  action-secondary-border-disabled: "#EAECF0"
+  action-tertiary-background-default: 'transparent'
+  action-tertiary-background-hover: '#F1F5F9'
+  action-tertiary-background-active: '#E2E8F0'
+  action-tertiary-background-disabled: 'transparent'
+  action-tertiary-foreground: '#344054'
+  action-tertiary-foreground-disabled: '#98A2B3'
 
-  action-tertiary-background-default: "transparent"
-  action-tertiary-background-hover: "#F1F5F9"
-  action-tertiary-background-active: "#E2E8F0"
-  action-tertiary-background-disabled: "transparent"
-  action-tertiary-foreground: "#344054"
-  action-tertiary-foreground-disabled: "#98A2B3"
+  action-destructive-background-default: '#D92D20'
+  action-destructive-background-hover: '#B42318'
+  action-destructive-background-active: '#912018'
+  action-destructive-background-disabled: '#FEE4E2'
+  action-destructive-foreground: '#FFFFFF'
+  action-destructive-foreground-disabled: '#98A2B3'
 
-  action-destructive-background-default: "#D92D20"
-  action-destructive-background-hover: "#B42318"
-  action-destructive-background-active: "#912018"
-  action-destructive-background-disabled: "#FEE4E2"
-  action-destructive-foreground: "#FFFFFF"
-  action-destructive-foreground-disabled: "#98A2B3"
+  action-link-default: '#155EEF'
+  action-link-hover: '#004EEB'
+  action-link-active: '#0040C1'
+  action-link-visited: '#6938EF'
+  action-link-disabled: '#94A3B8'
 
-  action-link-default: "#155EEF"
-  action-link-hover: "#004EEB"
-  action-link-active: "#0040C1"
-  action-link-visited: "#6938EF"
-  action-link-disabled: "#94A3B8"
+  feedback-success-background: '#ECFDF3'
+  feedback-success-foreground: '#067647'
+  feedback-success-border: '#ABEFC6'
+  feedback-warning-background: '#FFFAEB'
+  feedback-warning-foreground: '#854A0E'
+  feedback-warning-border: '#FEDF89'
+  feedback-danger-background: '#FEF3F2'
+  feedback-danger-foreground: '#B42318'
+  feedback-danger-border: '#FECDCA'
+  feedback-info-background: '#EFF8FF'
+  feedback-info-foreground: '#175CD3'
+  feedback-info-border: '#B2DDFF'
 
-  feedback-success-background: "#ECFDF3"
-  feedback-success-foreground: "#067647"
-  feedback-success-border: "#ABEFC6"
-  feedback-warning-background: "#FFFAEB"
-  feedback-warning-foreground: "#854A0E"
-  feedback-warning-border: "#FEDF89"
-  feedback-danger-background: "#FEF3F2"
-  feedback-danger-foreground: "#B42318"
-  feedback-danger-border: "#FECDCA"
-  feedback-info-background: "#EFF8FF"
-  feedback-info-foreground: "#175CD3"
-  feedback-info-border: "#B2DDFF"
+  status-positive-background: '#ECFDF3'
+  status-positive-foreground: '#067647'
+  status-positive-border: '#ABEFC6'
+  status-warning-background: '#FFFAEB'
+  status-warning-foreground: '#854A0E'
+  status-warning-border: '#FEDF89'
+  status-negative-background: '#FEF3F2'
+  status-negative-foreground: '#B42318'
+  status-negative-border: '#FECDCA'
+  status-info-background: '#EFF8FF'
+  status-info-foreground: '#175CD3'
+  status-info-border: '#B2DDFF'
+  status-neutral-background: '#F1F5F9'
+  status-neutral-foreground: '#475569'
+  status-neutral-border: '#CBD5E1'
 
-  status-positive-background: "#ECFDF3"
-  status-positive-foreground: "#067647"
-  status-positive-border: "#ABEFC6"
-  status-warning-background: "#FFFAEB"
-  status-warning-foreground: "#854A0E"
-  status-warning-border: "#FEDF89"
-  status-negative-background: "#FEF3F2"
-  status-negative-foreground: "#B42318"
-  status-negative-border: "#FECDCA"
-  status-info-background: "#EFF8FF"
-  status-info-foreground: "#175CD3"
-  status-info-border: "#B2DDFF"
-  status-neutral-background: "#F1F5F9"
-  status-neutral-foreground: "#475569"
-  status-neutral-border: "#CBD5E1"
+  navigation-sidebar-background: '#0F172A'
+  navigation-sidebar-foreground: '#CBD5E1'
+  navigation-sidebar-foreground-strong: '#FFFFFF'
+  navigation-sidebar-item-hover: '#1E293B'
+  navigation-sidebar-item-selected: '#155EEF'
+  navigation-sidebar-item-selected-foreground: '#FFFFFF'
+  navigation-topbar-background: '#FFFFFF'
+  navigation-topbar-border: '#E2E8F0'
 
-  navigation-sidebar-background: "#0F172A"
-  navigation-sidebar-foreground: "#CBD5E1"
-  navigation-sidebar-foreground-strong: "#FFFFFF"
-  navigation-sidebar-item-hover: "#1E293B"
-  navigation-sidebar-item-selected: "#155EEF"
-  navigation-sidebar-item-selected-foreground: "#FFFFFF"
-  navigation-topbar-background: "#FFFFFF"
-  navigation-topbar-border: "#E2E8F0"
+  table-header-background: '#F8FAFC'
+  table-row-background: '#FFFFFF'
+  table-row-hover: '#F8FAFC'
+  table-row-selected: '#EFF4FF'
+  table-border: '#E2E8F0'
 
-  table-header-background: "#F8FAFC"
-  table-row-background: "#FFFFFF"
-  table-row-hover: "#F8FAFC"
-  table-row-selected: "#EFF4FF"
-  table-border: "#E2E8F0"
+  selection-background: '#D1E0FF'
+  selection-foreground: '#0F172A'
+  focus-ring: '#84ADFF'
+  focus-ring-offset: '#FFFFFF'
 
-  selection-background: "#D1E0FF"
-  selection-foreground: "#0F172A"
-  focus-ring: "#84ADFF"
-  focus-ring-offset: "#FFFFFF"
-
-  chart-series-1: "#155EEF"
-  chart-series-2: "#6938EF"
-  chart-series-3: "#0E9384"
-  chart-series-4: "#DC6803"
-  chart-series-5: "#DD2590"
-  chart-series-6: "#475467"
-  chart-positive: "#079455"
-  chart-negative: "#D92D20"
-  chart-gridline: "#E2E8F0"
-  chart-axis: "#64748B"
+  chart-series-1: '#155EEF'
+  chart-series-2: '#6938EF'
+  chart-series-3: '#0E9384'
+  chart-series-4: '#DC6803'
+  chart-series-5: '#DD2590'
+  chart-series-6: '#475467'
+  chart-positive: '#079455'
+  chart-negative: '#D92D20'
+  chart-gridline: '#E2E8F0'
+  chart-axis: '#64748B'
 
 typography:
   display-lg:
     fontFamily: Inter
     fontSize: 56px
     fontWeight: 700
-    lineHeight: "1.08"
+    lineHeight: '1.08'
     letterSpacing: -0.02em
   heading-h1:
     fontFamily: Inter
     fontSize: 40px
     fontWeight: 700
-    lineHeight: "1.15"
+    lineHeight: '1.15'
     letterSpacing: -0.02em
   heading-h2:
     fontFamily: Inter
     fontSize: 32px
     fontWeight: 700
-    lineHeight: "1.2"
+    lineHeight: '1.2'
     letterSpacing: -0.01em
   heading-h3:
     fontFamily: Inter
     fontSize: 24px
     fontWeight: 600
-    lineHeight: "1.3"
+    lineHeight: '1.3'
   heading-h4:
     fontFamily: Inter
     fontSize: 20px
     fontWeight: 600
-    lineHeight: "1.35"
+    lineHeight: '1.35'
   body-lg:
     fontFamily: Inter
     fontSize: 18px
     fontWeight: 400
-    lineHeight: "1.6"
+    lineHeight: '1.6'
   body-md:
     fontFamily: Inter
     fontSize: 16px
     fontWeight: 400
-    lineHeight: "1.5"
+    lineHeight: '1.5'
   body-sm:
     fontFamily: Inter
     fontSize: 14px
     fontWeight: 400
-    lineHeight: "1.45"
+    lineHeight: '1.45'
   body-xs:
     fontFamily: Inter
     fontSize: 12px
     fontWeight: 400
-    lineHeight: "1.4"
+    lineHeight: '1.4'
   label-lg:
     fontFamily: Inter
     fontSize: 16px
     fontWeight: 600
-    lineHeight: "1.4"
+    lineHeight: '1.4'
   label-md:
     fontFamily: Inter
     fontSize: 14px
     fontWeight: 600
-    lineHeight: "1.4"
+    lineHeight: '1.4'
   label-sm:
     fontFamily: Inter
     fontSize: 12px
     fontWeight: 600
-    lineHeight: "1.35"
+    lineHeight: '1.35'
   caption:
     fontFamily: Inter
     fontSize: 12px
     fontWeight: 500
-    lineHeight: "1.4"
+    lineHeight: '1.4'
   data-lg:
     fontFamily: Inter
     fontSize: 28px
     fontWeight: 700
-    lineHeight: "1.2"
+    lineHeight: '1.2'
     letterSpacing: -0.01em
   data-md:
     fontFamily: Inter
     fontSize: 20px
     fontWeight: 600
-    lineHeight: "1.3"
+    lineHeight: '1.3'
   data-sm:
     fontFamily: Inter
     fontSize: 14px
     fontWeight: 600
-    lineHeight: "1.4"
+    lineHeight: '1.4'
 
 rounded:
   none: 0px
@@ -273,250 +272,250 @@ spacing:
 
 components:
   button-primary:
-    backgroundColor: "{colors.action-primary-background-default}"
-    textColor: "{colors.action-primary-foreground}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-lg}"
+    backgroundColor: '{colors.action-primary-background-default}'
+    textColor: '{colors.action-primary-foreground}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-lg}'
   button-primary-hover:
-    backgroundColor: "{colors.action-primary-background-hover}"
-    textColor: "{colors.action-primary-foreground}"
+    backgroundColor: '{colors.action-primary-background-hover}'
+    textColor: '{colors.action-primary-foreground}'
   button-primary-active:
-    backgroundColor: "{colors.action-primary-background-active}"
-    textColor: "{colors.action-primary-foreground}"
+    backgroundColor: '{colors.action-primary-background-active}'
+    textColor: '{colors.action-primary-foreground}'
   button-primary-disabled:
-    backgroundColor: "{colors.action-primary-background-disabled}"
-    textColor: "{colors.action-primary-foreground-disabled}"
+    backgroundColor: '{colors.action-primary-background-disabled}'
+    textColor: '{colors.action-primary-foreground-disabled}'
 
   button-primary-compact:
-    backgroundColor: "{colors.action-primary-background-default}"
-    textColor: "{colors.action-primary-foreground}"
-    typography: "{typography.label-sm}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.sm}"
-    height: "{spacing.control-height-sm}"
+    backgroundColor: '{colors.action-primary-background-default}'
+    textColor: '{colors.action-primary-foreground}'
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.sm}'
+    height: '{spacing.control-height-sm}'
 
   button-secondary:
-    backgroundColor: "{colors.action-secondary-background-default}"
-    textColor: "{colors.action-secondary-foreground}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-lg}"
+    backgroundColor: '{colors.action-secondary-background-default}'
+    textColor: '{colors.action-secondary-foreground}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-lg}'
   button-secondary-hover:
-    backgroundColor: "{colors.action-secondary-background-hover}"
-    textColor: "{colors.action-secondary-foreground}"
+    backgroundColor: '{colors.action-secondary-background-hover}'
+    textColor: '{colors.action-secondary-foreground}'
   button-secondary-active:
-    backgroundColor: "{colors.action-secondary-background-active}"
-    textColor: "{colors.action-secondary-foreground}"
+    backgroundColor: '{colors.action-secondary-background-active}'
+    textColor: '{colors.action-secondary-foreground}'
   button-secondary-disabled:
-    backgroundColor: "{colors.action-secondary-background-disabled}"
-    textColor: "{colors.action-secondary-foreground-disabled}"
+    backgroundColor: '{colors.action-secondary-background-disabled}'
+    textColor: '{colors.action-secondary-foreground-disabled}'
 
   button-tertiary:
-    backgroundColor: "{colors.action-tertiary-background-default}"
-    textColor: "{colors.action-tertiary-foreground}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-lg}"
+    backgroundColor: '{colors.action-tertiary-background-default}'
+    textColor: '{colors.action-tertiary-foreground}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-lg}'
   button-tertiary-hover:
-    backgroundColor: "{colors.action-tertiary-background-hover}"
-    textColor: "{colors.action-tertiary-foreground}"
+    backgroundColor: '{colors.action-tertiary-background-hover}'
+    textColor: '{colors.action-tertiary-foreground}'
   button-tertiary-active:
-    backgroundColor: "{colors.action-tertiary-background-active}"
-    textColor: "{colors.action-tertiary-foreground}"
+    backgroundColor: '{colors.action-tertiary-background-active}'
+    textColor: '{colors.action-tertiary-foreground}'
   button-tertiary-disabled:
-    backgroundColor: "{colors.action-tertiary-background-default}"
-    textColor: "{colors.action-tertiary-foreground-disabled}"
+    backgroundColor: '{colors.action-tertiary-background-default}'
+    textColor: '{colors.action-tertiary-foreground-disabled}'
 
   button-destructive:
-    backgroundColor: "{colors.action-destructive-background-default}"
-    textColor: "{colors.action-destructive-foreground}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-lg}"
+    backgroundColor: '{colors.action-destructive-background-default}'
+    textColor: '{colors.action-destructive-foreground}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-lg}'
   button-destructive-hover:
-    backgroundColor: "{colors.action-destructive-background-hover}"
-    textColor: "{colors.action-destructive-foreground}"
+    backgroundColor: '{colors.action-destructive-background-hover}'
+    textColor: '{colors.action-destructive-foreground}'
   button-destructive-active:
-    backgroundColor: "{colors.action-destructive-background-active}"
-    textColor: "{colors.action-destructive-foreground}"
+    backgroundColor: '{colors.action-destructive-background-active}'
+    textColor: '{colors.action-destructive-foreground}'
   button-destructive-disabled:
-    backgroundColor: "{colors.action-destructive-background-disabled}"
-    textColor: "{colors.action-destructive-foreground-disabled}"
+    backgroundColor: '{colors.action-destructive-background-disabled}'
+    textColor: '{colors.action-destructive-foreground-disabled}'
 
   input:
-    backgroundColor: "{colors.surface-primary}"
-    textColor: "{colors.text-primary}"
-    typography: "{typography.body-sm}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-lg}"
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-primary}'
+    typography: '{typography.body-sm}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-lg}'
   input-compact:
-    backgroundColor: "{colors.surface-primary}"
-    textColor: "{colors.text-primary}"
-    typography: "{typography.body-sm}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.sm}"
-    height: "{spacing.control-height-md}"
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-primary}'
+    typography: '{typography.body-sm}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.sm}'
+    height: '{spacing.control-height-md}'
   input-focus:
-    backgroundColor: "{colors.surface-primary}"
-    textColor: "{colors.text-primary}"
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-primary}'
   input-placeholder:
-    backgroundColor: "{colors.surface-primary}"
-    textColor: "{colors.text-placeholder}"
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-placeholder}'
   input-disabled:
-    backgroundColor: "{colors.background-disabled}"
-    textColor: "{colors.text-disabled}"
+    backgroundColor: '{colors.background-disabled}'
+    textColor: '{colors.text-disabled}'
 
   search-field:
-    backgroundColor: "{colors.surface-secondary}"
-    textColor: "{colors.text-primary}"
-    typography: "{typography.body-sm}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-md}"
+    backgroundColor: '{colors.surface-secondary}'
+    textColor: '{colors.text-primary}'
+    typography: '{typography.body-sm}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-md}'
 
   card:
-    backgroundColor: "{colors.surface-primary}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.lg}"
-    padding: "{spacing.xl}"
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-primary}'
+    rounded: '{rounded.lg}'
+    padding: '{spacing.xl}'
   card-compact:
-    backgroundColor: "{colors.surface-primary}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.lg}"
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-primary}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.lg}'
   stat-card:
-    backgroundColor: "{colors.surface-primary}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.lg}"
-    padding: "{spacing.lg}"
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-primary}'
+    rounded: '{rounded.lg}'
+    padding: '{spacing.lg}'
 
   sidebar:
-    backgroundColor: "{colors.navigation-sidebar-background}"
-    textColor: "{colors.navigation-sidebar-foreground}"
-    width: "{spacing.sidebar-expanded}"
+    backgroundColor: '{colors.navigation-sidebar-background}'
+    textColor: '{colors.navigation-sidebar-foreground}'
+    width: '{spacing.sidebar-expanded}'
   sidebar-collapsed:
-    backgroundColor: "{colors.navigation-sidebar-background}"
-    textColor: "{colors.navigation-sidebar-foreground}"
-    width: "{spacing.sidebar-collapsed}"
+    backgroundColor: '{colors.navigation-sidebar-background}'
+    textColor: '{colors.navigation-sidebar-foreground}'
+    width: '{spacing.sidebar-collapsed}'
   sidebar-item:
-    backgroundColor: "transparent"
-    textColor: "{colors.navigation-sidebar-foreground}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-md}"
+    backgroundColor: 'transparent'
+    textColor: '{colors.navigation-sidebar-foreground}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-md}'
   sidebar-item-hover:
-    backgroundColor: "{colors.navigation-sidebar-item-hover}"
-    textColor: "{colors.navigation-sidebar-foreground-strong}"
+    backgroundColor: '{colors.navigation-sidebar-item-hover}'
+    textColor: '{colors.navigation-sidebar-foreground-strong}'
   sidebar-item-selected:
-    backgroundColor: "{colors.navigation-sidebar-item-selected}"
-    textColor: "{colors.navigation-sidebar-item-selected-foreground}"
+    backgroundColor: '{colors.navigation-sidebar-item-selected}'
+    textColor: '{colors.navigation-sidebar-item-selected-foreground}'
 
   topbar:
-    backgroundColor: "{colors.navigation-topbar-background}"
-    textColor: "{colors.text-primary}"
-    height: "{spacing.topbar-height}"
+    backgroundColor: '{colors.navigation-topbar-background}'
+    textColor: '{colors.text-primary}'
+    height: '{spacing.topbar-height}'
 
   tab:
-    backgroundColor: "transparent"
-    textColor: "{colors.text-secondary}"
-    typography: "{typography.label-md}"
-    rounded: "{rounded.sm}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-md}"
+    backgroundColor: 'transparent'
+    textColor: '{colors.text-secondary}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.sm}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-md}'
   tab-hover:
-    backgroundColor: "{colors.action-tertiary-background-hover}"
-    textColor: "{colors.text-primary}"
+    backgroundColor: '{colors.action-tertiary-background-hover}'
+    textColor: '{colors.text-primary}'
   tab-selected:
-    backgroundColor: "{colors.background-accent}"
-    textColor: "{colors.text-accent}"
+    backgroundColor: '{colors.background-accent}'
+    textColor: '{colors.text-accent}'
 
   table-header:
-    backgroundColor: "{colors.table-header-background}"
-    textColor: "{colors.text-secondary}"
-    typography: "{typography.label-sm}"
-    padding: "{spacing.md}"
-    height: "{spacing.control-height-md}"
+    backgroundColor: '{colors.table-header-background}'
+    textColor: '{colors.text-secondary}'
+    typography: '{typography.label-sm}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-md}'
   table-row:
-    backgroundColor: "{colors.table-row-background}"
-    textColor: "{colors.text-primary}"
-    typography: "{typography.body-sm}"
-    padding: "{spacing.md}"
+    backgroundColor: '{colors.table-row-background}'
+    textColor: '{colors.text-primary}'
+    typography: '{typography.body-sm}'
+    padding: '{spacing.md}'
   table-row-hover:
-    backgroundColor: "{colors.table-row-hover}"
-    textColor: "{colors.text-primary}"
+    backgroundColor: '{colors.table-row-hover}'
+    textColor: '{colors.text-primary}'
   table-row-selected:
-    backgroundColor: "{colors.table-row-selected}"
-    textColor: "{colors.text-primary}"
+    backgroundColor: '{colors.table-row-selected}'
+    textColor: '{colors.text-primary}'
 
   badge-positive:
-    backgroundColor: "{colors.status-positive-background}"
-    textColor: "{colors.status-positive-foreground}"
-    typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
-    padding: "{spacing.sm}"
+    backgroundColor: '{colors.status-positive-background}'
+    textColor: '{colors.status-positive-foreground}'
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.full}'
+    padding: '{spacing.sm}'
   badge-warning:
-    backgroundColor: "{colors.status-warning-background}"
-    textColor: "{colors.status-warning-foreground}"
-    typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
-    padding: "{spacing.sm}"
+    backgroundColor: '{colors.status-warning-background}'
+    textColor: '{colors.status-warning-foreground}'
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.full}'
+    padding: '{spacing.sm}'
   badge-negative:
-    backgroundColor: "{colors.status-negative-background}"
-    textColor: "{colors.status-negative-foreground}"
-    typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
-    padding: "{spacing.sm}"
+    backgroundColor: '{colors.status-negative-background}'
+    textColor: '{colors.status-negative-foreground}'
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.full}'
+    padding: '{spacing.sm}'
   badge-info:
-    backgroundColor: "{colors.status-info-background}"
-    textColor: "{colors.status-info-foreground}"
-    typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
-    padding: "{spacing.sm}"
+    backgroundColor: '{colors.status-info-background}'
+    textColor: '{colors.status-info-foreground}'
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.full}'
+    padding: '{spacing.sm}'
   badge-neutral:
-    backgroundColor: "{colors.status-neutral-background}"
-    textColor: "{colors.status-neutral-foreground}"
-    typography: "{typography.label-sm}"
-    rounded: "{rounded.full}"
-    padding: "{spacing.sm}"
+    backgroundColor: '{colors.status-neutral-background}'
+    textColor: '{colors.status-neutral-foreground}'
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.full}'
+    padding: '{spacing.sm}'
 
   alert-success:
-    backgroundColor: "{colors.feedback-success-background}"
-    textColor: "{colors.feedback-success-foreground}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.lg}"
+    backgroundColor: '{colors.feedback-success-background}'
+    textColor: '{colors.feedback-success-foreground}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.lg}'
   alert-warning:
-    backgroundColor: "{colors.feedback-warning-background}"
-    textColor: "{colors.feedback-warning-foreground}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.lg}"
+    backgroundColor: '{colors.feedback-warning-background}'
+    textColor: '{colors.feedback-warning-foreground}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.lg}'
   alert-danger:
-    backgroundColor: "{colors.feedback-danger-background}"
-    textColor: "{colors.feedback-danger-foreground}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.lg}"
+    backgroundColor: '{colors.feedback-danger-background}'
+    textColor: '{colors.feedback-danger-foreground}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.lg}'
   alert-info:
-    backgroundColor: "{colors.feedback-info-background}"
-    textColor: "{colors.feedback-info-foreground}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.lg}"
+    backgroundColor: '{colors.feedback-info-background}'
+    textColor: '{colors.feedback-info-foreground}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.lg}'
 
   dropdown:
-    backgroundColor: "{colors.surface-raised}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.sm}"
+    backgroundColor: '{colors.surface-raised}'
+    textColor: '{colors.text-primary}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.sm}'
   modal:
-    backgroundColor: "{colors.surface-raised}"
-    textColor: "{colors.text-primary}"
-    rounded: "{rounded.xl}"
-    padding: "{spacing.xl}"
+    backgroundColor: '{colors.surface-raised}'
+    textColor: '{colors.text-primary}'
+    rounded: '{rounded.xl}'
+    padding: '{spacing.xl}'
 ---
 
 # Bento UI Admin
@@ -582,14 +581,14 @@ substitute one semantic role for another.
 
 ### Source of truth
 
-| Concern | Authoritative source | Update rule |
-| --- | --- | --- |
-| Exact light-theme token values | This file's frontmatter | Edit here first. |
-| System-wide rationale and usage | This document body | Avoid repeating exact values. |
-| Component behavior and accessibility | [`design/components/`](design/components/) | Update with contract changes. |
-| Cross-component experience patterns | [`design/patterns/`](design/patterns/) | Keep outcomes independent of implementation technology. |
-| Platform and tool mappings | [`design/adapters/`](design/adapters/) | Treat as non-normative translations of this contract. |
-| Repository workflow | [`design/README.md`](design/README.md) | Keep commands, generated-file policy, and implementation inventory here. |
+| Concern                              | Authoritative source                       | Update rule                                                              |
+| ------------------------------------ | ------------------------------------------ | ------------------------------------------------------------------------ |
+| Exact light-theme token values       | This file's frontmatter                    | Edit here first.                                                         |
+| System-wide rationale and usage      | This document body                         | Avoid repeating exact values.                                            |
+| Component behavior and accessibility | [`design/components/`](design/components/) | Update with contract changes.                                            |
+| Cross-component experience patterns  | [`design/patterns/`](design/patterns/)     | Keep outcomes independent of implementation technology.                  |
+| Platform and tool mappings           | [`design/adapters/`](design/adapters/)     | Treat as non-normative translations of this contract.                    |
+| Repository workflow                  | [`design/README.md`](design/README.md)     | Keep commands, generated-file policy, and implementation inventory here. |
 
 The external file-format contract is the
 [Google Labs DESIGN.md specification](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md).

@@ -16,29 +16,44 @@ export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'size'> 
   leadingIcon?: ReactNode
 }
 
-export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select({
-  id,
-  label,
-  hint,
-  helperText,
-  error,
-  status = error ? 'invalid' : 'default',
-  size = 'standard',
-  options,
-  placeholder,
-  className = '',
-  required,
-  leadingIcon,
-  ...props
-}, ref) {
+export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
+  {
+    id,
+    label,
+    hint,
+    helperText,
+    error,
+    status = error ? 'invalid' : 'default',
+    size = 'standard',
+    options,
+    placeholder,
+    className = '',
+    required,
+    leadingIcon,
+    ...props
+  },
+  ref,
+) {
   const generatedId = useId()
   const selectId = id ?? generatedId
   const messageId = `${selectId}-message`
 
   return (
-    <FieldFrame id={selectId} label={label} hint={hint} helperText={helperText} error={error} status={status} required={required}>
+    <FieldFrame
+      id={selectId}
+      label={label}
+      hint={hint}
+      helperText={helperText}
+      error={error}
+      status={status}
+      required={required}
+    >
       <span className="relative block">
-        {leadingIcon && <span className="pointer-events-none absolute inset-y-0 left-md grid place-items-center text-text-secondary">{leadingIcon}</span>}
+        {leadingIcon && (
+          <span className="pointer-events-none absolute inset-y-0 left-md grid place-items-center text-text-secondary">
+            {leadingIcon}
+          </span>
+        )}
         <select
           ref={ref}
           id={selectId}
@@ -57,10 +72,32 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
           ].join(' ')}
           {...props}
         >
-          {placeholder && <option className="text-text-placeholder" value="" disabled={required}>{placeholder}</option>}
-          {options.map((option) => <option className="text-text-primary" key={option.value} value={option.value} disabled={option.disabled}>{option.label}</option>)}
+          {placeholder && (
+            <option className="text-text-placeholder" value="" disabled={required}>
+              {placeholder}
+            </option>
+          )}
+          {options.map((option) => (
+            <option
+              className="text-text-primary"
+              key={option.value}
+              value={option.value}
+              disabled={option.disabled}
+            >
+              {option.label}
+            </option>
+          ))}
         </select>
-        <svg className="pointer-events-none absolute right-md top-1/2 size-4 -translate-y-1/2 text-text-secondary" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+        <svg
+          className="pointer-events-none absolute top-1/2 right-md size-4 -translate-y-1/2 text-text-secondary"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          aria-hidden="true"
+        >
+          <path d="m4 6 4 4 4-4" />
+        </svg>
       </span>
     </FieldFrame>
   )

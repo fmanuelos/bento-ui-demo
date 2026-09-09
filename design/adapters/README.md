@@ -5,10 +5,10 @@ Adapters translate the normative [`DESIGN.md`](../../DESIGN.md),
 into a target platform or tool. They are non-normative and may not redefine a
 token, state, component, or behavior to fit an implementation limitation.
 
-| Adapter | Scope |
-| --- | --- |
-| [Web](web.md) | HTML semantics, ARIA mappings, CSS/SVG mechanisms, user preferences, and browser behavior |
-| [Tailwind](tailwind.md) | Current token export and system-range mapping |
+| Adapter                 | Scope                                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------------- |
+| [Web](web.md)           | HTML semantics, ARIA mappings, CSS/SVG mechanisms, user preferences, and browser behavior |
+| [Tailwind](tailwind.md) | Current token export and system-range mapping                                             |
 
 An adapter documents:
 
