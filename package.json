@@ -13,7 +13,9 @@
     "format:check": "prettier . --check",
     "preview": "vite preview",
     "design:lint": "designmd lint DESIGN.md",
-    "design:build": "designmd export --format css-tailwind DESIGN.md > src/theme.css && designmd export --format dtcg DESIGN.md > tokens.json"
+    "design:css": "designmd export --format css-tailwind DESIGN.md > src/theme.css",
+    "design:dtcg": "designmd export --format dtcg DESIGN.md > tokens.json",
+    "design:build": "pnpm design:css && pnpm design:dtcg"
   },
   "dependencies": {
     "@fontsource/inter": "5.3.0",
