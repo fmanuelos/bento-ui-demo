@@ -73,7 +73,7 @@ export function DocsLayout() {
         >
           <h2
             id={`docs-nav-${section.title.toLocaleLowerCase()}`}
-            className="mt-0 mb-sm px-md text-label-sm font-semibold tracking-[.08em] text-navigation-sidebar-foreground uppercase"
+            className="mt-0 mb-sm px-md font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-navigation-sidebar-foreground uppercase"
           >
             {section.title}
           </h2>

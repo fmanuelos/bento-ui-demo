@@ -396,6 +396,12 @@ typography:
     fontWeight: 600
     lineHeight: '1.35'
     letterSpacing: 0em
+  label-overline:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: '1.35'
+    letterSpacing: 0.08em
   caption:
     fontFamily: Inter
     fontSize: 12px
@@ -1206,7 +1212,10 @@ a fallback family or writing system makes tighter tracking less legible.
 - `heading-*` defines visual page and section hierarchy independently of the
   document's semantic heading levels.
 - `body-*` defines reading and information-density levels.
-- `label-*` is for controls, navigation, filters, headers, and badges.
+- `label-lg`, `label-md`, and `label-sm` are for controls, navigation, filters,
+  headers, and badges.
+- `label-overline` is for brief contextual or eyebrow text placed above or beside
+  a title. It is not for paragraphs, controls, navigation items, or status badges.
 - `caption` is for timestamps and supporting metadata.
 - `data-*` is for metrics and quantitative values.
 
@@ -1229,6 +1238,11 @@ not clip labels, values, instructions, validation messages, or controls. Truncat
 only nonessential content and provide access to the complete value.
 
 Allow for longer translations and writing systems with different glyph metrics.
+Adapters may render `label-overline` in uppercase when that transformation is
+appropriate for the language and the authored text is short. Because casing is
+not a typography token property, adapters must omit uppercase transformation and
+may reset its letter spacing to `0em` for writing systems where either treatment
+reduces legibility.
 Choose the platform's semantic heading structure from the document outline; a
 visual `display-*` or `heading-*` role never replaces that structure.
 

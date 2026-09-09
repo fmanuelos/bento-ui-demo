@@ -38,7 +38,7 @@ export function PageIntro({
 }) {
   return (
     <header className="min-w-0">
-      <p className="mt-0 mb-sm text-label-sm font-semibold tracking-[.08em] text-text-accent uppercase">
+      <p className="mt-0 mb-sm font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-text-accent uppercase">
         {eyebrow}
       </p>
       <h1 className="m-0 text-heading-xl font-bold tracking-heading-xl text-text-primary">

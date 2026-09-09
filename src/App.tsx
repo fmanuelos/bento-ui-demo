@@ -27,7 +27,7 @@ const Spark = ({ className = 'size-5' }: { className?: string }) => (
 )
 
 const labelClasses =
-  'text-label-sm font-semibold uppercase leading-normal tracking-[.08em] text-text-secondary'
+  'text-label-overline font-label-overline leading-label-overline font-semibold tracking-label-overline text-text-secondary uppercase'
 const cardClasses =
   'relative overflow-hidden rounded-lg border border-border-subtle bg-surface-primary'
 
@@ -149,7 +149,7 @@ function DemoPage() {
           >
             <article className="relative min-h-[430px] overflow-hidden rounded-lg bg-background-inverse p-9 text-text-inverse max-sm:min-h-[570px] max-sm:p-6 lg:col-span-8">
               <div className="relative z-10 flex h-full max-w-[55%] flex-col items-start max-sm:max-w-none">
-                <span className="inline-flex items-center gap-sm rounded-full bg-navigation-sidebar-item-hover px-md py-sm text-label-sm font-semibold tracking-[.08em] uppercase">
+                <span className="inline-flex items-center gap-sm rounded-full bg-navigation-sidebar-item-hover px-md py-sm font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline uppercase">
                   <span className="size-1.5 rounded-full bg-current" /> Today’s intention
                 </span>
                 <h2 className="my-8 text-display-lg leading-[1.08] font-bold tracking-display-lg max-sm:text-heading-xl">
@@ -181,7 +181,10 @@ function DemoPage() {
                   <Spark className="size-12 max-sm:size-9" />
                 </div>
                 <div className="absolute right-37 bottom-12 grid size-[90px] rotate-[-8deg] place-content-center rounded-full bg-status-info-background text-center text-body-sm leading-none font-bold text-status-info-foreground max-sm:bottom-6 max-sm:left-9">
-                  09:30<span className="mt-1 text-[8px] tracking-[.1em] uppercase">deep work</span>
+                  09:30
+                  <span className="mt-1 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline uppercase">
+                    deep work
+                  </span>
                 </div>
               </div>
             </article>
@@ -250,7 +253,7 @@ function DemoPage() {
               <blockquote className="mt-7 text-heading-md leading-[1.3] font-semibold">
                 Clarity comes from engagement, not thought.
               </blockquote>
-              <div className="mt-auto flex items-center justify-between text-[10px] font-extrabold tracking-[.08em] uppercase">
+              <div className="mt-auto flex items-center justify-between text-caption font-medium">
                 <span>— Marie Forleo</span>
                 <Button variant="primary" size="icon" aria-label="Save quote" className="text-xl">
                   +
@@ -278,7 +281,7 @@ function DemoPage() {
                 </div>
               </div>
               <div className="mt-auto">
-                <p className="text-label-sm font-semibold tracking-[.08em] text-text-inverse/60 uppercase">
+                <p className="font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-text-inverse/60 uppercase">
                   Featured project · 03
                 </p>
                 <h3 className="mt-2.5 text-heading-lg leading-none font-bold tracking-heading-lg">

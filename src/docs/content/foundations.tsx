@@ -89,6 +89,10 @@ const typeRoles = [
   ['label-lg', 'text-label-lg font-label-lg leading-label-lg'],
   ['label-md', 'text-label-md font-label-md leading-label-md'],
   ['label-sm', 'text-label-sm font-label-sm leading-label-sm'],
+  [
+    'label-overline',
+    'text-label-overline font-label-overline leading-label-overline font-semibold tracking-label-overline uppercase',
+  ],
   ['caption', 'text-caption font-caption leading-caption'],
   ['data-lg', 'text-data-lg font-data-lg leading-data-lg'],
   ['data-md', 'text-data-md font-data-md leading-data-md'],
@@ -225,7 +229,11 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
                 className="grid gap-sm border-b border-border-secondary p-lg last:border-0 sm:grid-cols-[10rem_1fr]"
               >
                 <code className="text-body-xs text-text-secondary">{role}</code>
-                <span className={classes}>Bento makes complex work feel calm.</span>
+                <span className={classes}>
+                  {role === 'label-overline'
+                    ? 'Featured project'
+                    : 'Bento makes complex work feel calm.'}
+                </span>
               </div>
             ))}
           </div>
@@ -239,6 +247,10 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
             <li>
               Use labels for controls and navigation, captions for metadata, and data roles for
               metrics.
+            </li>
+            <li>
+              Use label-overline only for short eyebrow or contextual text. Apply uppercase in the
+              adapter only when it is appropriate for the language and writing system.
             </li>
             <li>
               Use tabular numerals for aligned values; typography does not replace semantic heading
