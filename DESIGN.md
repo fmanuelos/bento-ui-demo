@@ -323,51 +323,61 @@ typography:
     fontSize: 24px
     fontWeight: 600
     lineHeight: '1.3'
+    letterSpacing: 0em
   heading-h4:
     fontFamily: Inter
     fontSize: 20px
     fontWeight: 600
-    lineHeight: '1.35'
+    lineHeight: '1.4'
+    letterSpacing: 0em
   body-lg:
     fontFamily: Inter
     fontSize: 18px
     fontWeight: 400
     lineHeight: '1.6'
+    letterSpacing: 0em
   body-md:
     fontFamily: Inter
     fontSize: 16px
     fontWeight: 400
     lineHeight: '1.5'
+    letterSpacing: 0em
   body-sm:
     fontFamily: Inter
     fontSize: 14px
     fontWeight: 400
-    lineHeight: '1.45'
+    lineHeight: '1.5'
+    letterSpacing: 0em
   body-xs:
     fontFamily: Inter
     fontSize: 12px
     fontWeight: 400
-    lineHeight: '1.4'
+    lineHeight: '1.5'
+    letterSpacing: 0em
   label-lg:
     fontFamily: Inter
     fontSize: 16px
     fontWeight: 600
     lineHeight: '1.4'
+    letterSpacing: 0em
   label-md:
     fontFamily: Inter
     fontSize: 14px
     fontWeight: 600
     lineHeight: '1.4'
+    letterSpacing: 0em
   label-sm:
     fontFamily: Inter
     fontSize: 12px
     fontWeight: 600
     lineHeight: '1.35'
+    letterSpacing: 0em
   caption:
     fontFamily: Inter
     fontSize: 12px
     fontWeight: 500
     lineHeight: '1.4'
+    letterSpacing: 0em
   data-lg:
     fontFamily: Inter
     fontSize: 28px
@@ -379,11 +389,13 @@ typography:
     fontSize: 20px
     fontWeight: 600
     lineHeight: '1.3'
+    letterSpacing: 0em
   data-sm:
     fontFamily: Inter
     fontSize: 14px
     fontWeight: 600
     lineHeight: '1.4'
+    letterSpacing: 0em
 
 rounded:
   none: 0px
