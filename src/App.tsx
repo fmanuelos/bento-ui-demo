@@ -164,6 +164,7 @@ function DemoPage() {
                 <Button
                   ref={focusSessionButtonRef}
                   variant="secondary"
+                  size="lg"
                   className="mt-auto max-sm:mt-6"
                   icon={<ArrowUpRight className="size-4" />}
                   onClick={() => setModalOpen(true)}

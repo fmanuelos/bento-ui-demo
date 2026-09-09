@@ -35,9 +35,9 @@ export const componentDocs = [
       },
       {
         name: 'size',
-        type: "'sm' | 'md' | 'icon'",
+        type: "'sm' | 'md' | 'lg' | 'icon'",
         defaultValue: "'md'",
-        description: 'Uses compact, standard, or square icon sizing.',
+        description: 'Uses compact, standard, prominent CTA, or square icon sizing.',
       },
       {
         name: 'loading',
@@ -59,7 +59,7 @@ export const componentDocs = [
     ],
     variants: [
       'Primary, secondary, outline, ghost, and destructive treatments.',
-      'Compact, standard, and icon sizes.',
+      'Compact, standard, prominent CTA, and icon sizes.',
       'Default, hover, focus, active, loading, disabled, pressed, and expanded states.',
     ],
     accessibility: [
@@ -68,11 +68,12 @@ export const componentDocs = [
       'Use aria-pressed for toggles and aria-expanded with aria-controls for disclosures.',
     ],
     responsive:
-      'Use compact only in dense pointer-oriented tools. Standard and icon sizes preserve the touch target in touch contexts.',
+      'Use compact only in dense pointer-oriented tools. Standard and icon sizes preserve the touch target in touch contexts. Reserve prominent sizing for one major landing-page or onboarding CTA.',
     theme:
       'Every variant uses semantic action tokens; focus remains visible in light and demo dark themes.',
     mistakes: [
       'Do not use a button for navigation.',
+      'Do not use prominent sizing for dashboard toolbars, repeated actions, or ordinary forms.',
       'Do not remove the label during loading.',
       'Name the destructive outcome instead of relying on red.',
     ],

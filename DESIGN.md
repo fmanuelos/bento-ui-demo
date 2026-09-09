@@ -460,6 +460,7 @@ spacing:
   control-height-sm: 32px
   control-height-md: 40px
   control-height-lg: 44px
+  control-height-xl: 48px
   touch-target-min: 44px
 
   sidebar-expanded: 256px
@@ -496,6 +497,14 @@ components:
     rounded: '{rounded.md}'
     padding: '{spacing.sm}'
     height: '{spacing.control-height-sm}'
+
+  button-primary-prominent:
+    backgroundColor: '{colors.action-primary-background-default}'
+    textColor: '{colors.action-primary-foreground}'
+    typography: '{typography.label-lg}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.lg}'
+    height: '{spacing.control-height-xl}'
 
   button-secondary:
     backgroundColor: '{colors.action-secondary-background-default}'
@@ -750,6 +759,9 @@ components:
     backgroundColor: '{colors.dark-action-primary-background-disabled}'
     textColor: '{colors.dark-action-primary-foreground-disabled}'
   button-primary-compact-dark:
+    backgroundColor: '{colors.dark-action-primary-background-default}'
+    textColor: '{colors.dark-action-primary-foreground}'
+  button-primary-prominent-dark:
     backgroundColor: '{colors.dark-action-primary-background-default}'
     textColor: '{colors.dark-action-primary-foreground}'
 
@@ -1316,6 +1328,8 @@ dates, times, currency, and sorting behavior use locale-aware presentation.
 - Small controls are for dense, pointer-oriented desktop interfaces.
 - Medium controls are the dashboard default.
 - Large controls are for prominent, form, and touch-oriented contexts.
+- Extra-large controls are optional and reserved for a single prominent call to
+  action in a landing-page hero, onboarding start, or comparable conversion area.
 - Touch layouts must preserve the minimum interactive target in frontmatter.
 
 Compact visual controls may use a larger invisible hit area where appropriate.

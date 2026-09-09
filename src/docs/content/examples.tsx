@@ -159,6 +159,7 @@ export const componentExamples: Record<string, ReactNode> = {
       <Button variant="ghost">Ghost</Button>
       <Button variant="destructive">Delete project</Button>
       <Button size="sm">Compact</Button>
+      <Button size="lg">Prominent CTA</Button>
       <Button loading>Save changes</Button>
     </div>
   ),

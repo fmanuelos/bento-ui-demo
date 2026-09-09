@@ -24,11 +24,12 @@ Buttons trigger an immediate action. Use one primary button for the most importa
 
 ## Sizes
 
-| Size     | Height                     | Horizontal padding | Typography | Use                                      |
-| -------- | -------------------------- | ------------------ | ---------- | ---------------------------------------- |
-| Compact  | `control-height-sm`        | `spacing.sm`       | `label-sm` | Dense desktop utilities                  |
-| Standard | `control-height-lg`        | `spacing.md`       | `label-md` | Forms, primary flows, and touch contexts |
-| Icon     | `control-height-lg` square | None               | Inherited  | Icon-only action                         |
+| Size      | Height                     | Horizontal padding | Typography | Use                                      |
+| --------- | -------------------------- | ------------------ | ---------- | ---------------------------------------- |
+| Compact   | `control-height-sm`        | `spacing.sm`       | `label-sm` | Dense desktop utilities                  |
+| Standard  | `control-height-lg`        | `spacing.md`       | `label-md` | Forms, primary flows, and touch contexts |
+| Prominent | `control-height-xl`        | `spacing.lg`       | `label-lg` | A major landing-page or onboarding CTA   |
+| Icon      | `control-height-lg` square | None               | Inherited  | Icon-only action                         |
 
 Buttons use `rounded.md`. Because height is fixed, component-token `padding`
 means horizontal padding.
@@ -60,7 +61,11 @@ navigation semantic instead.
 ## Responsive behavior
 
 Use compact buttons only in pointer-oriented toolbars and repeated utilities. Use
-standard or icon size when touch is expected.
+standard or icon size when touch is expected. Prominent size is optional: use it
+for one primary or supporting CTA in a landing-page hero, onboarding start, or
+comparable conversion area. Do not use prominent size in dashboard toolbars,
+repeated table actions, or ordinary forms, and do not use size to replace the
+semantic hierarchy expressed by the button variant.
 
 ## Accessibility
 
