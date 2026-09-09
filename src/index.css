@@ -27,6 +27,7 @@
     --color-text-primary: var(--color-text-inverse);
     --color-text-secondary: var(--color-navigation-sidebar-foreground);
     --color-text-tertiary: var(--color-navigation-sidebar-foreground);
+    --color-text-placeholder: var(--color-navigation-sidebar-foreground);
     --color-text-accent: var(--color-focus-ring);
     --color-text-link: var(--color-focus-ring);
     --color-border-primary: var(--color-border-inverse);

@@ -23,6 +23,7 @@ colors:
   text-primary: "#0F172A"
   text-secondary: "#475569"
   text-tertiary: "#64748B"
+  text-placeholder: "#64748B"
   text-inverse: "#FFFFFF"
   text-disabled: "#475569"
   text-accent: "#155EEF"
@@ -364,6 +365,9 @@ components:
   input-focus:
     backgroundColor: "{colors.surface-primary}"
     textColor: "{colors.text-primary}"
+  input-placeholder:
+    backgroundColor: "{colors.surface-primary}"
+    textColor: "{colors.text-placeholder}"
   input-disabled:
     backgroundColor: "{colors.background-disabled}"
     textColor: "{colors.text-disabled}"
