@@ -89,7 +89,7 @@ export function Modal({
     >
       <header className="flex items-start justify-between gap-xl">
         <div>
-          <h2 id={titleId} className="m-0 text-heading-h2 font-bold tracking-heading-h2">
+          <h2 id={titleId} className="m-0 text-heading-lg font-bold tracking-heading-lg">
             {title}
           </h2>
           {description && (

@@ -312,31 +312,43 @@ colors:
   dark-chart-axis: '#94A3B8'
 
 typography:
+  display-xl:
+    fontFamily: Inter
+    fontSize: 72px
+    fontWeight: 700
+    lineHeight: '1.05'
+    letterSpacing: -0.025em
   display-lg:
     fontFamily: Inter
     fontSize: 56px
     fontWeight: 700
     lineHeight: '1.08'
     letterSpacing: -0.02em
-  heading-h1:
+  display-md:
+    fontFamily: Inter
+    fontSize: 48px
+    fontWeight: 700
+    lineHeight: '1.1'
+    letterSpacing: -0.02em
+  heading-xl:
     fontFamily: Inter
     fontSize: 40px
     fontWeight: 700
     lineHeight: '1.15'
     letterSpacing: -0.02em
-  heading-h2:
+  heading-lg:
     fontFamily: Inter
     fontSize: 32px
     fontWeight: 700
     lineHeight: '1.2'
     letterSpacing: -0.01em
-  heading-h3:
+  heading-md:
     fontFamily: Inter
     fontSize: 24px
     fontWeight: 600
     lineHeight: '1.3'
     letterSpacing: 0em
-  heading-h4:
+  heading-sm:
     fontFamily: Inter
     fontSize: 20px
     fontWeight: 600
@@ -1187,9 +1199,12 @@ or patterns for essential distinctions.
 Inter is the interface family for supported weights 400–700. An adapter that
 cannot provide Inter must choose a highly legible fallback with compatible
 metrics and preserve hierarchy, weight distinction, and text reflow.
+Negative letter spacing is tuned for Inter. Adapters must reset it to `0em` when
+a fallback family or writing system makes tighter tracking less legible.
 
 - `display-*` is for major public-facing statements.
-- `heading-*` defines page and section hierarchy.
+- `heading-*` defines visual page and section hierarchy independently of the
+  document's semantic heading levels.
 - `body-*` defines reading and information-density levels.
 - `label-*` is for controls, navigation, filters, headers, and badges.
 - `caption` is for timestamps and supporting metadata.
@@ -1201,6 +1216,11 @@ general body style.
 
 Use tabular numerals for aligned numeric columns and metrics.
 
+Choose display and heading roles according to content and available space, not
+the HTML element name. A landing-page hero may use `heading-xl` in compact space,
+`display-md` in intermediate space, and `display-lg` or `display-xl` when expanded
+without changing its semantic heading level.
+
 ### Text resilience and localization
 
 Text must remain readable and operable when enlarged to 200%, when user text
@@ -1209,8 +1229,8 @@ not clip labels, values, instructions, validation messages, or controls. Truncat
 only nonessential content and provide access to the complete value.
 
 Allow for longer translations and writing systems with different glyph metrics.
-Do not infer document heading semantics from a typography token name: a visual
-`heading-h1` role does not replace the platform's semantic heading structure.
+Choose the platform's semantic heading structure from the document outline; a
+visual `display-*` or `heading-*` role never replaces that structure.
 
 ## Layout
 

@@ -13,7 +13,7 @@ export function DocsSection({
 }) {
   return (
     <section id={id} className="min-w-0 scroll-mt-24 border-t border-border-secondary pt-2xl">
-      <h2 className="mt-0 mb-lg text-heading-h3 font-semibold text-text-primary">{title}</h2>
+      <h2 className="mt-0 mb-lg text-heading-md font-semibold text-text-primary">{title}</h2>
       {preview ? (
         <div className="rounded-lg border border-border-secondary bg-surface-primary p-lg sm:p-xl">
           {children}
@@ -41,7 +41,7 @@ export function PageIntro({
       <p className="mt-0 mb-sm text-label-sm font-semibold tracking-[.08em] text-text-accent uppercase">
         {eyebrow}
       </p>
-      <h1 className="m-0 text-heading-h1 font-bold tracking-heading-h1 text-text-primary">
+      <h1 className="m-0 text-heading-xl font-bold tracking-heading-xl text-text-primary">
         {title}
       </h1>
       <p className="mt-lg mb-0 max-w-content-readable text-body-lg leading-relaxed text-text-secondary">

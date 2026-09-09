@@ -141,7 +141,7 @@ function NavigationExample() {
       utilities={<StatusBadge variant="positive">Online</StatusBadge>}
       className="relative !min-h-content-narrow overflow-hidden rounded-lg border border-border-secondary [&>aside]:absolute [&>header]:absolute [&>header]:inset-x-0 [&>main]:pt-20"
     >
-      <Card heading={<h3 className="m-0 text-heading-h4">Workspace</h3>}>
+      <Card heading={<h3 className="m-0 text-heading-sm">Workspace</h3>}>
         <p className="m-0 text-body-sm text-text-secondary">
           The shell keeps destinations stable while the workspace reflows.
         </p>
@@ -313,7 +313,7 @@ export const componentExamples: Record<string, ReactNode> = {
   card: (
     <div className="grid gap-lg sm:grid-cols-2">
       <Card
-        heading={<h3 className="m-0 text-heading-h4">Project brief</h3>}
+        heading={<h3 className="m-0 text-heading-sm">Project brief</h3>}
         footer={<Button variant="outline">View details</Button>}
       >
         <p className="m-0 text-body-sm text-text-secondary">

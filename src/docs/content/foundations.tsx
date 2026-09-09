@@ -55,11 +55,34 @@ const colorGroups = {
 } as const
 
 const typeRoles = [
-  ['display-lg', 'text-display-lg font-display-lg leading-display-lg'],
-  ['heading-h1', 'text-heading-h1 font-heading-h1 leading-heading-h1'],
-  ['heading-h2', 'text-heading-h2 font-heading-h2 leading-heading-h2'],
-  ['heading-h3', 'text-heading-h3 font-heading-h3 leading-heading-h3'],
-  ['heading-h4', 'text-heading-h4 font-heading-h4 leading-heading-h4'],
+  [
+    'display-xl',
+    'text-display-xl font-display-xl leading-display-xl font-bold tracking-display-xl',
+  ],
+  [
+    'display-lg',
+    'text-display-lg font-display-lg leading-display-lg font-bold tracking-display-lg',
+  ],
+  [
+    'display-md',
+    'text-display-md font-display-md leading-display-md font-bold tracking-display-md',
+  ],
+  [
+    'heading-xl',
+    'text-heading-xl font-heading-xl leading-heading-xl font-bold tracking-heading-xl',
+  ],
+  [
+    'heading-lg',
+    'text-heading-lg font-heading-lg leading-heading-lg font-bold tracking-heading-lg',
+  ],
+  [
+    'heading-md',
+    'text-heading-md font-heading-md leading-heading-md font-semibold tracking-heading-md',
+  ],
+  [
+    'heading-sm',
+    'text-heading-sm font-heading-sm leading-heading-sm font-semibold tracking-heading-sm',
+  ],
   ['body-lg', 'text-body-lg font-body-lg leading-body-lg'],
   ['body-md', 'text-body-md font-body-md leading-body-md'],
   ['body-sm', 'text-body-sm font-body-sm leading-body-sm'],
@@ -144,7 +167,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
           <div className="grid gap-xl">
             {Object.entries(colorGroups).map(([group, tokens]) => (
               <section key={group}>
-                <h3 className="mt-0 mb-md text-heading-h4">{group}</h3>
+                <h3 className="mt-0 mb-md text-heading-sm">{group}</h3>
                 <div className="grid gap-sm sm:grid-cols-2 xl:grid-cols-3">
                   {tokens.map((token) => (
                     <div

@@ -53,7 +53,7 @@ function DemoPage() {
       >
         <header className="grid h-22 grid-cols-[1fr_auto_1fr] items-center border-b border-border-secondary max-sm:h-18 max-sm:grid-cols-[1fr_auto]">
           <a
-            className="flex w-fit items-center gap-2.5 text-heading-h4 font-bold tracking-[-.02em] whitespace-nowrap no-underline"
+            className="flex w-fit items-center gap-2.5 text-heading-sm font-bold tracking-[-.02em] whitespace-nowrap no-underline"
             href="#top"
             aria-label="Bento UI Admin home"
           >
@@ -132,7 +132,7 @@ function DemoPage() {
               <p className={labelClasses}>Friday, August 28</p>
               <h1
                 id="page-title"
-                className="mt-1.5 text-[clamp(34px,4vw,52px)] leading-none font-bold tracking-heading-h1"
+                className="mt-1.5 text-[clamp(34px,4vw,52px)] leading-none font-bold tracking-heading-xl"
               >
                 Good morning, Mira.
               </h1>
@@ -152,7 +152,7 @@ function DemoPage() {
                 <span className="inline-flex items-center gap-sm rounded-full bg-navigation-sidebar-item-hover px-md py-sm text-label-sm font-semibold tracking-[.08em] uppercase">
                   <span className="size-1.5 rounded-full bg-current" /> Today’s intention
                 </span>
-                <h2 className="my-8 text-display-lg leading-[1.08] font-bold tracking-display-lg max-sm:text-heading-h1">
+                <h2 className="my-8 text-display-lg leading-[1.08] font-bold tracking-display-lg max-sm:text-heading-xl">
                   Make room
                   <br />
                   for better work.
@@ -190,7 +190,7 @@ function DemoPage() {
               <div className="flex items-start justify-between">
                 <div>
                   <p className={labelClasses}>Weekly focus</p>
-                  <h3 className="mt-1.5 text-heading-h3 font-semibold">Quiet progress</h3>
+                  <h3 className="mt-1.5 text-heading-md font-semibold">Quiet progress</h3>
                 </div>
                 <Button variant="ghost" size="icon" aria-label="Open weekly focus">
                   <ArrowUpRight />
@@ -215,7 +215,7 @@ function DemoPage() {
               <div className="flex items-start justify-between">
                 <div>
                   <p className={labelClasses}>On your desk</p>
-                  <h3 className="mt-1.5 text-heading-h3 font-semibold">Today’s rhythm</h3>
+                  <h3 className="mt-1.5 text-heading-md font-semibold">Today’s rhythm</h3>
                 </div>
                 <span className="grid size-control-height-md place-items-center rounded-sm bg-background-inverse text-data-sm font-semibold text-text-inverse">
                   28
@@ -247,7 +247,7 @@ function DemoPage() {
 
             <article className="flex min-h-[360px] flex-col rounded-lg border border-border-accent bg-background-accent p-7 text-text-primary lg:col-span-3">
               <div className="text-display-lg leading-[.7] font-bold text-text-accent">“</div>
-              <blockquote className="mt-7 text-heading-h3 leading-[1.3] font-semibold">
+              <blockquote className="mt-7 text-heading-md leading-[1.3] font-semibold">
                 Clarity comes from engagement, not thought.
               </blockquote>
               <div className="mt-auto flex items-center justify-between text-[10px] font-extrabold tracking-[.08em] uppercase">
@@ -281,7 +281,7 @@ function DemoPage() {
                 <p className="text-label-sm font-semibold tracking-[.08em] text-text-inverse/60 uppercase">
                   Featured project · 03
                 </p>
-                <h3 className="mt-2.5 text-heading-h2 leading-none font-bold tracking-heading-h2">
+                <h3 className="mt-2.5 text-heading-lg leading-none font-bold tracking-heading-lg">
                   Field Notes
                   <br />
                   identity system
@@ -309,7 +309,7 @@ function DemoPage() {
             >
               <div>
                 <p className={labelClasses}>System check</p>
-                <h3 className="mt-2 text-heading-h3 leading-tight font-semibold">
+                <h3 className="mt-2 text-heading-md leading-tight font-semibold">
                   Made from
                   <br />
                   <code className="rounded-sm bg-background-tertiary px-1.5 py-0.5 font-mono text-lg font-bold">
