@@ -606,14 +606,6 @@ components:
     rounded: '{rounded.md}'
     padding: '{spacing.sm}'
     height: '{spacing.control-height-small}'
-  # Deprecated name for input-small.
-  input-compact:
-    backgroundColor: '{colors.surface-primary}'
-    textColor: '{colors.text-primary}'
-    typography: '{typography.body-sm}'
-    rounded: '{rounded.md}'
-    padding: '{spacing.sm}'
-    height: '{spacing.control-height-small}'
   input-focus:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
@@ -840,9 +832,6 @@ components:
     backgroundColor: '{colors.dark-surface-primary}'
     textColor: '{colors.dark-text-primary}'
   input-small-dark:
-    backgroundColor: '{colors.dark-surface-primary}'
-    textColor: '{colors.dark-text-primary}'
-  input-compact-dark:
     backgroundColor: '{colors.dark-surface-primary}'
     textColor: '{colors.dark-text-primary}'
   input-focus-dark:
