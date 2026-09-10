@@ -5,33 +5,62 @@ DESIGN.md frontmatter. These contracts are normative and independent of CSS
 methodology, UI framework, component library, and build system. A frontmatter
 entry or runtime component does not by itself prove conformance.
 
-## Status
+## Contract maturity
 
-| Component                                          | Contract status |
-| -------------------------------------------------- | --------------- |
-| [Button](button.md)                                | Complete        |
-| [Text field](input.md)                             | Complete        |
-| [Textarea](textarea.md)                            | Complete        |
-| [Select](select.md)                                | Complete        |
-| [Listbox](listbox.md)                              | Complete        |
-| [Combobox](combobox.md)                            | Complete        |
-| [Checkbox](checkbox.md)                            | Complete        |
-| [Radio group](radio.md)                            | Complete        |
-| [Switch](switch.md)                                | Complete        |
-| [Dialog and modal](modal.md)                       | Complete        |
-| [Tabs](tabs.md)                                    | Complete        |
-| [Data table](table.md)                             | Complete        |
-| [Data grid](data-grid.md)                          | Complete        |
-| [Status badge](status-badge.md)                    | Complete        |
-| [Alert](alert.md)                                  | Complete        |
-| [Popup surface and dropdown patterns](dropdown.md) | Complete        |
-| [Navigation shell](navigation.md)                  | Complete        |
-| [Card](card.md)                                    | Complete        |
+| Status         | Meaning                                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Proposed**   | A system need and intended scope are recorded, but normative behavior is not yet defined.                        |
+| **Draft**      | The contract is being defined and may contain unresolved decisions or incomplete required sections.              |
+| **Complete**   | Every required section is normative, internally consistent, and ready for implementation and conformance review. |
+| **Deprecated** | A replacement and migration path are documented for an established deprecation window.                           |
 
-`Complete` means the technology-neutral written contract contains the required
-design, state, behavior, responsive, and accessibility requirements and is ready
-for implementation. It does not mean that a reusable implementation exists or
-that any implementation has passed conformance review.
+Contract maturity does not indicate that a reusable implementation exists or has
+passed conformance review. Track implementation, platform support, and test
+status outside this technology-neutral contract index.
+
+## Current contracts
+
+| Component or foundation                            | DESIGN.md coverage              | Contract status | Depends on                             |
+| -------------------------------------------------- | ------------------------------- | --------------- | -------------------------------------- |
+| [Form field](form-field.md)                        | Shared prose and semantic roles | Complete        | Forms-and-validation pattern           |
+| [Overlay foundation](overlay.md)                   | Shared prose and dropdown style | Complete        | Elevation and shared state model       |
+| [Progress indicators and spinner](progress.md)     | Shared prose and async pattern  | Complete        | Asynchronous-feedback pattern          |
+| [Empty state](empty-state.md)                      | Shared prose and data pattern   | Complete        | Data display, asynchronous feedback    |
+| [Tooltip](tooltip.md)                              | Shared prose and layer ordering | Complete        | Overlay                                |
+| [Alert dialog](alert-dialog.md)                    | Shared prose and risk pattern   | Complete        | Dialog, Button, destructive actions    |
+| [Disclosure](disclosure.md)                        | Shared prose and popup taxonomy | Complete        | Overlay only when visually layered     |
+| [Button](button.md)                                | Frontmatter and prose           | Complete        | Shared state model                     |
+| [Text field](input.md)                             | Frontmatter and prose           | Complete        | Form field                             |
+| [Textarea](textarea.md)                            | Prose and contract              | Complete        | Form field, text field                 |
+| [Select](select.md)                                | Prose and contract              | Complete        | Form field                             |
+| [Listbox](listbox.md)                              | Prose and contract              | Complete        | Overlay when popup, collection model   |
+| [Combobox](combobox.md)                            | Prose and contract              | Complete        | Form field, overlay, collection model  |
+| [Checkbox](checkbox.md)                            | Prose and contract              | Complete        | Form field                             |
+| [Radio group](radio.md)                            | Prose and contract              | Complete        | Form field, collection model           |
+| [Switch](switch.md)                                | Prose and contract              | Complete        | Form field, asynchronous feedback      |
+| [Dialog and modal](modal.md)                       | Frontmatter and prose           | Complete        | Shared state and destructive actions   |
+| [Tabs](tabs.md)                                    | Frontmatter and prose           | Complete        | Collection model                       |
+| [Data table](table.md)                             | Frontmatter and prose           | Complete        | Data-display pattern                   |
+| [Data grid](data-grid.md)                          | Prose and contract              | Complete        | Collection model, data-display pattern |
+| [Status badge](status-badge.md)                    | Frontmatter and prose           | Complete        | Shared state model                     |
+| [Alert](alert.md)                                  | Frontmatter and prose           | Complete        | Asynchronous-feedback pattern          |
+| [Popup surface and dropdown patterns](dropdown.md) | Frontmatter and prose           | Complete        | Overlay, collection model              |
+| [Navigation shell](navigation.md)                  | Frontmatter and prose           | Complete        | Dialog when modal, navigation pattern  |
+| [Card](card.md)                                    | Frontmatter and prose           | Complete        | Data-display pattern when data-bearing |
+
+## Proposed contracts
+
+| Component                     | Existing evidence                                                        | Priority | Planned foundation               |
+| ----------------------------- | ------------------------------------------------------------------------ | -------- | -------------------------------- |
+| Pagination                    | Table, data grid, and data display require pagination behavior.          | Medium   | Collection model, async feedback |
+| Popover                       | Elevation describes popovers and dropdown distinguishes plain popups.    | Medium   | Overlay                          |
+| Toast and notification region | Async completion and failure need a transient presentation option.       | Medium   | Alert, async feedback            |
+| Drawer and sheet              | Dialog guidance recommends a side panel for long or narrow tasks.        | Medium   | Dialog                           |
+| Public-site navigation        | DESIGN.md defines public navigation behavior beyond the dashboard shell. | Medium   | Disclosure, Dialog when modal    |
+
+Add a proposed file only when work begins on its normative contract. Move it to
+Draft until every required section and dependency is resolved; move it to
+Complete only after the contract and index agree.
 
 ## Required sections
 
@@ -53,37 +82,49 @@ Update the contract status when its normative requirements materially change.
 
 ## Shared requirements
 
-All contracts inherit the shared state, accessibility, terminology, and adapter
-rules in [`DESIGN.md`](../../DESIGN.md#components). A contract only needs to
-repeat a shared rule when it narrows or strengthens it.
+All contracts inherit the shared state, accessibility, terminology, collection,
+and adapter rules in [`DESIGN.md`](../../DESIGN.md#components). A contract only
+needs to repeat a shared rule when it narrows or strengthens it.
 
 HTML elements, ARIA attributes, CSS behavior, SVG techniques, and framework file
 paths are web or repository mappings. They are not the component's conceptual
 definition. Each adapter may choose different native mechanisms while preserving
 the same name, role, value, state, focus, and interaction outcomes.
 
+Create a dedicated contract when a concept has its own semantic role, state
+model, interaction model, accessibility behavior, or composition rules. Keep a
+presentation in an existing contract when it only narrows behavior or changes
+appearance. Reuse foundation contracts instead of restating shared behavior.
+
+## Frontmatter coverage
+
+Frontmatter component entries are visual mappings, not the component inventory.
+Add an entry only for an approved mapping that the current DESIGN.md schema can
+represent honestly.
+
+| Frontmatter family        | Normative contracts                                         | Contract-only coverage                                                                |
+| ------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Buttons                   | Button                                                      | Focus, loading, pressed, expanded, activation, and icon-only behavior                 |
+| Input and search          | Form field, Text field                                      | Boundary mappings, read-only, validation, description, and message behavior           |
+| Cards and statistic cards | Card                                                        | Static, interactive, loading, empty, and error behavior                               |
+| Navigation and tabs       | Navigation shell, Tabs                                      | Focus, current semantics, collapse, temporary navigation, and managed tab behavior    |
+| Table                     | Data table, Data grid                                       | Sorting, selection, loading, empty, stale, error, editing, and managed grid behavior  |
+| Alerts and badges         | Alert, Status badge                                         | Announcement, dismissal, dynamic status, and distinction between feedback and status  |
+| Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox     | Placement, focus, selection, dismissal, active item, viewport fit, and transformation |
+| Modal surface             | Dialog and modal                                            | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery |
+| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch | Complete behavior remains contract-only until an honest visual mapping is approved    |
+
 ## Frontmatter state coverage
 
-The frontmatter has been audited against the shared state model. Existing flat
-entries cover states whose background or foreground changes can be expressed by
-the current DESIGN.md component schema. No duplicate entries are added for states
-whose only requirements are behavior, boundary, focus indicator, announcement,
-or motion.
+Existing flat entries cover states whose background or foreground changes can be
+expressed by the current DESIGN.md component schema. Do not add duplicate entries
+for states whose requirements are behavior, boundary, focus indicator,
+announcement, or motion.
 
 Each supported light-theme color entry has a related `*-dark` entry for dark-mode
 contrast validation. Dark entries override `backgroundColor` and `textColor`
 only; typography, shape, spacing, sizing, behavior, and accessibility remain
 shared with the unqualified component or state.
-
-| Component family          | Frontmatter coverage                               | Contract-only coverage                                                                                                                       |
-| ------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Buttons                   | Variant states and five independent size contracts | Focus, loading, pressed, expanded, activation behavior                                                                                       |
-| Text field                | Medium, small, search, focus, disabled             | Boundary mappings, read-only, invalid, warning, success, validation behavior                                                                 |
-| Other form controls       | None                                               | Textarea, select, listbox, combobox, checkbox, radio, and switch contracts; add frontmatter only when supported visual mappings are approved |
-| Navigation and tabs       | Default, hover, selected, collapsed shell          | Focus, current semantics, expanded behavior, disabled tabs                                                                                   |
-| Table                     | Header, row, hover, selected                       | Focus, sorting, loading, empty, stale, error, grid behavior                                                                                  |
-| Alerts and badges         | Semantic variants                                  | Announcement, dismissal, dynamic-status behavior                                                                                             |
-| Popup and dialog surfaces | Base surfaces                                      | Open/closed, focus, selection, dismissal, modal behavior                                                                                     |
 
 Adding an unsupported component property only to reference an otherwise orphaned
 token would create a misleading mapping and is prohibited.

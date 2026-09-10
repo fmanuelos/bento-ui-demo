@@ -57,6 +57,9 @@ interactive-target rules below.
 
 Visual states use the matching `action-*` and `focus-ring` tokens. Shared state
 precedence is defined in [`DESIGN.md`](../../DESIGN.md#shared-state-model).
+Loading presentation follows the
+[`progress-indicator contract`](progress.md); a compact spinner supplements rather
+than replaces the action label or busy state.
 
 ## Behavior
 

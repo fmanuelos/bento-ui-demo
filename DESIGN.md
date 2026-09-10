@@ -1538,6 +1538,36 @@ Every component specification contains:
 An implementation may use any CSS methodology, framework, component library, or
 build system if it satisfies the same contract.
 
+### Contract lifecycle and extension rules
+
+Component contracts use four maturity states:
+
+- **Proposed:** The system has identified a need and scope, but normative behavior
+  is not yet defined.
+- **Draft:** The contract is being defined and may contain unresolved decisions or
+  incomplete required sections.
+- **Complete:** Every required section is normative, internally consistent, and
+  ready for implementation and conformance review.
+- **Deprecated:** A replacement is documented and consumers are within an agreed
+  migration window.
+
+Contract maturity does not describe runtime availability or conformance. Track
+implementation and test status outside this technology-neutral design contract.
+
+Create a dedicated component contract when a concept has its own semantic role,
+state model, interaction model, accessibility behavior, or composition rules.
+Keep a variant in an existing contract when it changes presentation or narrows
+behavior without introducing a new semantic role. Put requirements shared by
+several components in a foundation contract or system-wide rule and make each
+dependent contract reference it.
+
+Add a frontmatter component entry only when the component has an approved visual
+mapping that can be represented honestly with the DESIGN.md component properties.
+Reuse existing semantic tokens and component mappings when a new component is a
+composition or behavioral specialization. Do not add tokens or component entries
+only to create an inventory, mirror every state, or silence orphaned-token
+warnings.
+
 ### Shared state model
 
 Use these state names consistently where they apply: default, hover, focus,
@@ -1561,6 +1591,33 @@ Add a related flat frontmatter entry only when a state changes a component
 property supported by the DESIGN.md schema. Document other state requirements in
 the component contract rather than inventing unsupported properties.
 
+### Shared collection model
+
+Listboxes, comboboxes, action menus, tabs, and data grids are collections with
+component-specific semantics. They share interaction terms but do not share one
+role or selection model.
+
+- **Focus** identifies the element receiving keyboard input. **Active item**
+  identifies the option or cell managed by a composite control. **Selection**
+  identifies a committed value or chosen record. Keep these states distinct
+  unless a component contract explicitly couples them.
+- Use one managed focus strategy within a collection: roving focus or an active
+  descendant. Do not mix strategies during ordinary navigation.
+- Directional commands, Home, End, and type-ahead apply only when the component's
+  contract defines them. Navigation skips unavailable items while preserving
+  their understandable presentation when they remain visible.
+- Insertion, removal, filtering, sorting, and asynchronous replacement preserve
+  focus, active item, and selection when their targets remain available. If a
+  target disappears, move to the nearest logical continuation and announce a
+  material context change once.
+- Loading does not expose placeholder rows or messages as selectable items. Empty
+  and error content remains reachable without joining the collection's managed
+  navigation unless it contains a defined recovery control.
+- Type-ahead uses locale-aware comparison, has a predictable reset interval, and
+  does not replace native text editing in a combobox.
+- Disabled items cannot be activated. A component may keep them discoverable when
+  an explanation is useful, but managed navigation normally skips them.
+
 ### Accessibility baseline
 
 Every interactive component has a programmatically determinable name, role,
@@ -1574,11 +1631,15 @@ reduced-motion modes. Platform-specific semantics belong in adapters.
 
 ### Component taxonomy
 
-- `dropdown` is the shared popup-surface styling term. Action menus, listboxes,
-  comboboxes, and disclosures are distinct behavioral patterns.
+- `overlay` defines shared anchored-layer behavior such as placement, viewport
+  fit, dismissal, and focus restoration. `dropdown` is the compatible
+  popup-surface styling term. Tooltip, popover, action menu, listbox, combobox,
+  and disclosure remain distinct semantic and behavioral patterns.
 - A data table presents tabular information. An interactive data grid manages
   focus and selection as a composite control; do not use the terms interchangeably.
-- A modal is the blocking variant of the broader dialog concept.
+- A dialog is a focused task surface. A modal dialog is its blocking variant;
+  alert dialogs, drawers, sheets, and temporary navigation reuse dialog behavior
+  only when their semantics and modality match.
 - Sidebar and topbar tokens support the navigation-shell pattern; they do not
   prescribe a reusable component architecture.
 
@@ -1587,9 +1648,26 @@ reduced-motion modes. Platform-specific semantics belong in adapters.
 - Use `primary`, `secondary`, `outline`, `ghost`, and `destructive` consistently.
   Outline describes a bordered alternative; ghost is the canonical transparent,
   low-emphasis treatment. Do not reintroduce `tertiary` as an alias.
-- Inputs require visible labels; placeholders are examples, not labels.
+- Form controls follow the shared
+  [`form-field contract`](design/components/form-field.md) for labels,
+  descriptions, requirements, messages, and validation. Placeholders are
+  examples, not labels.
 - Validation includes a text description and, when useful, an icon in addition
   to color.
+- Anchored popup components follow the shared
+  [`overlay contract`](design/components/overlay.md) without adopting another
+  component's role or keyboard model.
+- Measurable and indeterminate operations use the
+  [`progress-indicator contract`](design/components/progress.md); motion is never
+  the only busy cue.
+- Collections distinguish loading, failure, no data, no results, and filtered
+  empty states through the [`empty-state contract`](design/components/empty-state.md)
+  and applicable experience pattern.
+- Tooltips follow the [`tooltip contract`](design/components/tooltip.md), contain
+  no interactive content, and never replace a control's accessible name.
+- Decisions requiring immediate acknowledgement follow the
+  [`alert-dialog contract`](design/components/alert-dialog.md) and use the safe
+  initial-focus and dismissal policies appropriate to their risk.
 - Selected navigation represents location, not a primary action.
 - Selected tabs include a non-color indicator.
 - Table rows use hover styling only when hover has meaning.

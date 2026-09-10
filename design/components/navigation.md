@@ -8,6 +8,9 @@ Contract complete for the navigation-shell pattern.
 
 Navigation communicates location and access to destinations. Selected navigation
 is a location state, not a primary action.
+Temporary modal navigation follows the shared
+[`dialog contract`](modal.md); a non-modal disclosure retains focus on its
+trigger and does not adopt dialog behavior.
 
 ## Anatomy and variants
 
@@ -47,8 +50,10 @@ an equivalent control is not a responsive transformation.
 
 Expose navigation regions, destination names, current location, and expanded
 state programmatically. Collapsed items retain an accessible label and a visible
-text alternative on focus or request. Keyboard and reading order follow the
-meaningful visual order.
+text alternative on focus or request. A brief label presentation follows the
+[`tooltip contract`](tooltip.md); the tooltip supplements rather than creates the
+destination's accessible name. Keyboard and reading order follow the meaningful
+visual order.
 
 ### Web adapter
 

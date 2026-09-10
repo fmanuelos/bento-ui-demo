@@ -8,11 +8,13 @@ Contract complete.
 
 A textarea collects multi-line text. Use a single-line text field when line
 breaks are not meaningful and a rich-text editor when formatting is required.
+Its label, description, requirement, hint, validation, and message relationships
+follow the shared [`form-field contract`](form-field.md).
 
 ## Anatomy and variants
 
-Textarea inherits the text-field label, description, status, helper, and
-validation anatomy. Fixed-height and content-growing variants are supported.
+Textarea inherits the form-field and text-field label, description, status,
+helper, and validation anatomy. Fixed-height and content-growing variants are supported.
 Both use `surface-primary`, `text-primary`, the input typography, `rounded.md`,
 and the default, focus, disabled, and validation boundary roles.
 

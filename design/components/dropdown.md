@@ -14,10 +14,15 @@ not determine behavior. Choose the specific pattern from the content and task:
 - [Listbox](listbox.md) for choosing one or more values.
 - [Combobox](combobox.md) for text entry with suggestions or selectable values.
 - [Select](select.md) for a compact, non-editable single choice.
-- Disclosure for showing or hiding ordinary content.
+- [Disclosure](disclosure.md) for showing or hiding ordinary content.
 - Popup surface for presentation only when none of the interactive patterns apply.
 
 Use a dialog, page, or side panel for complex tasks.
+
+Every anchored popup follows the shared [`overlay contract`](overlay.md) for
+placement, viewport fit, dismissal boundaries, responsive transformation, and
+focus restoration. The selected pattern below continues to own semantics,
+selection, and keyboard behavior.
 
 ## Anatomy and variants
 
@@ -74,6 +79,10 @@ A non-interactive popup provides supplemental content associated with its anchor
 It is dismissible without pointer input and does not take focus unless its content
 requires interaction; if interaction is required, choose a defined interactive
 pattern instead.
+
+Brief non-interactive text follows the [`tooltip contract`](tooltip.md). Richer
+supplemental content remains a proposed popover contract and must not be given
+menu semantics in the interim.
 
 ## Responsive behavior
 

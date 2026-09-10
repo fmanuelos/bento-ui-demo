@@ -9,6 +9,8 @@ Contract complete.
 A combobox combines text entry with a related popup of suggestions or selectable
 values. Use a select when entry is not editable and a text field when suggestions
 are unnecessary.
+It follows the shared [`form-field`](form-field.md),
+[`overlay`](overlay.md), and collection rules in DESIGN.md.
 
 ## Anatomy and variants
 
@@ -32,6 +34,9 @@ cursor and selection behavior. Directional commands navigate suggestions only
 when the popup is active. Escape closes the popup and follows the documented value
 restoration policy. Selection commits one value; free-form values are accepted
 only when the variant explicitly allows them.
+Loading presentation follows the [`progress-indicator contract`](progress.md).
+No-results, unavailable, and failed results follow the compact
+[`empty-state contract`](empty-state.md) without becoming selectable options.
 
 ## Responsive behavior
 

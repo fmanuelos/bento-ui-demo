@@ -8,6 +8,9 @@ Contract complete.
 
 A radio group selects exactly one value from a small set whose options benefit
 from simultaneous visibility. Use a select for a longer compact list.
+Its group label, description, requirement, validation, and message relationships
+follow the shared [`form-field contract`](form-field.md). Option navigation also
+follows the shared collection model in DESIGN.md.
 
 ## Anatomy and variants
 

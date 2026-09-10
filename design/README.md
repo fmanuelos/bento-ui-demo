@@ -66,7 +66,7 @@ paths into invalid dotted CSS identifiers.
 
 ## Known lint baseline
 
-With `@google/design.md` 0.4.0, the current document has zero lint errors and 128
+With `@google/design.md` 0.4.0, the current document has zero lint errors and 138
 warnings. Six are contrast warnings:
 
 | Finding                                              | Interpretation                                                                    | Review rule                                                                                                                                 |

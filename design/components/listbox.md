@@ -9,6 +9,8 @@ Contract complete.
 A listbox presents a visible or popup list from which one or more values can be
 selected. It is not an action menu and its items do not trigger unrelated
 commands.
+A popup listbox follows the shared [`overlay contract`](overlay.md). Persistent
+and popup variants follow the shared collection model in DESIGN.md.
 
 ## Anatomy and variants
 
@@ -31,6 +33,9 @@ multi-selection, disabled option, loading, empty, and error. Focus, active optio
 and selection remain distinct. Directional commands move the active option;
 selection follows the chosen single- or multi-selection model. Type-ahead is
 available for longer lists. Reordering or filtering preserves valid selections.
+Loading presentation follows the [`progress-indicator contract`](progress.md).
+Empty and unavailable content follows the compact
+[`empty-state contract`](empty-state.md) without becoming an option.
 
 ## Responsive behavior
 

@@ -24,7 +24,8 @@ the default wrapper for every dashboard region.
 A static card has no hover state. An interactive card needs a single clear action,
 visible hover and focus, and the platform semantic that matches its action. Focus
 remains visible independently of any nested control. Loading, empty, and error
-states follow the applicable data-display pattern.
+states follow the applicable data-display pattern and
+[`empty-state contract`](empty-state.md).
 
 ## Behavior
 

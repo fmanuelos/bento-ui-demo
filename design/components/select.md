@@ -9,6 +9,8 @@ Contract complete.
 A select chooses one value from a predetermined set without free-form entry. Use
 a radio group for a small set that benefits from simultaneous visibility and a
 combobox when filtering or text entry is required.
+Its label, description, requirement, hint, validation, and message relationships
+follow the shared [`form-field contract`](form-field.md).
 
 ## Anatomy and variants
 

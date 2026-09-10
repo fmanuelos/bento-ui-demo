@@ -9,6 +9,8 @@ Contract complete.
 A checkbox represents an independent binary choice or one choice in a set.
 Indeterminate communicates a mixed summary state; it is not a third submitted
 value unless the product explicitly defines one.
+Labels, descriptions, requirements, group relationships, and validation follow
+the shared [`form-field contract`](form-field.md).
 
 ## Anatomy and variants
 

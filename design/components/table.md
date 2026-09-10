@@ -30,6 +30,9 @@ actual selection. Sorting, selection, pagination, and row actions require visibl
 focus and explicit state. Support loading, empty, partial, error, and stale-data
 states where data is dynamic. Loading does not remove headers or erase usable
 data, and empty is distinct from failure.
+Loading presentation follows the [`progress-indicator contract`](progress.md).
+Empty and unavailable results follow the [`empty-state contract`](empty-state.md)
+inside the table region without being represented as data rows.
 
 ## Behavior
 

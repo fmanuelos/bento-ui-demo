@@ -8,6 +8,8 @@ Contract complete.
 
 Tabs switch between peer views of the same context. They do not replace global
 navigation or represent sequential steps.
+Focus, active item, selection, disabled-item navigation, and dynamic item changes
+follow the shared collection model in DESIGN.md.
 
 ## Anatomy and variants
 

@@ -9,6 +9,8 @@ Contract complete.
 A data grid is an interactive composite for efficient navigation, selection, and
 editing of tabular data. Use a static data table when managed cell focus and grid
 commands are unnecessary.
+Focus, active cell, selection, disabled or unavailable targets, and dynamic data
+changes follow the shared collection model in DESIGN.md.
 
 ## Anatomy and variants
 
@@ -31,6 +33,9 @@ Support focused cell, selected row or cell, sorted column, editing, invalid edit
 loading, empty, partial, stale, and error states as relevant. Focus and selection
 remain independent. A state change never removes the only focused element without
 placing focus at the nearest logical location.
+Loading presentation follows the [`progress-indicator contract`](progress.md).
+Empty and unavailable results follow the [`empty-state contract`](empty-state.md)
+without joining managed grid navigation.
 
 ## Behavior
 

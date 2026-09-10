@@ -9,6 +9,8 @@ Contract complete for a single-line text field. See the separate contracts for
 ## Intent
 
 Inputs collect short, structured text. Every input has a visible label; placeholder copy is an example, not a replacement for the label.
+The label, description, requirement, hint, validation, and message relationships
+follow the shared [`form-field contract`](form-field.md).
 
 ## Anatomy
 

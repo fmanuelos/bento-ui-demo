@@ -9,6 +9,8 @@ Contract complete.
 A switch changes a persistent setting between on and off and normally takes
 effect immediately. Use a checkbox when the value is part of a form committed by
 a separate submit action.
+Its label, description, requirement, validation, and message relationships follow
+the shared [`form-field contract`](form-field.md).
 
 ## Anatomy and variants
 
