@@ -193,7 +193,7 @@ function DemoPage() {
           </section>
 
           <section
-            className="grid grid-cols-1 gap-space-4 sm:gap-space-6 lg:grid-cols-12"
+            className="grid grid-cols-1 gap-grid-gutter-mobile sm:gap-grid-gutter-tablet lg:grid-cols-12 lg:gap-grid-gutter-desktop"
             id="overview"
             aria-label="Daily overview"
           >

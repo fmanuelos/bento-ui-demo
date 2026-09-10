@@ -109,7 +109,7 @@ export function NavigationShell({
     >
       <header
         inert={mobileOpen ? true : undefined}
-        className="sticky top-0 z-20 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-padding-mobile text-text-primary lg:pl-[calc(var(--spacing-dashboard-padding-desktop)+var(--shell-sidebar-width))]"
+        className="sticky top-0 z-20 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-padding-mobile text-text-primary sm:px-dashboard-padding-tablet lg:pr-dashboard-padding-desktop lg:pl-[calc(var(--spacing-dashboard-padding-desktop)+var(--shell-sidebar-width))]"
       >
         <Button
           ref={mobileTriggerRef}
@@ -213,7 +213,7 @@ export function NavigationShell({
       )}
       <main
         inert={mobileOpen ? true : undefined}
-        className="px-dashboard-padding-mobile py-space-6 lg:ml-(--shell-sidebar-width) lg:px-dashboard-padding-desktop"
+        className="px-dashboard-padding-mobile py-space-6 sm:px-dashboard-padding-tablet lg:ml-(--shell-sidebar-width) lg:px-dashboard-padding-desktop"
       >
         {children}
       </main>

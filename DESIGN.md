@@ -469,10 +469,12 @@ spacing:
   page-padding-tablet: 24px
   page-padding-desktop: 32px
   dashboard-padding-mobile: 16px
+  dashboard-padding-tablet: 20px
   dashboard-padding-desktop: 24px
 
   grid-gutter-mobile: 16px
-  grid-gutter-tablet: 24px
+  grid-gutter-tablet: 20px
+  grid-gutter-desktop: 24px
 
   # Two-pixel strokes are dimensions, not general-purpose spacing.
   focus-ring-width: 2px
@@ -1329,10 +1331,11 @@ Treat `topbar-height` as the normal minimum height. Preserve brand and primary
 utilities, move secondary utilities into an accessible overflow control when
 needed, and never clip enlarged or translated labels to enforce a fixed bar.
 
-Use `grid-gutter-mobile` by default and `grid-gutter-tablet` from the tablet range
-upward. A public-site grid should normally use intrinsic columns with a useful
-minimum item width. A 12-column grid is reserved for complex desktop and wide
-dashboard composition; it is not required for ordinary card groups.
+Use `grid-gutter-mobile` by default, `grid-gutter-tablet` from the tablet range,
+and `grid-gutter-desktop` from the desktop range upward. A public-site grid should
+normally use intrinsic columns with a useful minimum item width. A 12-column grid
+is reserved for complex desktop and wide dashboard composition; it is not
+required for ordinary card groups.
 
 The canonical control-height vocabulary is `tiny`, `small`, `medium`, `large`,
 and `extra-large`. The abbreviated `sm`, `md`, `lg`, and `xl` height names are
@@ -1363,11 +1366,12 @@ Use dashboard padding, efficient grouping, compact controls, tables, filters, an
 a fluid dashboard. Major groups generally use `space-6`–`space-8` separation;
 content within groups generally uses `space-4`–`space-6`.
 
-Mobile and tablet dashboards use `dashboard-padding-mobile` and temporary
-navigation. Desktop and wide dashboards use `dashboard-padding-desktop` and may
-use the persistent sidebar and top-bar dimensions in frontmatter. When navigation
-and content cannot coexist comfortably, replace the persistent sidebar with
-temporary navigation even if the viewport is in a larger range.
+Mobile dashboards use `dashboard-padding-mobile`, tablet dashboards use
+`dashboard-padding-tablet`, and both use temporary navigation. Desktop and wide
+dashboards use `dashboard-padding-desktop` and may use the persistent sidebar and
+top-bar dimensions in frontmatter. When navigation and content cannot coexist
+comfortably, replace the persistent sidebar with temporary navigation even if the
+viewport is in a larger range.
 
 A 12-column desktop or wide grid is a composition aid for complex dashboards,
 not a fixed device contract. Give tables and primary analysis surfaces width

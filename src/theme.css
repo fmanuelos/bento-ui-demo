@@ -400,9 +400,11 @@
   --spacing-page-padding-tablet: 24px;
   --spacing-page-padding-desktop: 32px;
   --spacing-dashboard-padding-mobile: 16px;
+  --spacing-dashboard-padding-tablet: 20px;
   --spacing-dashboard-padding-desktop: 24px;
   --spacing-grid-gutter-mobile: 16px;
-  --spacing-grid-gutter-tablet: 24px;
+  --spacing-grid-gutter-tablet: 20px;
+  --spacing-grid-gutter-desktop: 24px;
   --spacing-focus-ring-width: 2px;
   --spacing-control-height-tiny: 32px;
   --spacing-control-height-small: 40px;
