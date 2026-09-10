@@ -487,6 +487,10 @@ spacing:
 
   touch-target-min: 44px
 
+  avatar-size-small: '{spacing.control-height-tiny}'
+  avatar-size-medium: '{spacing.control-height-small}'
+  avatar-size-large: '{spacing.control-height-large}'
+
   sidebar-expanded: 256px
   sidebar-collapsed: 72px
   topbar-height: 64px
@@ -655,6 +659,24 @@ components:
     textColor: '{colors.text-primary}'
     rounded: '{rounded.lg}'
     padding: '{spacing.space-4}'
+
+  avatar-fallback:
+    backgroundColor: '{colors.brand-background-subtle}'
+    textColor: '{colors.brand-foreground}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.full}'
+  avatar-size-small:
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.full}'
+    size: '{spacing.avatar-size-small}'
+  avatar-size-medium:
+    typography: '{typography.label-md}'
+    rounded: '{rounded.full}'
+    size: '{spacing.avatar-size-medium}'
+  avatar-size-large:
+    typography: '{typography.label-lg}'
+    rounded: '{rounded.full}'
+    size: '{spacing.avatar-size-large}'
 
   sidebar:
     backgroundColor: '{colors.navigation-sidebar-background}'
@@ -873,6 +895,10 @@ components:
   stat-card-dark:
     backgroundColor: '{colors.dark-surface-primary}'
     textColor: '{colors.dark-text-primary}'
+
+  avatar-fallback-dark:
+    backgroundColor: '{colors.dark-brand-background-subtle}'
+    textColor: '{colors.dark-brand-foreground}'
 
   sidebar-dark:
     backgroundColor: '{colors.dark-navigation-sidebar-background}'
@@ -1318,7 +1344,8 @@ layout dimensions, not interchangeable spacing steps.
 - `breakpoint-*` defines page-layout thresholds; mobile is the default and has no
   breakpoint token.
 - `section-*`, `*-padding-*`, and `grid-gutter-*` define composition spacing.
-- `control-height-*` and `touch-target-min` define control dimensions.
+- `control-height-*`, `avatar-size-*`, and `touch-target-min` define component
+  and target dimensions.
 - `sidebar-*` and `topbar-height` define navigation-shell dimensions.
 - `container-*` defines content-width limits.
 
@@ -1522,6 +1549,10 @@ dimensions, typography, shape, and spacing for every button color variant;
 variant and state entries define semantic color. Medium is the default button
 size.
 
+Avatar fallback color and size are independent. `avatar-size-*` entries define
+the supported dimensions, typography, and circular shape; `avatar-fallback` and
+`avatar-fallback-dark` define fallback color without prescribing image content.
+
 ### Component contract
 
 Every component specification contains:
@@ -1642,6 +1673,11 @@ reduced-motion modes. Platform-specific semantics belong in adapters.
 - A dialog is a focused task surface. A modal dialog is its blocking variant;
   alert dialogs, drawers, sheets, and temporary navigation reuse dialog behavior
   only when their semantics and modality match.
+- An avatar is a visual reference to a person, while an avatar group is a compact
+  preview of several people. Neither pattern creates presence, selection, or an
+  action without a separate semantic control or status.
+- A disclosure controls one revealed region. An accordion coordinates a group of
+  disclosures and adds a stable group policy and heading structure.
 - Sidebar and topbar tokens support the navigation-shell pattern; they do not
   prescribe a reusable component architecture.
 
@@ -1687,6 +1723,13 @@ reduced-motion modes. Platform-specific semantics belong in adapters.
   [`Public-site Navigation`](design/components/site-navigation.md) contract;
   authenticated workspace navigation continues to follow the application
   navigation shell.
+- Person imagery and fallbacks follow the shared
+  [`Avatar`](design/components/avatar.md) contract. Compact identity collections
+  follow [`Avatar Group`](design/components/avatar-group.md) without replacing a
+  complete participant list.
+- Coordinated expandable sections follow the shared
+  [`Accordion`](design/components/accordion.md) contract and inherit individual
+  section behavior from Disclosure.
 - Selected navigation represents location, not a primary action.
 - Selected tabs include a non-color indicator.
 - Table rows use hover styling only when hover has meaning.

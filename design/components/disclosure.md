@@ -29,9 +29,9 @@ dismissal while retaining disclosure semantics.
 - **Navigation disclosure:** Reveals destination links that do not fit inline.
   Destination order and current-location meaning remain unchanged.
 
-An accordion is a coordinated group of disclosures and requires a separate
-contract only when group behavior, heading structure, or single-open rules are
-needed.
+An [`Accordion`](accordion.md) is a coordinated group of disclosures. Use it when
+group behavior, heading structure, or single-open rules are needed; do not make
+independent disclosures implicitly coordinate with one another.
 
 ## Sizes and semantic token mapping
 

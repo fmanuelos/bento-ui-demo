@@ -26,9 +26,12 @@ status outside this technology-neutral contract index.
 | [Overlay foundation](overlay.md)                   | Shared prose and dropdown style   | Complete        | Elevation and shared state model       |
 | [Progress indicators and spinner](progress.md)     | Shared prose and async pattern    | Complete        | Asynchronous-feedback pattern          |
 | [Empty state](empty-state.md)                      | Shared prose and data pattern     | Complete        | Data display, asynchronous feedback    |
+| [Avatar](avatar.md)                                | Frontmatter and shared prose      | Complete        | Shared state and identity rules        |
+| [Avatar Group](avatar-group.md)                    | Shared prose and contract         | Complete        | Avatar, Popover when expandable        |
 | [Tooltip](tooltip.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                |
 | [Alert dialog](alert-dialog.md)                    | Shared prose and risk pattern     | Complete        | Dialog, Button, destructive actions    |
 | [Disclosure](disclosure.md)                        | Shared prose and popup taxonomy   | Complete        | Overlay only when visually layered     |
+| [Accordion](accordion.md)                          | Shared prose and group behavior   | Complete        | Disclosure, Button                     |
 | [Pagination](pagination.md)                        | Shared prose and data pattern     | Complete        | Collection model, async feedback       |
 | [Popover](popover.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                |
 | [Toast and notification region](toast.md)          | Shared prose and async pattern    | Complete        | Alert, progress, async feedback        |
@@ -55,10 +58,11 @@ status outside this technology-neutral contract index.
 
 ## Proposed contracts
 
-No additional component contract is currently scheduled. Avatar and Avatar
-Group, Container, Accordion, and richer interactive-card variants remain deferred
-until product requirements establish behavior that is not already covered by the
-current contracts.
+No additional component contract is currently scheduled. Container remains a
+layout foundation in DESIGN.md rather than a component contract. Whole-card
+interaction remains governed by Card; add a specialized card contract only when
+a concrete workflow introduces behavior that Card and its composed components do
+not cover.
 
 Add a proposed file only when work begins on its normative contract. Move it to
 Draft until every required section and dependency is resolved; move it to
@@ -104,17 +108,19 @@ Frontmatter component entries are visual mappings, not the component inventory.
 Add an entry only for an approved mapping that the current DESIGN.md schema can
 represent honestly.
 
-| Frontmatter family        | Normative contracts                                                                   | Contract-only coverage                                                                          |
-| ------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Buttons                   | Button                                                                                | Focus, loading, pressed, expanded, activation, and icon-only behavior                           |
-| Input and search          | Form field, Text field                                                                | Boundary mappings, read-only, validation, description, and message behavior                     |
-| Cards and statistic cards | Card                                                                                  | Static, interactive, loading, empty, and error behavior                                         |
-| Navigation and tabs       | Navigation shell, Public-site navigation, Tabs                                        | Focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |
-| Table                     | Data table, Data grid, Pagination                                                     | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior    |
-| Alerts and badges         | Alert, Toast and notification region, Status badge                                    | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status  |
-| Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover, Disclosure | Placement, focus, selection, dismissal, active item, viewport fit, and transformation           |
-| Modal surface             | Dialog and modal, Alert dialog, Drawer and sheet                                      | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery           |
-| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch                           | Complete behavior remains contract-only until an honest visual mapping is approved              |
+| Frontmatter family        | Normative contracts                                                       | Contract-only coverage                                                                          |
+| ------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Buttons                   | Button                                                                    | Focus, loading, pressed, expanded, activation, and icon-only behavior                           |
+| Input and search          | Form field, Text field                                                    | Boundary mappings, read-only, validation, description, and message behavior                     |
+| Cards and statistic cards | Card                                                                      | Static, interactive, loading, empty, and error behavior                                         |
+| Avatars                   | Avatar, Avatar Group                                                      | Image fallback, identity exposure, ordering, overlap, and overflow behavior                     |
+| Navigation and tabs       | Navigation shell, Public-site navigation, Tabs                            | Focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |
+| Table                     | Data table, Data grid, Pagination                                         | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior    |
+| Alerts and badges         | Alert, Toast and notification region, Status badge                        | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status  |
+| Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover | Placement, focus, selection, dismissal, active item, viewport fit, and transformation           |
+| Disclosure                | Disclosure, Accordion                                                     | Expansion, heading structure, group policy, focus, and panel relationships                      |
+| Modal surface             | Dialog and modal, Alert dialog, Drawer and sheet                          | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery           |
+| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch               | Complete behavior remains contract-only until an honest visual mapping is approved              |
 
 ## Frontmatter state coverage
 
