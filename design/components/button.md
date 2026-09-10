@@ -20,7 +20,6 @@ Buttons trigger an immediate action. Use one primary button for the most importa
 - **Outline:** Transparent background with a visible neutral edge for an alternative action.
 - **Ghost:** Transparent background without an edge for utilities and low-emphasis actions.
 - **Destructive:** Danger background for actions involving removal or irreversible loss.
-- **Icon:** A square control with an accessible name.
 
 ## Sizes
 
@@ -39,12 +38,9 @@ fixed height.
 
 Icon-only presentation is independent of size. A square icon-only button uses
 the selected size's height for both dimensions and requires a programmatically
-determinable name. Tiny and small visual controls remain subject to the minimum
+determinable name. It can be combined with any canonical size and semantic color
+variant. Tiny and small visual controls remain subject to the minimum
 interactive-target rules below.
-
-For one compatibility cycle, `sm`, `md`, and `lg` map to tiny, medium, and large.
-The former `icon` size maps to medium plus icon-only presentation. New work uses
-the canonical names and treats icon-only as presentation rather than size.
 
 ## States
 

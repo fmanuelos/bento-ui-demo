@@ -1,10 +1,7 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'
-export type CanonicalButtonSize = 'tiny' | 'small' | 'medium' | 'large' | 'extra-large'
-/** @deprecated Use the canonical descriptive size names. */
-export type LegacyButtonSize = 'sm' | 'md' | 'lg' | 'icon'
-export type ButtonSize = CanonicalButtonSize | LegacyButtonSize
+export type ButtonSize = 'tiny' | 'small' | 'medium' | 'large' | 'extra-large'
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant
@@ -29,14 +26,7 @@ const variantClasses: Record<ButtonVariant, string> = {
     'border-action-destructive-background-default bg-action-destructive-background-default text-action-destructive-foreground hover:border-action-destructive-background-hover hover:bg-action-destructive-background-hover active:border-action-destructive-background-active active:bg-action-destructive-background-active disabled:border-action-destructive-background-disabled disabled:bg-action-destructive-background-disabled disabled:text-action-destructive-foreground-disabled',
 }
 
-const legacySizeAliases: Record<LegacyButtonSize, CanonicalButtonSize> = {
-  sm: 'tiny',
-  md: 'medium',
-  lg: 'large',
-  icon: 'medium',
-}
-
-const sizeClasses: Record<CanonicalButtonSize, string> = {
+const sizeClasses: Record<ButtonSize, string> = {
   tiny: 'h-control-height-tiny gap-xs px-sm font-label-sm text-label-sm leading-label-sm',
   small: 'h-control-height-small gap-sm px-md font-label-md text-label-md leading-label-md',
   medium: 'h-control-height-medium gap-sm px-md font-label-md text-label-md leading-label-md',
@@ -45,7 +35,7 @@ const sizeClasses: Record<CanonicalButtonSize, string> = {
     'h-control-height-extra-large gap-md px-xl font-label-lg text-label-lg leading-label-lg',
 }
 
-const squareSizeClasses: Record<CanonicalButtonSize, string> = {
+const squareSizeClasses: Record<ButtonSize, string> = {
   tiny: 'size-control-height-tiny',
   small: 'size-control-height-small',
   medium: 'size-control-height-medium',
@@ -53,7 +43,7 @@ const squareSizeClasses: Record<CanonicalButtonSize, string> = {
   'extra-large': 'size-control-height-extra-large',
 }
 
-const iconSizeClasses: Record<CanonicalButtonSize, string> = {
+const iconSizeClasses: Record<ButtonSize, string> = {
   tiny: 'size-4',
   small: 'size-4',
   medium: 'size-5',
@@ -78,12 +68,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   },
   ref,
 ) {
-  const canonicalSize: CanonicalButtonSize =
-    size in legacySizeAliases
-      ? legacySizeAliases[size as LegacyButtonSize]
-      : (size as CanonicalButtonSize)
-  const square = iconOnly || size === 'icon'
-  const iconClassName = iconSizeClasses[canonicalSize]
+  const square = iconOnly
+  const iconClassName = iconSizeClasses[size]
   const renderIcon = (content: ReactNode) => (
     <span
       className={`grid shrink-0 place-items-center ${iconClassName} [&_svg]:size-full`}
@@ -105,7 +91,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         'disabled:cursor-not-allowed',
         'active:translate-y-px',
         variantClasses[variant],
-        square ? `${squareSizeClasses[canonicalSize]} shrink-0 p-0` : sizeClasses[canonicalSize],
+        square ? `${squareSizeClasses[size]} shrink-0 p-0` : sizeClasses[size],
         className,
       ].join(' ')}
       {...props}
