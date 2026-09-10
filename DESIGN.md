@@ -1,7 +1,7 @@
 ---
 version: alpha
-name: Bento UI Admin
-description: A semantic design system for public websites, web applications, and admin dashboards using the Google Labs DESIGN.md format.
+name: Bento UI
+description: A semantic design system for public sites, web applications, and dashboards using the Google Labs DESIGN.md format.
 colors:
   primary: '#155EEF'
 
@@ -942,11 +942,11 @@ components:
     textColor: '{colors.dark-text-primary}'
 ---
 
-# Bento UI Admin
+# Bento UI
 
 > Document status: Draft. The YAML frontmatter contains normative token values;
 > this body and the linked component contracts define their intended use.
-> `version: alpha` identifies the DESIGN.md file format, not a Bento UI Admin
+> `version: alpha` identifies the DESIGN.md file format, not a Bento UI
 > release.
 
 [Overview](#overview) · [Colors](#colors) · [Typography](#typography) ·
@@ -955,17 +955,25 @@ components:
 
 ## Overview
 
-Bento UI Admin is a semantic design system for public websites and authenticated
-applications or admin dashboards. `Bento UI Admin` is the system name; “Admin”
-describes the current reference experience rather than limiting the system to
-authenticated surfaces.
+Bento UI is a semantic design system for public sites, web applications, and
+dashboards.
+
+Two experience terms are used consistently throughout this document:
+
+- **Public Site** describes public-facing commercial, marketing, and
+  informational pages.
+- **Dashboard** describes authenticated, task-oriented, administrative, and
+  data-heavy experiences.
+
+In code and identifiers, use `public-site` and `dashboard` for these experience
+types.
 
 The visual direction is calm, professional, highly legible, and operational.
 Primary action tokens establish interactive hierarchy, brand tokens express
 identity, slate neutrals establish visual hierarchy, and semantic feedback and
 status tokens communicate meaning.
 
-Public websites are spacious and content-led. Admin experiences are compact,
+Public Sites are spacious and content-led. Dashboard experiences are compact,
 structured, and information-led. Density should change through spacing,
 grouping, control size, and layout—not indiscriminate reductions in text size.
 
@@ -1254,7 +1262,7 @@ general body style.
 Use tabular numerals for aligned numeric columns and metrics.
 
 Choose display and heading roles according to content and available space, not
-the HTML element name. A landing-page hero may use `heading-xl` in mobile space,
+the HTML element name. A public-site hero may use `heading-xl` in mobile space,
 `display-md` in tablet space, and `display-lg` or `display-xl` in desktop and wide
 space without changing its semantic heading level.
 
@@ -1303,7 +1311,7 @@ utilities, move secondary utilities into an accessible overflow control when
 needed, and never clip enlarged or translated labels to enforce a fixed bar.
 
 Use `grid-gutter-mobile` by default and `grid-gutter-tablet` from the tablet range
-upward. A landing-page grid should normally use intrinsic columns with a useful
+upward. A public-site grid should normally use intrinsic columns with a useful
 minimum item width. A 12-column grid is reserved for complex desktop and wide
 dashboard composition; it is not required for ordinary card groups.
 
@@ -1311,11 +1319,11 @@ The canonical control-height vocabulary is `tiny`, `small`, `medium`, `large`,
 and `extra-large`. The abbreviated `sm`, `md`, `lg`, and `xl` height names are
 deprecated compatibility aliases and must not be used by new work.
 
-### Website mode
+### Public Site mode
 
 Use page padding, readable content widths, and section-spacing tokens. Full-width
 backgrounds may extend to the viewport while content stays aligned to its
-container. Landing-page navigation keeps the brand and primary action visible and
+container. Public-site navigation keeps the brand and primary action visible and
 uses an accessible disclosure whenever the destination links do not fit; never
 remove primary destinations without an equivalent control.
 
@@ -1325,12 +1333,12 @@ remove primary destinations without an equivalent control.
 - `container-dashboard` supports data-heavy dashboards; tables and visualizations
   may exceed it when the task benefits.
 
-Landing pages use `page-padding-mobile`, `page-padding-tablet`, and
+Public Sites use `page-padding-mobile`, `page-padding-tablet`, and
 `page-padding-desktop` with the matching system ranges. Section separation uses
 `section-mobile`, `section-tablet`, and `section-desktop`; wide pages retain the
 desktop section and page-padding values.
 
-### Admin mode
+### Dashboard mode
 
 Use dashboard padding, efficient grouping, compact controls, tables, filters, and
 a fluid dashboard. Major groups generally use `space-6`–`space-8` separation;
@@ -1368,7 +1376,7 @@ padding, navigation shells, and major composition; component fit governs cards,
 forms, toolbars, tables, and feature grids. Adapters may map the ranges to
 framework-specific breakpoint names.
 
-Landing-page defaults:
+Public Site defaults:
 
 - Mobile heroes, content sections, forms, card groups, calls to action, and footer
   groups use a single-column flow. Place hero copy before media.
@@ -1415,7 +1423,7 @@ dates, times, currency, and sorting behavior use locale-aware presentation.
 - Medium controls are the application, form, dialog, and touch-oriented default.
 - Large controls are for important standalone and onboarding actions.
 - Extra-large controls are optional and reserved for a single major call to action
-  in a landing-page hero or comparable public conversion area.
+  in a public-site hero or comparable public conversion area.
 - Touch layouts must preserve the minimum interactive target in frontmatter.
 
 Tiny and small visual controls may use a larger invisible hit area where
