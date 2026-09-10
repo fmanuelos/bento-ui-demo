@@ -463,12 +463,6 @@ spacing:
   control-height-large: 48px
   control-height-extra-large: 56px
 
-  # Deprecated compatibility aliases. Remove after consumers migrate to the
-  # canonical control-height names above.
-  control-height-sm: 32px
-  control-height-md: 40px
-  control-height-lg: 44px
-  control-height-xl: 48px
   touch-target-min: 44px
 
   sidebar-expanded: 256px
