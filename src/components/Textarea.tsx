@@ -74,8 +74,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
         aria-invalid={Boolean(error) || status === 'invalid'}
         className={[
           fieldControlBase,
-          'min-h-28 resize-y py-md leading-relaxed',
-          autoGrow ? 'max-h-content-narrow overflow-y-auto' : '',
+          'min-h-28 resize-y py-space-3 leading-relaxed',
+          autoGrow ? 'max-h-container-narrow overflow-y-auto' : '',
           fieldStatusClasses[error ? 'invalid' : status],
           className,
         ].join(' ')}

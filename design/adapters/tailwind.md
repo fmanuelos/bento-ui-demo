@@ -6,11 +6,12 @@ file policy live in [`design/README.md`](../README.md).
 
 ## Responsive range mapping
 
-| System range | System boundary                        | Current Tailwind mapping |
-| ------------ | -------------------------------------- | ------------------------ |
-| Compact      | Below 40rem / 640px                    | Below `sm`               |
-| Intermediate | 40rem through below 64rem / 640–1023px | `sm` through below `lg`  |
-| Expanded     | 64rem / 1024px and above               | `lg` and above           |
+| System range | System boundary                         | Current Tailwind mapping |
+| ------------ | --------------------------------------- | ------------------------ |
+| Mobile       | Below 40rem / 640px                     | Below `sm`               |
+| Tablet       | 40rem through below 64rem / 640–1023px  | `sm` through below `lg`  |
+| Desktop      | 64rem through below 80rem / 1024–1279px | `lg` through below `xl`  |
+| Wide         | 80rem / 1280px and above                | `xl` and above           |
 
 Tailwind names are adapter aliases only. Product and component contracts use the
 system range names and content-driven transformation rules.

@@ -27,12 +27,15 @@ const variantClasses: Record<ButtonVariant, string> = {
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
-  tiny: 'h-control-height-tiny gap-xs px-sm font-label-sm text-label-sm leading-label-sm',
-  small: 'h-control-height-small gap-sm px-md font-label-md text-label-md leading-label-md',
-  medium: 'h-control-height-medium gap-sm px-md font-label-md text-label-md leading-label-md',
-  large: 'h-control-height-large gap-sm px-lg font-label-lg text-label-lg leading-label-lg',
+  tiny: 'h-control-height-tiny gap-space-1 px-space-2 font-label-sm text-label-sm leading-label-sm',
+  small:
+    'h-control-height-small gap-space-2 px-space-3 font-label-md text-label-md leading-label-md',
+  medium:
+    'h-control-height-medium gap-space-2 px-space-3 font-label-md text-label-md leading-label-md',
+  large:
+    'h-control-height-large gap-space-2 px-space-4 font-label-lg text-label-lg leading-label-lg',
   'extra-large':
-    'h-control-height-extra-large gap-md px-xl font-label-lg text-label-lg leading-label-lg',
+    'h-control-height-extra-large gap-space-3 px-space-6 font-label-lg text-label-lg leading-label-lg',
 }
 
 const squareSizeClasses: Record<ButtonSize, string> = {
@@ -48,7 +51,7 @@ const iconSizeClasses: Record<ButtonSize, string> = {
   small: 'size-4',
   medium: 'size-5',
   large: 'size-5',
-  'extra-large': 'size-xl',
+  'extra-large': 'size-space-6',
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(

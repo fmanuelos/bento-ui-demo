@@ -71,7 +71,7 @@ export function NavigationShell({
   }, [mobileOpen])
 
   const navigation = (mobile: boolean) => (
-    <nav aria-label={navigationLabel} className="grid gap-xs p-md">
+    <nav aria-label={navigationLabel} className="grid gap-space-1 p-space-3">
       {items.map((item, index) => {
         const current = currentHref === item.href
         return (
@@ -82,7 +82,7 @@ export function NavigationShell({
             aria-current={current ? 'page' : undefined}
             title={!mobile && collapsed ? item.label : undefined}
             onClick={() => mobile && setMobileOpen(false)}
-            className={`flex min-h-control-height-small items-center gap-md rounded-md px-md text-label-md font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${current ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`}
+            className={`flex min-h-control-height-small items-center gap-space-3 rounded-md px-space-3 text-label-md font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${current ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`}
           >
             {item.icon && (
               <span className="grid size-5 shrink-0 place-items-center" aria-hidden="true">
@@ -109,7 +109,7 @@ export function NavigationShell({
     >
       <header
         inert={mobileOpen ? true : undefined}
-        className="sticky top-0 z-20 flex h-topbar-height items-center gap-md border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-gutter-mobile text-text-primary lg:pl-[calc(var(--spacing-dashboard-gutter-desktop)+var(--shell-sidebar-width))]"
+        className="sticky top-0 z-20 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-padding-mobile text-text-primary lg:pl-[calc(var(--spacing-dashboard-padding-desktop)+var(--shell-sidebar-width))]"
       >
         <Button
           ref={mobileTriggerRef}
@@ -139,7 +139,7 @@ export function NavigationShell({
         inert={mobileOpen ? true : undefined}
         className="fixed inset-y-0 left-0 z-30 hidden w-(--shell-sidebar-width) flex-col bg-navigation-sidebar-background text-navigation-sidebar-foreground transition-[width] lg:flex"
       >
-        <div className="flex h-topbar-height items-center justify-between gap-sm border-b border-border-inverse px-md text-navigation-sidebar-foreground-strong">
+        <div className="flex h-topbar-height items-center justify-between gap-space-2 border-b border-border-inverse px-space-3 text-navigation-sidebar-foreground-strong">
           <div className="min-w-0 overflow-hidden">{brand}</div>
           <Button
             variant="ghost"
@@ -182,7 +182,7 @@ export function NavigationShell({
             aria-label={navigationLabel}
             className="h-full w-[min(86vw,var(--spacing-sidebar-expanded))] bg-navigation-sidebar-background text-navigation-sidebar-foreground"
           >
-            <div className="flex h-topbar-height items-center justify-between border-b border-border-inverse px-md text-navigation-sidebar-foreground-strong">
+            <div className="flex h-topbar-height items-center justify-between border-b border-border-inverse px-space-3 text-navigation-sidebar-foreground-strong">
               <div>{brand}</div>
               <Button
                 variant="ghost"
@@ -213,7 +213,7 @@ export function NavigationShell({
       )}
       <main
         inert={mobileOpen ? true : undefined}
-        className="px-dashboard-gutter-mobile py-xl lg:ml-(--shell-sidebar-width) lg:px-dashboard-gutter-desktop"
+        className="px-dashboard-padding-mobile py-space-6 lg:ml-(--shell-sidebar-width) lg:px-dashboard-padding-desktop"
       >
         {children}
       </main>

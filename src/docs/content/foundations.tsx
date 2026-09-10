@@ -99,15 +99,14 @@ const typeRoles = [
   ['data-sm', 'text-data-sm font-data-sm leading-data-sm'],
 ] as const
 const spacingRoles = [
-  ['xxs', 'w-xxs'],
-  ['xs', 'w-xs'],
-  ['sm', 'w-sm'],
-  ['md', 'w-md'],
-  ['lg', 'w-lg'],
-  ['xl', 'w-xl'],
-  ['2xl', 'w-2xl'],
-  ['3xl', 'w-3xl'],
-  ['4xl', 'w-4xl'],
+  ['space-1', 'w-space-1'],
+  ['space-2', 'w-space-2'],
+  ['space-3', 'w-space-3'],
+  ['space-4', 'w-space-4'],
+  ['space-6', 'w-space-6'],
+  ['space-8', 'w-space-8'],
+  ['space-12', 'w-space-12'],
+  ['space-16', 'w-space-16'],
 ] as const
 const radiusRoles = [
   ['none', 'rounded-none'],
@@ -140,10 +139,11 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'System ranges',
         body: (
-          <div className="grid gap-md sm:grid-cols-3">
-            <Range name="Compact" detail="Below 40rem" />
-            <Range name="Intermediate" detail="40rem–63.999rem" />
-            <Range name="Expanded" detail="64rem and above" />
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(12rem,100%),1fr))] gap-space-3">
+            <Range name="Mobile" detail="Below 40rem" />
+            <Range name="Tablet" detail="40rem–63.999rem" />
+            <Range name="Desktop" detail="64rem–79.999rem" />
+            <Range name="Wide" detail="80rem and above" />
           </div>
         ),
       },
@@ -168,15 +168,15 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Semantic roles',
         body: (
-          <div className="grid gap-xl">
+          <div className="grid gap-space-6">
             {Object.entries(colorGroups).map(([group, tokens]) => (
               <section key={group}>
-                <h3 className="mt-0 mb-md text-heading-sm">{group}</h3>
-                <div className="grid gap-sm sm:grid-cols-2 xl:grid-cols-3">
+                <h3 className="mt-0 mb-space-3 text-heading-sm">{group}</h3>
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-space-2">
                   {tokens.map((token) => (
                     <div
                       key={token}
-                      className="flex items-center gap-md rounded-md border border-border-secondary bg-surface-primary p-md"
+                      className="flex items-center gap-space-3 rounded-md border border-border-secondary bg-surface-primary p-space-3"
                     >
                       <span
                         className="size-9 shrink-0 rounded-md border border-border-primary"
@@ -226,7 +226,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
             {typeRoles.map(([role, classes]) => (
               <div
                 key={role}
-                className="grid gap-sm border-b border-border-secondary p-lg last:border-0 sm:grid-cols-[10rem_1fr]"
+                className="grid gap-space-2 border-b border-border-secondary p-space-4 last:border-0 sm:grid-cols-[10rem_1fr]"
               >
                 <code className="text-body-xs text-text-secondary">{role}</code>
                 <span className={classes}>
@@ -280,12 +280,12 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Base scale',
         body: (
-          <div className="grid gap-md">
+          <div className="grid gap-space-3">
             {spacingRoles.map(([role, width]) => (
-              <div key={role} className="grid grid-cols-[4rem_1fr] items-center gap-md">
+              <div key={role} className="grid grid-cols-[4rem_1fr] items-center gap-space-3">
                 <code className="text-body-xs">{role}</code>
                 <span
-                  className={`block h-sm max-w-full rounded-full bg-action-primary-background-default ${width}`}
+                  className={`block h-space-2 max-w-full rounded-full bg-action-primary-background-default ${width}`}
                 />
               </div>
             ))}
@@ -297,16 +297,16 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         body: (
           <ul className="list-disc">
             <li>
-              <code>content-narrow</code> supports authentication and focused forms.
+              <code>container-narrow</code> supports authentication and focused forms.
             </li>
             <li>
-              <code>content-readable</code> supports prose and guidance.
+              <code>container-readable</code> supports prose and guidance.
             </li>
             <li>
-              <code>content-standard</code> supports general applications.
+              <code>container-page</code> supports general websites and applications.
             </li>
             <li>
-              <code>content-dashboard</code> supports dense workspaces.
+              <code>container-dashboard</code> supports dense dashboards.
             </li>
           </ul>
         ),
@@ -332,9 +332,9 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Radius scale',
         body: (
-          <div className="grid gap-md sm:grid-cols-2">
+          <div className="grid gap-space-3 sm:grid-cols-2">
             {radiusRoles.map(([role, radius]) => (
-              <div key={role} className="flex items-center gap-md">
+              <div key={role} className="flex items-center gap-space-3">
                 <span
                   className={`size-14 border-2 border-border-strong bg-surface-secondary ${radius}`}
                 />
@@ -423,7 +423,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Inverse surfaces',
         body: (
-          <div className="rounded-lg bg-surface-inverse p-xl text-text-inverse">
+          <div className="rounded-lg bg-surface-inverse p-space-6 text-text-inverse">
             <p className="m-0">
               Inverse is a supported local surface mode, not a complete page theme.
             </p>
@@ -507,9 +507,9 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
 
 function Range({ name, detail }: { name: string; detail: string }) {
   return (
-    <div className="rounded-lg border border-border-secondary bg-surface-primary p-lg">
+    <div className="rounded-lg border border-border-secondary bg-surface-primary p-space-4">
       <strong className="block text-label-md">{name}</strong>
-      <span className="mt-xs block text-body-sm text-text-secondary">{detail}</span>
+      <span className="mt-space-1 block text-body-sm text-text-secondary">{detail}</span>
     </div>
   )
 }

@@ -28,7 +28,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   return (
     <div className={className}>
       <label
-        className="inline-flex min-h-touch-target-min cursor-pointer items-start gap-md text-body-sm text-text-primary"
+        className="inline-flex min-h-touch-target-min cursor-pointer items-start gap-space-3 text-body-sm text-text-primary"
         htmlFor={inputId}
       >
         <input
@@ -58,7 +58,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
             </svg>
           )}
         </span>
-        <span className="grid gap-xs">
+        <span className="grid gap-space-1">
           <span className="font-semibold">{label}</span>
           {(description || error) && (
             <span

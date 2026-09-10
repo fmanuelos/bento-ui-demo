@@ -17,10 +17,10 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   return (
     <div className={className}>
       <label
-        className="flex min-h-touch-target-min cursor-pointer items-center justify-between gap-lg"
+        className="flex min-h-touch-target-min cursor-pointer items-center justify-between gap-space-4"
         htmlFor={inputId}
       >
-        <span className="grid gap-xs text-body-sm text-text-primary">
+        <span className="grid gap-space-1 text-body-sm text-text-primary">
           <span className="font-semibold">{label}</span>
           {(description || error) && (
             <span
@@ -44,7 +44,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
           className="peer sr-only"
         />
         <span
-          className="relative h-xl w-control-height-medium shrink-0 rounded-full border-2 border-border-strong bg-background-tertiary transition peer-checked:border-action-primary-background-default peer-checked:bg-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:border-border-disabled peer-disabled:bg-background-disabled after:absolute after:top-xxs after:left-xxs after:size-lg after:rounded-full after:bg-surface-primary after:transition-transform peer-checked:after:translate-x-5"
+          className="relative h-space-6 w-control-height-medium shrink-0 rounded-full border-2 border-border-strong bg-background-tertiary transition peer-checked:border-action-primary-background-default peer-checked:bg-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:border-border-disabled peer-disabled:bg-background-disabled after:absolute after:top-space-1 after:left-space-1 after:size-space-4 after:rounded-full after:bg-surface-primary after:transition-transform peer-checked:after:translate-x-5"
           aria-hidden="true"
         />
       </label>

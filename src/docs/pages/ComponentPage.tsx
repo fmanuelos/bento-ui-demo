@@ -33,10 +33,10 @@ export function ComponentPage() {
           <table className="w-full min-w-[44rem] border-collapse text-left text-body-sm">
             <thead className="bg-table-header-background text-label-sm text-text-secondary">
               <tr>
-                <th className="border-b border-table-border p-md">Prop</th>
-                <th className="border-b border-table-border p-md">Type</th>
-                <th className="border-b border-table-border p-md">Default</th>
-                <th className="border-b border-table-border p-md">Description</th>
+                <th className="border-b border-table-border p-space-3">Prop</th>
+                <th className="border-b border-table-border p-space-3">Type</th>
+                <th className="border-b border-table-border p-space-3">Default</th>
+                <th className="border-b border-table-border p-space-3">Description</th>
               </tr>
             </thead>
             <tbody>
@@ -44,17 +44,17 @@ export function ComponentPage() {
                 <tr key={prop.name}>
                   <th
                     scope="row"
-                    className="border-b border-table-border p-md font-semibold text-text-primary"
+                    className="border-b border-table-border p-space-3 font-semibold text-text-primary"
                   >
                     <code>{prop.name}</code>
                   </th>
-                  <td className="border-b border-table-border p-md">
+                  <td className="border-b border-table-border p-space-3">
                     <code>{prop.type}</code>
                   </td>
-                  <td className="border-b border-table-border p-md">
+                  <td className="border-b border-table-border p-space-3">
                     <code>{prop.defaultValue ?? '—'}</code>
                   </td>
-                  <td className="border-b border-table-border p-md">{prop.description}</td>
+                  <td className="border-b border-table-border p-space-3">{prop.description}</td>
                 </tr>
               ))}
             </tbody>
@@ -87,14 +87,14 @@ export function ComponentPage() {
         </ul>
       </DocsSection>
       <DocsSection id="related" title="Related components">
-        <div className="flex flex-wrap gap-sm">
+        <div className="flex flex-wrap gap-space-2">
           {documentation.related.map((relatedSlug) => {
             const item = componentNavigation.find((entry) => entry.slug === relatedSlug)
             return item ? (
               <Link
                 key={item.path}
                 to={item.path}
-                className="rounded-md border border-border-primary bg-surface-primary px-md py-sm no-underline hover:border-border-focus"
+                className="rounded-md border border-border-primary bg-surface-primary px-space-3 py-space-2 no-underline hover:border-border-focus"
               >
                 {item.title}
               </Link>

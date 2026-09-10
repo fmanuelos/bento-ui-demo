@@ -931,7 +931,7 @@ export const componentDocs = [
     ],
     variants: [
       'Expanded and collapsed persistent sidebar.',
-      'Temporary modal navigation at compact widths.',
+      'Temporary modal navigation at mobile and tablet widths.',
       'Default, hover, focus, and current destination states.',
     ],
     accessibility: [
@@ -940,13 +940,13 @@ export const componentDocs = [
       'Mobile navigation moves focus inside, contains it, closes on Escape, and restores the trigger.',
     ],
     responsive:
-      'At compact widths the sidebar becomes temporary navigation; at expanded widths it preserves workspace priority.',
+      'At mobile and tablet widths the sidebar becomes temporary navigation; at desktop and wide widths it may remain persistent when the dashboard still has sufficient room.',
     theme:
       'Sidebar, item, selected, topbar, boundary, and focus roles map directly to navigation tokens.',
     mistakes: [
       'Do not style the current route as a primary action.',
       'Do not remove destination names from the accessible tree when collapsed.',
-      'Do not place a squeezed persistent sidebar beside a narrow workspace.',
+      'Do not place a squeezed persistent sidebar beside a narrow dashboard.',
     ],
     related: ['tabs', 'button'],
   }),

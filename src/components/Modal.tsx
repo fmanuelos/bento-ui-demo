@@ -85,9 +85,9 @@ export function Modal({
         if (closeOnEscape && !busy) onClose()
       }}
       onMouseDown={handleBackdrop}
-      className={`m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-content-narrow overflow-y-auto rounded-xl border border-border-secondary bg-surface-raised p-xl text-text-primary backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${className}`}
+      className={`m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-container-narrow overflow-y-auto rounded-xl border border-border-secondary bg-surface-raised p-space-6 text-text-primary backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${className}`}
     >
-      <header className="flex items-start justify-between gap-xl">
+      <header className="flex items-start justify-between gap-space-6">
         <div>
           <h2 id={titleId} className="m-0 text-heading-lg font-bold tracking-heading-lg">
             {title}
@@ -95,7 +95,7 @@ export function Modal({
           {description && (
             <p
               id={descriptionId}
-              className="mt-sm mb-0 text-body-sm leading-relaxed text-text-secondary"
+              className="mt-space-2 mb-0 text-body-sm leading-relaxed text-text-secondary"
             >
               {description}
             </p>
@@ -109,7 +109,7 @@ export function Modal({
           aria-label="Close modal"
           onClick={onClose}
           disabled={busy}
-          className="-mt-sm -mr-sm"
+          className="-mt-space-2 -mr-space-2"
         >
           <svg
             className="size-5"
@@ -123,8 +123,10 @@ export function Modal({
           </svg>
         </Button>
       </header>
-      <div className="mt-xl">{children}</div>
-      {footer && <footer className="mt-xl flex flex-wrap justify-end gap-md">{footer}</footer>}
+      <div className="mt-space-6">{children}</div>
+      {footer && (
+        <footer className="mt-space-6 flex flex-wrap justify-end gap-space-3">{footer}</footer>
+      )}
     </dialog>
   )
 }

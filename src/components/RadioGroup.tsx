@@ -43,14 +43,14 @@ export function RadioGroup({
 
   return (
     <fieldset
-      className={`m-0 grid gap-md border-0 p-0 ${className}`}
+      className={`m-0 grid gap-space-3 border-0 p-0 ${className}`}
       aria-describedby={description || error ? `${groupId}-message` : undefined}
       aria-invalid={Boolean(error)}
     >
       <legend className="text-label-md font-semibold text-text-primary">
         {label}
         {required && (
-          <span className="ml-xs text-text-danger" aria-hidden="true">
+          <span className="ml-space-1 text-text-danger" aria-hidden="true">
             *
           </span>
         )}
@@ -63,11 +63,13 @@ export function RadioGroup({
           {error ?? description}
         </p>
       )}
-      <div className={orientation === 'horizontal' ? 'flex flex-wrap gap-xl' : 'grid gap-md'}>
+      <div
+        className={orientation === 'horizontal' ? 'flex flex-wrap gap-space-6' : 'grid gap-space-3'}
+      >
         {options.map((option, index) => (
           <label
             key={option.value}
-            className="inline-flex min-h-touch-target-min cursor-pointer items-start gap-md text-body-sm text-text-primary"
+            className="inline-flex min-h-touch-target-min cursor-pointer items-start gap-space-3 text-body-sm text-text-primary"
           >
             <input
               {...props}
@@ -89,7 +91,7 @@ export function RadioGroup({
               className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border-2 border-border-strong bg-surface-primary peer-checked:border-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:border-border-disabled peer-disabled:bg-background-disabled after:size-2.5 after:rounded-full after:bg-transparent peer-checked:after:bg-action-primary-background-default"
               aria-hidden="true"
             />
-            <span className="grid gap-xs">
+            <span className="grid gap-space-1">
               <span className="font-semibold">{option.label}</span>
               {option.description && (
                 <span className="text-body-xs text-text-secondary">{option.description}</span>

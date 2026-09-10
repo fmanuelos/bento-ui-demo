@@ -20,7 +20,7 @@ commands.
 
 Single- and multi-selection are distinct variants.
 
-Use `surface-raised`, `text-primary`, `rounded.md`, and `spacing.sm` for a popup
+Use `surface-raised`, `text-primary`, `rounded.md`, and `spacing.space-2` for a popup
 surface. Options use ghost action roles for hover and focus and selection roles
 for selected state.
 

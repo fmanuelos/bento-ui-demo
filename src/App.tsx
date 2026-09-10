@@ -36,6 +36,7 @@ function DemoPage() {
     () => localStorage.getItem('bento-ui-admin-theme') === 'dark',
   )
   const [modalOpen, setModalOpen] = useState(false)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [sessionActive, setSessionActive] = useState(false)
   const focusSessionButtonRef = useRef<HTMLButtonElement>(null)
   const closeModal = useCallback(() => setModalOpen(false), [])
@@ -48,12 +49,12 @@ function DemoPage() {
   return (
     <>
       <div
-        className="mx-auto min-h-screen w-[min(1240px,calc(100%-3rem))] max-sm:w-[calc(100%-1.75rem)]"
+        className="mx-auto box-content min-h-screen max-w-container-page px-page-padding-mobile sm:px-page-padding-tablet lg:px-page-padding-desktop"
         inert={modalOpen ? true : undefined}
       >
         <header className="grid h-22 grid-cols-[1fr_auto_1fr] items-center border-b border-border-secondary max-sm:h-18 max-sm:grid-cols-[1fr_auto]">
           <a
-            className="flex w-fit items-center gap-2.5 text-heading-sm font-bold tracking-[-.02em] whitespace-nowrap no-underline"
+            className="flex w-fit items-center gap-space-3 text-heading-sm font-bold tracking-[-.02em] whitespace-nowrap no-underline"
             href="#top"
             aria-label="Bento UI Admin home"
           >
@@ -62,27 +63,52 @@ function DemoPage() {
             </span>
             Bento UI Admin
           </a>
-          <nav className="flex gap-2 max-sm:hidden" aria-label="Primary navigation">
+          <nav className="hidden gap-space-2 sm:flex" aria-label="Primary navigation">
             <a
-              className="rounded-md bg-background-accent px-lg py-sm text-label-sm font-semibold text-text-accent"
+              className="rounded-md bg-background-accent px-space-4 py-space-2 text-label-sm font-semibold text-text-accent"
               href="#overview"
             >
               Overview
             </a>
             <a
-              className="rounded-md px-lg py-sm text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
+              className="rounded-md px-space-4 py-space-2 text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
               href="#schedule"
             >
               Schedule
             </a>
             <a
-              className="rounded-md px-lg py-sm text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
+              className="rounded-md px-space-4 py-space-2 text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
               href="#projects"
             >
               Projects
             </a>
           </nav>
-          <div className="flex items-center gap-3 justify-self-end">
+          <div className="flex items-center gap-space-3 justify-self-end">
+            <Button
+              variant="ghost"
+              size="medium"
+              iconOnly
+              className="sm:hidden"
+              aria-label={mobileNavOpen ? 'Close navigation' : 'Open navigation'}
+              aria-expanded={mobileNavOpen}
+              aria-controls="mobile-primary-navigation"
+              onClick={() => setMobileNavOpen((value) => !value)}
+            >
+              <svg
+                className="size-5"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                aria-hidden="true"
+              >
+                {mobileNavOpen ? (
+                  <path d="m5 5 10 10m0-10L5 15" />
+                ) : (
+                  <path d="M3 5h14M3 10h14M3 15h14" />
+                )}
+              </svg>
+            </Button>
             <Button
               variant="ghost"
               size="medium"
@@ -116,7 +142,7 @@ function DemoPage() {
               )}
             </Button>
             <div
-              className="grid size-control-height-medium place-items-center rounded-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background"
+              className="hidden size-control-height-medium place-items-center rounded-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background sm:grid"
               aria-label="Profile for Mira"
             >
               M
@@ -124,36 +150,59 @@ function DemoPage() {
           </div>
         </header>
 
+        {mobileNavOpen && (
+          <nav
+            id="mobile-primary-navigation"
+            className="grid gap-space-1 border-b border-border-secondary py-space-3 sm:hidden"
+            aria-label="Primary navigation"
+          >
+            {[
+              ['Overview', '#overview'],
+              ['Schedule', '#schedule'],
+              ['Projects', '#projects'],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className="rounded-md px-space-4 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
+                onClick={() => setMobileNavOpen(false)}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        )}
+
         <main id="top">
           <section
-            className="flex items-end justify-between px-1 pt-14 pb-7 max-sm:flex-col max-sm:items-start max-sm:gap-4 max-sm:pt-10"
+            className="flex items-end justify-between px-space-1 pt-space-12 pb-space-6 max-sm:flex-col max-sm:items-start max-sm:gap-space-4 max-sm:pt-space-8"
             aria-labelledby="page-title"
           >
             <div>
               <p className={labelClasses}>Friday, August 28</p>
               <h1
                 id="page-title"
-                className="mt-1.5 text-[clamp(34px,4vw,52px)] leading-none font-bold tracking-heading-xl"
+                className="mt-space-2 text-[clamp(34px,4vw,52px)] leading-none font-bold tracking-heading-xl"
               >
                 Good morning, Mira.
               </h1>
             </div>
-            <p className="mb-1 w-72 text-body-sm leading-relaxed text-text-secondary max-sm:w-auto">
+            <p className="mb-space-1 w-72 text-body-sm leading-relaxed text-text-secondary max-sm:w-auto">
               You have space to do meaningful work today.
             </p>
           </section>
 
           <section
-            className="grid grid-cols-1 gap-5 lg:grid-cols-12"
+            className="grid grid-cols-1 gap-space-4 sm:gap-space-6 lg:grid-cols-12"
             id="overview"
             aria-label="Daily overview"
           >
-            <article className="relative min-h-[430px] overflow-hidden rounded-lg bg-background-inverse p-9 text-text-inverse max-sm:min-h-[570px] max-sm:p-6 lg:col-span-8">
+            <article className="relative min-h-[430px] overflow-hidden rounded-lg bg-background-inverse p-space-8 text-text-inverse max-sm:min-h-[570px] max-sm:p-space-6 lg:col-span-8">
               <div className="relative z-10 flex h-full max-w-[55%] flex-col items-start max-sm:max-w-none">
-                <span className="inline-flex items-center gap-sm rounded-full bg-navigation-sidebar-item-hover px-md py-sm font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline uppercase">
+                <span className="inline-flex items-center gap-space-2 rounded-full bg-navigation-sidebar-item-hover px-space-3 py-space-2 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline uppercase">
                   <span className="size-1.5 rounded-full bg-current" /> Today’s intention
                 </span>
-                <h2 className="my-8 text-display-lg leading-[1.08] font-bold tracking-display-lg max-sm:text-heading-xl">
+                <h2 className="my-space-8 text-display-lg leading-[1.08] font-bold tracking-display-lg max-sm:text-heading-xl">
                   Make room
                   <br />
                   for better work.
@@ -166,7 +215,7 @@ function DemoPage() {
                   ref={focusSessionButtonRef}
                   variant="secondary"
                   size="large"
-                  className="mt-auto max-sm:mt-6"
+                  className="mt-auto max-sm:mt-space-6"
                   icon={<ArrowUpRight />}
                   onClick={() => setModalOpen(true)}
                 >
@@ -191,22 +240,24 @@ function DemoPage() {
               </div>
             </article>
 
-            <article className={`${cardClasses} flex min-h-[430px] flex-col p-7 lg:col-span-4`}>
+            <article
+              className={`${cardClasses} flex min-h-[430px] flex-col p-space-6 lg:col-span-4`}
+            >
               <div className="flex items-start justify-between">
                 <div>
                   <p className={labelClasses}>Weekly focus</p>
-                  <h3 className="mt-1.5 text-heading-md font-semibold">Quiet progress</h3>
+                  <h3 className="mt-space-2 text-heading-md font-semibold">Quiet progress</h3>
                 </div>
                 <Button variant="ghost" size="medium" iconOnly aria-label="Open weekly focus">
                   <ArrowUpRight />
                 </Button>
               </div>
-              <div className="relative mx-auto my-5 grid size-[194px] place-items-center rounded-full bg-[conic-gradient(var(--color-chart-positive)_72%,var(--color-status-positive-background)_0)] after:absolute after:size-[154px] after:rounded-full after:bg-surface-primary">
+              <div className="relative mx-auto my-space-6 grid size-[194px] place-items-center rounded-full bg-[conic-gradient(var(--color-chart-positive)_72%,var(--color-status-positive-background)_0)] after:absolute after:size-[154px] after:rounded-full after:bg-surface-primary">
                 <div className="relative z-10 flex flex-col text-center">
                   <strong className="text-display-lg leading-none font-bold tracking-display-lg">
                     72%
                   </strong>
-                  <span className="mt-1.5 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase">
+                  <span className="mt-space-2 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase">
                     complete
                   </span>
                 </div>
@@ -216,33 +267,36 @@ function DemoPage() {
               </p>
             </article>
 
-            <article className={`${cardClasses} min-h-[360px] p-7 lg:col-span-5`} id="schedule">
+            <article
+              className={`${cardClasses} min-h-[360px] p-space-6 lg:col-span-5`}
+              id="schedule"
+            >
               <div className="flex items-start justify-between">
                 <div>
                   <p className={labelClasses}>On your desk</p>
-                  <h3 className="mt-1.5 text-heading-md font-semibold">Today’s rhythm</h3>
+                  <h3 className="mt-space-2 text-heading-md font-semibold">Today’s rhythm</h3>
                 </div>
                 <span className="grid size-control-height-small place-items-center rounded-sm bg-background-inverse text-data-sm font-semibold text-text-inverse">
                   28
                 </span>
               </div>
-              <ol className="mt-7">
+              <ol className="mt-space-6">
                 {[
                   ['09:30', 'bg-chart-series-3', 'Deep work', 'Brand direction', '90m'],
                   ['12:00', 'bg-chart-series-5', 'Studio sync', '4 teammates', '30m'],
                   ['15:30', 'bg-chart-series-4', 'Open space', 'Unscheduled', '60m'],
                 ].map(([time, color, title, detail, duration]) => (
                   <li
-                    className="grid min-h-[71px] grid-cols-[43px_4px_1fr_auto] items-center gap-md border-t border-table-border"
+                    className="grid min-h-[71px] grid-cols-[43px_4px_1fr_auto] items-center gap-space-3 border-t border-table-border"
                     key={time}
                   >
                     <time className="text-body-xs font-semibold text-text-secondary">{time}</time>
                     <span className={`h-9 w-1 rounded-full ${color}`} />
-                    <span className="flex flex-col gap-xs">
+                    <span className="flex flex-col gap-space-1">
                       <strong className="text-body-sm">{title}</strong>
                       <span className="text-body-xs text-text-secondary">{detail}</span>
                     </span>
-                    <span className="rounded-full bg-background-tertiary px-sm py-xs text-body-xs text-text-secondary">
+                    <span className="rounded-full bg-background-tertiary px-space-2 py-space-1 text-body-xs text-text-secondary">
                       {duration}
                     </span>
                   </li>
@@ -250,9 +304,9 @@ function DemoPage() {
               </ol>
             </article>
 
-            <article className="flex min-h-[360px] flex-col rounded-lg border border-border-accent bg-background-accent p-7 text-text-primary lg:col-span-3">
+            <article className="flex min-h-[360px] flex-col rounded-lg border border-border-accent bg-background-accent p-space-6 text-text-primary lg:col-span-3">
               <div className="text-display-lg leading-[.7] font-bold text-text-accent">“</div>
-              <blockquote className="mt-7 text-heading-md leading-[1.3] font-semibold">
+              <blockquote className="mt-space-6 text-heading-md leading-[1.3] font-semibold">
                 Clarity comes from engagement, not thought.
               </blockquote>
               <div className="mt-auto flex items-center justify-between text-caption font-medium">
@@ -270,17 +324,17 @@ function DemoPage() {
             </article>
 
             <article
-              className="relative flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-background-inverse p-7 text-text-inverse lg:col-span-4"
+              className="relative flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-background-inverse p-space-6 text-text-inverse lg:col-span-4"
               id="projects"
             >
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-sm rounded-full bg-status-positive-background px-md py-sm text-label-sm font-semibold tracking-[.08em] text-status-positive-foreground uppercase">
+                <span className="inline-flex items-center gap-space-2 rounded-full bg-status-positive-background px-space-3 py-space-2 text-label-sm font-semibold tracking-[.08em] text-status-positive-foreground uppercase">
                   <span className="size-1.5 rounded-full bg-current" /> In motion
                 </span>
                 <div className="flex" aria-label="Three collaborators">
                   {['R', 'J', 'N'].map((person) => (
                     <span
-                      className="-ml-2 grid size-8 place-items-center rounded-full border-2 border-background-inverse bg-brand-background-subtle text-label-sm font-bold text-brand-foreground"
+                      className="-ml-space-2 grid size-8 place-items-center rounded-full border-2 border-background-inverse bg-brand-background-subtle text-label-sm font-bold text-brand-foreground"
                       key={person}
                     >
                       {person}
@@ -292,16 +346,16 @@ function DemoPage() {
                 <p className="font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-text-inverse/60 uppercase">
                   Featured project · 03
                 </p>
-                <h3 className="mt-2.5 text-heading-lg leading-none font-bold tracking-heading-lg">
+                <h3 className="mt-space-3 text-heading-lg leading-none font-bold tracking-heading-lg">
                   Field Notes
                   <br />
                   identity system
                 </h3>
-                <div className="mt-6 flex justify-between text-body-xs text-text-inverse/70">
+                <div className="mt-space-6 flex justify-between text-body-xs text-text-inverse/70">
                   <span>12 of 16 tasks</span>
                   <span>Due Friday</span>
                 </div>
-                <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-border-inverse">
+                <div className="mt-space-3 h-1.5 overflow-hidden rounded-full bg-border-inverse">
                   <span className="block h-full w-3/4 rounded-full bg-chart-series-1" />
                 </div>
               </div>
@@ -317,11 +371,11 @@ function DemoPage() {
             </article>
 
             <article
-              className={`${cardClasses} grid min-h-[178px] items-center gap-6 p-7 sm:grid-cols-[1fr_auto_1fr] lg:col-span-12`}
+              className={`${cardClasses} grid min-h-[178px] items-center gap-space-6 p-space-6 sm:grid-cols-[1fr_auto_1fr] lg:col-span-12`}
             >
               <div>
                 <p className={labelClasses}>System check</p>
-                <h3 className="mt-2 text-heading-md leading-tight font-semibold">
+                <h3 className="mt-space-2 text-heading-md leading-tight font-semibold">
                   Made from
                   <br />
                   <code className="rounded-sm bg-background-tertiary px-1.5 py-0.5 font-mono text-lg font-bold">
@@ -330,7 +384,7 @@ function DemoPage() {
                 </h3>
               </div>
               <div
-                className="flex rounded-full bg-background-tertiary p-sm"
+                className="flex rounded-full bg-background-tertiary p-space-2"
                 aria-label="Theme colors"
               >
                 {[
@@ -340,7 +394,7 @@ function DemoPage() {
                   'bg-chart-series-5',
                 ].map((color) => (
                   <span
-                    className={`-ml-1 size-12 rounded-full border-3 border-surface-primary first:ml-0 ${color}`}
+                    className={`-ml-space-1 size-12 rounded-full border-3 border-surface-primary first:ml-0 ${color}`}
                     key={color}
                   />
                 ))}
@@ -352,7 +406,7 @@ function DemoPage() {
           </section>
         </main>
 
-        <footer className="flex justify-between px-1 pt-7 pb-10 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase max-sm:flex-col max-sm:gap-5">
+        <footer className="flex justify-between px-space-1 pt-space-6 pb-space-8 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase max-sm:flex-col max-sm:gap-space-4">
           <span>Bento UI Admin</span>
           <span>Designed for unhurried momentum.</span>
         </footer>

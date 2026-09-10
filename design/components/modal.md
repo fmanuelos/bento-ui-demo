@@ -45,9 +45,9 @@ cancellation is unsafe.
 
 ## Responsive behavior
 
-The panel fills the available width up to `content-narrow` and retains at least
-`spacing.lg` viewport padding. Use a page or side panel for long or multi-step
-work.
+The panel fills the available width up to `container-narrow` and retains at least
+`spacing.space-4` viewport padding. Stack actions when their labels do not fit.
+Use a page or side panel for long or multi-step work.
 
 ## Accessibility
 

@@ -437,25 +437,35 @@ rounded:
   full: 9999px
 
 spacing:
-  xxs: 2px
-  xs: 4px
-  sm: 8px
-  md: 12px
-  lg: 16px
-  xl: 24px
-  2xl: 32px
-  3xl: 48px
-  4xl: 64px
+  space-1: 4px
+  space-2: 8px
+  space-3: 12px
+  space-4: 16px
+  space-6: 24px
+  space-8: 32px
+  space-12: 48px
+  space-16: 64px
+
+  # Mobile is the default range and therefore has no breakpoint token.
+  breakpoint-tablet: 640px
+  breakpoint-desktop: 1024px
+  breakpoint-wide: 1280px
+
   section-mobile: 48px
   section-tablet: 64px
   section-desktop: 96px
 
-  page-gutter-mobile: 16px
-  page-gutter-tablet: 24px
-  page-gutter-desktop: 32px
-  dashboard-gutter-mobile: 16px
-  dashboard-gutter-tablet: 20px
-  dashboard-gutter-desktop: 24px
+  page-padding-mobile: 16px
+  page-padding-tablet: 24px
+  page-padding-desktop: 32px
+  dashboard-padding-mobile: 16px
+  dashboard-padding-desktop: 24px
+
+  grid-gutter-mobile: 16px
+  grid-gutter-tablet: 24px
+
+  # Two-pixel strokes are dimensions, not general-purpose spacing.
+  focus-ring-width: 2px
 
   control-height-tiny: 32px
   control-height-small: 40px
@@ -469,10 +479,10 @@ spacing:
   sidebar-collapsed: 72px
   topbar-height: 64px
 
-  content-narrow: 480px
-  content-readable: 720px
-  content-standard: 1200px
-  content-dashboard: 1600px
+  container-narrow: 480px
+  container-readable: 720px
+  container-page: 1200px
+  container-dashboard: 1600px
 
 components:
   button-primary:
@@ -480,7 +490,7 @@ components:
     textColor: '{colors.action-primary-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-primary-hover:
     backgroundColor: '{colors.action-primary-background-hover}'
@@ -495,27 +505,27 @@ components:
   button-size-tiny:
     typography: '{typography.label-sm}'
     rounded: '{rounded.md}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
     height: '{spacing.control-height-tiny}'
   button-size-small:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
   button-size-medium:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-size-large:
     typography: '{typography.label-lg}'
     rounded: '{rounded.md}'
-    padding: '{spacing.lg}'
+    padding: '{spacing.space-4}'
     height: '{spacing.control-height-large}'
   button-size-extra-large:
     typography: '{typography.label-lg}'
     rounded: '{rounded.md}'
-    padding: '{spacing.xl}'
+    padding: '{spacing.space-6}'
     height: '{spacing.control-height-extra-large}'
 
   button-secondary:
@@ -523,7 +533,7 @@ components:
     textColor: '{colors.action-secondary-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-secondary-hover:
     backgroundColor: '{colors.action-secondary-background-hover}'
@@ -540,7 +550,7 @@ components:
     textColor: '{colors.action-outline-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-outline-hover:
     backgroundColor: '{colors.action-outline-background-hover}'
@@ -557,7 +567,7 @@ components:
     textColor: '{colors.action-ghost-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-ghost-hover:
     backgroundColor: '{colors.action-ghost-background-hover}'
@@ -574,7 +584,7 @@ components:
     textColor: '{colors.action-destructive-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-destructive-hover:
     backgroundColor: '{colors.action-destructive-background-hover}'
@@ -591,14 +601,14 @@ components:
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   input-small:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
     rounded: '{rounded.md}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
     height: '{spacing.control-height-small}'
   input-focus:
     backgroundColor: '{colors.surface-primary}'
@@ -615,24 +625,24 @@ components:
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
 
   card:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.lg}'
-    padding: '{spacing.xl}'
+    padding: '{spacing.space-6}'
   card-compact:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.md}'
-    padding: '{spacing.lg}'
+    padding: '{spacing.space-4}'
   stat-card:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.lg}'
-    padding: '{spacing.lg}'
+    padding: '{spacing.space-4}'
 
   sidebar:
     backgroundColor: '{colors.navigation-sidebar-background}'
@@ -647,7 +657,7 @@ components:
     textColor: '{colors.navigation-sidebar-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
   sidebar-item-hover:
     backgroundColor: '{colors.navigation-sidebar-item-hover}'
@@ -666,7 +676,7 @@ components:
     textColor: '{colors.text-secondary}'
     typography: '{typography.label-md}'
     rounded: '{rounded.sm}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
   tab-hover:
     backgroundColor: '{colors.action-ghost-background-hover}'
@@ -679,13 +689,13 @@ components:
     backgroundColor: '{colors.table-header-background}'
     textColor: '{colors.text-secondary}'
     typography: '{typography.label-sm}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
   table-row:
     backgroundColor: '{colors.table-row-background}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
-    padding: '{spacing.md}'
+    padding: '{spacing.space-3}'
   table-row-hover:
     backgroundColor: '{colors.table-row-hover}'
     textColor: '{colors.text-primary}'
@@ -698,63 +708,63 @@ components:
     textColor: '{colors.status-positive-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.full}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
   badge-warning:
     backgroundColor: '{colors.status-warning-background}'
     textColor: '{colors.status-warning-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.full}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
   badge-negative:
     backgroundColor: '{colors.status-negative-background}'
     textColor: '{colors.status-negative-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.full}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
   badge-info:
     backgroundColor: '{colors.status-info-background}'
     textColor: '{colors.status-info-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.full}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
   badge-neutral:
     backgroundColor: '{colors.status-neutral-background}'
     textColor: '{colors.status-neutral-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.full}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
 
   alert-success:
     backgroundColor: '{colors.feedback-success-background}'
     textColor: '{colors.feedback-success-foreground}'
     rounded: '{rounded.md}'
-    padding: '{spacing.lg}'
+    padding: '{spacing.space-4}'
   alert-warning:
     backgroundColor: '{colors.feedback-warning-background}'
     textColor: '{colors.feedback-warning-foreground}'
     rounded: '{rounded.md}'
-    padding: '{spacing.lg}'
+    padding: '{spacing.space-4}'
   alert-danger:
     backgroundColor: '{colors.feedback-danger-background}'
     textColor: '{colors.feedback-danger-foreground}'
     rounded: '{rounded.md}'
-    padding: '{spacing.lg}'
+    padding: '{spacing.space-4}'
   alert-info:
     backgroundColor: '{colors.feedback-info-background}'
     textColor: '{colors.feedback-info-foreground}'
     rounded: '{rounded.md}'
-    padding: '{spacing.lg}'
+    padding: '{spacing.space-4}'
 
   dropdown:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.md}'
-    padding: '{spacing.sm}'
+    padding: '{spacing.space-2}'
   modal:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.xl}'
-    padding: '{spacing.xl}'
+    padding: '{spacing.space-6}'
 
   # Dark entries override the color properties of the matching unqualified
   # component or state. Typography, shape, size, and spacing remain shared.
@@ -1244,9 +1254,9 @@ general body style.
 Use tabular numerals for aligned numeric columns and metrics.
 
 Choose display and heading roles according to content and available space, not
-the HTML element name. A landing-page hero may use `heading-xl` in compact space,
-`display-md` in intermediate space, and `display-lg` or `display-xl` when expanded
-without changing its semantic heading level.
+the HTML element name. A landing-page hero may use `heading-xl` in mobile space,
+`display-md` in tablet space, and `display-lg` or `display-xl` in desktop and wide
+space without changing its semantic heading level.
 
 ### Text resilience and localization
 
@@ -1266,18 +1276,36 @@ visual `display-*` or `heading-*` role never replaces that structure.
 
 ## Layout
 
-The base spacing scale uses a primarily 4px rhythm, with 2px reserved for
-exceptional micro-adjustments. Use named tokens instead of arbitrary values.
+The base spacing scale uses a 4px rhythm. Numeric suffixes express multiples of
+4px, and intentionally missing suffixes are not available spacing steps. Use
+named tokens instead of arbitrary values. Two-pixel strokes use semantic
+dimension tokens such as `focus-ring-width`; they are not general spacing.
 
 The DESIGN.md schema has no general dimension group, so the `spacing` map also
-contains semantic heights, widths, gutters, and content limits. Treat
-`xxs`–`4xl` as the base spacing scale and the remaining entries as layout
-dimensions, not interchangeable spacing steps.
+contains breakpoints, semantic heights, widths, gutters, padding, and content
+limits. Treat `space-*` as the base spacing scale and the remaining entries as
+layout dimensions, not interchangeable spacing steps.
 
-- `section-*` and `*-gutter-*` define composition spacing.
+- `breakpoint-*` defines page-layout thresholds; mobile is the default and has no
+  breakpoint token.
+- `section-*`, `*-padding-*`, and `grid-gutter-*` define composition spacing.
 - `control-height-*` and `touch-target-min` define control dimensions.
 - `sidebar-*` and `topbar-height` define navigation-shell dimensions.
-- `content-*` defines content-width limits.
+- `container-*` defines content-width limits.
+
+Use automatic inline margins to center bounded containers. Apply page padding
+outside the container limit so full-width backgrounds can extend to the viewport
+while their content remains aligned. A section owns one block separation, applied
+as a gap or padding but not duplicated with an additional section margin.
+
+Treat `topbar-height` as the normal minimum height. Preserve brand and primary
+utilities, move secondary utilities into an accessible overflow control when
+needed, and never clip enlarged or translated labels to enforce a fixed bar.
+
+Use `grid-gutter-mobile` by default and `grid-gutter-tablet` from the tablet range
+upward. A landing-page grid should normally use intrinsic columns with a useful
+minimum item width. A 12-column grid is reserved for complex desktop and wide
+dashboard composition; it is not required for ordinary card groups.
 
 The canonical control-height vocabulary is `tiny`, `small`, `medium`, `large`,
 and `extra-large`. The abbreviated `sm`, `md`, `lg`, and `xl` height names are
@@ -1285,29 +1313,40 @@ deprecated compatibility aliases and must not be used by new work.
 
 ### Website mode
 
-Use page gutters, readable content widths, and section-spacing tokens. Full-width
+Use page padding, readable content widths, and section-spacing tokens. Full-width
 backgrounds may extend to the viewport while content stays aligned to its
-container.
+container. Landing-page navigation keeps the brand and primary action visible and
+uses an accessible disclosure whenever the destination links do not fit; never
+remove primary destinations without an equivalent control.
 
-- `content-narrow` supports authentication and focused tasks.
-- `content-readable` supports prose, guidance, and form-heavy pages.
-- `content-standard` supports general website and application content.
-- `content-dashboard` supports data-heavy workspaces; tables and visualizations
+- `container-narrow` supports authentication and focused tasks.
+- `container-readable` supports prose, guidance, and form-heavy pages.
+- `container-page` supports general website and application content.
+- `container-dashboard` supports data-heavy dashboards; tables and visualizations
   may exceed it when the task benefits.
+
+Landing pages use `page-padding-mobile`, `page-padding-tablet`, and
+`page-padding-desktop` with the matching system ranges. Section separation uses
+`section-mobile`, `section-tablet`, and `section-desktop`; wide pages retain the
+desktop section and page-padding values.
 
 ### Admin mode
 
-Use dashboard gutters, efficient grouping, compact controls, tables, filters,
-and a fluid workspace. Major groups generally use 24–32px separation; content
-within groups generally uses 16–24px.
+Use dashboard padding, efficient grouping, compact controls, tables, filters, and
+a fluid dashboard. Major groups generally use `space-6`–`space-8` separation;
+content within groups generally uses `space-4`–`space-6`.
 
-The expanded shell uses the sidebar and top-bar dimensions in frontmatter. When
-navigation and content cannot coexist comfortably, replace the persistent
-sidebar with temporary navigation.
+Mobile and tablet dashboards use `dashboard-padding-mobile` and temporary
+navigation. Desktop and wide dashboards use `dashboard-padding-desktop` and may
+use the persistent sidebar and top-bar dimensions in frontmatter. When navigation
+and content cannot coexist comfortably, replace the persistent sidebar with
+temporary navigation even if the viewport is in a larger range.
 
-A 12-column desktop grid is a composition aid for complex workspaces, not a
-fixed device contract. Give tables and primary analysis surfaces width before
-secondary panels.
+A 12-column desktop or wide grid is a composition aid for complex dashboards,
+not a fixed device contract. Give tables and primary analysis surfaces width
+before secondary panels. Wide layouts may retain a secondary inspector or expose
+additional essential data columns when the task benefits; adding another card
+column alone does not justify wide-only behavior.
 
 ### Responsive behavior
 
@@ -1317,14 +1356,50 @@ or mobile detail views.
 
 Page composition uses these system ranges:
 
-- Compact: below 40rem / 640px.
-- Intermediate: 40rem through below 64rem / 640–1023px.
-- Expanded: 64rem / 1024px and above.
+- Mobile: below 40rem / 640px.
+- Tablet: 40rem through below 64rem / 640–1023px.
+- Desktop: 64rem through below 80rem / 1024–1279px.
+- Wide: 80rem / 1280px and above.
 
-These are page-layout ranges, not device types. Prefer container-aware component
-behavior and transform a component when its content no longer fits, not merely
-when a named range begins. Adapters may map the ranges to framework-specific
-breakpoint names.
+These names describe page-layout ranges, not device detection. Prefer
+container-aware component behavior and transform a component when its content no
+longer fits, not merely when a named range begins. Global breakpoints govern page
+padding, navigation shells, and major composition; component fit governs cards,
+forms, toolbars, tables, and feature grids. Adapters may map the ranges to
+framework-specific breakpoint names.
+
+Landing-page defaults:
+
+- Mobile heroes, content sections, forms, card groups, calls to action, and footer
+  groups use a single-column flow. Place hero copy before media.
+- Tablet layouts may introduce two columns when each region retains a useful
+  minimum width. Inline navigation appears only when its labels fit.
+- Desktop and wide layouts may use split heroes and richer composition while
+  keeping prose within `container-readable` and general content within
+  `container-page`.
+- Feature and card grids use intrinsic columns or container queries. Do not wait
+  for the wide range merely to add another card column.
+- Calls to action wrap before they overflow. Full-width mobile actions are
+  optional rather than automatic.
+
+Dashboard defaults:
+
+- Mobile and tablet layouts use temporary sidebar navigation. Toolbars, filters,
+  forms, and panels stack or wrap while keeping the primary action visible.
+- Desktop and wide layouts may use persistent navigation and the 12-column
+  composition grid. Sidebar collapse remains a user or task state rather than a
+  separate breakpoint.
+- Prefer table and data-grid column prioritization, then contained horizontal
+  scrolling, then stacked records or a detail view. Preserve information,
+  actions, focus, and selection through every transformation.
+- Forms use one column by default and add a column when the form container, field
+  labels, and validation content fit. Panels give primary data surfaces width
+  before secondary summaries.
+- Modals retain at least `space-4` viewport clearance and stack actions when
+  needed. Use a page or side panel for long or multi-step work.
+- Density responds to task and input capability rather than viewport width.
+  Small and tiny controls remain limited to appropriate pointer-oriented or
+  keyboard-heavy interfaces.
 
 ### Reading order and bidirectionality
 

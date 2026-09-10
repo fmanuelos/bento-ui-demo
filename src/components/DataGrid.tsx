@@ -114,7 +114,7 @@ export function DataGrid<T>({
                 key={column.id}
                 role="columnheader"
                 aria-colindex={index + 1}
-                className={`h-control-height-small border-b border-table-border px-md ${column.numeric ? 'text-right' : ''}`}
+                className={`h-control-height-small border-b border-table-border px-space-3 ${column.numeric ? 'text-right' : ''}`}
               >
                 {column.header}
               </th>
@@ -150,7 +150,7 @@ export function DataGrid<T>({
                       onKeyDown={(event) =>
                         handleKeyDown(event, rowIndex, columnIndex, rowId, column)
                       }
-                      className={`border-b border-table-border px-md py-md outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right tabular-nums' : ''}`}
+                      className={`border-b border-table-border px-space-3 py-space-3 outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right tabular-nums' : ''}`}
                     >
                       {editing && column.edit
                         ? column.edit(row, () => {
@@ -169,7 +169,7 @@ export function DataGrid<T>({
               <td
                 role="gridcell"
                 colSpan={columns.length}
-                className="px-xl py-2xl text-center text-text-secondary"
+                className="px-space-6 py-space-8 text-center text-text-secondary"
               >
                 {emptyMessage}
               </td>
@@ -180,7 +180,7 @@ export function DataGrid<T>({
               <td
                 role="gridcell"
                 colSpan={columns.length}
-                className="px-xl py-2xl text-center text-text-secondary"
+                className="px-space-6 py-space-8 text-center text-text-secondary"
               >
                 Loading data…
               </td>

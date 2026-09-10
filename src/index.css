@@ -216,7 +216,7 @@
 
 @media (forced-colors: active) {
   :focus-visible {
-    outline: var(--spacing-xxs) solid Highlight !important;
+    outline: var(--spacing-focus-ring-width) solid Highlight !important;
   }
 
   [aria-current='page'],

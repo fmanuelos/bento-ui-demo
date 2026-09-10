@@ -65,7 +65,7 @@ export function DocsLayout() {
 
   const closeMobile = () => setMobileOpen(false)
   const navigation = (
-    <nav aria-label="Documentation navigation" className="grid gap-xl p-lg">
+    <nav aria-label="Documentation navigation" className="grid gap-space-6 p-space-4">
       {docsNavigation.map((section) => (
         <section
           key={section.title}
@@ -73,11 +73,11 @@ export function DocsLayout() {
         >
           <h2
             id={`docs-nav-${section.title.toLocaleLowerCase()}`}
-            className="mt-0 mb-sm px-md font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-navigation-sidebar-foreground uppercase"
+            className="mt-0 mb-space-2 px-space-3 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-navigation-sidebar-foreground uppercase"
           >
             {section.title}
           </h2>
-          <div className="grid gap-xxs">
+          <div className="grid gap-space-1">
             {section.items.map((item) => (
               <NavLink
                 key={item.path}
@@ -89,7 +89,7 @@ export function DocsLayout() {
                 }
                 onClick={closeMobile}
                 className={({ isActive }) =>
-                  `rounded-md border-l-4 px-md py-sm text-body-sm font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`
+                  `rounded-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`
                 }
               >
                 {item.title}
@@ -105,13 +105,13 @@ export function DocsLayout() {
     <div className="min-h-screen bg-background-secondary text-text-primary">
       <a
         href="#docs-content"
-        className="fixed top-md left-md z-50 -translate-y-24 rounded-md bg-action-primary-background-default px-md py-sm font-semibold text-action-primary-foreground focus:translate-y-0"
+        className="fixed top-space-3 left-space-3 z-50 -translate-y-24 rounded-md bg-action-primary-background-default px-space-3 py-space-2 font-semibold text-action-primary-foreground focus:translate-y-0"
       >
         Skip to content
       </a>
       <header
         inert={mobileOpen ? true : undefined}
-        className="fixed inset-x-0 top-0 z-30 flex h-topbar-height items-center gap-md border-b border-navigation-topbar-border bg-navigation-topbar-background px-page-gutter-mobile sm:px-page-gutter-tablet lg:px-page-gutter-desktop"
+        className="fixed inset-x-0 top-0 z-30 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-page-padding-mobile sm:px-page-padding-tablet lg:px-page-padding-desktop"
       >
         <Button
           ref={menuButtonRef}
@@ -136,7 +136,7 @@ export function DocsLayout() {
         </Button>
         <NavLink
           to="/docs"
-          className="flex min-w-0 items-center gap-sm font-bold text-text-primary no-underline"
+          className="flex min-w-0 items-center gap-space-2 font-bold text-text-primary no-underline"
         >
           <span className="grid size-7 shrink-0 place-items-center rounded-full bg-action-primary-background-default text-action-primary-foreground">
             <Spark />
@@ -146,7 +146,7 @@ export function DocsLayout() {
         </NavLink>
         <a
           href="/"
-          className="ml-auto hidden rounded-md px-md py-sm text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block"
+          className="ml-auto hidden rounded-md px-space-3 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block"
         >
           View demo
         </a>
@@ -203,7 +203,7 @@ export function DocsLayout() {
             aria-label="Documentation navigation"
             className="h-full w-[min(88vw,var(--spacing-sidebar-expanded))] overflow-y-auto bg-navigation-sidebar-background text-navigation-sidebar-foreground"
           >
-            <div className="sticky top-0 z-10 flex h-topbar-height items-center justify-between border-b border-border-inverse bg-navigation-sidebar-background px-lg font-bold text-navigation-sidebar-foreground-strong">
+            <div className="sticky top-0 z-10 flex h-topbar-height items-center justify-between border-b border-border-inverse bg-navigation-sidebar-background px-space-4 font-bold text-navigation-sidebar-foreground-strong">
               <span>Documentation</span>
               <Button
                 variant="ghost"
@@ -236,9 +236,9 @@ export function DocsLayout() {
         id="docs-content"
         tabIndex={-1}
         inert={mobileOpen ? true : undefined}
-        className="min-h-screen min-w-0 px-page-gutter-mobile pt-[calc(var(--spacing-topbar-height)+var(--spacing-2xl))] pb-section-mobile outline-none sm:px-page-gutter-tablet sm:pb-section-tablet lg:ml-sidebar-expanded lg:px-page-gutter-desktop lg:pb-section-desktop"
+        className="min-h-screen min-w-0 px-page-padding-mobile pt-[calc(var(--spacing-topbar-height)+var(--spacing-space-8))] pb-section-mobile outline-none sm:px-page-padding-tablet sm:pb-section-tablet lg:ml-sidebar-expanded lg:px-page-padding-desktop lg:pb-section-desktop"
       >
-        <div className="mx-auto grid w-full max-w-content-standard min-w-0 gap-3xl">
+        <div className="mx-auto grid w-full max-w-container-page min-w-0 gap-space-12">
           <Outlet />
         </div>
       </main>

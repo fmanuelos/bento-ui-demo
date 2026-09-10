@@ -38,12 +38,12 @@ export function FieldFrame({
   const messageStatus = error ? 'invalid' : status
 
   return (
-    <div className="grid gap-sm text-label-md font-semibold text-text-primary">
-      <label className="flex items-baseline justify-between gap-lg" htmlFor={id}>
+    <div className="grid gap-space-2 text-label-md font-semibold text-text-primary">
+      <label className="flex items-baseline justify-between gap-space-4" htmlFor={id}>
         <span>
           {label}
           {required && (
-            <span className="ml-xs text-text-danger" aria-hidden="true">
+            <span className="ml-space-1 text-text-danger" aria-hidden="true">
               *
             </span>
           )}

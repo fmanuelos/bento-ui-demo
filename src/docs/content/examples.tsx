@@ -153,7 +153,7 @@ function NavigationExample() {
         { href: '#settings', label: 'Settings', icon: <span>⚙</span> },
       ]}
       utilities={<StatusBadge variant="positive">Online</StatusBadge>}
-      className="relative !min-h-content-narrow overflow-hidden rounded-lg border border-border-secondary [&>aside]:absolute [&>header]:absolute [&>header]:inset-x-0 [&>main]:pt-20"
+      className="relative !min-h-container-narrow overflow-hidden rounded-lg border border-border-secondary [&>aside]:absolute [&>header]:absolute [&>header]:inset-x-0 [&>main]:pt-[calc(var(--spacing-topbar-height)+var(--spacing-space-4))]"
     >
       <Card heading={<h3 className="m-0 text-heading-sm">Workspace</h3>}>
         <p className="m-0 text-body-sm text-text-secondary">
@@ -166,15 +166,15 @@ function NavigationExample() {
 
 export const componentExamples: Record<string, ReactNode> = {
   button: (
-    <div className="grid gap-lg">
-      <div className="flex flex-wrap items-center gap-md">
+    <div className="grid gap-space-4">
+      <div className="flex flex-wrap items-center gap-space-3">
         <Button size="tiny">Tiny</Button>
         <Button size="small">Small</Button>
         <Button size="medium">Medium</Button>
         <Button size="large">Large</Button>
         <Button size="extra-large">Extra-large</Button>
       </div>
-      <div className="flex flex-wrap items-center gap-md">
+      <div className="flex flex-wrap items-center gap-space-3">
         <Button size="tiny" icon={ArrowIcon}>
           Tiny
         </Button>
@@ -191,7 +191,7 @@ export const componentExamples: Record<string, ReactNode> = {
           Extra-large
         </Button>
       </div>
-      <div className="flex flex-wrap items-center gap-md">
+      <div className="flex flex-wrap items-center gap-space-3">
         <Button>Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="outline">Outline</Button>
@@ -202,7 +202,7 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   input: (
-    <div className="grid max-w-content-narrow gap-lg">
+    <div className="grid max-w-container-narrow gap-space-4">
       <Input
         label="Project name"
         helperText="Use a name your team will recognize."
@@ -219,7 +219,7 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   textarea: (
-    <div className="max-w-content-narrow">
+    <div className="max-w-container-narrow">
       <Textarea
         label="Project description"
         helperText="Describe the intended outcome."
@@ -229,7 +229,7 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   select: (
-    <div className="max-w-content-narrow">
+    <div className="max-w-container-narrow">
       <Select
         label="Project status"
         placeholder="Choose a status"
@@ -242,17 +242,17 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   listbox: (
-    <div className="max-w-content-narrow">
+    <div className="max-w-container-narrow">
       <Listbox label="Project owners" options={people} multiple defaultValue={['amara']} />
     </div>
   ),
   combobox: (
-    <div className="max-w-content-narrow">
+    <div className="max-w-container-narrow">
       <Combobox label="Project owner" options={people} helperText="Type to filter people." />
     </div>
   ),
   checkbox: (
-    <div className="grid gap-sm">
+    <div className="grid gap-space-2">
       <Checkbox
         label="Email notifications"
         description="Receive updates about project activity."
@@ -277,7 +277,7 @@ export const componentExamples: Record<string, ReactNode> = {
     />
   ),
   switch: (
-    <div className="max-w-content-narrow">
+    <div className="max-w-container-narrow">
       <Switch label="Email notifications" description="Changes save immediately." defaultChecked />
     </div>
   ),
@@ -318,7 +318,7 @@ export const componentExamples: Record<string, ReactNode> = {
   table: <TableExample />,
   'data-grid': <DataGridExample />,
   'status-badge': (
-    <div className="flex flex-wrap gap-sm">
+    <div className="flex flex-wrap gap-space-2">
       <StatusBadge variant="positive">Active</StatusBadge>
       <StatusBadge variant="warning">At risk</StatusBadge>
       <StatusBadge variant="negative">Blocked</StatusBadge>
@@ -327,7 +327,7 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   alert: (
-    <div className="grid gap-md">
+    <div className="grid gap-space-3">
       <Alert title="Changes saved" variant="success">
         Your project settings are up to date.
       </Alert>
@@ -350,7 +350,7 @@ export const componentExamples: Record<string, ReactNode> = {
   ),
   navigation: <NavigationExample />,
   card: (
-    <div className="grid gap-lg sm:grid-cols-2">
+    <div className="grid gap-space-4 sm:grid-cols-2">
       <Card
         heading={<h3 className="m-0 text-heading-sm">Project brief</h3>}
         footer={<Button variant="outline">View details</Button>}

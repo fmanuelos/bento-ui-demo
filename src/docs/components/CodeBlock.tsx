@@ -13,7 +13,7 @@ export function CodeBlock({ code, label = 'Example code' }: CodeBlockProps) {
 
   return (
     <div className="overflow-hidden rounded-lg border border-border-secondary bg-background-inverse text-text-inverse">
-      <div className="flex items-center justify-between gap-md border-b border-border-inverse px-lg py-sm">
+      <div className="flex items-center justify-between gap-space-3 border-b border-border-inverse px-space-4 py-space-2">
         <span className="text-label-sm font-semibold text-navigation-sidebar-foreground">
           {label}
         </span>
@@ -26,7 +26,7 @@ export function CodeBlock({ code, label = 'Example code' }: CodeBlockProps) {
           {copied ? 'Copied' : 'Copy'}
         </Button>
       </div>
-      <pre className="m-0 overflow-x-auto p-lg text-body-sm leading-relaxed">
+      <pre className="m-0 overflow-x-auto p-space-4 text-body-sm leading-relaxed">
         <code className="!bg-transparent !p-0">{code}</code>
       </pre>
     </div>

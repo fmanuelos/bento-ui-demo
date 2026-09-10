@@ -7,7 +7,7 @@ zoom, and input capability without shrinking essential text or targets.
 
 ## Contract
 
-- Use compact, intermediate, and expanded as system range names; framework
+- Use mobile, tablet, desktop, and wide as system range names; framework
   breakpoint names belong in adapters.
 - Transform a component when its content no longer fits or its task becomes hard
   to complete, not solely at a range boundary.
@@ -24,9 +24,17 @@ zoom, and input capability without shrinking essential text or targets.
 
 ## Range defaults
 
-- Compact: below 40rem / 640px.
-- Intermediate: 40rem through below 64rem / 640–1023px.
-- Expanded: 64rem / 1024px and above.
+- Mobile: below 40rem / 640px.
+- Tablet: 40rem through below 64rem / 640–1023px.
+- Desktop: 64rem through below 80rem / 1024–1279px.
+- Wide: 80rem / 1280px and above.
 
 Adapters may map these defaults to platform-specific capabilities while
-preserving the transformation rules.
+preserving the transformation rules. These are layout ranges rather than device
+detection. Use global ranges for page padding, navigation shells, and major page
+composition. Use component or container fit for cards, forms, toolbars, tables,
+data grids, and feature grids.
+
+Wide behavior must solve a documented layout problem, such as preserving a
+secondary dashboard panel or exposing additional essential data columns. Do not
+use the wide range only to add another card column.

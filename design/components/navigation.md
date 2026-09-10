@@ -34,10 +34,14 @@ the dialog or disclosure pattern; closing restores focus to its trigger.
 
 ## Responsive behavior
 
-Replace the persistent sidebar with temporary navigation when it cannot coexist
-comfortably with the workspace, normally in the compact range. Do not squeeze it
-beside a narrow workspace. Longer translations may trigger the transformation
-earlier.
+Use temporary sidebar navigation in the mobile and tablet ranges. Desktop and
+wide layouts may use persistent navigation when it coexists comfortably with the
+dashboard. Do not squeeze it beside a narrow dashboard. Longer translations,
+zoom, or a constrained container may trigger the temporary form earlier.
+
+Landing-page navigation keeps primary destinations available through an
+accessible disclosure whenever inline links do not fit. Hiding the links without
+an equivalent control is not a responsive transformation.
 
 ## Accessibility
 

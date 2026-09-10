@@ -82,13 +82,13 @@ export function Tabs({
 
   return (
     <div
-      className={`${orientation === 'vertical' ? 'grid grid-cols-[auto_1fr] gap-xl' : ''} ${className}`}
+      className={`${orientation === 'vertical' ? 'grid grid-cols-[auto_1fr] gap-space-6' : ''} ${className}`}
     >
       <div
         role="tablist"
         aria-label={label}
         aria-orientation={orientation}
-        className={`${orientation === 'horizontal' ? 'flex overflow-x-auto border-b border-border-secondary' : 'grid content-start'} gap-xs`}
+        className={`${orientation === 'horizontal' ? 'flex overflow-x-auto border-b border-border-secondary' : 'grid content-start'} gap-space-1`}
       >
         {items.map((item, index) => {
           const isSelected = item.id === selected.id
@@ -107,7 +107,7 @@ export function Tabs({
               disabled={item.disabled}
               onClick={() => choose(item.id)}
               onKeyDown={(event) => handleKeyDown(event, index, item.id)}
-              className={`relative min-h-control-height-small shrink-0 rounded-sm px-md text-label-md font-semibold transition outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring disabled:cursor-not-allowed disabled:text-text-disabled ${isSelected ? 'bg-background-accent text-text-accent after:absolute after:inset-x-md after:bottom-0 after:h-0.5 after:bg-current' : 'text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary'}`}
+              className={`relative min-h-control-height-small shrink-0 rounded-sm px-space-3 text-label-md font-semibold transition outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring disabled:cursor-not-allowed disabled:text-text-disabled ${isSelected ? 'after:inset-x-md bg-background-accent text-text-accent after:absolute after:bottom-0 after:h-0.5 after:bg-current' : 'text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary'}`}
             >
               {item.label}
             </button>
@@ -119,7 +119,7 @@ export function Tabs({
         role="tabpanel"
         tabIndex={0}
         aria-labelledby={`${generatedId}-tab-${selected.id}`}
-        className="pt-lg outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+        className="pt-space-4 outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
       >
         {selected.content}
       </div>

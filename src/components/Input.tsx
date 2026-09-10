@@ -53,7 +53,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-invalid={Boolean(error) || status === 'invalid'}
         className={[
           fieldControlBase,
-          canonicalSize === 'small' ? 'h-control-height-small px-sm' : 'h-control-height-medium',
+          canonicalSize === 'small'
+            ? 'h-control-height-small px-space-2'
+            : 'h-control-height-medium',
           variant === 'search' ? 'bg-surface-secondary' : '',
           fieldStatusClasses[error ? 'invalid' : status],
           className,
