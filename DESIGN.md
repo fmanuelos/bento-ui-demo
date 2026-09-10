@@ -438,9 +438,13 @@ rounded:
 
 spacing:
   space-0: 0px
+  space-0-5: 2px
   space-1: 4px
+  space-1-5: 6px
   space-2: 8px
+  space-2-5: 10px
   space-3: 12px
+  space-3-5: 14px
   space-4: 16px
   space-5: 20px
   space-6: 24px
@@ -1290,14 +1294,19 @@ visual `display-*` or `heading-*` role never replaces that structure.
 
 ## Layout
 
-The base spacing scale uses a 4px rhythm. Numeric suffixes express multiples of
-4px, and intentionally missing suffixes are not available spacing steps. Use
-named tokens instead of arbitrary values. Two-pixel strokes use semantic
-dimension tokens such as `focus-ring-width`; they are not general spacing.
-`space-0` is available for responsive and state-based resets. Use `space-1`
-through `space-10` for component composition and the larger steps for generic
-layout spacing. When spacing has a defined layout role, prefer its semantic token,
-such as `section-desktop`, over an equivalent `space-*` value.
+The primary spacing scale uses a 4px rhythm. Whole-number numeric suffixes express
+multiples of 4px. The `space-*-5` tokens provide controlled 2px half-step
+refinements for compact internal component spacing and optical adjustment; do not
+use them for page padding, grid gutters, section spacing, or general layout.
+Intentionally missing suffixes are not available spacing steps. Use named tokens
+instead of arbitrary values.
+
+`space-0` is available for responsive and state-based resets. `space-0-5` is a
+general spacing token, while two-pixel strokes use semantic dimension tokens such
+as `focus-ring-width`. Use `space-1` through `space-10` for component composition
+and the larger steps for generic layout spacing. When spacing has a defined layout
+role, prefer its semantic token, such as `section-desktop`, over an equivalent
+`space-*` value.
 
 The DESIGN.md schema has no general dimension group, so the `spacing` map also
 contains breakpoints, semantic heights, widths, gutters, padding, and content
