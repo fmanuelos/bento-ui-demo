@@ -1,7 +1,10 @@
 import { type ReactNode } from 'react'
 
 export type FieldStatus = 'default' | 'success' | 'warning' | 'invalid'
-export type FieldSize = 'compact' | 'standard'
+export type CanonicalFieldSize = 'small' | 'medium'
+/** @deprecated Use small or medium. */
+export type LegacyFieldSize = 'compact' | 'standard'
+export type FieldSize = CanonicalFieldSize | LegacyFieldSize
 
 export type FieldFrameProps = {
   id: string

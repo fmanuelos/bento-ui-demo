@@ -35,9 +35,15 @@ export const componentDocs = [
       },
       {
         name: 'size',
-        type: "'sm' | 'md' | 'lg' | 'icon'",
-        defaultValue: "'md'",
-        description: 'Uses compact, standard, prominent CTA, or square icon sizing.',
+        type: "'tiny' | 'small' | 'medium' | 'large' | 'extra-large'",
+        defaultValue: "'medium'",
+        description: 'Sets dimensions, typography, icon size, and icon/label gap.',
+      },
+      {
+        name: 'iconOnly',
+        type: 'boolean',
+        defaultValue: 'false',
+        description: 'Makes the selected size square; requires an accessible name.',
       },
       {
         name: 'loading',
@@ -59,7 +65,7 @@ export const componentDocs = [
     ],
     variants: [
       'Primary, secondary, outline, ghost, and destructive treatments.',
-      'Compact, standard, prominent CTA, and icon sizes.',
+      'Tiny, small, medium, large, and extra-large sizes with independent icon-only presentation.',
       'Default, hover, focus, active, loading, disabled, pressed, and expanded states.',
     ],
     accessibility: [
@@ -68,12 +74,12 @@ export const componentDocs = [
       'Use aria-pressed for toggles and aria-expanded with aria-controls for disclosures.',
     ],
     responsive:
-      'Use compact only in dense pointer-oriented tools. Standard and icon sizes preserve the touch target in touch contexts. Reserve prominent sizing for one major landing-page or onboarding CTA.',
+      'Use tiny and small in dense interfaces only when a non-overlapping 44px target is available. Medium is the default; reserve extra-large for one public-facing CTA group.',
     theme:
       'Every variant uses semantic action tokens; focus remains visible in light and demo dark themes.',
     mistakes: [
       'Do not use a button for navigation.',
-      'Do not use prominent sizing for dashboard toolbars, repeated actions, or ordinary forms.',
+      'Do not use large or extra-large sizing for dashboard toolbars or repeated actions.',
       'Do not remove the label during loading.',
       'Name the destructive outcome instead of relying on red.',
     ],
@@ -90,9 +96,9 @@ export const componentDocs = [
       { name: 'label', type: 'string', description: 'Required visible and accessible label.' },
       {
         name: 'size',
-        type: "'compact' | 'standard'",
-        defaultValue: "'standard'",
-        description: 'Controls density.',
+        type: "'small' | 'medium'",
+        defaultValue: "'medium'",
+        description: 'Aligns compact filters and standard fields with shared control heights.',
       },
       {
         name: 'variant',
@@ -120,7 +126,7 @@ export const componentDocs = [
       classNameProp,
     ],
     variants: [
-      'Standard, compact, and search.',
+      'Medium, small, and search.',
       'Empty, populated, read-only, invalid, warning, success, and disabled states.',
     ],
     accessibility: [
@@ -129,7 +135,7 @@ export const componentDocs = [
       'Choose the correct native type and autocomplete value.',
     ],
     responsive:
-      'Fields fill their container; labels, help, and errors wrap. Prefer standard height when touch input is expected.',
+      'Fields fill their container; labels, help, and errors wrap. Prefer medium height when touch input is expected.',
     theme: 'Surface, text, border, disabled, validation, and focus roles are semantic tokens.',
     mistakes: [
       'A placeholder is not a label.',
@@ -210,9 +216,9 @@ export const componentDocs = [
       },
       {
         name: 'size',
-        type: "'compact' | 'standard'",
-        defaultValue: "'standard'",
-        description: 'Controls density.',
+        type: "'small' | 'medium'",
+        defaultValue: "'medium'",
+        description: 'Aligns compact and standard native selects with shared control heights.',
       },
       {
         name: 'helperText / error',
@@ -227,7 +233,7 @@ export const componentDocs = [
       classNameProp,
     ],
     variants: [
-      'Compact and standard native selects.',
+      'Small and medium native selects.',
       'Unselected, selected, focus, invalid, and disabled states.',
     ],
     accessibility: [

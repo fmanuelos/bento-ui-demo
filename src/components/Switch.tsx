@@ -44,7 +44,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
           className="peer sr-only"
         />
         <span
-          className="relative h-xl w-control-height-lg shrink-0 rounded-full border-2 border-border-strong bg-background-tertiary transition peer-checked:border-action-primary-background-default peer-checked:bg-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:border-border-disabled peer-disabled:bg-background-disabled after:absolute after:top-xxs after:left-xxs after:size-lg after:rounded-full after:bg-surface-primary after:transition-transform peer-checked:after:translate-x-5"
+          className="relative h-xl w-control-height-medium shrink-0 rounded-full border-2 border-border-strong bg-background-tertiary transition peer-checked:border-action-primary-background-default peer-checked:bg-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:border-border-disabled peer-disabled:bg-background-disabled after:absolute after:top-xxs after:left-xxs after:size-lg after:rounded-full after:bg-surface-primary after:transition-transform peer-checked:after:translate-x-5"
           aria-hidden="true"
         />
       </label>

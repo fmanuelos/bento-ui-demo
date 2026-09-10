@@ -82,7 +82,7 @@ export function NavigationShell({
             aria-current={current ? 'page' : undefined}
             title={!mobile && collapsed ? item.label : undefined}
             onClick={() => mobile && setMobileOpen(false)}
-            className={`flex min-h-control-height-md items-center gap-md rounded-md px-md text-label-md font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${current ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`}
+            className={`flex min-h-control-height-small items-center gap-md rounded-md px-md text-label-md font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${current ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`}
           >
             {item.icon && (
               <span className="grid size-5 shrink-0 place-items-center" aria-hidden="true">
@@ -114,7 +114,8 @@ export function NavigationShell({
         <Button
           ref={mobileTriggerRef}
           variant="ghost"
-          size="icon"
+          size="medium"
+          iconOnly
           className="lg:hidden"
           aria-label="Open navigation"
           aria-expanded={mobileOpen}
@@ -142,7 +143,8 @@ export function NavigationShell({
           <div className="min-w-0 overflow-hidden">{brand}</div>
           <Button
             variant="ghost"
-            size="icon"
+            size="medium"
+            iconOnly
             className="shrink-0 text-navigation-sidebar-foreground"
             aria-label={collapsed ? 'Expand navigation' : 'Collapse navigation'}
             aria-expanded={!collapsed}
@@ -184,7 +186,8 @@ export function NavigationShell({
               <div>{brand}</div>
               <Button
                 variant="ghost"
-                size="icon"
+                size="medium"
+                iconOnly
                 className="text-navigation-sidebar-foreground"
                 aria-label="Close navigation"
                 onClick={() => {

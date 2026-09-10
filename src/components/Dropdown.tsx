@@ -112,7 +112,7 @@ export function Dropdown({
                 item.onSelect()
                 close()
               }}
-              className={`flex min-h-control-height-md w-full items-center gap-md rounded-md px-md py-sm text-left text-body-sm outline-none hover:bg-action-ghost-background-hover focus-visible:bg-action-ghost-background-hover focus-visible:outline-3 focus-visible:outline-focus-ring disabled:cursor-not-allowed disabled:text-text-disabled ${item.destructive ? 'text-text-danger' : ''}`}
+              className={`flex min-h-control-height-small w-full items-center gap-md rounded-md px-md py-sm text-left text-body-sm outline-none hover:bg-action-ghost-background-hover focus-visible:bg-action-ghost-background-hover focus-visible:outline-3 focus-visible:outline-focus-ring disabled:cursor-not-allowed disabled:text-text-disabled ${item.destructive ? 'text-text-danger' : ''}`}
             >
               {item.icon && <span aria-hidden="true">{item.icon}</span>}
               {item.label}

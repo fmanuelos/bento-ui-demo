@@ -116,7 +116,8 @@ export function DocsLayout() {
         <Button
           ref={menuButtonRef}
           variant="ghost"
-          size="icon"
+          size="medium"
+          iconOnly
           className="lg:hidden"
           aria-label="Open documentation navigation"
           aria-expanded={mobileOpen}
@@ -151,7 +152,8 @@ export function DocsLayout() {
         </a>
         <Button
           variant="ghost"
-          size="icon"
+          size="medium"
+          iconOnly
           aria-label={darkMode ? 'Use light mode' : 'Use dark mode'}
           onClick={() => setDarkMode((value) => !value)}
         >
@@ -205,7 +207,8 @@ export function DocsLayout() {
               <span>Documentation</span>
               <Button
                 variant="ghost"
-                size="icon"
+                size="medium"
+                iconOnly
                 className="text-navigation-sidebar-foreground"
                 aria-label="Close documentation navigation"
                 onClick={() => {

@@ -1,11 +1,15 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'
-export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon'
+export type CanonicalButtonSize = 'tiny' | 'small' | 'medium' | 'large' | 'extra-large'
+/** @deprecated Use the canonical descriptive size names. */
+export type LegacyButtonSize = 'sm' | 'md' | 'lg' | 'icon'
+export type ButtonSize = CanonicalButtonSize | LegacyButtonSize
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant
   size?: ButtonSize
+  iconOnly?: boolean
   icon?: ReactNode
   iconPosition?: 'start' | 'end'
   loading?: boolean
@@ -25,17 +29,43 @@ const variantClasses: Record<ButtonVariant, string> = {
     'border-action-destructive-background-default bg-action-destructive-background-default text-action-destructive-foreground hover:border-action-destructive-background-hover hover:bg-action-destructive-background-hover active:border-action-destructive-background-active active:bg-action-destructive-background-active disabled:border-action-destructive-background-disabled disabled:bg-action-destructive-background-disabled disabled:text-action-destructive-foreground-disabled',
 }
 
-const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'h-control-height-sm px-sm text-label-sm',
-  md: 'h-control-height-lg px-md text-label-md',
-  lg: 'h-control-height-xl px-lg text-label-lg',
-  icon: 'size-control-height-lg shrink-0 p-0',
+const legacySizeAliases: Record<LegacyButtonSize, CanonicalButtonSize> = {
+  sm: 'tiny',
+  md: 'medium',
+  lg: 'large',
+  icon: 'medium',
+}
+
+const sizeClasses: Record<CanonicalButtonSize, string> = {
+  tiny: 'h-control-height-tiny gap-xs px-sm font-label-sm text-label-sm leading-label-sm',
+  small: 'h-control-height-small gap-sm px-md font-label-md text-label-md leading-label-md',
+  medium: 'h-control-height-medium gap-sm px-md font-label-md text-label-md leading-label-md',
+  large: 'h-control-height-large gap-sm px-lg font-label-lg text-label-lg leading-label-lg',
+  'extra-large':
+    'h-control-height-extra-large gap-md px-xl font-label-lg text-label-lg leading-label-lg',
+}
+
+const squareSizeClasses: Record<CanonicalButtonSize, string> = {
+  tiny: 'size-control-height-tiny',
+  small: 'size-control-height-small',
+  medium: 'size-control-height-medium',
+  large: 'size-control-height-large',
+  'extra-large': 'size-control-height-extra-large',
+}
+
+const iconSizeClasses: Record<CanonicalButtonSize, string> = {
+  tiny: 'size-4',
+  small: 'size-4',
+  medium: 'size-5',
+  large: 'size-5',
+  'extra-large': 'size-xl',
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
     variant = 'primary',
-    size = 'md',
+    size = 'medium',
+    iconOnly = false,
     icon,
     iconPosition = 'end',
     loading = false,
@@ -48,6 +78,21 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   },
   ref,
 ) {
+  const canonicalSize: CanonicalButtonSize =
+    size in legacySizeAliases
+      ? legacySizeAliases[size as LegacyButtonSize]
+      : (size as CanonicalButtonSize)
+  const square = iconOnly || size === 'icon'
+  const iconClassName = iconSizeClasses[canonicalSize]
+  const renderIcon = (content: ReactNode) => (
+    <span
+      className={`grid shrink-0 place-items-center ${iconClassName} [&_svg]:size-full`}
+      aria-hidden="true"
+    >
+      {content}
+    </span>
+  )
+
   return (
     <button
       ref={ref}
@@ -55,26 +100,27 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       disabled={disabled || loading}
       aria-busy={loading || undefined}
       className={[
-        'inline-flex items-center justify-center gap-sm rounded-md border font-semibold transition duration-200',
+        'inline-flex items-center justify-center rounded-md border font-semibold transition duration-200',
         'focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-focus-ring',
         'disabled:cursor-not-allowed',
         'active:translate-y-px',
         variantClasses[variant],
-        sizeClasses[size],
+        square ? `${squareSizeClasses[canonicalSize]} shrink-0 p-0` : sizeClasses[canonicalSize],
         className,
       ].join(' ')}
       {...props}
     >
       {loading && (
         <span
-          className="size-4 animate-spin rounded-full border-2 border-current border-r-transparent motion-reduce:animate-none"
+          className={`${iconClassName} animate-spin rounded-full border-2 border-current border-r-transparent motion-reduce:animate-none`}
           aria-hidden="true"
         />
       )}
-      {!loading && iconPosition === 'start' && icon}
-      {children}
+      {!loading && !square && iconPosition === 'start' && icon && renderIcon(icon)}
+      {!loading && square && renderIcon(icon ?? children)}
+      {!square && children}
       {loading && <span className="sr-only">{loadingLabel}</span>}
-      {!loading && iconPosition === 'end' && icon}
+      {!loading && !square && iconPosition === 'end' && icon && renderIcon(icon)}
     </button>
   )
 })

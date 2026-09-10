@@ -24,15 +24,27 @@ Buttons trigger an immediate action. Use one primary button for the most importa
 
 ## Sizes
 
-| Size      | Height                     | Horizontal padding | Typography | Use                                      |
-| --------- | -------------------------- | ------------------ | ---------- | ---------------------------------------- |
-| Compact   | `control-height-sm`        | `spacing.sm`       | `label-sm` | Dense desktop utilities                  |
-| Standard  | `control-height-lg`        | `spacing.md`       | `label-md` | Forms, primary flows, and touch contexts |
-| Prominent | `control-height-xl`        | `spacing.lg`       | `label-lg` | A major landing-page or onboarding CTA   |
-| Icon      | `control-height-lg` square | None               | Inherited  | Icon-only action                         |
+| Size        | Height                       | Horizontal padding | Typography | Icon | Gap          | Use                                       |
+| ----------- | ---------------------------- | ------------------ | ---------- | ---- | ------------ | ----------------------------------------- |
+| Tiny        | `control-height-tiny`        | `spacing.sm`       | `label-sm` | 16px | `spacing.xs` | Dense inline and table utilities          |
+| Small       | `control-height-small`       | `spacing.md`       | `label-md` | 16px | `spacing.sm` | Toolbars, filters, and compact forms      |
+| Medium      | `control-height-medium`      | `spacing.md`       | `label-md` | 20px | `spacing.sm` | Default application and form action       |
+| Large       | `control-height-large`       | `spacing.lg`       | `label-lg` | 20px | `spacing.sm` | Important standalone or onboarding CTA    |
+| Extra-large | `control-height-extra-large` | `spacing.xl`       | `label-lg` | 24px | `spacing.md` | One major public-facing or hero CTA group |
 
-Buttons use `rounded.md`. Because height is fixed, component-token `padding`
-means horizontal padding.
+Medium is the default when no size is specified. Buttons use `rounded.md` at
+every size. Because height is fixed, component-token `padding` means horizontal
+padding; vertical space is derived by centering the line box and icon within the
+fixed height.
+
+Icon-only presentation is independent of size. A square icon-only button uses
+the selected size's height for both dimensions and requires a programmatically
+determinable name. Tiny and small visual controls remain subject to the minimum
+interactive-target rules below.
+
+For one compatibility cycle, `sm`, `md`, and `lg` map to tiny, medium, and large.
+The former `icon` size maps to medium plus icon-only presentation. New work uses
+the canonical names and treats icon-only as presentation rather than size.
 
 ## States
 
@@ -60,12 +72,16 @@ navigation semantic instead.
 
 ## Responsive behavior
 
-Use compact buttons only in pointer-oriented toolbars and repeated utilities. Use
-standard or icon size when touch is expected. Prominent size is optional: use it
-for one primary or supporting CTA in a landing-page hero, onboarding start, or
-comparable conversion area. Do not use prominent size in dashboard toolbars,
-repeated table actions, or ordinary forms, and do not use size to replace the
-semantic hierarchy expressed by the button variant.
+Use tiny buttons only in dense, pointer-oriented tables and inline utilities.
+Small aligns buttons with compact fields, menu items, tabs, and toolbar controls.
+Medium is the standard application, form, and dialog size and is the minimum
+visual height when touch is expected. Large is for an important standalone or
+onboarding action, not every form submission. Extra-large is optional and limited
+to one major CTA in a landing-page hero or comparable public conversion area.
+
+Tiny and small controls either provide a non-overlapping 44px interactive area or
+promote to medium when touch is expected. Do not use size to replace the semantic
+hierarchy expressed by the button variant.
 
 ## Accessibility
 
@@ -73,6 +89,11 @@ Use visible text whenever space permits. An icon-only button has a
 programmatically determinable name that communicates the action. Name, role,
 pressed or expanded state, availability, and busy status are exposed to assistive
 technology. Activation is possible without pointer input.
+
+At 200% zoom and with increased text spacing, labels may wrap only when the
+resulting button can grow without clipping; otherwise use a shorter visible label
+that preserves the action's meaning. Invisible target expansion must not overlap
+an adjacent action's target.
 
 ### Web adapter
 

@@ -114,7 +114,7 @@ export function DataGrid<T>({
                 key={column.id}
                 role="columnheader"
                 aria-colindex={index + 1}
-                className={`h-control-height-md border-b border-table-border px-md ${column.numeric ? 'text-right' : ''}`}
+                className={`h-control-height-small border-b border-table-border px-md ${column.numeric ? 'text-right' : ''}`}
               >
                 {column.header}
               </th>

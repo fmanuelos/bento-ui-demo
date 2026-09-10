@@ -85,7 +85,8 @@ function DemoPage() {
           <div className="flex items-center gap-3 justify-self-end">
             <Button
               variant="ghost"
-              size="icon"
+              size="medium"
+              iconOnly
               aria-label={darkMode ? 'Use light mode' : 'Use dark mode'}
               onClick={() => setDarkMode((value) => !value)}
             >
@@ -115,7 +116,7 @@ function DemoPage() {
               )}
             </Button>
             <div
-              className="grid size-control-height-lg place-items-center rounded-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background"
+              className="grid size-control-height-medium place-items-center rounded-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background"
               aria-label="Profile for Mira"
             >
               M
@@ -164,9 +165,9 @@ function DemoPage() {
                 <Button
                   ref={focusSessionButtonRef}
                   variant="secondary"
-                  size="lg"
+                  size="large"
                   className="mt-auto max-sm:mt-6"
-                  icon={<ArrowUpRight className="size-4" />}
+                  icon={<ArrowUpRight />}
                   onClick={() => setModalOpen(true)}
                 >
                   {sessionActive ? 'Focus session active' : 'Start a focus session'}
@@ -196,7 +197,7 @@ function DemoPage() {
                   <p className={labelClasses}>Weekly focus</p>
                   <h3 className="mt-1.5 text-heading-md font-semibold">Quiet progress</h3>
                 </div>
-                <Button variant="ghost" size="icon" aria-label="Open weekly focus">
+                <Button variant="ghost" size="medium" iconOnly aria-label="Open weekly focus">
                   <ArrowUpRight />
                 </Button>
               </div>
@@ -221,7 +222,7 @@ function DemoPage() {
                   <p className={labelClasses}>On your desk</p>
                   <h3 className="mt-1.5 text-heading-md font-semibold">Today’s rhythm</h3>
                 </div>
-                <span className="grid size-control-height-md place-items-center rounded-sm bg-background-inverse text-data-sm font-semibold text-text-inverse">
+                <span className="grid size-control-height-small place-items-center rounded-sm bg-background-inverse text-data-sm font-semibold text-text-inverse">
                   28
                 </span>
               </div>
@@ -256,7 +257,13 @@ function DemoPage() {
               </blockquote>
               <div className="mt-auto flex items-center justify-between text-caption font-medium">
                 <span>— Marie Forleo</span>
-                <Button variant="primary" size="icon" aria-label="Save quote" className="text-xl">
+                <Button
+                  variant="primary"
+                  size="medium"
+                  iconOnly
+                  aria-label="Save quote"
+                  className="text-xl"
+                >
                   +
                 </Button>
               </div>
@@ -300,7 +307,8 @@ function DemoPage() {
               </div>
               <Button
                 variant="secondary"
-                size="icon"
+                size="medium"
+                iconOnly
                 className="absolute right-6 bottom-[74px]"
                 aria-label="Open Field Notes project"
               >

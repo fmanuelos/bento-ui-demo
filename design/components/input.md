@@ -20,9 +20,14 @@ Inputs collect short, structured text. Every input has a visible label; placehol
 
 ## Variants and sizes
 
-- **Standard:** `control-height-lg` for forms and general data entry.
-- **Compact:** `control-height-md` for dense desktop filters.
+- **Medium:** `control-height-medium` for forms and general data entry; this is
+  the default.
+- **Small:** `control-height-small` for dense desktop filters and toolbars.
 - **Search:** Uses `surface-secondary` to distinguish utility search.
+
+The deprecated `standard` and `compact` names map to medium and small
+respectively for one compatibility cycle. Inputs do not inherit the button-only
+tiny, large, or extra-large sizes.
 
 ## States
 
@@ -51,8 +56,8 @@ interchangeable.
 
 ## Responsive behavior
 
-Inputs fill their container up to the form's chosen content width. Compact inputs
-return to standard touch-friendly sizing when the input capability or available
+Inputs fill their container up to the form's chosen content width. Small inputs
+return to medium touch-friendly sizing when the input capability or available
 space requires it. Labels, values, instructions, and errors wrap without clipping.
 
 ## Accessibility

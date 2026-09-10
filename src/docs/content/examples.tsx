@@ -35,6 +35,20 @@ const rows = [
   { id: 'northstar', project: 'Northstar', owner: 'Jon', status: 'Draft', tasks: 7 },
 ]
 
+const ArrowIcon = (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M5 12h14m-6-6 6 6-6 6" />
+  </svg>
+)
+
 const tableColumns: TableColumn<(typeof rows)[number]>[] = [
   { id: 'project', header: 'Project', cell: (row) => row.project, sortable: true },
   { id: 'owner', header: 'Owner', cell: (row) => row.owner },
@@ -152,15 +166,39 @@ function NavigationExample() {
 
 export const componentExamples: Record<string, ReactNode> = {
   button: (
-    <div className="flex flex-wrap gap-md">
-      <Button>Primary</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="destructive">Delete project</Button>
-      <Button size="sm">Compact</Button>
-      <Button size="lg">Prominent CTA</Button>
-      <Button loading>Save changes</Button>
+    <div className="grid gap-lg">
+      <div className="flex flex-wrap items-center gap-md">
+        <Button size="tiny">Tiny</Button>
+        <Button size="small">Small</Button>
+        <Button size="medium">Medium</Button>
+        <Button size="large">Large</Button>
+        <Button size="extra-large">Extra-large</Button>
+      </div>
+      <div className="flex flex-wrap items-center gap-md">
+        <Button size="tiny" icon={ArrowIcon}>
+          Tiny
+        </Button>
+        <Button size="small" icon={ArrowIcon}>
+          Small
+        </Button>
+        <Button size="medium" icon={ArrowIcon}>
+          Medium
+        </Button>
+        <Button size="large" icon={ArrowIcon}>
+          Large
+        </Button>
+        <Button size="extra-large" icon={ArrowIcon}>
+          Extra-large
+        </Button>
+      </div>
+      <div className="flex flex-wrap items-center gap-md">
+        <Button>Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="destructive">Delete project</Button>
+        <Button loading>Save changes</Button>
+      </div>
     </div>
   ),
   input: (
@@ -174,7 +212,7 @@ export const componentExamples: Record<string, ReactNode> = {
       <Input
         label="Search"
         variant="search"
-        size="compact"
+        size="small"
         type="search"
         placeholder="Search projects"
       />

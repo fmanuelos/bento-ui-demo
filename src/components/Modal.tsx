@@ -104,7 +104,8 @@ export function Modal({
         <Button
           ref={closeButtonRef}
           variant="ghost"
-          size="icon"
+          size="medium"
+          iconOnly
           aria-label="Close modal"
           onClick={onClose}
           disabled={busy}

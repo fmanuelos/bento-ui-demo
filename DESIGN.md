@@ -457,6 +457,14 @@ spacing:
   dashboard-gutter-tablet: 20px
   dashboard-gutter-desktop: 24px
 
+  control-height-tiny: 32px
+  control-height-small: 40px
+  control-height-medium: 44px
+  control-height-large: 48px
+  control-height-extra-large: 56px
+
+  # Deprecated compatibility aliases. Remove after consumers migrate to the
+  # canonical control-height names above.
   control-height-sm: 32px
   control-height-md: 40px
   control-height-lg: 44px
@@ -479,7 +487,7 @@ components:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-lg}'
+    height: '{spacing.control-height-medium}'
   button-primary-hover:
     backgroundColor: '{colors.action-primary-background-hover}'
     textColor: '{colors.action-primary-foreground}'
@@ -490,13 +498,40 @@ components:
     backgroundColor: '{colors.action-primary-background-disabled}'
     textColor: '{colors.action-primary-foreground-disabled}'
 
+  button-size-tiny:
+    typography: '{typography.label-sm}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.sm}'
+    height: '{spacing.control-height-tiny}'
+  button-size-small:
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-small}'
+  button-size-medium:
+    typography: '{typography.label-md}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.md}'
+    height: '{spacing.control-height-medium}'
+  button-size-large:
+    typography: '{typography.label-lg}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.lg}'
+    height: '{spacing.control-height-large}'
+  button-size-extra-large:
+    typography: '{typography.label-lg}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.xl}'
+    height: '{spacing.control-height-extra-large}'
+
+  # Deprecated size aliases retained for one compatibility cycle.
   button-primary-compact:
     backgroundColor: '{colors.action-primary-background-default}'
     textColor: '{colors.action-primary-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.md}'
     padding: '{spacing.sm}'
-    height: '{spacing.control-height-sm}'
+    height: '{spacing.control-height-tiny}'
 
   button-primary-prominent:
     backgroundColor: '{colors.action-primary-background-default}'
@@ -504,7 +539,7 @@ components:
     typography: '{typography.label-lg}'
     rounded: '{rounded.md}'
     padding: '{spacing.lg}'
-    height: '{spacing.control-height-xl}'
+    height: '{spacing.control-height-large}'
 
   button-secondary:
     backgroundColor: '{colors.action-secondary-background-default}'
@@ -512,7 +547,7 @@ components:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-lg}'
+    height: '{spacing.control-height-medium}'
   button-secondary-hover:
     backgroundColor: '{colors.action-secondary-background-hover}'
     textColor: '{colors.action-secondary-foreground}'
@@ -529,7 +564,7 @@ components:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-lg}'
+    height: '{spacing.control-height-medium}'
   button-outline-hover:
     backgroundColor: '{colors.action-outline-background-hover}'
     textColor: '{colors.action-outline-foreground}'
@@ -546,7 +581,7 @@ components:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-lg}'
+    height: '{spacing.control-height-medium}'
   button-ghost-hover:
     backgroundColor: '{colors.action-ghost-background-hover}'
     textColor: '{colors.action-ghost-foreground}'
@@ -563,7 +598,7 @@ components:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-lg}'
+    height: '{spacing.control-height-medium}'
   button-destructive-hover:
     backgroundColor: '{colors.action-destructive-background-hover}'
     textColor: '{colors.action-destructive-foreground}'
@@ -580,14 +615,22 @@ components:
     typography: '{typography.body-sm}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-lg}'
+    height: '{spacing.control-height-medium}'
+  input-small:
+    backgroundColor: '{colors.surface-primary}'
+    textColor: '{colors.text-primary}'
+    typography: '{typography.body-sm}'
+    rounded: '{rounded.md}'
+    padding: '{spacing.sm}'
+    height: '{spacing.control-height-small}'
+  # Deprecated name for input-small.
   input-compact:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
     rounded: '{rounded.md}'
     padding: '{spacing.sm}'
-    height: '{spacing.control-height-md}'
+    height: '{spacing.control-height-small}'
   input-focus:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
@@ -604,7 +647,7 @@ components:
     typography: '{typography.body-sm}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-md}'
+    height: '{spacing.control-height-small}'
 
   card:
     backgroundColor: '{colors.surface-primary}'
@@ -636,7 +679,7 @@ components:
     typography: '{typography.label-md}'
     rounded: '{rounded.md}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-md}'
+    height: '{spacing.control-height-small}'
   sidebar-item-hover:
     backgroundColor: '{colors.navigation-sidebar-item-hover}'
     textColor: '{colors.navigation-sidebar-foreground-strong}'
@@ -655,7 +698,7 @@ components:
     typography: '{typography.label-md}'
     rounded: '{rounded.sm}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-md}'
+    height: '{spacing.control-height-small}'
   tab-hover:
     backgroundColor: '{colors.action-ghost-background-hover}'
     textColor: '{colors.text-primary}'
@@ -668,7 +711,7 @@ components:
     textColor: '{colors.text-secondary}'
     typography: '{typography.label-sm}'
     padding: '{spacing.md}'
-    height: '{spacing.control-height-md}'
+    height: '{spacing.control-height-small}'
   table-row:
     backgroundColor: '{colors.table-row-background}'
     textColor: '{colors.text-primary}'
@@ -818,6 +861,9 @@ components:
     textColor: '{colors.dark-action-destructive-foreground-disabled}'
 
   input-dark:
+    backgroundColor: '{colors.dark-surface-primary}'
+    textColor: '{colors.dark-text-primary}'
+  input-small-dark:
     backgroundColor: '{colors.dark-surface-primary}'
     textColor: '{colors.dark-text-primary}'
   input-compact-dark:
@@ -1169,9 +1215,10 @@ from adjacent text. Decorative icons are excluded from the accessibility tree;
 informative icons have a text alternative, and icon-only controls have a
 programmatically determinable name.
 
-Use 16px icons in compact controls, 20px by default, and 24px for prominent
-actions. Interface icons use a consistent 1.8px stroke. Filled icons are reserved
-for brand marks, simple status shapes, and decorative emphasis.
+Use 16px icons in tiny and small controls, 20px in medium and large controls, and
+24px in extra-large controls. Interface icons use a consistent 1.8px stroke.
+Filled icons are reserved for brand marks, simple status shapes, and decorative
+emphasis.
 
 The web adapter documents SVG inheritance and accessible-name techniques. Other
 platform adapters must preserve the same foreground and semantic outcomes.
@@ -1273,6 +1320,10 @@ dimensions, not interchangeable spacing steps.
 - `sidebar-*` and `topbar-height` define navigation-shell dimensions.
 - `content-*` defines content-width limits.
 
+The canonical control-height vocabulary is `tiny`, `small`, `medium`, `large`,
+and `extra-large`. The abbreviated `sm`, `md`, `lg`, and `xl` height names are
+deprecated compatibility aliases and must not be used by new work.
+
 ### Website mode
 
 Use page gutters, readable content widths, and section-spacing tokens. Full-width
@@ -1325,14 +1376,17 @@ dates, times, currency, and sorting behavior use locale-aware presentation.
 
 ### Controls and touch targets
 
-- Small controls are for dense, pointer-oriented desktop interfaces.
-- Medium controls are the dashboard default.
-- Large controls are for prominent, form, and touch-oriented contexts.
-- Extra-large controls are optional and reserved for a single prominent call to
-  action in a landing-page hero, onboarding start, or comparable conversion area.
+- Tiny controls are for dense, pointer-oriented tables and inline utilities.
+- Small controls are for toolbars, filters, compact fields, menus, and tabs.
+- Medium controls are the application, form, dialog, and touch-oriented default.
+- Large controls are for important standalone and onboarding actions.
+- Extra-large controls are optional and reserved for a single major call to action
+  in a landing-page hero or comparable public conversion area.
 - Touch layouts must preserve the minimum interactive target in frontmatter.
 
-Compact visual controls may use a larger invisible hit area where appropriate.
+Tiny and small visual controls may use a larger invisible hit area where
+appropriate, but adjacent target areas must not overlap. Otherwise promote them
+to medium when touch is expected.
 All functionality remains available through keyboard and pointer input. Complete
 an action on the pointer release event so it can be cancelled before completion,
 unless immediate activation is essential. Any drag interaction provides a
@@ -1395,6 +1449,12 @@ override and inherits every non-color property from the unqualified entry. State
 and theme qualifiers stay explicit, for example `button-primary-hover-dark`.
 This flat convention keeps both themes machine-readable without adding an
 unsupported nested theme group.
+
+Button color variants and sizes are independent. `button-size-*` entries define
+dimensions, typography, shape, and spacing for every button color variant;
+variant and state entries define semantic color. Medium is the default button
+size. The `button-primary-compact` and `button-primary-prominent` entries are
+deprecated compatibility aliases for tiny and large.
 
 ### Component contract
 

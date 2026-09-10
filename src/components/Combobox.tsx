@@ -132,7 +132,7 @@ export function Combobox({
             if (allowCustomValue) onValueChange?.(event.currentTarget.value)
           }}
           onKeyDown={handleKeyDown}
-          className={`${fieldControlBase} h-control-height-lg pr-10 ${fieldStatusClasses[error ? 'invalid' : 'default']} ${className}`}
+          className={`${fieldControlBase} h-control-height-medium pr-10 ${fieldStatusClasses[error ? 'invalid' : 'default']} ${className}`}
         />
         <button
           type="button"
@@ -143,7 +143,7 @@ export function Combobox({
             setOpen((shown) => !shown)
             inputRef.current?.focus()
           }}
-          className="absolute inset-y-0 right-0 grid w-control-height-lg place-items-center rounded-md text-text-secondary"
+          className="absolute inset-y-0 right-0 grid w-control-height-medium place-items-center rounded-md text-text-secondary"
         >
           <svg
             className="size-4"

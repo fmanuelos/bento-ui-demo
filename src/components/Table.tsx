@@ -62,7 +62,7 @@ export function Table<T>({
               {selectable && (
                 <th
                   scope="col"
-                  className="h-control-height-md w-12 border-b border-table-border px-md"
+                  className="h-control-height-small w-12 border-b border-table-border px-md"
                 >
                   <input
                     type="checkbox"
@@ -80,12 +80,12 @@ export function Table<T>({
                     key={column.id}
                     scope="col"
                     aria-sort={activeSort ? sort.direction : undefined}
-                    className={`h-control-height-md border-b border-table-border px-md whitespace-nowrap ${column.numeric ? 'text-right' : ''}`}
+                    className={`h-control-height-small border-b border-table-border px-md whitespace-nowrap ${column.numeric ? 'text-right' : ''}`}
                   >
                     {column.sortable ? (
                       <button
                         type="button"
-                        className="font-inherit inline-flex min-h-control-height-md items-center gap-xs rounded-sm outline-none focus-visible:outline-3 focus-visible:outline-focus-ring"
+                        className="font-inherit inline-flex min-h-control-height-small items-center gap-xs rounded-sm outline-none focus-visible:outline-3 focus-visible:outline-focus-ring"
                         onClick={() =>
                           onSort?.(
                             column.id,

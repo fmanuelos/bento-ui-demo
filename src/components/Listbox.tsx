@@ -164,7 +164,7 @@ export function Listbox({
                 onMouseMove={() => !option.disabled && setActiveIndex(index)}
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => select(option)}
-                className={`flex min-h-control-height-md items-center gap-md rounded-md px-md py-sm ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${selected ? 'bg-selection-background text-selection-foreground' : active ? 'bg-action-ghost-background-hover' : ''}`}
+                className={`flex min-h-control-height-small items-center gap-md rounded-md px-md py-sm ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${selected ? 'bg-selection-background text-selection-foreground' : active ? 'bg-action-ghost-background-hover' : ''}`}
               >
                 {multiple && (
                   <span
