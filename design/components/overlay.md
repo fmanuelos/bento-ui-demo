@@ -9,11 +9,13 @@ Contract complete for anchored, non-modal overlay behavior.
 An overlay places a temporary surface in a layer above the current content while
 keeping it associated with an anchor or trigger. It defines placement, viewport
 fit, dismissal, and focus coordination; it does not assign the surface a role.
-Tooltip, popover, action menu, listbox, and combobox contracts provide their own
+[`Tooltip`](tooltip.md), [`Popover`](popover.md), action menu,
+[`Listbox`](listbox.md), and [`Combobox`](combobox.md) contracts provide their own
 semantics and keyboard behavior.
 
-Use the dialog foundation for blocking interaction or a page, drawer, or sheet
-when a task cannot remain understandable and operable in an anchored surface.
+Use the [`Dialog foundation`](modal.md) for blocking interaction or a page or
+[`Drawer or Sheet`](drawer.md) when a task cannot remain understandable and
+operable in an anchored surface.
 
 ## Anatomy and variants
 
@@ -85,10 +87,10 @@ changing its semantic role. Long labels and values wrap or expose an equivalent
 complete representation. Avoid simultaneous horizontal and vertical scrolling
 inside a small popup.
 
-On narrow touch surfaces, promote content to a dialog, drawer, or sheet when
+On narrow touch surfaces, promote content to a Dialog, Drawer, or Sheet when
 targets, text, or tasks cannot remain comfortable in the anchored presentation.
-That transformation preserves the same value, selection, actions, and return
-focus rather than opening a separate workflow.
+That transformation follows the related contract and preserves the same value,
+selection, actions, and return focus rather than opening a separate workflow.
 
 ## Accessibility
 

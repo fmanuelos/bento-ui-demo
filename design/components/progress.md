@@ -58,6 +58,9 @@ Support delayed, active, paused when meaningful, completing, completed, failed,
 and cancelled states at the experience level. The progress component presents
 only an active measurable or indeterminate operation; completion, failure, and
 cancellation transition to visible feedback appropriate to their outcome.
+When the originating region is no longer visible, use the
+[`Toast and notification region`](toast.md) contract for transient completion
+feedback.
 
 Delay an indicator when an operation normally completes immediately and a brief
 appearance would create distracting flicker. Once shown, keep the operation label

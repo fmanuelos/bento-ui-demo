@@ -1345,9 +1345,11 @@ deprecated compatibility aliases and must not be used by new work.
 
 Use page padding, readable content widths, and section-spacing tokens. Full-width
 backgrounds may extend to the viewport while content stays aligned to its
-container. Public-site navigation keeps the brand and primary action visible and
-uses an accessible disclosure whenever the destination links do not fit; never
-remove primary destinations without an equivalent control.
+container. Public-site navigation follows the
+[`Public-site Navigation contract`](design/components/site-navigation.md), keeps
+the brand and primary action visible, and uses an accessible disclosure whenever
+the destination links do not fit; never remove primary destinations without an
+equivalent control.
 
 - `container-narrow` supports authentication and focused tasks.
 - `container-readable` supports prose, guidance, and form-heavy pages.
@@ -1668,6 +1670,23 @@ reduced-motion modes. Platform-specific semantics belong in adapters.
 - Decisions requiring immediate acknowledgement follow the
   [`alert-dialog contract`](design/components/alert-dialog.md) and use the safe
   initial-focus and dismissal policies appropriate to their risk.
+- Paginated data follows the shared
+  [`Pagination`](design/components/pagination.md) contract and preserves
+  filtering, sorting, selection, focus, and result context across page changes.
+- Interactive supplemental popup content follows the shared
+  [`Popover`](design/components/popover.md) contract and does not adopt menu or
+  dialog semantics solely because it appears in a floating surface.
+- Transient asynchronous outcomes follow the shared
+  [`Toast and notification region`](design/components/toast.md) contract;
+  validation and actionable recovery remain near the affected context.
+- Edge-attached task surfaces follow the shared
+  [`Drawer and sheet`](design/components/drawer.md) contract and preserve task
+  values and focus when transforming between inspector, drawer, sheet, or page
+  presentations.
+- Public navigation follows the shared
+  [`Public-site Navigation`](design/components/site-navigation.md) contract;
+  authenticated workspace navigation continues to follow the application
+  navigation shell.
 - Selected navigation represents location, not a primary action.
 - Selected tabs include a non-color indicator.
 - Table rows use hover styling only when hover has meaning.
@@ -1686,8 +1705,9 @@ responsive density. Component implementations must follow applicable patterns.
 
 ### Component contract index
 
-The [`component index`](design/components/README.md) records contract maturity
-only.
+The [`component index`](design/components/README.md) records contract maturity,
+dependencies, and frontmatter coverage. It does not track runtime
+implementation.
 
 ## Do's and Don'ts
 

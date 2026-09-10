@@ -18,7 +18,7 @@ changes follow the shared collection model in DESIGN.md.
 2. Column and optional row headers
 3. Focusable cells or one focusable control per navigable cell
 4. Optional selection, sorting, editing, and row actions
-5. Optional pagination or virtualization controls
+5. Optional [`Pagination`](pagination.md) or virtualization controls
 
 Read-only, selectable, and editable grids are separate variants. Do not add grid
 behavior solely to reduce the page's tab stops.
@@ -48,6 +48,9 @@ remain available.
 Virtualization preserves row and column position, exposes the available extent,
 and does not make off-screen content appear absent. Every drag or resize action
 has a non-drag alternative.
+
+Pagination follows the [`Pagination contract`](pagination.md) and preserves the
+managed focus, selection, edit, and result context defined here.
 
 ## Responsive behavior
 

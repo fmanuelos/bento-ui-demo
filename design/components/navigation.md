@@ -10,7 +10,9 @@ Navigation communicates location and access to destinations. Selected navigation
 is a location state, not a primary action.
 Temporary modal navigation follows the shared
 [`dialog contract`](modal.md); a non-modal disclosure retains focus on its
-trigger and does not adopt dialog behavior.
+trigger and follows the [`Disclosure contract`](disclosure.md) without adopting
+dialog behavior. Public-facing headers and destination navigation follow the
+separate [`Public-site Navigation contract`](site-navigation.md).
 
 ## Anatomy and variants
 
@@ -43,7 +45,8 @@ dashboard. Do not squeeze it beside a narrow dashboard. Longer translations,
 zoom, or a constrained container may trigger the temporary form earlier.
 
 Landing-page navigation keeps primary destinations available through an
-accessible disclosure whenever inline links do not fit. Hiding the links without
+accessible disclosure whenever inline links do not fit and follows the
+[`Public-site Navigation contract`](site-navigation.md). Hiding the links without
 an equivalent control is not a responsive transformation.
 
 ## Accessibility

@@ -6,7 +6,10 @@ Contract complete.
 
 ## Intent
 
-Alerts communicate an event, outcome, warning, error, or contextual notice.
+Alerts communicate an event, outcome, warning, error, or contextual notice. Use
+the [`Toast and notification-region contract`](toast.md) when brief asynchronous
+feedback should appear outside the originating layout. Use an inline Alert when
+the message must remain near affected content.
 
 ## Anatomy and variants
 

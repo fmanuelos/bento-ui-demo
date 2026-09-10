@@ -2,8 +2,8 @@
 
 ## Status
 
-Contract complete for the shared dialog foundation and modal dialog. Alert-dialog
-and drawer or sheet specializations remain proposed in the component index.
+Contract complete for the shared dialog foundation and modal dialog. Alert Dialog
+and Drawer or Sheet provide dedicated specializations.
 
 ## Intent
 
@@ -16,7 +16,8 @@ long-form content.
 Use an alert dialog for a short decision whose consequences require immediate
 acknowledgement and follow the dedicated
 [`alert-dialog contract`](alert-dialog.md). Use a page, drawer, or sheet for long,
-multi-step, or frequently referenced work.
+multi-step, or frequently referenced work and follow the
+[`drawer-and-sheet contract`](drawer.md) for an edge-attached presentation.
 
 ## Anatomy and variants
 
@@ -98,7 +99,8 @@ reachable through one clear vertical scrolling region.
 Action labels wrap or actions stack when they do not fit. Preserve action order
 and keep the safe exit available. When a task becomes too long, too wide, or too
 dependent on surrounding context, transform it into a page, drawer, or sheet
-without losing entered values or task progress.
+without losing entered values or task progress. Edge-attached transformations
+follow the [`Drawer and Sheet contract`](drawer.md).
 
 The logical reading and focus order remains stable in right-to-left layouts.
 Directional placement and motion mirror only when their meaning is directional.

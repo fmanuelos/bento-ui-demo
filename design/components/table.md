@@ -17,7 +17,7 @@ decorative cards by default.
 2. Header row
 3. Data rows
 4. Optional selection and row actions
-5. Optional pagination
+5. Optional [`Pagination`](pagination.md)
 
 Use `table-header-background`, `table-row-background`, `table-row-hover`,
 `table-row-selected`, and `table-border`. Compact density is allowed for large
@@ -36,8 +36,9 @@ inside the table region without being represented as data rows.
 
 ## Behavior
 
-Sorting communicates the active key and direction. Pagination preserves table
-context and moves focus only when necessary to continue the task. Selection is
+Sorting communicates the active key and direction. Pagination follows the
+[`Pagination contract`](pagination.md), preserves table context, and moves focus
+only when necessary to continue the task. Selection is
 available without selecting the whole row as an ambiguous action. Updating or
 removing a focused row places focus at the nearest logical control.
 

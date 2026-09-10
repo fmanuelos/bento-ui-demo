@@ -81,8 +81,9 @@ requires interaction; if interaction is required, choose a defined interactive
 pattern instead.
 
 Brief non-interactive text follows the [`tooltip contract`](tooltip.md). Richer
-supplemental content remains a proposed popover contract and must not be given
-menu semantics in the interim.
+supplemental or interactive content follows the
+[`popover contract`](popover.md) and must not be given menu semantics merely
+because it uses the same raised surface.
 
 ## Responsive behavior
 
