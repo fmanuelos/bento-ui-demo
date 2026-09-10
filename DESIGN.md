@@ -437,14 +437,20 @@ rounded:
   full: 9999px
 
 spacing:
+  space-0: 0px
   space-1: 4px
   space-2: 8px
   space-3: 12px
   space-4: 16px
+  space-5: 20px
   space-6: 24px
   space-8: 32px
+  space-10: 40px
   space-12: 48px
   space-16: 64px
+  space-20: 80px
+  space-24: 96px
+  space-32: 128px
 
   # Mobile is the default range and therefore has no breakpoint token.
   breakpoint-tablet: 640px
@@ -1288,6 +1294,10 @@ The base spacing scale uses a 4px rhythm. Numeric suffixes express multiples of
 4px, and intentionally missing suffixes are not available spacing steps. Use
 named tokens instead of arbitrary values. Two-pixel strokes use semantic
 dimension tokens such as `focus-ring-width`; they are not general spacing.
+`space-0` is available for responsive and state-based resets. Use `space-1`
+through `space-10` for component composition and the larger steps for generic
+layout spacing. When spacing has a defined layout role, prefer its semantic token,
+such as `section-desktop`, over an equivalent `space-*` value.
 
 The DESIGN.md schema has no general dimension group, so the `spacing` map also
 contains breakpoints, semantic heights, widths, gutters, padding, and content
