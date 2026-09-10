@@ -76,7 +76,7 @@ Small aligns buttons with compact fields, menu items, tabs, and toolbar controls
 Medium is the standard application, form, and dialog size and is the minimum
 visual height when touch is expected. Large is for an important standalone or
 onboarding action, not every form submission. Extra-large is optional and limited
-to one major CTA in a landing-page hero or comparable public conversion area.
+to one major CTA in a public-site hero or comparable public conversion area.
 
 Tiny and small controls either provide a non-overlapping 44px interactive area or
 promote to medium when touch is expected. Do not use size to replace the semantic

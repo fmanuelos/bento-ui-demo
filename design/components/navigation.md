@@ -44,7 +44,7 @@ wide layouts may use persistent navigation when it coexists comfortably with the
 dashboard. Do not squeeze it beside a narrow dashboard. Longer translations,
 zoom, or a constrained container may trigger the temporary form earlier.
 
-Landing-page navigation keeps primary destinations available through an
+Public site navigation keeps primary destinations available through an
 accessible disclosure whenever inline links do not fit and follows the
 [`Public-site Navigation contract`](site-navigation.md). Hiding the links without
 an equivalent control is not a responsive transformation.
