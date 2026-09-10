@@ -524,23 +524,6 @@ components:
     padding: '{spacing.xl}'
     height: '{spacing.control-height-extra-large}'
 
-  # Deprecated size aliases retained for one compatibility cycle.
-  button-primary-compact:
-    backgroundColor: '{colors.action-primary-background-default}'
-    textColor: '{colors.action-primary-foreground}'
-    typography: '{typography.label-sm}'
-    rounded: '{rounded.md}'
-    padding: '{spacing.sm}'
-    height: '{spacing.control-height-tiny}'
-
-  button-primary-prominent:
-    backgroundColor: '{colors.action-primary-background-default}'
-    textColor: '{colors.action-primary-foreground}'
-    typography: '{typography.label-lg}'
-    rounded: '{rounded.md}'
-    padding: '{spacing.lg}'
-    height: '{spacing.control-height-large}'
-
   button-secondary:
     backgroundColor: '{colors.action-secondary-background-default}'
     textColor: '{colors.action-secondary-foreground}'
@@ -801,13 +784,6 @@ components:
   button-primary-disabled-dark:
     backgroundColor: '{colors.dark-action-primary-background-disabled}'
     textColor: '{colors.dark-action-primary-foreground-disabled}'
-  button-primary-compact-dark:
-    backgroundColor: '{colors.dark-action-primary-background-default}'
-    textColor: '{colors.dark-action-primary-foreground}'
-  button-primary-prominent-dark:
-    backgroundColor: '{colors.dark-action-primary-background-default}'
-    textColor: '{colors.dark-action-primary-foreground}'
-
   button-secondary-dark:
     backgroundColor: '{colors.dark-action-secondary-background-default}'
     textColor: '{colors.dark-action-secondary-foreground}'
@@ -1453,8 +1429,7 @@ unsupported nested theme group.
 Button color variants and sizes are independent. `button-size-*` entries define
 dimensions, typography, shape, and spacing for every button color variant;
 variant and state entries define semantic color. Medium is the default button
-size. The `button-primary-compact` and `button-primary-prominent` entries are
-deprecated compatibility aliases for tiny and large.
+size.
 
 ### Component contract
 
