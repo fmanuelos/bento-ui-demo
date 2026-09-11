@@ -2,47 +2,143 @@
 import { type FoundationDocumentation } from './types'
 
 const colorGroups = {
-  'Canvas & surfaces': [
+  Brand: [
+    'brand-background',
+    'brand-background-subtle',
+    'brand-foreground',
+    'brand-on-background',
+    'brand-border',
+  ],
+  Background: [
     'background-primary',
     'background-secondary',
     'background-tertiary',
     'background-inverse',
     'background-accent',
+    'background-disabled',
+    'background-overlay',
+  ],
+  Surface: [
     'surface-primary',
     'surface-secondary',
     'surface-raised',
     'surface-sunken',
     'surface-inverse',
   ],
-  'Text & boundaries': [
+  Text: [
     'text-primary',
     'text-secondary',
     'text-tertiary',
+    'text-placeholder',
+    'text-inverse',
+    'text-disabled',
     'text-accent',
+    'text-link',
     'text-success',
     'text-warning',
     'text-danger',
     'text-info',
+  ],
+  Border: [
     'border-primary',
     'border-secondary',
+    'border-subtle',
     'border-strong',
+    'border-inverse',
+    'border-disabled',
     'border-focus',
+    'border-accent',
     'border-success',
     'border-warning',
     'border-danger',
   ],
-  'Feedback & status': [
-    'feedback-success-background',
-    'feedback-warning-background',
-    'feedback-danger-background',
-    'feedback-info-background',
-    'status-positive-background',
-    'status-warning-background',
-    'status-negative-background',
-    'status-info-background',
-    'status-neutral-background',
+  Action: {
+    Primary: [
+      'action-primary-background-default',
+      'action-primary-background-hover',
+      'action-primary-background-active',
+      'action-primary-background-disabled',
+      'action-primary-foreground',
+      'action-primary-foreground-disabled',
+      'action-primary-border',
+      'action-primary-border-disabled',
+    ],
+    Secondary: [
+      'action-secondary-background-default',
+      'action-secondary-background-hover',
+      'action-secondary-background-active',
+      'action-secondary-background-disabled',
+      'action-secondary-foreground',
+      'action-secondary-foreground-disabled',
+      'action-secondary-border',
+      'action-secondary-border-disabled',
+    ],
+    Outline: [
+      'action-outline-background-default',
+      'action-outline-background-hover',
+      'action-outline-background-active',
+      'action-outline-background-disabled',
+      'action-outline-foreground',
+      'action-outline-foreground-disabled',
+      'action-outline-border',
+      'action-outline-border-disabled',
+    ],
+    Ghost: [
+      'action-ghost-background-default',
+      'action-ghost-background-hover',
+      'action-ghost-background-active',
+      'action-ghost-background-disabled',
+      'action-ghost-foreground',
+      'action-ghost-foreground-disabled',
+    ],
+    Destructive: [
+      'action-destructive-background-default',
+      'action-destructive-background-hover',
+      'action-destructive-background-active',
+      'action-destructive-background-disabled',
+      'action-destructive-foreground',
+      'action-destructive-foreground-disabled',
+    ],
+    Link: [
+      'action-link-default',
+      'action-link-hover',
+      'action-link-active',
+      'action-link-visited',
+      'action-link-disabled',
+    ],
+  },
+  Feedback: {
+    Success: ['feedback-success-background', 'feedback-success-foreground', 'feedback-success-border'],
+    Warning: ['feedback-warning-background', 'feedback-warning-foreground', 'feedback-warning-border'],
+    Danger: ['feedback-danger-background', 'feedback-danger-foreground', 'feedback-danger-border'],
+    Info: ['feedback-info-background', 'feedback-info-foreground', 'feedback-info-border'],
+  },
+  Status: {
+    Positive: ['status-positive-background', 'status-positive-foreground', 'status-positive-border'],
+    Warning: ['status-warning-background', 'status-warning-foreground', 'status-warning-border'],
+    Negative: ['status-negative-background', 'status-negative-foreground', 'status-negative-border'],
+    Info: ['status-info-background', 'status-info-foreground', 'status-info-border'],
+    Neutral: ['status-neutral-background', 'status-neutral-foreground', 'status-neutral-border'],
+  },
+  Navigation: [
+    'navigation-sidebar-background',
+    'navigation-sidebar-foreground',
+    'navigation-sidebar-foreground-strong',
+    'navigation-sidebar-item-hover',
+    'navigation-sidebar-item-selected',
+    'navigation-sidebar-item-selected-foreground',
+    'navigation-topbar-background',
+    'navigation-topbar-border',
   ],
-  'Data visualization': [
+  Table: [
+    'table-header-background',
+    'table-row-background',
+    'table-row-hover',
+    'table-row-selected',
+    'table-border',
+  ],
+  Selection: ['selection-background', 'selection-foreground', 'focus-ring', 'focus-ring-offset'],
+  Chart: [
     'chart-series-1',
     'chart-series-2',
     'chart-series-3',
@@ -51,6 +147,8 @@ const colorGroups = {
     'chart-series-6',
     'chart-positive',
     'chart-negative',
+    'chart-gridline',
+    'chart-axis',
   ],
 } as const
 
@@ -140,10 +238,10 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         title: 'System ranges',
         body: (
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(12rem,100%),1fr))] gap-space-3">
-            <Range name="Mobile" detail="Below 40rem" />
-            <Range name="Tablet" detail="40rem–63.999rem" />
-            <Range name="Desktop" detail="64rem–79.999rem" />
-            <Range name="Wide" detail="80rem and above" />
+            <Range name="Mobile" detail="Below 40rem / 640px" />
+            <Range name="Tablet" detail="40rem–63.999rem / 640–1023px" />
+            <Range name="Desktop" detail="64rem–79.999rem / 1024–1279px" />
+            <Range name="Wide" detail="80rem / 1280px and above" />
           </div>
         ),
       },
@@ -172,20 +270,18 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
             {Object.entries(colorGroups).map(([group, tokens]) => (
               <section key={group}>
                 <h3 className="mt-0 mb-space-3 text-heading-sm">{group}</h3>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-space-2">
-                  {tokens.map((token) => (
-                    <div
-                      key={token}
-                      className="flex items-center gap-space-3 rounded-shape-md border border-border-secondary bg-surface-primary p-space-3"
-                    >
-                      <span
-                        className="size-9 shrink-0 rounded-shape-md border border-border-primary"
-                        style={{ background: `var(--color-${token})` }}
-                      />
-                      <code className="min-w-0 text-body-xs break-all">{token}</code>
-                    </div>
-                  ))}
-                </div>
+                {Array.isArray(tokens) ? (
+                  <ColorSwatches tokens={tokens} />
+                ) : (
+                  <div className="grid gap-space-4">
+                    {Object.entries(tokens).map(([purpose, purposeTokens]) => (
+                      <section key={purpose}>
+                        <h4 className="mt-0 mb-space-2 text-label-md">{purpose}</h4>
+                        <ColorSwatches tokens={purposeTokens} />
+                      </section>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
           </div>
@@ -504,6 +600,25 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
     ],
   },
 ]
+
+function ColorSwatches({ tokens }: { tokens: readonly string[] }) {
+  return (
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-space-2">
+      {tokens.map((token) => (
+        <div
+          key={token}
+          className="flex items-center gap-space-3 rounded-shape-md border border-border-secondary bg-surface-primary p-space-3"
+        >
+          <span
+            className="size-9 shrink-0 rounded-shape-md border border-border-primary"
+            style={{ background: `var(--color-${token})` }}
+          />
+          <code className="min-w-0 text-body-xs break-all">{token}</code>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 function Range({ name, detail }: { name: string; detail: string }) {
   return (
