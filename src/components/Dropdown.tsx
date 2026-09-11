@@ -115,7 +115,13 @@ export function Dropdown({
               item.onSelect()
               close()
             }}
-            className={`flex min-h-control-height-small w-full items-center gap-space-3 rounded-shape-md px-space-3 py-space-2 text-left text-body-sm outline-none hover:bg-action-ghost-background-hover focus-visible:bg-action-ghost-background-hover focus-visible:outline-3 focus-visible:outline-focus-ring disabled:cursor-not-allowed disabled:text-text-disabled ${item.destructive ? 'text-text-danger' : ''}`}
+            className={[
+              'flex min-h-control-height-small w-full items-center gap-space-3 rounded-shape-md px-space-3 py-space-2 text-left text-body-sm outline-none',
+              'hover:bg-action-ghost-background-hover',
+              'focus-visible:bg-action-ghost-background-hover focus-visible:outline-3 focus-visible:outline-focus-ring',
+              'disabled:cursor-not-allowed disabled:text-text-disabled',
+              item.destructive ? 'text-text-danger' : '',
+            ].join(' ')}
           >
             {item.icon && <span aria-hidden="true">{item.icon}</span>}
             {item.label}

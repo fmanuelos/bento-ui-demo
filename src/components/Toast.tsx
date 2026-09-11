@@ -77,7 +77,13 @@ export function ToastRegion({
   return (
     <section
       aria-label={label}
-      className={`${position === 'viewport' ? 'fixed right-page-padding-mobile bottom-page-padding-mobile sm:right-page-padding-tablet sm:bottom-page-padding-tablet' : 'absolute inset-x-page-padding-mobile bottom-page-padding-mobile sm:inset-x-auto sm:right-page-padding-tablet sm:bottom-page-padding-tablet'} z-50 grid w-[min(26rem,calc(100vw-var(--spacing-page-padding-mobile)*2))] gap-space-3 ${className}`}
+      className={[
+        position === 'viewport'
+          ? 'fixed right-page-padding-mobile bottom-page-padding-mobile sm:right-page-padding-tablet sm:bottom-page-padding-tablet'
+          : 'absolute inset-x-page-padding-mobile bottom-page-padding-mobile sm:inset-x-auto sm:right-page-padding-tablet sm:bottom-page-padding-tablet',
+        'z-50 grid w-[min(26rem,calc(100vw-var(--spacing-page-padding-mobile)*2))] gap-space-3',
+        className,
+      ].join(' ')}
     >
       {visible.map((toast) => (
         <ToastItem key={toast.id} toast={toast} onDismiss={() => onDismiss(toast.id)} />

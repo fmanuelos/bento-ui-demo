@@ -15,16 +15,36 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary:
-    'border-action-primary-border bg-action-primary-background-default text-action-primary-foreground hover:border-action-primary-background-hover hover:bg-action-primary-background-hover active:border-action-primary-background-active active:bg-action-primary-background-active disabled:border-action-primary-border-disabled disabled:bg-action-primary-background-disabled disabled:text-action-primary-foreground-disabled',
-  secondary:
-    'border-action-secondary-border bg-action-secondary-background-default text-action-secondary-foreground hover:bg-action-secondary-background-hover active:bg-action-secondary-background-active disabled:border-action-secondary-border-disabled disabled:bg-action-secondary-background-disabled disabled:text-action-secondary-foreground-disabled',
-  outline:
-    'border-action-outline-border bg-action-outline-background-default text-action-outline-foreground hover:bg-action-outline-background-hover active:bg-action-outline-background-active disabled:border-action-outline-border-disabled disabled:bg-action-outline-background-disabled disabled:text-action-outline-foreground-disabled',
-  ghost:
-    'border-transparent bg-action-ghost-background-default text-action-ghost-foreground hover:bg-action-ghost-background-hover active:bg-action-ghost-background-active disabled:bg-action-ghost-background-disabled disabled:text-action-ghost-foreground-disabled',
-  destructive:
-    'border-action-destructive-background-default bg-action-destructive-background-default text-action-destructive-foreground hover:border-action-destructive-background-hover hover:bg-action-destructive-background-hover active:border-action-destructive-background-active active:bg-action-destructive-background-active disabled:border-action-destructive-background-disabled disabled:bg-action-destructive-background-disabled disabled:text-action-destructive-foreground-disabled',
+  primary: [
+    'border-action-primary-border bg-action-primary-background-default text-action-primary-foreground',
+    'hover:border-action-primary-background-hover hover:bg-action-primary-background-hover',
+    'active:border-action-primary-background-active active:bg-action-primary-background-active',
+    'disabled:border-action-primary-border-disabled disabled:bg-action-primary-background-disabled disabled:text-action-primary-foreground-disabled',
+  ].join(' '),
+  secondary: [
+    'border-action-secondary-border bg-action-secondary-background-default text-action-secondary-foreground',
+    'hover:bg-action-secondary-background-hover',
+    'active:bg-action-secondary-background-active',
+    'disabled:border-action-secondary-border-disabled disabled:bg-action-secondary-background-disabled disabled:text-action-secondary-foreground-disabled',
+  ].join(' '),
+  outline: [
+    'border-action-outline-border bg-action-outline-background-default text-action-outline-foreground',
+    'hover:bg-action-outline-background-hover',
+    'active:bg-action-outline-background-active',
+    'disabled:border-action-outline-border-disabled disabled:bg-action-outline-background-disabled disabled:text-action-outline-foreground-disabled',
+  ].join(' '),
+  ghost: [
+    'border-transparent bg-action-ghost-background-default text-action-ghost-foreground',
+    'hover:bg-action-ghost-background-hover',
+    'active:bg-action-ghost-background-active',
+    'disabled:bg-action-ghost-background-disabled disabled:text-action-ghost-foreground-disabled',
+  ].join(' '),
+  destructive: [
+    'border-action-destructive-background-default bg-action-destructive-background-default text-action-destructive-foreground',
+    'hover:border-action-destructive-background-hover hover:bg-action-destructive-background-hover',
+    'active:border-action-destructive-background-active active:bg-action-destructive-background-active',
+    'disabled:border-action-destructive-background-disabled disabled:bg-action-destructive-background-disabled disabled:text-action-destructive-foreground-disabled',
+  ].join(' '),
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
