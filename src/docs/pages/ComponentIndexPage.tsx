@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { DocsBackToTop } from '../components/DocsBackToTop'
 import { PageIntro } from '../components/DocsSection'
 import { componentNavigation } from '../navigation'
 
@@ -26,6 +27,7 @@ export function ComponentIndexPage() {
           </Link>
         ))}
       </div>
+      <DocsBackToTop />
     </>
   )
 }

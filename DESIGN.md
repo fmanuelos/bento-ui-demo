@@ -1468,6 +1468,37 @@ meaningful sequence. Layouts support left-to-right and right-to-left direction;
 directional icons mirror only when their meaning depends on direction. Numbers,
 dates, times, currency, and sorting behavior use locale-aware presentation.
 
+### Back to top
+
+Back to top is an optional in-page navigation aid for long vertical pages or
+independently scrolling content regions. Omit it when the top destination remains
+readily reachable, and provide no more than one control for each scroll context.
+It supplements rather than replaces the initial bypass route, landmarks,
+headings, or platform navigation.
+
+Place the default inline presentation after the primary content and before the
+footer. An optional floating presentation appears only after substantial
+scrolling and disappears when the top destination is visible. Its position in
+the reading and navigation order remains meaningful regardless of visual
+placement. It must not cover content, focused controls, persistent actions,
+system safe areas, or the footer.
+
+Activation returns the current scroll context to a named top destination and
+moves navigation focus to that destination rather than only changing the visible
+position. Use the visible label "Back to top", or a more specific label when
+multiple scroll contexts could be ambiguous. An upward-direction icon may
+supplement but does not replace the visible label.
+
+Back to top is navigation rather than a primary action. It has no disabled state
+and supports default, hover when available, focus, and active states. Movement is
+immediate by default; any optional smooth movement becomes immediate when reduced
+motion is requested.
+
+The inline presentation uses `action-link-*`, `label-md`, and the global focus
+roles. A floating presentation composes `surface-raised`, `border-secondary`,
+`text-link`, `shape-md`, and the minimum interactive target. Reuse these semantic
+roles rather than adding a dedicated token family.
+
 ### Controls and touch targets
 
 - Tiny controls are for dense, pointer-oriented tables and inline utilities.

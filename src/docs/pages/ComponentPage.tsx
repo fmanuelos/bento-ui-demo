@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { componentNavigation } from '../navigation'
 import { CodeBlock } from '../components/CodeBlock'
+import { DocsBackToTop } from '../components/DocsBackToTop'
 import { DocsSection, PageIntro } from '../components/DocsSection'
 import { PropsTable } from '../components/PropsTable'
 import { componentDocsBySlug } from '../content/components'
@@ -73,6 +74,7 @@ export function ComponentPage() {
           })}
         </div>
       </DocsSection>
+      <DocsBackToTop />
     </>
   )
 }

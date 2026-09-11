@@ -37,6 +37,7 @@ status outside this technology-neutral contract index.
 | [Toast and notification region](toast.md)          | Shared prose and async pattern    | Complete        | Alert, progress, async feedback        |
 | [Drawer and sheet](drawer.md)                      | Shared prose and dialog family    | Complete        | Dialog                                 |
 | [Public-site navigation](site-navigation.md)       | Shared prose and Public Site mode | Complete        | Disclosure, Dialog when modal          |
+| [Back to top](back-to-top.md)                      | Shared prose and contract         | Complete        | Link navigation and focus              |
 | [Button](button.md)                                | Frontmatter and prose             | Complete        | Shared state model                     |
 | [Text field](input.md)                             | Frontmatter and prose             | Complete        | Form field                             |
 | [Textarea](textarea.md)                            | Prose and contract                | Complete        | Form field, text field                 |

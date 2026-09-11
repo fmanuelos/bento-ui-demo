@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { BackToTop } from './components/BackToTop'
 import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Modal } from './components/Modal'
@@ -173,7 +174,7 @@ function DemoPage() {
           </nav>
         )}
 
-        <main id="top">
+        <main id="top" tabIndex={-1} className="outline-none">
           <section
             className="flex items-end justify-between px-space-1 pt-space-12 pb-space-6 max-sm:flex-col max-sm:items-start max-sm:gap-space-4 max-sm:pt-space-8"
             aria-labelledby="page-title"
@@ -405,6 +406,10 @@ function DemoPage() {
             </article>
           </section>
         </main>
+
+        <div className="flex justify-end px-space-1 pt-space-6">
+          <BackToTop targetId="top" />
+        </div>
 
         <footer className="flex justify-between px-space-1 pt-space-6 pb-space-8 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase max-sm:flex-col max-sm:gap-space-4">
           <span>Bento UI Admin</span>

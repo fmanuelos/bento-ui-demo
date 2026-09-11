@@ -23,6 +23,7 @@ const implementationFiles = new Map([
     'accordion',
     'alert',
     'avatar',
+    'back-to-top',
     'button',
     'card',
     'checkbox',

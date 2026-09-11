@@ -818,6 +818,49 @@ export const componentDocs = [
     related: ['navigation', 'disclosure', 'drawer'],
   }),
   createDoc({
+    slug: 'back-to-top',
+    title: 'Back to top',
+    summary:
+      'Returns a long page or scroll region to a named starting point without leaving focus behind.',
+    useCases: [
+      'Long reports, documentation, and content-heavy pages where returning to the beginning otherwise requires substantial navigation.',
+    ],
+    importCode: "import { BackToTop } from '@/components'",
+    basicCode: `<BackToTop targetId="main-content" />`,
+    props: [
+      {
+        name: 'targetId',
+        type: 'string',
+        description: 'Identifies the stable top destination in the current document.',
+      },
+      {
+        name: 'label',
+        type: 'string',
+        defaultValue: "'Back to top'",
+        description: 'Provides the visible destination label and supports localization.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Inline end-of-content presentation.',
+      'Default, hover, focus, and active link states.',
+    ],
+    accessibility: [
+      'Uses native same-document link navigation.',
+      'Moves focus to the named destination after activation.',
+      'Keeps a visible label and treats the upward indicator as decorative.',
+    ],
+    responsive:
+      'The inline link reflows with content and retains its visible label at narrow widths and high zoom.',
+    theme: 'Uses action-link, label, shape, interactive-target, and focus roles.',
+    mistakes: [
+      'Do not use it on short pages.',
+      'Do not target an unnamed or unrelated location.',
+      'Do not use it instead of the initial bypass route.',
+    ],
+    related: ['site-navigation', 'navigation', 'button'],
+  }),
+  createDoc({
     slug: 'button',
     title: 'Button',
     summary:

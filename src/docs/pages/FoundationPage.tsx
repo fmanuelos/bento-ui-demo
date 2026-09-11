@@ -1,4 +1,5 @@
 import { Navigate, useLocation } from 'react-router-dom'
+import { DocsBackToTop } from '../components/DocsBackToTop'
 import { DocsSection, PageIntro } from '../components/DocsSection'
 import { foundationDocsByPath } from '../content/foundations'
 
@@ -18,6 +19,7 @@ export function FoundationPage() {
           {section.body}
         </DocsSection>
       ))}
+      <DocsBackToTop />
     </>
   )
 }
