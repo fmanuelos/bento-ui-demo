@@ -21,14 +21,14 @@ export const foundationNavigation: readonly DocsNavigationItem[] = foundationDoc
   }),
 )
 
-export const componentNavigation: readonly DocsNavigationItem[] = componentDocs.map(
-  (component) => ({
+export const componentNavigation: readonly DocsNavigationItem[] = [...componentDocs]
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .map((component) => ({
     title: component.title,
     slug: component.slug,
     path: `/docs/components/${component.slug}`,
     description: component.summary,
-  }),
-)
+  }))
 
 export const docsNavigation: readonly DocsNavigationSection[] = [
   {
