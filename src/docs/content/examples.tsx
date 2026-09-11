@@ -26,6 +26,7 @@ import {
   RadioGroup,
   Select,
   SiteNavigation,
+  SkipLink,
   StatCard,
   StatusBadge,
   Switch,
@@ -392,6 +393,21 @@ export const componentExamples: Record<string, ReactNode> = {
       <div className="flex min-h-[28rem] items-end justify-end">
         <BackToTop targetId="back-to-top-example-target" />
       </div>
+    </div>
+  ),
+  'skip-link': (
+    <div className="grid gap-space-4">
+      <SkipLink
+        targetId="skip-link-example-target"
+        className="!static !translate-y-0 justify-self-start"
+      />
+      <p
+        id="skip-link-example-target"
+        tabIndex={-1}
+        className="m-0 rounded-shape-md border border-border-secondary p-space-3 text-body-sm text-text-secondary outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+      >
+        Main content destination
+      </p>
     </div>
   ),
   button: (

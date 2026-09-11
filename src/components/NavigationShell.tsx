@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { Button } from './Button'
+import { SkipLink } from './SkipLink'
 
 export type NavigationItem = { href: string; label: string; icon?: ReactNode }
 export type NavigationShellProps = {
@@ -117,13 +118,9 @@ export function NavigationShell({
       }
       className={`min-h-screen bg-background-secondary ${className}`}
     >
-      <a
-        href={`#${mainContentId}`}
-        inert={mobileOpen ? true : undefined}
-        className="fixed start-space-3 top-space-3 z-50 -translate-y-24 rounded-shape-md bg-action-primary-background-default px-space-3 py-space-2 text-label-md font-semibold text-action-primary-foreground no-underline transition-transform outline-none focus:translate-y-0 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
-      >
+      <SkipLink targetId={mainContentId} inert={mobileOpen ? true : undefined}>
         {skipToMainLabel}
-      </a>
+      </SkipLink>
       <header
         inert={mobileOpen ? true : undefined}
         className="sticky top-0 z-20 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-padding-mobile text-text-primary sm:px-dashboard-padding-tablet lg:pr-dashboard-padding-desktop lg:pl-[calc(var(--spacing-dashboard-padding-desktop)+var(--shell-sidebar-width))]"

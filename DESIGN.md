@@ -1700,6 +1700,9 @@ bypass routes to named regions are optional when they materially shorten
 navigation. Do not expose a route when its target is hidden, inert, or otherwise
 unavailable in the current presentation.
 
+Reusable bypass controls follow the
+[`Skip link`](design/components/skip-link.md) contract.
+
 ### Component taxonomy
 
 - `overlay` defines shared anchored-layer behavior such as placement, viewport

@@ -13,6 +13,7 @@ Temporary modal navigation follows the shared
 trigger and follows the [`Disclosure contract`](disclosure.md) without adopting
 dialog behavior. Public-facing headers and destination navigation follow the
 separate [`Public-site Navigation contract`](site-navigation.md).
+Bypass navigation follows the separate [`Skip link contract`](skip-link.md).
 
 ## Anatomy and variants
 
@@ -58,8 +59,8 @@ text alternative on focus or request. A brief label presentation follows the
 destination's accessible name. Keyboard and reading order follow the meaningful
 visual order.
 
-Application shells provide a route past repeated top-bar and navigation content
-to the primary content. A route to primary navigation is optional when it
+Application shells provide a skip link past repeated top-bar and navigation
+content to the primary content. A route to primary navigation is optional when it
 materially shortens navigation through other repeated regions; name that route by
 purpose rather than visual position. Do not expose a route to hidden, inert, or
 closed temporary navigation.

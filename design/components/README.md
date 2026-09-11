@@ -37,6 +37,7 @@ status outside this technology-neutral contract index.
 | [Toast and notification region](toast.md)          | Shared prose and async pattern    | Complete        | Alert, progress, async feedback        |
 | [Drawer and sheet](drawer.md)                      | Shared prose and dialog family    | Complete        | Dialog                                 |
 | [Public-site navigation](site-navigation.md)       | Shared prose and Public Site mode | Complete        | Disclosure, Dialog when modal          |
+| [Skip link](skip-link.md)                          | Shared accessibility baseline     | Complete        | Link navigation and focus              |
 | [Back to top](back-to-top.md)                      | Shared prose and contract         | Complete        | Link navigation and focus              |
 | [Button](button.md)                                | Frontmatter and prose             | Complete        | Shared state model                     |
 | [Text field](input.md)                             | Frontmatter and prose             | Complete        | Form field                             |
@@ -54,7 +55,7 @@ status outside this technology-neutral contract index.
 | [Status badge](status-badge.md)                    | Frontmatter and prose             | Complete        | Shared state model                     |
 | [Alert](alert.md)                                  | Frontmatter and prose             | Complete        | Asynchronous-feedback pattern          |
 | [Popup surface and dropdown patterns](dropdown.md) | Frontmatter and prose             | Complete        | Overlay, collection model              |
-| [Navigation shell](navigation.md)                  | Frontmatter and prose             | Complete        | Dialog when modal, navigation pattern  |
+| [Navigation shell](navigation.md)                  | Frontmatter and prose             | Complete        | Skip link, dialog when modal           |
 | [Card](card.md)                                    | Frontmatter and prose             | Complete        | Data-display pattern when data-bearing |
 
 ## Proposed contracts
@@ -115,7 +116,7 @@ represent honestly.
 | Input and search          | Form field, Text field                                                    | Boundary mappings, read-only, validation, description, and message behavior                     |
 | Cards and statistic cards | Card                                                                      | Static, interactive, loading, empty, and error behavior                                         |
 | Avatars                   | Avatar, Avatar Group                                                      | Image fallback, identity exposure, ordering, overlap, and overflow behavior                     |
-| Navigation and tabs       | Navigation shell, Public-site navigation, Tabs                            | Focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |
+| Navigation and tabs       | Navigation shell, Public-site navigation, Skip link, Tabs                 | Focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |
 | Table                     | Data table, Data grid, Pagination                                         | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior    |
 | Alerts and badges         | Alert, Toast and notification region, Status badge                        | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status  |
 | Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover | Placement, focus, selection, dismissal, active item, viewport fit, and transformation           |

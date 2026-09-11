@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import { Button } from '../../components'
+import { Button, SkipLink } from '../../components'
 import { docsNavigation } from '../navigation'
 
 const Spark = () => (
@@ -103,12 +103,9 @@ export function DocsLayout() {
 
   return (
     <div className="min-h-screen bg-background-secondary text-text-primary">
-      <a
-        href="#docs-content"
-        className="fixed top-space-3 left-space-3 z-50 -translate-y-24 rounded-shape-md bg-action-primary-background-default px-space-3 py-space-2 font-semibold text-action-primary-foreground focus:translate-y-0"
-      >
+      <SkipLink targetId="docs-content" inert={mobileOpen ? true : undefined}>
         Skip to content
-      </a>
+      </SkipLink>
       <header
         inert={mobileOpen ? true : undefined}
         className="fixed inset-x-0 top-0 z-30 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-page-padding-mobile sm:px-page-padding-tablet lg:px-page-padding-desktop"

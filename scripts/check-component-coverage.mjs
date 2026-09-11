@@ -38,6 +38,7 @@ const implementationFiles = new Map([
     'popover',
     'progress',
     'select',
+    'skip-link',
     'switch',
     'table',
     'tabs',

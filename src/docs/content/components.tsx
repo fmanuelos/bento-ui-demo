@@ -818,6 +818,49 @@ export const componentDocs = [
     related: ['navigation', 'disclosure', 'drawer'],
   }),
   createDoc({
+    slug: 'skip-link',
+    title: 'Skip link',
+    summary:
+      'Provides a keyboard-accessible route past repeated page regions and moves focus to a named destination.',
+    useCases: [
+      'Application shells, documentation, and other pages with repeated headers or navigation before primary content.',
+    ],
+    importCode: "import { SkipLink } from '@/components'",
+    basicCode: `<SkipLink targetId="main-content">Skip to main content</SkipLink>`,
+    props: [
+      {
+        name: 'targetId',
+        type: 'string',
+        description: 'Identifies the stable, available destination in the current document.',
+      },
+      {
+        name: 'children',
+        type: 'ReactNode',
+        defaultValue: "'Skip to main content'",
+        description: 'Names the destination by purpose and supports localization.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Focus-revealed presentation by default.',
+      'Persistent presentation when the route should be visible to everyone.',
+    ],
+    accessibility: [
+      'Uses native same-document link navigation.',
+      'Moves focus to the named destination after activation.',
+      'Remains first in focus order when bypassing repeated page regions.',
+    ],
+    responsive:
+      'Uses logical placement and accommodates zoom, text enlargement, and translated labels above sticky content.',
+    theme: 'Uses primary action, label, shape, interactive-target, and focus roles.',
+    mistakes: [
+      'Do not hide it with display: none or visibility: hidden.',
+      'Do not expose a route to a hidden, inert, or unavailable destination.',
+      'Do not label a route only by visual position.',
+    ],
+    related: ['navigation', 'site-navigation', 'back-to-top'],
+  }),
+  createDoc({
     slug: 'back-to-top',
     title: 'Back to top',
     summary:
@@ -1819,7 +1862,7 @@ export const componentDocs = [
       'Do not remove destination names from the accessible tree when collapsed.',
       'Do not place a squeezed persistent sidebar beside a narrow dashboard.',
     ],
-    related: ['tabs', 'button', 'disclosure', 'drawer', 'site-navigation', 'tooltip'],
+    related: ['skip-link', 'tabs', 'button', 'disclosure', 'drawer', 'site-navigation', 'tooltip'],
   }),
   createDoc({
     slug: 'card',
