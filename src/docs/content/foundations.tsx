@@ -197,14 +197,24 @@ const typeRoles = [
   ['data-sm', 'text-data-sm font-data-sm leading-data-sm'],
 ] as const
 const spacingRoles = [
+  ['space-0', 'w-space-0'],
+  ['space-0-5', 'w-space-0-5'],
   ['space-1', 'w-space-1'],
+  ['space-1-5', 'w-space-1-5'],
   ['space-2', 'w-space-2'],
+  ['space-2-5', 'w-space-2-5'],
   ['space-3', 'w-space-3'],
+  ['space-3-5', 'w-space-3-5'],
   ['space-4', 'w-space-4'],
+  ['space-5', 'w-space-5'],
   ['space-6', 'w-space-6'],
   ['space-8', 'w-space-8'],
+  ['space-10', 'w-space-10'],
   ['space-12', 'w-space-12'],
   ['space-16', 'w-space-16'],
+  ['space-20', 'w-space-20'],
+  ['space-24', 'w-space-24'],
+  ['space-32', 'w-space-32'],
 ] as const
 const radiusRoles = [
   ['none', 'rounded-shape-none'],
@@ -378,7 +388,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         body: (
           <div className="grid gap-space-3">
             {spacingRoles.map(([role, width]) => (
-              <div key={role} className="grid grid-cols-[4rem_1fr] items-center gap-space-3">
+              <div key={role} className="grid grid-cols-[6rem_1fr] items-center gap-space-3">
                 <code className="text-body-xs">{role}</code>
                 <span
                   className={`block h-space-2 max-w-full rounded-shape-full bg-action-primary-background-default ${width}`}
