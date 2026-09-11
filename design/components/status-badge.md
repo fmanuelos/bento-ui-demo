@@ -23,7 +23,7 @@ communicate transient operation feedback.
 - **Neutral:** Draft, Inactive, Archived, Unknown
 
 Each variant uses the matching `status-*` foreground, background, and border with
-`label-sm` typography and `rounded.full`.
+`label-sm` typography and `rounded.shape-full`.
 
 ## States and responsive behavior
 

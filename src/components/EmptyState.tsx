@@ -34,12 +34,12 @@ export function EmptyState({
   return (
     <div
       role={announce ? (variant === 'error' ? 'alert' : 'status') : undefined}
-      className={`grid justify-items-center rounded-lg text-center ${size === 'spacious' ? 'gap-space-4 p-space-8 sm:p-space-12' : 'gap-space-3 p-space-4'} ${feedback} ${className}`}
+      className={`grid justify-items-center rounded-shape-lg text-center ${size === 'spacious' ? 'gap-space-4 p-space-8 sm:p-space-12' : 'gap-space-3 p-space-4'} ${feedback} ${className}`}
       {...props}
     >
       {icon && (
         <span
-          className="grid size-10 place-items-center rounded-full bg-background-tertiary text-text-accent [&_svg]:size-5"
+          className="grid size-10 place-items-center rounded-shape-full bg-background-tertiary text-text-accent [&_svg]:size-5"
           aria-hidden="true"
         >
           {icon}

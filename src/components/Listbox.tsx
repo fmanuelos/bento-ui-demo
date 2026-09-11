@@ -144,7 +144,7 @@ export function Listbox({
         aria-disabled={disabled || undefined}
         aria-describedby={error ? `${listboxId}-error` : undefined}
         onKeyDown={handleKeyDown}
-        className={`max-h-64 overflow-y-auto rounded-md border bg-surface-raised p-space-2 text-body-sm text-text-primary outline-none focus-visible:border-border-focus focus-visible:ring-3 focus-visible:ring-focus-ring/20 ${error ? 'border-border-danger' : 'border-border-secondary'}`}
+        className={`max-h-64 overflow-y-auto rounded-shape-md border bg-surface-raised p-space-2 text-body-sm text-text-primary outline-none focus-visible:border-border-focus focus-visible:ring-3 focus-visible:ring-focus-ring/20 ${error ? 'border-border-danger' : 'border-border-secondary'}`}
       >
         {loading && (
           <p className="m-0 px-space-3 py-space-2 text-text-secondary">Loading options…</p>
@@ -166,11 +166,11 @@ export function Listbox({
                 onMouseMove={() => !option.disabled && setActiveIndex(index)}
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => select(option)}
-                className={`flex min-h-control-height-small items-center gap-space-3 rounded-md px-space-3 py-space-2 ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${selected ? 'bg-selection-background text-selection-foreground' : active ? 'bg-action-ghost-background-hover' : ''}`}
+                className={`flex min-h-control-height-small items-center gap-space-3 rounded-shape-md px-space-3 py-space-2 ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${selected ? 'bg-selection-background text-selection-foreground' : active ? 'bg-action-ghost-background-hover' : ''}`}
               >
                 {multiple && (
                   <span
-                    className={`grid size-4 place-items-center rounded-xs border ${selected ? 'border-action-primary-background-default bg-action-primary-background-default text-action-primary-foreground' : 'border-border-strong'}`}
+                    className={`grid size-4 place-items-center rounded-shape-xs border ${selected ? 'border-action-primary-background-default bg-action-primary-background-default text-action-primary-foreground' : 'border-border-strong'}`}
                     aria-hidden="true"
                   >
                     {selected && '✓'}

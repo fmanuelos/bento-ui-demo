@@ -41,7 +41,7 @@ Temporary navigation may use a modal drawer but continues to follow the
 ## Sizes and semantic token mapping
 
 The surface uses `surface-raised`, `text-primary`, and `border-secondary`. Modal
-variants use `background-overlay`. Use `rounded.xl` on exposed corners; an edge
+variants use `background-overlay`. Use `rounded.shape-xl` on exposed corners; an edge
 flush with the viewport does not need an artificial outer radius. Apply modal or
 raised depth according to modality and DESIGN.md layer guidance.
 

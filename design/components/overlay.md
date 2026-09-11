@@ -37,7 +37,7 @@ flip to remain usable within the available viewport or containing boundary.
 ## Semantic token mapping
 
 Raised popup surfaces use the `dropdown` frontmatter mapping:
-`surface-raised`, `text-primary`, `rounded.md`, and `spacing.space-2`. Use
+`surface-raised`, `text-primary`, `rounded.shape-md`, and `spacing.space-2`. Use
 `border-secondary` or the active theme's equivalent quiet edge. Apply the raised
 popup depth described in DESIGN.md when tonal separation and a border do not
 provide enough distinction.

@@ -45,7 +45,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
           className="peer sr-only"
         />
         <span
-          className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-sm border-2 border-border-strong bg-surface-primary text-action-primary-foreground peer-checked:border-action-primary-background-default peer-checked:bg-action-primary-background-default peer-indeterminate:border-action-primary-background-default peer-indeterminate:bg-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:cursor-not-allowed peer-disabled:border-border-disabled peer-disabled:bg-background-disabled peer-checked:[&>svg]:block"
+          className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-shape-sm border-2 border-border-strong bg-surface-primary text-action-primary-foreground peer-checked:border-action-primary-background-default peer-checked:bg-action-primary-background-default peer-indeterminate:border-action-primary-background-default peer-indeterminate:bg-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:cursor-not-allowed peer-disabled:border-border-disabled peer-disabled:bg-background-disabled peer-checked:[&>svg]:block"
           aria-hidden="true"
         >
           {indeterminate ? (

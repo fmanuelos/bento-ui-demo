@@ -81,7 +81,7 @@ export function AlertDialog({
         {error && (
           <div
             role="alert"
-            className="rounded-md border border-feedback-danger-border bg-feedback-danger-background p-space-3 text-body-sm text-feedback-danger-foreground"
+            className="rounded-shape-md border border-feedback-danger-border bg-feedback-danger-background p-space-3 text-body-sm text-feedback-danger-foreground"
           >
             {error}
           </div>

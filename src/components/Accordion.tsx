@@ -49,7 +49,7 @@ export function Accordion({
 
   return (
     <div
-      className={`divide-y divide-border-secondary rounded-lg border border-border-secondary ${className}`}
+      className={`divide-y divide-border-secondary rounded-shape-lg border border-border-secondary ${className}`}
       {...props}
     >
       {items.map((item) => (
@@ -63,7 +63,7 @@ export function Accordion({
             'aria-disabled': (requiredOpen && expanded.includes(item.id)) || undefined,
           }}
           headingLevel={headingLevel}
-          className="first:rounded-t-lg last:rounded-b-lg"
+          className="first:rounded-t-shape-lg last:rounded-b-shape-lg"
         >
           {item.content}
         </Disclosure>

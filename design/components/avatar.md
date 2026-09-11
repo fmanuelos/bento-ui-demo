@@ -40,7 +40,7 @@ editing affordances, and presence indicators are outside this contract.
 | Large  | `avatar-size-large`  | `label-lg` | Profile summaries and prominent identity |
 
 The fallback uses the `avatar-fallback` frontmatter mapping:
-`brand-background-subtle`, `brand-foreground`, and `rounded.full`. Image and
+`brand-background-subtle`, `brand-foreground`, and `rounded.shape-full`. Image and
 fallback presentations share the selected size and circular boundary. The dark
 theme uses the related `avatar-fallback-dark` color mapping.
 

@@ -96,7 +96,7 @@ export function DataGrid<T>({
 
   return (
     <div
-      className={`overflow-x-auto rounded-lg border border-table-border ${className}`}
+      className={`overflow-x-auto rounded-shape-lg border border-table-border ${className}`}
       aria-busy={loading || undefined}
     >
       <table

@@ -30,13 +30,14 @@ export type ModalProps = {
 }
 
 const presentationClasses = {
-  center: 'm-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-container-narrow rounded-xl',
+  center:
+    'm-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-container-narrow rounded-shape-xl',
   'drawer-start':
-    'fixed inset-y-0 left-0 m-0 h-dvh max-h-dvh w-[90vw] max-w-container-readable rounded-r-xl',
+    'fixed inset-y-0 left-0 m-0 h-dvh max-h-dvh w-[90vw] max-w-container-readable rounded-r-shape-xl',
   'drawer-end':
-    'fixed inset-y-0 right-0 m-0 h-dvh max-h-dvh w-[90vw] max-w-container-readable rounded-l-xl',
+    'fixed inset-y-0 right-0 m-0 h-dvh max-h-dvh w-[90vw] max-w-container-readable rounded-l-shape-xl',
   sheet:
-    'fixed inset-x-0 bottom-0 m-0 max-h-[85dvh] w-full max-w-none rounded-t-xl pb-[max(var(--spacing-space-6),env(safe-area-inset-bottom))]',
+    'fixed inset-x-0 bottom-0 m-0 max-h-[85dvh] w-full max-w-none rounded-t-shape-xl pb-[max(var(--spacing-space-6),env(safe-area-inset-bottom))]',
 } as const
 
 export function Modal({

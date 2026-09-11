@@ -167,7 +167,7 @@ function NavigationExample() {
         { href: '#settings', label: 'Settings', icon: <span>⚙</span> },
       ]}
       utilities={<StatusBadge variant="positive">Online</StatusBadge>}
-      className="relative !min-h-container-narrow overflow-hidden rounded-lg border border-border-secondary [&>aside]:absolute [&>header]:absolute [&>header]:inset-x-0 [&>main]:pt-[calc(var(--spacing-topbar-height)+var(--spacing-space-4))]"
+      className="relative !min-h-container-narrow overflow-hidden rounded-shape-lg border border-border-secondary [&>aside]:absolute [&>header]:absolute [&>header]:inset-x-0 [&>main]:pt-[calc(var(--spacing-topbar-height)+var(--spacing-space-4))]"
     >
       <Card heading={<h3 className="m-0 text-heading-sm">Workspace</h3>}>
         <p className="m-0 text-body-sm text-text-secondary">
@@ -371,7 +371,7 @@ export const componentExamples: Record<string, ReactNode> = {
         { href: '#resources', label: 'Resources' },
       ]}
       primaryAction={<Button size="small">Start free</Button>}
-      className="rounded-lg border"
+      className="rounded-shape-lg border"
     />
   ),
   button: (

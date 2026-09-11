@@ -27,7 +27,7 @@ multi-step explanations require a popover or dialog instead.
 ## Sizes and semantic token mapping
 
 Keep the surface compact while allowing text to wrap to a readable short line
-length. Use `surface-inverse` with `text-inverse`, `label-sm`, `rounded.md`, and
+length. Use `surface-inverse` with `text-inverse`, `label-sm`, `rounded.shape-md`, and
 `spacing.space-2`. Use a quiet inverse boundary when needed for high-contrast
 separation. The surface occupies the tooltip layer defined in DESIGN.md.
 

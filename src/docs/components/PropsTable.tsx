@@ -2,7 +2,7 @@ import { type PropReference } from '../content/types'
 
 export function PropsTable({ props }: { props: readonly PropReference[] }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-border-secondary">
+    <div className="overflow-x-auto rounded-shape-lg border border-border-secondary">
       <table className="w-full min-w-[44rem] border-collapse text-left text-body-sm">
         <thead className="bg-table-header-background text-label-sm text-text-secondary">
           <tr>

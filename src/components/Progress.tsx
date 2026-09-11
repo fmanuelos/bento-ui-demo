@@ -42,10 +42,10 @@ export function Progress({
         aria-valuemax={percentage === undefined ? undefined : max}
         aria-valuenow={boundedValue}
         aria-valuetext={valueLabel}
-        className="h-space-2 overflow-hidden rounded-full bg-feedback-info-background"
+        className="h-space-2 overflow-hidden rounded-shape-full bg-feedback-info-background"
       >
         <span
-          className={`block h-full rounded-full bg-feedback-info-foreground motion-reduce:transition-none ${percentage === undefined ? 'w-1/3 animate-pulse motion-reduce:animate-none' : 'transition-[width] duration-200'}`}
+          className={`block h-full rounded-shape-full bg-feedback-info-foreground motion-reduce:transition-none ${percentage === undefined ? 'w-1/3 animate-pulse motion-reduce:animate-none' : 'transition-[width] duration-200'}`}
           style={percentage === undefined ? undefined : { width: `${percentage}%` }}
         />
       </div>
@@ -73,7 +73,7 @@ export function Spinner({ label, size = 'medium', className = '', ...props }: Sp
       {...props}
     >
       <span
-        className={`${spinnerSizes[size]} animate-spin rounded-full border-2 border-current border-r-transparent motion-reduce:animate-none`}
+        className={`${spinnerSizes[size]} animate-spin rounded-shape-full border-2 border-current border-r-transparent motion-reduce:animate-none`}
         aria-hidden="true"
       />
     </span>

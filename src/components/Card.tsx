@@ -18,7 +18,7 @@ export function Card({
 }: CardProps) {
   return (
     <Element
-      className={`${compact ? 'rounded-md p-space-4' : 'rounded-lg p-space-6'} border border-border-secondary bg-surface-primary text-text-primary ${className}`}
+      className={`${compact ? 'rounded-shape-md p-space-4' : 'rounded-shape-lg p-space-6'} border border-border-secondary bg-surface-primary text-text-primary ${className}`}
       {...props}
     >
       {heading && <header className="mb-space-4">{heading}</header>}

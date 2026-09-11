@@ -138,7 +138,7 @@ export const OverlaySurface = forwardRef<HTMLDivElement, OverlaySurfaceProps>(
           surfaceRef.current = element
           assignRef(forwardedRef, element)
         }}
-        className={`z-40 overflow-y-auto rounded-md border p-space-2 shadow-lg ${surface === 'inverse' ? 'border-border-inverse bg-surface-inverse text-text-inverse' : 'border-border-secondary bg-surface-raised text-text-primary'} ${className}`}
+        className={`z-40 overflow-y-auto rounded-shape-md border p-space-2 shadow-lg ${surface === 'inverse' ? 'border-border-inverse bg-surface-inverse text-text-inverse' : 'border-border-secondary bg-surface-raised text-text-primary'} ${className}`}
         style={{ ...position, ...style }}
         {...props}
       >

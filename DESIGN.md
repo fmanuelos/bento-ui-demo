@@ -428,13 +428,13 @@ typography:
     letterSpacing: 0em
 
 rounded:
-  none: 0px
-  xs: 2px
-  sm: 4px
-  md: 8px
-  lg: 12px
-  xl: 16px
-  full: 9999px
+  shape-none: 0px
+  shape-xs: 2px
+  shape-sm: 4px
+  shape-md: 8px
+  shape-lg: 12px
+  shape-xl: 16px
+  shape-full: 9999px
 
 spacing:
   space-0: 0px
@@ -505,7 +505,7 @@ components:
     backgroundColor: '{colors.action-primary-background-default}'
     textColor: '{colors.action-primary-foreground}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-primary-hover:
@@ -520,27 +520,27 @@ components:
 
   button-size-tiny:
     typography: '{typography.label-sm}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-2}'
     height: '{spacing.control-height-tiny}'
   button-size-small:
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
   button-size-medium:
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-size-large:
     typography: '{typography.label-lg}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-4}'
     height: '{spacing.control-height-large}'
   button-size-extra-large:
     typography: '{typography.label-lg}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-6}'
     height: '{spacing.control-height-extra-large}'
 
@@ -548,7 +548,7 @@ components:
     backgroundColor: '{colors.action-secondary-background-default}'
     textColor: '{colors.action-secondary-foreground}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-secondary-hover:
@@ -565,7 +565,7 @@ components:
     backgroundColor: '{colors.action-outline-background-default}'
     textColor: '{colors.action-outline-foreground}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-outline-hover:
@@ -582,7 +582,7 @@ components:
     backgroundColor: '{colors.action-ghost-background-default}'
     textColor: '{colors.action-ghost-foreground}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-ghost-hover:
@@ -599,7 +599,7 @@ components:
     backgroundColor: '{colors.action-destructive-background-default}'
     textColor: '{colors.action-destructive-foreground}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   button-destructive-hover:
@@ -616,14 +616,14 @@ components:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-medium}'
   input-small:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-2}'
     height: '{spacing.control-height-small}'
   input-focus:
@@ -640,42 +640,42 @@ components:
     backgroundColor: '{colors.surface-secondary}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
 
   card:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
-    rounded: '{rounded.lg}'
+    rounded: '{rounded.shape-lg}'
     padding: '{spacing.space-6}'
   card-compact:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-4}'
   stat-card:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
-    rounded: '{rounded.lg}'
+    rounded: '{rounded.shape-lg}'
     padding: '{spacing.space-4}'
 
   avatar-fallback:
     backgroundColor: '{colors.brand-background-subtle}'
     textColor: '{colors.brand-foreground}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
   avatar-size-small:
     typography: '{typography.label-sm}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     size: '{spacing.avatar-size-small}'
   avatar-size-medium:
     typography: '{typography.label-md}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     size: '{spacing.avatar-size-medium}'
   avatar-size-large:
     typography: '{typography.label-lg}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     size: '{spacing.avatar-size-large}'
 
   sidebar:
@@ -690,7 +690,7 @@ components:
     backgroundColor: 'transparent'
     textColor: '{colors.navigation-sidebar-foreground}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
   sidebar-item-hover:
@@ -709,7 +709,7 @@ components:
     backgroundColor: 'transparent'
     textColor: '{colors.text-secondary}'
     typography: '{typography.label-md}'
-    rounded: '{rounded.sm}'
+    rounded: '{rounded.shape-sm}'
     padding: '{spacing.space-3}'
     height: '{spacing.control-height-small}'
   tab-hover:
@@ -741,63 +741,63 @@ components:
     backgroundColor: '{colors.status-positive-background}'
     textColor: '{colors.status-positive-foreground}'
     typography: '{typography.label-sm}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     padding: '{spacing.space-2}'
   badge-warning:
     backgroundColor: '{colors.status-warning-background}'
     textColor: '{colors.status-warning-foreground}'
     typography: '{typography.label-sm}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     padding: '{spacing.space-2}'
   badge-negative:
     backgroundColor: '{colors.status-negative-background}'
     textColor: '{colors.status-negative-foreground}'
     typography: '{typography.label-sm}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     padding: '{spacing.space-2}'
   badge-info:
     backgroundColor: '{colors.status-info-background}'
     textColor: '{colors.status-info-foreground}'
     typography: '{typography.label-sm}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     padding: '{spacing.space-2}'
   badge-neutral:
     backgroundColor: '{colors.status-neutral-background}'
     textColor: '{colors.status-neutral-foreground}'
     typography: '{typography.label-sm}'
-    rounded: '{rounded.full}'
+    rounded: '{rounded.shape-full}'
     padding: '{spacing.space-2}'
 
   alert-success:
     backgroundColor: '{colors.feedback-success-background}'
     textColor: '{colors.feedback-success-foreground}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-4}'
   alert-warning:
     backgroundColor: '{colors.feedback-warning-background}'
     textColor: '{colors.feedback-warning-foreground}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-4}'
   alert-danger:
     backgroundColor: '{colors.feedback-danger-background}'
     textColor: '{colors.feedback-danger-foreground}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-4}'
   alert-info:
     backgroundColor: '{colors.feedback-info-background}'
     textColor: '{colors.feedback-info-foreground}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-4}'
 
   dropdown:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.text-primary}'
-    rounded: '{rounded.md}'
+    rounded: '{rounded.shape-md}'
     padding: '{spacing.space-2}'
   modal:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.text-primary}'
-    rounded: '{rounded.xl}'
+    rounded: '{rounded.shape-xl}'
     padding: '{spacing.space-6}'
 
   # Dark entries override the color properties of the matching unqualified
@@ -1522,10 +1522,10 @@ documented in the relevant adapter.
 
 ## Shapes
 
-- `rounded.md` is the default for controls.
-- `rounded.lg` is the default for cards and grouped containers.
-- `rounded.xl` is reserved for dialogs and feature surfaces.
-- `rounded.full` is reserved for pills, badges, avatars, and circular controls.
+- `rounded.shape-md` is the default for controls.
+- `rounded.shape-lg` is the default for cards and grouped containers.
+- `rounded.shape-xl` is reserved for dialogs and feature surfaces.
+- `rounded.shape-full` is reserved for pills, badges, avatars, and circular controls.
 
 Use a container radius for tables rather than rounding individual rows or cells.
 

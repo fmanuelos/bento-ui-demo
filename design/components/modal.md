@@ -44,7 +44,7 @@ modal, and a modal remains modal if its backdrop is visually subtle.
 ## Semantic token mapping
 
 The modal backdrop uses `background-overlay`. The panel uses the `modal`
-frontmatter mapping: `surface-raised`, `text-primary`, `rounded.xl`, and
+frontmatter mapping: `surface-raised`, `text-primary`, `rounded.shape-xl`, and
 `spacing.space-6`, with `border-secondary` as its quiet edge. Apply the modal
 depth described in DESIGN.md when the border and tonal step do not sufficiently
 separate the panel from the backdrop.

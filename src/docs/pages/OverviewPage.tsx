@@ -45,7 +45,7 @@ export function OverviewPage() {
       <DocsSection id="start" title="Where to start">
         <div className="grid gap-space-3 sm:grid-cols-2">
           <Link
-            className="rounded-lg border border-border-secondary bg-surface-primary p-space-6 no-underline hover:border-border-focus"
+            className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-6 no-underline hover:border-border-focus"
             to="/docs/foundations"
           >
             <strong className="block text-heading-sm text-text-primary">Explore foundations</strong>
@@ -54,7 +54,7 @@ export function OverviewPage() {
             </span>
           </Link>
           <Link
-            className="rounded-lg border border-border-secondary bg-surface-primary p-space-6 no-underline hover:border-border-focus"
+            className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-6 no-underline hover:border-border-focus"
             to="/docs/components"
           >
             <strong className="block text-heading-sm text-text-primary">Browse components</strong>

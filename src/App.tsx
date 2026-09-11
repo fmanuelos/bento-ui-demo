@@ -29,7 +29,7 @@ const Spark = ({ className = 'size-5' }: { className?: string }) => (
 const labelClasses =
   'text-label-overline font-label-overline leading-label-overline font-semibold tracking-label-overline text-text-secondary uppercase'
 const cardClasses =
-  'relative overflow-hidden rounded-lg border border-border-subtle bg-surface-primary'
+  'relative overflow-hidden rounded-shape-lg border border-border-subtle bg-surface-primary'
 
 function DemoPage() {
   const [darkMode, setDarkMode] = useState(
@@ -58,26 +58,26 @@ function DemoPage() {
             href="#top"
             aria-label="Bento UI Admin home"
           >
-            <span className="grid size-7 place-items-center rounded-full bg-brand-background text-brand-on-background">
+            <span className="grid size-7 place-items-center rounded-shape-full bg-brand-background text-brand-on-background">
               <Spark className="size-4" />
             </span>
             Bento UI Admin
           </a>
           <nav className="hidden gap-space-2 sm:flex" aria-label="Primary navigation">
             <a
-              className="rounded-md bg-background-accent px-space-4 py-space-2 text-label-sm font-semibold text-text-accent"
+              className="rounded-shape-md bg-background-accent px-space-4 py-space-2 text-label-sm font-semibold text-text-accent"
               href="#overview"
             >
               Overview
             </a>
             <a
-              className="rounded-md px-space-4 py-space-2 text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
+              className="rounded-shape-md px-space-4 py-space-2 text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
               href="#schedule"
             >
               Schedule
             </a>
             <a
-              className="rounded-md px-space-4 py-space-2 text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
+              className="rounded-shape-md px-space-4 py-space-2 text-label-sm font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
               href="#projects"
             >
               Projects
@@ -142,7 +142,7 @@ function DemoPage() {
               )}
             </Button>
             <div
-              className="hidden size-control-height-medium place-items-center rounded-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background sm:grid"
+              className="hidden size-control-height-medium place-items-center rounded-shape-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background sm:grid"
               aria-label="Profile for Mira"
             >
               M
@@ -164,7 +164,7 @@ function DemoPage() {
               <a
                 key={href}
                 href={href}
-                className="rounded-md px-space-4 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
+                className="rounded-shape-md px-space-4 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary"
                 onClick={() => setMobileNavOpen(false)}
               >
                 {label}
@@ -197,10 +197,10 @@ function DemoPage() {
             id="overview"
             aria-label="Daily overview"
           >
-            <article className="relative min-h-[430px] overflow-hidden rounded-lg bg-background-inverse p-space-8 text-text-inverse max-sm:min-h-[570px] max-sm:p-space-6 lg:col-span-8">
+            <article className="relative min-h-[430px] overflow-hidden rounded-shape-lg bg-background-inverse p-space-8 text-text-inverse max-sm:min-h-[570px] max-sm:p-space-6 lg:col-span-8">
               <div className="relative z-10 flex h-full max-w-[55%] flex-col items-start max-sm:max-w-none">
-                <span className="inline-flex items-center gap-space-2 rounded-full bg-navigation-sidebar-item-hover px-space-3 py-space-2 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline uppercase">
-                  <span className="size-1.5 rounded-full bg-current" /> Today’s intention
+                <span className="inline-flex items-center gap-space-2 rounded-shape-full bg-navigation-sidebar-item-hover px-space-3 py-space-2 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline uppercase">
+                  <span className="size-1.5 rounded-shape-full bg-current" /> Today’s intention
                 </span>
                 <h2 className="my-space-8 text-display-lg leading-[1.08] font-bold tracking-display-lg max-sm:text-heading-xl">
                   Make room
@@ -226,12 +226,12 @@ function DemoPage() {
                 className="absolute inset-y-0 right-0 w-[45%] max-sm:inset-x-0 max-sm:top-auto max-sm:bottom-0 max-sm:h-56 max-sm:w-full"
                 aria-hidden="true"
               >
-                <div className="absolute top-10 right-[-82px] size-[330px] rounded-full border border-border-inverse max-sm:top-0 max-sm:right-[-55px] max-sm:size-[250px]" />
-                <div className="absolute top-[88px] right-[-34px] size-[235px] rounded-full border border-border-inverse max-sm:top-12 max-sm:right-[-7px] max-sm:size-[155px]" />
-                <div className="absolute top-[132px] right-2.5 grid size-[148px] place-items-center rounded-full bg-brand-background-subtle text-brand-foreground ring-12 ring-brand-background-subtle/10 max-sm:top-[68px] max-sm:right-4 max-sm:size-28">
+                <div className="absolute top-10 right-[-82px] size-[330px] rounded-shape-full border border-border-inverse max-sm:top-0 max-sm:right-[-55px] max-sm:size-[250px]" />
+                <div className="absolute top-[88px] right-[-34px] size-[235px] rounded-shape-full border border-border-inverse max-sm:top-12 max-sm:right-[-7px] max-sm:size-[155px]" />
+                <div className="absolute top-[132px] right-2.5 grid size-[148px] place-items-center rounded-shape-full bg-brand-background-subtle text-brand-foreground ring-12 ring-brand-background-subtle/10 max-sm:top-[68px] max-sm:right-4 max-sm:size-28">
                   <Spark className="size-12 max-sm:size-9" />
                 </div>
-                <div className="absolute right-37 bottom-12 grid size-[90px] rotate-[-8deg] place-content-center rounded-full bg-status-info-background text-center text-body-sm leading-none font-bold text-status-info-foreground max-sm:bottom-6 max-sm:left-9">
+                <div className="absolute right-37 bottom-12 grid size-[90px] rotate-[-8deg] place-content-center rounded-shape-full bg-status-info-background text-center text-body-sm leading-none font-bold text-status-info-foreground max-sm:bottom-6 max-sm:left-9">
                   09:30
                   <span className="mt-1 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline uppercase">
                     deep work
@@ -252,7 +252,7 @@ function DemoPage() {
                   <ArrowUpRight />
                 </Button>
               </div>
-              <div className="relative mx-auto my-space-6 grid size-[194px] place-items-center rounded-full bg-[conic-gradient(var(--color-chart-positive)_72%,var(--color-status-positive-background)_0)] after:absolute after:size-[154px] after:rounded-full after:bg-surface-primary">
+              <div className="relative mx-auto my-space-6 grid size-[194px] place-items-center rounded-shape-full bg-[conic-gradient(var(--color-chart-positive)_72%,var(--color-status-positive-background)_0)] after:absolute after:size-[154px] after:rounded-shape-full after:bg-surface-primary">
                 <div className="relative z-10 flex flex-col text-center">
                   <strong className="text-display-lg leading-none font-bold tracking-display-lg">
                     72%
@@ -276,7 +276,7 @@ function DemoPage() {
                   <p className={labelClasses}>On your desk</p>
                   <h3 className="mt-space-2 text-heading-md font-semibold">Today’s rhythm</h3>
                 </div>
-                <span className="grid size-control-height-small place-items-center rounded-sm bg-background-inverse text-data-sm font-semibold text-text-inverse">
+                <span className="grid size-control-height-small place-items-center rounded-shape-sm bg-background-inverse text-data-sm font-semibold text-text-inverse">
                   28
                 </span>
               </div>
@@ -291,12 +291,12 @@ function DemoPage() {
                     key={time}
                   >
                     <time className="text-body-xs font-semibold text-text-secondary">{time}</time>
-                    <span className={`h-9 w-1 rounded-full ${color}`} />
+                    <span className={`h-9 w-1 rounded-shape-full ${color}`} />
                     <span className="flex flex-col gap-space-1">
                       <strong className="text-body-sm">{title}</strong>
                       <span className="text-body-xs text-text-secondary">{detail}</span>
                     </span>
-                    <span className="rounded-full bg-background-tertiary px-space-2 py-space-1 text-body-xs text-text-secondary">
+                    <span className="rounded-shape-full bg-background-tertiary px-space-2 py-space-1 text-body-xs text-text-secondary">
                       {duration}
                     </span>
                   </li>
@@ -304,7 +304,7 @@ function DemoPage() {
               </ol>
             </article>
 
-            <article className="flex min-h-[360px] flex-col rounded-lg border border-border-accent bg-background-accent p-space-6 text-text-primary lg:col-span-3">
+            <article className="flex min-h-[360px] flex-col rounded-shape-lg border border-border-accent bg-background-accent p-space-6 text-text-primary lg:col-span-3">
               <div className="text-display-lg leading-[.7] font-bold text-text-accent">“</div>
               <blockquote className="mt-space-6 text-heading-md leading-[1.3] font-semibold">
                 Clarity comes from engagement, not thought.
@@ -324,17 +324,17 @@ function DemoPage() {
             </article>
 
             <article
-              className="relative flex min-h-[360px] flex-col overflow-hidden rounded-lg bg-background-inverse p-space-6 text-text-inverse lg:col-span-4"
+              className="relative flex min-h-[360px] flex-col overflow-hidden rounded-shape-lg bg-background-inverse p-space-6 text-text-inverse lg:col-span-4"
               id="projects"
             >
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-space-2 rounded-full bg-status-positive-background px-space-3 py-space-2 text-label-sm font-semibold tracking-[.08em] text-status-positive-foreground uppercase">
-                  <span className="size-1.5 rounded-full bg-current" /> In motion
+                <span className="inline-flex items-center gap-space-2 rounded-shape-full bg-status-positive-background px-space-3 py-space-2 text-label-sm font-semibold tracking-[.08em] text-status-positive-foreground uppercase">
+                  <span className="size-1.5 rounded-shape-full bg-current" /> In motion
                 </span>
                 <div className="flex" aria-label="Three collaborators">
                   {['R', 'J', 'N'].map((person) => (
                     <span
-                      className="-ml-space-2 grid size-8 place-items-center rounded-full border-2 border-background-inverse bg-brand-background-subtle text-label-sm font-bold text-brand-foreground"
+                      className="-ml-space-2 grid size-8 place-items-center rounded-shape-full border-2 border-background-inverse bg-brand-background-subtle text-label-sm font-bold text-brand-foreground"
                       key={person}
                     >
                       {person}
@@ -355,8 +355,8 @@ function DemoPage() {
                   <span>12 of 16 tasks</span>
                   <span>Due Friday</span>
                 </div>
-                <div className="mt-space-3 h-1.5 overflow-hidden rounded-full bg-border-inverse">
-                  <span className="block h-full w-3/4 rounded-full bg-chart-series-1" />
+                <div className="mt-space-3 h-1.5 overflow-hidden rounded-shape-full bg-border-inverse">
+                  <span className="block h-full w-3/4 rounded-shape-full bg-chart-series-1" />
                 </div>
               </div>
               <Button
@@ -378,13 +378,13 @@ function DemoPage() {
                 <h3 className="mt-space-2 text-heading-md leading-tight font-semibold">
                   Made from
                   <br />
-                  <code className="rounded-sm bg-background-tertiary px-1.5 py-0.5 font-mono text-lg font-bold">
+                  <code className="rounded-shape-sm bg-background-tertiary px-1.5 py-0.5 font-mono text-lg font-bold">
                     DESIGN.md
                   </code>
                 </h3>
               </div>
               <div
-                className="flex rounded-full bg-background-tertiary p-space-2"
+                className="flex rounded-shape-full bg-background-tertiary p-space-2"
                 aria-label="Theme colors"
               >
                 {[
@@ -394,7 +394,7 @@ function DemoPage() {
                   'bg-chart-series-5',
                 ].map((color) => (
                   <span
-                    className={`-ml-space-1 size-12 rounded-full border-3 border-surface-primary first:ml-0 ${color}`}
+                    className={`-ml-space-1 size-12 rounded-shape-full border-3 border-surface-primary first:ml-0 ${color}`}
                     key={color}
                   />
                 ))}

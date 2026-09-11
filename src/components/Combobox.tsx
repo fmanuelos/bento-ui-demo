@@ -147,7 +147,7 @@ export function Combobox({
             setOpen((shown) => !shown)
             inputRef.current?.focus()
           }}
-          className="absolute inset-y-0 right-0 grid w-control-height-medium place-items-center rounded-md text-text-secondary"
+          className="absolute inset-y-0 right-0 grid w-control-height-medium place-items-center rounded-shape-md text-text-secondary"
         >
           <svg
             className="size-4"
@@ -166,7 +166,7 @@ export function Combobox({
             role="listbox"
             aria-label={`${label} suggestions`}
             aria-busy={loading || undefined}
-            className="absolute z-30 mt-space-1 max-h-64 w-full overflow-y-auto rounded-md border border-border-secondary bg-surface-raised p-space-2 text-body-sm text-text-primary"
+            className="absolute z-30 mt-space-1 max-h-64 w-full overflow-y-auto rounded-shape-md border border-border-secondary bg-surface-raised p-space-2 text-body-sm text-text-primary"
           >
             {loading && (
               <p className="m-0 px-space-3 py-space-2 text-text-secondary">Loading suggestions…</p>
@@ -185,7 +185,7 @@ export function Combobox({
                   onMouseDown={(event) => event.preventDefault()}
                   onMouseMove={() => !option.disabled && setActiveIndex(index)}
                   onClick={() => commit(option)}
-                  className={`rounded-md px-space-3 py-space-2 ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${activeIndex === index ? 'bg-action-ghost-background-hover' : ''} ${currentValue === option.value ? 'font-semibold text-text-accent' : ''}`}
+                  className={`rounded-shape-md px-space-3 py-space-2 ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${activeIndex === index ? 'bg-action-ghost-background-hover' : ''} ${currentValue === option.value ? 'font-semibold text-text-accent' : ''}`}
                 >
                   {option.label}
                 </div>

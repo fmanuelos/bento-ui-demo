@@ -18,11 +18,11 @@ export function DocsSection({
     >
       <h2 className="mt-0 mb-space-4 text-heading-md font-semibold text-text-primary">{title}</h2>
       {preview ? (
-        <div className="rounded-lg border border-border-secondary bg-surface-primary p-space-4 sm:p-space-6">
+        <div className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4 sm:p-space-6">
           {children}
         </div>
       ) : (
-        <div className="min-w-0 text-body-md leading-relaxed text-text-secondary [&_a]:font-semibold [&_a]:text-text-link [&_code]:rounded-sm [&_code]:bg-background-tertiary [&_code]:px-space-1 [&_code]:py-space-1 [&_li+li]:mt-space-2 [&_ol]:list-decimal [&_ol]:pl-space-6 [&_ul]:list-disc [&_ul]:pl-space-6">
+        <div className="min-w-0 text-body-md leading-relaxed text-text-secondary [&_a]:font-semibold [&_a]:text-text-link [&_code]:rounded-shape-sm [&_code]:bg-background-tertiary [&_code]:px-space-1 [&_code]:py-space-1 [&_li+li]:mt-space-2 [&_ol]:list-decimal [&_ol]:pl-space-6 [&_ul]:list-disc [&_ul]:pl-space-6">
           {children}
         </div>
       )}

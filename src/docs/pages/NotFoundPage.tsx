@@ -12,7 +12,7 @@ export function NotFoundPage() {
       <div>
         <Link
           to="/docs"
-          className="inline-flex h-control-height-medium items-center rounded-md bg-action-primary-background-default px-space-3 text-label-md font-semibold text-action-primary-foreground no-underline outline-none hover:bg-action-primary-background-hover focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-focus-ring"
+          className="inline-flex h-control-height-medium items-center rounded-shape-md bg-action-primary-background-default px-space-3 text-label-md font-semibold text-action-primary-foreground no-underline outline-none hover:bg-action-primary-background-hover focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-focus-ring"
         >
           Return to documentation
         </Link>

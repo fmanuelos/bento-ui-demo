@@ -34,7 +34,7 @@ export function AvatarGroup({
       size={size === 'small' ? 'tiny' : 'small'}
       iconOnly
       aria-label={`Show ${hiddenCount} more ${hiddenCount === 1 ? 'person' : 'people'}`}
-      className={`rounded-full ${avatarSize}`}
+      className={`rounded-shape-full ${avatarSize}`}
     >
       +{hiddenCount}
     </Button>
@@ -68,7 +68,7 @@ export function AvatarGroup({
           </Popover>
         ) : (
           <span
-            className={`-ml-space-2 grid place-items-center rounded-full border border-border-secondary bg-background-tertiary font-semibold text-text-secondary ring-2 ring-surface-primary ${avatarSize}`}
+            className={`-ml-space-2 grid place-items-center rounded-shape-full border border-border-secondary bg-background-tertiary font-semibold text-text-secondary ring-2 ring-surface-primary ${avatarSize}`}
             aria-hidden="true"
           >
             +{hiddenCount}

@@ -42,7 +42,7 @@ export function Avatar({
   return (
     <span
       {...accessible}
-      className={`relative inline-grid shrink-0 place-items-center overflow-hidden rounded-full border border-border-secondary bg-brand-background-subtle font-semibold text-brand-foreground ${avatarSizes[size]} ${className}`}
+      className={`relative inline-grid shrink-0 place-items-center overflow-hidden rounded-shape-full border border-border-secondary bg-brand-background-subtle font-semibold text-brand-foreground ${avatarSizes[size]} ${className}`}
       {...props}
     >
       {imageVisible ? (

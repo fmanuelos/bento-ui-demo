@@ -12,7 +12,7 @@ export function CodeBlock({ code, label = 'Example code' }: CodeBlockProps) {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-border-secondary bg-background-inverse text-text-inverse">
+    <div className="overflow-hidden rounded-shape-lg border border-border-secondary bg-background-inverse text-text-inverse">
       <div className="flex items-center justify-between gap-space-3 border-b border-border-inverse px-space-4 py-space-2">
         <span className="text-label-sm font-semibold text-navigation-sidebar-foreground">
           {label}

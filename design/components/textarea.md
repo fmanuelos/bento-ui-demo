@@ -15,7 +15,7 @@ follow the shared [`form-field contract`](form-field.md).
 
 Textarea inherits the form-field and text-field label, description, status,
 helper, and validation anatomy. Fixed-height and content-growing variants are supported.
-Both use `surface-primary`, `text-primary`, the input typography, `rounded.md`,
+Both use `surface-primary`, `text-primary`, the input typography, `rounded.shape-md`,
 and the default, focus, disabled, and validation boundary roles.
 
 ## States and behavior

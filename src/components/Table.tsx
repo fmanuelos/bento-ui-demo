@@ -56,7 +56,7 @@ export function Table<T>({
           {toolbar}
         </div>
       )}
-      <div className="overflow-x-auto rounded-lg border border-table-border">
+      <div className="overflow-x-auto rounded-shape-lg border border-table-border">
         <table className="w-full border-collapse text-left text-body-sm text-text-primary">
           <caption className="sr-only">{caption}</caption>
           <thead className="bg-table-header-background text-label-sm font-semibold text-text-secondary">
@@ -87,7 +87,7 @@ export function Table<T>({
                     {column.sortable ? (
                       <button
                         type="button"
-                        className="font-inherit inline-flex min-h-control-height-small items-center gap-space-1 rounded-sm outline-none focus-visible:outline-3 focus-visible:outline-focus-ring"
+                        className="font-inherit inline-flex min-h-control-height-small items-center gap-space-1 rounded-shape-sm outline-none focus-visible:outline-3 focus-visible:outline-focus-ring"
                         onClick={() =>
                           onSort?.(
                             column.id,

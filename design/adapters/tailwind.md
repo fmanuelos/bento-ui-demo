@@ -29,6 +29,12 @@ system range names and content-driven transformation rules.
 Do not hand-edit generated files or rename semantic roles to fit a utility name.
 Re-evaluate every mapping and workaround when the exporter version changes.
 
+Rounded scale names use the `shape-*` prefix because the exporter maps the
+schema's `rounded` group into Tailwind's `--radius-*` namespace. For example,
+`rounded.shape-md` becomes `--radius-shape-md` and the `rounded-shape-md`
+utility. This preserves Tailwind's built-in `--radius-md` token instead of
+overriding it.
+
 ## Theme mapping
 
 The alpha DESIGN.md schema does not define nested theme modes. Bento UI Admin

@@ -66,7 +66,7 @@ export function Alert({
   return (
     <div
       role={urgent ? 'alert' : 'status'}
-      className={`flex items-start gap-space-3 rounded-md border p-space-4 ${variants[variant]} ${className}`}
+      className={`flex items-start gap-space-3 rounded-shape-md border p-space-4 ${variants[variant]} ${className}`}
       {...props}
     >
       <svg

@@ -31,7 +31,7 @@ selection, and keyboard behavior.
 3. Pattern-specific content and items
 4. Optional leading icons, trailing metadata, separators, or section labels
 
-Use `surface-raised`, `text-primary`, `rounded.md`, and `spacing.space-2`. Use quiet
+Use `surface-raised`, `text-primary`, `rounded.shape-md`, and `spacing.space-2`. Use quiet
 borders or restrained elevation to separate the menu from its anchor surface.
 
 ## States

@@ -65,7 +65,7 @@ export function ComponentPage() {
               <Link
                 key={item.path}
                 to={item.path}
-                className="rounded-md border border-border-primary bg-surface-primary px-space-3 py-space-2 no-underline hover:border-border-focus"
+                className="rounded-shape-md border border-border-primary bg-surface-primary px-space-3 py-space-2 no-underline hover:border-border-focus"
               >
                 {item.title}
               </Link>

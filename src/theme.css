@@ -365,13 +365,13 @@
   --font-weight-data-lg: 700;
   --font-weight-data-md: 600;
   --font-weight-data-sm: 600;
-  --radius-none: 0px;
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-full: 9999px;
+  --radius-shape-none: 0px;
+  --radius-shape-xs: 2px;
+  --radius-shape-sm: 4px;
+  --radius-shape-md: 8px;
+  --radius-shape-lg: 12px;
+  --radius-shape-xl: 16px;
+  --radius-shape-full: 9999px;
   --spacing-space-0: 0px;
   --spacing-space-0-5: 2px;
   --spacing-space-1: 4px;
@@ -419,4 +419,7 @@
   --spacing-container-readable: 720px;
   --spacing-container-page: 1200px;
   --spacing-container-dashboard: 1600px;
+  --spacing-avatar-size-small: 32px;
+  --spacing-avatar-size-medium: 40px;
+  --spacing-avatar-size-large: 48px;
 }

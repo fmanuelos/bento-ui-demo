@@ -109,13 +109,13 @@ const spacingRoles = [
   ['space-16', 'w-space-16'],
 ] as const
 const radiusRoles = [
-  ['none', 'rounded-none'],
-  ['xs', 'rounded-xs'],
-  ['sm', 'rounded-sm'],
-  ['md', 'rounded-md'],
-  ['lg', 'rounded-lg'],
-  ['xl', 'rounded-xl'],
-  ['full', 'rounded-full'],
+  ['none', 'rounded-shape-none'],
+  ['xs', 'rounded-shape-xs'],
+  ['sm', 'rounded-shape-sm'],
+  ['md', 'rounded-shape-md'],
+  ['lg', 'rounded-shape-lg'],
+  ['xl', 'rounded-shape-xl'],
+  ['full', 'rounded-shape-full'],
 ] as const
 
 export const foundationDocs: readonly FoundationDocumentation[] = [
@@ -176,10 +176,10 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
                   {tokens.map((token) => (
                     <div
                       key={token}
-                      className="flex items-center gap-space-3 rounded-md border border-border-secondary bg-surface-primary p-space-3"
+                      className="flex items-center gap-space-3 rounded-shape-md border border-border-secondary bg-surface-primary p-space-3"
                     >
                       <span
-                        className="size-9 shrink-0 rounded-md border border-border-primary"
+                        className="size-9 shrink-0 rounded-shape-md border border-border-primary"
                         style={{ background: `var(--color-${token})` }}
                       />
                       <code className="min-w-0 text-body-xs break-all">{token}</code>
@@ -222,7 +222,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Type roles',
         body: (
-          <div className="overflow-hidden rounded-lg border border-border-secondary">
+          <div className="overflow-hidden rounded-shape-lg border border-border-secondary">
             {typeRoles.map(([role, classes]) => (
               <div
                 key={role}
@@ -285,7 +285,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
               <div key={role} className="grid grid-cols-[4rem_1fr] items-center gap-space-3">
                 <code className="text-body-xs">{role}</code>
                 <span
-                  className={`block h-space-2 max-w-full rounded-full bg-action-primary-background-default ${width}`}
+                  className={`block h-space-2 max-w-full rounded-shape-full bg-action-primary-background-default ${width}`}
                 />
               </div>
             ))}
@@ -338,7 +338,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
                 <span
                   className={`size-14 border-2 border-border-strong bg-surface-secondary ${radius}`}
                 />
-                <code className="text-body-xs">rounded.{role}</code>
+                <code className="text-body-xs">rounded.shape-{role}</code>
               </div>
             ))}
           </div>
@@ -423,7 +423,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Inverse surfaces',
         body: (
-          <div className="rounded-lg bg-surface-inverse p-space-6 text-text-inverse">
+          <div className="rounded-shape-lg bg-surface-inverse p-space-6 text-text-inverse">
             <p className="m-0">
               Inverse is a supported local surface mode, not a complete page theme.
             </p>
@@ -507,7 +507,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
 
 function Range({ name, detail }: { name: string; detail: string }) {
   return (
-    <div className="rounded-lg border border-border-secondary bg-surface-primary p-space-4">
+    <div className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4">
       <strong className="block text-label-md">{name}</strong>
       <span className="mt-space-1 block text-body-sm text-text-secondary">{detail}</span>
     </div>

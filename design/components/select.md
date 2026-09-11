@@ -19,7 +19,7 @@ follow the shared [`form-field contract`](form-field.md).
 3. Current value and selection control
 4. Optional helper or validation message
 
-Use `surface-primary`, `text-primary`, the input typography, `rounded.md`, and the
+Use `surface-primary`, `text-primary`, the input typography, `rounded.shape-md`, and the
 default, focus, disabled, and validation boundary roles. Placeholder-like prompt
 text is not a valid selected value unless the field is optional.
 

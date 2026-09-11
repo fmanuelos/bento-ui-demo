@@ -89,7 +89,7 @@ export function DocsLayout() {
                 }
                 onClick={closeMobile}
                 className={({ isActive }) =>
-                  `rounded-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`
+                  `rounded-shape-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`
                 }
               >
                 {item.title}
@@ -105,7 +105,7 @@ export function DocsLayout() {
     <div className="min-h-screen bg-background-secondary text-text-primary">
       <a
         href="#docs-content"
-        className="fixed top-space-3 left-space-3 z-50 -translate-y-24 rounded-md bg-action-primary-background-default px-space-3 py-space-2 font-semibold text-action-primary-foreground focus:translate-y-0"
+        className="fixed top-space-3 left-space-3 z-50 -translate-y-24 rounded-shape-md bg-action-primary-background-default px-space-3 py-space-2 font-semibold text-action-primary-foreground focus:translate-y-0"
       >
         Skip to content
       </a>
@@ -138,7 +138,7 @@ export function DocsLayout() {
           to="/docs"
           className="flex min-w-0 items-center gap-space-2 font-bold text-text-primary no-underline"
         >
-          <span className="grid size-7 shrink-0 place-items-center rounded-full bg-action-primary-background-default text-action-primary-foreground">
+          <span className="grid size-7 shrink-0 place-items-center rounded-shape-full bg-action-primary-background-default text-action-primary-foreground">
             <Spark />
           </span>
           <span className="truncate">Bento UI Admin</span>
@@ -146,7 +146,7 @@ export function DocsLayout() {
         </NavLink>
         <a
           href="/"
-          className="ml-auto hidden rounded-md px-space-3 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block"
+          className="ml-auto hidden rounded-shape-md px-space-3 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block"
         >
           View demo
         </a>
