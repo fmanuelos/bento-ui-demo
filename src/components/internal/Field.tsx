@@ -10,10 +10,12 @@ export type FieldFrameProps = {
   id: string
   label: string
   hint?: string
+  description?: string
   helperText?: string
   error?: string
   status?: FieldStatus
   required?: boolean
+  busy?: boolean
   children: ReactNode
 }
 
@@ -28,17 +30,21 @@ export function FieldFrame({
   id,
   label,
   hint,
+  description,
   helperText,
   error,
   status = error ? 'invalid' : 'default',
   required,
+  busy = false,
   children,
 }: FieldFrameProps) {
-  const message = error ?? helperText
   const messageStatus = error ? 'invalid' : status
 
   return (
-    <div className="grid gap-space-2 text-label-md font-semibold text-text-primary">
+    <div
+      className="grid gap-space-2 text-label-md font-semibold text-text-primary"
+      aria-busy={busy || undefined}
+    >
       <label className="flex items-baseline justify-between gap-space-4" htmlFor={id}>
         <span>
           {label}
@@ -48,15 +54,30 @@ export function FieldFrame({
             </span>
           )}
         </span>
-        {hint && <span className="text-body-xs font-normal text-text-secondary">{hint}</span>}
+        {hint && (
+          <span id={`${id}-hint`} className="text-body-xs font-normal text-text-secondary">
+            {hint}
+          </span>
+        )}
       </label>
+      {description && (
+        <p id={`${id}-description`} className="m-0 text-body-xs font-normal text-text-secondary">
+          {description}
+        </p>
+      )}
       {children}
-      {message && (
+      {helperText && (
+        <p id={`${id}-helper`} className="m-0 text-body-xs font-normal text-text-secondary">
+          {helperText}
+        </p>
+      )}
+      {error && (
         <p
           id={`${id}-message`}
+          role="alert"
           className={`m-0 text-body-xs font-normal ${statusTextClasses[messageStatus]}`}
         >
-          {message}
+          {error}
         </p>
       )}
     </div>

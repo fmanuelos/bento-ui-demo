@@ -1,5 +1,6 @@
 import { forwardRef, useId, useState, type InputEvent, type TextareaHTMLAttributes } from 'react'
 import { FieldFrame, type FieldStatus } from './internal/Field'
+import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'
 
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -37,7 +38,13 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
     typeof defaultValue === 'string' ? defaultValue.length : 0,
   )
   const count = typeof value === 'string' ? value.length : internalCount
-  const messageId = `${textareaId}-message`
+  const resolvedHint =
+    hint ?? (maxLength && count !== undefined ? `${count}/${maxLength}` : undefined)
+  const describedBy = getFieldDescriptionIds(textareaId, {
+    hint: resolvedHint,
+    description: helperText,
+    error,
+  })
 
   const resize = (event: InputEvent<HTMLTextAreaElement>) => {
     if (autoGrow) {
@@ -51,8 +58,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
     <FieldFrame
       id={textareaId}
       label={label}
-      hint={hint ?? (maxLength && count !== undefined ? `${count}/${maxLength}` : undefined)}
-      helperText={helperText}
+      hint={resolvedHint}
+      description={helperText}
       error={error}
       status={status}
       required={required}
@@ -69,8 +76,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
           onChange?.(event)
         }}
         onInput={resize}
-        aria-describedby={helperText || error ? messageId : undefined}
-        aria-errormessage={error ? messageId : undefined}
+        aria-describedby={describedBy}
+        aria-errormessage={error ? `${textareaId}-message` : undefined}
         aria-invalid={Boolean(error) || status === 'invalid'}
         className={[
           fieldControlBase,

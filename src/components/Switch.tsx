@@ -13,6 +13,9 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
 ) {
   const generatedId = useId()
   const inputId = id ?? generatedId
+  const describedBy = [description ? `${inputId}-description` : '', error ? `${inputId}-error` : '']
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <div className={className}>
@@ -22,12 +25,14 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
       >
         <span className="grid gap-space-1 text-body-sm text-text-primary">
           <span className="font-semibold">{label}</span>
-          {(description || error) && (
-            <span
-              id={`${inputId}-message`}
-              className={`text-body-xs ${error ? 'text-text-danger' : 'text-text-secondary'}`}
-            >
-              {error ?? description}
+          {description && (
+            <span id={`${inputId}-description`} className="text-body-xs text-text-secondary">
+              {description}
+            </span>
+          )}
+          {error && (
+            <span id={`${inputId}-error`} className="text-body-xs text-text-danger">
+              {error}
             </span>
           )}
         </span>
@@ -39,7 +44,8 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
           role="switch"
           disabled={disabled || busy}
           aria-busy={busy || undefined}
-          aria-describedby={description || error ? `${inputId}-message` : undefined}
+          aria-describedby={describedBy || undefined}
+          aria-errormessage={error ? `${inputId}-error` : undefined}
           aria-invalid={Boolean(error)}
           className="peer sr-only"
         />

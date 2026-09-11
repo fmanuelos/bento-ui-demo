@@ -1,4 +1,5 @@
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react'
+import { Spinner } from './Progress'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'
 export type ButtonSize = 'tiny' | 'small' | 'medium' | 'large' | 'extra-large'
@@ -100,9 +101,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       {...props}
     >
       {loading && (
-        <span
-          className={`${iconClassName} animate-spin rounded-full border-2 border-current border-r-transparent motion-reduce:animate-none`}
-          aria-hidden="true"
+        <Spinner
+          size={
+            size === 'tiny' || size === 'small' ? 'small' : size === 'medium' ? 'medium' : 'large'
+          }
         />
       )}
       {!loading && !square && iconPosition === 'start' && icon && renderIcon(icon)}

@@ -40,11 +40,14 @@ export function RadioGroup({
   const generatedId = useId()
   const groupId = id ?? generatedId
   const groupName = name ?? groupId
+  const describedBy = [description ? `${groupId}-description` : '', error ? `${groupId}-error` : '']
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <fieldset
       className={`m-0 grid gap-space-3 border-0 p-0 ${className}`}
-      aria-describedby={description || error ? `${groupId}-message` : undefined}
+      aria-describedby={describedBy || undefined}
       aria-invalid={Boolean(error)}
     >
       <legend className="text-label-md font-semibold text-text-primary">
@@ -55,12 +58,14 @@ export function RadioGroup({
           </span>
         )}
       </legend>
-      {(description || error) && (
-        <p
-          id={`${groupId}-message`}
-          className={`m-0 text-body-xs ${error ? 'text-text-danger' : 'text-text-secondary'}`}
-        >
-          {error ?? description}
+      {description && (
+        <p id={`${groupId}-description`} className="m-0 text-body-xs text-text-secondary">
+          {description}
+        </p>
+      )}
+      {error && (
+        <p id={`${groupId}-error`} role="alert" className="m-0 text-body-xs text-text-danger">
+          {error}
         </p>
       )}
       <div

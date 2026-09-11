@@ -7,6 +7,7 @@ import {
   type KeyboardEvent,
 } from 'react'
 import { FieldFrame } from './internal/Field'
+import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'
 import { type ListboxOption } from './Listbox'
 
@@ -59,7 +60,10 @@ export function Combobox({
     [options, query],
   )
   const popupId = `${inputId}-popup`
-  const messageId = `${inputId}-message`
+  const describedBy = getFieldDescriptionIds(inputId, {
+    description: helperText,
+    error,
+  })
 
   const commit = (option: ListboxOption) => {
     if (option.disabled) return
@@ -99,7 +103,7 @@ export function Combobox({
     <FieldFrame
       id={inputId}
       label={label}
-      helperText={helperText}
+      description={helperText}
       error={error}
       required={required}
     >
@@ -118,8 +122,8 @@ export function Combobox({
           aria-activedescendant={
             open && filtered[activeIndex] ? `${popupId}-option-${activeIndex}` : undefined
           }
-          aria-describedby={helperText || error ? messageId : undefined}
-          aria-errormessage={error ? messageId : undefined}
+          aria-describedby={describedBy}
+          aria-errormessage={error ? `${inputId}-message` : undefined}
           aria-invalid={Boolean(error)}
           onFocus={() => setOpen(true)}
           onBlur={(event) => {

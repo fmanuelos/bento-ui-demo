@@ -1,4 +1,12 @@
-import { useEffect, useId, useRef, type MouseEvent, type ReactNode, type RefObject } from 'react'
+import {
+  useEffect,
+  useId,
+  useRef,
+  type AriaRole,
+  type MouseEvent,
+  type ReactNode,
+  type RefObject,
+} from 'react'
 import { Button } from './Button'
 
 export type ModalProps = {
@@ -13,8 +21,23 @@ export type ModalProps = {
   closeOnBackdrop?: boolean
   closeOnEscape?: boolean
   busy?: boolean
+  modal?: boolean
+  role?: Extract<AriaRole, 'dialog' | 'alertdialog'>
+  showCloseButton?: boolean
+  closeLabel?: string
+  presentation?: 'center' | 'drawer-start' | 'drawer-end' | 'sheet'
   className?: string
 }
+
+const presentationClasses = {
+  center: 'm-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-container-narrow rounded-xl',
+  'drawer-start':
+    'fixed inset-y-0 left-0 m-0 h-dvh max-h-dvh w-[90vw] max-w-container-readable rounded-r-xl',
+  'drawer-end':
+    'fixed inset-y-0 right-0 m-0 h-dvh max-h-dvh w-[90vw] max-w-container-readable rounded-l-xl',
+  sheet:
+    'fixed inset-x-0 bottom-0 m-0 max-h-[85dvh] w-full max-w-none rounded-t-xl pb-[max(var(--spacing-space-6),env(safe-area-inset-bottom))]',
+} as const
 
 export function Modal({
   open,
@@ -28,6 +51,11 @@ export function Modal({
   closeOnBackdrop = true,
   closeOnEscape = true,
   busy = false,
+  modal = true,
+  role = 'dialog',
+  showCloseButton = true,
+  closeLabel = 'Close dialog',
+  presentation = 'center',
   className = '',
 }: ModalProps) {
   const titleId = useId()
@@ -43,8 +71,11 @@ export function Modal({
       returnFocusRef?.current ?? (document.activeElement as HTMLElement | null)
     previousFocusRef.current = returnFocusElement
     const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    if (!dialog.open) dialog.showModal()
+    if (modal) document.body.style.overflow = 'hidden'
+    if (!dialog.open) {
+      if (modal) dialog.showModal()
+      else dialog.show()
+    }
     queueMicrotask(() =>
       (
         initialFocusRef?.current ??
@@ -55,11 +86,11 @@ export function Modal({
     )
 
     return () => {
-      document.body.style.overflow = previousOverflow
+      if (modal) document.body.style.overflow = previousOverflow
       if (dialog.open) dialog.close()
       returnFocusElement?.focus()
     }
-  }, [initialFocusRef, open, returnFocusRef])
+  }, [initialFocusRef, modal, open, returnFocusRef])
 
   if (!open) return null
 
@@ -77,6 +108,8 @@ export function Modal({
   return (
     <dialog
       ref={dialogRef}
+      role={role}
+      aria-modal={modal || undefined}
       aria-labelledby={titleId}
       aria-describedby={description ? descriptionId : undefined}
       aria-busy={busy || undefined}
@@ -85,7 +118,7 @@ export function Modal({
         if (closeOnEscape && !busy) onClose()
       }}
       onMouseDown={handleBackdrop}
-      className={`m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-container-narrow overflow-y-auto rounded-xl border border-border-secondary bg-surface-raised p-space-6 text-text-primary backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${className}`}
+      className={`overflow-y-auto border border-border-secondary bg-surface-raised p-space-6 text-text-primary backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${presentationClasses[presentation]} ${className}`}
     >
       <header className="flex items-start justify-between gap-space-6">
         <div>
@@ -101,27 +134,29 @@ export function Modal({
             </p>
           )}
         </div>
-        <Button
-          ref={closeButtonRef}
-          variant="ghost"
-          size="medium"
-          iconOnly
-          aria-label="Close modal"
-          onClick={onClose}
-          disabled={busy}
-          className="-mt-space-2 -mr-space-2"
-        >
-          <svg
-            className="size-5"
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
+        {showCloseButton && (
+          <Button
+            ref={closeButtonRef}
+            variant="ghost"
+            size="medium"
+            iconOnly
+            aria-label={closeLabel}
+            onClick={onClose}
+            disabled={busy}
+            className="-mt-space-2 -mr-space-2"
           >
-            <path d="m5 5 10 10M15 5 5 15" />
-          </svg>
-        </Button>
+            <svg
+              className="size-5"
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              aria-hidden="true"
+            >
+              <path d="m5 5 10 10M15 5 5 15" />
+            </svg>
+          </Button>
+        )}
       </header>
       <div className="mt-space-6">{children}</div>
       {footer && (

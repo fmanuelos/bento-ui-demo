@@ -1,5 +1,6 @@
 import { forwardRef, useId, type ReactNode, type SelectHTMLAttributes } from 'react'
 import { FieldFrame, type FieldSize, type FieldStatus } from './internal/Field'
+import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'
 import { resolveFieldSize } from './internal/fieldSizes'
 
@@ -37,15 +38,19 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
 ) {
   const generatedId = useId()
   const selectId = id ?? generatedId
-  const messageId = `${selectId}-message`
   const canonicalSize = resolveFieldSize(size)
+  const describedBy = getFieldDescriptionIds(selectId, {
+    hint,
+    description: helperText,
+    error,
+  })
 
   return (
     <FieldFrame
       id={selectId}
       label={label}
       hint={hint}
-      helperText={helperText}
+      description={helperText}
       error={error}
       status={status}
       required={required}
@@ -60,8 +65,8 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
           ref={ref}
           id={selectId}
           required={required}
-          aria-describedby={helperText || error ? messageId : undefined}
-          aria-errormessage={error ? messageId : undefined}
+          aria-describedby={describedBy}
+          aria-errormessage={error ? `${selectId}-message` : undefined}
           aria-invalid={Boolean(error) || status === 'invalid'}
           className={[
             fieldControlBase,

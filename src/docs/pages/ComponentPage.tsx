@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { componentNavigation } from '../navigation'
 import { CodeBlock } from '../components/CodeBlock'
 import { DocsSection, PageIntro } from '../components/DocsSection'
+import { PropsTable } from '../components/PropsTable'
 import { componentDocsBySlug } from '../content/components'
 
 export function ComponentPage() {
@@ -29,37 +30,7 @@ export function ComponentPage() {
         {documentation.example}
       </DocsSection>
       <DocsSection id="api" title="Props and API">
-        <div className="overflow-x-auto rounded-lg border border-border-secondary">
-          <table className="w-full min-w-[44rem] border-collapse text-left text-body-sm">
-            <thead className="bg-table-header-background text-label-sm text-text-secondary">
-              <tr>
-                <th className="border-b border-table-border p-space-3">Prop</th>
-                <th className="border-b border-table-border p-space-3">Type</th>
-                <th className="border-b border-table-border p-space-3">Default</th>
-                <th className="border-b border-table-border p-space-3">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {documentation.props.map((prop) => (
-                <tr key={prop.name}>
-                  <th
-                    scope="row"
-                    className="border-b border-table-border p-space-3 font-semibold text-text-primary"
-                  >
-                    <code>{prop.name}</code>
-                  </th>
-                  <td className="border-b border-table-border p-space-3">
-                    <code>{prop.type}</code>
-                  </td>
-                  <td className="border-b border-table-border p-space-3">
-                    <code>{prop.defaultValue ?? '—'}</code>
-                  </td>
-                  <td className="border-b border-table-border p-space-3">{prop.description}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <PropsTable props={documentation.props} />
       </DocsSection>
       <DocsSection id="variants" title="Variants, sizes, and states">
         <ul>

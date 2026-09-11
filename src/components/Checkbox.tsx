@@ -14,6 +14,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   const generatedId = useId()
   const inputId = id ?? generatedId
   const internalRef = useRef<HTMLInputElement>(null)
+  const describedBy = [description ? `${inputId}-description` : '', error ? `${inputId}-error` : '']
+    .filter(Boolean)
+    .join(' ')
 
   useEffect(() => {
     if (internalRef.current) internalRef.current.indeterminate = indeterminate
@@ -36,7 +39,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
           ref={setRef}
           id={inputId}
           type="checkbox"
-          aria-describedby={description || error ? `${inputId}-message` : undefined}
+          aria-describedby={describedBy || undefined}
+          aria-errormessage={error ? `${inputId}-error` : undefined}
           aria-invalid={Boolean(error)}
           className="peer sr-only"
         />
@@ -60,12 +64,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
         </span>
         <span className="grid gap-space-1">
           <span className="font-semibold">{label}</span>
-          {(description || error) && (
-            <span
-              id={`${inputId}-message`}
-              className={`text-body-xs ${error ? 'text-text-danger' : 'text-text-secondary'}`}
-            >
-              {error ?? description}
+          {description && (
+            <span id={`${inputId}-description`} className="text-body-xs text-text-secondary">
+              {description}
+            </span>
+          )}
+          {error && (
+            <span id={`${inputId}-error`} className="text-body-xs text-text-danger">
+              {error}
             </span>
           )}
         </span>

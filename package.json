@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "check": "pnpm format:check && pnpm design:lint && pnpm lint && pnpm build",
+    "check": "pnpm format:check && pnpm design:lint && pnpm components:check && pnpm lint && pnpm build",
+    "components:check": "node scripts/check-component-coverage.mjs",
     "lint": "eslint .",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
