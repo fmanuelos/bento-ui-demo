@@ -93,7 +93,7 @@ export function RadioGroup({
               className="peer sr-only"
             />
             <span
-              className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-shape-full border-2 border-border-strong bg-surface-primary peer-checked:border-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-focus-ring peer-disabled:border-border-disabled peer-disabled:bg-background-disabled after:size-2.5 after:rounded-shape-full after:bg-transparent peer-checked:after:bg-action-primary-background-default"
+              className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-shape-full border-2 border-border-strong bg-surface-primary peer-checked:border-action-primary-background-default peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus-ring peer-focus-visible:outline-solid peer-disabled:border-border-disabled peer-disabled:bg-background-disabled after:size-2.5 after:rounded-shape-full after:bg-transparent peer-checked:after:bg-action-primary-background-default"
               aria-hidden="true"
             />
             <span className="grid gap-space-1">

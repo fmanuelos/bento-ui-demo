@@ -476,8 +476,9 @@ spacing:
   grid-gutter-tablet: 20px
   grid-gutter-desktop: 24px
 
-  # Two-pixel strokes are dimensions, not general-purpose spacing.
-  focus-ring-width: 2px
+  # Focus indicator geometry is semantic, not general-purpose spacing.
+  focus-ring-width: 3px
+  focus-ring-offset-width: 2px
 
   control-height-tiny: 32px
   control-height-small: 40px
@@ -1249,12 +1250,20 @@ Transparent outline and ghost actions and tabs are supported on the default ligh
 page and surface backgrounds. In other themes or on inverse surfaces, use an
 explicit theme mapping rather than assuming transparent tokens remain legible.
 
-Use `focus-ring` for visible focus and `focus-ring-offset` when separation from the
-surface is necessary. Focus must not rely only on an internal color change. Its
-rendered area, contrast, and placement must remain perceivable on every supported
-surface; an adapter must add or retain a platform focus indicator when the token
-alone is insufficient. Focus must not be fully obscured by sticky or overlay
-content.
+The default authored focus indicator is a solid outer ring using `focus-ring-width`
+with `focus-ring-offset-width` of separation from the component boundary. Use
+`focus-ring` for the outer indicator and `focus-ring-offset` as the contrasting
+separation color when the surrounding surface alone does not provide sufficient
+contrast. Focus must not rely only on an internal color change. Its rendered area
+must be at least equivalent to a two CSS-pixel perimeter and maintain at least 3:1
+contrast against adjacent colors on every supported surface.
+
+Web implementations use `:focus-visible`. Do not suppress the user-agent outline
+unless a complete replacement is applied in the same focused state. Inset
+indicators are permitted only where an outer indicator would be clipped, such as
+inside a data grid or tightly contained scroll region, and must preserve equivalent
+area and contrast. Focus must not be fully obscured or clipped by sticky, overlay,
+or scrolling content.
 
 In dark mode, use `dark-focus-ring` with `dark-focus-ring-offset`. Preserve the
 offset as a contrasting inner separation when the ring is adjacent to a primary
@@ -1330,11 +1339,11 @@ Intentionally missing suffixes are not available spacing steps. Use named tokens
 instead of arbitrary values.
 
 `space-0` is available for responsive and state-based resets. `space-0-5` is a
-general spacing token, while two-pixel strokes use semantic dimension tokens such
-as `focus-ring-width`. Use `space-1` through `space-10` for component composition
-and the larger steps for generic layout spacing. When spacing has a defined layout
-role, prefer its semantic token, such as `section-desktop`, over an equivalent
-`space-*` value.
+general spacing token, while focus indicator geometry uses semantic dimension
+tokens such as `focus-ring-width` and `focus-ring-offset-width`. Use `space-1`
+through `space-10` for component composition and the larger steps for generic
+layout spacing. When spacing has a defined layout role, prefer its semantic token,
+such as `section-desktop`, over an equivalent `space-*` value.
 
 The DESIGN.md schema has no general dimension group, so the `spacing` map also
 contains breakpoints, semantic heights, widths, gutters, padding, and content

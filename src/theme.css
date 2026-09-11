@@ -405,7 +405,8 @@
   --spacing-grid-gutter-mobile: 16px;
   --spacing-grid-gutter-tablet: 20px;
   --spacing-grid-gutter-desktop: 24px;
-  --spacing-focus-ring-width: 2px;
+  --spacing-focus-ring-width: 3px;
+  --spacing-focus-ring-offset-width: 2px;
   --spacing-control-height-tiny: 32px;
   --spacing-control-height-small: 40px;
   --spacing-control-height-medium: 44px;

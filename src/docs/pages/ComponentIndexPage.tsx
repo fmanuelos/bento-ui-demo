@@ -16,7 +16,7 @@ export function ComponentIndexPage() {
           <Link
             key={component.path}
             to={component.path}
-            className="group rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4 no-underline transition outline-none hover:border-border-focus focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-focus-ring focus-visible:outline-solid"
+            className="group rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4 no-underline transition outline-none hover:border-border-focus focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
           >
             <h2 className="m-0 text-heading-sm font-semibold text-text-primary group-hover:text-text-accent">
               {component.title}
