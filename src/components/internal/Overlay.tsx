@@ -47,7 +47,11 @@ export const OverlaySurface = forwardRef<HTMLDivElement, OverlaySurfaceProps>(
     forwardedRef,
   ) {
     const surfaceRef = useRef<HTMLDivElement>(null)
-    const [position, setPosition] = useState<CSSProperties>({ visibility: 'hidden' })
+    const [position, setPosition] = useState<CSSProperties>({
+      position: 'fixed',
+      visibility: 'hidden',
+      width: 'max-content',
+    })
 
     const dismiss = () => {
       onDismiss()
@@ -96,6 +100,7 @@ export const OverlaySurface = forwardRef<HTMLDivElement, OverlaySurfaceProps>(
             viewportPadding,
             Math.min(desiredLeft, window.innerWidth - surfaceRect.width - viewportPadding),
           ),
+          width: 'max-content',
           maxHeight: `calc(100dvh - ${viewportPadding * 2}px)`,
           visibility: 'visible',
         })
