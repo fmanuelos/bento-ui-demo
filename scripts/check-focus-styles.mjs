@@ -32,7 +32,7 @@ function sourceFiles(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const path = join(directory, entry.name)
     if (entry.isDirectory()) return sourceFiles(path)
-    return entry.name.endsWith('.tsx') ? [path] : []
+    return /\.tsx?$/.test(entry.name) ? [path] : []
   })
 }
 
