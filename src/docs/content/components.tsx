@@ -1742,6 +1742,18 @@ export const componentDocs = [
         defaultValue: "'Primary navigation'",
         description: 'Names the navigation landmark and mobile dialog.',
       },
+      {
+        name: 'mainContentId',
+        type: 'string',
+        defaultValue: "'main-content'",
+        description: 'Provides the stable fragment target for the main content landmark.',
+      },
+      {
+        name: 'skipToMainLabel',
+        type: 'string',
+        defaultValue: "'Skip to main content'",
+        description: 'Labels the bypass link and supports localization.',
+      },
       classNameProp,
     ],
     variants: [
@@ -1750,6 +1762,7 @@ export const componentDocs = [
       'Default, hover, focus, and current destination states.',
     ],
     accessibility: [
+      'A focus-revealed bypass link is the first focusable element and moves focus to main content.',
       'Uses named navigation landmarks and aria-current.',
       'Collapsed links retain names through title and accessible text.',
       'Mobile navigation moves focus inside, contains it, closes on Escape, and restores the trigger.',

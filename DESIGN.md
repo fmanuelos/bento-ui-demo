@@ -1662,6 +1662,13 @@ Components preserve meaningful reading and focus order, survive text enlargement
 and increased text spacing, and expose the same information in high-contrast and
 reduced-motion modes. Platform-specific semantics belong in adapters.
 
+Page compositions that place repeated regions before primary task content provide
+a bypass route before those regions. Activating the route moves navigation focus
+to the primary content rather than only changing its visible position. Additional
+bypass routes to named regions are optional when they materially shorten
+navigation. Do not expose a route when its target is hidden, inert, or otherwise
+unavailable in the current presentation.
+
 ### Component taxonomy
 
 - `overlay` defines shared anchored-layer behavior such as placement, viewport

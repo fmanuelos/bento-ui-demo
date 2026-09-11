@@ -9,6 +9,8 @@ export type NavigationShellProps = {
   children: ReactNode
   utilities?: ReactNode
   navigationLabel?: string
+  mainContentId?: string
+  skipToMainLabel?: string
   collapsed?: boolean
   onCollapsedChange?: (collapsed: boolean) => void
   className?: string
@@ -21,6 +23,8 @@ export function NavigationShell({
   children,
   utilities,
   navigationLabel = 'Primary navigation',
+  mainContentId = 'main-content',
+  skipToMainLabel = 'Skip to main content',
   collapsed: controlledCollapsed,
   onCollapsedChange,
   className = '',
@@ -113,6 +117,13 @@ export function NavigationShell({
       }
       className={`min-h-screen bg-background-secondary ${className}`}
     >
+      <a
+        href={`#${mainContentId}`}
+        inert={mobileOpen ? true : undefined}
+        className="fixed start-space-3 top-space-3 z-50 -translate-y-24 rounded-shape-md bg-action-primary-background-default px-space-3 py-space-2 text-label-md font-semibold text-action-primary-foreground no-underline transition-transform outline-none focus:translate-y-0 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+      >
+        {skipToMainLabel}
+      </a>
       <header
         inert={mobileOpen ? true : undefined}
         className="sticky top-0 z-20 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-padding-mobile text-text-primary sm:px-dashboard-padding-tablet lg:pr-dashboard-padding-desktop lg:pl-[calc(var(--spacing-dashboard-padding-desktop)+var(--shell-sidebar-width))]"
@@ -218,8 +229,10 @@ export function NavigationShell({
         </div>
       )}
       <main
+        id={mainContentId}
+        tabIndex={-1}
         inert={mobileOpen ? true : undefined}
-        className="px-dashboard-padding-mobile py-space-6 sm:px-dashboard-padding-tablet lg:ml-(--shell-sidebar-width) lg:px-dashboard-padding-desktop"
+        className="px-dashboard-padding-mobile py-space-6 outline-none sm:px-dashboard-padding-tablet lg:ml-(--shell-sidebar-width) lg:px-dashboard-padding-desktop"
       >
         {children}
       </main>
