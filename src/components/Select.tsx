@@ -2,7 +2,6 @@ import { forwardRef, useId, type ReactNode, type SelectHTMLAttributes } from 're
 import { FieldFrame, type FieldSize, type FieldStatus } from './internal/Field'
 import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'
-import { resolveFieldSize } from './internal/fieldSizes'
 
 export type SelectOption = { value: string; label: string; disabled?: boolean }
 
@@ -38,7 +37,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
 ) {
   const generatedId = useId()
   const selectId = id ?? generatedId
-  const canonicalSize = resolveFieldSize(size)
   const describedBy = getFieldDescriptionIds(selectId, {
     hint,
     description: helperText,
@@ -71,9 +69,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
           className={[
             fieldControlBase,
             'appearance-none pr-10',
-            canonicalSize === 'small'
-              ? 'h-control-height-small py-0'
-              : 'h-control-height-medium py-0',
+            size === 'small' ? 'h-control-height-small py-0' : 'h-control-height-medium py-0',
             leadingIcon ? 'pl-10' : '',
             placeholder ? "[&:has(option[value='']:checked)]:text-text-placeholder" : '',
             fieldStatusClasses[error ? 'invalid' : status],

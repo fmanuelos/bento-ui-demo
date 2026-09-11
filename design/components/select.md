@@ -25,9 +25,7 @@ text is not a valid selected value unless the field is optional.
 
 Selects support small (`control-height-small`) and medium
 (`control-height-medium`) sizes and default to medium. They intentionally do not
-inherit the button-only tiny, large, or extra-large sizes. The deprecated
-`compact` and `standard` names remain aliases for small and medium for one
-compatibility cycle.
+inherit the button-only tiny, large, or extra-large sizes.
 
 ## States and behavior
 

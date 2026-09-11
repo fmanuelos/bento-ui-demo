@@ -27,9 +27,7 @@ follow the shared [`form-field contract`](form-field.md).
 - **Small:** `control-height-small` for dense desktop filters and toolbars.
 - **Search:** Uses `surface-secondary` to distinguish utility search.
 
-The deprecated `standard` and `compact` names map to medium and small
-respectively for one compatibility cycle. Inputs do not inherit the button-only
-tiny, large, or extra-large sizes.
+Inputs do not inherit the button-only tiny, large, or extra-large sizes.
 
 ## States
 

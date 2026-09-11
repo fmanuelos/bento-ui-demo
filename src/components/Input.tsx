@@ -2,7 +2,6 @@ import { forwardRef, useId, type InputHTMLAttributes } from 'react'
 import { FieldFrame, type FieldSize, type FieldStatus } from './internal/Field'
 import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'
-import { resolveFieldSize } from './internal/fieldSizes'
 
 export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   label: string
@@ -32,7 +31,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 ) {
   const generatedId = useId()
   const inputId = id ?? generatedId
-  const canonicalSize = resolveFieldSize(size)
   const describedBy = getFieldDescriptionIds(inputId, {
     hint,
     description: helperText,
@@ -58,9 +56,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         aria-invalid={Boolean(error) || status === 'invalid'}
         className={[
           fieldControlBase,
-          canonicalSize === 'small'
-            ? 'h-control-height-small px-space-2'
-            : 'h-control-height-medium',
+          size === 'small' ? 'h-control-height-small px-space-2' : 'h-control-height-medium',
           variant === 'search' ? 'bg-surface-secondary' : '',
           fieldStatusClasses[error ? 'invalid' : status],
           className,
