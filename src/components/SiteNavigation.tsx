@@ -38,7 +38,7 @@ export function SiteNavigation({
       className={[
         'rounded-shape-md px-space-3 py-space-2 text-label-md font-semibold no-underline outline-none',
         'hover:bg-action-ghost-background-hover',
-        'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring',
+        'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
         item.href === currentHref
           ? 'bg-background-accent text-text-accent underline decoration-2 underline-offset-4'
           : 'text-text-secondary',

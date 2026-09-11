@@ -109,7 +109,7 @@ export function Tabs({
               onKeyDown={(event) => handleKeyDown(event, index, item.id)}
               className={[
                 'relative min-h-control-height-small shrink-0 rounded-shape-sm px-space-3 text-label-md font-semibold transition outline-none',
-                'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring',
+                'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
                 'disabled:cursor-not-allowed disabled:text-text-disabled',
                 isSelected
                   ? 'bg-background-accent text-text-accent after:absolute after:inset-x-space-3 after:bottom-0 after:h-0.5 after:bg-current'
@@ -126,7 +126,7 @@ export function Tabs({
         role="tabpanel"
         tabIndex={0}
         aria-labelledby={`${generatedId}-tab-${selected.id}`}
-        className="pt-space-4 outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+        className="pt-space-4 outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
       >
         {selected.content}
       </div>

@@ -89,7 +89,7 @@ export function NavigationShell({
             onClick={() => mobile && setMobileOpen(false)}
             className={[
               'flex min-h-control-height-small items-center gap-space-3 rounded-shape-md px-space-3 text-label-md font-semibold outline-none',
-              'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring',
+              'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
               current
                 ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground'
                 : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong',

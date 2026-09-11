@@ -87,7 +87,7 @@ export function Table<T>({
                     {column.sortable ? (
                       <button
                         type="button"
-                        className="font-inherit inline-flex min-h-control-height-small items-center gap-space-1 rounded-shape-sm outline-none focus-visible:outline-3 focus-visible:outline-focus-ring"
+                        className="font-inherit inline-flex min-h-control-height-small items-center gap-space-1 rounded-shape-sm outline-none focus-visible:outline-3 focus-visible:outline-focus-ring focus-visible:outline-solid"
                         onClick={() =>
                           onSort?.(
                             column.id,

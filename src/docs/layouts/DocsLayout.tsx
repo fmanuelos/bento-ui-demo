@@ -89,7 +89,7 @@ export function DocsLayout() {
                 }
                 onClick={closeMobile}
                 className={({ isActive }) =>
-                  `rounded-shape-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`
+                  `rounded-shape-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`
                 }
               >
                 {item.title}

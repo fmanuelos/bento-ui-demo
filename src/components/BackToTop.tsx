@@ -29,7 +29,7 @@ export function BackToTop({
     <a
       href={href}
       onClick={moveFocusToTarget}
-      className={`inline-flex min-h-control-height-medium items-center gap-space-2 rounded-shape-md px-space-2 text-label-md font-semibold text-action-link-default underline underline-offset-4 outline-none hover:text-action-link-hover focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring active:text-action-link-active ${className}`}
+      className={`inline-flex min-h-control-height-medium items-center gap-space-2 rounded-shape-md px-space-2 text-label-md font-semibold text-action-link-default underline underline-offset-4 outline-none hover:text-action-link-hover focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid active:text-action-link-active ${className}`}
       {...props}
     >
       <svg
