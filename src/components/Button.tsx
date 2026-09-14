@@ -68,10 +68,10 @@ const squareSizeClasses: Record<ButtonSize, string> = {
 }
 
 const iconSizeClasses: Record<ButtonSize, string> = {
-  tiny: 'size-4',
-  small: 'size-4',
-  medium: 'size-5',
-  large: 'size-5',
+  tiny: 'size-space-4',
+  small: 'size-space-4',
+  medium: 'size-space-5',
+  large: 'size-space-5',
   'extra-large': 'size-space-6',
 }
 

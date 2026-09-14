@@ -23,13 +23,13 @@ Buttons trigger an immediate action. Use one primary button for the most importa
 
 ## Sizes
 
-| Size        | Height                       | Horizontal padding | Typography | Icon | Gap               | Use                                       |
-| ----------- | ---------------------------- | ------------------ | ---------- | ---- | ----------------- | ----------------------------------------- |
-| Tiny        | `control-height-tiny`        | `spacing.space-2`  | `label-sm` | 16px | `spacing.space-1` | Dense inline and table utilities          |
-| Small       | `control-height-small`       | `spacing.space-3`  | `label-md` | 16px | `spacing.space-2` | Toolbars, filters, and compact forms      |
-| Medium      | `control-height-medium`      | `spacing.space-3`  | `label-md` | 20px | `spacing.space-2` | Default application and form action       |
-| Large       | `control-height-large`       | `spacing.space-4`  | `label-lg` | 20px | `spacing.space-2` | Important standalone or onboarding CTA    |
-| Extra-large | `control-height-extra-large` | `spacing.space-6`  | `label-lg` | 24px | `spacing.space-3` | One major public-facing or hero CTA group |
+| Size        | Height                       | Horizontal padding | Typography | Icon              | Gap               | Use                                       |
+| ----------- | ---------------------------- | ------------------ | ---------- | ----------------- | ----------------- | ----------------------------------------- |
+| Tiny        | `control-height-tiny`        | `spacing.space-2`  | `label-sm` | `spacing.space-4` | `spacing.space-1` | Dense inline and table utilities          |
+| Small       | `control-height-small`       | `spacing.space-3`  | `label-md` | `spacing.space-4` | `spacing.space-2` | Toolbars, filters, and compact forms      |
+| Medium      | `control-height-medium`      | `spacing.space-3`  | `label-md` | `spacing.space-5` | `spacing.space-2` | Default application and form action       |
+| Large       | `control-height-large`       | `spacing.space-4`  | `label-lg` | `spacing.space-5` | `spacing.space-2` | Important standalone or onboarding CTA    |
+| Extra-large | `control-height-extra-large` | `spacing.space-6`  | `label-lg` | `spacing.space-6` | `spacing.space-3` | One major public-facing or hero CTA group |
 
 Medium is the default when no size is specified. Buttons use `rounded.shape-md` at
 every size. Because height is fixed, component-token `padding` means horizontal
