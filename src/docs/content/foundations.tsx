@@ -108,15 +108,31 @@ const colorGroups = {
     ],
   },
   Feedback: {
-    Success: ['feedback-success-background', 'feedback-success-foreground', 'feedback-success-border'],
-    Warning: ['feedback-warning-background', 'feedback-warning-foreground', 'feedback-warning-border'],
+    Success: [
+      'feedback-success-background',
+      'feedback-success-foreground',
+      'feedback-success-border',
+    ],
+    Warning: [
+      'feedback-warning-background',
+      'feedback-warning-foreground',
+      'feedback-warning-border',
+    ],
     Danger: ['feedback-danger-background', 'feedback-danger-foreground', 'feedback-danger-border'],
     Info: ['feedback-info-background', 'feedback-info-foreground', 'feedback-info-border'],
   },
   Status: {
-    Positive: ['status-positive-background', 'status-positive-foreground', 'status-positive-border'],
+    Positive: [
+      'status-positive-background',
+      'status-positive-foreground',
+      'status-positive-border',
+    ],
     Warning: ['status-warning-background', 'status-warning-foreground', 'status-warning-border'],
-    Negative: ['status-negative-background', 'status-negative-foreground', 'status-negative-border'],
+    Negative: [
+      'status-negative-background',
+      'status-negative-foreground',
+      'status-negative-border',
+    ],
     Info: ['status-info-background', 'status-info-foreground', 'status-info-border'],
     Neutral: ['status-neutral-background', 'status-neutral-foreground', 'status-neutral-border'],
   },
@@ -195,6 +211,8 @@ const typeRoles = [
   ['data-lg', 'text-data-lg font-data-lg leading-data-lg'],
   ['data-md', 'text-data-md font-data-md leading-data-md'],
   ['data-sm', 'text-data-sm font-data-sm leading-data-sm'],
+  ['code-sm', 'text-code-sm font-code-sm leading-code-sm font-normal tracking-code-sm'],
+  ['code-md', 'text-code-md font-code-md leading-code-md font-normal tracking-code-md'],
 ] as const
 const spacingRoles = [
   ['space-0', 'w-space-0'],
@@ -327,7 +345,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
     path: '/docs/foundations/typography',
     title: 'Typography',
     summary:
-      'Inter provides a legible hierarchy from public-facing display text to compact labels and tabular data.',
+      'Inter provides the interface hierarchy, while JetBrains Mono keeps code, commands, and terminal output clear.',
     sections: [
       {
         title: 'Type roles',
@@ -627,7 +645,7 @@ function ColorSwatches({ tokens }: { tokens: readonly string[] }) {
             className="size-9 shrink-0 rounded-shape-md border border-border-primary"
             style={{ background: `var(--color-${token})` }}
           />
-          <code className="min-w-0 text-body-xs break-all">{token}</code>
+          <code className="min-w-0 text-code-sm font-code-sm leading-code-sm font-normal tracking-code-sm break-all">{token}</code>
         </div>
       ))}
     </div>

@@ -289,6 +289,8 @@
   --font-data-lg: "Inter";
   --font-data-md: "Inter";
   --font-data-sm: "Inter";
+  --font-code-sm: "JetBrains Mono";
+  --font-code-md: "JetBrains Mono";
   --text-display-xl: 72px;
   --text-display-lg: 56px;
   --text-display-md: 48px;
@@ -308,6 +310,8 @@
   --text-data-lg: 28px;
   --text-data-md: 20px;
   --text-data-sm: 14px;
+  --text-code-sm: 12px;
+  --text-code-md: 14px;
   --leading-display-xl: 1.05;
   --leading-display-lg: 1.08;
   --leading-display-md: 1.1;
@@ -327,6 +331,8 @@
   --leading-data-lg: 1.2;
   --leading-data-md: 1.3;
   --leading-data-sm: 1.4;
+  --leading-code-sm: 1.5;
+  --leading-code-md: 1.6;
   --tracking-display-xl: -0.025em;
   --tracking-display-lg: -0.02em;
   --tracking-display-md: -0.02em;
@@ -346,6 +352,8 @@
   --tracking-data-lg: -0.01em;
   --tracking-data-md: 0em;
   --tracking-data-sm: 0em;
+  --tracking-code-sm: 0em;
+  --tracking-code-md: 0em;
   --font-weight-display-xl: 700;
   --font-weight-display-lg: 700;
   --font-weight-display-md: 700;
@@ -365,6 +373,8 @@
   --font-weight-data-lg: 700;
   --font-weight-data-md: 600;
   --font-weight-data-sm: 600;
+  --font-weight-code-sm: 400;
+  --font-weight-code-md: 400;
   --radius-shape-none: 0px;
   --radius-shape-xs: 2px;
   --radius-shape-sm: 4px;

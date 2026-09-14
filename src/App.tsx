@@ -379,7 +379,7 @@ function DemoPage() {
                 <h3 className="mt-space-2 text-heading-md leading-tight font-semibold">
                   Made from
                   <br />
-                  <code className="rounded-shape-sm bg-background-tertiary px-1.5 py-0.5 font-mono text-lg font-bold">
+                  <code className="rounded-shape-sm bg-background-tertiary px-1.5 py-0.5 font-code-md text-lg font-bold">
                     DESIGN.md
                   </code>
                 </h3>

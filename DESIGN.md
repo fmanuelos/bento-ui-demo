@@ -426,6 +426,18 @@ typography:
     fontWeight: 600
     lineHeight: '1.4'
     letterSpacing: 0em
+  code-sm:
+    fontFamily: JetBrains Mono
+    fontSize: 12px
+    fontWeight: 400
+    lineHeight: '1.5'
+    letterSpacing: 0em
+  code-md:
+    fontFamily: JetBrains Mono
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: '1.6'
+    letterSpacing: 0em
 
 rounded:
   shape-none: 0px
@@ -1285,9 +1297,10 @@ or patterns for essential distinctions.
 
 ## Typography
 
-Inter is the interface family for supported weights 400–700. An adapter that
-cannot provide Inter must choose a highly legible fallback with compatible
-metrics and preserve hierarchy, weight distinction, and text reflow.
+Inter is the interface family for supported weights 400–700. JetBrains Mono is
+the code family at weight 400. An adapter that cannot provide either family must
+choose a highly legible fallback with compatible metrics and preserve hierarchy,
+weight distinction, and text reflow.
 Negative letter spacing is tuned for Inter. Adapters must reset it to `0em` when
 a fallback family or writing system makes tighter tracking less legible.
 
@@ -1301,12 +1314,17 @@ a fallback family or writing system makes tighter tracking less legible.
   a title. It is not for paragraphs, controls, navigation items, or status badges.
 - `caption` is for timestamps and supporting metadata.
 - `data-*` is for metrics and quantitative values.
+- `code-sm` is for inline code, identifiers, and compact technical data.
+- `code-md` is for code blocks, commands, terminal output, and logs.
 
 Use `body-md` by default on public surfaces. `body-sm` may be used for dashboard
 content and tables when readability is preserved. Do not use `body-xs` as a
 general body style.
 
 Use tabular numerals for aligned numeric columns and metrics.
+
+Disable standard and contextual ligatures in terminal output, logs, and other
+contexts where every authored character must remain visually unambiguous.
 
 Choose display and heading roles according to content and available space, not
 the HTML element name. A public-site hero may use `heading-xl` in mobile space,

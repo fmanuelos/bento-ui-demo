@@ -26,7 +26,7 @@ export function CodeBlock({ code, label = 'Example code' }: CodeBlockProps) {
           {copied ? 'Copied' : 'Copy'}
         </Button>
       </div>
-      <pre className="m-0 overflow-x-auto p-space-4 text-body-sm leading-relaxed">
+      <pre className="m-0 overflow-x-auto p-space-4 font-code-md text-code-md leading-code-md font-normal tracking-code-md">
         <code className="!bg-transparent !p-0">{code}</code>
       </pre>
     </div>
