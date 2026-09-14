@@ -35,11 +35,19 @@ already loaded content, position, and a route to the newly added results.
 
 ## Sizes and semantic token mapping
 
-Pagination controls use small Button sizing in compact tables and medium sizing
-when touch is expected. The current page uses `background-accent` and
-`text-accent` with a non-color current indicator. Available controls use outline
-or ghost action treatment according to the surrounding emphasis. Disabled
-boundary controls use their component's disabled roles.
+Pagination controls use medium Button sizing and meet the
+`touch-target-min` interactive dimension. The current page uses
+`background-accent` and `text-accent` with a non-color current indicator.
+Available controls use outline or ghost action treatment according to the
+surrounding emphasis. Disabled boundary controls use their component's disabled
+roles.
+
+Numbered page controls are compact text buttons, not icon-only buttons. They use
+the medium Button's label typography and `touch-target-min` as their minimum
+inline size. Single-digit controls therefore appear square, while multi-digit or
+localized page labels may grow horizontally without clipping. Page-number text
+is centered using the Button's text line box and is not constrained by an icon
+wrapper or icon-size token.
 
 The current page is a location state, not a primary action. Gap indicators are
 informational text and never interactive. No separate frontmatter component entry

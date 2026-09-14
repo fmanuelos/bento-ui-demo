@@ -42,6 +42,13 @@ determinable name. It can be combined with any canonical size and semantic color
 variant. Tiny and small visual controls remain subject to the minimum
 interactive-target rules below.
 
+Icon-only sizing is reserved for controls whose visible content is a graphical
+icon. Do not use icon-only presentation solely to make a text label square.
+Compact text controls retain the selected size's label typography and line
+height. They may use a minimum inline size equal to the selected control height
+and grow horizontally when the label requires more space. Icon-size tokens apply
+only to graphical icons, not text content.
+
 ## States
 
 | State           | Support                          | Contract                                                                                                            |

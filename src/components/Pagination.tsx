@@ -64,7 +64,7 @@ export function Pagination({
     >
       <Button
         variant="outline"
-        size="small"
+        size="medium"
         disabled={disabled || current === 1}
         onClick={() => go(current - 1)}
         aria-label="Previous page"
@@ -79,8 +79,8 @@ export function Pagination({
               <li key={item}>
                 <Button
                   variant={item === current ? 'secondary' : 'ghost'}
-                  size="small"
-                  iconOnly
+                  size="medium"
+                  className="min-w-touch-target-min"
                   disabled={disabled}
                   aria-label={`Page ${item}`}
                   aria-current={item === current ? 'page' : undefined}
@@ -104,7 +104,7 @@ export function Pagination({
       )}
       <Button
         variant="outline"
-        size="small"
+        size="medium"
         disabled={disabled || !canGoNext}
         onClick={() => go(current + 1)}
         aria-label="Next page"
