@@ -25,7 +25,7 @@ export function AvatarGroup({
   const visibleCount = Math.max(1, Math.min(maxVisible, people.length))
   const visible = people.slice(0, visibleCount)
   const hiddenCount = people.length - visible.length
-  const avatarSize = size === 'small' ? 'size-avatar-size-small' : 'size-avatar-size-medium'
+  const avatarSize = size === 'small' ? 'size-control-height-tiny' : 'size-control-height-small'
   const summary = `${label}: ${people.map((person) => person.name).join(', ')}`
 
   const overflow = (

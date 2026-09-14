@@ -10,9 +10,9 @@ export type AvatarProps = Omit<HTMLAttributes<HTMLSpanElement>, 'children'> & {
 }
 
 const avatarSizes: Record<AvatarSize, string> = {
-  small: 'size-avatar-size-small text-label-sm',
-  medium: 'size-avatar-size-medium text-label-md',
-  large: 'size-avatar-size-large text-label-lg',
+  small: 'size-control-height-tiny text-label-sm',
+  medium: 'size-control-height-small text-label-md',
+  large: 'size-control-height-large text-label-lg',
 }
 
 function initialsFor(name: string) {

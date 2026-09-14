@@ -33,11 +33,11 @@ editing affordances, and presence indicators are outside this contract.
 
 ## Sizes and semantic token mapping
 
-| Size   | Dimension            | Typography | Use                                      |
-| ------ | -------------------- | ---------- | ---------------------------------------- |
-| Small  | `avatar-size-small`  | `label-sm` | Dense lists, tables, and compact groups  |
-| Medium | `avatar-size-medium` | `label-md` | Default application and account context  |
-| Large  | `avatar-size-large`  | `label-lg` | Profile summaries and prominent identity |
+| Size   | Dimension              | Typography | Use                                      |
+| ------ | ---------------------- | ---------- | ---------------------------------------- |
+| Small  | `control-height-tiny`  | `label-sm` | Dense lists, tables, and compact groups  |
+| Medium | `control-height-small` | `label-md` | Default application and account context  |
+| Large  | `control-height-large` | `label-lg` | Profile summaries and prominent identity |
 
 The fallback uses the `avatar-fallback` frontmatter mapping:
 `brand-background-subtle`, `brand-foreground`, and `rounded.shape-full`. Image and

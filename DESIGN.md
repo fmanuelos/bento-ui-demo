@@ -488,10 +488,6 @@ spacing:
 
   touch-target-min: 44px
 
-  avatar-size-small: '{spacing.control-height-tiny}'
-  avatar-size-medium: '{spacing.control-height-small}'
-  avatar-size-large: '{spacing.control-height-large}'
-
   sidebar-expanded: 256px
   sidebar-collapsed: 72px
   topbar-height: 64px
@@ -669,15 +665,15 @@ components:
   avatar-size-small:
     typography: '{typography.label-sm}'
     rounded: '{rounded.shape-full}'
-    size: '{spacing.avatar-size-small}'
+    size: '{spacing.control-height-tiny}'
   avatar-size-medium:
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-full}'
-    size: '{spacing.avatar-size-medium}'
+    size: '{spacing.control-height-small}'
   avatar-size-large:
     typography: '{typography.label-lg}'
     rounded: '{rounded.shape-full}'
-    size: '{spacing.avatar-size-large}'
+    size: '{spacing.control-height-large}'
 
   sidebar:
     backgroundColor: '{colors.navigation-sidebar-background}'
@@ -1353,8 +1349,8 @@ layout dimensions, not interchangeable spacing steps.
 - `breakpoint-*` defines page-layout thresholds; mobile is the default and has no
   breakpoint token.
 - `section-*`, `*-padding-*`, and `grid-gutter-*` define composition spacing.
-- `control-height-*`, `avatar-size-*`, and `touch-target-min` define component
-  and target dimensions.
+- `control-height-*` and `touch-target-min` define component and target
+  dimensions.
 - `sidebar-*` and `topbar-height` define navigation-shell dimensions.
 - `container-*` defines content-width limits.
 
@@ -1585,9 +1581,10 @@ dimensions, typography, shape, and spacing for every button color variant;
 variant and state entries define semantic color. Medium is the default button
 size.
 
-Avatar fallback color and size are independent. `avatar-size-*` entries define
-the supported dimensions, typography, and circular shape; `avatar-fallback` and
-`avatar-fallback-dark` define fallback color without prescribing image content.
+Avatar fallback color and size are independent. `avatar-size-*` component entries
+map the supported sizes directly to `control-height-*` dimensions and define their
+typography and circular shape; `avatar-fallback` and `avatar-fallback-dark` define
+fallback color without prescribing image content.
 
 ### Component contract
 
