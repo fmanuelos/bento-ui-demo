@@ -1479,33 +1479,29 @@ dates, times, currency, and sorting behavior use locale-aware presentation.
 
 ### Back to top
 
-Back to top is an optional in-page navigation aid for long vertical pages or
-independently scrolling content regions. Omit it when the top destination remains
-readily reachable, and provide no more than one control for each scroll context.
-It supplements rather than replaces the initial bypass route, landmarks,
-headings, or platform navigation.
+Back to top is an optional floating in-page navigation aid for long vertical
+pages. Omit it when the top destination remains readily reachable, and provide no
+more than one control per page. It supplements rather than replaces the initial
+bypass route, landmarks, headings, or platform navigation.
 
-Place the default inline presentation after the primary content and before the
-footer. An optional floating presentation appears only after substantial
-scrolling and disappears when the top destination is visible. Its position in
-the reading and navigation order remains meaningful regardless of visual
-placement. It must not cover content, focused controls, persistent actions,
-system safe areas, or the footer.
+Mount it after the primary content so its reading and navigation order remains
+meaningful despite its fixed visual placement. It appears only as the remaining
+scroll distance approaches the bottom and remains unavailable near the top and
+middle of the page. It stays in the same viewport corner as the footer enters;
+page layouts reserve that corner from important content and persistent actions.
+The control respects system safe areas.
 
-Activation returns the current scroll context to a named top destination and
-moves navigation focus to that destination rather than only changing the visible
-position. Use the visible label "Back to top", or a more specific label when
-multiple scroll contexts could be ambiguous. An upward-direction icon may
-supplement but does not replace the visible label.
+Activation returns the page to a named top destination and moves navigation
+focus to that destination rather than only changing the visible position. Use
+the visible label "Back to top". An upward-direction icon may supplement but does
+not replace the visible label.
 
 Back to top is navigation rather than a primary action. It has no disabled state
-and supports default, hover when available, focus, and active states. Movement is
-immediate by default; any optional smooth movement becomes immediate when reduced
-motion is requested.
+and supports default, hover when available, focus, and active states. Web
+movement is smooth and becomes immediate when reduced motion is requested.
 
-The inline presentation uses `action-link-*`, `label-md`, and the global focus
-roles. A floating presentation composes `surface-raised`, `border-secondary`,
-`text-link`, `shape-md`, and the minimum interactive target. Reuse these semantic
+The presentation composes `surface-raised`, `border-secondary`, `text-link`,
+`label-md`, `shape-md`, and the minimum interactive target. Reuse these semantic
 roles rather than adding a dedicated token family.
 
 ### Controls and touch targets

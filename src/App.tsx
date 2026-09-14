@@ -407,11 +407,9 @@ function DemoPage() {
           </section>
         </main>
 
-        <div className="flex justify-end px-space-1 pt-space-6">
-          <BackToTop targetId="top" />
-        </div>
+        <BackToTop targetId="top" />
 
-        <footer className="flex justify-between px-space-1 pt-space-6 pb-space-8 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase max-sm:flex-col max-sm:gap-space-4">
+        <footer className="flex justify-between px-space-1 pt-space-6 pb-space-20 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase max-sm:flex-col max-sm:gap-space-4 sm:pb-space-24">
           <span>Bento UI Admin</span>
           <span>Designed for unhurried momentum.</span>
         </footer>

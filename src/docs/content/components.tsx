@@ -863,8 +863,7 @@ export const componentDocs = [
   createDoc({
     slug: 'back-to-top',
     title: 'Back to top',
-    summary:
-      'Returns a long page or scroll region to a named starting point without leaving focus behind.',
+    summary: 'Returns a long page to a named starting point without leaving focus behind.',
     useCases: [
       'Long reports, documentation, and content-heavy pages where returning to the beginning otherwise requires substantial navigation.',
     ],
@@ -882,24 +881,33 @@ export const componentDocs = [
         defaultValue: "'Back to top'",
         description: 'Provides the visible destination label and supports localization.',
       },
+      {
+        name: 'revealOffset',
+        type: 'number',
+        defaultValue: '320',
+        description: 'Reveals the fixed link at this remaining scroll distance from the bottom.',
+      },
       classNameProp,
     ],
     variants: [
-      'Inline end-of-content presentation.',
-      'Default, hover, focus, and active link states.',
+      'Fixed viewport presentation with unavailable and available visibility states.',
+      'Default, hover, focus, and active link states when available.',
     ],
     accessibility: [
       'Uses native same-document link navigation.',
       'Moves focus to the named destination after activation.',
       'Keeps a visible label and treats the upward indicator as decorative.',
+      'Removes the unavailable link from pointer, keyboard, and assistive-technology interaction.',
     ],
     responsive:
-      'The inline link reflows with content and retains its visible label at narrow widths and high zoom.',
-    theme: 'Uses action-link, label, shape, interactive-target, and focus roles.',
+      'Uses logical fixed placement, responsive page spacing, and system safe areas while retaining its visible label and stable corner position.',
+    theme:
+      'Uses raised-surface, secondary-border, text-link, label, shape, interactive-target, and focus roles.',
     mistakes: [
       'Do not use it on short pages.',
       'Do not target an unnamed or unrelated location.',
       'Do not use it instead of the initial bypass route.',
+      'Do not place important footer content or other persistent controls behind its viewport corner.',
     ],
     related: ['site-navigation', 'navigation', 'button'],
   }),

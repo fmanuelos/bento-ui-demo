@@ -6,7 +6,6 @@ import {
   AlertDialog,
   Avatar,
   AvatarGroup,
-  BackToTop,
   Button,
   Card,
   Checkbox,
@@ -377,22 +376,11 @@ export const componentExamples: Record<string, ReactNode> = {
     />
   ),
   'back-to-top': (
-    <div
-      role="region"
-      aria-label="Scrollable Back-to-Top example"
-      tabIndex={0}
-      className="h-56 overflow-y-auto rounded-shape-md border border-border-secondary p-space-3 outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
-    >
-      <p
-        id="back-to-top-example-target"
-        tabIndex={-1}
-        className="m-0 text-body-sm text-text-secondary outline-none"
-      >
-        Start of the example content
+    <div className="rounded-shape-md border border-border-secondary bg-surface-primary p-space-4">
+      <p className="m-0 text-body-sm text-text-secondary">
+        The live Back-to-Top control for this page appears in the viewport as you approach the end
+        of the documentation.
       </p>
-      <div className="flex min-h-[28rem] items-end justify-end">
-        <BackToTop targetId="back-to-top-example-target" />
-      </div>
     </div>
   ),
   'skip-link': (

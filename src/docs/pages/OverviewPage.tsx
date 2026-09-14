@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Card, StatusBadge } from '../../components'
+import { DocsBackToTop } from '../components/DocsBackToTop'
 import { PageIntro, DocsSection } from '../components/DocsSection'
 
 export function OverviewPage() {
@@ -71,6 +72,7 @@ export function OverviewPage() {
           implementations target modern platform semantics and WCAG 2.2 Level AA.
         </p>
       </DocsSection>
+      <DocsBackToTop />
     </>
   )
 }
