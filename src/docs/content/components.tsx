@@ -979,7 +979,85 @@ export const componentDocs = [
       'Do not remove the label during loading.',
       'Name the destructive outcome instead of relying on red.',
     ],
-    related: ['modal', 'dropdown', 'progress'],
+    related: ['button-group', 'modal', 'dropdown', 'progress'],
+  }),
+  createDoc({
+    slug: 'button-group',
+    title: 'Button Group',
+    summary:
+      'Arranges a small set of related, independent actions with stable order and hierarchy.',
+    useCases: [
+      'Form, dialog, toolbar, and public-site action areas containing two or three related actions.',
+    ],
+    importCode: "import { Button, ButtonGroup } from '@/components'",
+    basicCode: `<ButtonGroup variant="connected" aria-label="Zoom controls">
+  <Button variant="outline">Decrease zoom</Button>
+  <Button variant="outline">Reset zoom</Button>
+  <Button variant="outline">Increase zoom</Button>
+</ButtonGroup>`,
+    props: [
+      {
+        name: 'variant',
+        type: "'separated' | 'connected'",
+        defaultValue: "'separated'",
+        description: 'Uses spaced actions or one continuous outline boundary.',
+      },
+      {
+        name: 'orientation',
+        type: "'horizontal' | 'vertical' | 'responsive'",
+        defaultValue: "'horizontal'",
+        description:
+          'Keeps one row, stacks actions, or permits logical wrapping; connected groups exclude responsive wrapping.',
+      },
+      {
+        name: 'gap',
+        type: "'default' | 'spacious'",
+        defaultValue: "'default'",
+        description:
+          'Uses space-2 or the spacious public-site space-3 separation in separated groups.',
+      },
+      {
+        name: 'fullWidth',
+        type: 'boolean',
+        defaultValue: 'false',
+        description: 'Fills the available inline size and lets direct child actions grow.',
+      },
+      {
+        name: 'aria-label / aria-labelledby',
+        type: 'string',
+        description: 'Names the relationship and automatically supplies group semantics.',
+      },
+      {
+        name: '…div props',
+        type: 'HTMLAttributes<HTMLDivElement>',
+        description: 'Forwards native container attributes without changing Button behavior.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Separated horizontal, vertical, and responsive wrapping layouts.',
+      'Connected horizontal and vertical outline layouts with one continuous boundary.',
+      'Default and spacious separated gaps with optional full-width child actions.',
+      'Contained buttons retain their own size, variant, loading, disabled, and focus states.',
+    ],
+    accessibility: [
+      'Tab visits every action in source order; Enter and Space retain native Button behavior.',
+      'A named group receives role="group"; familiar action rows can remain ungrouped.',
+      'It does not add toolbar arrow-key navigation or selection semantics.',
+      'Connected buttons retain separate, unclipped focus rings above adjacent boundaries.',
+    ],
+    responsive:
+      'Separated groups may wrap while order stays clear. Connected groups never wrap; change the whole group to vertical when it no longer fits.',
+    theme:
+      'The group adds semantic spacing and shape; every light- and dark-theme color comes from its contained Buttons.',
+    mistakes: [
+      'Do not include more than one primary action in a separated group.',
+      'Do not mix Button sizes in one group.',
+      'Use only outline Buttons as direct children of a connected group.',
+      'Do not use Button Group for radio selection, peer-view tabs, or a split button.',
+      'Do not use role="toolbar" without implementing the complete toolbar keyboard model.',
+    ],
+    related: ['button', 'dropdown', 'radio-group', 'tabs'],
   }),
   createDoc({
     slug: 'input',

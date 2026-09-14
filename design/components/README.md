@@ -40,6 +40,7 @@ status outside this technology-neutral contract index.
 | [Skip link](skip-link.md)                          | Shared accessibility baseline     | Complete        | Link navigation and focus              |
 | [Back to top](back-to-top.md)                      | Shared prose and contract         | Complete        | Link navigation and focus              |
 | [Button](button.md)                                | Frontmatter and prose             | Complete        | Shared state model                     |
+| [Button Group](button-group.md)                    | Contract-only composition         | Complete        | Button, shared state model             |
 | [Text field](input.md)                             | Frontmatter and prose             | Complete        | Form field                             |
 | [Textarea](textarea.md)                            | Prose and contract                | Complete        | Form field, text field                 |
 | [Select](select.md)                                | Prose and contract                | Complete        | Form field                             |

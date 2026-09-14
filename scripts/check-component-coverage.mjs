@@ -25,6 +25,7 @@ const implementationFiles = new Map([
     'avatar',
     'back-to-top',
     'button',
+    'button-group',
     'card',
     'checkbox',
     'combobox',

@@ -111,4 +111,6 @@ expanded and controlled relationships. An icon-only button may use visible text,
 ## Example
 
 Use one primary action and a secondary, outline, or ghost alternative in a
-decision area. Use destructive only when the outcome involves removal or loss.
+decision area. Related independent actions follow the
+[`Button Group`](button-group.md) contract. Use destructive only when the outcome
+involves removal or loss.

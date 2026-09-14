@@ -7,6 +7,7 @@ import {
   Avatar,
   AvatarGroup,
   Button,
+  ButtonGroup,
   Card,
   Checkbox,
   Combobox,
@@ -432,6 +433,15 @@ export const componentExamples: Record<string, ReactNode> = {
         <Button variant="destructive">Delete project</Button>
         <Button loading>Save changes</Button>
       </div>
+    </div>
+  ),
+  'button-group': (
+    <div className="max-w-container-narrow">
+      <ButtonGroup variant="connected" aria-label="Zoom controls">
+        <Button variant="outline">Decrease zoom</Button>
+        <Button variant="outline">Reset zoom</Button>
+        <Button variant="outline">Increase zoom</Button>
+      </ButtonGroup>
     </div>
   ),
   input: (
