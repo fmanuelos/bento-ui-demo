@@ -27,7 +27,7 @@ export function DocsLayout() {
     const item = docsNavigation
       .flatMap((section) => section.items)
       .find((entry) => entry.path === pathname)
-    document.title = `${item?.title ?? 'Documentation'} — Bento UI Admin`
+    document.title = `${item?.title ?? 'Documentation'} — Bento UI`
     window.scrollTo({ top: 0 })
   }, [pathname])
 
@@ -138,7 +138,7 @@ export function DocsLayout() {
           <span className="grid size-7 shrink-0 place-items-center rounded-shape-full bg-action-primary-background-default text-action-primary-foreground">
             <Spark />
           </span>
-          <span className="truncate">Bento UI Admin</span>
+          <span className="truncate">Bento UI</span>
           <span className="hidden text-body-sm font-normal text-text-tertiary sm:inline">Docs</span>
         </NavLink>
         <a

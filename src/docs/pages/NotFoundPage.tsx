@@ -7,7 +7,7 @@ export function NotFoundPage() {
       <PageIntro
         eyebrow="404"
         title="Documentation page not found"
-        summary="That route is not part of the Bento UI Admin documentation."
+        summary="That route is not part of the Bento UI documentation."
       />
       <div>
         <Link

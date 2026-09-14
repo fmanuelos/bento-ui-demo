@@ -1,6 +1,6 @@
 # Web adapter
 
-This adapter maps Bento UI Admin to web-platform mechanisms. These mechanisms are
+This adapter maps Bento UI to web-platform mechanisms. These mechanisms are
 implementation guidance, not the conceptual definitions of the design system.
 
 ## Semantics and interaction
@@ -17,6 +17,14 @@ implementation guidance, not the conceptual definitions of the design system.
 
 Component files contain their specific HTML and ARIA mappings under `Web adapter`
 subsections.
+
+## Support boundary
+
+This repository provides the web adapter as its current platform mapping. Exact
+browser, operating-system, device, and assistive-technology versions are declared
+and tested by each consuming product; they are not inferred from generated CSS or
+a successful application build. A web conformance claim records that test matrix
+and any limitation through the shared governance process.
 
 ## Theme selection
 

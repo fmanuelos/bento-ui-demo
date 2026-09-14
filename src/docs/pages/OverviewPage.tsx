@@ -7,9 +7,9 @@ export function OverviewPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Bento UI Admin"
-        title="Calm foundations for serious work"
-        summary="A semantic React component library and design language for public sites, applications, and information-dense admin experiences."
+        eyebrow="Bento UI"
+        title="Calm foundations for purposeful work"
+        summary="A semantic design language for public sites, applications, and information-dense operational experiences."
       />
       <div className="grid gap-space-4 sm:grid-cols-3">
         <Card compact>
@@ -27,7 +27,7 @@ export function OverviewPage() {
           </p>
         </Card>
         <Card compact>
-          <StatusBadge>18 components</StatusBadge>
+          <StatusBadge>36 contracts</StatusBadge>
           <h2 className="mt-space-4 mb-space-2 text-heading-sm">Built for reuse</h2>
           <p className="m-0 text-body-sm leading-relaxed text-text-secondary">
             Typed components stay independent of product content and business logic.
@@ -36,11 +36,31 @@ export function OverviewPage() {
       </div>
       <DocsSection id="principles" title="Design principles">
         <ol>
-          <li>Use semantic tokens rather than raw visual values.</li>
-          <li>Keep action, feedback, status, navigation, and selection meanings distinct.</li>
-          <li>Prefer tonal surfaces and borders before elevation.</li>
-          <li>Preserve visible focus and non-color cues.</li>
-          <li>Adapt components to available space while keeping one coherent system.</li>
+          <li>
+            <strong>Purpose before pattern.</strong> Begin with the user’s goal and context.
+          </li>
+          <li>
+            <strong>Calm surfaces, clear priorities.</strong> Keep emphasis available for what
+            matters.
+          </li>
+          <li>
+            <strong>Clarity before compression.</strong> Add density only when it improves the task.
+          </li>
+          <li>
+            <strong>Reveal complexity when useful.</strong> Keep advanced capability discoverable.
+          </li>
+          <li>
+            <strong>One language, context-aware expression.</strong> Adapt composition without
+            semantic drift.
+          </li>
+          <li>
+            <strong>Preserve continuity through change.</strong> Retain content, state, focus, and
+            recovery.
+          </li>
+          <li>
+            <strong>Accessibility defines the experience.</strong> Equivalent appearance without
+            equivalent access is not conformance.
+          </li>
         </ol>
       </DocsSection>
       <DocsSection id="start" title="Where to start">
@@ -67,9 +87,10 @@ export function OverviewPage() {
       </DocsSection>
       <DocsSection id="scope" title="Theme and platform scope">
         <p>
-          The default light theme is normative. Inverse surfaces are supported locally. The current
-          dark-mode mapping is a demo extension, documented transparently under Themes, and web
-          implementations target modern platform semantics and WCAG 2.2 Level AA.
+          The authored light and dark themes are normative. Inverse surfaces provide stable local
+          emphasis, and the web adapter maps all themes while targeting WCAG 2.2 Level AA outcomes.
+          Exact browser, device, assistive-technology, and locale support is declared by each
+          consuming product before it claims conformance.
         </p>
       </DocsSection>
       <DocsBackToTop />

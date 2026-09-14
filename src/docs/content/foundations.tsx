@@ -253,7 +253,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
     path: '/docs/foundations',
     title: 'Foundations',
     summary:
-      'Bento UI Admin begins with semantic roles: product code names a purpose, while the active theme supplies the visual value.',
+      'Bento UI begins with semantic roles: product code names a purpose, while the active theme supplies the visual value.',
     sections: [
       {
         title: 'Token model',
@@ -536,7 +536,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
     path: '/docs/foundations/themes',
     title: 'Themes',
     summary:
-      'The light theme is normative; inverse surfaces are supported locally, while the current dark theme is an explicitly limited documentation and demo extension.',
+      'The light and dark themes are normative system mappings, while inverse surfaces remain a local treatment for specific surfaces.',
     sections: [
       {
         title: 'Light theme',
@@ -559,13 +559,14 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         ),
       },
       {
-        title: 'Dark-mode status',
+        title: 'Dark theme',
         body: (
           <p>
-            Dark mode is not yet a supported system theme during the Draft phase. The toggle in this
-            documentation site uses the repository’s demo-specific role remapping; do not treat it
-            as a complete production palette. A future theme must remap and verify every foreground,
-            surface, border, focus, feedback, status, and chart combination.
+            Dark-mode values in the DESIGN.md frontmatter are an authored system theme. The runtime
+            adapter maps unqualified semantic roles to their dark equivalents when the dark theme is
+            active. Products must use one complete theme mapping at a time and verify every
+            foreground, surface, border, focus, feedback, status, and chart pairing in rendered
+            contexts.
           </p>
         ),
       },
@@ -645,7 +646,9 @@ function ColorSwatches({ tokens }: { tokens: readonly string[] }) {
             className="size-9 shrink-0 rounded-shape-md border border-border-primary"
             style={{ background: `var(--color-${token})` }}
           />
-          <code className="min-w-0 text-code-sm font-code-sm leading-code-sm font-normal tracking-code-sm break-all">{token}</code>
+          <code className="min-w-0 font-code-sm text-code-sm leading-code-sm font-normal tracking-code-sm break-all">
+            {token}
+          </code>
         </div>
       ))}
     </div>

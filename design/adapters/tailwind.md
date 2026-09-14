@@ -37,7 +37,7 @@ overriding it.
 
 ## Theme mapping
 
-The alpha DESIGN.md schema does not define nested theme modes. Bento UI Admin
+The alpha DESIGN.md schema does not define nested theme modes. Bento UI
 therefore stores the default light colors under unqualified semantic names and
 the dark colors under flat `dark-*` semantic names. The exporter emits both sets
 as CSS custom properties.

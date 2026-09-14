@@ -1019,23 +1019,155 @@ Two experience terms are used consistently throughout this document:
 In code and identifiers, use `public-site` and `dashboard` for these experience
 types.
 
-The visual direction is calm, professional, highly legible, and operational.
+### Product purpose and audience
+
+Bento UI gives product teams a shared design language for public-facing and
+operational digital experiences. It helps designers, engineers, content authors,
+and automated tools make compatible decisions from the same intent without
+requiring every product to reproduce one fixed page or implementation.
+
+Public Site visitors may be unfamiliar with the organization or subject. They
+need to understand what is offered, establish trust, find information, and
+identify a sensible next step without learning an application interface first.
+
+Dashboard users are typically returning to an authenticated workspace to monitor
+information or complete a task. They need to orient quickly, scan and compare
+reliably, act with confidence, and recover from interruptions or errors without
+losing context or work.
+
+Products that contain both modes select the mode by surface and user purpose.
+They do not mix editorial spaciousness and operational density arbitrarily within
+one task.
+
+### Experience outcomes
+
+Bento UI succeeds when people can:
+
+- Understand where they are and what requires attention.
+- Recognize the primary action without losing access to supporting actions.
+- Scan content or data without confusing visual prominence with semantic state.
+- Complete, review, and recover from tasks without losing entered information,
+  focus, selection, or context.
+- Use the same capabilities across viewport sizes, input methods, themes,
+  languages, and accessibility preferences.
+
+Consistency is a means to these outcomes, not an outcome by itself. Reuse an
+existing component or pattern when it preserves purpose and behavior; extend the
+system when forced reuse would make an experience less understandable.
+
+### Brand character
+
+Bento UI is calm, trustworthy, purposeful, and humane. It should feel capable
+without feeling imposing and supportive without distracting from the work.
+
+- **Calm** comes from stable structure, restrained motion, quiet surfaces, and
+  deliberate use of emphasis; it does not mean empty or passive.
+- **Trustworthy** comes from legible hierarchy, predictable behavior, honest
+  status, and visible recovery; it does not mean institutional or impersonal.
+- **Purposeful** means every prominent element supports comprehension, navigation,
+  or action; decoration never competes with task meaning.
+- **Humane** means language is respectful, errors are recoverable, and interfaces
+  adapt to people rather than demanding one mode of use.
+
 Primary action tokens establish interactive hierarchy, brand tokens express
 identity, slate neutrals establish visual hierarchy, and semantic feedback and
-status tokens communicate meaning.
+status tokens communicate meaning. Public Sites are spacious and content-led.
+Dashboard experiences are compact, structured, and information-led. Density
+changes through spacing, grouping, control size, and layout—not indiscriminate
+reductions in text size.
 
-Public Sites are spacious and content-led. Dashboard experiences are compact,
-structured, and information-led. Density should change through spacing,
-grouping, control size, and layout—not indiscriminate reductions in text size.
+### Voice and content
+
+Write in a direct, specific, and respectful voice. Prefer familiar words and
+short sentences, but retain necessary detail when a decision has consequences.
+
+- Use sentence case for interface labels and headings unless a proper name or
+  locale convention requires another form.
+- Begin action labels with a specific verb and name the object or outcome when it
+  is not obvious. Avoid vague labels such as "Yes," "Submit," or "Continue" when
+  a more precise action is available.
+- State persistent status as the condition of an entity or process. State
+  feedback as what happened and, when needed, what the person can do next.
+- Describe errors without blame. Preserve valid work, identify the affected
+  context, and provide a recovery action when one is known.
+- Introduce instructions before they are needed. Use placeholders only for
+  examples or format hints, never as the sole label or requirement.
+- Avoid internal terminology, unexplained abbreviations, directional instructions
+  such as "click the button on the right," and celebratory language that competes
+  with warnings or task status.
+- Format names, dates, times, numbers, units, and currency for the active locale.
+  Do not build meaning from English word order, capitalization, or punctuation.
 
 ### Design principles
 
-1. Use semantic tokens rather than raw visual values in product code.
-2. Keep action, feedback, status, navigation, and selection meanings distinct.
-3. Prefer tonal surfaces and borders over unnecessary elevation.
-4. Preserve visible focus and non-color cues in every interaction.
-5. Adapt components to available space while retaining one coherent system.
-6. Prefer explicit, accessible behavior over purely visual consistency.
+1. **Purpose before pattern.** Begin with the user's goal and context. Reuse does
+   not justify a pattern that obscures the task or changes its meaning.
+2. **Calm surfaces, clear priorities.** Keep most presentation quiet so primary
+   actions, important content, and material state changes remain unmistakable.
+3. **Clarity before compression.** Add density when it improves scanning,
+   comparison, or repeated work; do not trade away comprehension merely to fit
+   more on screen.
+4. **Reveal complexity when it becomes useful.** Present the information and
+   controls needed for the current decision while keeping advanced capability
+   discoverable and context intact.
+5. **One language, context-aware expression.** Public Sites and Dashboards share
+   semantic foundations and behavior while adapting composition, density, and
+   emphasis to their different purposes.
+6. **Preserve continuity through change.** Responsive transformation, loading,
+   validation, errors, theme changes, and asynchronous updates retain meaningful
+   content, state, focus, selection, and recovery paths.
+7. **Accessibility defines the experience.** A component or pattern is not
+   equivalent if its name, role, value, state, keyboard operation, focus,
+   reading order, reflow, or non-visual feedback is lost.
+
+### System parameters
+
+Bento UI is strict where shared meaning and user outcomes depend on consistency,
+and flexible where a platform or product needs to express that meaning through an
+appropriate native form.
+
+| Area                          | Parameter                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Semantic token meaning        | **Strict.** A token retains one purpose across products, modes, themes, and adapters.                                          |
+| Accessibility outcomes        | **Strict.** Names, roles, states, operation, focus, reading order, reflow, and feedback remain equivalent.                     |
+| State and pattern terminology | **Strict.** Contracts and product discussions use the canonical vocabulary defined here.                                       |
+| Exact token values            | **Centralized.** This frontmatter is the only hand-edited source; generated artifacts are outputs.                             |
+| Component contracts           | **Strict in intent and behavior; flexible in implementation.** Platforms use suitable native mechanisms.                       |
+| Perceptual expression         | **Consistent in relationship; adaptable in treatment.** Mode, theme, locale, and input capability may change presentation.     |
+| Composition and templates     | **Flexible within contracts.** Products arrange components for their content and tasks without redefining component semantics. |
+| Experience mode               | **Purpose-led.** Public Site and Dashboard expression is selected by surface and user goal, not by team or technology.         |
+| Product content and data      | **Product-specific.** Content follows Bento voice, resilience, and localization rules while retaining domain accuracy.         |
+| Adapter mechanics             | **Platform-specific and non-normative.** Limitations are documented without weakening or renaming the design contract.         |
+
+Constraints should prevent semantic drift while leaving room for responsible
+composition and product expression. When a product repeatedly needs an exception,
+review the shared contract instead of allowing the exception to become an
+undocumented parallel system.
+
+### Governance
+
+The **Design System Owner** is accountable for Bento's semantic integrity, brand
+character, accessibility baseline, and breaking-change decisions. **Maintainers**
+review contributions and keep contracts, adapters, generated outputs, tests, and
+documentation aligned. **Adapter or product reviewers** verify affected platform
+and consumer outcomes. **Contributors** may propose a change but do not establish
+a new system rule merely by implementing it.
+
+Until a person or group is formally assigned as Design System Owner, the
+repository maintainer who accepts a change assumes that accountability for the
+change. A single-maintainer repository may use documented self-review, but must
+record the rationale, affected contracts and consumers, migration impact, and
+validation evidence.
+
+Guidance-only changes require maintainer review. Additive normative changes
+require the Design System Owner or a delegated maintainer. Breaking changes
+require the Design System Owner and an affected adapter or consuming-product
+reviewer when that role exists, together with a migration and deprecation plan.
+Security, privacy, safety, or accessibility corrections may use an expedited
+path, but never skip documentation, validation, or consumer-impact review.
+
+The detailed proposal, approval, exception, deprecation, and validation process
+is defined in [`design/GOVERNANCE.md`](design/GOVERNANCE.md).
 
 ### System contract
 
@@ -1050,7 +1182,12 @@ implement it:
    normative behavior and accessibility that the frontmatter cannot express.
 4. The patterns in [`design/patterns/`](design/patterns/) define reusable
    experience-level behavior.
-5. The files in [`design/adapters/`](design/adapters/) explain non-normative
+5. The contexts in [`design/reference-contexts/`](design/reference-contexts/)
+   validate the system with representative and adverse content without redefining
+   it.
+6. [`design/GOVERNANCE.md`](design/GOVERNANCE.md) defines how normative decisions
+   are proposed, approved, excepted, migrated, and deprecated.
+7. The files in [`design/adapters/`](design/adapters/) explain non-normative
    mappings to particular platforms, frameworks, and tools.
 
 Within the supported frontmatter groups, semantic color tokens describe purpose,
@@ -1063,19 +1200,55 @@ Raw palette foundations are not separately represented. Repeated literals are
 intentional aliases of the same visual value, not permission for consumers to
 substitute one semantic role for another.
 
+### Portable kernel and conformance
+
+This file is Bento UI's portable kernel. A consumer that receives only
+`DESIGN.md` can determine the system's purpose, audiences, brand character,
+experience modes, token values, layout and perceptual rules, composition model,
+functional pattern outcomes, shared state and accessibility requirements,
+component-selection guidance, and design guardrails.
+
+Repository contracts elaborate the portable kernel. They may narrow or strengthen
+requirements for a component or pattern but must not contradict this file. When
+linked contracts are unavailable, a consumer may claim kernel alignment after
+applying the rules in this file, but it cannot claim complete Bento contract,
+adapter, or product conformance. Prefer a native, simpler semantic pattern over
+inventing behavior that the available contract does not define.
+
+Conformance claims are cumulative:
+
+| Level                   | Required evidence                                                                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Format-valid**        | The file parses under the recorded DESIGN.md specification and pinned tooling with no lint errors.                                   |
+| **Kernel-aligned**      | Output follows this file's tokens, purpose, brand, modes, composition and pattern models, shared requirements, and guardrails.       |
+| **Contract-conformant** | Every applicable component and experience-pattern contract is satisfied in addition to kernel alignment.                             |
+| **Adapter-conformant**  | Platform mappings preserve the contracts and pass a declared browser, device, input, assistive-technology, theme, and locale matrix. |
+| **Product-validated**   | A named consuming product passes its applicable reference contexts and records exceptions, versions, and evidence.                   |
+
+Format validity or successful generation is not evidence for the higher levels.
+The current review status and known evidence gaps are recorded in
+[`design/CONFORMANCE.md`](design/CONFORMANCE.md); that record reports conformance
+but does not define design intent.
+
 ### Source of truth
 
-| Concern                              | Authoritative source                       | Update rule                                                              |
-| ------------------------------------ | ------------------------------------------ | ------------------------------------------------------------------------ |
-| Exact light- and dark-theme values   | This file's frontmatter                    | Edit here first.                                                         |
-| System-wide rationale and usage      | This document body                         | Avoid repeating exact values.                                            |
-| Component behavior and accessibility | [`design/components/`](design/components/) | Update with contract changes.                                            |
-| Cross-component experience patterns  | [`design/patterns/`](design/patterns/)     | Keep outcomes independent of implementation technology.                  |
-| Platform and tool mappings           | [`design/adapters/`](design/adapters/)     | Treat as non-normative translations of this contract.                    |
-| Repository workflow                  | [`design/README.md`](design/README.md)     | Keep commands, generated-file policy, and implementation inventory here. |
+| Concern                              | Authoritative source                                       | Update rule                                                                  |
+| ------------------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Exact light- and dark-theme values   | This file's frontmatter                                    | Edit here first.                                                             |
+| System-wide rationale and usage      | This document body                                         | Avoid repeating exact values.                                                |
+| Component behavior and accessibility | [`design/components/`](design/components/)                 | Update with contract changes.                                                |
+| Cross-component experience patterns  | [`design/patterns/`](design/patterns/)                     | Keep outcomes independent of implementation technology.                      |
+| Representative validation contexts   | [`design/reference-contexts/`](design/reference-contexts/) | Test contracts with realistic and adverse content without redefining them.   |
+| Governance and contribution policy   | [`design/GOVERNANCE.md`](design/GOVERNANCE.md)             | Record authority, approvals, exceptions, and migration requirements.         |
+| Conformance status and evidence      | [`design/CONFORMANCE.md`](design/CONFORMANCE.md)           | Record scoped claims, results, gaps, and exceptions without defining intent. |
+| Platform and tool mappings           | [`design/adapters/`](design/adapters/)                     | Treat as non-normative translations of this contract.                        |
+| Repository workflow                  | [`design/README.md`](design/README.md)                     | Keep commands, generated-file policy, and implementation inventory here.     |
 
 The external file-format contract is the
-[Google Labs DESIGN.md specification](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md).
+[Google Labs DESIGN.md specification at revision
+`961439fc`](https://github.com/google-labs-code/design.md/blob/961439fc064335fea10f165e022b10e6e5182e95/docs/spec.md).
+Repository lint and export behavior is governed separately by the pinned CLI
+version documented in [`design/README.md`](design/README.md).
 
 Runtime code is implementation evidence, not design authority. When runtime
 behavior conflicts with this contract, treat the difference as a conformance
@@ -1104,6 +1277,11 @@ While this document is Draft and the package is `0.0.0`, breaking changes are
 allowed only when migration happens in the same change. Establish a published
 deprecation window before the first stable release.
 
+After the first stable release, deprecations follow the minimum window,
+release-boundary, approval, and expedited-correction requirements in
+[`design/GOVERNANCE.md`](design/GOVERNANCE.md). A replacement and migration
+guidance are published before an established decision is removed.
+
 ### Current repository adapters — non-normative
 
 The current repository includes web, Tailwind, and DTCG integrations.
@@ -1112,17 +1290,22 @@ are documented in [`design/README.md`](design/README.md) and
 [`design/adapters/`](design/adapters/). They may translate this contract but must
 not redefine token meaning or component behavior.
 
-### Open decisions — unverified
+### Support boundaries
 
-The following decisions are not established by repository documentation:
+The normative contract is platform-neutral. This repository currently provides a
+web adapter and Tailwind and DTCG tool mappings; it does not imply conformance for
+an adapter or platform that has not documented and tested the required outcomes.
+Consuming products record their exact browser, operating-system, device, and
+assistive-technology support matrix. Do not infer support from successful build
+output or the availability of a generated token format.
 
-- Supported browser and platform versions beyond the modern output produced by
-  the current web adapter.
-- Supported locales and writing systems, translation-expansion budgets, and any
-  exceptions beyond the baseline bidirectional and locale-aware behavior below.
-- The design-system owner and required approver for breaking changes.
-
-Record each decision before relying on it in implementation.
+Bento does not prescribe a universal list of product locales. Every implementation
+supports localization, text expansion, locale-aware formatting, and
+bidirectionality at the contract level. Each consuming product declares the
+locales and writing systems it ships, its translation-expansion budgets, and its
+validation matrix before claiming support. A product-specific limitation remains
+implementation metadata and must not weaken the shared naming, reflow, or
+bidirectional requirements.
 
 ## Colors
 
@@ -1607,6 +1790,148 @@ Avatar fallback color and size are independent. `avatar-size-*` component entrie
 map the supported sizes directly to `control-height-*` dimensions and define their
 typography and circular shape; `avatar-fallback` and `avatar-fallback-dark` define
 fallback color without prescribing image content.
+
+### Composition model
+
+Bento UI uses six levels to connect abstract design decisions to complete
+experiences:
+
+`Foundations → Components → Compositions → Experience patterns → Templates → Reference pages`
+
+| Level                   | Role                                                                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Foundations**         | Semantic color, typography, spacing, shape, depth, motion, content, and accessibility decisions shared across the system.         |
+| **Components**          | Bounded semantic units with a defined intent, anatomy, state model, behavior, and accessibility contract.                         |
+| **Compositions**        | Local arrangements of components that solve one part of a task without silently creating new component semantics.                 |
+| **Experience patterns** | Repeatable solutions that coordinate components, content, state, and sequence around a user outcome.                              |
+| **Templates**           | Durable page- or flow-level content structures that provide realistic context without prescribing product-specific content.       |
+| **Reference pages**     | Concrete template instances using representative and adverse content to test the resilience and coherence of the complete system. |
+
+The levels describe responsibility, not DOM depth, visual size, or a mandatory
+implementation order. Work moves in both directions: foundations and components
+assemble into experiences, while realistic templates and reference pages expose
+missing, duplicated, or overly rigid lower-level decisions.
+
+Classify a concept at the highest stable level justified by its purpose. A card
+containing a field and button remains a composition when the parts retain their
+existing roles. It becomes a candidate for a named component or experience
+pattern only when repeated use establishes a distinct intent, state model,
+behavior, or cross-component sequence.
+
+Start page-specific work with a template and representative content. Promote a
+solution into the shared system only after its recurring problem and reusable
+contract are understood. Do not create a shared pattern merely because two
+screens look similar.
+
+For example, typography and spacing foundations support a text field and button;
+those components form a field-and-action composition; forms and validation
+coordinates entry, submission, and recovery; an account-settings template gives
+the pattern page context; and localized, invalid, loading, and interrupted
+reference pages test whether the system survives real conditions.
+
+### Pattern language
+
+Bento describes reusable decisions through functional and perceptual patterns.
+They are complementary views of one experience rather than separate libraries.
+A functional pattern describes what people and the interface accomplish; a
+perceptual pattern describes how the experience communicates character,
+hierarchy, and state.
+
+Use one canonical, purpose-led name for each pattern across design, content,
+engineering, documentation, and product discussion. Prefer names that survive a
+change in appearance, page position, technology, or product-specific content.
+Names such as `data display`, `status badge`, and `destructive action` communicate
+more durable intent than names based only on color, shape, or location.
+
+Reuse a pattern when its purpose, behavior, and outcome agree with the new
+context. Keep a presentation or density change as a variant when semantics and
+behavior remain stable. Define a new pattern when a recurring problem introduces
+a distinct user outcome, interaction or state sequence, accessibility contract,
+or composition rule.
+
+### Functional patterns
+
+Functional patterns define recurring user goals and the behavior required to
+support them. Component contracts provide lower-level functional building
+blocks; experience patterns coordinate several components across a task or
+state transition.
+
+| Pattern family        | User outcome                                                                                   |
+| --------------------- | ---------------------------------------------------------------------------------------------- |
+| Forms and validation  | Enter, understand, review, correct, and submit information without avoidable loss.             |
+| Asynchronous feedback | Understand whether work is pending, progressing, complete, or recoverable after failure.       |
+| Destructive actions   | Recognize consequential actions, prevent accidental loss, and recover when recovery is viable. |
+| Navigation            | Understand location, available destinations, and how to move without losing task context.      |
+| Data display          | Inspect, compare, filter, and act on information while retaining meaning and freshness.        |
+
+A functional pattern defines intent before anatomy. It documents applicable
+contexts, participating components, meaningful states, sequence and persistence,
+content requirements, responsive transformation, localization, accessibility,
+and recovery. It does not require every implementation to share the same visual
+composition.
+
+### Perceptual patterns
+
+Perceptual patterns define the relationships that make Bento recognizable and
+help people interpret an interface. A perceptual pattern is not a single token;
+it is a repeatable combination of emphasis, rhythm, containment, motion, and
+language applied for a purpose.
+
+| Pattern family         | Bento expression                                                                                                             |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Hierarchy and emphasis | Quiet neutral structure, legible type hierarchy, and cobalt reserved for purposeful brand or action emphasis.                |
+| Density and rhythm     | A shared spacing vocabulary expressed spaciously for Public Sites and compactly for repeated Dashboard work.                 |
+| Containment and depth  | Tonal surfaces, borders, grouping, and restrained elevation communicate relationships before decoration.                     |
+| State expression       | Semantic foregrounds, boundaries, labels, icons, and restrained motion communicate state without relying on color alone.     |
+| Identity and voice     | Brand roles, icon treatment, typography, and direct, respectful content make the system trustworthy, purposeful, and humane. |
+| Theme continuity       | Light, dark, inverse, and high-contrast presentations preserve semantic hierarchy and recognizable relationships.            |
+
+Functional requirements take precedence when a perceptual treatment would obscure
+meaning, interaction, or accessibility. Perceptual expression may adapt by mode,
+theme, language, or input capability, but the intended character and semantic
+relationships remain stable. Responsive density is cross-cutting: it changes
+perceptual rhythm to preserve functional comprehension and operability.
+
+### Component selection
+
+Select components by semantic purpose and interaction model before appearance.
+Use the simplest native or Bento component that provides the required behavior;
+combine existing components when a local arrangement does not introduce a new
+semantic role or state model.
+
+| Need                          | Choose                                                                                                                                | Distinction to preserve                                                                                                     |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Trigger an action             | Button; Button Group for related independent actions                                                                                  | Navigation uses a link or destination semantic, not a button styled differently.                                            |
+| Enter text                    | Form Field with Text Field or Textarea                                                                                                | Placeholder text is an example, not a label; read-only is not disabled.                                                     |
+| Choose from values            | Native Select for a simple closed list; Listbox for a managed option collection; Combobox when text entry or filtering is required    | Focus, active item, and committed selection remain distinct.                                                                |
+| Choose flags or one option    | Checkbox for independent choices; Radio Group for one visible-set choice; Switch for an immediate binary setting                      | A switch is not a delayed form choice, and a checkbox is not action confirmation.                                           |
+| Reveal adjacent content       | Disclosure; Accordion for a coordinated disclosure group                                                                              | Expansion is not selection, navigation, or a generic popup.                                                                 |
+| Explain or supplement         | Tooltip for brief non-interactive help; Popover for interactive supplemental content                                                  | Tooltips contain no actions and never replace an accessible name.                                                           |
+| Present popup choices         | Action Menu, Listbox, or Combobox using the Overlay foundation and compatible Dropdown surface styling                                | Visual placement does not determine menu, listbox, combobox, popover, or dialog semantics.                                  |
+| Focus a bounded task          | Dialog; Modal Dialog when background interaction must stop; Alert Dialog for an urgent decision; Drawer or Sheet for an edge task     | Modality, initial focus, dismissal, inertness, and restoration follow the selected contract.                                |
+| Communicate state or progress | Status Badge for persistent state; Alert or Toast for an event; Progress for ongoing work; Empty State for unavailable content        | Feedback, status, loading, validation, and empty data remain separate concepts.                                             |
+| Organize destinations         | Public-site Navigation or Navigation Shell; Tabs for local views; Pagination for results; Skip Link and Back to Top for page movement | Current location, local view selection, paging, bypass, and in-page movement do not share one interaction model.            |
+| Present grouped information   | Card for containment; Data Table for relational reading; Data Grid only for managed cell navigation, selection, or editing            | Visual density does not turn a table into a grid, and a whole card is not interactive without an explicit semantic control. |
+| Represent people              | Avatar; Avatar Group for a compact preview                                                                                            | Identity imagery does not imply presence, selection, or action.                                                             |
+
+When two candidates appear suitable, compare their user outcome, state model,
+keyboard behavior, focus ownership, and content constraints. If those differ,
+they are not interchangeable variants. The
+[`component index`](design/components/README.md) provides the complete normative
+contracts and dependencies.
+
+### Reference contexts
+
+The [`reference-context index`](design/reference-contexts/README.md) instantiates
+Public Site, Dashboard, data-management, form, and destructive templates with
+representative content, required states, adverse conditions, and observable
+acceptance outcomes. Use these contexts to test relationships across the complete
+system and to locate failures at the responsible composition level.
+
+Reference contexts validate the design contract; they do not prescribe one visual
+layout, implementation technology, or product-specific content. An implementation
+or screenshot is evidence for the named conditions, not design authority or proof
+that another adapter conforms.
 
 ### Component contract
 

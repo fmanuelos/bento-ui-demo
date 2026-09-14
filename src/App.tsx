@@ -57,12 +57,12 @@ function DemoPage() {
           <a
             className="flex w-fit items-center gap-space-3 text-heading-sm font-bold tracking-[-.02em] whitespace-nowrap no-underline"
             href="#top"
-            aria-label="Bento UI Admin home"
+            aria-label="Bento UI home"
           >
             <span className="grid size-7 place-items-center rounded-shape-full bg-brand-background text-brand-on-background">
               <Spark className="size-4" />
             </span>
-            Bento UI Admin
+            Bento UI
           </a>
           <nav className="hidden gap-space-2 sm:flex" aria-label="Primary navigation">
             <a
@@ -410,7 +410,7 @@ function DemoPage() {
         <BackToTop targetId="top" />
 
         <footer className="flex justify-between px-space-1 pt-space-6 pb-space-20 text-label-sm font-semibold tracking-[.08em] text-text-secondary uppercase max-sm:flex-col max-sm:gap-space-4 sm:pb-space-24">
-          <span>Bento UI Admin</span>
+          <span>Bento UI</span>
           <span>Designed for unhurried momentum.</span>
         </footer>
       </div>

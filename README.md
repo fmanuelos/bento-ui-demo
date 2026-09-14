@@ -1,6 +1,7 @@
 # Bento UI — DESIGN.md + Tailwind demo
 
-Bento UI is a responsive React/Vite bento dashboard driven by `DESIGN.md` and styled with Tailwind CSS v4.
+Bento UI is a semantic design system with a responsive React/Vite reference
+implementation driven by `DESIGN.md` and styled with Tailwind CSS v4.
 
 ## Design-token workflow
 
@@ -31,5 +32,5 @@ TypeScript, and the production build.
 Tailwind uses its official Vite plugin. The application CSS entrypoint is `src/index.css`, which imports Tailwind and the generated theme and defines the class-driven dark mode.
 
 Inter weights 400–700 are self-hosted through the pinned `@fontsource/inter`
-package. The dark-mode mapping is a demo extension rather than a supported
-design-system theme.
+package. The web adapter maps the authored light and dark semantic themes without
+changing component meaning or behavior.

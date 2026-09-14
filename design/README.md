@@ -2,13 +2,17 @@
 
 This file documents the current repository integration. It is non-normative:
 packages, commands, generated formats, and runtime structure may change without
-changing the meaning of the Bento UI Admin design contract.
+changing the meaning of the Bento UI design contract.
 
 [`DESIGN.md`](../DESIGN.md) is the only hand-edited source of exact token values.
 Its Markdown body, the [`component contracts`](components/), and the
 [`experience patterns`](patterns/) define intended use. The
 [`adapter documentation`](adapters/) translates that contract for specific
-platforms and tools.
+platforms and tools. [`GOVERNANCE.md`](GOVERNANCE.md) defines contribution,
+approval, exception, compatibility, and deprecation policy. The
+[`reference contexts`](reference-contexts/) test the complete system with
+representative and adverse conditions. [`CONFORMANCE.md`](CONFORMANCE.md)
+records current claims, evidence, and gaps without redefining design intent.
 
 ## Generated files
 
@@ -26,6 +30,13 @@ pnpm design:build
 
 The repository pins `@google/design.md` 0.4.0. `design:lint` runs that local CLI
 and reports its findings directly.
+
+The format guidance is reviewed against the
+[Google Labs DESIGN.md specification at revision
+`961439fc`](https://github.com/google-labs-code/design.md/blob/961439fc064335fea10f165e022b10e6e5182e95/docs/spec.md),
+dated July 27, 2026. The specification revision describes the intended format;
+the pinned CLI version determines actual local lint and export behavior. Review
+both baselines independently whenever either one changes.
 
 After changing `DESIGN.md`, run `design:lint`, then `design:build`. Inspect both
 generated files and commit the source and generated files together. Review all
@@ -52,6 +63,24 @@ conforms.
 Application implementation inventories belong in application or source-code
 documentation rather than the design-system contract.
 
+## Reference contexts
+
+The files in `design/reference-contexts/` instantiate page and flow templates with
+fictional representative content, state transitions, stress conditions, and
+observable acceptance outcomes. They validate relationships across foundations,
+components, compositions, and patterns without prescribing one layout or runtime
+implementation.
+
+Use the shared validation matrix and the context relevant to a change. Record the
+implementation, version, applicable conditions, evidence, and any exception.
+Reference output is implementation evidence rather than a generated artifact or
+design authority.
+
+Use [`CONFORMANCE.md`](CONFORMANCE.md) to record the named implementation,
+revision, support matrix, applicable contexts, evidence, and exceptions. Lint,
+generation, build, and inventory checks are prerequisites rather than proof of
+rendered behavior or product outcomes.
+
 ## Export limitations
 
 With the pinned CLI, Tailwind and DTCG exports omit component entries. Unitless
@@ -66,7 +95,7 @@ paths into invalid dotted CSS identifiers.
 
 ## Known lint baseline
 
-With `@google/design.md` 0.4.0, the current document has zero lint errors and 138
+With `@google/design.md` 0.4.0, the current document has zero lint errors and 134
 warnings. Six are contrast warnings:
 
 | Finding                                              | Interpretation                                                                    | Review rule                                                                                                                                 |
