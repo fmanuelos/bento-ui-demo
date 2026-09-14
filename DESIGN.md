@@ -448,9 +448,13 @@ spacing:
   space-4: 16px
   space-5: 20px
   space-6: 24px
+  space-7: 28px
   space-8: 32px
+  space-9: 36px
   space-10: 40px
+  space-11: 44px
   space-12: 48px
+  space-14: 56px
   space-16: 64px
   space-20: 80px
   space-24: 96px
@@ -1331,13 +1335,13 @@ The primary spacing scale uses a 4px rhythm. Whole-number numeric suffixes expre
 multiples of 4px. The `space-*-5` tokens provide controlled 2px half-step
 refinements for compact internal component spacing and optical adjustment; do not
 use them for page padding, grid gutters, section spacing, or general layout.
-Intentionally missing suffixes are not available spacing steps. Use named tokens
+Suffixes that are not listed are not available spacing steps. Use named tokens
 instead of arbitrary values.
 
 `space-0` is available for responsive and state-based resets. `space-0-5` is a
 general spacing token, while focus indicator geometry uses semantic dimension
 tokens such as `focus-ring-width` and `focus-ring-offset-width`. Use `space-1`
-through `space-10` for component composition and the larger steps for generic
+through `space-11` for component composition and the larger steps for generic
 layout spacing. When spacing has a defined layout role, prefer its semantic token,
 such as `section-desktop`, over an equivalent `space-*` value.
 

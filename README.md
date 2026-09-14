@@ -1,6 +1,6 @@
-# Bento UI Admin — DESIGN.md + Tailwind demo
+# Bento UI — DESIGN.md + Tailwind demo
 
-Bento UI Admin is a responsive React/Vite bento dashboard driven by `DESIGN.md` and styled with Tailwind CSS v4.
+Bento UI is a responsive React/Vite bento dashboard driven by `DESIGN.md` and styled with Tailwind CSS v4.
 
 ## Design-token workflow
 
