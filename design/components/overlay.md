@@ -22,7 +22,7 @@ operable in an anchored surface.
 1. Anchor or controlling trigger
 2. Optional relationship indicator
 3. Layer boundary
-4. Raised popup surface
+4. Floating popup surface
 5. Pattern-specific content
 6. Optional dismissal control when the content requires one
 
@@ -36,11 +36,11 @@ flip to remain usable within the available viewport or containing boundary.
 
 ## Semantic token mapping
 
-Raised popup surfaces use the `dropdown` frontmatter mapping:
+Floating popup surfaces use the `dropdown` frontmatter mapping:
 `surface-raised`, `text-primary`, `rounded.shape-md`, and `spacing.space-2`. Use
-`border-secondary` or the active theme's equivalent quiet edge. Apply the raised
-popup depth described in DESIGN.md when tonal separation and a border do not
-provide enough distinction.
+`border-secondary` or the active theme's equivalent quiet edge. Apply the
+floating-surface depth described in DESIGN.md when tonal separation and a border
+do not provide enough distinction.
 
 Pattern-specific items continue to use their action, selection, feedback, or
 status roles. The overlay surface does not turn selected values into actions or

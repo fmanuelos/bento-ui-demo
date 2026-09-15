@@ -27,12 +27,13 @@ selection, and keyboard behavior.
 ## Anatomy and variants
 
 1. Trigger, when the pattern has one
-2. Raised popup surface
+2. Floating popup surface
 3. Pattern-specific content and items
 4. Optional leading icons, trailing metadata, separators, or section labels
 
-Use `surface-raised`, `text-primary`, `rounded.shape-md`, and `spacing.space-2`. Use quiet
-borders or restrained elevation to separate the menu from its anchor surface.
+Use `surface-raised`, `text-primary`, `rounded.shape-md`, and `spacing.space-2`.
+Use a quiet border and the floating-surface depth guidance to separate the menu
+from its anchor surface.
 
 ## States
 
@@ -83,7 +84,7 @@ pattern instead.
 Brief non-interactive text follows the [`tooltip contract`](tooltip.md). Richer
 supplemental or interactive content follows the
 [`popover contract`](popover.md) and must not be given menu semantics merely
-because it uses the same raised surface.
+because it uses the same floating surface.
 
 ## Responsive behavior
 

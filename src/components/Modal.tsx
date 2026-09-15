@@ -119,7 +119,7 @@ export function Modal({
         if (closeOnEscape && !busy) onClose()
       }}
       onMouseDown={handleBackdrop}
-      className={`overflow-y-auto border border-border-secondary bg-surface-raised p-space-6 text-text-primary backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${presentationClasses[presentation]} ${className}`}
+      className={`overflow-y-auto border border-border-secondary bg-surface-raised p-space-6 text-text-primary ${modal ? 'shadow-2xl' : 'shadow-lg'} backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${presentationClasses[presentation]} ${className}`}
     >
       <header className="flex items-start justify-between gap-space-6">
         <div>

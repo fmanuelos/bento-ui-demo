@@ -25,7 +25,8 @@ label.
 
 Use `surface-raised`, `border-secondary`, `text-link`, `label-md`, `shape-md`, the
 global focus roles, and at least the minimum interactive target. Do not introduce
-a dedicated token family or adopt primary-button styling.
+a dedicated token family or adopt primary-button styling. Because the control
+temporarily overlaps the page, it follows the floating-surface depth guidance.
 
 ## States
 

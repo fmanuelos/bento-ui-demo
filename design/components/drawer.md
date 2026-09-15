@@ -20,7 +20,7 @@ non-modal dialog requirements only when they are focused dialog tasks.
 ## Anatomy and variants
 
 1. Optional blocking backdrop
-2. Edge-attached raised surface
+2. Edge-attached task surface
 3. Title and optional description
 4. Optional close control
 5. Scrollable task content
@@ -42,8 +42,11 @@ Temporary navigation may use a modal drawer but continues to follow the
 
 The surface uses `surface-raised`, `text-primary`, and `border-secondary`. Modal
 variants use `background-overlay`. Use `rounded.shape-xl` on exposed corners; an edge
-flush with the viewport does not need an artificial outer radius. Apply modal or
-raised depth according to modality and DESIGN.md layer guidance.
+flush with the viewport does not need an artificial outer radius. A modal drawer
+or sheet uses modal-surface depth. A temporary non-modal inspector that overlaps
+content uses floating-surface depth; a persistent inspector beside content uses
+raised-surface depth. The `surface-raised` color role does not determine these
+elevation levels.
 
 Choose a useful width based on content, up to `container-readable` for complex
 reading or forms. A narrow focused task may use `container-narrow`. Bottom sheets

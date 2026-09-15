@@ -40,7 +40,9 @@ must remember after it disappears.
 Success, warning, danger, and info use the matching `alert-*` frontmatter mapping
 and `feedback-*` foreground, background, and border roles. Toast width is bounded
 to a readable line length and adapts to available inline space. Internal actions
-use compact Button or Link treatment while preserving touch targets.
+use compact Button or Link treatment while preserving touch targets. Because a
+toast temporarily overlaps the current layout, it follows the floating-surface
+depth guidance while retaining its semantic feedback border.
 
 No separate frontmatter entry is required because Toast reuses the Alert visual
 mapping. Placement and queue behavior remain contract-defined rather than token

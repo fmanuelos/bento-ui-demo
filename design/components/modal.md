@@ -22,7 +22,7 @@ multi-step, or frequently referenced work and follow the
 ## Anatomy and variants
 
 1. Optional dimmed backdrop for a modal presentation
-2. Raised semantic surface
+2. Floating or modal semantic surface according to modality
 3. Title and optional description
 4. Optional close button
 5. Task content
@@ -45,9 +45,11 @@ modal, and a modal remains modal if its backdrop is visually subtle.
 
 The modal backdrop uses `background-overlay`. The panel uses the `modal`
 frontmatter mapping: `surface-raised`, `text-primary`, `rounded.shape-xl`, and
-`spacing.space-6`, with `border-secondary` as its quiet edge. Apply the modal
-depth described in DESIGN.md when the border and tonal step do not sufficiently
-separate the panel from the backdrop.
+`spacing.space-6`, with `border-secondary` as its quiet edge. A non-modal dialog
+uses floating-surface depth; a modal dialog uses modal-surface depth above its
+blocking backdrop. The `surface-raised` color role does not determine either
+elevation level. Preserve the quiet edge and tonal step even when the platform
+adapter supplies a shadow.
 
 Titles use an appropriate heading role based on hierarchy and available space;
 the visual typography role does not determine the document heading level.

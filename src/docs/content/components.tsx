@@ -100,7 +100,7 @@ export const componentDocs = [
     ],
     responsive:
       'Surfaces shift or flip before clipping and stay within the viewport with one useful scrolling direction.',
-    theme: 'Raised surfaces reuse dropdown surface, boundary, spacing, and depth roles.',
+    theme: 'Floating surfaces reuse dropdown surface, boundary, spacing, and depth roles.',
     mistakes: [
       'Do not give every floating surface menu semantics.',
       'Do not position without collision handling.',
@@ -638,7 +638,7 @@ export const componentDocs = [
     ],
     responsive:
       'Repositions within the viewport and should transform to a drawer or dialog when content no longer fits.',
-    theme: 'Uses the shared raised dropdown surface mapping.',
+    theme: 'Uses the shared floating overlay surface mapping.',
     mistakes: [
       'Do not use menu semantics for ordinary content.',
       'Do not place complex or consequential forms in a popover.',
@@ -701,7 +701,8 @@ export const componentDocs = [
     ],
     responsive:
       'Region avoids primary chrome and uses available width with page padding on narrow screens.',
-    theme: 'Reuses Alert semantic variants and Progress styling.',
+    theme:
+      'Reuses Alert semantic variants and Progress styling while following floating-surface depth guidance.',
     mistakes: [
       'Do not use for validation or required instructions.',
       'Do not auto-dismiss a toast with an action.',
@@ -758,7 +759,8 @@ export const componentDocs = [
     ],
     responsive:
       'Can transform between inspector, drawer, sheet, and page while preserving task state.',
-    theme: 'Composes raised surface, overlay, border, shape, and dialog roles.',
+    theme:
+      'Uses the surface-raised color role with modal depth for modal variants, floating depth for temporary non-modal inspectors, and raised depth for persistent inspectors.',
     mistakes: [
       'Do not use an edge panel as generic page layout.',
       'Do not lock page scroll for non-modal inspectors.',
@@ -902,7 +904,7 @@ export const componentDocs = [
     responsive:
       'Uses logical fixed placement, responsive page spacing, and system safe areas while retaining its visible label and stable corner position.',
     theme:
-      'Uses raised-surface, secondary-border, text-link, label, shape, interactive-target, and focus roles.',
+      'Uses raised-surface color, secondary-border, text-link, label, shape, interactive-target, and focus roles with floating-surface depth.',
     mistakes: [
       'Do not use it on short pages.',
       'Do not target an unnamed or unrelated location.',
@@ -1551,7 +1553,7 @@ export const componentDocs = [
     responsive:
       'Uses available width up to the narrow content token with viewport padding and vertical scrolling.',
     theme:
-      'Overlay, raised surface, secondary border, XL radius, and focus roles come from semantic tokens.',
+      'Uses overlay, surface-raised color, secondary-border, XL-radius, and focus roles with floating depth when non-modal and modal depth when blocking.',
     mistakes: [
       'Do not use for a full page or long multi-step task.',
       'Disable backdrop dismissal when abandoning content could lose data.',
@@ -1833,7 +1835,7 @@ export const componentDocs = [
     slug: 'dropdown',
     title: 'Dropdown',
     summary:
-      'Provides the shared raised popup surface as an accessible action-menu implementation.',
+      'Provides the shared floating popup surface as an accessible action-menu implementation.',
     useCases: ['Short command menus such as Rename, Duplicate, Archive, and Delete.'],
     importCode: "import { Dropdown } from '@/components'",
     basicCode: `<Dropdown label="Project actions" items={actions} />`,
@@ -1868,7 +1870,8 @@ export const componentDocs = [
     ],
     responsive:
       'The menu sizes to content; use a dialog or bottom sheet if touch targets cannot fit the viewport.',
-    theme: 'Uses raised surface, quiet boundary, ghost hover/focus, danger text, and focus tokens.',
+    theme:
+      'Uses surface-raised color, a quiet boundary, floating depth, ghost hover/focus, danger text, and focus tokens.',
     mistakes: [
       'Dropdown is not one universal behavior.',
       'Use Listbox for selection and Combobox for editable suggestions.',
@@ -1997,7 +2000,8 @@ export const componentDocs = [
       'Whole-card actions must not contain conflicting nested controls.',
     ],
     responsive: 'Card grids reflow before values or labels become hard to scan.',
-    theme: 'Uses primary surface, quiet boundary, semantic text, radii, and spacing roles.',
+    theme:
+      'Uses a standard primary surface, quiet boundary, semantic text, radii, and spacing roles without a shadow.',
     mistakes: [
       'Do not wrap every region in a card.',
       'Do not use elevation to imply missing interaction.',

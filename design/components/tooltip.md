@@ -16,7 +16,7 @@ A tooltip follows the shared [`overlay contract`](overlay.md).
 ## Anatomy and variants
 
 1. Described trigger or anchor
-2. Compact raised surface
+2. Compact floating surface
 3. Brief plain-text description
 4. Optional visual pointer toward the anchor
 
@@ -29,7 +29,8 @@ multi-step explanations require a popover or dialog instead.
 Keep the surface compact while allowing text to wrap to a readable short line
 length. Use `surface-inverse` with `text-inverse`, `label-sm`, `rounded.shape-md`, and
 `spacing.space-2`. Use a quiet inverse boundary when needed for high-contrast
-separation. The surface occupies the tooltip layer defined in DESIGN.md.
+separation and follow the floating-surface depth guidance. The surface occupies
+the tooltip layer defined in DESIGN.md.
 
 No frontmatter entry is required until the tooltip presentation needs an
 independent machine-readable mapping rather than this composition of existing

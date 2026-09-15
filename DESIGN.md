@@ -1703,7 +1703,8 @@ movement is smooth and becomes immediate when reduced motion is requested.
 
 The presentation composes `surface-raised`, `border-secondary`, `text-link`,
 `label-md`, `shape-md`, and the minimum interactive target. Reuse these semantic
-roles rather than adding a dedicated token family.
+roles rather than adding a dedicated token family. As a temporary surface that
+overlaps the page, Back to top follows the floating-surface depth guidance.
 
 ### Controls and touch targets
 
@@ -1729,20 +1730,20 @@ Use this hierarchy:
 
 1. Page or workspace background.
 2. Standard surface with a quiet border or tonal separation.
-3. Raised menu, dropdown, or popover.
-4. Modal above the overlay.
+3. Raised surface for persistent content that needs additional separation.
+4. Floating surface for temporary content that overlaps the current layout.
+5. Modal surface above a blocking backdrop.
 
-Reserve shadows for content that genuinely floats. Exact shadow values are not
-yet tokenized. Borders and tonal separation are the stable alternative until an
-elevation scale is adopted.
+Standard surfaces do not use shadows. Raised surfaces rely primarily on borders
+and tonal separation and may use restrained elevation when necessary.
 
-In dark mode, a raised popup uses `dark-surface-raised`, its documented quiet
-border, and `0 8px 24px rgba(0, 0, 0, 0.40)`. A modal uses the same raised
-surface above `dark-background-overlay` with
-`0 24px 48px rgba(0, 0, 0, 0.56)`. These shadow values are normative visual
-guidance in prose until the DESIGN.md schema supports an elevation token group;
-the visible edge and tonal step remain necessary because shadow alone can
-disappear on a dark canvas.
+Floating and modal surfaces may use implementation-defined shadows. Exact shadow
+values belong to platform adapters rather than this design contract. The
+`surface-raised` color role identifies a panel surface and does not by itself
+assign an elevation level.
+
+In dark mode, raised, floating, and modal surfaces retain a visible border or
+tonal difference because shadows alone may disappear against a dark canvas.
 
 Layer content in this order: page, sticky navigation, popover, blocking overlay
 and dialog, then tooltip. Numeric z-index values remain application-local; do not

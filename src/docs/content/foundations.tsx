@@ -500,14 +500,14 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       'Depth follows a semantic layer order, while restrained motion confirms state without becoming essential.',
     sections: [
       {
-        title: 'Layer order',
+        title: 'Elevation hierarchy',
         body: (
           <ol>
             <li>Page or workspace background</li>
-            <li>Standard bordered or tonal surface</li>
-            <li>Raised menu, dropdown, or popover</li>
-            <li>Modal above its overlay</li>
-            <li>Tooltip above blocking overlays when essential</li>
+            <li>Standard surface with a quiet border or tonal separation</li>
+            <li>Raised surface for persistent content that needs additional separation</li>
+            <li>Floating surface for temporary content that overlaps the current layout</li>
+            <li>Modal surface above a blocking backdrop</li>
           </ol>
         ),
       },
@@ -515,8 +515,20 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         title: 'Shadows',
         body: (
           <p>
-            Exact shadow values are not tokenized. Use borders and tonal separation as the stable
-            default; reserve shadows for content that genuinely floats.
+            Standard surfaces do not use shadows. Raised surfaces rely primarily on borders and
+            tonal separation. Floating and modal surfaces may use implementation-defined shadows;
+            exact values belong to the platform adapter. In dark mode, elevated surfaces retain a
+            visible edge because shadows alone may disappear against the canvas.
+          </p>
+        ),
+      },
+      {
+        title: 'Stacking order',
+        body: (
+          <p>
+            Layer content in this order: page, sticky navigation, popover, blocking backdrop and
+            dialog, then tooltip when essential. Numeric stacking values remain local to the
+            implementation.
           </p>
         ),
       },

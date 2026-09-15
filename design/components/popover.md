@@ -19,7 +19,7 @@ Popover follows the shared [`overlay contract`](overlay.md).
 ## Anatomy and variants
 
 1. Trigger or anchor
-2. Raised popup surface
+2. Floating popup surface
 3. Optional title and concise description
 4. Supplemental content or controls
 5. Optional explicit close action
@@ -38,9 +38,9 @@ menu, listbox, or dialog semantics solely because it floats.
 ## Sizes and semantic token mapping
 
 Use the `dropdown` surface mapping: `surface-raised`, `text-primary`,
-`rounded.shape-md`, and `spacing.space-2`, with a `border-secondary` edge and the raised
-popup depth defined in DESIGN.md. Internal sections use the spacing scale and
-appropriate text roles. Actions use their existing component mappings.
+`rounded.shape-md`, and `spacing.space-2`, with a `border-secondary` edge and the
+floating-surface depth defined in DESIGN.md. Internal sections use the spacing
+scale and appropriate text roles. Actions use their existing component mappings.
 
 Constrain the surface to a readable width based on its content rather than a
 device class. No separate frontmatter entry is required while Popover shares the
