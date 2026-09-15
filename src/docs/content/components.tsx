@@ -1708,11 +1708,10 @@ export const componentDocs = [
   createDoc({
     slug: 'table',
     title: 'Table',
-    summary:
-      'Presents relational data with native row and column semantics, sorting, and optional selection.',
-    useCases: ['Scannable records where comparison across columns matters.'],
+    summary: 'Best for simple presentation, reports, and small datasets.',
+    useCases: ['Customer reports and other scannable records where comparison matters.'],
     importCode: "import { Table } from '@/components'",
-    basicCode: `<Table caption="Projects" columns={columns} rows={rows} getRowId={(row) => row.id} />`,
+    basicCode: `<Table caption="Customer report" columns={columns} rows={customers} getRowId={(customer) => customer.id} />`,
     props: [
       { name: 'caption', type: 'string', description: 'Accessible table name.' },
       {
@@ -1724,6 +1723,11 @@ export const componentDocs = [
         name: 'rows / getRowId',
         type: 'readonly T[] / (row: T) => string',
         description: 'Data and stable row identity.',
+      },
+      {
+        name: 'getRowLabel',
+        type: '(row: T) => string',
+        description: 'Optional human-readable record name used in selection labels.',
       },
       {
         name: 'sort / onSort',
@@ -1748,7 +1752,7 @@ export const componentDocs = [
       classNameProp,
     ],
     variants: [
-      'Static and selectable data tables.',
+      'Read-only and selectable non-composite data tables.',
       'Sorted, loading, empty, error, selected, and hover states.',
     ],
     accessibility: [
@@ -1769,24 +1773,28 @@ export const componentDocs = [
   createDoc({
     slug: 'data-grid',
     title: 'Data grid',
-    summary:
-      'Adds managed two-dimensional focus, row selection, and optional cell editing to tabular data.',
+    summary: 'Best for managing many records and spreadsheet-like tasks.',
     useCases: [
-      'Large datasets where people need efficient cell navigation, selection, or inline editing.',
+      'Customer-management tasks requiring cell navigation, selection, bulk actions, or inline editing.',
     ],
     importCode: "import { DataGrid } from '@/components'",
-    basicCode: `<DataGrid label="Projects" columns={columns} rows={rows} getRowId={(row) => row.id} />`,
+    basicCode: `<DataGrid label="Customers" columns={columns} rows={customers} getRowId={(customer) => customer.id} pagination={pagination} />`,
     props: [
       { name: 'label', type: 'string', description: 'Accessible grid name.' },
       {
         name: 'columns',
         type: 'readonly DataGridColumn<T>[]',
-        description: 'Cell renderers and optional editor renderers.',
+        description: 'Headers, cells, optional editors, and sortable state.',
       },
       {
         name: 'rows / getRowId',
         type: 'readonly T[] / (row: T) => string',
         description: 'Data and stable identity.',
+      },
+      {
+        name: 'getRowLabel',
+        type: '(row: T) => string',
+        description: 'Optional human-readable record name used in selection labels.',
       },
       {
         name: 'selectable',
@@ -1800,20 +1808,32 @@ export const componentDocs = [
         description: 'Controlled selection.',
       },
       {
-        name: 'loading / emptyMessage',
-        type: 'boolean / ReactNode',
+        name: 'sort / onSort',
+        type: 'Sort state / callback',
+        description: 'Controlled active column and ascending or descending direction.',
+      },
+      {
+        name: 'pagination',
+        type: 'DataGridPaginationProps',
+        description:
+          'Controlled page state, page size, optional total row count, and pagination controls.',
+      },
+      {
+        name: 'loading / error / emptyMessage',
+        type: 'boolean / ReactNode / ReactNode',
         description: 'Data availability state.',
       },
       classNameProp,
     ],
     variants: [
-      'Read-only, selectable, and editable cells.',
-      'Focused, selected, editing, loading, and empty states.',
+      'Read-only, selectable, editable, and paginated grids.',
+      'Focused, selected, sorted, editing, loading, and empty states.',
     ],
     accessibility: [
       'Only one cell is in the page tab sequence.',
-      'Arrow keys move between cells; Home and End move within the row.',
-      'Enter enters configured edit mode, Escape exits, and Space selects a row.',
+      'Arrow keys move between headers and cells; Home and End move within the row; modified Home and End move across the grid.',
+      'Enter or Space sorts a sortable header; Enter or F2 enters cell edit mode; Escape exits; Space selects a data row.',
+      'Pagination keeps focus on its initiating control while row and column positions remain programmatically available.',
     ],
     responsive:
       'Keeps grid navigation intact inside contained horizontal scrolling; prioritize essential columns first.',

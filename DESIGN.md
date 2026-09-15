@@ -2059,8 +2059,11 @@ Reusable bypass controls follow the
   fit, dismissal, and focus restoration. `dropdown` is the compatible
   popup-surface styling term. Tooltip, popover, action menu, listbox, combobox,
   and disclosure remain distinct semantic and behavioral patterns.
-- A data table presents tabular information. An interactive data grid manages
-  focus and selection as a composite control; do not use the terms interchangeably.
+- A data table presents and compares tabular information and may include
+  independent sorting, filtering, pagination, selection, and row-action controls.
+  An interactive data grid adds managed cell focus and grid commands as a
+  composite control. Record count and visual density do not determine the
+  pattern; do not use the terms interchangeably.
 - A dialog is a focused task surface. A modal dialog is its blocking variant;
   alert dialogs, drawers, sheets, and temporary navigation reuse dialog behavior
   only when their semantics and modality match.

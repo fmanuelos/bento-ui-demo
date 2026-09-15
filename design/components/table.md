@@ -2,65 +2,111 @@
 
 ## Status
 
-Contract complete for a static data table. Interactive data grids use the
-separate [`data-grid contract`](data-grid.md).
+Contract complete.
 
-## Intent
+## Purpose
 
-Tables support comparison and scanning across repeated records. A table is not a
-managed-focus composite widget. Do not replace a relational dataset with
-decorative cards by default.
+**Best for simple presentation, reports, and small datasets.**
+
+A table organizes related values into rows and columns so people can read,
+compare, and understand them. Its primary job is presentation. A table may still
+include sorting, filtering, pagination, selection controls, or row actions, but
+those controls remain independent elements in the normal page tab order.
+
+Use a [`Data grid`](data-grid.md) when the primary job is managing records with
+spreadsheet-like keyboard navigation, inline cell editing, cell-range selection,
+or comparable two-dimensional interaction.
+
+Dataset size alone does not determine the component. A large read-only report can
+remain a table, and a small editable matrix can require a data grid.
+
+## Use when
+
+- People mainly read, scan, or compare values.
+- The content is a report, summary, directory, invoice, or results list.
+- Any sorting, filtering, selection, or row actions can work as ordinary page
+  controls.
+- Cells do not need managed arrow-key navigation or an edit mode.
+
+## Do not use when
+
+- Arrow keys must move focus between cells.
+- People need to edit several cells without leaving the grid.
+- The experience requires cell-range selection, copy-and-paste across cells, or
+  other spreadsheet-like behavior.
+- The information is not relational. Use a list, cards, or another suitable
+  pattern instead.
 
 ## Anatomy and variants
 
-1. Optional caption and toolbar
+1. Optional caption
 2. Header row
 3. Data rows
-4. Optional selection and row actions
-5. Optional [`Pagination`](pagination.md)
+4. Optional footer or summary
+5. Optional independent controls for sorting, filtering, selection, pagination,
+   and row actions
+
+Supported variants are read-only, sortable, selectable, and actionable. Adding
+one of these behaviors does not by itself turn a table into a data grid.
+
+## States and semantic tokens
+
+Support hover, selected, sorted, loading, empty, partial, stale, and error states
+when relevant. Hover only helps scanning or signals an available row action;
+selection represents an actual user choice.
 
 Use `table-header-background`, `table-row-background`, `table-row-hover`,
-`table-row-selected`, and `table-border`. Compact density is allowed for large
-desktop datasets.
+`table-row-selected`, and `table-border`. Focus, validation, and action states use
+their corresponding shared semantic roles.
 
-## States
-
-Hover indicates scan assistance or an available row interaction; selected means
-actual selection. Sorting, selection, pagination, and row actions require visible
-focus and explicit state. Support loading, empty, partial, error, and stale-data
-states where data is dynamic. Loading does not remove headers or erase usable
-data, and empty is distinct from failure.
-Loading presentation follows the [`progress-indicator contract`](progress.md).
-Empty and unavailable results follow the [`empty-state contract`](empty-state.md)
-inside the table region without being represented as data rows.
+Loading follows the [`Progress contract`](progress.md). Empty and unavailable
+results follow the [`Empty state contract`](empty-state.md) inside the table
+region and are not represented as data rows. Preserve headers and usable data
+during refresh when possible.
 
 ## Behavior
 
-Sorting communicates the active key and direction. Pagination follows the
-[`Pagination contract`](pagination.md), preserves table context, and moves focus
-only when necessary to continue the task. Selection is
-available without selecting the whole row as an ambiguous action. Updating or
-removing a focused row places focus at the nearest logical control.
+Sorting communicates the active column and direction. Filtering and pagination
+preserve table context. Selection uses an explicit control instead of making the
+whole row ambiguous. If an update removes the focused row, move focus to the
+nearest logical control.
 
-## Responsive behavior
+Pagination follows the [`Pagination contract`](pagination.md).
 
-Prefer, in order: column prioritization, contained horizontal scrolling, stacked
-records, or a dedicated detail view. Do not compress every desktop column.
+## Responsive behavior and localization
+
+Prefer, in order: prioritizing essential columns, contained horizontal scrolling,
+stacked records, or a dedicated detail view. Do not compress every desktop
+column until the content becomes unreadable.
+
+Allow headers, values, and actions to grow for translated text. Keep numeric
+columns consistently aligned according to locale, and provide access to every
+essential value without relying on truncation.
 
 ## Accessibility
 
-Expose the caption, row and column relationships, headers, sort state, selection
+Expose the caption, headers, row and column relationships, sort state, selection
 controls, and row actions programmatically. Reading order follows the meaningful
-column order. Numeric columns remain consistently aligned, and essential content
-has a non-truncated representation.
+column order. All interactive elements have visible focus and descriptive labels.
+
+The table uses ordinary page keyboard behavior: Tab moves between interactive
+controls, while non-interactive cells do not become tab stops. Touch targets,
+contrast, and high-contrast presentation follow the shared requirements in
+[`DESIGN.md`](../../DESIGN.md#components). Tables do not introduce motion beyond
+shared state transitions.
 
 ### Web adapter
 
-Use native table elements for tabular data. Associate headers with cells and use
-`aria-sort` on the active sortable header. Label selection controls and row
-actions with their record context. Do not apply the ARIA grid pattern unless the
-managed-focus behavior in `data-grid.md` is implemented.
+Use native `table`, `caption`, `thead`, `tbody`, `tr`, `th`, and `td` elements.
+Associate headers with cells, use `aria-sort` on the active sortable header, and
+label selection controls and row actions with their record context.
+
+Do not apply the ARIA grid pattern unless the managed focus and keyboard behavior
+defined by the [`Data grid`](data-grid.md) contract is implemented.
 
 ## Example
 
-Use a table for projects with owner, status, due date, and predictable row actions.
+Use a table for a customer report with name, plan, status, and monthly fee.
+Readers scan and compare the values. They may sort by fee or open a customer from
+a row action, but they do not navigate between cells with arrow keys or edit
+values inline.

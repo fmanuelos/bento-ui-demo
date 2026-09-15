@@ -37,6 +37,8 @@ import {
   ToastRegion,
   Tooltip,
   type ToastMessage,
+  type DataGridColumn,
+  type DataGridSortDirection,
   type TableColumn,
 } from '../../components'
 
@@ -46,10 +48,21 @@ const people = [
   { value: 'noor', label: 'Noor Singh', description: 'Research' },
 ]
 
-const rows = [
-  { id: 'atlas', project: 'Atlas', owner: 'Amara', status: 'Active', tasks: 18 },
-  { id: 'field-notes', project: 'Field Notes', owner: 'Noor', status: 'Review', tasks: 12 },
-  { id: 'northstar', project: 'Northstar', owner: 'Jon', status: 'Draft', tasks: 7 },
+type Customer = {
+  id: string
+  name: string
+  plan: 'Basic' | 'Pro'
+  status: 'Active' | 'Paused'
+  monthlyFee: number
+}
+
+const customers: Customer[] = [
+  { id: 'ana', name: 'Ana', plan: 'Pro', status: 'Active', monthlyFee: 49 },
+  { id: 'ben', name: 'Ben', plan: 'Basic', status: 'Paused', monthlyFee: 19 },
+  { id: 'chen', name: 'Chen', plan: 'Pro', status: 'Active', monthlyFee: 49 },
+  { id: 'diego', name: 'Diego', plan: 'Basic', status: 'Active', monthlyFee: 19 },
+  { id: 'ellis', name: 'Ellis', plan: 'Pro', status: 'Paused', monthlyFee: 49 },
+  { id: 'farah', name: 'Farah', plan: 'Basic', status: 'Active', monthlyFee: 19 },
 ]
 
 const ArrowIcon = (
@@ -66,23 +79,15 @@ const ArrowIcon = (
   </svg>
 )
 
-const tableColumns: TableColumn<(typeof rows)[number]>[] = [
-  { id: 'project', header: 'Project', cell: (row) => row.project, sortable: true },
-  { id: 'owner', header: 'Owner', cell: (row) => row.owner },
+const customerTableColumns: TableColumn<Customer>[] = [
+  { id: 'name', header: 'Customer', cell: (customer) => customer.name },
+  { id: 'plan', header: 'Plan', cell: (customer) => customer.plan },
   {
-    id: 'status',
-    header: 'Status',
-    cell: (row) => (
-      <StatusBadge
-        variant={
-          row.status === 'Active' ? 'positive' : row.status === 'Review' ? 'info' : 'neutral'
-        }
-      >
-        {row.status}
-      </StatusBadge>
-    ),
+    id: 'monthly-fee',
+    header: 'Monthly fee',
+    cell: (customer) => `$${customer.monthlyFee}`,
+    numeric: true,
   },
-  { id: 'tasks', header: 'Tasks', cell: (row) => row.tasks, numeric: true },
 ]
 
 function ModalExample() {
@@ -115,47 +120,187 @@ function ModalExample() {
 }
 
 function TableExample() {
-  const [selected, setSelected] = useState<string[]>([])
-  const [sort, setSort] = useState<{ columnId: string; direction: 'ascending' | 'descending' }>({
-    columnId: 'project',
-    direction: 'ascending',
-  })
-  const sortedRows = [...rows].sort((first, second) =>
-    sort.direction === 'ascending'
-      ? first.project.localeCompare(second.project)
-      : second.project.localeCompare(first.project),
-  )
   return (
-    <Table
-      caption="Example projects"
-      columns={tableColumns}
-      rows={sortedRows}
-      getRowId={(row) => row.id}
-      sort={sort}
-      onSort={(columnId, direction) => setSort({ columnId, direction })}
-      selectedRowIds={selected}
-      onSelectionChange={setSelected}
-    />
+    <div className="grid gap-space-3">
+      <Table
+        caption="Customer plan report"
+        columns={customerTableColumns}
+        rows={customers.slice(0, 3)}
+        getRowId={(customer) => customer.id}
+      />
+      <p className="m-0 text-body-sm text-text-secondary">
+        <strong className="font-semibold text-text-primary">Table:</strong> best for simple
+        presentation, reports, and small datasets. People scan and compare these values; the cells
+        do not receive managed focus.
+      </p>
+    </div>
   )
 }
 
 function DataGridExample() {
   const [selected, setSelected] = useState<string[]>([])
+  const [gridRows, setGridRows] = useState(customers)
+  const [query, setQuery] = useState('')
+  const [plan, setPlan] = useState<'all' | Customer['plan']>('all')
+  const [page, setPage] = useState(1)
+  const [sort, setSort] = useState<{
+    columnId: string
+    direction: DataGridSortDirection
+  }>({ columnId: 'name', direction: 'ascending' })
+  const [gridMessage, setGridMessage] = useState('')
+  const visibleCustomers = gridRows.filter(
+    (customer) =>
+      customer.name.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()) &&
+      (plan === 'all' || customer.plan === plan),
+  )
+  const sortedCustomers = [...visibleCustomers].sort((first, second) => {
+    const comparison = first.name.localeCompare(second.name)
+    return sort.direction === 'ascending' ? comparison : -comparison
+  })
+  const pageSize = 3
+  const pageCustomers = sortedCustomers.slice((page - 1) * pageSize, page * pageSize)
+  const gridColumns: DataGridColumn<Customer>[] = [
+    { id: 'name', header: 'Customer', cell: (customer) => customer.name, sortable: true },
+    { id: 'plan', header: 'Plan', cell: (customer) => customer.plan },
+    {
+      id: 'status',
+      header: (
+        <span>
+          Status <span className="font-normal text-text-tertiary">(editable)</span>
+        </span>
+      ),
+      cell: (customer) => (
+        <StatusBadge variant={customer.status === 'Active' ? 'positive' : 'neutral'}>
+          {customer.status}
+        </StatusBadge>
+      ),
+      edit: (customer, finish) => (
+        <form
+          className="flex min-w-48 items-center gap-space-2"
+          onSubmit={(event) => {
+            event.preventDefault()
+            const status = new FormData(event.currentTarget).get('status') as Customer['status']
+            setGridRows((current) =>
+              current.map((candidate) =>
+                candidate.id === customer.id ? { ...candidate, status } : candidate,
+              ),
+            )
+            setGridMessage(`${customer.name}'s status changed to ${status}`)
+            finish()
+          }}
+        >
+          <label className="sr-only" htmlFor={`status-${customer.id}`}>
+            Status for {customer.name}
+          </label>
+          <select
+            id={`status-${customer.id}`}
+            name="status"
+            defaultValue={customer.status}
+            autoFocus
+            className="h-control-height-small min-w-0 flex-1 rounded-shape-md border border-border-primary bg-surface-primary px-space-2 text-body-sm text-text-primary outline-none focus-visible:border-border-focus focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+          >
+            <option>Active</option>
+            <option>Paused</option>
+          </select>
+          <Button type="submit" size="tiny">
+            Save
+          </Button>
+        </form>
+      ),
+    },
+    {
+      id: 'monthly-fee',
+      header: 'Monthly fee',
+      cell: (customer) => `$${customer.monthlyFee}`,
+      numeric: true,
+    },
+  ]
+
   return (
-    <DataGrid
-      label="Keyboard-navigable project grid"
-      columns={tableColumns.map((column) => ({
-        id: column.id,
-        header: column.header,
-        cell: column.cell,
-        numeric: column.numeric,
-      }))}
-      rows={rows}
-      getRowId={(row) => row.id}
-      selectable
-      selectedRowIds={selected}
-      onSelectionChange={setSelected}
-    />
+    <div className="grid gap-space-3">
+      <div className="grid gap-space-3 sm:grid-cols-2">
+        <Input
+          label="Search customers"
+          type="search"
+          variant="search"
+          value={query}
+          onChange={(event) => {
+            setQuery(event.target.value)
+            setPage(1)
+          }}
+          placeholder="Customer name"
+        />
+        <Select
+          label="Plan"
+          value={plan}
+          onChange={(event) => {
+            setPlan(event.target.value as 'all' | Customer['plan'])
+            setPage(1)
+          }}
+          options={[
+            { value: 'all', label: 'All plans' },
+            { value: 'Pro', label: 'Pro' },
+            { value: 'Basic', label: 'Basic' },
+          ]}
+        />
+      </div>
+      <div className="flex flex-wrap items-center justify-between gap-space-3">
+        <p className="m-0 text-body-sm text-text-secondary" aria-live="polite">
+          {gridMessage ||
+            `${visibleCustomers.length} of ${gridRows.length} records shown · ${selected.length} selected`}
+        </p>
+        <Button
+          size="small"
+          disabled={selected.length === 0}
+          onClick={() => {
+            const selectedCount = selected.length
+            setGridRows((current) =>
+              current.map((customer) =>
+                selected.includes(customer.id) ? { ...customer, status: 'Active' } : customer,
+              ),
+            )
+            setSelected([])
+            setGridMessage(`${selectedCount} customer${selectedCount === 1 ? '' : 's'} activated`)
+          }}
+        >
+          Activate selected
+        </Button>
+      </div>
+      <DataGrid
+        label="Customer management grid"
+        columns={gridColumns}
+        rows={pageCustomers}
+        getRowId={(customer) => customer.id}
+        getRowLabel={(customer) => customer.name}
+        selectable
+        selectedRowIds={selected}
+        onSelectionChange={(rowIds) => {
+          setSelected(rowIds)
+          setGridMessage('')
+        }}
+        sort={sort}
+        onSort={(columnId, direction) => {
+          setSort({ columnId, direction })
+          setPage(1)
+          setGridMessage(`Customers sorted ${direction}`)
+        }}
+        pagination={{
+          page,
+          onPageChange: (nextPage) => {
+            setPage(nextPage)
+          },
+          pageSize,
+          totalRowCount: sortedCustomers.length,
+          label: 'Customer grid pages',
+        }}
+      />
+      <p className="m-0 text-body-sm text-text-secondary">
+        <strong className="font-semibold text-text-primary">Data grid:</strong> best for managing
+        many records and spreadsheet-like tasks. Arrow Up reaches a column header; Enter or Space
+        sorts Customer; Space selects a data row; Enter or F2 edits Status. Pagination preserves
+        sorting and selections made on other pages.
+      </p>
+    </div>
   )
 }
 

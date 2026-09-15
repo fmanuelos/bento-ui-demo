@@ -1,4 +1,4 @@
-import { type HTMLAttributes, type ReactNode } from 'react'
+import { useLayoutEffect, useRef, type HTMLAttributes, type ReactNode } from 'react'
 import { Button } from './Button'
 
 export type PaginationProps = Omit<HTMLAttributes<HTMLElement>, 'onChange'> & {
@@ -41,23 +41,52 @@ export function Pagination({
   className = '',
   ...props
 }: PaginationProps) {
+  const navigationRef = useRef<HTMLElement>(null)
+  const pendingFocus = useRef<string | null>(null)
   const safeCount = pageCount === undefined ? undefined : Math.max(1, pageCount)
   const current =
     safeCount === undefined ? Math.max(1, page) : Math.min(safeCount, Math.max(1, page))
   const canGoNext = hasNextPage ?? (safeCount === undefined || current < safeCount)
-  const go = (next: number) => {
+  const go = (next: number, focusTarget: string) => {
     if (
       !disabled &&
       next !== current &&
       next >= 1 &&
       (safeCount === undefined || next <= safeCount)
     ) {
+      pendingFocus.current = focusTarget
       onPageChange(next)
     }
   }
 
+  useLayoutEffect(() => {
+    if (!pendingFocus.current) return
+
+    const preferred = navigationRef.current?.querySelector<HTMLButtonElement>(
+      `[data-pagination-control="${pendingFocus.current}"]`,
+    )
+    const currentPage = navigationRef.current?.querySelector<HTMLButtonElement>(
+      `[data-pagination-control="page-${current}"]`,
+    )
+    const fallback = navigationRef.current?.querySelector<HTMLButtonElement>(
+      `[data-pagination-control="${current > 1 ? 'previous' : 'next'}"]`,
+    )
+    const target =
+      preferred && !preferred.disabled
+        ? preferred
+        : currentPage && !currentPage.disabled
+          ? currentPage
+          : fallback && !fallback.disabled
+            ? fallback
+            : null
+
+    target?.focus()
+    pendingFocus.current = null
+  }, [current])
+
   return (
     <nav
+      ref={navigationRef}
       aria-label={label}
       className={`flex flex-wrap items-center gap-space-2 ${className}`}
       {...props}
@@ -66,12 +95,21 @@ export function Pagination({
         variant="outline"
         size="medium"
         disabled={disabled || current === 1}
-        onClick={() => go(current - 1)}
+        onClick={() => go(current - 1, 'previous')}
         aria-label="Previous page"
+        data-pagination-control="previous"
       >
         Previous
       </Button>
-      {summary && <span className="mr-space-2 text-body-sm text-text-secondary">{summary}</span>}
+      {summary && (
+        <span
+          role="status"
+          aria-atomic="true"
+          className="mr-space-2 text-body-sm text-text-secondary"
+        >
+          {summary}
+        </span>
+      )}
       {showPageNumbers && safeCount !== undefined ? (
         <ol className="m-0 flex list-none items-center gap-space-1 p-0">
           {pageItems(current, safeCount, siblingCount).map((item) =>
@@ -84,7 +122,8 @@ export function Pagination({
                   disabled={disabled}
                   aria-label={`Page ${item}`}
                   aria-current={item === current ? 'page' : undefined}
-                  onClick={() => go(item)}
+                  onClick={() => go(item, `page-${item}`)}
+                  data-pagination-control={`page-${item}`}
                 >
                   {item}
                 </Button>
@@ -97,7 +136,7 @@ export function Pagination({
           )}
         </ol>
       ) : (
-        <span className="text-body-sm text-text-secondary" aria-live="polite">
+        <span role="status" aria-atomic="true" className="text-body-sm text-text-secondary">
           Page {current}
           {safeCount === undefined ? '' : ` of ${safeCount}`}
         </span>
@@ -106,8 +145,9 @@ export function Pagination({
         variant="outline"
         size="medium"
         disabled={disabled || !canGoNext}
-        onClick={() => go(current + 1)}
+        onClick={() => go(current + 1, 'next')}
         aria-label="Next page"
+        data-pagination-control="next"
       >
         Next
       </Button>
