@@ -19,12 +19,13 @@ completed steps, or when the hierarchy contains only the current page.
 3. Root and ancestor destinations
 4. Decorative separators
 5. Current-page item
-6. Optional collapsed-ancestor Disclosure
+6. Optional collapsed-ancestor navigation popover
 
 - **Full trail:** Shows every level and is preferred when the trail fits without
   crowding or obscuring the page title.
 - **Collapsed trail:** Replaces one contiguous set of intermediate ancestors with
-  a labelled Disclosure while preserving access to every omitted destination.
+  a labelled trigger that opens an anchored navigation popover while preserving
+  access to every omitted destination.
 
 The root may include a decorative home indicator, but it retains a visible text
 label. Separators communicate visual direction or division and are not trail
@@ -45,17 +46,21 @@ It may display `…` as its compact visible content while retaining a complete
 accessible name that communicates whether it will show or hide the omitted
 parent pages.
 
+The ancestor popover uses the shared Dropdown surface mapping and follows the
+Overlay foundation for placement, viewport fit, dismissal, and focus restoration.
+This visual reuse does not give the ancestor links action-menu semantics.
+
 Breadcrumb links preserve at least `touch-target-min` in touch presentations.
 Compact visual text must not create overlapping interactive targets. No dedicated
 frontmatter component entry or token family is required because Breadcrumb
-composes link, text, icon, spacing, and Disclosure roles.
+composes link, text, icon, spacing, Ghost Button, and Overlay roles.
 
 ## States
 
 Ancestor links support default, hover when available, focus, active, and visited
 states. The current-page item supports current and focus only when it remains a
-link. A collapsed trail supports collapsed, expanded, and focus states through
-its Disclosure.
+link. A collapsed trail supports closed, open, focus, repositioning, and closing
+states through its navigation popover and Overlay.
 
 Disabled, selected, loading, busy, error, and validation states do not apply to
 the trail. Do not present an unavailable ancestor as a disabled link. If an
@@ -78,8 +83,15 @@ identify its destination in context.
 A collapsed trail omits one contiguous middle range only. Its trigger may use a
 visible ellipsis when its accessible name states how many parent levels it will
 show or hide. The trigger is visually and semantically an action, not a link.
-Expanding it reveals the omitted ancestors in their original order and follows
-the Disclosure contract for focus and state.
+Opening it presents the omitted ancestors in their original order as native
+navigation destinations within an anchored popup surface.
+
+Opening moves focus to the first available ancestor link. Escape and eligible
+outside activation close the popover and restore focus to the trigger. Ordinary
+Tab navigation moves through the ancestor links and then continues to the next
+logical item in the visible trail. Activating an ancestor follows its native
+navigation behavior and closes the popup without first restoring trigger focus.
+The popup does not introduce action-menu selection or arrow-key behavior.
 
 ## Responsive, overflow, and localization behavior
 
@@ -92,6 +104,11 @@ The current-page label may wrap and is not truncated. Ancestor labels may wrap
 when item boundaries remain clear. If an ancestor is visually truncated as a
 last resort, its complete label remains available on focus and on request without
 relying on hover alone. The trail must not create two-dimensional page scrolling.
+
+The popover follows Overlay collision and viewport-fit behavior. When its links
+or targets cannot fit comfortably on a narrow touch presentation, transform the
+same omitted ancestors into an inline Disclosure, Sheet, or another presentation
+that preserves their order, names, destinations, and trigger return path.
 
 Use logical ordering and spacing. In right-to-left presentation, trail order
 follows the localized reading direction; directional separator icons mirror,
@@ -106,12 +123,14 @@ and exactly one current page. Decorative separators and icons are ignored by
 assistive technology. The current item remains understandable without color, and
 ancestor links remain distinguishable from ordinary text.
 
-Keyboard operation follows ordinary link navigation and the Disclosure contract
-when ancestors are collapsed; Breadcrumb does not introduce arrow-key or managed
-focus behavior. Every interactive item has visible focus and an adequate touch
-target. High-contrast presentation preserves links, focus, and the current-item
-distinction. Breadcrumb requires no motion; any collapse or reflow transition is
-removed when reduced motion is requested.
+Keyboard operation follows ordinary link navigation. Enter or Space activates
+the collapsed-ancestor button, opening focus moves to the first available
+ancestor link, and Tab moves through the popup without a trap. Breadcrumb does
+not introduce menu arrow-key or managed-selection behavior. Every interactive
+item has visible focus and an adequate touch target. High-contrast presentation
+preserves the popup edge, links, focus, and the current-item distinction.
+Reduced motion removes popup, collapse, or reflow transitions without delaying
+availability.
 
 ### Web adapter
 
@@ -123,9 +142,15 @@ such as “Breadcrumb.”
 Keep separators out of accessible names and the accessibility tree, including
 when they are inserted with generated content or icons. A collapsed-ancestor
 trigger is a native button with an accessible name such as “Show 2 parent pages”
-or “Hide 2 parent pages” and an expanded relationship. Its accessible name does
-not collapse to the visible `…`. It reveals list items in the same ordered trail
-rather than opening an unrelated navigation landmark.
+or “Hide 2 parent pages” and an expanded and controlled relationship. Its
+accessible name does not collapse to the visible `…`.
+
+Render omitted ancestors as native anchors in an ordered list within an ordinary
+named group or equivalent popup container. Do not use `role="menu"`,
+`role="menuitem"`, `aria-haspopup="menu"`, or command buttons. Portalled content
+retains valid trigger relationships, begins at a predictable focus target, and
+returns focus according to the closing action. Do not create a second navigation
+landmark for the ancestor popup.
 
 ## Example
 
@@ -133,5 +158,6 @@ A support article displays “Home / Documentation / Guides / Project management
 Move a project,” where the first four items are links and “Move a project” is the
 current page. At a narrow width it displays “Home / … / Project management / Move
 a project.” The ellipsis button has the accessible name “Show 2 parent pages.”
-Activating it reveals “Documentation” and “Guides” in their original hierarchical
-order without moving focus.
+Activating it opens an anchored popup containing the “Documentation” and “Guides”
+links in their original hierarchical order and moves focus to “Documentation.”
+Escape closes the popup and returns focus to the ellipsis button.

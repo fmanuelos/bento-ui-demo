@@ -559,18 +559,30 @@ export const componentDocs = [
       {
         name: 'expanded / defaultExpanded',
         type: 'boolean',
-        description: 'Controls or initializes the omitted-parent disclosure.',
+        description: 'Controls or initializes the omitted-parent navigation popover.',
       },
       {
         name: 'onExpandedChange',
         type: '(expanded: boolean) => void',
-        description: 'Reports disclosure changes without moving focus.',
+        description: 'Reports navigation-popover open-state changes.',
       },
       {
         name: 'overflowLabel',
         type: 'ReactNode',
         defaultValue: "'…'",
-        description: 'Supplies compact visible content for the omitted-parent disclosure.',
+        description: 'Supplies compact visible content for the omitted-parent trigger.',
+      },
+      {
+        name: 'overflowGroupLabel',
+        type: 'string',
+        defaultValue: "'Parent pages'",
+        description: 'Names the ordinary link group inside the navigation popover.',
+      },
+      {
+        name: 'overflowPlacement',
+        type: 'OverlayPlacement',
+        defaultValue: "'bottom-start'",
+        description: 'Sets the preferred anchored placement before viewport collision handling.',
       },
       {
         name: 'getOverflowAccessibleLabel',
@@ -580,25 +592,29 @@ export const componentDocs = [
       classNameProp,
     ],
     variants: [
-      'Full trail and collapsed-middle trail.',
-      'Default, hover, focus, active, visited, current, collapsed, and expanded states.',
+      'Full trail and collapsed-middle trail with an anchored navigation popover.',
+      'Default, hover, focus, active, visited, current, closed, and open states.',
     ],
     accessibility: [
       'Uses one named navigation landmark containing an ordered list.',
       'Marks exactly one final item as the current page.',
       'Keeps separators and item icons out of accessible names.',
       'Uses ordinary link navigation and a labelled button for omitted parent pages.',
+      'Moves focus to the first omitted ancestor on open; Escape and outside activation close and restore the trigger.',
+      'Does not apply menu roles or arrow-key selection behavior to navigation destinations.',
     ],
     responsive:
-      'Wraps readable labels and can collapse intermediate ancestors before the current page or immediate parent is lost.',
-    theme: 'Composes link, text, spacing, shape, Button, and global focus roles.',
+      'Wraps readable labels, collapses intermediate ancestors before the current page or immediate parent is lost, and uses Overlay collision handling for the popup.',
+    theme:
+      'Composes link, text, spacing, shape, Ghost Button, Dropdown surface, Overlay, and global focus roles.',
     mistakes: [
       'Do not reconstruct browser history or sequential steps.',
       'Do not use an unlabelled ellipsis as the overflow control.',
       'Do not truncate the current page label.',
       'Do not use Breadcrumb as the only primary navigation.',
+      'Do not use menu or menuitem semantics for omitted ancestor links.',
     ],
-    related: ['site-navigation', 'navigation', 'disclosure'],
+    related: ['site-navigation', 'navigation', 'popover', 'dropdown'],
   }),
   createDoc({
     slug: 'pagination',
