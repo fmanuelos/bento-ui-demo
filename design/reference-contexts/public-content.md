@@ -33,6 +33,7 @@ table, code-style identifiers, links, and a disclosure-based question section.
   [data display](../patterns/data-display.md), and
   [responsive density](../patterns/responsive-density.md).
 - Components: [Public-site navigation](../components/site-navigation.md),
+  [Breadcrumb](../components/breadcrumb.md),
   [Skip link](../components/skip-link.md), [Alert](../components/alert.md),
   [Data table](../components/table.md), [Disclosure](../components/disclosure.md),
   [Accordion](../components/accordion.md), and
@@ -43,6 +44,8 @@ table, code-style identifiers, links, and a disclosure-based question section.
 ## Required states and transitions
 
 - The current location and article outline remain understandable without color.
+- Breadcrumb uses the canonical content hierarchy, exposes one current page, and
+  keeps every ancestor destination reachable when intermediate levels collapse.
 - In-page navigation identifies its destination and does not obscure the focused
   heading behind sticky content.
 - Alerts preserve severity, title, message, and action meaning in light, dark, and

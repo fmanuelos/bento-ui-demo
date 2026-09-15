@@ -8,6 +8,7 @@ import {
   AvatarGroup,
   Button,
   ButtonGroup,
+  Breadcrumb,
   Card,
   Checkbox,
   Combobox,
@@ -346,6 +347,19 @@ export const componentExamples: Record<string, ReactNode> = {
           title: 'What happens when I archive?',
           content: 'The project becomes read-only and leaves active views.',
         },
+      ]}
+    />
+  ),
+  breadcrumb: (
+    <Breadcrumb
+      maxItems={4}
+      label="Article breadcrumb"
+      items={[
+        { href: '#home', label: 'Home' },
+        { href: '#documentation', label: 'Documentation' },
+        { href: '#guides', label: 'Guides' },
+        { href: '#project-management', label: 'Project management' },
+        { label: 'Move a project' },
       ]}
     />
   ),

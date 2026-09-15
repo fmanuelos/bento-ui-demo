@@ -24,6 +24,7 @@ const implementationFiles = new Map([
     'alert',
     'avatar',
     'back-to-top',
+    'breadcrumb',
     'button',
     'button-group',
     'card',

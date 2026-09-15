@@ -1900,20 +1900,20 @@ Use the simplest native or Bento component that provides the required behavior;
 combine existing components when a local arrangement does not introduce a new
 semantic role or state model.
 
-| Need                          | Choose                                                                                                                                | Distinction to preserve                                                                                                     |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Trigger an action             | Button; Button Group for related independent actions                                                                                  | Navigation uses a link or destination semantic, not a button styled differently.                                            |
-| Enter text                    | Form Field with Text Field or Textarea                                                                                                | Placeholder text is an example, not a label; read-only is not disabled.                                                     |
-| Choose from values            | Native Select for a simple closed list; Listbox for a managed option collection; Combobox when text entry or filtering is required    | Focus, active item, and committed selection remain distinct.                                                                |
-| Choose flags or one option    | Checkbox for independent choices; Radio Group for one visible-set choice; Switch for an immediate binary setting                      | A switch is not a delayed form choice, and a checkbox is not action confirmation.                                           |
-| Reveal adjacent content       | Disclosure; Accordion for a coordinated disclosure group                                                                              | Expansion is not selection, navigation, or a generic popup.                                                                 |
-| Explain or supplement         | Tooltip for brief non-interactive help; Popover for interactive supplemental content                                                  | Tooltips contain no actions and never replace an accessible name.                                                           |
-| Present popup choices         | Action Menu, Listbox, or Combobox using the Overlay foundation and compatible Dropdown surface styling                                | Visual placement does not determine menu, listbox, combobox, popover, or dialog semantics.                                  |
-| Focus a bounded task          | Dialog; Modal Dialog when background interaction must stop; Alert Dialog for an urgent decision; Drawer or Sheet for an edge task     | Modality, initial focus, dismissal, inertness, and restoration follow the selected contract.                                |
-| Communicate state or progress | Status Badge for persistent state; Alert or Toast for an event; Progress for ongoing work; Empty State for unavailable content        | Feedback, status, loading, validation, and empty data remain separate concepts.                                             |
-| Organize destinations         | Public-site Navigation or Navigation Shell; Tabs for local views; Pagination for results; Skip Link and Back to Top for page movement | Current location, local view selection, paging, bypass, and in-page movement do not share one interaction model.            |
-| Present grouped information   | Card for containment; Data Table for relational reading; Data Grid only for managed cell navigation, selection, or editing            | Visual density does not turn a table into a grid, and a whole card is not interactive without an explicit semantic control. |
-| Represent people              | Avatar; Avatar Group for a compact preview                                                                                            | Identity imagery does not imply presence, selection, or action.                                                             |
+| Need                          | Choose                                                                                                                                                                      | Distinction to preserve                                                                                                                  |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Trigger an action             | Button; Button Group for related independent actions                                                                                                                        | Navigation uses a link or destination semantic, not a button styled differently.                                                         |
+| Enter text                    | Form Field with Text Field or Textarea                                                                                                                                      | Placeholder text is an example, not a label; read-only is not disabled.                                                                  |
+| Choose from values            | Native Select for a simple closed list; Listbox for a managed option collection; Combobox when text entry or filtering is required                                          | Focus, active item, and committed selection remain distinct.                                                                             |
+| Choose flags or one option    | Checkbox for independent choices; Radio Group for one visible-set choice; Switch for an immediate binary setting                                                            | A switch is not a delayed form choice, and a checkbox is not action confirmation.                                                        |
+| Reveal adjacent content       | Disclosure; Accordion for a coordinated disclosure group                                                                                                                    | Expansion is not selection, navigation, or a generic popup.                                                                              |
+| Explain or supplement         | Tooltip for brief non-interactive help; Popover for interactive supplemental content                                                                                        | Tooltips contain no actions and never replace an accessible name.                                                                        |
+| Present popup choices         | Action Menu, Listbox, or Combobox using the Overlay foundation and compatible Dropdown surface styling                                                                      | Visual placement does not determine menu, listbox, combobox, popover, or dialog semantics.                                               |
+| Focus a bounded task          | Dialog; Modal Dialog when background interaction must stop; Alert Dialog for an urgent decision; Drawer or Sheet for an edge task                                           | Modality, initial focus, dismissal, inertness, and restoration follow the selected contract.                                             |
+| Communicate state or progress | Status Badge for persistent state; Alert or Toast for an event; Progress for ongoing work; Empty State for unavailable content                                              | Feedback, status, loading, validation, and empty data remain separate concepts.                                                          |
+| Organize destinations         | Public-site Navigation or Navigation Shell; Breadcrumb for hierarchical location; Tabs for local views; Pagination for results; Skip Link and Back to Top for page movement | Global navigation, hierarchical location, local view selection, paging, bypass, and in-page movement do not share one interaction model. |
+| Present grouped information   | Card for containment; Data Table for relational reading; Data Grid only for managed cell navigation, selection, or editing                                                  | Visual density does not turn a table into a grid, and a whole card is not interactive without an explicit semantic control.              |
+| Represent people              | Avatar; Avatar Group for a compact preview                                                                                                                                  | Identity imagery does not imply presence, selection, or action.                                                                          |
 
 When two candidates appear suitable, compare their user outcome, state model,
 keyboard behavior, focus ownership, and content constraints. If those differ,
@@ -2069,6 +2069,9 @@ Reusable bypass controls follow the
   action without a separate semantic control or status.
 - A disclosure controls one revealed region. An accordion coordinates a group of
   disclosures and adds a stable group policy and heading structure.
+- Breadcrumb communicates canonical hierarchical location and routes to ancestor
+  destinations; it does not reproduce browser history, global navigation, or
+  sequential progress.
 - Sidebar and topbar tokens support the navigation-shell pattern; they do not
   prescribe a reusable component architecture.
 
@@ -2114,6 +2117,9 @@ Reusable bypass controls follow the
   [`Public-site Navigation`](design/components/site-navigation.md) contract;
   authenticated workspace navigation continues to follow the application
   navigation shell.
+- Hierarchical page location follows the shared
+  [`Breadcrumb`](design/components/breadcrumb.md) contract and uses the canonical
+  information architecture rather than the visitor's click path.
 - Person imagery and fallbacks follow the shared
   [`Avatar`](design/components/avatar.md) contract. Compact identity collections
   follow [`Avatar Group`](design/components/avatar-group.md) without replacing a

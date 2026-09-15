@@ -1,6 +1,6 @@
 # Bento UI conformance record
 
-This record reports the evidence available for Bento UI on September 14, 2026.
+This record reports the evidence available for Bento UI on September 15, 2026.
 It is non-normative: [`DESIGN.md`](../DESIGN.md) defines the portable kernel,
 component and pattern contracts define behavior, and this file records how far a
 named implementation has demonstrated those requirements.
@@ -11,13 +11,13 @@ The repository can currently claim **Format-valid** conformance for `DESIGN.md`.
 It does not yet claim that the reference implementation is Contract-conformant,
 Adapter-conformant, or Product-validated.
 
-| Level                   | Status                                                   | Evidence or missing proof                                                                                                                            |
-| ----------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Format-valid**        | Pass                                                     | `@google/design.md` 0.4.0 reports zero errors against the repository's pinned format baseline.                                                       |
-| **Kernel-aligned**      | Documentation reviewed; no complete implementation claim | Repository documentation and visible product naming were reconciled with the kernel. Complete rendered-state evidence has not been recorded.         |
-| **Contract-conformant** | Not claimed                                              | All 36 contracts have documentation and implementation mappings, but coverage does not prove that behavior, state, accessibility, or content passes. |
-| **Adapter-conformant**  | Not claimed                                              | Web and Tailwind mappings are documented, but no versioned browser, device, input, assistive-technology, theme, and locale test record exists.       |
-| **Product-validated**   | Not claimed                                              | Six reference contexts are specified, but no named product has recorded a completed context matrix and exceptions.                                   |
+| Level                   | Status                                                   | Evidence or missing proof                                                                                                                      |
+| ----------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Format-valid**        | Pass                                                     | `@google/design.md` 0.4.0 reports zero errors against the repository's pinned format baseline.                                                 |
+| **Kernel-aligned**      | Documentation reviewed; no complete implementation claim | Repository documentation and visible product naming were reconciled with the kernel. Complete rendered-state evidence has not been recorded.   |
+| **Contract-conformant** | Not claimed                                              | All 37 contracts have documentation and implementation mappings, but coverage does not prove behavioral conformance.                           |
+| **Adapter-conformant**  | Not claimed                                              | Web and Tailwind mappings are documented, but no versioned browser, device, input, assistive-technology, theme, and locale test record exists. |
+| **Product-validated**   | Not claimed                                              | Six reference contexts are specified, but no named product has recorded a completed context matrix and exceptions.                             |
 
 Claims are cumulative. A higher-level claim requires the evidence for every
 preceding level and must name the implementation or product, version or revision,
@@ -51,7 +51,7 @@ The Phase 6 review records:
   `@google/design.md` 0.4.0. Six are context-dependent contrast findings; the
   remainder are tokens not referenced by a property supported by the alpha
   component schema.
-- Contract inventory: 36 component or foundation contracts, 36 rendered
+- Contract inventory: 37 component or foundation contracts, 37 rendered
   documentation entries, and an implementation mapping for every contract.
 - Reference inventory: six normative reference contexts covering public,
   dashboard, data-management, form, and destructive workflows.

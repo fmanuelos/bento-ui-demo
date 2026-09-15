@@ -20,44 +20,45 @@ status outside this technology-neutral contract index.
 
 ## Current contracts
 
-| Component or foundation                            | DESIGN.md coverage                | Contract status | Depends on                             |
-| -------------------------------------------------- | --------------------------------- | --------------- | -------------------------------------- |
-| [Form field](form-field.md)                        | Shared prose and semantic roles   | Complete        | Forms-and-validation pattern           |
-| [Overlay foundation](overlay.md)                   | Shared prose and dropdown style   | Complete        | Elevation and shared state model       |
-| [Progress indicators and spinner](progress.md)     | Shared prose and async pattern    | Complete        | Asynchronous-feedback pattern          |
-| [Empty state](empty-state.md)                      | Shared prose and data pattern     | Complete        | Data display, asynchronous feedback    |
-| [Avatar](avatar.md)                                | Frontmatter and shared prose      | Complete        | Shared state and identity rules        |
-| [Avatar Group](avatar-group.md)                    | Shared prose and contract         | Complete        | Avatar, Popover when expandable        |
-| [Tooltip](tooltip.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                |
-| [Alert dialog](alert-dialog.md)                    | Shared prose and risk pattern     | Complete        | Dialog, Button, destructive actions    |
-| [Disclosure](disclosure.md)                        | Shared prose and popup taxonomy   | Complete        | Overlay only when visually layered     |
-| [Accordion](accordion.md)                          | Shared prose and group behavior   | Complete        | Disclosure, Button                     |
-| [Pagination](pagination.md)                        | Shared prose and data pattern     | Complete        | Collection model, async feedback       |
-| [Popover](popover.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                |
-| [Toast and notification region](toast.md)          | Shared prose and async pattern    | Complete        | Alert, progress, async feedback        |
-| [Drawer and sheet](drawer.md)                      | Shared prose and dialog family    | Complete        | Dialog                                 |
-| [Public-site navigation](site-navigation.md)       | Shared prose and Public Site mode | Complete        | Disclosure, Dialog when modal          |
-| [Skip link](skip-link.md)                          | Shared accessibility baseline     | Complete        | Link navigation and focus              |
-| [Back to top](back-to-top.md)                      | Shared prose and contract         | Complete        | Link navigation and focus              |
-| [Button](button.md)                                | Frontmatter and prose             | Complete        | Shared state model                     |
-| [Button Group](button-group.md)                    | Contract-only composition         | Complete        | Button, shared state model             |
-| [Text field](input.md)                             | Frontmatter and prose             | Complete        | Form field                             |
-| [Textarea](textarea.md)                            | Prose and contract                | Complete        | Form field, text field                 |
-| [Select](select.md)                                | Prose and contract                | Complete        | Form field                             |
-| [Listbox](listbox.md)                              | Prose and contract                | Complete        | Overlay when popup, collection model   |
-| [Combobox](combobox.md)                            | Prose and contract                | Complete        | Form field, overlay, collection model  |
-| [Checkbox](checkbox.md)                            | Prose and contract                | Complete        | Form field                             |
-| [Radio group](radio.md)                            | Prose and contract                | Complete        | Form field, collection model           |
-| [Switch](switch.md)                                | Prose and contract                | Complete        | Form field, asynchronous feedback      |
-| [Dialog and modal](modal.md)                       | Frontmatter and prose             | Complete        | Shared state and destructive actions   |
-| [Tabs](tabs.md)                                    | Frontmatter and prose             | Complete        | Collection model                       |
-| [Data table](table.md)                             | Frontmatter and prose             | Complete        | Data-display pattern                   |
-| [Data grid](data-grid.md)                          | Prose and contract                | Complete        | Collection model, data-display pattern |
-| [Status badge](status-badge.md)                    | Frontmatter and prose             | Complete        | Shared state model                     |
-| [Alert](alert.md)                                  | Frontmatter and prose             | Complete        | Asynchronous-feedback pattern          |
-| [Popup surface and dropdown patterns](dropdown.md) | Frontmatter and prose             | Complete        | Overlay, collection model              |
-| [Navigation shell](navigation.md)                  | Frontmatter and prose             | Complete        | Skip link, dialog when modal           |
-| [Card](card.md)                                    | Frontmatter and prose             | Complete        | Data-display pattern when data-bearing |
+| Component or foundation                            | DESIGN.md coverage                | Contract status | Depends on                                 |
+| -------------------------------------------------- | --------------------------------- | --------------- | ------------------------------------------ |
+| [Form field](form-field.md)                        | Shared prose and semantic roles   | Complete        | Forms-and-validation pattern               |
+| [Overlay foundation](overlay.md)                   | Shared prose and dropdown style   | Complete        | Elevation and shared state model           |
+| [Progress indicators and spinner](progress.md)     | Shared prose and async pattern    | Complete        | Asynchronous-feedback pattern              |
+| [Empty state](empty-state.md)                      | Shared prose and data pattern     | Complete        | Data display, asynchronous feedback        |
+| [Avatar](avatar.md)                                | Frontmatter and shared prose      | Complete        | Shared state and identity rules            |
+| [Avatar Group](avatar-group.md)                    | Shared prose and contract         | Complete        | Avatar, Popover when expandable            |
+| [Tooltip](tooltip.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                    |
+| [Alert dialog](alert-dialog.md)                    | Shared prose and risk pattern     | Complete        | Dialog, Button, destructive actions        |
+| [Disclosure](disclosure.md)                        | Shared prose and popup taxonomy   | Complete        | Overlay only when visually layered         |
+| [Accordion](accordion.md)                          | Shared prose and group behavior   | Complete        | Disclosure, Button                         |
+| [Breadcrumb](breadcrumb.md)                        | Shared prose and Public Site mode | Complete        | Link navigation, Disclosure when collapsed |
+| [Pagination](pagination.md)                        | Shared prose and data pattern     | Complete        | Collection model, async feedback           |
+| [Popover](popover.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                    |
+| [Toast and notification region](toast.md)          | Shared prose and async pattern    | Complete        | Alert, progress, async feedback            |
+| [Drawer and sheet](drawer.md)                      | Shared prose and dialog family    | Complete        | Dialog                                     |
+| [Public-site navigation](site-navigation.md)       | Shared prose and Public Site mode | Complete        | Disclosure, Dialog when modal              |
+| [Skip link](skip-link.md)                          | Shared accessibility baseline     | Complete        | Link navigation and focus                  |
+| [Back to top](back-to-top.md)                      | Shared prose and contract         | Complete        | Link navigation and focus                  |
+| [Button](button.md)                                | Frontmatter and prose             | Complete        | Shared state model                         |
+| [Button Group](button-group.md)                    | Contract-only composition         | Complete        | Button, shared state model                 |
+| [Text field](input.md)                             | Frontmatter and prose             | Complete        | Form field                                 |
+| [Textarea](textarea.md)                            | Prose and contract                | Complete        | Form field, text field                     |
+| [Select](select.md)                                | Prose and contract                | Complete        | Form field                                 |
+| [Listbox](listbox.md)                              | Prose and contract                | Complete        | Overlay when popup, collection model       |
+| [Combobox](combobox.md)                            | Prose and contract                | Complete        | Form field, overlay, collection model      |
+| [Checkbox](checkbox.md)                            | Prose and contract                | Complete        | Form field                                 |
+| [Radio group](radio.md)                            | Prose and contract                | Complete        | Form field, collection model               |
+| [Switch](switch.md)                                | Prose and contract                | Complete        | Form field, asynchronous feedback          |
+| [Dialog and modal](modal.md)                       | Frontmatter and prose             | Complete        | Shared state and destructive actions       |
+| [Tabs](tabs.md)                                    | Frontmatter and prose             | Complete        | Collection model                           |
+| [Data table](table.md)                             | Frontmatter and prose             | Complete        | Data-display pattern                       |
+| [Data grid](data-grid.md)                          | Prose and contract                | Complete        | Collection model, data-display pattern     |
+| [Status badge](status-badge.md)                    | Frontmatter and prose             | Complete        | Shared state model                         |
+| [Alert](alert.md)                                  | Frontmatter and prose             | Complete        | Asynchronous-feedback pattern              |
+| [Popup surface and dropdown patterns](dropdown.md) | Frontmatter and prose             | Complete        | Overlay, collection model                  |
+| [Navigation shell](navigation.md)                  | Frontmatter and prose             | Complete        | Skip link, dialog when modal               |
+| [Card](card.md)                                    | Frontmatter and prose             | Complete        | Data-display pattern when data-bearing     |
 
 ## Proposed contracts
 
@@ -111,19 +112,19 @@ Frontmatter component entries are visual mappings, not the component inventory.
 Add an entry only for an approved mapping that the current DESIGN.md schema can
 represent honestly.
 
-| Frontmatter family        | Normative contracts                                                       | Contract-only coverage                                                                          |
-| ------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Buttons                   | Button                                                                    | Focus, loading, pressed, expanded, activation, and icon-only behavior                           |
-| Input and search          | Form field, Text field                                                    | Boundary mappings, read-only, validation, description, and message behavior                     |
-| Cards and statistic cards | Card                                                                      | Static, interactive, loading, empty, and error behavior                                         |
-| Avatars                   | Avatar, Avatar Group                                                      | Image fallback, identity exposure, ordering, overlap, and overflow behavior                     |
-| Navigation and tabs       | Navigation shell, Public-site navigation, Skip link, Tabs                 | Focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |
-| Table                     | Data table, Data grid, Pagination                                         | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior    |
-| Alerts and badges         | Alert, Toast and notification region, Status badge                        | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status  |
-| Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover | Placement, focus, selection, dismissal, active item, viewport fit, and transformation           |
-| Disclosure                | Disclosure, Accordion                                                     | Expansion, heading structure, group policy, focus, and panel relationships                      |
-| Modal surface             | Dialog and modal, Alert dialog, Drawer and sheet                          | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery           |
-| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch               | Complete behavior remains contract-only until an honest visual mapping is approved              |
+| Frontmatter family        | Normative contracts                                                       | Contract-only coverage                                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Buttons                   | Button                                                                    | Focus, loading, pressed, expanded, activation, and icon-only behavior                                                  |
+| Input and search          | Form field, Text field                                                    | Boundary mappings, read-only, validation, description, and message behavior                                            |
+| Cards and statistic cards | Card                                                                      | Static, interactive, loading, empty, and error behavior                                                                |
+| Avatars                   | Avatar, Avatar Group                                                      | Image fallback, identity exposure, ordering, overlap, and overflow behavior                                            |
+| Navigation and tabs       | Navigation shell, Public-site navigation, Breadcrumb, Skip link, Tabs     | Hierarchical location, focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |
+| Table                     | Data table, Data grid, Pagination                                         | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior                           |
+| Alerts and badges         | Alert, Toast and notification region, Status badge                        | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status                         |
+| Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover | Placement, focus, selection, dismissal, active item, viewport fit, and transformation                                  |
+| Disclosure                | Disclosure, Accordion                                                     | Expansion, heading structure, group policy, focus, and panel relationships                                             |
+| Modal surface             | Dialog and modal, Alert dialog, Drawer and sheet                          | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery                                  |
+| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch               | Complete behavior remains contract-only until an honest visual mapping is approved                                     |
 
 ## Frontmatter state coverage
 

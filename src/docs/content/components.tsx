@@ -527,6 +527,80 @@ export const componentDocs = [
     related: ['disclosure', 'tabs'],
   }),
   createDoc({
+    slug: 'breadcrumb',
+    title: 'Breadcrumb',
+    summary:
+      'Communicates a page’s canonical hierarchical location and provides routes to its ancestors.',
+    useCases: [
+      'Deep public content, documentation, and nested application resources where parent context aids orientation.',
+    ],
+    importCode: "import { Breadcrumb } from '@/components'",
+    basicCode: `<Breadcrumb items={[{ href: '/', label: 'Home' }, { href: '/guides', label: 'Guides' }, { label: 'Move a project' }]} />`,
+    props: [
+      {
+        name: 'items',
+        type: 'readonly BreadcrumbItem[]',
+        description:
+          'Ordered canonical hierarchy; the final item is the current page and may omit href.',
+      },
+      {
+        name: 'label / separator',
+        type: 'string / ReactNode',
+        defaultValue: "'Breadcrumb' / chevron",
+        description: 'Names the landmark and supplies a decorative visual separator.',
+      },
+      {
+        name: 'maxItems',
+        type: 'number',
+        defaultValue: '5',
+        description:
+          'Collapses a contiguous middle range while preserving root, immediate parent, and current page.',
+      },
+      {
+        name: 'expanded / defaultExpanded',
+        type: 'boolean',
+        description: 'Controls or initializes the omitted-parent disclosure.',
+      },
+      {
+        name: 'onExpandedChange',
+        type: '(expanded: boolean) => void',
+        description: 'Reports disclosure changes without moving focus.',
+      },
+      {
+        name: 'overflowLabel',
+        type: 'ReactNode',
+        defaultValue: "'…'",
+        description: 'Supplies compact visible content for the omitted-parent disclosure.',
+      },
+      {
+        name: 'getOverflowAccessibleLabel',
+        type: '(hiddenCount: number, expanded: boolean) => string',
+        description: 'Localizes the complete accessible expand and collapse label.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Full trail and collapsed-middle trail.',
+      'Default, hover, focus, active, visited, current, collapsed, and expanded states.',
+    ],
+    accessibility: [
+      'Uses one named navigation landmark containing an ordered list.',
+      'Marks exactly one final item as the current page.',
+      'Keeps separators and item icons out of accessible names.',
+      'Uses ordinary link navigation and a labelled button for omitted parent pages.',
+    ],
+    responsive:
+      'Wraps readable labels and can collapse intermediate ancestors before the current page or immediate parent is lost.',
+    theme: 'Composes link, text, spacing, shape, Button, and global focus roles.',
+    mistakes: [
+      'Do not reconstruct browser history or sequential steps.',
+      'Do not use an unlabelled ellipsis as the overflow control.',
+      'Do not truncate the current page label.',
+      'Do not use Breadcrumb as the only primary navigation.',
+    ],
+    related: ['site-navigation', 'navigation', 'disclosure'],
+  }),
+  createDoc({
     slug: 'pagination',
     title: 'Pagination',
     summary: 'Moves through a bounded result set while preserving data and focus context.',
