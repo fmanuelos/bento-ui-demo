@@ -1208,7 +1208,84 @@ export const componentDocs = [
       'Do not use disabled when a value should remain focusable and copyable.',
       'Do not erase the value during validation.',
     ],
-    related: ['form-field', 'textarea', 'select', 'combobox'],
+    related: ['form-field', 'input-group', 'textarea', 'select', 'combobox'],
+  }),
+  createDoc({
+    slug: 'input-group',
+    title: 'Input Group',
+    summary:
+      'Joins one text field with a closely related addon, icon, secondary control, or action.',
+    useCases: [
+      'URLs with a protocol prefix, project search, qualified amounts, and field-specific actions.',
+    ],
+    importCode: "import { InputGroup } from '@/components'",
+    basicCode: `<InputGroup
+  label="Website"
+  leadingAddon="https://"
+  defaultValue="example.com"
+  helperText="The protocol is included in the saved URL."
+/>`,
+    props: [
+      {
+        name: 'label',
+        type: 'string',
+        description: 'Required visible label for the primary Input.',
+      },
+      {
+        name: 'leadingAddon / trailingAddon',
+        type: 'ReactNode',
+        description: 'Adds concise, non-interactive text or a decorative icon.',
+      },
+      {
+        name: 'select',
+        type: 'InputGroupSelectProps',
+        description: 'Adds one labelled native Select that qualifies the entered value.',
+      },
+      {
+        name: 'action',
+        type: 'InputGroupActionProps',
+        description: 'Adds one Button whose action directly uses the current value.',
+      },
+      {
+        name: 'size',
+        type: "'small' | 'medium'",
+        defaultValue: "'medium'",
+        description: 'Applies one shared canonical height to every connected control.',
+      },
+      {
+        name: 'helperText / error / status',
+        type: "string / 'default' | 'success' | 'warning' | 'invalid'",
+        description: 'Connects persistent guidance and current validation feedback.',
+      },
+      {
+        name: '…input props',
+        type: 'InputHTMLAttributes<HTMLInputElement>',
+        description: 'Forwards native value, type, requirement, availability, and events.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Text addon and Input; decorative icon and Input.',
+      'Addon, Input, and labelled secondary Select; Input and one adjacent action.',
+      'Small and medium sizes with default, focus, validation, read-only, busy, and disabled states.',
+    ],
+    accessibility: [
+      'The visible label names the primary Input; secondary controls and actions keep their own names and tab stops.',
+      'Static addons and decorative icons are excluded from the accessibility tree, so meaningful transformations require helper text.',
+      'Tab follows source order and Enter retains the containing form’s native submission behavior.',
+      'Focus, validation, internal dividers, and action affordances remain distinguishable in high contrast.',
+    ],
+    responsive:
+      'The connected row preserves useful Input width. Product layouts separate the action or secondary Select as a complete rounded control before content clips.',
+    theme:
+      'Input, Select, and Button mappings supply their semantic colors; the composition adds shared borders, dividers, shape, spacing, and focus treatment.',
+    mistakes: [
+      'Do not use an addon, icon, placeholder, or action as the field label.',
+      'Do not combine independent values such as first and last name inside one boundary.',
+      'Do not add multiple adjacent actions; place a Button Group outside the field instead.',
+      'Do not bind Enter to the adjacent action unless it is the documented form submit action.',
+    ],
+    related: ['form-field', 'input', 'select', 'button', 'button-group', 'combobox'],
   }),
   createDoc({
     slug: 'textarea',

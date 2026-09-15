@@ -1903,7 +1903,7 @@ semantic role or state model.
 | Need                          | Choose                                                                                                                                                                      | Distinction to preserve                                                                                                                  |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | Trigger an action             | Button; Button Group for related independent actions                                                                                                                        | Navigation uses a link or destination semantic, not a button styled differently.                                                         |
-| Enter text                    | Form Field with Text Field or Textarea                                                                                                                                      | Placeholder text is an example, not a label; read-only is not disabled.                                                                  |
+| Enter text                    | Form Field with Text Field or Textarea; Input Group when one value needs a closely related addon, secondary control, or action                                              | Placeholder text is an example, not a label; read-only is not disabled; visual connection does not merge control semantics.              |
 | Choose from values            | Native Select for a simple closed list; Listbox for a managed option collection; Combobox when text entry or filtering is required                                          | Focus, active item, and committed selection remain distinct.                                                                             |
 | Choose flags or one option    | Checkbox for independent choices; Radio Group for one visible-set choice; Switch for an immediate binary setting                                                            | A switch is not a delayed form choice, and a checkbox is not action confirmation.                                                        |
 | Reveal adjacent content       | Disclosure; Accordion for a coordinated disclosure group                                                                                                                    | Expansion is not selection, navigation, or a generic popup.                                                                              |
@@ -2087,6 +2087,9 @@ Reusable bypass controls follow the
   [`form-field contract`](design/components/form-field.md) for labels,
   descriptions, requirements, messages, and validation. Placeholders are
   examples, not labels.
+- Connected field addons, compatible secondary controls, and adjacent actions
+  follow the [`Input Group contract`](design/components/input-group.md). Every
+  interactive part retains its own value, focus, state, and semantics.
 - Validation includes a text description and, when useful, an icon in addition
   to color.
 - Anchored popup components follow the shared

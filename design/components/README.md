@@ -43,6 +43,7 @@ status outside this technology-neutral contract index.
 | [Button](button.md)                                | Frontmatter and prose             | Complete        | Shared state model                      |
 | [Button Group](button-group.md)                    | Contract-only composition         | Complete        | Button, shared state model              |
 | [Text field](input.md)                             | Frontmatter and prose             | Complete        | Form field                              |
+| [Input Group](input-group.md)                      | Contract-only composition         | Complete        | Form field, Input, Button, Select       |
 | [Textarea](textarea.md)                            | Prose and contract                | Complete        | Form field, text field                  |
 | [Select](select.md)                                | Prose and contract                | Complete        | Form field                              |
 | [Listbox](listbox.md)                              | Prose and contract                | Complete        | Overlay when popup, collection model    |
@@ -115,7 +116,7 @@ represent honestly.
 | Frontmatter family        | Normative contracts                                                       | Contract-only coverage                                                                                                 |
 | ------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Buttons                   | Button                                                                    | Focus, loading, pressed, expanded, activation, and icon-only behavior                                                  |
-| Input and search          | Form field, Text field                                                    | Boundary mappings, read-only, validation, description, and message behavior                                            |
+| Input and search          | Form field, Text field                                                    | Input Group composition, boundary mappings, read-only, validation, description, and message behavior                   |
 | Cards and statistic cards | Card                                                                      | Static, interactive, loading, empty, and error behavior                                                                |
 | Avatars                   | Avatar, Avatar Group                                                      | Image fallback, identity exposure, ordering, overlap, and overflow behavior                                            |
 | Navigation and tabs       | Navigation shell, Public-site navigation, Breadcrumb, Skip link, Tabs     | Hierarchical location, focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |

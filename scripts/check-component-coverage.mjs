@@ -34,6 +34,7 @@ const implementationFiles = new Map([
     'drawer',
     'dropdown',
     'input',
+    'input-group',
     'listbox',
     'modal',
     'pagination',

@@ -18,6 +18,7 @@ import {
   Dropdown,
   EmptyState,
   Input,
+  InputGroup,
   Listbox,
   Modal,
   NavigationShell,
@@ -76,6 +77,21 @@ const ArrowIcon = (
     aria-hidden="true"
   >
     <path d="M5 12h14m-6-6 6 6-6 6" />
+  </svg>
+)
+
+const SearchIcon = (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="11" cy="11" r="7" />
+    <path d="m16 16 4 4" />
   </svg>
 )
 
@@ -413,6 +429,61 @@ function ToastExample() {
   )
 }
 
+function InputGroupExample() {
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('Enter an email address to try the action.')
+
+  return (
+    <div className="grid max-w-container-narrow gap-space-5">
+      <InputGroup
+        label="Website"
+        leadingAddon="https://"
+        defaultValue="example.com"
+        helperText="The protocol is included in the saved URL."
+      />
+      <InputGroup
+        label="Search projects"
+        leadingAddon={SearchIcon}
+        type="search"
+        placeholder="Search by name or owner"
+      />
+      <InputGroup
+        label="Invoice amount"
+        leadingAddon="$"
+        type="number"
+        min="0"
+        step="0.01"
+        defaultValue="1250"
+        select={{
+          label: 'Currency',
+          defaultValue: 'USD',
+          options: [
+            { value: 'USD', label: 'USD' },
+            { value: 'EUR', label: 'EUR' },
+            { value: 'GBP', label: 'GBP' },
+          ],
+        }}
+      />
+      <InputGroup
+        label="Invite teammate"
+        type="email"
+        placeholder="name@company.com"
+        value={email}
+        onChange={(event) => {
+          setEmail(event.currentTarget.value)
+          setMessage('Enter an email address to try the action.')
+        }}
+        helperText={message}
+        action={{
+          label: 'Send invite',
+          onClick: () =>
+            setMessage(email ? `Invite ready for ${email}.` : 'Enter an email address first.'),
+        }}
+      />
+    </div>
+  )
+}
+
 export const componentExamples: Record<string, ReactNode> = {
   'form-field': (
     <div className="max-w-container-narrow">
@@ -620,6 +691,7 @@ export const componentExamples: Record<string, ReactNode> = {
       />
     </div>
   ),
+  'input-group': <InputGroupExample />,
   textarea: (
     <div className="max-w-container-narrow">
       <Textarea
