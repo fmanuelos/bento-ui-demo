@@ -12,6 +12,11 @@ Inputs collect short, structured text. Every input has a visible label; placehol
 The label, description, requirement, hint, validation, and message relationships
 follow the shared [`form-field contract`](form-field.md).
 
+When an Input changes the query for a page or dataset, the surrounding workflow
+follows the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md).
+Filtering suggestions within a selectable value instead requires a Combobox.
+
 ## Anatomy
 
 1. Label

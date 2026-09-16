@@ -15,6 +15,14 @@ actions that can provide undo.
 Alert Dialog extends the shared [`dialog and modal contract`](modal.md) and the
 destructive-actions pattern. It is always modal.
 
+When the decision applies to several selected records, selection scope,
+eligibility, the immutable commitment snapshot, and per-record outcomes follow
+the
+[`Selection and bulk actions pattern`](../patterns/selection-and-bulk-actions.md).
+When the decision confirms discarding entered or recovered work, its save state,
+recovery promise, and return context follow the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md).
+
 ## Anatomy and variants
 
 1. Blocking backdrop and modal surface
@@ -30,6 +38,11 @@ destructive-actions pattern. It is always modal.
 - **Critical acknowledgement:** Resolves a blocking condition that is not a
   destructive action. Use the action hierarchy appropriate to the decision and
   do not apply danger styling automatically.
+
+The dialog's decision region follows the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
+Destructive treatment identifies the consequential commitment without also
+applying primary styling, and a safe alternative remains available.
 
 ## Sizes and semantic token mapping
 

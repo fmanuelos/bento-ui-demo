@@ -12,6 +12,11 @@ value unless the product explicitly defines one.
 Labels, descriptions, requirements, group relationships, and validation follow
 the shared [`form-field contract`](form-field.md).
 
+When a Checkbox selects a record in a dataset or summarizes a visible selected
+set, scope, persistence, mixed state, and downstream operations follow the
+[`Selection and bulk actions pattern`](../patterns/selection-and-bulk-actions.md).
+The Checkbox continues to own only its individual checked or mixed state.
+
 ## Anatomy and variants
 
 1. Selection indicator

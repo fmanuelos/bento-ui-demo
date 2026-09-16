@@ -19,6 +19,11 @@ acknowledgement and follow the dedicated
 multi-step, or frequently referenced work and follow the
 [`drawer-and-sheet contract`](drawer.md) for an edge-attached presentation.
 
+When the dialog contains editable work, saving, interruption, restoration, and
+discard follow the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md).
+Dialog continues to own modality, dismissal, and focus behavior.
+
 ## Anatomy and variants
 
 1. Optional dimmed backdrop for a modal presentation
@@ -55,6 +60,8 @@ Titles use an appropriate heading role based on hierarchy and available space;
 the visual typography role does not determine the document heading level.
 Actions use the Button contract. Destructive emphasis follows the destructive-
 actions pattern rather than changing the dialog surface to a danger color.
+Relative priority within the decision region follows the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
 
 ## States
 

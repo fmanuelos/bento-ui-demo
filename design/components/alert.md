@@ -11,6 +11,11 @@ the [`Toast and notification-region contract`](toast.md) when brief asynchronous
 feedback should appear outside the originating layout. Use an inline Alert when
 the message must remain near affected content.
 
+Persistent unsaved, save-failed, offline, restoration, or conflict messages
+follow the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md).
+Alert owns their contained presentation, not the persistence or recovery model.
+
 ## Anatomy and variants
 
 1. Optional semantic icon

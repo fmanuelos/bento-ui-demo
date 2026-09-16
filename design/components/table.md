@@ -71,6 +71,16 @@ preserve table context. Selection uses an explicit control instead of making the
 whole row ambiguous. If an update removes the focused row, move focus to the
 nearest logical control.
 
+When search, filters, sorting, counts, or pagination form a query-refinement
+workflow, their coordination follows the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md).
+The table continues to own only the relational presentation and its bounded
+interactive states.
+
+When selected records can persist beyond the visible rows or receive a grouped
+operation, scope, identity, action availability, and recovery follow the
+[`Selection and bulk actions pattern`](../patterns/selection-and-bulk-actions.md).
+
 Pagination follows the [`Pagination contract`](pagination.md).
 
 ## Responsive behavior and localization

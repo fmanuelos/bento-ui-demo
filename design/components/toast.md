@@ -15,6 +15,11 @@ and an Alert Dialog when a decision blocks progress.
 Toast follows the asynchronous-feedback pattern and reuses the semantic variants
 of the [`Alert contract`](alert.md).
 
+A completed save may use a toast as supplementary feedback. Persistent unsaved,
+offline, queued, failed, conflicted, or restored state follows the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md) and
+must remain discoverable after transient feedback disappears.
+
 ## Anatomy and variants
 
 1. Persistent notification region

@@ -8,7 +8,9 @@ Contract complete.
 
 A Button Group arranges a small set of related, independent actions so their
 relationship and action hierarchy are clear. Every item remains a Button with its
-own action, state, and accessible name.
+own action, state, and accessible name. The containing decision region and the
+relative priority of its actions follow the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
 
 Use a [`Radio group`](radio.md) when exactly one value is selected, [`Tabs`](tabs.md)
 when choices switch peer views, and a toolbar pattern when a persistent set of
@@ -58,6 +60,20 @@ secondary, outline, or ghost treatment according to their hierarchy. Destructive
 actions follow the
 [`destructive-actions pattern`](../patterns/destructive-actions.md) and remain
 secondary to a safe alternative until the final commitment step.
+
+Loading, unavailability, responsive transformation, or removal of one action does
+not silently promote another. Changes in hierarchy follow the Action hierarchy
+and emphasis pattern and occur only when the decision or available outcome
+materially changes.
+
+When a group presents actions for selected records, the selected scope, action
+availability, operation snapshot, and outcome recovery follow the
+[`Selection and bulk actions pattern`](../patterns/selection-and-bulk-actions.md).
+Button Group continues to own only action arrangement and hierarchy.
+
+When a group presents Save, Save draft, Discard, Cancel, or final commitment,
+their version, persistence, and recovery meaning follows the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md).
 
 Every Button in a connected group uses the same canonical size and the outline
 variant. Adjacent borders form one continuous visual boundary with a single

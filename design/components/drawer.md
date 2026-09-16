@@ -37,6 +37,12 @@ non-modal dialog requirements only when they are focused dialog tasks.
 
 Temporary navigation may use a modal drawer but continues to follow the
 [`Navigation contract`](navigation.md) for destinations and current location.
+Temporary dataset filters may use a drawer or sheet but continue to follow the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md)
+for draft criteria, application, cancellation, and query persistence.
+Editable work in a drawer or sheet follows the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md) for
+saving, interruption, restoration, and discard.
 
 ## Sizes and semantic token mapping
 

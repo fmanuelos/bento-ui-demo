@@ -22,6 +22,11 @@ improve comprehension. Use a [`Combobox`](combobox.md) when text entry and popup
 selection produce one value. Use a [`Button Group`](button-group.md) for related
 independent actions without a text-entry control.
 
+When an Input Group submits a query for a page or dataset, the complete query and
+result workflow follows the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md).
+Input Group continues to own only the connected field-and-action composition.
+
 ## Anatomy
 
 1. Persistent visible Form field label
@@ -57,6 +62,10 @@ Static addons stay concise. Do not place sentences, validation messages,
 multiple icons, menus, or unrelated status content inside the connected
 boundary. An Input Group contains at most one adjacent action. When several
 actions are needed, place a Button Group outside the field.
+The containing decision region follows the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md);
+the adjacent Button does not become primary merely because it is visually joined
+to the field.
 
 ## States
 

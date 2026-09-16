@@ -1874,13 +1874,16 @@ support them. Component contracts provide lower-level functional building
 blocks; experience patterns coordinate several components across a task or
 state transition.
 
-| Pattern family        | User outcome                                                                                   |
-| --------------------- | ---------------------------------------------------------------------------------------------- |
-| Forms and validation  | Enter, understand, review, correct, and submit information without avoidable loss.             |
-| Asynchronous feedback | Understand whether work is pending, progressing, complete, or recoverable after failure.       |
-| Destructive actions   | Recognize consequential actions, prevent accidental loss, and recover when recovery is viable. |
-| Navigation            | Understand location, available destinations, and how to move without losing task context.      |
-| Data display          | Inspect, compare, filter, and act on information while retaining meaning and freshness.        |
+| Pattern family                   | User outcome                                                                                   |
+| -------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Forms and validation             | Enter, understand, review, correct, and submit information without avoidable loss.             |
+| Task continuity and unsaved work | Preserve meaningful work and resume safely through saving, interruption, or conflict.          |
+| Asynchronous feedback            | Understand whether work is pending, progressing, complete, or recoverable after failure.       |
+| Destructive actions              | Recognize consequential actions, prevent accidental loss, and recover when recovery is viable. |
+| Navigation                       | Understand location, available destinations, and how to move without losing task context.      |
+| Data display                     | Inspect, compare, and act on information while retaining meaning and freshness.                |
+| Search, filtering, and results   | Express, revise, and restore query criteria while understanding the results they produced.     |
+| Selection and bulk actions       | Choose an explicit record scope and act on it without losing identity, context, or recovery.   |
 
 A functional pattern defines intent before anatomy. It documents applicable
 contexts, participating components, meaningful states, sequence and persistence,
@@ -1895,14 +1898,14 @@ help people interpret an interface. A perceptual pattern is not a single token;
 it is a repeatable combination of emphasis, rhythm, containment, motion, and
 language applied for a purpose.
 
-| Pattern family         | Bento expression                                                                                                             |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Hierarchy and emphasis | Quiet neutral structure, legible type hierarchy, and cobalt reserved for purposeful brand or action emphasis.                |
-| Density and rhythm     | A shared spacing vocabulary expressed spaciously for Public Sites and compactly for repeated Dashboard work.                 |
-| Containment and depth  | Tonal surfaces, borders, grouping, and restrained elevation communicate relationships before decoration.                     |
-| State expression       | Semantic foregrounds, boundaries, labels, icons, and restrained motion communicate state without relying on color alone.     |
-| Identity and voice     | Brand roles, icon treatment, typography, and direct, respectful content make the system trustworthy, purposeful, and humane. |
-| Theme continuity       | Light, dark, inverse, and high-contrast presentations preserve semantic hierarchy and recognizable relationships.            |
+| Pattern family                                                                    | Bento expression                                                                                                             |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [Action hierarchy and emphasis](design/patterns/action-hierarchy-and-emphasis.md) | One purposeful primary action per decision region, with quieter supporting, utility, navigation, and recovery actions.       |
+| Density and rhythm                                                                | A shared spacing vocabulary expressed spaciously for Public Sites and compactly for repeated Dashboard work.                 |
+| Containment and depth                                                             | Tonal surfaces, borders, grouping, and restrained elevation communicate relationships before decoration.                     |
+| State expression                                                                  | Semantic foregrounds, boundaries, labels, icons, and restrained motion communicate state without relying on color alone.     |
+| Identity and voice                                                                | Brand roles, icon treatment, typography, and direct, respectful content make the system trustworthy, purposeful, and humane. |
+| Theme continuity                                                                  | Light, dark, inverse, and high-contrast presentations preserve semantic hierarchy and recognizable relationships.            |
 
 Functional requirements take precedence when a perceptual treatment would obscure
 meaning, interaction, or accessibility. Perceptual expression may adapt by mode,
@@ -2098,6 +2101,11 @@ Reusable bypass controls follow the
 
 ### Shared rules
 
+- Related actions follow the
+  [`Action hierarchy and emphasis`](design/patterns/action-hierarchy-and-emphasis.md)
+  pattern. Define the decision region, keep at most one primary action in
+  that region, and preserve action meaning and relative priority through state
+  and responsive changes.
 - Use `primary`, `secondary`, `outline`, `ghost`, and `destructive` consistently.
   Outline describes a bordered alternative; ghost is the canonical transparent,
   low-emphasis treatment. Do not reintroduce `tertiary` as an alias.
@@ -2105,6 +2113,11 @@ Reusable bypass controls follow the
   [`form-field contract`](design/components/form-field.md) for labels,
   descriptions, requirements, messages, and validation. Placeholders are
   examples, not labels.
+- Saving, drafts, unsaved changes, interruption, restoration, and conflicts
+  follow the
+  [`Task continuity and unsaved work`](design/patterns/task-continuity.md)
+  pattern. A saved message represents the current durable version rather than a
+  pending, local-only, queued, failed, or superseded snapshot.
 - Connected field addons, compatible secondary controls, and adjacent actions
   follow the [`Input Group contract`](design/components/input-group.md). Every
   interactive part retains its own value, focus, state, and semantics.
@@ -2127,6 +2140,10 @@ Reusable bypass controls follow the
 - Paginated data follows the shared
   [`Pagination`](design/components/pagination.md) contract and preserves
   filtering, sorting, selection, focus, and result context across page changes.
+- Multi-record selection and grouped operations follow the
+  [`Selection and bulk actions`](design/patterns/selection-and-bulk-actions.md)
+  pattern. Visible-set selection, whole-query selection, and an operation's
+  committed scope remain distinct.
 - Interactive supplemental popup content follows the shared
   [`Popover`](design/components/popover.md) contract and does not adopt menu or
   dialog semantics solely because it appears in a floating surface.
@@ -2163,9 +2180,12 @@ Reusable bypass controls follow the
 
 ### Experience patterns
 
-The [`pattern index`](design/patterns/README.md) defines forms and validation,
-asynchronous feedback, destructive actions, navigation shells, data display, and
-responsive density. Component implementations must follow applicable patterns.
+The [`pattern index`](design/patterns/README.md) defines the current experience
+patterns. They cover forms and validation; task continuity and unsaved work;
+asynchronous feedback; destructive actions; navigation shells; data display;
+search, filtering, and results; selection and bulk actions; and responsive
+density, with action hierarchy and emphasis coordinating perceptual priority
+across their actions. Component implementations must follow applicable patterns.
 
 ### Component contract index
 

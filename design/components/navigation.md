@@ -38,6 +38,12 @@ Collapsed and temporary forms preserve the same destination names, order, and
 current-location meaning. Opening temporary navigation moves focus according to
 the dialog or disclosure pattern; closing restores focus to its trigger.
 
+When changing location may interrupt editing or discard work, the decision,
+preservation, authentication recovery, and return context follow the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md).
+Navigation continues to own destination activation and commits the location
+change only after that policy resolves.
+
 ## Responsive behavior
 
 Use temporary sidebar navigation in the mobile and tablet ranges. Desktop and

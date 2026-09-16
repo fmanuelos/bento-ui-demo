@@ -41,8 +41,9 @@ or amount of essential explanation.
 Neutral empty states use the containing surface with `text-primary` and
 `text-secondary`. Error and warning conditions use the matching `feedback-*`
 roles when a contained message treatment is needed. Actions follow the Button or
-Link contract. Illustrations use brand or neutral roles and never use danger
-color decoratively.
+Link contract and the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
+Illustrations use brand or neutral roles and never use danger color decoratively.
 
 No new frontmatter entry is required because Empty State composes existing text,
 surface, feedback, and action roles.
@@ -63,12 +64,18 @@ condition remains visible until the underlying condition changes.
 Determine the cause before choosing copy and actions. Titles name the condition;
 descriptions explain cause or consequence; actions provide a realistic next step.
 Do not offer retry for a valid no-data state or creation when the user lacks
-permission.
+permission. A local primary action belongs to this contained condition and must
+not compete with a higher-level commitment for the same task.
 
 Search terms, filters, sort state, and valid user input survive empty and failed
 results. Clearing filters is explicit and changes only the filters described by
 the action. A retry repeats the failed operation without duplicating submissions
 or resetting unrelated state.
+
+No-results and filtered-empty workflows follow the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md)
+for applied criteria, result scope, clear behavior, query persistence, and
+announcements.
 
 ## Responsive behavior
 

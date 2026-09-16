@@ -9,6 +9,10 @@ Contract complete.
 Status badges communicate persistent entity or workflow state. They do not
 communicate transient operation feedback.
 
+A `Draft` badge describes the entity's committed workflow state; it does not say
+whether the current edits are saved. Current save and recovery state follows the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md).
+
 ## Anatomy
 
 1. Required text label

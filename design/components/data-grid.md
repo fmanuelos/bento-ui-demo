@@ -16,6 +16,17 @@ Use a [`Table`](table.md) when people mainly need to read or compare values and
 ordinary page controls are sufficient for sorting, filtering, pagination,
 selection, or row actions.
 
+When external search, filters, sorting, counts, or pagination refine the grid's
+dataset, their coordination follows the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md).
+The grid continues to own managed cell navigation and editing.
+
+Multi-record selection and grouped operations follow the
+[`Selection and bulk actions pattern`](../patterns/selection-and-bulk-actions.md)
+for scope, persistence, commitment, and recovery. The grid continues to own its
+selection controls, bounded cell-range interaction, active cell, and managed
+keyboard behavior.
+
 Record count alone does not determine the component. What makes this a data grid
 is its managed two-dimensional interaction, not its visual density or number of
 rows.

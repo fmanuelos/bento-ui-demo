@@ -13,7 +13,13 @@ clarity. Do not paginate short content merely to reduce page length, and do not
 use pagination to represent sequential workflow steps.
 
 Pagination follows the shared collection model, asynchronous-feedback pattern,
-and the state-preservation requirements of the data-display pattern.
+and the state-preservation requirements of the data-display pattern. When pages
+belong to a searched or filtered result set, query application and restoration
+follow the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md).
+Selections that persist between pages and actions on those selections follow the
+[`Selection and bulk actions pattern`](../patterns/selection-and-bulk-actions.md).
+Pagination never defines or silently clears their scope.
 
 ## Anatomy and variants
 

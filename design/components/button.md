@@ -6,7 +6,10 @@ Contract complete.
 
 ## Intent
 
-Buttons trigger an immediate action. Use one primary button for the most important action in a region; use secondary, outline, or ghost buttons for supporting actions.
+Buttons trigger an immediate action. Use one primary button for the most important
+action in a region; use secondary, outline, or ghost buttons for supporting
+actions. Relationships among actions follow the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
 
 ## Anatomy
 
@@ -86,6 +89,11 @@ navigation semantic instead. Choose the Link variant only when a genuine action
 needs a quiet, text-like presentation, such as clearing optional filters or
 revealing supplementary controls.
 
+When an action saves, retries, restores, discards, or commits edited work, its
+version and persistence meaning follows the
+[`Task continuity and unsaved work pattern`](../patterns/task-continuity.md).
+Button continues to own activation, action labelling, and its busy state.
+
 ## Responsive behavior
 
 Use tiny buttons only in dense, pointer-oriented tables and inline utilities.
@@ -123,7 +131,9 @@ The Link visual variant still renders a native `button`; it does not accept
 ## Example
 
 Use one primary action and a secondary, outline, or ghost alternative in a
-decision area. Related independent actions follow the
+decision region. The region, priority, and behavior through state changes follow
+the [`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
+Related independent actions follow the
 [`Button Group`](button-group.md) contract. Use destructive only when the outcome
 involves removal or loss. A filter region may use a Link Button labelled “Clear
 filters” when the action should remain available without competing with the main

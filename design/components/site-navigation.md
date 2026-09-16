@@ -44,7 +44,8 @@ Use `navigation-topbar-background` and `navigation-topbar-border` for a standard
 bounded header, with `text-primary` and `text-secondary` for brand and
 destinations. Current location uses `background-accent` and `text-accent` or
 another documented non-color indicator. Primary and utility actions follow their
-Button or Link mappings.
+Button or Link mappings and the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
 
 Treat `topbar-height` as a normal minimum, not a fixed clipping boundary. Use
 Public Site page-padding tokens for alignment and the appropriate container token
@@ -68,7 +69,8 @@ collapse navigation unexpectedly.
 Brand and destination activation navigate rather than trigger an in-place action.
 The brand normally leads to the public-site home. Use one primary action when a
 conversion or account task is important; do not style the current destination as
-that action.
+that action. Page and navigation actions are reviewed together so two controls
+for the same outcome do not compete as separate primaries.
 
 When space becomes constrained, retain brand and the primary action when
 possible, move secondary utilities into an accessible overflow pattern, and

@@ -25,6 +25,10 @@ when that Button uses the Link visual variant.
 - **Button-presented:** Destination whose visual hierarchy uses an approved
   Button style recipe while retaining Link semantics and behavior.
 
+When a Link participates in a decision region, its relative priority follows the
+[`Action hierarchy and emphasis pattern`](../patterns/action-hierarchy-and-emphasis.md).
+Visual prominence never changes its destination semantics into an action.
+
 Icons supplement a destination label. Do not use an icon alone unless the
 destination has a programmatically determinable name and the surrounding
 context makes its purpose unambiguous.

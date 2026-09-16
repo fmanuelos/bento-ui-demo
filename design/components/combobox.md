@@ -12,6 +12,11 @@ are unnecessary.
 It follows the shared [`form-field`](form-field.md),
 [`overlay`](overlay.md), and collection rules in DESIGN.md.
 
+Filtering the Combobox's own suggestions remains component behavior. When a
+Combobox supplies one criterion for a page or dataset, the surrounding query and
+result workflow follows the
+[`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md).
+
 ## Anatomy and variants
 
 1. Visible label and optional description
