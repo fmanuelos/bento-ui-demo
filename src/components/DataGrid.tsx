@@ -285,7 +285,7 @@ export function DataGrid<T>({
           aria-readonly={columns.every((column) => !column.edit) || undefined}
           className="w-full border-collapse text-left text-body-sm text-text-primary"
         >
-          <thead className="bg-table-header-background text-label-sm font-semibold text-text-secondary">
+          <thead className="bg-table-header-background text-label-md font-semibold text-text-secondary">
             <tr role="row">
               {selectable && (
                 <th
@@ -300,7 +300,7 @@ export function DataGrid<T>({
                   }
                   onFocus={() => setActiveCell({ rowId: null, columnId: selectionColumnId })}
                   onKeyDown={(event) => handleKeyDown(event, 0, 0, null)}
-                  className="h-control-height-small w-12 border-b border-table-border px-space-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
+                  className="h-control-height-medium w-12 border-b border-table-border px-space-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
                 >
                   <span className="sr-only">Select</span>
                   <input
@@ -340,7 +340,7 @@ export function DataGrid<T>({
                     }
                     onFocus={() => setActiveCell({ rowId: null, columnId: column.id })}
                     onKeyDown={(event) => handleKeyDown(event, 0, managedColumnIndex, null, column)}
-                    className={`h-control-height-small border-b border-table-border px-space-3 whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right' : ''}`}
+                    className={`h-control-height-medium border-b border-table-border px-space-3 whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right' : ''}`}
                   >
                     {canSort ? (
                       <button
@@ -354,7 +354,7 @@ export function DataGrid<T>({
                           requestSort(column)
                           focusCell(0, managedColumnIndex)
                         }}
-                        className="font-inherit inline-flex min-h-control-height-small items-center gap-space-1 rounded-shape-sm outline-none"
+                        className="font-inherit inline-flex min-h-control-height-medium items-center gap-space-1 rounded-shape-sm outline-none"
                       >
                         {column.header}
                         <span aria-hidden="true">

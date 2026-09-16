@@ -92,12 +92,12 @@ export function Table<T>({
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left text-body-sm text-text-primary">
             <caption className="sr-only">{caption}</caption>
-            <thead className="bg-table-header-background text-label-sm font-semibold text-text-secondary">
+            <thead className="bg-table-header-background text-label-md font-semibold text-text-secondary">
               <tr>
                 {selectable && (
                   <th
                     scope="col"
-                    className="h-control-height-small w-12 border-b border-table-border px-space-3"
+                    className="h-control-height-medium w-12 border-b border-table-border px-space-3"
                   >
                     <input
                       ref={selectAllRef}
@@ -119,12 +119,12 @@ export function Table<T>({
                       key={column.id}
                       scope="col"
                       aria-sort={activeSort ? sort.direction : undefined}
-                      className={`h-control-height-small border-b border-table-border px-space-3 whitespace-nowrap ${column.numeric ? 'text-right' : ''}`}
+                      className={`h-control-height-medium border-b border-table-border px-space-3 whitespace-nowrap ${column.numeric ? 'text-right' : ''}`}
                     >
                       {canSort ? (
                         <button
                           type="button"
-                          className="font-inherit inline-flex min-h-control-height-small items-center gap-space-1 rounded-shape-sm outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+                          className="font-inherit inline-flex min-h-control-height-medium items-center gap-space-1 rounded-shape-sm outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
                           onClick={() =>
                             onSort?.(
                               column.id,

@@ -752,9 +752,9 @@ components:
   table-header:
     backgroundColor: '{colors.table-header-background}'
     textColor: '{colors.text-secondary}'
-    typography: '{typography.label-sm}'
+    typography: '{typography.label-md}'
     padding: '{spacing.space-3}'
-    height: '{spacing.control-height-small}'
+    height: '{spacing.control-height-medium}'
   table-row:
     backgroundColor: '{colors.table-row-background}'
     textColor: '{colors.text-primary}'
@@ -1939,7 +1939,7 @@ semantic role or state model.
 | Enter text                    | Form Field with Text Field or Textarea; Input Group when one value needs a closely related addon, secondary control, or action                                              | Placeholder text is an example, not a label; read-only is not disabled; visual connection does not merge control semantics.              |
 | Choose from values            | Native Select for a simple closed list; Listbox for a managed option collection; Combobox when text entry or filtering is required                                          | Focus, active item, and committed selection remain distinct.                                                                             |
 | Choose flags or one option    | Checkbox for independent choices; Radio Group for one visible-set choice; Switch for an immediate binary setting                                                            | A switch is not a delayed form choice, and a checkbox is not action confirmation.                                                        |
-| Choose a bounded number       | [Slider](design/components/slider.md) when relative position and direct manipulation aid the choice; Text Field when exact entry is primary                                 | A slider represents one current value; multi-thumb interval selection requires a separate interaction contract.                          |
+| Choose a bounded number       | [Slider](design/components/slider.md) when relative position and direct manipulation aid the choice; Text Field when exact entry is primary                                   | A slider represents one current value; multi-thumb interval selection requires a separate interaction contract.                          |
 | Reveal adjacent content       | Disclosure; Accordion for a coordinated disclosure group                                                                                                                    | Expansion is not selection, navigation, or a generic popup.                                                                              |
 | Explain or supplement         | Tooltip for brief non-interactive help; Popover for interactive supplemental content                                                                                        | Tooltips contain no actions and never replace an accessible name.                                                                        |
 | Present popup choices         | Action Menu, Listbox, or Combobox using the Overlay foundation and compatible Dropdown surface styling                                                                      | Visual placement does not determine menu, listbox, combobox, popover, or dialog semantics.                                               |
