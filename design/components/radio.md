@@ -41,13 +41,17 @@ Visual rearrangement preserves option order and group context.
 ## Accessibility
 
 Expose the group name, each option name and description, selected value,
-requirement, validation, and availability. Focus remains visible on the active
-option.
+requirement, validation, and availability. The group label names the group, and
+each visible option label provides only that option's accessible name. Associate
+optional option guidance as a description rather than appending it to the name.
+Focus remains visible on the active option.
 
 ### Web adapter
 
 Prefer native radio inputs with the same group name. Use a fieldset and legend or
-equivalent programmatic group name. Associate group-level descriptions and errors.
+equivalent programmatic group name. Associate option descriptions with their
+radio inputs. Associate group-level descriptions and errors with the group, and
+make the current group error available when a radio receives focus.
 
 ## Example
 

@@ -8,19 +8,34 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> 
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
-  { id, label, description, error, indeterminate = false, className = '', ...props },
+  {
+    id,
+    label,
+    description,
+    error,
+    indeterminate = false,
+    className = '',
+    disabled,
+    'aria-describedby': externalDescribedBy,
+    'aria-labelledby': externalLabelledBy,
+    ...props
+  },
   forwardedRef,
 ) {
   const generatedId = useId()
   const inputId = id ?? generatedId
+  const labelId = `${inputId}-label`
+  const descriptionId = `${inputId}-description`
+  const errorId = `${inputId}-error`
   const internalRef = useRef<HTMLInputElement>(null)
-  const describedBy = [description ? `${inputId}-description` : '', error ? `${inputId}-error` : '']
+  const labelledBy = [labelId, externalLabelledBy].filter(Boolean).join(' ')
+  const describedBy = [externalDescribedBy, description ? descriptionId : '', error ? errorId : '']
     .filter(Boolean)
     .join(' ')
 
   useEffect(() => {
     if (internalRef.current) internalRef.current.indeterminate = indeterminate
-  }, [indeterminate])
+  })
 
   const setRef = (element: HTMLInputElement | null) => {
     internalRef.current = element
@@ -31,7 +46,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   return (
     <div className={className}>
       <label
-        className="inline-flex min-h-touch-target-min cursor-pointer items-start gap-space-3 text-body-sm text-text-primary"
+        className={`inline-flex min-h-touch-target-min items-start gap-space-3 text-body-sm ${
+          disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer text-text-primary'
+        }`}
         htmlFor={inputId}
       >
         <input
@@ -39,8 +56,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
           ref={setRef}
           id={inputId}
           type="checkbox"
+          disabled={disabled}
+          aria-labelledby={labelledBy}
           aria-describedby={describedBy || undefined}
-          aria-errormessage={error ? `${inputId}-error` : undefined}
+          aria-errormessage={error ? errorId : undefined}
           aria-invalid={Boolean(error)}
           className="peer sr-only"
         />
@@ -51,33 +70,37 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
             'peer-indeterminate:border-action-primary-background-default peer-indeterminate:bg-action-primary-background-default',
             'peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus-ring peer-focus-visible:outline-solid',
             'peer-disabled:cursor-not-allowed peer-disabled:border-border-disabled peer-disabled:bg-background-disabled',
-            'peer-checked:[&>svg]:block',
+            'peer-checked:[&>[data-checkmark]]:block',
+            'peer-indeterminate:[&>[data-checkmark]]:hidden peer-indeterminate:[&>[data-mixed]]:block',
           ].join(' ')}
           aria-hidden="true"
         >
-          {indeterminate ? (
-            <span className="h-0.5 w-2.5 bg-current" />
-          ) : (
-            <svg
-              className="hidden size-3.5"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-            >
-              <path d="m3 8 3 3 7-7" />
-            </svg>
-          )}
+          <span data-mixed className="hidden h-0.5 w-2.5 bg-current" />
+          <svg
+            data-checkmark
+            className="hidden size-3.5"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+          >
+            <path d="m3 8 3 3 7-7" />
+          </svg>
         </span>
         <span className="grid gap-space-1">
-          <span className="font-semibold">{label}</span>
+          <span id={labelId} className="font-semibold">
+            {label}
+          </span>
           {description && (
-            <span id={`${inputId}-description`} className="text-body-xs text-text-secondary">
+            <span
+              id={descriptionId}
+              className={`text-body-xs ${disabled ? 'text-text-disabled' : 'text-text-secondary'}`}
+            >
               {description}
             </span>
           )}
           {error && (
-            <span id={`${inputId}-error`} className="text-body-xs text-text-danger">
+            <span id={errorId} role="alert" className="text-body-xs text-text-danger">
               {error}
             </span>
           )}

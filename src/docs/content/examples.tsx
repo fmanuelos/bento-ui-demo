@@ -487,6 +487,27 @@ function InputGroupExample() {
   )
 }
 
+function CheckboxExample() {
+  const [summaryState, setSummaryState] = useState<'mixed' | 'checked' | 'unchecked'>('mixed')
+
+  return (
+    <div className="grid max-w-container-narrow gap-space-2">
+      <Checkbox
+        label="Email notifications"
+        description="Receive updates about project activity."
+        defaultChecked
+      />
+      <Checkbox
+        label="Select all projects"
+        description="Some projects are already selected."
+        checked={summaryState === 'checked'}
+        indeterminate={summaryState === 'mixed'}
+        onChange={(event) => setSummaryState(event.currentTarget.checked ? 'checked' : 'unchecked')}
+      />
+    </div>
+  )
+}
+
 export const componentExamples: Record<string, ReactNode> = {
   'form-field': (
     <div className="max-w-container-narrow">
@@ -745,23 +766,11 @@ export const componentExamples: Record<string, ReactNode> = {
       <Combobox label="Project owner" options={people} helperText="Type to filter people." />
     </div>
   ),
-  checkbox: (
-    <div className="grid gap-space-2">
-      <Checkbox
-        label="Email notifications"
-        description="Receive updates about project activity."
-        defaultChecked
-      />
-      <Checkbox
-        label="Select all projects"
-        description="Some projects are already selected."
-        indeterminate
-      />
-    </div>
-  ),
+  checkbox: <CheckboxExample />,
   'radio-group': (
     <RadioGroup
       label="Billing interval"
+      description="Choose how often your subscription renews."
       orientation="horizontal"
       defaultValue="annual"
       options={[
