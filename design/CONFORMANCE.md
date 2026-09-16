@@ -15,7 +15,7 @@ Adapter-conformant, or Product-validated.
 | ----------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Format-valid**        | Pass                                                     | `@google/design.md` 0.4.0 reports zero errors against the repository's pinned format baseline.                                                 |
 | **Kernel-aligned**      | Documentation reviewed; no complete implementation claim | Repository documentation and visible product naming were reconciled with the kernel. Complete rendered-state evidence has not been recorded.   |
-| **Contract-conformant** | Not claimed                                              | All 37 contracts have documentation and implementation mappings, but coverage does not prove behavioral conformance.                           |
+| **Contract-conformant** | Not claimed                                              | All 40 contracts have documentation and implementation mappings, but coverage does not prove behavioral conformance.                           |
 | **Adapter-conformant**  | Not claimed                                              | Web and Tailwind mappings are documented, but no versioned browser, device, input, assistive-technology, theme, and locale test record exists. |
 | **Product-validated**   | Not claimed                                              | Six reference contexts are specified, but no named product has recorded a completed context matrix and exceptions.                             |
 

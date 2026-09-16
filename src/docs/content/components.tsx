@@ -1721,6 +1721,66 @@ export const componentDocs = [
     related: ['form-field', 'checkbox', 'alert'],
   }),
   createDoc({
+    slug: 'slider',
+    title: 'Slider',
+    summary:
+      'Selects one numeric value from a bounded range through direct manipulation or keyboard input.',
+    useCases: [
+      'Relative settings such as volume, text size, zoom, or adjustment around a neutral value.',
+    ],
+    importCode: "import { Slider } from '@/components'",
+    basicCode: `<Slider label="Volume" defaultValue={72} formatValue={(value) => \`${'${value}'}%\`} />`,
+    props: [
+      { name: 'label', type: 'string', description: 'Visible and accessible slider name.' },
+      {
+        name: 'min / max / step',
+        type: 'number',
+        description: 'Defines the inclusive bounds and permitted increments.',
+      },
+      {
+        name: 'value / defaultValue',
+        type: 'number',
+        description: 'Controlled or initial current value.',
+      },
+      {
+        name: 'formatValue',
+        type: '(value: number) => string',
+        description: 'Formats the visible value and accessible value text.',
+      },
+      {
+        name: 'description / error',
+        type: 'string',
+        description: 'Persistent guidance or the current validation message.',
+      },
+      {
+        name: 'showValue',
+        type: 'boolean',
+        defaultValue: 'true',
+        description: 'Shows the formatted current value beside the label.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Continuous, stepped, and centered value models.',
+      'Default, hover, focus, dragging, invalid, and disabled states.',
+    ],
+    accessibility: [
+      'Uses a native range input with exposed bounds and current value.',
+      'Arrow keys change one step; Home and End reach the bounds.',
+      'Formatted labels such as Medium or Neutral become accessible value text.',
+    ],
+    responsive:
+      'The value moves below the label when necessary while the thumb keeps a touch-sized target.',
+    theme:
+      'Uses primary action emphasis, neutral track, semantic text, focus, disabled, and danger roles.',
+    mistakes: [
+      'Use a Text Field when exact entry is the primary task.',
+      'Do not use a slider for unrelated named choices.',
+      'Do not imitate a two-thumb interval selector with this single-value component.',
+    ],
+    related: ['form-field', 'input', 'progress'],
+  }),
+  createDoc({
     slug: 'modal',
     title: 'Dialog and modal',
     summary:

@@ -52,6 +52,7 @@ status outside this technology-neutral contract index.
 | [Checkbox](checkbox.md)                            | Prose and contract                | Complete        | Form field                              |
 | [Radio group](radio.md)                            | Prose and contract                | Complete        | Form field, collection model            |
 | [Switch](switch.md)                                | Prose and contract                | Complete        | Form field, asynchronous feedback       |
+| [Slider](slider.md)                                | Prose and contract                | Complete        | Form field, shared state model          |
 | [Dialog and modal](modal.md)                       | Frontmatter and prose             | Complete        | Shared state and destructive actions    |
 | [Tabs](tabs.md)                                    | Frontmatter and prose             | Complete        | Collection model                        |
 | [Data table](table.md)                             | Frontmatter and prose             | Complete        | Data-display pattern                    |
@@ -126,7 +127,7 @@ represent honestly.
 | Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover   | Placement, focus, selection, dismissal, active item, viewport fit, and transformation                                                     |
 | Disclosure                | Disclosure, Accordion                                                       | Expansion, heading structure, group policy, focus, and panel relationships                                                                |
 | Modal surface             | Dialog and modal, Alert dialog, Drawer and sheet                            | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery                                                     |
-| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch                 | Complete behavior remains contract-only until an honest visual mapping is approved                                                        |
+| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch, Slider         | Complete behavior remains contract-only until an honest visual mapping is approved                                                        |
 
 ## Frontmatter state coverage
 

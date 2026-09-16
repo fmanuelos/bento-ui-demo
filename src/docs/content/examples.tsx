@@ -31,6 +31,7 @@ import {
   Select,
   SiteNavigation,
   SkipLink,
+  Slider,
   StatCard,
   StatusBadge,
   Switch,
@@ -772,6 +773,11 @@ export const componentExamples: Record<string, ReactNode> = {
   switch: (
     <div className="max-w-container-narrow">
       <Switch label="Email notifications" description="Changes save immediately." defaultChecked />
+    </div>
+  ),
+  slider: (
+    <div className="max-w-container-narrow">
+      <Slider label="Volume" defaultValue={72} formatValue={(value) => `${value}%`} />
     </div>
   ),
   modal: <ModalExample />,

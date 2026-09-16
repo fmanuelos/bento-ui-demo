@@ -27,7 +27,7 @@ export function OverviewPage() {
           </p>
         </Card>
         <Card compact>
-          <StatusBadge>39 contracts</StatusBadge>
+          <StatusBadge>40 contracts</StatusBadge>
           <h2 className="mt-space-4 mb-space-2 text-heading-sm">Built for reuse</h2>
           <p className="m-0 text-body-sm leading-relaxed text-text-secondary">
             Typed components stay independent of product content and business logic.

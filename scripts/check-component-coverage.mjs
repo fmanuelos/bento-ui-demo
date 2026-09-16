@@ -43,6 +43,7 @@ const implementationFiles = new Map([
     'progress',
     'select',
     'skip-link',
+    'slider',
     'switch',
     'table',
     'tabs',
