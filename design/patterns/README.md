@@ -37,8 +37,8 @@ contracts:
    prescribing an implementation technology.
 
 A pattern may combine these concerns under broader headings when the requirements
-remain unambiguous. [Reference contexts](../reference-contexts/) provide concrete
-examples and adverse conditions; they validate a pattern but do not redefine it.
+remain unambiguous. The [validation scenarios](../VALIDATION.md) provide concrete
+workflows and adverse conditions; they validate a pattern but do not redefine it.
 
 Platform mechanics belong in [`design/adapters/`](../adapters/). Runtime examples
 may illustrate a pattern but do not redefine it.

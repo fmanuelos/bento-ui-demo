@@ -59,7 +59,7 @@ export function OverviewPage() {
           </li>
           <li>
             <strong>Accessibility defines the experience.</strong> Equivalent appearance without
-            equivalent access is not conformance.
+            equivalent access does not satisfy the system.
           </li>
         </ol>
       </DocsSection>
@@ -98,7 +98,7 @@ export function OverviewPage() {
           The authored light and dark themes are normative. Inverse surfaces provide stable local
           emphasis, and the web adapter maps all themes while targeting WCAG 2.2 Level AA outcomes.
           Exact browser, device, assistive-technology, and locale support is declared by each
-          consuming product before it claims conformance.
+          consuming product before it claims support.
         </p>
       </DocsSection>
       <DocsBackToTop />

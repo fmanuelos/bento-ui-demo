@@ -8,11 +8,8 @@ changing the meaning of the Bento UI design contract.
 Its Markdown body, the [`component contracts`](components/), and the
 [`experience patterns`](patterns/) define intended use. The
 [`adapter documentation`](adapters/) translates that contract for specific
-platforms and tools. [`GOVERNANCE.md`](GOVERNANCE.md) defines contribution,
-approval, exception, compatibility, and deprecation policy. The
-[`reference contexts`](reference-contexts/) test the complete system with
-representative and adverse conditions. [`CONFORMANCE.md`](CONFORMANCE.md)
-records current claims, evidence, and gaps without redefining design intent.
+platforms and tools. [`VALIDATION.md`](VALIDATION.md) collects representative
+workflow and adverse-condition checks without redefining design intent.
 
 ## Generated files
 
@@ -63,23 +60,43 @@ conforms.
 Application implementation inventories belong in application or source-code
 documentation rather than the design-system contract.
 
-## Reference contexts
+## Changing the design system
 
-The files in `design/reference-contexts/` instantiate page and flow templates with
-fictional representative content, state transitions, stress conditions, and
-observable acceptance outcomes. They validate relationships across foundations,
-components, compositions, and patterns without prescribing one layout or runtime
-implementation.
+Use these rules for changes to shared design decisions:
 
-Use the shared validation matrix and the context relevant to a change. Record the
-implementation, version, applicable conditions, evidence, and any exception.
-Reference output is implementation evidence rather than a generated artifact or
-design authority.
+1. Treat `DESIGN.md` and the component and pattern contracts as the normative
+   sources. Runtime code and generated files are implementation evidence.
+2. Classify a change as a clarification, an additive decision, or a breaking
+   decision. Do not hide a change in meaning inside a visual adjustment.
+3. Explain the user or product problem, alternatives considered, affected
+   contracts and consumers, and the relevant validation evidence in a durable
+   review record such as a pull request or issue.
+4. Include migration guidance with a breaking change. While the package is
+   `0.0.0`, migrate every in-repository consumer in the same change.
+5. Never silently waive an accessibility or semantic outcome. Record a necessary
+   product limitation, its user impact, compensating behavior, owner, and review
+   date.
 
-Use [`CONFORMANCE.md`](CONFORMANCE.md) to record the named implementation,
-revision, support matrix, applicable contexts, evidence, and exceptions. Lint,
-generation, build, and inventory checks are prerequisites rather than proof of
-rendered behavior or product outcomes.
+Security, privacy, safety, and accessibility corrections may be expedited when
+retaining old behavior creates material harm, but still require rationale,
+consumer-impact review, migration guidance, and relevant validation.
+
+## Validation
+
+Use [`VALIDATION.md`](VALIDATION.md) to test applicable workflows across content,
+state, layout, input, accessibility preferences, themes, locales, and writing
+directions. Record the implementation revision, environments, results, and known
+limitations in the pull request, issue, release record, or another durable review
+record. Evidence is implementation history, not design authority.
+
+### Current status
+
+The repository currently passes DESIGN.md format validation with the pinned
+tooling. The component inventory and runtime documentation are structurally
+covered, but the repository does not claim complete behavioral or product
+validation. A successful lint, generation, build, inventory check, or visual
+inspection is a prerequisite, not proof of rendered accessibility or user
+outcomes.
 
 ## Export limitations
 
@@ -95,14 +112,14 @@ paths into invalid dotted CSS identifiers.
 
 ## Known lint baseline
 
-With `@google/design.md` 0.4.0, the current document has zero lint errors and 134
-warnings. Six are contrast warnings:
+With `@google/design.md` 0.4.0, the current document has zero lint errors and 129
+warnings. Nine are contrast warnings:
 
 | Finding                                              | Interpretation                                                                    | Review rule                                                                                                                                 |
 | ---------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | Primary, secondary, and destructive disabled buttons | The linter applies its standard text contrast check to disabled components.       | Confirm that disabled controls remain identifiable without relying on low contrast alone; do not change tokens only to silence the warning. |
 | Transparent outline and ghost buttons                | The linter cannot resolve the permitted surface through a transparent background. | Verify each foreground and outline border on every supported surface listed in `DESIGN.md`.                                                 |
-| Transparent tab                                      | The linter cannot resolve the permitted surface through a transparent background. | Verify default and state foregrounds on every supported surface.                                                                            |
+| Transparent link and tab treatments                  | The linter cannot resolve the permitted surface through a transparent background. | Verify default and state foregrounds on every supported surface.                                                                            |
 
 The remaining warnings identify light or dark color tokens that are not
 referenced by a supported component property. Many are intentionally consumed by

@@ -1174,30 +1174,18 @@ composition and product expression. When a product repeatedly needs an exception
 review the shared contract instead of allowing the exception to become an
 undocumented parallel system.
 
-### Governance
+### Change policy
 
-The **Design System Owner** is accountable for Bento's semantic integrity, brand
-character, accessibility baseline, and breaking-change decisions. **Maintainers**
-review contributions and keep contracts, adapters, generated outputs, tests, and
-documentation aligned. **Adapter or product reviewers** verify affected platform
-and consumer outcomes. **Contributors** may propose a change but do not establish
-a new system rule merely by implementing it.
+Clarifications preserve existing meaning. Additive decisions introduce a new
+capability without changing established semantics. Breaking decisions remove,
+rename, or change a normative value, behavior, accessibility outcome, or
+previously valid usage.
 
-Until a person or group is formally assigned as Design System Owner, the
-repository maintainer who accepts a change assumes that accountability for the
-change. A single-maintainer repository may use documented self-review, but must
-record the rationale, affected contracts and consumers, migration impact, and
-validation evidence.
-
-Guidance-only changes require maintainer review. Additive normative changes
-require the Design System Owner or a delegated maintainer. Breaking changes
-require the Design System Owner and an affected adapter or consuming-product
-reviewer when that role exists, together with a migration and deprecation plan.
-Security, privacy, safety, or accessibility corrections may use an expedited
-path, but never skip documentation, validation, or consumer-impact review.
-
-The detailed proposal, approval, exception, deprecation, and validation process
-is defined in [`design/GOVERNANCE.md`](design/GOVERNANCE.md).
+Every shared change records its rationale, affected contracts and consumers,
+migration impact, and relevant validation. Breaking changes include migration
+guidance, and accessibility or semantic outcomes are never silently waived. The
+lightweight contribution policy is documented with the repository workflow in
+[`design/README.md`](design/README.md#changing-the-design-system).
 
 ### System contract
 
@@ -1212,11 +1200,10 @@ implement it:
    normative behavior and accessibility that the frontmatter cannot express.
 4. The patterns in [`design/patterns/`](design/patterns/) define reusable
    experience-level behavior.
-5. The contexts in [`design/reference-contexts/`](design/reference-contexts/)
-   validate the system with representative and adverse content without redefining
-   it.
-6. [`design/GOVERNANCE.md`](design/GOVERNANCE.md) defines how normative decisions
-   are proposed, approved, excepted, migrated, and deprecated.
+5. [`design/VALIDATION.md`](design/VALIDATION.md) collects representative workflow
+   and adverse-condition checks without redefining the system.
+6. [`design/README.md`](design/README.md) defines the repository workflow and
+   lightweight change policy.
 7. The files in [`design/adapters/`](design/adapters/) explain non-normative
    mappings to particular platforms, frameworks, and tools.
 
@@ -1230,7 +1217,7 @@ Raw palette foundations are not separately represented. Repeated literals are
 intentional aliases of the same visual value, not permission for consumers to
 substitute one semantic role for another.
 
-### Portable kernel and conformance
+### Portable kernel and validation
 
 This file is Bento UI's portable kernel. A consumer that receives only
 `DESIGN.md` can determine the system's purpose, audiences, brand character,
@@ -1240,39 +1227,37 @@ component-selection guidance, and design guardrails.
 
 Repository contracts elaborate the portable kernel. They may narrow or strengthen
 requirements for a component or pattern but must not contradict this file. When
-linked contracts are unavailable, a consumer may claim kernel alignment after
-applying the rules in this file, but it cannot claim complete Bento contract,
-adapter, or product conformance. Prefer a native, simpler semantic pattern over
-inventing behavior that the available contract does not define.
+linked contracts are unavailable, a consumer can evaluate only alignment with
+this kernel. Prefer a native, simpler semantic pattern over inventing behavior
+that the available contract does not define.
 
-Conformance claims are cumulative:
+Keep validation scope explicit. Format validity shows that this file parses under
+the pinned tooling. Kernel alignment requires the output to follow this file.
+Contract validation also covers every applicable component and experience
+pattern. Adapter support requires a declared platform, device, input,
+assistive-technology, theme, and locale matrix. Product validation additionally
+covers the applicable workflows in [`design/VALIDATION.md`](design/VALIDATION.md)
+and records the implementation revision, evidence, and limitations.
 
-| Level                   | Required evidence                                                                                                                    |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **Format-valid**        | The file parses under the recorded DESIGN.md specification and pinned tooling with no lint errors.                                   |
-| **Kernel-aligned**      | Output follows this file's tokens, purpose, brand, modes, composition and pattern models, shared requirements, and guardrails.       |
-| **Contract-conformant** | Every applicable component and experience-pattern contract is satisfied in addition to kernel alignment.                             |
-| **Adapter-conformant**  | Platform mappings preserve the contracts and pass a declared browser, device, input, assistive-technology, theme, and locale matrix. |
-| **Product-validated**   | A named consuming product passes its applicable reference contexts and records exceptions, versions, and evidence.                   |
-
-Format validity or successful generation is not evidence for the higher levels.
-The current review status and known evidence gaps are recorded in
-[`design/CONFORMANCE.md`](design/CONFORMANCE.md); that record reports conformance
-but does not define design intent.
+These scopes do not imply one another. Successful parsing, generation, or
+compilation does not demonstrate rendered behavior or user outcomes. The current
+repository status is summarized in
+[`design/README.md`](design/README.md#current-status); product-specific evidence
+belongs in its durable review or release record.
 
 ### Source of truth
 
-| Concern                              | Authoritative source                                       | Update rule                                                                  |
-| ------------------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Exact light- and dark-theme values   | This file's frontmatter                                    | Edit here first.                                                             |
-| System-wide rationale and usage      | This document body                                         | Avoid repeating exact values.                                                |
-| Component behavior and accessibility | [`design/components/`](design/components/)                 | Update with contract changes.                                                |
-| Cross-component experience patterns  | [`design/patterns/`](design/patterns/)                     | Keep outcomes independent of implementation technology.                      |
-| Representative validation contexts   | [`design/reference-contexts/`](design/reference-contexts/) | Test contracts with realistic and adverse content without redefining them.   |
-| Governance and contribution policy   | [`design/GOVERNANCE.md`](design/GOVERNANCE.md)             | Record authority, approvals, exceptions, and migration requirements.         |
-| Conformance status and evidence      | [`design/CONFORMANCE.md`](design/CONFORMANCE.md)           | Record scoped claims, results, gaps, and exceptions without defining intent. |
-| Platform and tool mappings           | [`design/adapters/`](design/adapters/)                     | Treat as non-normative translations of this contract.                        |
-| Repository workflow                  | [`design/README.md`](design/README.md)                     | Keep commands, generated-file policy, and implementation inventory here.     |
+| Concern                              | Authoritative source                                              | Update rule                                                                   |
+| ------------------------------------ | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Exact light- and dark-theme values   | This file's frontmatter                                           | Edit here first.                                                              |
+| System-wide rationale and usage      | This document body                                                | Avoid repeating exact values.                                                 |
+| Component behavior and accessibility | [`design/components/`](design/components/)                        | Update with contract changes.                                                 |
+| Cross-component experience patterns  | [`design/patterns/`](design/patterns/)                            | Keep outcomes independent of implementation technology.                       |
+| Representative workflow validation   | [`design/VALIDATION.md`](design/VALIDATION.md)                    | Test contracts with realistic and adverse conditions without redefining them. |
+| Contribution and change policy       | [`design/README.md`](design/README.md#changing-the-design-system) | Record rationale, migration impact, limitations, and relevant validation.     |
+| Product-specific validation evidence | Pull request, issue, or release record                            | Record scope, revision, environments, results, and known limitations.         |
+| Platform and tool mappings           | [`design/adapters/`](design/adapters/)                            | Treat as non-normative translations of this contract.                         |
+| Repository workflow                  | [`design/README.md`](design/README.md)                            | Keep commands, generated-file policy, and implementation inventory here.      |
 
 The external file-format contract is the
 [Google Labs DESIGN.md specification at revision
@@ -1281,7 +1266,7 @@ Repository lint and export behavior is governed separately by the pinned CLI
 version documented in [`design/README.md`](design/README.md).
 
 Runtime code is implementation evidence, not design authority. When runtime
-behavior conflicts with this contract, treat the difference as a conformance
+behavior conflicts with this contract, treat the difference as a validation
 issue; do not silently redefine either source.
 
 ### Accessibility target
@@ -1292,7 +1277,7 @@ implementations on other platforms must preserve the same outcomes: perceivable
 state, complete non-pointer operation, programmatically determinable semantics,
 predictable focus, and compatibility with user accessibility preferences.
 
-Conformance is evaluated in rendered context. Token presence alone is not proof
+Accessibility is evaluated in rendered context. Token presence alone is not proof
 of sufficient contrast, focus visibility, keyboard support, announcement
 behavior, reflow, or target size.
 
@@ -1307,10 +1292,9 @@ While this document is Draft and the package is `0.0.0`, breaking changes are
 allowed only when migration happens in the same change. Establish a published
 deprecation window before the first stable release.
 
-After the first stable release, deprecations follow the minimum window,
-release-boundary, approval, and expedited-correction requirements in
-[`design/GOVERNANCE.md`](design/GOVERNANCE.md). A replacement and migration
-guidance are published before an established decision is removed.
+After the first stable release, establish and document a deprecation window and
+release policy before removing an established decision. Publish the replacement
+and migration guidance before removal.
 
 ### Current repository adapters — non-normative
 
@@ -1323,8 +1307,8 @@ not redefine token meaning or component behavior.
 ### Support boundaries
 
 The normative contract is platform-neutral. This repository currently provides a
-web adapter and Tailwind and DTCG tool mappings; it does not imply conformance for
-an adapter or platform that has not documented and tested the required outcomes.
+web adapter and Tailwind and DTCG tool mappings; it does not imply support for an
+adapter or platform that has not documented and tested the required outcomes.
 Consuming products record their exact browser, operating-system, device, and
 assistive-technology support matrix. Do not infer support from successful build
 output or the availability of a generated token format.
@@ -1939,7 +1923,7 @@ semantic role or state model.
 | Enter text                    | Form Field with Text Field or Textarea; Input Group when one value needs a closely related addon, secondary control, or action                                              | Placeholder text is an example, not a label; read-only is not disabled; visual connection does not merge control semantics.              |
 | Choose from values            | Native Select for a simple closed list; Listbox for a managed option collection; Combobox when text entry or filtering is required                                          | Focus, active item, and committed selection remain distinct.                                                                             |
 | Choose flags or one option    | Checkbox for independent choices; Radio Group for one visible-set choice; Switch for an immediate binary setting                                                            | A switch is not a delayed form choice, and a checkbox is not action confirmation.                                                        |
-| Choose a bounded number       | [Slider](design/components/slider.md) when relative position and direct manipulation aid the choice; Text Field when exact entry is primary                                   | A slider represents one current value; multi-thumb interval selection requires a separate interaction contract.                          |
+| Choose a bounded number       | [Slider](design/components/slider.md) when relative position and direct manipulation aid the choice; Text Field when exact entry is primary                                 | A slider represents one current value; multi-thumb interval selection requires a separate interaction contract.                          |
 | Reveal adjacent content       | Disclosure; Accordion for a coordinated disclosure group                                                                                                                    | Expansion is not selection, navigation, or a generic popup.                                                                              |
 | Explain or supplement         | Tooltip for brief non-interactive help; Popover for interactive supplemental content                                                                                        | Tooltips contain no actions and never replace an accessible name.                                                                        |
 | Present popup choices         | Action Menu, Listbox, or Combobox using the Overlay foundation and compatible Dropdown surface styling                                                                      | Visual placement does not determine menu, listbox, combobox, popover, or dialog semantics.                                               |
@@ -1955,18 +1939,18 @@ they are not interchangeable variants. The
 [`component index`](design/components/README.md) provides the complete normative
 contracts and dependencies.
 
-### Reference contexts
+### Validation scenarios
 
-The [`reference-context index`](design/reference-contexts/README.md) instantiates
-Public Site, Dashboard, data-management, form, and destructive templates with
-representative content, required states, adverse conditions, and observable
-acceptance outcomes. Use these contexts to test relationships across the complete
-system and to locate failures at the responsible composition level.
+The [`validation guide`](design/VALIDATION.md) covers Public Site, Dashboard,
+data-management, form, and destructive workflows with representative states,
+adverse conditions, and observable outcomes. Use the applicable scenarios to test
+relationships across the complete system and to locate failures at the
+responsible composition level.
 
-Reference contexts validate the design contract; they do not prescribe one visual
+The scenarios validate the design contract; they do not prescribe one visual
 layout, implementation technology, or product-specific content. An implementation
 or screenshot is evidence for the named conditions, not design authority or proof
-that another adapter conforms.
+that another adapter has been validated.
 
 ### Component contract
 
@@ -1995,11 +1979,11 @@ Component contracts use four maturity states:
 - **Draft:** The contract is being defined and may contain unresolved decisions or
   incomplete required sections.
 - **Complete:** Every required section is normative, internally consistent, and
-  ready for implementation and conformance review.
+  ready for implementation and validation.
 - **Deprecated:** A replacement is documented and consumers are within an agreed
   migration window.
 
-Contract maturity does not describe runtime availability or conformance. Track
+Contract maturity does not describe runtime availability or validation. Track
 implementation and test status outside this technology-neutral design contract.
 
 Create a dedicated component contract when a concept has its own semantic role,

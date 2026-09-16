@@ -3,19 +3,19 @@
 Component files define behavior and accessibility that cannot be represented in
 DESIGN.md frontmatter. These contracts are normative and independent of CSS
 methodology, UI framework, component library, and build system. A frontmatter
-entry or runtime component does not by itself prove conformance.
+entry or runtime component does not by itself prove correct behavior.
 
 ## Contract maturity
 
-| Status         | Meaning                                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **Proposed**   | A system need and intended scope are recorded, but normative behavior is not yet defined.                        |
-| **Draft**      | The contract is being defined and may contain unresolved decisions or incomplete required sections.              |
-| **Complete**   | Every required section is normative, internally consistent, and ready for implementation and conformance review. |
-| **Deprecated** | A replacement and migration path are documented for an established deprecation window.                           |
+| Status         | Meaning                                                                                                  |
+| -------------- | -------------------------------------------------------------------------------------------------------- |
+| **Proposed**   | A system need and intended scope are recorded, but normative behavior is not yet defined.                |
+| **Draft**      | The contract is being defined and may contain unresolved decisions or incomplete required sections.      |
+| **Complete**   | Every required section is normative, internally consistent, and ready for implementation and validation. |
+| **Deprecated** | A replacement and migration path are documented for an established deprecation window.                   |
 
 Contract maturity does not indicate that a reusable implementation exists or has
-passed conformance review. Track implementation, platform support, and test
+passed validation. Track implementation, platform support, and test
 status outside this technology-neutral contract index.
 
 ## Current contracts

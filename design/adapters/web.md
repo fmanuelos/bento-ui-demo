@@ -23,8 +23,8 @@ subsections.
 This repository provides the web adapter as its current platform mapping. Exact
 browser, operating-system, device, and assistive-technology versions are declared
 and tested by each consuming product; they are not inferred from generated CSS or
-a successful application build. A web conformance claim records that test matrix
-and any limitation through the shared governance process.
+a successful application build. A web support claim records that test matrix and
+any known limitation in a durable product review or release record.
 
 ## Theme selection
 
@@ -66,7 +66,7 @@ Support text enlargement to 200%, user text-spacing overrides, and page reflow a
 high zoom. Do not clip labels, values, instructions, errors, or controls. Contain
 horizontal scrolling to data or media whose meaning requires two dimensions.
 
-## Conformance
+## Validation
 
 Supported web experiences target WCAG 2.2 Level AA and the stronger 44px
 `touch-target-min` design token where applicable. Test with keyboard-only input,
