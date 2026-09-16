@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import { Button, SkipLink } from '../../components'
+import { Button, SkipLink, linkStyles } from '../../components'
 import { docsNavigation } from '../navigation'
 
 const Spark = () => (
@@ -89,7 +89,10 @@ export function DocsLayout() {
                 }
                 onClick={closeMobile}
                 className={({ isActive }) =>
-                  `rounded-shape-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`
+                  linkStyles({
+                    variant: 'navigation',
+                    className: `rounded-shape-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`,
+                  })
                 }
               >
                 {item.title}
@@ -133,7 +136,11 @@ export function DocsLayout() {
         </Button>
         <NavLink
           to="/docs"
-          className="flex min-w-0 items-center gap-space-2 font-bold text-text-primary no-underline"
+          className={linkStyles({
+            variant: 'navigation',
+            className:
+              'flex min-w-0 items-center gap-space-2 rounded-shape-sm font-bold text-text-primary',
+          })}
         >
           <span className="grid size-7 shrink-0 place-items-center rounded-shape-full bg-action-primary-background-default text-action-primary-foreground">
             <Spark />
@@ -143,7 +150,11 @@ export function DocsLayout() {
         </NavLink>
         <a
           href="/"
-          className="ml-auto hidden rounded-shape-md px-space-3 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block"
+          className={linkStyles({
+            variant: 'navigation',
+            className:
+              'ml-auto hidden rounded-shape-md px-space-3 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block',
+          })}
         >
           View demo
         </a>

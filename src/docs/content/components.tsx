@@ -527,6 +527,65 @@ export const componentDocs = [
     related: ['disclosure', 'tabs'],
   }),
   createDoc({
+    slug: 'link',
+    title: 'Link',
+    summary:
+      'Navigates to a resource, route, file, or named location while preserving platform link behavior.',
+    useCases: [
+      'Inline and standalone destinations, application routes, downloads, same-page navigation, and button-presented calls to action.',
+    ],
+    importCode: "import { Link, LinkButton } from '@/components'",
+    basicCode: `<Link href="/accessibility">Accessibility guidance</Link>`,
+    props: [
+      {
+        name: 'href',
+        type: 'string',
+        description: 'Supplies a valid resource, route, file, or fragment destination.',
+      },
+      {
+        name: 'variant',
+        type: "'inline' | 'standalone' | 'navigation' | 'unstyled'",
+        defaultValue: "'inline'",
+        description: 'Selects a link presentation without changing destination semantics.',
+      },
+      {
+        name: 'icon / iconPosition',
+        type: "ReactNode / 'start' | 'end'",
+        description: 'Adds a decorative icon before or after the destination label.',
+      },
+      {
+        name: 'LinkButton variant / size',
+        type: "Exclude<ButtonStyleVariant, 'link'> / ButtonStyleSize",
+        description: 'Applies an approved Button recipe while continuing to render an anchor.',
+      },
+      {
+        name: '…anchor props',
+        type: 'AnchorHTMLAttributes<HTMLAnchorElement>',
+        description: 'Forwards native destination, download, target, and relationship attributes.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Inline, standalone, navigation, unstyled, and Button-presented destinations.',
+      'Default, hover, focus, active, visited, and current states where applicable.',
+    ],
+    accessibility: [
+      'Renders a native anchor with a valid href.',
+      'Preserves modified clicks, destination preview, copying, downloads, and browser history.',
+      'Uses a specific destination label and does not rely on color alone for inline affordance.',
+    ],
+    responsive:
+      'Labels wrap without clipping, and independently placed links preserve adequate non-overlapping touch targets.',
+    theme:
+      'Inline and standalone variants use action-link state roles; contextual navigation and Button-presented links compose their owning mappings.',
+    mistakes: [
+      'Do not use a link for an in-place action.',
+      'Do not simulate a link with a button, role, or click handler on a generic element.',
+      'Do not create a disabled link; omit it or render explanatory text.',
+    ],
+    related: ['button', 'breadcrumb', 'skip-link', 'back-to-top', 'site-navigation'],
+  }),
+  createDoc({
     slug: 'breadcrumb',
     title: 'Breadcrumb',
     summary:
@@ -864,8 +923,8 @@ export const componentDocs = [
     summary:
       'Presents public identity, destinations, current location, and one principal action responsively.',
     useCases: ['Commercial, marketing, and informational site headers.'],
-    importCode: "import { SiteNavigation } from '@/components'",
-    basicCode: `<SiteNavigation brand="Bento" items={links} currentHref={pathname} primaryAction={<Button>Start free</Button>} />`,
+    importCode: "import { LinkButton, SiteNavigation } from '@/components'",
+    basicCode: `<SiteNavigation brand="Bento" items={links} currentHref={pathname} primaryAction={<LinkButton href="/signup">Start free</LinkButton>} />`,
     props: [
       {
         name: 'brand / brandHref',
@@ -907,7 +966,7 @@ export const componentDocs = [
       'Do not hide destinations without an equivalent control.',
       'Do not style the current page as the primary action.',
     ],
-    related: ['navigation', 'disclosure', 'drawer'],
+    related: ['link', 'navigation', 'disclosure', 'drawer'],
   }),
   createDoc({
     slug: 'skip-link',
@@ -1017,7 +1076,7 @@ export const componentDocs = [
     props: [
       {
         name: 'variant',
-        type: "'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'",
+        type: "'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link'",
         defaultValue: "'primary'",
         description: 'Sets the semantic action hierarchy.',
       },
@@ -1052,7 +1111,7 @@ export const componentDocs = [
       classNameProp,
     ],
     variants: [
-      'Primary, secondary, outline, ghost, and destructive treatments.',
+      'Primary, secondary, outline, ghost, destructive, and link treatments.',
       'Tiny, small, medium, large, and extra-large sizes with independent icon-only presentation.',
       'Default, hover, focus, active, loading, disabled, pressed, and expanded states.',
     ],
@@ -1060,6 +1119,7 @@ export const componentDocs = [
       'Uses a native button, so Enter and Space activate it.',
       'Icon-only buttons need an accessible name.',
       'Use aria-pressed for toggles and aria-expanded with aria-controls for disclosures.',
+      'The link variant remains a native button and does not navigate.',
     ],
     responsive:
       'Use tiny and small in dense interfaces only when a non-overlapping 44px target is available. Medium is the default; reserve extra-large for one public-facing CTA group.',
@@ -1067,11 +1127,12 @@ export const componentDocs = [
       'Every variant uses semantic action tokens; focus remains visible in light and demo dark themes.',
     mistakes: [
       'Do not use a button for navigation.',
+      'Use Link or LinkButton, not the link variant, when activation has a destination.',
       'Do not use large or extra-large sizing for dashboard toolbars or repeated actions.',
       'Do not remove the label during loading.',
       'Name the destructive outcome instead of relying on red.',
     ],
-    related: ['button-group', 'modal', 'dropdown', 'progress'],
+    related: ['link', 'button-group', 'modal', 'dropdown', 'progress'],
   }),
   createDoc({
     slug: 'button-group',

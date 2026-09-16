@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { Button } from './Button'
 import { SkipLink } from './SkipLink'
+import { linkStyles } from './interactiveStyles'
 
 export type NavigationItem = { href: string; label: string; icon?: ReactNode }
 export type NavigationShellProps = {
@@ -87,13 +88,15 @@ export function NavigationShell({
             aria-current={current ? 'page' : undefined}
             title={!mobile && collapsed ? item.label : undefined}
             onClick={() => mobile && setMobileOpen(false)}
-            className={[
-              'flex min-h-control-height-small items-center gap-space-3 rounded-shape-md px-space-3 text-label-md font-semibold outline-none',
-              'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
-              current
-                ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground'
-                : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong',
-            ].join(' ')}
+            className={linkStyles({
+              variant: 'navigation',
+              className: [
+                'flex min-h-control-height-small items-center gap-space-3 rounded-shape-md px-space-3 text-label-md font-semibold',
+                current
+                  ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground'
+                  : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong',
+              ].join(' '),
+            })}
           >
             {item.icon && (
               <span className="grid size-5 shrink-0 place-items-center" aria-hidden="true">

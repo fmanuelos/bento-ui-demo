@@ -36,6 +36,7 @@ const implementationFiles = new Map([
     'input',
     'input-group',
     'listbox',
+    'link',
     'modal',
     'pagination',
     'popover',

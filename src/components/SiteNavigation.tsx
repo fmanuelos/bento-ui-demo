@@ -1,5 +1,6 @@
 import { useId, useState, type HTMLAttributes, type ReactNode } from 'react'
 import { Button } from './Button'
+import { linkStyles } from './interactiveStyles'
 
 export type SiteNavigationItem = {
   href: string
@@ -35,14 +36,15 @@ export function SiteNavigation({
       href={item.href}
       aria-current={item.href === currentHref ? 'page' : undefined}
       onClick={() => setOpen(false)}
-      className={[
-        'rounded-shape-md px-space-3 py-space-2 text-label-md font-semibold no-underline outline-none',
-        'hover:bg-action-ghost-background-hover',
-        'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
-        item.href === currentHref
-          ? 'bg-background-accent text-text-accent underline decoration-2 underline-offset-4'
-          : 'text-text-secondary',
-      ].join(' ')}
+      className={linkStyles({
+        variant: 'navigation',
+        className: [
+          'rounded-shape-md px-space-3 py-space-2 text-label-md font-semibold hover:bg-action-ghost-background-hover',
+          item.href === currentHref
+            ? 'bg-background-accent text-text-accent underline decoration-2 underline-offset-4'
+            : 'text-text-secondary',
+        ].join(' '),
+      })}
     >
       {item.label}
     </a>
@@ -54,7 +56,13 @@ export function SiteNavigation({
       {...props}
     >
       <div className="mx-auto flex min-h-topbar-height max-w-container-page items-center gap-space-3 px-page-padding-mobile sm:px-page-padding-tablet lg:px-page-padding-desktop">
-        <a href={brandHref} className="shrink-0 font-bold text-text-primary no-underline">
+        <a
+          href={brandHref}
+          className={linkStyles({
+            variant: 'navigation',
+            className: 'shrink-0 rounded-shape-sm font-bold text-text-primary',
+          })}
+        >
           {brand}
         </a>
         <nav

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { linkStyles } from '../../components'
 import { DocsBackToTop } from '../components/DocsBackToTop'
 import { PageIntro } from '../components/DocsSection'
 import { componentNavigation } from '../navigation'
@@ -16,7 +17,11 @@ export function ComponentIndexPage() {
           <Link
             key={component.path}
             to={component.path}
-            className="group rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4 no-underline transition outline-none hover:border-border-focus focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+            className={linkStyles({
+              variant: 'navigation',
+              className:
+                'group rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4 transition hover:border-border-focus',
+            })}
           >
             <h2 className="m-0 text-heading-sm font-semibold text-text-primary group-hover:text-text-accent">
               {component.title}

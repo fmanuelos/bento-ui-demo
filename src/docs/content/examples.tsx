@@ -20,6 +20,8 @@ import {
   Input,
   InputGroup,
   Listbox,
+  Link,
+  LinkButton,
   Modal,
   NavigationShell,
   Pagination,
@@ -579,6 +581,18 @@ export const componentExamples: Record<string, ReactNode> = {
       ]}
     />
   ),
+  link: (
+    <div className="flex flex-wrap items-center gap-space-4">
+      <Link href="#accessibility-guidance">Accessibility guidance</Link>
+      <Link variant="standalone" href="#project-guide" icon={ArrowIcon}>
+        Read the project guide
+      </Link>
+      <LinkButton href="#start-free">Start free</LinkButton>
+      <Button variant="link" onClick={() => undefined}>
+        Clear filters
+      </Button>
+    </div>
+  ),
   pagination: <PaginationExample />,
   popover: (
     <Popover
@@ -602,7 +616,11 @@ export const componentExamples: Record<string, ReactNode> = {
         { href: '#pricing', label: 'Pricing' },
         { href: '#resources', label: 'Resources' },
       ]}
-      primaryAction={<Button size="small">Start free</Button>}
+      primaryAction={
+        <LinkButton href="#start-free" size="small">
+          Start free
+        </LinkButton>
+      }
       className="rounded-shape-lg border"
     />
   ),
@@ -661,6 +679,7 @@ export const componentExamples: Record<string, ReactNode> = {
         <Button variant="outline">Outline</Button>
         <Button variant="ghost">Ghost</Button>
         <Button variant="destructive">Delete project</Button>
+        <Button variant="link">Clear filters</Button>
         <Button loading>Save changes</Button>
       </div>
     </div>

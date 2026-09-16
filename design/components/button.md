@@ -20,6 +20,8 @@ Buttons trigger an immediate action. Use one primary button for the most importa
 - **Outline:** Transparent background with a visible neutral edge for an alternative action.
 - **Ghost:** Transparent background without an edge for utilities and low-emphasis actions.
 - **Destructive:** Danger background for actions involving removal or irreversible loss.
+- **Link:** Transparent, underlined treatment using link color roles for a
+  low-emphasis action. It remains a Button and never represents navigation.
 
 ## Sizes
 
@@ -68,13 +70,21 @@ Loading presentation follows the
 [`progress-indicator contract`](progress.md); a compact spinner supplements rather
 than replaces the action label or busy state.
 
+The Link variant uses `action-link-default`, `action-link-hover`,
+`action-link-active`, and `action-link-disabled`. The visited role does not apply
+to Button because an action has no destination history. Link Button supports the
+same sizes and behavioral states as other Button variants and is not an inline
+prose substitute for the [`Link`](link.md) component.
+
 ## Behavior
 
 One completed activation produces one action. Loading prevents duplicate actions.
 When an action opens or closes another component, focus follows that component's
 contract. A destructive label states the action rather than relying on color.
 Buttons trigger actions; controls whose purpose is navigation use the platform's
-navigation semantic instead.
+navigation semantic instead. Choose the Link variant only when a genuine action
+needs a quiet, text-like presentation, such as clearing optional filters or
+revealing supplementary controls.
 
 ## Responsive behavior
 
@@ -107,10 +117,14 @@ Use a native `button` where possible. Enter and Space activate it. Toggle button
 expose `aria-pressed`; controls that reveal content expose the appropriate
 expanded and controlled relationships. An icon-only button may use visible text,
 `aria-label`, or `aria-labelledby`. Use a link, not a button, for navigation.
+The Link visual variant still renders a native `button`; it does not accept
+`href`, `to`, or destination behavior.
 
 ## Example
 
 Use one primary action and a secondary, outline, or ghost alternative in a
 decision area. Related independent actions follow the
 [`Button Group`](button-group.md) contract. Use destructive only when the outcome
-involves removal or loss.
+involves removal or loss. A filter region may use a Link Button labelled “Clear
+filters” when the action should remain available without competing with the main
+commitment.

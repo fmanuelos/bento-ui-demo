@@ -625,6 +625,23 @@ components:
     backgroundColor: '{colors.action-destructive-background-disabled}'
     textColor: '{colors.action-destructive-foreground-disabled}'
 
+  button-link:
+    backgroundColor: 'transparent'
+    textColor: '{colors.action-link-default}'
+    typography: '{typography.label-md}'
+    rounded: '{rounded.shape-md}'
+    padding: '{spacing.space-3}'
+    height: '{spacing.control-height-medium}'
+  button-link-hover:
+    backgroundColor: 'transparent'
+    textColor: '{colors.action-link-hover}'
+  button-link-active:
+    backgroundColor: 'transparent'
+    textColor: '{colors.action-link-active}'
+  button-link-disabled:
+    backgroundColor: 'transparent'
+    textColor: '{colors.action-link-disabled}'
+
   input:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
@@ -878,6 +895,19 @@ components:
   button-destructive-disabled-dark:
     backgroundColor: '{colors.dark-action-destructive-background-disabled}'
     textColor: '{colors.dark-action-destructive-foreground-disabled}'
+
+  button-link-dark:
+    backgroundColor: 'transparent'
+    textColor: '{colors.dark-action-link-default}'
+  button-link-hover-dark:
+    backgroundColor: 'transparent'
+    textColor: '{colors.dark-action-link-hover}'
+  button-link-active-dark:
+    backgroundColor: 'transparent'
+    textColor: '{colors.dark-action-link-active}'
+  button-link-disabled-dark:
+    backgroundColor: 'transparent'
+    textColor: '{colors.dark-action-link-disabled}'
 
   input-dark:
     backgroundColor: '{colors.dark-surface-primary}'
@@ -1785,7 +1815,10 @@ unsupported nested theme group.
 Button color variants and sizes are independent. `button-size-*` entries define
 dimensions, typography, shape, and spacing for every button color variant;
 variant and state entries define semantic color. Medium is the default button
-size.
+size. The Link Button variant is an action presentation: it uses the
+`action-link-*` foreground roles but retains Button semantics and never uses the
+visited role. Destination links use the Link contract even when their visual
+presentation resembles a button.
 
 Avatar fallback color and size are independent. `avatar-size-*` component entries
 map the supported sizes directly to `control-height-*` dimensions and define their

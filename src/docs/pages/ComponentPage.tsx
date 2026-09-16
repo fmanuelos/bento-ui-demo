@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { linkStyles } from '../../components'
 import { componentNavigation } from '../navigation'
 import { CodeBlock } from '../components/CodeBlock'
 import { DocsBackToTop } from '../components/DocsBackToTop'
@@ -66,7 +67,11 @@ export function ComponentPage() {
               <Link
                 key={item.path}
                 to={item.path}
-                className="rounded-shape-md border border-border-primary bg-surface-primary px-space-3 py-space-2 no-underline outline-none hover:border-border-focus focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+                className={linkStyles({
+                  variant: 'navigation',
+                  className:
+                    'rounded-shape-md border border-border-primary bg-surface-primary px-space-3 py-space-2 hover:border-border-focus',
+                })}
               >
                 {item.title}
               </Link>

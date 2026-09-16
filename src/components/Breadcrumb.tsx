@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import { Button } from './Button'
+import { linkStyles } from './interactiveStyles'
 import { OverlaySurface, type OverlayPlacement } from './internal/Overlay'
 
 export type BreadcrumbItem = {
@@ -137,13 +138,13 @@ export function Breadcrumb({
         <a
           href={item.href}
           aria-current={current ? 'page' : undefined}
-          className={[
-            'inline-flex min-h-touch-target-min min-w-0 items-center gap-space-1 rounded-shape-sm outline-none',
-            'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
-            current
-              ? 'font-semibold text-text-primary no-underline'
-              : 'text-text-link underline underline-offset-4 visited:text-action-link-visited hover:text-action-link-hover active:text-action-link-active',
-          ].join(' ')}
+          className={linkStyles({
+            variant: current ? 'navigation' : 'inline',
+            className: [
+              'inline-flex min-h-touch-target-min min-w-0 items-center gap-space-1 rounded-shape-sm',
+              current ? 'font-semibold text-text-primary' : '',
+            ].join(' '),
+          })}
         >
           {content}
         </a>
@@ -245,7 +246,11 @@ export function Breadcrumb({
                           }}
                           href={item.href}
                           onClick={() => setExpanded(false)}
-                          className="flex min-h-touch-target-min items-center gap-space-2 rounded-shape-md px-space-3 py-space-2 text-label-md text-text-link underline underline-offset-4 outline-none visited:text-action-link-visited hover:bg-action-ghost-background-hover hover:text-action-link-hover focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid active:text-action-link-active"
+                          className={linkStyles({
+                            variant: 'inline',
+                            className:
+                              'flex min-h-touch-target-min items-center gap-space-2 rounded-shape-md px-space-3 py-space-2 text-label-md hover:bg-action-ghost-background-hover',
+                          })}
                         >
                           {item.icon && (
                             <span

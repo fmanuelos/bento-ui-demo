@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { buttonStyles } from '../../components'
 import { PageIntro } from '../components/DocsSection'
 
 export function NotFoundPage() {
@@ -12,7 +13,7 @@ export function NotFoundPage() {
       <div>
         <Link
           to="/docs"
-          className="inline-flex h-control-height-medium items-center rounded-shape-md bg-action-primary-background-default px-space-3 text-label-md font-semibold text-action-primary-foreground no-underline outline-none hover:bg-action-primary-background-hover focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+          className={buttonStyles({ variant: 'primary', className: 'no-underline' })}
         >
           Return to documentation
         </Link>

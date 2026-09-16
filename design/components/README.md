@@ -32,6 +32,7 @@ status outside this technology-neutral contract index.
 | [Alert dialog](alert-dialog.md)                    | Shared prose and risk pattern     | Complete        | Dialog, Button, destructive actions     |
 | [Disclosure](disclosure.md)                        | Shared prose and popup taxonomy   | Complete        | Overlay only when visually layered      |
 | [Accordion](accordion.md)                          | Shared prose and group behavior   | Complete        | Disclosure, Button                      |
+| [Link](link.md)                                    | Semantic roles and shared prose   | Complete        | Shared state and focus model            |
 | [Breadcrumb](breadcrumb.md)                        | Shared prose and Public Site mode | Complete        | Link navigation, Overlay when collapsed |
 | [Pagination](pagination.md)                        | Shared prose and data pattern     | Complete        | Collection model, async feedback        |
 | [Popover](popover.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                 |
@@ -113,19 +114,19 @@ Frontmatter component entries are visual mappings, not the component inventory.
 Add an entry only for an approved mapping that the current DESIGN.md schema can
 represent honestly.
 
-| Frontmatter family        | Normative contracts                                                       | Contract-only coverage                                                                                                 |
-| ------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Buttons                   | Button                                                                    | Focus, loading, pressed, expanded, activation, and icon-only behavior                                                  |
-| Input and search          | Form field, Text field                                                    | Input Group composition, boundary mappings, read-only, validation, description, and message behavior                   |
-| Cards and statistic cards | Card                                                                      | Static, interactive, loading, empty, and error behavior                                                                |
-| Avatars                   | Avatar, Avatar Group                                                      | Image fallback, identity exposure, ordering, overlap, and overflow behavior                                            |
-| Navigation and tabs       | Navigation shell, Public-site navigation, Breadcrumb, Skip link, Tabs     | Hierarchical location, focus, current semantics, responsive disclosure, temporary navigation, and managed tab behavior |
-| Table                     | Data table, Data grid, Pagination                                         | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior                           |
-| Alerts and badges         | Alert, Toast and notification region, Status badge                        | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status                         |
-| Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover | Placement, focus, selection, dismissal, active item, viewport fit, and transformation                                  |
-| Disclosure                | Disclosure, Accordion                                                     | Expansion, heading structure, group policy, focus, and panel relationships                                             |
-| Modal surface             | Dialog and modal, Alert dialog, Drawer and sheet                          | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery                                  |
-| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch               | Complete behavior remains contract-only until an honest visual mapping is approved                                     |
+| Frontmatter family        | Normative contracts                                                         | Contract-only coverage                                                                                                                    |
+| ------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Buttons                   | Button                                                                      | Focus, loading, pressed, expanded, activation, and icon-only behavior                                                                     |
+| Input and search          | Form field, Text field                                                      | Input Group composition, boundary mappings, read-only, validation, description, and message behavior                                      |
+| Cards and statistic cards | Card                                                                        | Static, interactive, loading, empty, and error behavior                                                                                   |
+| Avatars                   | Avatar, Avatar Group                                                        | Image fallback, identity exposure, ordering, overlap, and overflow behavior                                                               |
+| Navigation and tabs       | Link, Navigation shell, Public-site navigation, Breadcrumb, Skip link, Tabs | Destination semantics, hierarchical location, focus, current state, responsive disclosure, temporary navigation, and managed tab behavior |
+| Table                     | Data table, Data grid, Pagination                                           | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior                                              |
+| Alerts and badges         | Alert, Toast and notification region, Status badge                          | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status                                            |
+| Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover   | Placement, focus, selection, dismissal, active item, viewport fit, and transformation                                                     |
+| Disclosure                | Disclosure, Accordion                                                       | Expansion, heading structure, group policy, focus, and panel relationships                                                                |
+| Modal surface             | Dialog and modal, Alert dialog, Drawer and sheet                            | Modality, focus entry and containment, dismissal, inertness, busy state, and recovery                                                     |
+| Other form controls       | Form field, Textarea, Select, Checkbox, Radio group, Switch                 | Complete behavior remains contract-only until an honest visual mapping is approved                                                        |
 
 ## Frontmatter state coverage
 

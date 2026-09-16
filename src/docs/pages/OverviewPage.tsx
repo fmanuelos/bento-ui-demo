@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Card, StatusBadge } from '../../components'
+import { Card, StatusBadge, linkStyles } from '../../components'
 import { DocsBackToTop } from '../components/DocsBackToTop'
 import { PageIntro, DocsSection } from '../components/DocsSection'
 
@@ -27,7 +27,7 @@ export function OverviewPage() {
           </p>
         </Card>
         <Card compact>
-          <StatusBadge>36 contracts</StatusBadge>
+          <StatusBadge>39 contracts</StatusBadge>
           <h2 className="mt-space-4 mb-space-2 text-heading-sm">Built for reuse</h2>
           <p className="m-0 text-body-sm leading-relaxed text-text-secondary">
             Typed components stay independent of product content and business logic.
@@ -66,7 +66,11 @@ export function OverviewPage() {
       <DocsSection id="start" title="Where to start">
         <div className="grid gap-space-3 sm:grid-cols-2">
           <Link
-            className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-6 no-underline hover:border-border-focus"
+            className={linkStyles({
+              variant: 'navigation',
+              className:
+                'rounded-shape-lg border border-border-secondary bg-surface-primary p-space-6 hover:border-border-focus',
+            })}
             to="/docs/foundations"
           >
             <strong className="block text-heading-sm text-text-primary">Explore foundations</strong>
@@ -75,7 +79,11 @@ export function OverviewPage() {
             </span>
           </Link>
           <Link
-            className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-6 no-underline hover:border-border-focus"
+            className={linkStyles({
+              variant: 'navigation',
+              className:
+                'rounded-shape-lg border border-border-secondary bg-surface-primary p-space-6 hover:border-border-focus',
+            })}
             to="/docs/components"
           >
             <strong className="block text-heading-sm text-text-primary">Browse components</strong>
