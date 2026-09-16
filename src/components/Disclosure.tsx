@@ -36,7 +36,7 @@ export function Disclosure({
   const trigger = (
     <Button
       variant="ghost"
-      size="medium"
+      size="large"
       {...buttonProps}
       disabled={disabled || busy}
       aria-expanded={expanded}
