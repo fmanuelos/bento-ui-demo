@@ -77,7 +77,7 @@ export function BackToTop({
       className={linkStyles({
         variant: 'navigation',
         className: [
-          'fixed z-20 inline-flex min-h-control-height-medium items-center gap-space-2 rounded-shape-md border border-border-secondary bg-surface-raised px-space-3 text-label-md font-semibold text-text-link shadow-lg',
+          'fixed z-20 inline-flex min-h-control-height-medium items-center gap-scale-2 rounded-shape-md border border-border-secondary bg-surface-raised px-scale-3 text-label-md font-semibold text-text-link shadow-lg',
           '[inset-block-end:calc(env(safe-area-inset-bottom,0px)+var(--spacing-page-padding-mobile))]',
           '[inset-inline-end:calc(max(env(safe-area-inset-left,0px),env(safe-area-inset-right,0px))+var(--spacing-page-padding-mobile))]',
           'transition-[opacity,transform,visibility] duration-200 ease-out hover:text-action-link-hover focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid active:text-action-link-active',
@@ -88,7 +88,7 @@ export function BackToTop({
           'motion-reduce:transform-none motion-reduce:transition-none',
           visible
             ? 'visible translate-y-0 opacity-100'
-            : 'pointer-events-none invisible translate-y-space-2 opacity-0',
+            : 'pointer-events-none invisible translate-y-scale-2 opacity-0',
           className,
         ].join(' '),
       })}

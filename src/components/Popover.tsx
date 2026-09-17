@@ -85,15 +85,15 @@ export function Popover({
         onDismiss={() => setExpanded(false)}
         placement={placement}
         restoreFocus={initialFocus === 'first'}
-        className={`w-max max-w-[min(24rem,calc(100vw-1rem))] p-space-4 ${className}`}
+        className={`w-max max-w-[min(24rem,calc(100vw-1rem))] p-scale-4 ${className}`}
         aria-busy={undefined}
       >
         {(title || description || showCloseButton) && (
-          <header className="mb-space-3 flex items-start gap-space-4">
+          <header className="mb-scale-3 flex items-start gap-scale-4">
             <div className="min-w-0 flex-1">
               {title && <h3 className="m-0 text-heading-sm font-semibold">{title}</h3>}
               {description && (
-                <div className="mt-space-1 text-body-sm text-text-secondary">{description}</div>
+                <div className="mt-scale-1 text-body-sm text-text-secondary">{description}</div>
               )}
             </div>
             {showCloseButton && (

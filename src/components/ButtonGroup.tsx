@@ -29,8 +29,8 @@ const orientationClasses: Record<ButtonGroupOrientation, string> = {
 }
 
 const gapClasses: Record<ButtonGroupGap, string> = {
-  default: 'gap-space-2',
-  spacious: 'gap-space-3',
+  default: 'gap-scale-2',
+  spacious: 'gap-scale-3',
 }
 
 const connectedClasses: Record<Exclude<ButtonGroupOrientation, 'responsive'>, string> = {
@@ -71,7 +71,7 @@ export function ButtonGroup({
   const presentationClasses =
     variant === 'connected'
       ? [
-          'gap-space-0',
+          'gap-scale-0',
           connectedClasses[resolvedOrientation === 'vertical' ? 'vertical' : 'horizontal'],
           '[&>*:hover]:relative [&>*:hover]:z-10',
           '[&>*:focus-visible]:relative [&>*:focus-visible]:z-20',

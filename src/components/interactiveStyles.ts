@@ -48,15 +48,15 @@ const buttonVariantClasses: Record<ButtonStyleVariant, string> = {
 }
 
 const buttonSizeClasses: Record<ButtonStyleSize, string> = {
-  tiny: 'h-control-height-tiny gap-space-1 px-space-2 font-label-sm text-label-sm leading-label-sm',
+  tiny: 'h-control-height-tiny gap-scale-1 px-scale-2 font-label-sm text-label-sm leading-label-sm',
   small:
-    'h-control-height-small gap-space-2 px-space-3 font-label-md text-label-md leading-label-md',
+    'h-control-height-small gap-scale-2 px-scale-3 font-label-md text-label-md leading-label-md',
   medium:
-    'h-control-height-medium gap-space-2 px-space-3 font-label-md text-label-md leading-label-md',
+    'h-control-height-medium gap-scale-2 px-scale-3 font-label-md text-label-md leading-label-md',
   large:
-    'h-control-height-large gap-space-2 px-space-4 font-label-lg text-label-lg leading-label-lg',
+    'h-control-height-large gap-scale-2 px-scale-4 font-label-lg text-label-lg leading-label-lg',
   'extra-large':
-    'h-control-height-extra-large gap-space-3 px-space-6 font-label-lg text-label-lg leading-label-lg',
+    'h-control-height-extra-large gap-scale-3 px-scale-6 font-label-lg text-label-lg leading-label-lg',
 }
 
 export const buttonSquareSizeClasses: Record<ButtonStyleSize, string> = {
@@ -71,7 +71,7 @@ const linkVariantClasses: Record<LinkStyleVariant, string> = {
   inline:
     'text-action-link-default underline underline-offset-4 visited:text-action-link-visited hover:text-action-link-hover active:text-action-link-active',
   standalone:
-    'inline-flex min-h-touch-target-min items-center gap-space-1 rounded-shape-sm text-action-link-default underline underline-offset-4 visited:text-action-link-visited hover:text-action-link-hover active:text-action-link-active',
+    'inline-flex min-h-touch-target-min items-center gap-scale-1 rounded-shape-sm text-action-link-default underline underline-offset-4 visited:text-action-link-visited hover:text-action-link-hover active:text-action-link-active',
   navigation: 'no-underline',
   unstyled: '',
 }

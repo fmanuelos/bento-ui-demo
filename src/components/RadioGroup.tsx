@@ -50,7 +50,7 @@ export function RadioGroup({
     <fieldset
       id={groupId}
       disabled={disabled}
-      className={`m-0 grid gap-space-3 border-0 p-0 ${className}`}
+      className={`m-0 grid gap-scale-3 border-0 p-0 ${className}`}
       aria-describedby={describedBy || undefined}
       aria-errormessage={error ? errorId : undefined}
       aria-invalid={Boolean(error)}
@@ -60,7 +60,7 @@ export function RadioGroup({
       >
         {label}
         {required && (
-          <span className="ml-space-1 text-text-danger" aria-hidden="true">
+          <span className="ml-scale-1 text-text-danger" aria-hidden="true">
             *
           </span>
         )}
@@ -79,7 +79,7 @@ export function RadioGroup({
         </p>
       )}
       <div
-        className={orientation === 'horizontal' ? 'flex flex-wrap gap-space-6' : 'grid gap-space-3'}
+        className={orientation === 'horizontal' ? 'flex flex-wrap gap-scale-6' : 'grid gap-scale-3'}
       >
         {options.map((option, index) => {
           const optionId = `${groupId}-option-${index}`
@@ -101,7 +101,7 @@ export function RadioGroup({
             <label
               key={option.value}
               htmlFor={optionId}
-              className={`inline-flex min-h-touch-target-min items-start gap-space-3 text-body-sm ${
+              className={`inline-flex min-h-touch-target-min items-start gap-scale-3 text-body-sm ${
                 optionDisabled
                   ? 'cursor-not-allowed text-text-disabled'
                   : 'cursor-pointer text-text-primary'
@@ -139,7 +139,7 @@ export function RadioGroup({
                 ].join(' ')}
                 aria-hidden="true"
               />
-              <span className="grid gap-space-1">
+              <span className="grid gap-scale-1">
                 <span id={optionLabelId} className="font-semibold">
                   {option.label}
                 </span>

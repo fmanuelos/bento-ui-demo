@@ -66,7 +66,7 @@ export function Alert({
   return (
     <div
       role={urgent ? 'alert' : 'status'}
-      className={`flex items-start gap-space-3 rounded-shape-md border p-space-4 ${variants[variant]} ${className}`}
+      className={`flex items-start gap-scale-3 rounded-shape-md border p-scale-4 ${variants[variant]} ${className}`}
       {...props}
     >
       <svg
@@ -83,15 +83,15 @@ export function Alert({
       </svg>
       <div className="min-w-0 flex-1">
         <p className="m-0 text-label-md font-semibold">{title}</p>
-        {children && <div className="mt-space-1 text-body-sm leading-relaxed">{children}</div>}
-        {action && <div className="mt-space-3">{action}</div>}
+        {children && <div className="mt-scale-1 text-body-sm leading-relaxed">{children}</div>}
+        {action && <div className="mt-scale-3">{action}</div>}
       </div>
       {dismissible && (
         <Button
           variant="ghost"
           size="tiny"
           iconOnly
-          className="-m-space-2 size-8 text-current"
+          className="-m-scale-2 size-8 text-current"
           aria-label={`Dismiss ${typeof title === 'string' ? title : 'alert'}`}
           onClick={dismiss}
         >

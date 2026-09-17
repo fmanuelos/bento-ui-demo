@@ -88,7 +88,7 @@ nearest logical continuation.
 
 ## Responsive behavior
 
-The dialog retains at least `spacing.space-4` viewport clearance. Descriptions,
+The dialog retains at least `spacing.scale-4` viewport clearance. Descriptions,
 object names, consequences, and actions wrap. Actions stack when they do not fit,
 while preserving a clear safe choice and commitment order. Do not truncate the
 object or scope that users are being asked to confirm.

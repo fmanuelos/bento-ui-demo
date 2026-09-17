@@ -60,7 +60,7 @@ export function ComponentPage() {
         </ul>
       </DocsSection>
       <DocsSection id="related" title="Related components">
-        <div className="flex flex-wrap gap-space-2">
+        <div className="flex flex-wrap gap-scale-2">
           {documentation.related.map((relatedSlug) => {
             const item = componentNavigation.find((entry) => entry.slug === relatedSlug)
             return item ? (
@@ -70,7 +70,7 @@ export function ComponentPage() {
                 className={linkStyles({
                   variant: 'navigation',
                   className:
-                    'rounded-shape-md border border-border-primary bg-surface-primary px-space-3 py-space-2 hover:border-border-focus',
+                    'rounded-shape-md border border-border-primary bg-surface-primary px-scale-3 py-scale-2 hover:border-border-focus',
                 })}
               >
                 {item.title}

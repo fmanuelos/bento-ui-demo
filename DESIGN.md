@@ -450,69 +450,69 @@ rounded:
 
 spacing:
   # Relative dimensions use the browser-default 16px root size as their baseline.
-  space-0: 0rem         # 0px
-  space-0-5: 0.125rem  # 2px
-  space-1: 0.25rem     # 4px
-  space-1-5: 0.375rem  # 6px
-  space-2: 0.5rem      # 8px
-  space-2-5: 0.625rem  # 10px
-  space-3: 0.75rem     # 12px
-  space-3-5: 0.875rem  # 14px
-  space-4: 1rem        # 16px
-  space-5: 1.25rem     # 20px
-  space-6: 1.5rem      # 24px
-  space-7: 1.75rem     # 28px
-  space-8: 2rem        # 32px
-  space-9: 2.25rem     # 36px
-  space-10: 2.5rem     # 40px
-  space-11: 2.75rem    # 44px
-  space-12: 3rem       # 48px
-  space-14: 3.5rem     # 56px
-  space-16: 4rem       # 64px
-  space-20: 5rem       # 80px
-  space-24: 6rem       # 96px
-  space-32: 8rem       # 128px
+  scale-0: 0rem # 0px
+  scale-0-5: 0.125rem # 2px
+  scale-1: 0.25rem # 4px
+  scale-1-5: 0.375rem # 6px
+  scale-2: 0.5rem # 8px
+  scale-2-5: 0.625rem # 10px
+  scale-3: 0.75rem # 12px
+  scale-3-5: 0.875rem # 14px
+  scale-4: 1rem # 16px
+  scale-5: 1.25rem # 20px
+  scale-6: 1.5rem # 24px
+  scale-7: 1.75rem # 28px
+  scale-8: 2rem # 32px
+  scale-9: 2.25rem # 36px
+  scale-10: 2.5rem # 40px
+  scale-11: 2.75rem # 44px
+  scale-12: 3rem # 48px
+  scale-14: 3.5rem # 56px
+  scale-16: 4rem # 64px
+  scale-20: 5rem # 80px
+  scale-24: 6rem # 96px
+  scale-32: 8rem # 128px
 
   # Mobile is the default range and therefore has no breakpoint token.
-  breakpoint-tablet: 40em    # 640px
-  breakpoint-desktop: 64em   # 1024px
-  breakpoint-wide: 80em      # 1280px
+  breakpoint-tablet: 40em # 640px
+  breakpoint-desktop: 64em # 1024px
+  breakpoint-wide: 80em # 1280px
 
-  section-mobile: 3rem    # 48px
-  section-tablet: 4rem    # 64px
-  section-desktop: 6rem   # 96px
+  section-mobile: 3rem # 48px
+  section-tablet: 4rem # 64px
+  section-desktop: 6rem # 96px
 
-  page-padding-mobile: 1rem          # 16px
-  page-padding-tablet: 1.5rem        # 24px
-  page-padding-desktop: 2rem         # 32px
-  dashboard-padding-mobile: 1rem     # 16px
-  dashboard-padding-tablet: 1.25rem  # 20px
-  dashboard-padding-desktop: 1.5rem  # 24px
+  page-padding-mobile: 1rem # 16px
+  page-padding-tablet: 1.5rem # 24px
+  page-padding-desktop: 2rem # 32px
+  dashboard-padding-mobile: 1rem # 16px
+  dashboard-padding-tablet: 1.25rem # 20px
+  dashboard-padding-desktop: 1.5rem # 24px
 
-  grid-gutter-mobile: 1rem      # 16px
-  grid-gutter-tablet: 1.25rem   # 20px
-  grid-gutter-desktop: 1.5rem   # 24px
+  grid-gutter-mobile: 1rem # 16px
+  grid-gutter-tablet: 1.25rem # 20px
+  grid-gutter-desktop: 1.5rem # 24px
 
   # Focus indicator geometry is semantic, not general-purpose spacing.
   focus-ring-width: 3px
   focus-ring-offset-width: 2px
 
-  control-height-tiny: 2rem               # 32px
-  control-height-small: 2.5rem            # 40px
-  control-height-medium: 2.75rem          # 44px
-  control-height-large: 3rem              # 48px
-  control-height-extra-large: 3.5rem      # 56px
+  control-height-tiny: 2rem # 32px
+  control-height-small: 2.5rem # 40px
+  control-height-medium: 2.75rem # 44px
+  control-height-large: 3rem # 48px
+  control-height-extra-large: 3.5rem # 56px
 
-  touch-target-min: 2.75rem  # 44px
+  touch-target-min: 2.75rem # 44px
 
-  sidebar-expanded: 16rem    # 256px
-  sidebar-collapsed: 4.5rem  # 72px
-  topbar-height: 4rem        # 64px
+  sidebar-expanded: 16rem # 256px
+  sidebar-collapsed: 4.5rem # 72px
+  topbar-height: 4rem # 64px
 
-  container-narrow: 30rem      # 480px
-  container-readable: 45rem    # 720px
-  container-page: 75rem        # 1200px
-  container-dashboard: 100rem  # 1600px
+  container-narrow: 30rem # 480px
+  container-readable: 45rem # 720px
+  container-page: 75rem # 1200px
+  container-dashboard: 100rem # 1600px
 
 components:
   button-primary:
@@ -520,7 +520,7 @@ components:
     textColor: '{colors.action-primary-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   button-primary-hover:
     backgroundColor: '{colors.action-primary-background-hover}'
@@ -535,27 +535,27 @@ components:
   button-size-tiny:
     typography: '{typography.label-sm}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
     height: '{spacing.control-height-tiny}'
   button-size-small:
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-small}'
   button-size-medium:
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   button-size-large:
     typography: '{typography.label-lg}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-4}'
+    padding: '{spacing.scale-4}'
     height: '{spacing.control-height-large}'
   button-size-extra-large:
     typography: '{typography.label-lg}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-6}'
+    padding: '{spacing.scale-6}'
     height: '{spacing.control-height-extra-large}'
 
   button-secondary:
@@ -563,7 +563,7 @@ components:
     textColor: '{colors.action-secondary-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   button-secondary-hover:
     backgroundColor: '{colors.action-secondary-background-hover}'
@@ -580,7 +580,7 @@ components:
     textColor: '{colors.action-outline-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   button-outline-hover:
     backgroundColor: '{colors.action-outline-background-hover}'
@@ -597,7 +597,7 @@ components:
     textColor: '{colors.action-ghost-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   button-ghost-hover:
     backgroundColor: '{colors.action-ghost-background-hover}'
@@ -614,7 +614,7 @@ components:
     textColor: '{colors.action-destructive-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   button-destructive-hover:
     backgroundColor: '{colors.action-destructive-background-hover}'
@@ -631,7 +631,7 @@ components:
     textColor: '{colors.action-link-default}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   button-link-hover:
     backgroundColor: 'transparent'
@@ -648,14 +648,14 @@ components:
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   input-small:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
     height: '{spacing.control-height-small}'
   input-focus:
     backgroundColor: '{colors.surface-primary}'
@@ -672,24 +672,24 @@ components:
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-small}'
 
   card:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.shape-lg}'
-    padding: '{spacing.space-6}'
+    padding: '{spacing.scale-6}'
   card-compact:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-4}'
+    padding: '{spacing.scale-4}'
   stat-card:
     backgroundColor: '{colors.surface-primary}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.shape-lg}'
-    padding: '{spacing.space-4}'
+    padding: '{spacing.scale-4}'
 
   avatar-fallback:
     backgroundColor: '{colors.brand-background-subtle}'
@@ -722,7 +722,7 @@ components:
     textColor: '{colors.navigation-sidebar-foreground}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-small}'
   sidebar-item-hover:
     backgroundColor: '{colors.navigation-sidebar-item-hover}'
@@ -741,7 +741,7 @@ components:
     textColor: '{colors.text-secondary}'
     typography: '{typography.label-md}'
     rounded: '{rounded.shape-sm}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-small}'
   tab-hover:
     backgroundColor: '{colors.action-ghost-background-hover}'
@@ -754,13 +754,13 @@ components:
     backgroundColor: '{colors.table-header-background}'
     textColor: '{colors.text-secondary}'
     typography: '{typography.label-md}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
     height: '{spacing.control-height-medium}'
   table-row:
     backgroundColor: '{colors.table-row-background}'
     textColor: '{colors.text-primary}'
     typography: '{typography.body-sm}'
-    padding: '{spacing.space-3}'
+    padding: '{spacing.scale-3}'
   table-row-hover:
     backgroundColor: '{colors.table-row-hover}'
     textColor: '{colors.text-primary}'
@@ -773,63 +773,63 @@ components:
     textColor: '{colors.status-positive-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.shape-full}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
   badge-warning:
     backgroundColor: '{colors.status-warning-background}'
     textColor: '{colors.status-warning-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.shape-full}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
   badge-negative:
     backgroundColor: '{colors.status-negative-background}'
     textColor: '{colors.status-negative-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.shape-full}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
   badge-info:
     backgroundColor: '{colors.status-info-background}'
     textColor: '{colors.status-info-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.shape-full}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
   badge-neutral:
     backgroundColor: '{colors.status-neutral-background}'
     textColor: '{colors.status-neutral-foreground}'
     typography: '{typography.label-sm}'
     rounded: '{rounded.shape-full}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
 
   alert-success:
     backgroundColor: '{colors.feedback-success-background}'
     textColor: '{colors.feedback-success-foreground}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-4}'
+    padding: '{spacing.scale-4}'
   alert-warning:
     backgroundColor: '{colors.feedback-warning-background}'
     textColor: '{colors.feedback-warning-foreground}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-4}'
+    padding: '{spacing.scale-4}'
   alert-danger:
     backgroundColor: '{colors.feedback-danger-background}'
     textColor: '{colors.feedback-danger-foreground}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-4}'
+    padding: '{spacing.scale-4}'
   alert-info:
     backgroundColor: '{colors.feedback-info-background}'
     textColor: '{colors.feedback-info-foreground}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-4}'
+    padding: '{spacing.scale-4}'
 
   dropdown:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.shape-md}'
-    padding: '{spacing.space-2}'
+    padding: '{spacing.scale-2}'
   modal:
     backgroundColor: '{colors.surface-raised}'
     textColor: '{colors.text-primary}'
     rounded: '{rounded.shape-xl}'
-    padding: '{spacing.space-6}'
+    padding: '{spacing.scale-6}'
 
   # Dark entries override the color properties of the matching unqualified
   # component or state. Typography, shape, size, and spacing remain shared.
@@ -1548,22 +1548,22 @@ visual `display-*` or `heading-*` role never replaces that structure.
 ## Layout
 
 The primary spacing scale uses a 4px rhythm. Whole-number numeric suffixes express
-multiples of 4px. The `space-*-5` tokens provide controlled 2px half-step
+multiples of 4px. The `scale-*-5` tokens provide controlled 2px half-step
 refinements for compact internal component spacing and optical adjustment; do not
 use them for page padding, grid gutters, section spacing, or general layout.
 Suffixes that are not listed are not available spacing steps. Use named tokens
 instead of arbitrary values.
 
-`space-0` is available for responsive and state-based resets. `space-0-5` is a
+`scale-0` is available for responsive and state-based resets. `scale-0-5` is a
 general spacing token, while focus indicator geometry uses semantic dimension
-tokens such as `focus-ring-width` and `focus-ring-offset-width`. Use `space-1`
-through `space-11` for component composition and the larger steps for generic
+tokens such as `focus-ring-width` and `focus-ring-offset-width`. Use `scale-1`
+through `scale-11` for component composition and the larger steps for generic
 layout spacing. When spacing has a defined layout role, prefer its semantic token,
-such as `section-desktop`, over an equivalent `space-*` value.
+such as `section-desktop`, over an equivalent `scale-*` value.
 
 The DESIGN.md schema has no general dimension group, so the `spacing` map also
 contains breakpoints, semantic heights, widths, gutters, padding, and content
-limits. Treat `space-*` as the base spacing scale and the remaining entries as
+limits. Treat `scale-*` as the base spacing scale and the remaining entries as
 layout dimensions, not interchangeable spacing steps.
 
 - `breakpoint-*` defines page-layout thresholds; mobile is the default and has no
@@ -1617,8 +1617,8 @@ desktop section and page-padding values.
 ### Dashboard mode
 
 Use dashboard padding, efficient grouping, compact controls, tables, filters, and
-a fluid dashboard. Major groups generally use `space-6`–`space-8` separation;
-content within groups generally uses `space-4`–`space-6`.
+a fluid dashboard. Major groups generally use `scale-6`–`scale-8` separation;
+content within groups generally uses `scale-4`–`scale-6`.
 
 Mobile dashboards use `dashboard-padding-mobile`, tablet dashboards use
 `dashboard-padding-tablet`, and both use temporary navigation. Desktop and wide
@@ -1680,7 +1680,7 @@ Dashboard defaults:
 - Forms use one column by default and add a column when the form container, field
   labels, and validation content fit. Panels give primary data surfaces width
   before secondary summaries.
-- Modals retain at least `space-4` viewport clearance and stack actions when
+- Modals retain at least `scale-4` viewport clearance and stack actions when
   needed. Use a page or side panel for long or multi-step work.
 - Density responds to task and input capability rather than viewport width.
   Small and tiny controls remain limited to appropriate pointer-oriented or

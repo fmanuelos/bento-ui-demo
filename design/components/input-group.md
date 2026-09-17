@@ -93,8 +93,8 @@ variant, label, icon, state, and target-size mappings.
 
 The connected boundary uses `surface-primary`, `border-primary`, and
 `rounded.shape-md`. Internal dividers use `border-primary`. Static addons use
-`surface-secondary`, `text-secondary`, and `spacing.space-3` inline padding at
-medium size or `spacing.space-2` at small size. Text entry retains enough inline
+`surface-secondary`, `text-secondary`, and `spacing.scale-3` inline padding at
+medium size or `spacing.scale-2` at small size. Text entry retains enough inline
 padding to keep its value separate from an addon or divider.
 
 Interior corners use `rounded.shape-none`; only the parts at the logical outer

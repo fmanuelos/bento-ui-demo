@@ -49,7 +49,7 @@ export function AvatarGroup({
     >
       <ul className="m-0 flex list-none p-0" aria-hidden="true">
         {visible.map((person, index) => (
-          <li key={person.id} className={index === 0 ? '' : '-ml-space-2'}>
+          <li key={person.id} className={index === 0 ? '' : '-ml-scale-2'}>
             <Avatar {...person} size={size} decorative className="ring-2 ring-surface-primary" />
           </li>
         ))}
@@ -57,9 +57,9 @@ export function AvatarGroup({
       {hiddenCount > 0 &&
         (expandable ? (
           <Popover trigger={overflow} title={label} initialFocus="first" placement="bottom-end">
-            <ul className="m-0 grid list-none gap-space-3 p-0">
+            <ul className="m-0 grid list-none gap-scale-3 p-0">
               {people.map((person) => (
-                <li key={person.id} className="flex items-center gap-space-3 text-body-sm">
+                <li key={person.id} className="flex items-center gap-scale-3 text-body-sm">
                   <Avatar {...person} size="small" decorative />
                   <span>{person.name}</span>
                 </li>
@@ -68,7 +68,7 @@ export function AvatarGroup({
           </Popover>
         ) : (
           <span
-            className={`-ml-space-2 grid place-items-center rounded-shape-full border border-border-secondary bg-background-tertiary font-semibold text-text-secondary ring-2 ring-surface-primary ${avatarSize}`}
+            className={`-ml-scale-2 grid place-items-center rounded-shape-full border border-border-secondary bg-background-tertiary font-semibold text-text-secondary ring-2 ring-surface-primary ${avatarSize}`}
             aria-hidden="true"
           >
             +{hiddenCount}

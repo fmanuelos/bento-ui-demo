@@ -20,7 +20,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 ) {
   const renderedIcon = icon ? (
     <span
-      className="grid size-space-4 shrink-0 place-items-center [&_svg]:size-full"
+      className="grid size-scale-4 shrink-0 place-items-center [&_svg]:size-full"
       aria-hidden="true"
     >
       {icon}
@@ -32,7 +32,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
       ref={ref}
       className={linkStyles({
         variant,
-        className: `${icon ? 'inline-flex items-center gap-space-1' : ''} ${className}`,
+        className: `${icon ? 'inline-flex items-center gap-scale-1' : ''} ${className}`,
       })}
       {...props}
     >
@@ -65,10 +65,10 @@ export const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(functio
 ) {
   const iconSize =
     size === 'tiny' || size === 'small'
-      ? 'size-space-4'
+      ? 'size-scale-4'
       : size === 'extra-large'
-        ? 'size-space-6'
-        : 'size-space-5'
+        ? 'size-scale-6'
+        : 'size-scale-5'
   const renderedIcon = icon ? (
     <span
       className={`grid shrink-0 place-items-center ${iconSize} [&_svg]:size-full`}

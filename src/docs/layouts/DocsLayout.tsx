@@ -65,7 +65,7 @@ export function DocsLayout() {
 
   const closeMobile = () => setMobileOpen(false)
   const navigation = (
-    <nav aria-label="Documentation navigation" className="grid gap-space-6 p-space-4">
+    <nav aria-label="Documentation navigation" className="grid gap-scale-6 p-scale-4">
       {docsNavigation.map((section) => (
         <section
           key={section.title}
@@ -73,11 +73,11 @@ export function DocsLayout() {
         >
           <h2
             id={`docs-nav-${section.title.toLocaleLowerCase()}`}
-            className="mt-0 mb-space-2 px-space-3 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-navigation-sidebar-foreground uppercase"
+            className="mt-0 mb-scale-2 px-scale-3 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-navigation-sidebar-foreground uppercase"
           >
             {section.title}
           </h2>
-          <div className="grid gap-space-1">
+          <div className="grid gap-scale-1">
             {section.items.map((item) => (
               <NavLink
                 key={item.path}
@@ -91,7 +91,7 @@ export function DocsLayout() {
                 className={({ isActive }) =>
                   linkStyles({
                     variant: 'navigation',
-                    className: `rounded-shape-md border-l-4 px-space-3 py-space-2 text-body-sm font-semibold ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`,
+                    className: `rounded-shape-md border-l-4 px-scale-3 py-scale-2 text-body-sm font-semibold ${isActive ? 'border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground' : 'border-transparent text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong'}`,
                   })
                 }
               >
@@ -111,7 +111,7 @@ export function DocsLayout() {
       </SkipLink>
       <header
         inert={mobileOpen ? true : undefined}
-        className="fixed inset-x-0 top-0 z-30 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-page-padding-mobile sm:px-page-padding-tablet lg:px-page-padding-desktop"
+        className="fixed inset-x-0 top-0 z-30 flex h-topbar-height items-center gap-scale-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-page-padding-mobile sm:px-page-padding-tablet lg:px-page-padding-desktop"
       >
         <Button
           ref={menuButtonRef}
@@ -139,7 +139,7 @@ export function DocsLayout() {
           className={linkStyles({
             variant: 'navigation',
             className:
-              'flex min-w-0 items-center gap-space-2 rounded-shape-sm font-bold text-text-primary',
+              'flex min-w-0 items-center gap-scale-2 rounded-shape-sm font-bold text-text-primary',
           })}
         >
           <span className="grid size-7 shrink-0 place-items-center rounded-shape-full bg-action-primary-background-default text-action-primary-foreground">
@@ -153,7 +153,7 @@ export function DocsLayout() {
           className={linkStyles({
             variant: 'navigation',
             className:
-              'ml-auto hidden rounded-shape-md px-space-3 py-space-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block',
+              'ml-auto hidden rounded-shape-md px-scale-3 py-scale-2 text-label-md font-semibold text-text-secondary hover:bg-action-ghost-background-hover sm:block',
           })}
         >
           View demo
@@ -211,7 +211,7 @@ export function DocsLayout() {
             aria-label="Documentation navigation"
             className="h-full w-[min(88vw,var(--spacing-sidebar-expanded))] overflow-y-auto bg-navigation-sidebar-background text-navigation-sidebar-foreground"
           >
-            <div className="sticky top-0 z-10 flex h-topbar-height items-center justify-between border-b border-border-inverse bg-navigation-sidebar-background px-space-4 font-bold text-navigation-sidebar-foreground-strong">
+            <div className="sticky top-0 z-10 flex h-topbar-height items-center justify-between border-b border-border-inverse bg-navigation-sidebar-background px-scale-4 font-bold text-navigation-sidebar-foreground-strong">
               <span>Documentation</span>
               <Button
                 variant="ghost"
@@ -244,9 +244,9 @@ export function DocsLayout() {
         id="docs-content"
         tabIndex={-1}
         inert={mobileOpen ? true : undefined}
-        className="min-h-screen min-w-0 px-page-padding-mobile pt-[calc(var(--spacing-topbar-height)+var(--spacing-space-8))] pb-section-mobile outline-none sm:px-page-padding-tablet sm:pb-section-tablet lg:ml-sidebar-expanded lg:px-page-padding-desktop lg:pb-section-desktop"
+        className="min-h-screen min-w-0 px-page-padding-mobile pt-[calc(var(--spacing-topbar-height)+var(--spacing-scale-8))] pb-section-mobile outline-none sm:px-page-padding-tablet sm:pb-section-tablet lg:ml-sidebar-expanded lg:px-page-padding-desktop lg:pb-section-desktop"
       >
-        <div className="mx-auto grid w-full max-w-container-page min-w-0 gap-space-12">
+        <div className="mx-auto grid w-full max-w-container-page min-w-0 gap-scale-12">
           <Outlet />
         </div>
       </main>

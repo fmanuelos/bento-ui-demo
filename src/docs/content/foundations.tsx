@@ -215,28 +215,28 @@ const typeRoles = [
   ['code-md', 'text-code-md font-code-md leading-code-md font-normal tracking-code-md'],
 ] as const
 const spacingRoles = [
-  ['space-0', 'w-space-0'],
-  ['space-0-5', 'w-space-0-5'],
-  ['space-1', 'w-space-1'],
-  ['space-1-5', 'w-space-1-5'],
-  ['space-2', 'w-space-2'],
-  ['space-2-5', 'w-space-2-5'],
-  ['space-3', 'w-space-3'],
-  ['space-3-5', 'w-space-3-5'],
-  ['space-4', 'w-space-4'],
-  ['space-5', 'w-space-5'],
-  ['space-6', 'w-space-6'],
-  ['space-7', 'w-space-7'],
-  ['space-8', 'w-space-8'],
-  ['space-9', 'w-space-9'],
-  ['space-10', 'w-space-10'],
-  ['space-11', 'w-space-11'],
-  ['space-12', 'w-space-12'],
-  ['space-14', 'w-space-14'],
-  ['space-16', 'w-space-16'],
-  ['space-20', 'w-space-20'],
-  ['space-24', 'w-space-24'],
-  ['space-32', 'w-space-32'],
+  ['scale-0', 'w-scale-0'],
+  ['scale-0-5', 'w-scale-0-5'],
+  ['scale-1', 'w-scale-1'],
+  ['scale-1-5', 'w-scale-1-5'],
+  ['scale-2', 'w-scale-2'],
+  ['scale-2-5', 'w-scale-2-5'],
+  ['scale-3', 'w-scale-3'],
+  ['scale-3-5', 'w-scale-3-5'],
+  ['scale-4', 'w-scale-4'],
+  ['scale-5', 'w-scale-5'],
+  ['scale-6', 'w-scale-6'],
+  ['scale-7', 'w-scale-7'],
+  ['scale-8', 'w-scale-8'],
+  ['scale-9', 'w-scale-9'],
+  ['scale-10', 'w-scale-10'],
+  ['scale-11', 'w-scale-11'],
+  ['scale-12', 'w-scale-12'],
+  ['scale-14', 'w-scale-14'],
+  ['scale-16', 'w-scale-16'],
+  ['scale-20', 'w-scale-20'],
+  ['scale-24', 'w-scale-24'],
+  ['scale-32', 'w-scale-32'],
 ] as const
 const radiusRoles = [
   ['none', 'rounded-shape-none'],
@@ -269,7 +269,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'System ranges',
         body: (
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(12rem,100%),1fr))] gap-space-3">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(12rem,100%),1fr))] gap-scale-3">
             <Range name="Mobile" detail="Below 40rem / 640px" />
             <Range name="Tablet" detail="40rem–63.999rem / 640–1023px" />
             <Range name="Desktop" detail="64rem–79.999rem / 1024–1279px" />
@@ -298,17 +298,17 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Semantic roles',
         body: (
-          <div className="grid gap-space-6">
+          <div className="grid gap-scale-6">
             {Object.entries(colorGroups).map(([group, tokens]) => (
               <section key={group}>
-                <h3 className="mt-0 mb-space-3 text-heading-sm">{group}</h3>
+                <h3 className="mt-0 mb-scale-3 text-heading-sm">{group}</h3>
                 {Array.isArray(tokens) ? (
                   <ColorSwatches tokens={tokens} />
                 ) : (
-                  <div className="grid gap-space-4">
+                  <div className="grid gap-scale-4">
                     {Object.entries(tokens).map(([purpose, purposeTokens]) => (
                       <section key={purpose}>
-                        <h4 className="mt-0 mb-space-2 text-label-md">{purpose}</h4>
+                        <h4 className="mt-0 mb-scale-2 text-label-md">{purpose}</h4>
                         <ColorSwatches tokens={purposeTokens} />
                       </section>
                     ))}
@@ -354,7 +354,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
             {typeRoles.map(([role, classes]) => (
               <div
                 key={role}
-                className="grid gap-space-2 border-b border-border-secondary p-space-4 last:border-0 sm:grid-cols-[10rem_1fr]"
+                className="grid gap-scale-2 border-b border-border-secondary p-scale-4 last:border-0 sm:grid-cols-[10rem_1fr]"
               >
                 <code className="text-body-xs text-text-secondary">{role}</code>
                 <span className={classes}>
@@ -408,12 +408,12 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Base scale',
         body: (
-          <div className="grid gap-space-3">
+          <div className="grid gap-scale-3">
             {spacingRoles.map(([role, width]) => (
-              <div key={role} className="grid grid-cols-[6rem_1fr] items-center gap-space-3">
+              <div key={role} className="grid grid-cols-[6rem_1fr] items-center gap-scale-3">
                 <code className="text-body-xs">{role}</code>
                 <span
-                  className={`block h-space-2 max-w-full rounded-shape-full bg-action-primary-background-default ${width}`}
+                  className={`block h-scale-2 max-w-full rounded-shape-full bg-action-primary-background-default ${width}`}
                 />
               </div>
             ))}
@@ -460,9 +460,9 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Radius scale',
         body: (
-          <div className="grid gap-space-3 sm:grid-cols-2">
+          <div className="grid gap-scale-3 sm:grid-cols-2">
             {radiusRoles.map(([role, radius]) => (
-              <div key={role} className="flex items-center gap-space-3">
+              <div key={role} className="flex items-center gap-scale-3">
                 <span
                   className={`size-14 border-2 border-border-strong bg-surface-secondary ${radius}`}
                 />
@@ -563,7 +563,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
       {
         title: 'Inverse surfaces',
         body: (
-          <div className="rounded-shape-lg bg-surface-inverse p-space-6 text-text-inverse">
+          <div className="rounded-shape-lg bg-surface-inverse p-scale-6 text-text-inverse">
             <p className="m-0">
               Inverse is a supported local surface mode, not a complete page theme.
             </p>
@@ -648,11 +648,11 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
 
 function ColorSwatches({ tokens }: { tokens: readonly string[] }) {
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-space-2">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-scale-2">
       {tokens.map((token) => (
         <div
           key={token}
-          className="flex items-center gap-space-3 rounded-shape-md border border-border-secondary bg-surface-primary p-space-3"
+          className="flex items-center gap-scale-3 rounded-shape-md border border-border-secondary bg-surface-primary p-scale-3"
         >
           <span
             className="size-9 shrink-0 rounded-shape-md border border-border-primary"
@@ -669,9 +669,9 @@ function ColorSwatches({ tokens }: { tokens: readonly string[] }) {
 
 function Range({ name, detail }: { name: string; detail: string }) {
   return (
-    <div className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4">
+    <div className="rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4">
       <strong className="block text-label-md">{name}</strong>
-      <span className="mt-space-1 block text-body-sm text-text-secondary">{detail}</span>
+      <span className="mt-scale-1 block text-body-sm text-text-secondary">{detail}</span>
     </div>
   )
 }

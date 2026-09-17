@@ -18,13 +18,13 @@ export function Card({
 }: CardProps) {
   return (
     <Element
-      className={`${compact ? 'rounded-shape-md p-space-4' : 'rounded-shape-lg p-space-6'} border border-border-secondary bg-surface-primary text-text-primary ${className}`}
+      className={`${compact ? 'rounded-shape-md p-scale-4' : 'rounded-shape-lg p-scale-6'} border border-border-secondary bg-surface-primary text-text-primary ${className}`}
       {...props}
     >
-      {heading && <header className="mb-space-4">{heading}</header>}
+      {heading && <header className="mb-scale-4">{heading}</header>}
       {children}
       {footer && (
-        <footer className="mt-space-4 border-t border-border-secondary pt-space-4">{footer}</footer>
+        <footer className="mt-scale-4 border-t border-border-secondary pt-scale-4">{footer}</footer>
       )}
     </Element>
   )
@@ -40,10 +40,10 @@ export function StatCard({ label, value, metadata, ...props }: StatCardProps) {
   return (
     <Card compact {...props}>
       <p className="m-0 text-label-sm font-semibold text-text-secondary">{label}</p>
-      <p className="mt-space-2 mb-0 text-data-lg font-bold text-text-primary tabular-nums">
+      <p className="mt-scale-2 mb-0 text-data-lg font-bold text-text-primary tabular-nums">
         {value}
       </p>
-      {metadata && <div className="mt-space-2 text-body-xs text-text-secondary">{metadata}</div>}
+      {metadata && <div className="mt-scale-2 text-body-xs text-text-secondary">{metadata}</div>}
     </Card>
   )
 }

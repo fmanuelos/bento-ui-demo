@@ -16,9 +16,9 @@ the default wrapper for every dashboard region.
 3. Optional metadata or action
 
 - **Standard card:** A standard surface using `surface-primary`, a quiet border,
-  `rounded.shape-lg`, and `spacing.space-6` without a shadow.
+  `rounded.shape-lg`, and `spacing.scale-6` without a shadow.
 - **Compact card:** A standard surface using `surface-primary`, a quiet border,
-  `rounded.shape-md`, and `spacing.space-4` without a shadow.
+  `rounded.shape-md`, and `spacing.scale-4` without a shadow.
 - **Statistic card:** Emphasizes a `data-*` value before label and context.
 
 ## States

@@ -50,7 +50,7 @@ modal, and a modal remains modal if its backdrop is visually subtle.
 
 The modal backdrop uses `background-overlay`. The panel uses the `modal`
 frontmatter mapping: `surface-raised`, `text-primary`, `rounded.shape-xl`, and
-`spacing.space-6`, with `border-secondary` as its quiet edge. A non-modal dialog
+`spacing.scale-6`, with `border-secondary` as its quiet edge. A non-modal dialog
 uses floating-surface depth; a modal dialog uses modal-surface depth above its
 blocking backdrop. The `surface-raised` color role does not determine either
 elevation level. Preserve the quiet edge and tonal step even when the platform
@@ -101,7 +101,7 @@ innermost dialog outward.
 ## Responsive behavior
 
 The standard panel fills the available width up to `container-narrow` and retains
-at least `spacing.space-4` viewport clearance. Width is a useful maximum, not a
+at least `spacing.scale-4` viewport clearance. Width is a useful maximum, not a
 reason to shrink labels or create horizontal scrolling. Long content remains
 reachable through one clear vertical scrolling region.
 

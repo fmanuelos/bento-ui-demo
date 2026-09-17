@@ -77,7 +77,7 @@ export function NavigationShell({
   }, [mobileOpen])
 
   const navigation = (mobile: boolean) => (
-    <nav aria-label={navigationLabel} className="grid gap-space-1 p-space-3">
+    <nav aria-label={navigationLabel} className="grid gap-scale-1 p-scale-3">
       {items.map((item, index) => {
         const current = currentHref === item.href
         return (
@@ -91,7 +91,7 @@ export function NavigationShell({
             className={linkStyles({
               variant: 'navigation',
               className: [
-                'flex min-h-control-height-small items-center gap-space-3 rounded-shape-md px-space-3 text-label-md font-semibold',
+                'flex min-h-control-height-small items-center gap-scale-3 rounded-shape-md px-scale-3 text-label-md font-semibold',
                 current
                   ? 'border-l-4 border-navigation-sidebar-foreground-strong bg-navigation-sidebar-item-selected text-navigation-sidebar-item-selected-foreground'
                   : 'text-navigation-sidebar-foreground hover:bg-navigation-sidebar-item-hover hover:text-navigation-sidebar-foreground-strong',
@@ -126,7 +126,7 @@ export function NavigationShell({
       </SkipLink>
       <header
         inert={mobileOpen ? true : undefined}
-        className="sticky top-0 z-20 flex h-topbar-height items-center gap-space-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-padding-mobile text-text-primary sm:px-dashboard-padding-tablet lg:pr-dashboard-padding-desktop lg:pl-[calc(var(--spacing-dashboard-padding-desktop)+var(--shell-sidebar-width))]"
+        className="sticky top-0 z-20 flex h-topbar-height items-center gap-scale-3 border-b border-navigation-topbar-border bg-navigation-topbar-background px-dashboard-padding-mobile text-text-primary sm:px-dashboard-padding-tablet lg:pr-dashboard-padding-desktop lg:pl-[calc(var(--spacing-dashboard-padding-desktop)+var(--shell-sidebar-width))]"
       >
         <Button
           ref={mobileTriggerRef}
@@ -156,7 +156,7 @@ export function NavigationShell({
         inert={mobileOpen ? true : undefined}
         className="fixed inset-y-0 left-0 z-30 hidden w-(--shell-sidebar-width) flex-col bg-navigation-sidebar-background text-navigation-sidebar-foreground transition-[width] lg:flex"
       >
-        <div className="flex h-topbar-height items-center justify-between gap-space-2 border-b border-border-inverse px-space-3 text-navigation-sidebar-foreground-strong">
+        <div className="flex h-topbar-height items-center justify-between gap-scale-2 border-b border-border-inverse px-scale-3 text-navigation-sidebar-foreground-strong">
           <div className="min-w-0 overflow-hidden">{brand}</div>
           <Button
             variant="ghost"
@@ -199,7 +199,7 @@ export function NavigationShell({
             aria-label={navigationLabel}
             className="h-full w-[min(86vw,var(--spacing-sidebar-expanded))] bg-navigation-sidebar-background text-navigation-sidebar-foreground"
           >
-            <div className="flex h-topbar-height items-center justify-between border-b border-border-inverse px-space-3 text-navigation-sidebar-foreground-strong">
+            <div className="flex h-topbar-height items-center justify-between border-b border-border-inverse px-scale-3 text-navigation-sidebar-foreground-strong">
               <div>{brand}</div>
               <Button
                 variant="ghost"
@@ -232,7 +232,7 @@ export function NavigationShell({
         id={mainContentId}
         tabIndex={-1}
         inert={mobileOpen ? true : undefined}
-        className="px-dashboard-padding-mobile py-space-6 outline-none sm:px-dashboard-padding-tablet lg:ml-(--shell-sidebar-width) lg:px-dashboard-padding-desktop"
+        className="px-dashboard-padding-mobile py-scale-6 outline-none sm:px-dashboard-padding-tablet lg:ml-(--shell-sidebar-width) lg:px-dashboard-padding-desktop"
       >
         {children}
       </main>

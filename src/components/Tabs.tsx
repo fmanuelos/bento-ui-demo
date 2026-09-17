@@ -82,13 +82,13 @@ export function Tabs({
 
   return (
     <div
-      className={`${orientation === 'vertical' ? 'grid grid-cols-[auto_1fr] gap-space-6' : ''} ${className}`}
+      className={`${orientation === 'vertical' ? 'grid grid-cols-[auto_1fr] gap-scale-6' : ''} ${className}`}
     >
       <div
         role="tablist"
         aria-label={label}
         aria-orientation={orientation}
-        className={`${orientation === 'horizontal' ? 'flex overflow-x-auto border-b border-border-secondary' : 'grid content-start'} gap-space-1`}
+        className={`${orientation === 'horizontal' ? 'flex overflow-x-auto border-b border-border-secondary' : 'grid content-start'} gap-scale-1`}
       >
         {items.map((item, index) => {
           const isSelected = item.id === selected.id
@@ -108,11 +108,11 @@ export function Tabs({
               onClick={() => choose(item.id)}
               onKeyDown={(event) => handleKeyDown(event, index, item.id)}
               className={[
-                'relative min-h-control-height-small shrink-0 rounded-shape-sm px-space-3 text-label-md font-semibold transition outline-none',
+                'relative min-h-control-height-small shrink-0 rounded-shape-sm px-scale-3 text-label-md font-semibold transition outline-none',
                 'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
                 'disabled:cursor-not-allowed disabled:text-text-disabled',
                 isSelected
-                  ? 'bg-background-accent text-text-accent after:absolute after:inset-x-space-3 after:bottom-0 after:h-0.5 after:bg-current'
+                  ? 'bg-background-accent text-text-accent after:absolute after:inset-x-scale-3 after:bottom-0 after:h-0.5 after:bg-current'
                   : 'text-text-secondary hover:bg-action-ghost-background-hover hover:text-text-primary',
               ].join(' ')}
             >
@@ -126,7 +126,7 @@ export function Tabs({
         role="tabpanel"
         tabIndex={0}
         aria-labelledby={`${generatedId}-tab-${selected.id}`}
-        className="pt-space-4 outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+        className="pt-scale-4 outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
       >
         {selected.content}
       </div>

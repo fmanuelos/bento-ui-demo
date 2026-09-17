@@ -14,15 +14,15 @@ export function DocsSection({
   return (
     <section
       id={id}
-      className="min-w-0 scroll-mt-section-desktop border-t border-border-secondary pt-space-8"
+      className="min-w-0 scroll-mt-section-desktop border-t border-border-secondary pt-scale-8"
     >
-      <h2 className="mt-0 mb-space-4 text-heading-md font-semibold text-text-primary">{title}</h2>
+      <h2 className="mt-0 mb-scale-4 text-heading-md font-semibold text-text-primary">{title}</h2>
       {preview ? (
-        <div className="rounded-shape-lg border border-border-secondary bg-surface-primary p-space-4 sm:p-space-6">
+        <div className="rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4 sm:p-scale-6">
           {children}
         </div>
       ) : (
-        <div className="min-w-0 text-body-md leading-relaxed text-text-secondary [&_a]:font-semibold [&_a]:text-text-link [&_code]:rounded-shape-sm [&_code]:bg-background-tertiary [&_code]:px-space-1 [&_code]:py-space-1 [&_li+li]:mt-space-2 [&_ol]:list-decimal [&_ol]:pl-space-6 [&_ul]:list-disc [&_ul]:pl-space-6">
+        <div className="min-w-0 text-body-md leading-relaxed text-text-secondary [&_a]:font-semibold [&_a]:text-text-link [&_code]:rounded-shape-sm [&_code]:bg-background-tertiary [&_code]:px-scale-1 [&_code]:py-scale-1 [&_li+li]:mt-scale-2 [&_ol]:list-decimal [&_ol]:pl-scale-6 [&_ul]:list-disc [&_ul]:pl-scale-6">
           {children}
         </div>
       )}
@@ -41,13 +41,13 @@ export function PageIntro({
 }) {
   return (
     <header className="min-w-0">
-      <p className="mt-0 mb-space-2 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-text-accent uppercase">
+      <p className="mt-0 mb-scale-2 font-label-overline text-label-overline leading-label-overline font-semibold tracking-label-overline text-text-accent uppercase">
         {eyebrow}
       </p>
       <h1 className="m-0 text-heading-xl font-bold tracking-heading-xl text-text-primary">
         {title}
       </h1>
-      <p className="mt-space-4 mb-0 max-w-container-readable text-body-lg leading-relaxed text-text-secondary">
+      <p className="mt-scale-4 mb-0 max-w-container-readable text-body-lg leading-relaxed text-text-secondary">
         {summary}
       </p>
     </header>

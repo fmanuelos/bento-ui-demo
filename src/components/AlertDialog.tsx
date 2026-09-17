@@ -67,7 +67,7 @@ export function AlertDialog({
         </>
       }
     >
-      <div className="grid gap-space-4">
+      <div className="grid gap-scale-4">
         {children}
         {confirmationPhrase && (
           <Input
@@ -81,7 +81,7 @@ export function AlertDialog({
         {error && (
           <div
             role="alert"
-            className="rounded-shape-md border border-feedback-danger-border bg-feedback-danger-background p-space-3 text-body-sm text-feedback-danger-foreground"
+            className="rounded-shape-md border border-feedback-danger-border bg-feedback-danger-background p-scale-3 text-body-sm text-feedback-danger-foreground"
           >
             {error}
           </div>

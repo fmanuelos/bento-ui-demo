@@ -1167,7 +1167,7 @@ export const componentDocs = [
         type: "'default' | 'spacious'",
         defaultValue: "'default'",
         description:
-          'Uses space-2 or the spacious public-site space-3 separation in separated groups.',
+          'Uses scale-2 or the spacious public-site scale-3 separation in separated groups.',
       },
       {
         name: 'fullWidth',
