@@ -38,7 +38,7 @@ menu, listbox, or dialog semantics solely because it floats.
 ## Sizes and semantic token mapping
 
 Use the `dropdown` surface mapping: `surface-raised`, `text-primary`,
-`rounded.shape-md`, and `spacing.space-2`, with a `border-secondary` edge and the
+`rounded.shape-md`, and `spacing.scale-2`, with a `border-secondary` edge and the
 floating-surface depth defined in DESIGN.md. Internal sections use the spacing
 scale and appropriate text roles. Actions use their existing component mappings.
 

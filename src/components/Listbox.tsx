@@ -127,7 +127,7 @@ export function Listbox({
   }
 
   return (
-    <div className={`grid gap-space-2 ${className}`}>
+    <div className={`grid gap-scale-2 ${className}`}>
       <span id={`${listboxId}-label`} className="text-label-md font-semibold text-text-primary">
         {label}
       </span>
@@ -144,13 +144,13 @@ export function Listbox({
         aria-disabled={disabled || undefined}
         aria-describedby={error ? `${listboxId}-error` : undefined}
         onKeyDown={handleKeyDown}
-        className={`max-h-64 overflow-y-auto rounded-shape-md border bg-surface-raised p-space-2 text-body-sm text-text-primary outline-none focus-visible:border-border-focus focus-visible:ring-3 focus-visible:ring-focus-ring/20 ${error ? 'border-border-danger' : 'border-border-secondary'}`}
+        className={`max-h-64 overflow-y-auto rounded-shape-md border bg-surface-raised p-scale-2 text-body-sm text-text-primary outline-none focus-visible:border-border-focus focus-visible:ring-3 focus-visible:ring-focus-ring/20 ${error ? 'border-border-danger' : 'border-border-secondary'}`}
       >
         {loading && (
-          <p className="m-0 px-space-3 py-space-2 text-text-secondary">Loading options…</p>
+          <p className="m-0 px-scale-3 py-scale-2 text-text-secondary">Loading options…</p>
         )}
         {!loading && options.length === 0 && (
-          <p className="m-0 px-space-3 py-space-2 text-text-secondary">{emptyMessage}</p>
+          <p className="m-0 px-scale-3 py-scale-2 text-text-secondary">{emptyMessage}</p>
         )}
         {!loading &&
           options.map((option, index) => {
@@ -167,7 +167,7 @@ export function Listbox({
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => select(option)}
                 className={[
-                  'flex min-h-control-height-small items-center gap-space-3 rounded-shape-md px-space-3 py-space-2',
+                  'flex min-h-control-height-small items-center gap-scale-3 rounded-shape-md px-scale-3 py-scale-2',
                   option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer',
                   selected ? 'bg-selection-background text-selection-foreground' : '',
                   !selected && active ? 'bg-action-ghost-background-hover' : '',
@@ -181,7 +181,7 @@ export function Listbox({
                     {selected && '✓'}
                   </span>
                 )}
-                <span className="grid gap-space-1">
+                <span className="grid gap-scale-1">
                   <span className="font-semibold">{option.label}</span>
                   {option.description && (
                     <span className="text-body-xs text-text-secondary">{option.description}</span>

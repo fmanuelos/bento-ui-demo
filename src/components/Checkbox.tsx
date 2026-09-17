@@ -46,7 +46,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   return (
     <div className={className}>
       <label
-        className={`inline-flex min-h-touch-target-min items-start gap-space-3 text-body-sm ${
+        className={`inline-flex min-h-touch-target-min items-start gap-scale-3 text-body-sm ${
           disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer text-text-primary'
         }`}
         htmlFor={inputId}
@@ -87,7 +87,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
             <path d="m3 8 3 3 7-7" />
           </svg>
         </span>
-        <span className="grid gap-space-1">
+        <span className="grid gap-scale-1">
           <span id={labelId} className="font-semibold">
             {label}
           </span>

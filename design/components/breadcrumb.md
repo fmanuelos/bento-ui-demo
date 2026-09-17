@@ -35,7 +35,7 @@ items. Use one Breadcrumb per page.
 
 Use `label-md` with `text-secondary` for ancestor context, `text-link` and the
 matching `action-link-*` states for navigable destinations, `text-primary` for
-the current page, and `text-tertiary` for separators. Use `spacing.space-2`
+the current page, and `text-tertiary` for separators. Use `spacing.scale-2`
 between items and separators, the global focus roles, and a non-color distinction
 between the current item and ancestor links.
 

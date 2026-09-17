@@ -28,8 +28,8 @@ export function Progress({
     valueLabel ?? (percentage === undefined ? undefined : `${Math.round(percentage)}%`)
 
   return (
-    <div className={`grid gap-space-2 ${className}`} {...props}>
-      <div className="flex items-baseline justify-between gap-space-4">
+    <div className={`grid gap-scale-2 ${className}`} {...props}>
+      <div className="flex items-baseline justify-between gap-scale-4">
         <span className="text-label-md font-semibold text-text-primary">{label}</span>
         {showValue && visibleValue && (
           <span className="text-body-xs text-text-secondary">{visibleValue}</span>
@@ -42,7 +42,7 @@ export function Progress({
         aria-valuemax={percentage === undefined ? undefined : max}
         aria-valuenow={boundedValue}
         aria-valuetext={valueLabel}
-        className="h-space-2 overflow-hidden rounded-shape-full bg-feedback-info-background"
+        className="h-scale-2 overflow-hidden rounded-shape-full bg-feedback-info-background"
       >
         <span
           className={`block h-full rounded-shape-full bg-feedback-info-foreground motion-reduce:transition-none ${percentage === undefined ? 'w-1/3 animate-pulse motion-reduce:animate-none' : 'transition-[width] duration-200'}`}
@@ -61,7 +61,7 @@ export type SpinnerProps = HTMLAttributes<HTMLSpanElement> & {
 const spinnerSizes = {
   small: 'size-4',
   medium: 'size-5',
-  large: 'size-space-6',
+  large: 'size-scale-6',
 } as const
 
 export function Spinner({ label, size = 'medium', className = '', ...props }: SpinnerProps) {

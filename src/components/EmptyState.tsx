@@ -34,7 +34,7 @@ export function EmptyState({
   return (
     <div
       role={announce ? (variant === 'error' ? 'alert' : 'status') : undefined}
-      className={`grid justify-items-center rounded-shape-lg text-center ${size === 'spacious' ? 'gap-space-4 p-space-8 sm:p-space-12' : 'gap-space-3 p-space-4'} ${feedback} ${className}`}
+      className={`grid justify-items-center rounded-shape-lg text-center ${size === 'spacious' ? 'gap-scale-4 p-scale-8 sm:p-scale-12' : 'gap-scale-3 p-scale-4'} ${feedback} ${className}`}
       {...props}
     >
       {icon && (
@@ -45,12 +45,12 @@ export function EmptyState({
           {icon}
         </span>
       )}
-      <div className="grid max-w-container-readable gap-space-1">
+      <div className="grid max-w-container-readable gap-scale-1">
         <h3 className="m-0 text-heading-sm font-semibold text-text-primary">{title}</h3>
         <div className="text-body-sm leading-relaxed text-text-secondary">{description}</div>
       </div>
       {(primaryAction || secondaryAction) && (
-        <div className="flex flex-wrap justify-center gap-space-2">
+        <div className="flex flex-wrap justify-center gap-scale-2">
           {primaryAction}
           {secondaryAction}
         </div>

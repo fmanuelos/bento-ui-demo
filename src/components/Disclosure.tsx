@@ -66,7 +66,7 @@ export function Disclosure({
     <div className={className} {...props}>
       {Heading ? <Heading className="m-0">{trigger}</Heading> : trigger}
       <div id={`${generatedId}-panel`} hidden={!expanded} aria-busy={busy || undefined}>
-        {expanded && <div className="px-space-3 pt-space-2 pb-space-4">{children}</div>}
+        {expanded && <div className="px-scale-3 pt-scale-2 pb-scale-4">{children}</div>}
       </div>
     </div>
   )

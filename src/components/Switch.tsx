@@ -20,10 +20,10 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
   return (
     <div className={className}>
       <label
-        className="flex min-h-touch-target-min cursor-pointer items-center justify-between gap-space-4"
+        className="flex min-h-touch-target-min cursor-pointer items-center justify-between gap-scale-4"
         htmlFor={inputId}
       >
-        <span className="grid gap-space-1 text-body-sm text-text-primary">
+        <span className="grid gap-scale-1 text-body-sm text-text-primary">
           <span className="font-semibold">{label}</span>
           {description && (
             <span id={`${inputId}-description`} className="text-body-xs text-text-secondary">
@@ -51,11 +51,11 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
         />
         <span
           className={[
-            'relative h-space-6 w-control-height-medium shrink-0 rounded-shape-full border-2 border-border-strong bg-background-tertiary transition',
+            'relative h-scale-6 w-control-height-medium shrink-0 rounded-shape-full border-2 border-border-strong bg-background-tertiary transition',
             'peer-checked:border-action-primary-background-default peer-checked:bg-action-primary-background-default',
             'peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus-ring peer-focus-visible:outline-solid',
             'peer-disabled:border-border-disabled peer-disabled:bg-background-disabled',
-            'after:absolute after:top-space-0-5 after:left-space-0-5 after:size-space-4 after:rounded-shape-full after:bg-surface-primary after:transition-transform',
+            'after:absolute after:top-scale-0-5 after:left-scale-0-5 after:size-scale-4 after:rounded-shape-full after:bg-surface-primary after:transition-transform',
             'peer-checked:after:translate-x-5',
           ].join(' ')}
           aria-hidden="true"

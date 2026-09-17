@@ -88,7 +88,7 @@ export function Pagination({
     <nav
       ref={navigationRef}
       aria-label={label}
-      className={`flex flex-wrap items-center gap-space-2 ${className}`}
+      className={`flex flex-wrap items-center gap-scale-2 ${className}`}
       {...props}
     >
       <Button
@@ -105,13 +105,13 @@ export function Pagination({
         <span
           role="status"
           aria-atomic="true"
-          className="mr-space-2 text-body-sm text-text-secondary"
+          className="mr-scale-2 text-body-sm text-text-secondary"
         >
           {summary}
         </span>
       )}
       {showPageNumbers && safeCount !== undefined ? (
-        <ol className="m-0 flex list-none items-center gap-space-1 p-0">
+        <ol className="m-0 flex list-none items-center gap-scale-1 p-0">
           {pageItems(current, safeCount, siblingCount).map((item) =>
             typeof item === 'number' ? (
               <li key={item}>
@@ -129,7 +129,7 @@ export function Pagination({
                 </Button>
               </li>
             ) : (
-              <li key={item} aria-hidden="true" className="px-space-1 text-text-tertiary">
+              <li key={item} aria-hidden="true" className="px-scale-1 text-text-tertiary">
                 …
               </li>
             ),

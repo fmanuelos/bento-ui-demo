@@ -75,8 +75,8 @@ export const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(function
   const describedBy = [externalDescription, fieldDescription].filter(Boolean).join(' ') || undefined
   const resolvedStatus = error ? 'invalid' : status
   const controlHeight = size === 'small' ? 'h-control-height-small' : 'h-control-height-medium'
-  const controlPadding = size === 'small' ? 'px-space-2' : 'px-space-3'
-  const addonIconSize = size === 'small' ? '[&_svg]:size-space-4' : '[&_svg]:size-space-5'
+  const controlPadding = size === 'small' ? 'px-scale-2' : 'px-scale-3'
+  const addonIconSize = size === 'small' ? '[&_svg]:size-scale-4' : '[&_svg]:size-scale-5'
   const inputRadius = [
     leadingAddon === undefined ? 'rounded-s-shape-md' : 'rounded-s-none',
     trailingAddon === undefined && !select && !action ? 'rounded-e-shape-md' : 'rounded-e-none',
@@ -104,7 +104,7 @@ export const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(function
           aria-label={selectLabel}
           disabled={selectDisabled ?? disabled}
           className={[
-            'min-w-24 appearance-none border-0 border-s border-border-primary bg-surface-primary pr-9 pl-space-3 text-body-sm font-normal text-text-primary outline-none',
+            'min-w-24 appearance-none border-0 border-s border-border-primary bg-surface-primary pr-9 pl-scale-3 text-body-sm font-normal text-text-primary outline-none',
             'focus-visible:relative focus-visible:z-10 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
             'disabled:cursor-not-allowed disabled:bg-background-disabled disabled:text-text-disabled',
             controlHeight,
@@ -120,7 +120,7 @@ export const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(function
           ))}
         </select>
         <svg
-          className="pointer-events-none absolute top-1/2 right-space-3 size-4 -translate-y-1/2 text-text-secondary"
+          className="pointer-events-none absolute top-1/2 right-scale-3 size-4 -translate-y-1/2 text-text-secondary"
           viewBox="0 0 16 16"
           fill="none"
           stroke="currentColor"

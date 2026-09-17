@@ -300,7 +300,7 @@ export function DataGrid<T>({
                   }
                   onFocus={() => setActiveCell({ rowId: null, columnId: selectionColumnId })}
                   onKeyDown={(event) => handleKeyDown(event, 0, 0, null)}
-                  className="h-control-height-medium w-12 border-b border-table-border px-space-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
+                  className="h-control-height-medium w-12 border-b border-table-border px-scale-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
                 >
                   <span className="sr-only">Select</span>
                   <input
@@ -340,7 +340,7 @@ export function DataGrid<T>({
                     }
                     onFocus={() => setActiveCell({ rowId: null, columnId: column.id })}
                     onKeyDown={(event) => handleKeyDown(event, 0, managedColumnIndex, null, column)}
-                    className={`h-control-height-medium border-b border-table-border px-space-3 whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right' : ''}`}
+                    className={`h-control-height-medium border-b border-table-border px-scale-3 whitespace-nowrap outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right' : ''}`}
                   >
                     {canSort ? (
                       <button
@@ -354,7 +354,7 @@ export function DataGrid<T>({
                           requestSort(column)
                           focusCell(0, managedColumnIndex)
                         }}
-                        className="font-inherit inline-flex min-h-control-height-medium items-center gap-space-1 rounded-shape-sm outline-none"
+                        className="font-inherit inline-flex min-h-control-height-medium items-center gap-scale-1 rounded-shape-sm outline-none"
                       >
                         {column.header}
                         <span aria-hidden="true">
@@ -402,7 +402,7 @@ export function DataGrid<T>({
                       onFocus={() => setActiveCell({ rowId, columnId: selectionColumnId })}
                       onClick={() => focusCell(gridRowIndex, 0)}
                       onKeyDown={(event) => handleKeyDown(event, gridRowIndex, 0, rowId)}
-                      className="border-b border-table-border px-space-3 py-space-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
+                      className="border-b border-table-border px-scale-3 py-scale-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
                     >
                       <input
                         type="checkbox"
@@ -445,7 +445,7 @@ export function DataGrid<T>({
                         onKeyDown={(event) =>
                           handleKeyDown(event, gridRowIndex, managedColumnIndex, rowId, column)
                         }
-                        className={`border-b border-table-border px-space-3 py-space-3 outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right tabular-nums' : ''}`}
+                        className={`border-b border-table-border px-scale-3 py-scale-3 outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset ${column.numeric ? 'text-right tabular-nums' : ''}`}
                       >
                         {editing && column.edit
                           ? column.edit(row, () => finishEditing(gridRowIndex, managedColumnIndex))
@@ -463,7 +463,7 @@ export function DataGrid<T>({
       {availabilityMessage && (
         <div
           id={statusId}
-          className="bg-table-row-background px-space-6 py-space-6 text-center text-body-sm text-text-secondary"
+          className="bg-table-row-background px-scale-6 py-scale-6 text-center text-body-sm text-text-secondary"
           role={error && !loading ? 'alert' : 'status'}
         >
           {availabilityMessage}
@@ -471,7 +471,7 @@ export function DataGrid<T>({
       )}
 
       {pagination && (
-        <div className="border-t border-table-border bg-table-row-background px-space-3 py-space-3">
+        <div className="border-t border-table-border bg-table-row-background px-scale-3 py-scale-3">
           <Pagination
             page={pagination.page}
             pageCount={pageCount}

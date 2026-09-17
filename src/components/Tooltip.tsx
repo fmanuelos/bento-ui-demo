@@ -62,7 +62,7 @@ export function Tooltip({ content, children, placement = 'top-start', delay = 40
         placement={placement}
         dismissOnOutsideActivation={false}
         surface="inverse"
-        className="pointer-events-none max-w-64 px-space-2 py-space-1 text-label-sm"
+        className="pointer-events-none max-w-64 px-scale-2 py-scale-1 text-label-sm"
       >
         {content}
       </OverlaySurface>

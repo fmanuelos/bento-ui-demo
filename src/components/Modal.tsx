@@ -37,7 +37,7 @@ const presentationClasses = {
   'drawer-end':
     'fixed inset-y-0 right-0 m-0 h-dvh max-h-dvh w-[90vw] max-w-container-readable rounded-l-shape-xl',
   sheet:
-    'fixed inset-x-0 bottom-0 m-0 max-h-[85dvh] w-full max-w-none rounded-t-shape-xl pb-[max(var(--spacing-space-6),env(safe-area-inset-bottom))]',
+    'fixed inset-x-0 bottom-0 m-0 max-h-[85dvh] w-full max-w-none rounded-t-shape-xl pb-[max(var(--spacing-scale-6),env(safe-area-inset-bottom))]',
 } as const
 
 export function Modal({
@@ -119,9 +119,9 @@ export function Modal({
         if (closeOnEscape && !busy) onClose()
       }}
       onMouseDown={handleBackdrop}
-      className={`overflow-y-auto border border-border-secondary bg-surface-raised p-space-6 text-text-primary ${modal ? 'shadow-2xl' : 'shadow-lg'} backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${presentationClasses[presentation]} ${className}`}
+      className={`overflow-y-auto border border-border-secondary bg-surface-raised p-scale-6 text-text-primary ${modal ? 'shadow-2xl' : 'shadow-lg'} backdrop:bg-background-overlay backdrop:backdrop-blur-[2px] ${presentationClasses[presentation]} ${className}`}
     >
-      <header className="flex items-start justify-between gap-space-6">
+      <header className="flex items-start justify-between gap-scale-6">
         <div>
           <h2
             id={titleId}
@@ -132,7 +132,7 @@ export function Modal({
           {description && (
             <p
               id={descriptionId}
-              className="mt-space-2 mb-0 text-body-sm leading-relaxed text-text-secondary"
+              className="mt-scale-2 mb-0 text-body-sm leading-relaxed text-text-secondary"
             >
               {description}
             </p>
@@ -147,7 +147,7 @@ export function Modal({
             aria-label={closeLabel}
             onClick={onClose}
             disabled={busy}
-            className="-mt-space-2 -mr-space-2"
+            className="-mt-scale-2 -mr-scale-2"
           >
             <svg
               className="size-5"
@@ -162,9 +162,9 @@ export function Modal({
           </Button>
         )}
       </header>
-      <div className="mt-space-6">{children}</div>
+      <div className="mt-scale-6">{children}</div>
       {footer && (
-        <footer className="mt-space-6 flex flex-wrap justify-end gap-space-3">{footer}</footer>
+        <footer className="mt-scale-6 flex flex-wrap justify-end gap-scale-3">{footer}</footer>
       )}
     </dialog>
   )

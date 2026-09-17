@@ -83,7 +83,7 @@ export function Table<T>({
   return (
     <section className={className} aria-busy={loading || undefined}>
       {toolbar && (
-        <div className="mb-space-3 flex flex-wrap items-end justify-between gap-space-3">
+        <div className="mb-scale-3 flex flex-wrap items-end justify-between gap-scale-3">
           {toolbar}
         </div>
       )}
@@ -97,7 +97,7 @@ export function Table<T>({
                 {selectable && (
                   <th
                     scope="col"
-                    className="h-control-height-medium w-12 border-b border-table-border px-space-3"
+                    className="h-control-height-medium w-12 border-b border-table-border px-scale-3"
                   >
                     <input
                       ref={selectAllRef}
@@ -119,12 +119,12 @@ export function Table<T>({
                       key={column.id}
                       scope="col"
                       aria-sort={activeSort ? sort.direction : undefined}
-                      className={`h-control-height-medium border-b border-table-border px-space-3 whitespace-nowrap ${column.numeric ? 'text-right' : ''}`}
+                      className={`h-control-height-medium border-b border-table-border px-scale-3 whitespace-nowrap ${column.numeric ? 'text-right' : ''}`}
                     >
                       {canSort ? (
                         <button
                           type="button"
-                          className="font-inherit inline-flex min-h-control-height-medium items-center gap-space-1 rounded-shape-sm outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+                          className="font-inherit inline-flex min-h-control-height-medium items-center gap-scale-1 rounded-shape-sm outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
                           onClick={() =>
                             onSort?.(
                               column.id,
@@ -161,7 +161,7 @@ export function Table<T>({
                     className={`${isSelected ? 'bg-table-row-selected' : 'bg-table-row-background'} hover:bg-table-row-hover`}
                   >
                     {selectable && (
-                      <td className="border-b border-table-border px-space-3 py-space-3">
+                      <td className="border-b border-table-border px-scale-3 py-scale-3">
                         <input
                           type="checkbox"
                           aria-label={`Select ${getRowLabel(row)}`}
@@ -175,7 +175,7 @@ export function Table<T>({
                     {columns.map((column) => (
                       <td
                         key={column.id}
-                        className={`border-b border-table-border px-space-3 py-space-3 ${column.numeric ? 'text-right tabular-nums' : ''}`}
+                        className={`border-b border-table-border px-scale-3 py-scale-3 ${column.numeric ? 'text-right tabular-nums' : ''}`}
                       >
                         {column.cell(row)}
                       </td>
@@ -189,7 +189,7 @@ export function Table<T>({
 
         {availabilityMessage && (
           <div
-            className="bg-table-row-background px-space-6 py-space-6 text-center text-body-sm text-text-secondary"
+            className="bg-table-row-background px-scale-6 py-scale-6 text-center text-body-sm text-text-secondary"
             role={error && !loading ? 'alert' : 'status'}
           >
             {availabilityMessage}

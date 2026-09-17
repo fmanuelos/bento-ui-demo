@@ -39,8 +39,8 @@ and messages with `label-md`, `body-xs`, and the spacing scale. The field uses
 hints, and the matching semantic text and border roles for success, warning, and
 invalid states.
 
-Use `spacing.space-2` between a label and its control by default. Closely related
-label metadata may use `spacing.space-1`; descriptions or messages remain near
+Use `spacing.scale-2` between a label and its control by default. Closely related
+label metadata may use `spacing.scale-1`; descriptions or messages remain near
 the control they explain. Do not use reduced text size or tighter spacing to hide
 long labels or validation content.
 

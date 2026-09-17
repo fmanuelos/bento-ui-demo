@@ -116,7 +116,7 @@ export function Dropdown({
               close()
             }}
             className={[
-              'flex min-h-control-height-small w-full items-center gap-space-3 rounded-shape-md px-space-3 py-space-2 text-left text-body-sm outline-none',
+              'flex min-h-control-height-small w-full items-center gap-scale-3 rounded-shape-md px-scale-3 py-scale-2 text-left text-body-sm outline-none',
               'hover:bg-action-ghost-background-hover',
               'focus-visible:bg-action-ghost-background-hover focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid',
               'disabled:cursor-not-allowed disabled:text-text-disabled',

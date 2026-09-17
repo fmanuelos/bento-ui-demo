@@ -140,7 +140,7 @@ function ModalExample() {
 
 function TableExample() {
   return (
-    <div className="grid gap-space-3">
+    <div className="grid gap-scale-3">
       <Table
         caption="Customer plan report"
         columns={customerTableColumns}
@@ -195,7 +195,7 @@ function DataGridExample() {
       ),
       edit: (customer, finish) => (
         <form
-          className="flex min-w-48 items-center gap-space-2"
+          className="flex min-w-48 items-center gap-scale-2"
           onSubmit={(event) => {
             event.preventDefault()
             const status = new FormData(event.currentTarget).get('status') as Customer['status']
@@ -216,7 +216,7 @@ function DataGridExample() {
             name="status"
             defaultValue={customer.status}
             autoFocus
-            className="h-control-height-small min-w-0 flex-1 rounded-shape-md border border-border-primary bg-surface-primary px-space-2 text-body-sm text-text-primary outline-none focus-visible:border-border-focus focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+            className="h-control-height-small min-w-0 flex-1 rounded-shape-md border border-border-primary bg-surface-primary px-scale-2 text-body-sm text-text-primary outline-none focus-visible:border-border-focus focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
           >
             <option>Active</option>
             <option>Paused</option>
@@ -236,8 +236,8 @@ function DataGridExample() {
   ]
 
   return (
-    <div className="grid gap-space-3">
-      <div className="grid gap-space-3 sm:grid-cols-2">
+    <div className="grid gap-scale-3">
+      <div className="grid gap-scale-3 sm:grid-cols-2">
         <Input
           label="Search customers"
           type="search"
@@ -263,7 +263,7 @@ function DataGridExample() {
           ]}
         />
       </div>
-      <div className="flex flex-wrap items-center justify-between gap-space-3">
+      <div className="flex flex-wrap items-center justify-between gap-scale-3">
         <p className="m-0 text-body-sm text-text-secondary" aria-live="polite">
           {gridMessage ||
             `${visibleCustomers.length} of ${gridRows.length} records shown · ${selected.length} selected`}
@@ -334,7 +334,7 @@ function NavigationExample() {
         { href: '#settings', label: 'Settings', icon: <span>⚙</span> },
       ]}
       utilities={<StatusBadge variant="positive">Online</StatusBadge>}
-      className="relative !min-h-container-narrow overflow-hidden rounded-shape-lg border border-border-secondary [&>aside]:absolute [&>header]:absolute [&>header]:inset-x-0 [&>main]:pt-[calc(var(--spacing-topbar-height)+var(--spacing-space-4))]"
+      className="relative !min-h-container-narrow overflow-hidden rounded-shape-lg border border-border-secondary [&>aside]:absolute [&>header]:absolute [&>header]:inset-x-0 [&>main]:pt-[calc(var(--spacing-topbar-height)+var(--spacing-scale-4))]"
     >
       <Card heading={<h3 className="m-0 text-heading-sm">Workspace</h3>}>
         <p className="m-0 text-body-sm text-text-secondary">
@@ -437,7 +437,7 @@ function InputGroupExample() {
   const [message, setMessage] = useState('Enter an email address to try the action.')
 
   return (
-    <div className="grid max-w-container-narrow gap-space-5">
+    <div className="grid max-w-container-narrow gap-scale-5">
       <InputGroup
         label="Website"
         leadingAddon="https://"
@@ -491,7 +491,7 @@ function CheckboxExample() {
   const [summaryState, setSummaryState] = useState<'mixed' | 'checked' | 'unchecked'>('mixed')
 
   return (
-    <div className="grid max-w-container-narrow gap-space-2">
+    <div className="grid max-w-container-narrow gap-scale-2">
       <Checkbox
         label="Email notifications"
         description="Receive updates about project activity."
@@ -541,7 +541,7 @@ export const componentExamples: Record<string, ReactNode> = {
     />
   ),
   avatar: (
-    <div className="flex items-center gap-space-3">
+    <div className="flex items-center gap-scale-3">
       <Avatar name="Morgan Lee" size="large" />
       <span className="font-semibold">Morgan Lee</span>
     </div>
@@ -604,7 +604,7 @@ export const componentExamples: Record<string, ReactNode> = {
     />
   ),
   link: (
-    <div className="flex flex-wrap items-center gap-space-4">
+    <div className="flex flex-wrap items-center gap-scale-4">
       <Link href="#accessibility-guidance">Accessibility guidance</Link>
       <Link variant="standalone" href="#project-guide" icon={ArrowIcon}>
         Read the project guide
@@ -647,7 +647,7 @@ export const componentExamples: Record<string, ReactNode> = {
     />
   ),
   'back-to-top': (
-    <div className="rounded-shape-md border border-border-secondary bg-surface-primary p-space-4">
+    <div className="rounded-shape-md border border-border-secondary bg-surface-primary p-scale-4">
       <p className="m-0 text-body-sm text-text-secondary">
         The live Back-to-Top control for this page appears in the viewport as you approach the end
         of the documentation.
@@ -655,7 +655,7 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   'skip-link': (
-    <div className="grid gap-space-4">
+    <div className="grid gap-scale-4">
       <SkipLink
         targetId="skip-link-example-target"
         className="!static !translate-y-0 justify-self-start"
@@ -663,22 +663,22 @@ export const componentExamples: Record<string, ReactNode> = {
       <p
         id="skip-link-example-target"
         tabIndex={-1}
-        className="m-0 rounded-shape-md border border-border-secondary p-space-3 text-body-sm text-text-secondary outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
+        className="m-0 rounded-shape-md border border-border-secondary p-scale-3 text-body-sm text-text-secondary outline-none focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-focus-ring focus-visible:outline-solid"
       >
         Main content destination
       </p>
     </div>
   ),
   button: (
-    <div className="grid gap-space-4">
-      <div className="flex flex-wrap items-center gap-space-3">
+    <div className="grid gap-scale-4">
+      <div className="flex flex-wrap items-center gap-scale-3">
         <Button size="tiny">Tiny</Button>
         <Button size="small">Small</Button>
         <Button size="medium">Medium</Button>
         <Button size="large">Large</Button>
         <Button size="extra-large">Extra-large</Button>
       </div>
-      <div className="flex flex-wrap items-center gap-space-3">
+      <div className="flex flex-wrap items-center gap-scale-3">
         <Button size="tiny" icon={ArrowIcon}>
           Tiny
         </Button>
@@ -695,7 +695,7 @@ export const componentExamples: Record<string, ReactNode> = {
           Extra-large
         </Button>
       </div>
-      <div className="flex flex-wrap items-center gap-space-3">
+      <div className="flex flex-wrap items-center gap-scale-3">
         <Button>Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="outline">Outline</Button>
@@ -716,7 +716,7 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   input: (
-    <div className="grid max-w-container-narrow gap-space-4">
+    <div className="grid max-w-container-narrow gap-scale-4">
       <Input
         label="Project name"
         helperText="Use a name your team will recognize."
@@ -826,7 +826,7 @@ export const componentExamples: Record<string, ReactNode> = {
   table: <TableExample />,
   'data-grid': <DataGridExample />,
   'status-badge': (
-    <div className="flex flex-wrap gap-space-2">
+    <div className="flex flex-wrap gap-scale-2">
       <StatusBadge variant="positive">Active</StatusBadge>
       <StatusBadge variant="warning">At risk</StatusBadge>
       <StatusBadge variant="negative">Blocked</StatusBadge>
@@ -835,7 +835,7 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   alert: (
-    <div className="grid gap-space-3">
+    <div className="grid gap-scale-3">
       <Alert title="Changes saved" variant="success">
         Your project settings are up to date.
       </Alert>
@@ -858,7 +858,7 @@ export const componentExamples: Record<string, ReactNode> = {
   ),
   navigation: <NavigationExample />,
   card: (
-    <div className="grid gap-space-4 sm:grid-cols-2">
+    <div className="grid gap-scale-4 sm:grid-cols-2">
       <Card
         heading={<h3 className="m-0 text-heading-sm">Project brief</h3>}
         footer={<Button variant="outline">View details</Button>}

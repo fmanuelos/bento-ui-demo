@@ -57,7 +57,7 @@ function ToastItem({ toast, onDismiss }: { toast: ToastMessage; onDismiss: () =>
           <Progress
             label={toast.progressLabel ?? 'Progress'}
             value={toast.progress}
-            className="mt-space-3"
+            className="mt-scale-3"
           />
         )}
       </Alert>
@@ -81,7 +81,7 @@ export function ToastRegion({
         position === 'viewport'
           ? 'fixed right-page-padding-mobile bottom-page-padding-mobile sm:right-page-padding-tablet sm:bottom-page-padding-tablet'
           : 'absolute inset-x-page-padding-mobile bottom-page-padding-mobile sm:inset-x-auto sm:right-page-padding-tablet sm:bottom-page-padding-tablet',
-        'z-50 grid w-[min(26rem,calc(100vw-var(--spacing-page-padding-mobile)*2))] gap-space-3',
+        'z-50 grid w-[min(26rem,calc(100vw-var(--spacing-page-padding-mobile)*2))] gap-scale-3',
         className,
       ].join(' ')}
     >

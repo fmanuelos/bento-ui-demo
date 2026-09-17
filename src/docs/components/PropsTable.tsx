@@ -6,16 +6,16 @@ export function PropsTable({ props }: { props: readonly PropReference[] }) {
       <table className="w-full min-w-[44rem] border-collapse text-left text-body-sm">
         <thead className="bg-table-header-background text-label-md text-text-secondary">
           <tr>
-            <th className="h-control-height-medium border-b border-table-border px-space-3">
+            <th className="h-control-height-medium border-b border-table-border px-scale-3">
               Prop
             </th>
-            <th className="h-control-height-medium border-b border-table-border px-space-3">
+            <th className="h-control-height-medium border-b border-table-border px-scale-3">
               Type
             </th>
-            <th className="h-control-height-medium border-b border-table-border px-space-3">
+            <th className="h-control-height-medium border-b border-table-border px-scale-3">
               Default
             </th>
-            <th className="h-control-height-medium border-b border-table-border px-space-3">
+            <th className="h-control-height-medium border-b border-table-border px-scale-3">
               Description
             </th>
           </tr>
@@ -25,17 +25,17 @@ export function PropsTable({ props }: { props: readonly PropReference[] }) {
             <tr key={prop.name}>
               <th
                 scope="row"
-                className="border-b border-table-border p-space-3 font-semibold text-text-primary"
+                className="border-b border-table-border p-scale-3 font-semibold text-text-primary"
               >
                 <code>{prop.name}</code>
               </th>
-              <td className="border-b border-table-border p-space-3">
+              <td className="border-b border-table-border p-scale-3">
                 <code>{prop.type}</code>
               </td>
-              <td className="border-b border-table-border p-space-3">
+              <td className="border-b border-table-border p-scale-3">
                 <code>{prop.defaultValue ?? '—'}</code>
               </td>
-              <td className="border-b border-table-border p-space-3">{prop.description}</td>
+              <td className="border-b border-table-border p-scale-3">{prop.description}</td>
             </tr>
           ))}
         </tbody>

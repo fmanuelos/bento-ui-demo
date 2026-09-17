@@ -55,7 +55,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
     >
       <span className="relative block">
         {leadingIcon && (
-          <span className="pointer-events-none absolute inset-y-0 left-space-3 grid place-items-center text-text-secondary">
+          <span className="pointer-events-none absolute inset-y-0 left-scale-3 grid place-items-center text-text-secondary">
             {leadingIcon}
           </span>
         )}
@@ -94,7 +94,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
           ))}
         </select>
         <svg
-          className="pointer-events-none absolute top-1/2 right-space-3 size-4 -translate-y-1/2 text-text-secondary"
+          className="pointer-events-none absolute top-1/2 right-scale-3 size-4 -translate-y-1/2 text-text-secondary"
           viewBox="0 0 16 16"
           fill="none"
           stroke="currentColor"

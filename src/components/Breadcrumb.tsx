@@ -33,7 +33,7 @@ export type BreadcrumbProps = Omit<HTMLAttributes<HTMLElement>, 'children'> & {
 
 const defaultSeparator = (
   <svg
-    className="size-space-4 rtl:rotate-180"
+    className="size-scale-4 rtl:rotate-180"
     viewBox="0 0 16 16"
     fill="none"
     stroke="currentColor"
@@ -125,7 +125,7 @@ export function Breadcrumb({
     const content = (
       <>
         {item.icon && (
-          <span className="grid size-space-4 shrink-0 place-items-center" aria-hidden="true">
+          <span className="grid size-scale-4 shrink-0 place-items-center" aria-hidden="true">
             {item.icon}
           </span>
         )}
@@ -141,7 +141,7 @@ export function Breadcrumb({
           className={linkStyles({
             variant: current ? 'navigation' : 'inline',
             className: [
-              'inline-flex min-h-touch-target-min min-w-0 items-center gap-space-1 rounded-shape-sm',
+              'inline-flex min-h-touch-target-min min-w-0 items-center gap-scale-1 rounded-shape-sm',
               current ? 'font-semibold text-text-primary' : '',
             ].join(' '),
           })}
@@ -155,7 +155,7 @@ export function Breadcrumb({
       <span
         aria-current={current ? 'page' : undefined}
         className={[
-          'inline-flex min-h-touch-target-min min-w-0 items-center gap-space-1',
+          'inline-flex min-h-touch-target-min min-w-0 items-center gap-scale-1',
           current ? 'font-semibold text-text-primary' : 'text-text-secondary',
         ].join(' ')}
       >
@@ -165,7 +165,7 @@ export function Breadcrumb({
   }
 
   const trailItem = (item: BreadcrumbItem, index: number) => (
-    <li key={index} className="flex max-w-full min-w-0 items-center gap-space-2">
+    <li key={index} className="flex max-w-full min-w-0 items-center gap-scale-2">
       <span className="grid shrink-0 place-items-center text-text-tertiary" aria-hidden="true">
         {separator}
       </span>
@@ -199,10 +199,10 @@ export function Breadcrumb({
 
   return (
     <nav aria-label={label} className={className} {...props}>
-      <ol className="m-0 flex max-w-full list-none flex-wrap items-center gap-x-space-2 p-0 text-label-md">
+      <ol className="m-0 flex max-w-full list-none flex-wrap items-center gap-x-scale-2 p-0 text-label-md">
         <li className="flex max-w-full min-w-0 items-center">{itemContent(items[0], 0)}</li>
         {shouldCollapse && (
-          <li className="flex items-center gap-space-2">
+          <li className="flex items-center gap-scale-2">
             <span
               className="grid shrink-0 place-items-center text-text-tertiary"
               aria-hidden="true"
@@ -218,7 +218,7 @@ export function Breadcrumb({
                 aria-controls={popupId}
                 aria-label={getOverflowAccessibleLabel(hiddenItems.length, isExpanded)}
                 onClick={() => setExpanded(!isExpanded)}
-                className="h-auto min-h-touch-target-min px-space-2"
+                className="h-auto min-h-touch-target-min px-scale-2"
               >
                 <span aria-hidden="true">{overflowLabel}</span>
               </Button>
@@ -236,7 +236,7 @@ export function Breadcrumb({
                 onKeyDown={handlePopupKeyDown}
                 className="w-max max-w-[min(20rem,calc(100vw-1rem))] min-w-48"
               >
-                <ol className="m-0 grid list-none gap-space-1 p-0">
+                <ol className="m-0 grid list-none gap-scale-1 p-0">
                   {hiddenItems.map((item, index) => (
                     <li key={index}>
                       {item.href ? (
@@ -249,12 +249,12 @@ export function Breadcrumb({
                           className={linkStyles({
                             variant: 'inline',
                             className:
-                              'flex min-h-touch-target-min items-center gap-space-2 rounded-shape-md px-space-3 py-space-2 text-label-md hover:bg-action-ghost-background-hover',
+                              'flex min-h-touch-target-min items-center gap-scale-2 rounded-shape-md px-scale-3 py-scale-2 text-label-md hover:bg-action-ghost-background-hover',
                           })}
                         >
                           {item.icon && (
                             <span
-                              className="grid size-space-4 shrink-0 place-items-center"
+                              className="grid size-scale-4 shrink-0 place-items-center"
                               aria-hidden="true"
                             >
                               {item.icon}
@@ -263,10 +263,10 @@ export function Breadcrumb({
                           <span className="break-words">{item.label}</span>
                         </a>
                       ) : (
-                        <span className="flex items-center gap-space-2 px-space-3 py-space-2 text-label-md text-text-secondary">
+                        <span className="flex items-center gap-scale-2 px-scale-3 py-scale-2 text-label-md text-text-secondary">
                           {item.icon && (
                             <span
-                              className="grid size-space-4 shrink-0 place-items-center"
+                              className="grid size-scale-4 shrink-0 place-items-center"
                               aria-hidden="true"
                             >
                               {item.icon}

@@ -166,13 +166,13 @@ export function Combobox({
             role="listbox"
             aria-label={`${label} suggestions`}
             aria-busy={loading || undefined}
-            className="absolute z-30 mt-space-1 max-h-64 w-full overflow-y-auto rounded-shape-md border border-border-secondary bg-surface-raised p-space-2 text-body-sm text-text-primary"
+            className="absolute z-30 mt-scale-1 max-h-64 w-full overflow-y-auto rounded-shape-md border border-border-secondary bg-surface-raised p-scale-2 text-body-sm text-text-primary"
           >
             {loading && (
-              <p className="m-0 px-space-3 py-space-2 text-text-secondary">Loading suggestions…</p>
+              <p className="m-0 px-scale-3 py-scale-2 text-text-secondary">Loading suggestions…</p>
             )}
             {!loading && filtered.length === 0 && (
-              <p className="m-0 px-space-3 py-space-2 text-text-secondary">{emptyMessage}</p>
+              <p className="m-0 px-scale-3 py-scale-2 text-text-secondary">{emptyMessage}</p>
             )}
             {!loading &&
               filtered.map((option, index) => (
@@ -185,7 +185,7 @@ export function Combobox({
                   onMouseDown={(event) => event.preventDefault()}
                   onMouseMove={() => !option.disabled && setActiveIndex(index)}
                   onClick={() => commit(option)}
-                  className={`rounded-shape-md px-space-3 py-space-2 ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${activeIndex === index ? 'bg-action-ghost-background-hover' : ''} ${currentValue === option.value ? 'font-semibold text-text-accent' : ''}`}
+                  className={`rounded-shape-md px-scale-3 py-scale-2 ${option.disabled ? 'cursor-not-allowed text-text-disabled' : 'cursor-pointer'} ${activeIndex === index ? 'bg-action-ghost-background-hover' : ''} ${currentValue === option.value ? 'font-semibold text-text-accent' : ''}`}
                 >
                   {option.label}
                 </div>

@@ -28,7 +28,7 @@ multi-step explanations require a popover or dialog instead.
 
 Keep the surface compact while allowing text to wrap to a readable short line
 length. Use `surface-inverse` with `text-inverse`, `label-sm`, `rounded.shape-md`, and
-`spacing.space-2`. Use a quiet inverse boundary when needed for high-contrast
+`spacing.scale-2`. Use a quiet inverse boundary when needed for high-contrast
 separation and follow the floating-surface depth guidance. The surface occupies
 the tooltip layer defined in DESIGN.md.
 

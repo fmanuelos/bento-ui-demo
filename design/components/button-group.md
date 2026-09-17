@@ -109,11 +109,11 @@ not merge its state with adjacent actions.
 ## Semantic token mapping
 
 Contained actions inherit their colors, typography, height, padding, icons, and
-state mappings from Button. A separated group uses `spacing.space-2` as its
+state mappings from Button. A separated group uses `spacing.scale-2` as its
 default logical row and column gap. A spacious Public Site action group may use
-`spacing.space-3` when that separation supports the surrounding composition.
+`spacing.scale-3` when that separation supports the surrounding composition.
 
-A connected group uses `spacing.space-0` between actions,
+A connected group uses `spacing.scale-0` between actions,
 `rounded.shape-none` on interior corners, and `rounded.shape-md` on its logical
 outer corners. Its continuous boundary and state presentation reuse the outline
 Button's background, foreground, border, and state tokens. Adjacent borders
@@ -218,7 +218,7 @@ targets.
 
 A publishing form presents `Cancel` as an outline Button, `Save draft` as a
 secondary Button, and `Publish` as the single primary Button. The group uses the
-medium size and `spacing.space-2`. When the labels no longer fit horizontally,
+medium size and `spacing.scale-2`. When the labels no longer fit horizontally,
 the same source order stacks vertically and the actions may fill the available
 width.
 

@@ -31,7 +31,7 @@ export function SkipLink({
       onClick={moveFocusToTarget}
       className={linkStyles({
         variant: 'navigation',
-        className: `fixed start-space-3 top-space-3 z-50 -translate-y-24 rounded-shape-md bg-action-primary-background-default px-space-3 py-space-2 text-label-md font-semibold text-action-primary-foreground transition-transform focus:translate-y-0 motion-reduce:transition-none ${className}`,
+        className: `fixed start-scale-3 top-scale-3 z-50 -translate-y-24 rounded-shape-md bg-action-primary-background-default px-scale-3 py-scale-2 text-label-md font-semibold text-action-primary-foreground transition-transform focus:translate-y-0 motion-reduce:transition-none ${className}`,
       })}
       {...props}
     >

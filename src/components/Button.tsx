@@ -16,11 +16,11 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 const iconSizeClasses: Record<ButtonSize, string> = {
-  tiny: 'size-space-4',
-  small: 'size-space-4',
-  medium: 'size-space-5',
-  large: 'size-space-5',
-  'extra-large': 'size-space-6',
+  tiny: 'size-scale-4',
+  small: 'size-scale-4',
+  medium: 'size-scale-5',
+  large: 'size-scale-5',
+  'extra-large': 'size-scale-6',
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
