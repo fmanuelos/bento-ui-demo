@@ -509,9 +509,13 @@ spacing:
   sidebar-collapsed: 4.5rem # 72px
   topbar-height: 4rem # 64px
 
-  block-height-sm: 26.875rem # 430px
-  block-height-md: 32.5rem # 520px
-  block-height-lg: 40rem # 640px
+  block-height-xs: 15rem # 240px
+  block-height-sm: 20rem # 320px
+  block-height-md: 26.875rem # 430px
+  block-height-lg: 32.5rem # 520px
+  block-height-xl: 40rem # 640px
+  block-height-2xl: 50rem # 800px
+  block-height-3xl: 60rem # 960px
 
   container-narrow: 30rem # 480px
   container-readable: 45rem # 720px

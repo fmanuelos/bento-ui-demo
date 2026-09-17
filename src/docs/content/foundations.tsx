@@ -449,10 +449,10 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         title: 'Block heights',
         body: (
           <p>
-            Use <code>block-height-sm</code>, <code>block-height-md</code>, and{' '}
-            <code>block-height-lg</code> for compositions that need a shared vertical boundary.
-            Treat them as opt-in heights rather than content limits, and allow content to reflow or
-            scroll instead of clipping at increased zoom or text spacing.
+            Use the <code>block-height-xs</code> through <code>block-height-3xl</code> range for
+            compositions that need a shared vertical boundary. Treat these as opt-in heights rather
+            than content limits, and allow content to reflow or scroll instead of clipping at
+            increased zoom or text spacing.
           </p>
         ),
       },

@@ -430,9 +430,13 @@
   --spacing-sidebar-expanded: 16rem;
   --spacing-sidebar-collapsed: 4.5rem;
   --spacing-topbar-height: 4rem;
-  --spacing-block-height-sm: 26.875rem;
-  --spacing-block-height-md: 32.5rem;
-  --spacing-block-height-lg: 40rem;
+  --spacing-block-height-xs: 15rem;
+  --spacing-block-height-sm: 20rem;
+  --spacing-block-height-md: 26.875rem;
+  --spacing-block-height-lg: 32.5rem;
+  --spacing-block-height-xl: 40rem;
+  --spacing-block-height-2xl: 50rem;
+  --spacing-block-height-3xl: 60rem;
   --spacing-container-narrow: 30rem;
   --spacing-container-readable: 45rem;
   --spacing-container-content: 60rem;
