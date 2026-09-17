@@ -450,46 +450,46 @@ rounded:
 
 spacing:
   # Relative dimensions use the browser-default 16px root size as their baseline.
-  scale-0: 0rem # 0px
+  scale-0: 0rem       # 0px
   scale-0-5: 0.125rem # 2px
-  scale-1: 0.25rem # 4px
+  scale-1: 0.25rem    # 4px
   scale-1-5: 0.375rem # 6px
-  scale-2: 0.5rem # 8px
+  scale-2: 0.5rem     # 8px
   scale-2-5: 0.625rem # 10px
-  scale-3: 0.75rem # 12px
+  scale-3: 0.75rem    # 12px
   scale-3-5: 0.875rem # 14px
-  scale-4: 1rem # 16px
-  scale-5: 1.25rem # 20px
-  scale-6: 1.5rem # 24px
-  scale-7: 1.75rem # 28px
-  scale-8: 2rem # 32px
-  scale-9: 2.25rem # 36px
-  scale-10: 2.5rem # 40px
-  scale-11: 2.75rem # 44px
-  scale-12: 3rem # 48px
-  scale-14: 3.5rem # 56px
-  scale-16: 4rem # 64px
-  scale-20: 5rem # 80px
-  scale-24: 6rem # 96px
-  scale-32: 8rem # 128px
+  scale-4: 1rem       # 16px
+  scale-5: 1.25rem    # 20px
+  scale-6: 1.5rem     # 24px
+  scale-7: 1.75rem    # 28px
+  scale-8: 2rem       # 32px
+  scale-9: 2.25rem    # 36px
+  scale-10: 2.5rem    # 40px
+  scale-11: 2.75rem   # 44px
+  scale-12: 3rem      # 48px
+  scale-14: 3.5rem    # 56px
+  scale-16: 4rem      # 64px
+  scale-20: 5rem      # 80px
+  scale-24: 6rem      # 96px
+  scale-32: 8rem      # 128px
 
   # Mobile is the default range and therefore has no breakpoint token.
-  breakpoint-tablet: 40em # 640px
+  breakpoint-tablet: 40em  # 640px
   breakpoint-desktop: 64em # 1024px
-  breakpoint-wide: 80em # 1280px
+  breakpoint-wide: 80em    # 1280px
 
-  section-mobile: 3rem # 48px
-  section-tablet: 4rem # 64px
+  section-mobile: 3rem  # 48px
+  section-tablet: 4rem  # 64px
   section-desktop: 6rem # 96px
 
-  page-padding-mobile: 1rem # 16px
-  page-padding-tablet: 1.5rem # 24px
-  page-padding-desktop: 2rem # 32px
-  dashboard-padding-mobile: 1rem # 16px
+  page-padding-mobile: 1rem         # 16px
+  page-padding-tablet: 1.5rem       # 24px
+  page-padding-desktop: 2rem        # 32px
+  dashboard-padding-mobile: 1rem    # 16px
   dashboard-padding-tablet: 1.25rem # 20px
   dashboard-padding-desktop: 1.5rem # 24px
 
-  grid-gutter-mobile: 1rem # 16px
+  grid-gutter-mobile: 1rem    # 16px
   grid-gutter-tablet: 1.25rem # 20px
   grid-gutter-desktop: 1.5rem # 24px
 
@@ -497,21 +497,23 @@ spacing:
   focus-ring-width: 3px
   focus-ring-offset-width: 2px
 
-  control-height-tiny: 2rem # 32px
-  control-height-small: 2.5rem # 40px
-  control-height-medium: 2.75rem # 44px
-  control-height-large: 3rem # 48px
+  control-height-tiny: 2rem          # 32px
+  control-height-small: 2.5rem       # 40px
+  control-height-medium: 2.75rem     # 44px
+  control-height-large: 3rem         # 48px
   control-height-extra-large: 3.5rem # 56px
 
   touch-target-min: 2.75rem # 44px
 
-  sidebar-expanded: 16rem # 256px
+  sidebar-expanded: 16rem   # 256px
   sidebar-collapsed: 4.5rem # 72px
-  topbar-height: 4rem # 64px
+  topbar-height: 4rem       # 64px
 
-  container-narrow: 30rem # 480px
-  container-readable: 45rem # 720px
-  container-page: 75rem # 1200px
+  container-narrow: 30rem     # 480px
+  container-readable: 45rem   # 720px
+  container-content: 60rem    # 960px
+  container-page: 75rem       # 1200px
+  container-wide: 90rem       # 1440px
   container-dashboard: 100rem # 1600px
 
 components:
