@@ -1607,7 +1607,11 @@ equivalent control.
 
 - `container-narrow` supports authentication and focused tasks.
 - `container-readable` supports prose, guidance, and form-heavy pages.
+- `container-content` supports mixed marketing and application sections that
+  outgrow readable prose.
 - `container-page` supports general website and application content.
+- `container-wide` supports expansive public-site layouts between page and
+  dashboard widths.
 - `container-dashboard` supports data-heavy dashboards; tables and visualizations
   may exceed it when the task benefits.
 

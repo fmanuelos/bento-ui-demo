@@ -432,6 +432,8 @@
   --spacing-topbar-height: 4rem;
   --spacing-container-narrow: 30rem;
   --spacing-container-readable: 45rem;
+  --spacing-container-content: 60rem;
   --spacing-container-page: 75rem;
+  --spacing-container-wide: 90rem;
   --spacing-container-dashboard: 100rem;
 }

@@ -431,7 +431,13 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
               <code>container-readable</code> supports prose and guidance.
             </li>
             <li>
+              <code>container-content</code> supports mixed marketing and application sections.
+            </li>
+            <li>
               <code>container-page</code> supports general websites and applications.
+            </li>
+            <li>
+              <code>container-wide</code> supports expansive public-site layouts.
             </li>
             <li>
               <code>container-dashboard</code> supports dense dashboards.
