@@ -449,69 +449,70 @@ rounded:
   shape-full: 9999px
 
 spacing:
-  space-0: 0px
-  space-0-5: 2px
-  space-1: 4px
-  space-1-5: 6px
-  space-2: 8px
-  space-2-5: 10px
-  space-3: 12px
-  space-3-5: 14px
-  space-4: 16px
-  space-5: 20px
-  space-6: 24px
-  space-7: 28px
-  space-8: 32px
-  space-9: 36px
-  space-10: 40px
-  space-11: 44px
-  space-12: 48px
-  space-14: 56px
-  space-16: 64px
-  space-20: 80px
-  space-24: 96px
-  space-32: 128px
+  # Relative dimensions use the browser-default 16px root size as their baseline.
+  space-0: 0rem         # 0px
+  space-0-5: 0.125rem  # 2px
+  space-1: 0.25rem     # 4px
+  space-1-5: 0.375rem  # 6px
+  space-2: 0.5rem      # 8px
+  space-2-5: 0.625rem  # 10px
+  space-3: 0.75rem     # 12px
+  space-3-5: 0.875rem  # 14px
+  space-4: 1rem        # 16px
+  space-5: 1.25rem     # 20px
+  space-6: 1.5rem      # 24px
+  space-7: 1.75rem     # 28px
+  space-8: 2rem        # 32px
+  space-9: 2.25rem     # 36px
+  space-10: 2.5rem     # 40px
+  space-11: 2.75rem    # 44px
+  space-12: 3rem       # 48px
+  space-14: 3.5rem     # 56px
+  space-16: 4rem       # 64px
+  space-20: 5rem       # 80px
+  space-24: 6rem       # 96px
+  space-32: 8rem       # 128px
 
   # Mobile is the default range and therefore has no breakpoint token.
-  breakpoint-tablet: 640px
-  breakpoint-desktop: 1024px
-  breakpoint-wide: 1280px
+  breakpoint-tablet: 40em    # 640px
+  breakpoint-desktop: 64em   # 1024px
+  breakpoint-wide: 80em      # 1280px
 
-  section-mobile: 48px
-  section-tablet: 64px
-  section-desktop: 96px
+  section-mobile: 3rem    # 48px
+  section-tablet: 4rem    # 64px
+  section-desktop: 6rem   # 96px
 
-  page-padding-mobile: 16px
-  page-padding-tablet: 24px
-  page-padding-desktop: 32px
-  dashboard-padding-mobile: 16px
-  dashboard-padding-tablet: 20px
-  dashboard-padding-desktop: 24px
+  page-padding-mobile: 1rem          # 16px
+  page-padding-tablet: 1.5rem        # 24px
+  page-padding-desktop: 2rem         # 32px
+  dashboard-padding-mobile: 1rem     # 16px
+  dashboard-padding-tablet: 1.25rem  # 20px
+  dashboard-padding-desktop: 1.5rem  # 24px
 
-  grid-gutter-mobile: 16px
-  grid-gutter-tablet: 20px
-  grid-gutter-desktop: 24px
+  grid-gutter-mobile: 1rem      # 16px
+  grid-gutter-tablet: 1.25rem   # 20px
+  grid-gutter-desktop: 1.5rem   # 24px
 
   # Focus indicator geometry is semantic, not general-purpose spacing.
   focus-ring-width: 3px
   focus-ring-offset-width: 2px
 
-  control-height-tiny: 32px
-  control-height-small: 40px
-  control-height-medium: 44px
-  control-height-large: 48px
-  control-height-extra-large: 56px
+  control-height-tiny: 2rem               # 32px
+  control-height-small: 2.5rem            # 40px
+  control-height-medium: 2.75rem          # 44px
+  control-height-large: 3rem              # 48px
+  control-height-extra-large: 3.5rem      # 56px
 
-  touch-target-min: 44px
+  touch-target-min: 2.75rem  # 44px
 
-  sidebar-expanded: 256px
-  sidebar-collapsed: 72px
-  topbar-height: 64px
+  sidebar-expanded: 16rem    # 256px
+  sidebar-collapsed: 4.5rem  # 72px
+  topbar-height: 4rem        # 64px
 
-  container-narrow: 480px
-  container-readable: 720px
-  container-page: 1200px
-  container-dashboard: 1600px
+  container-narrow: 30rem      # 480px
+  container-readable: 45rem    # 720px
+  container-page: 75rem        # 1200px
+  container-dashboard: 100rem  # 1600px
 
 components:
   button-primary:
