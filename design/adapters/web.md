@@ -60,6 +60,26 @@ preference. Collapse nonessential transitions and smooth scrolling to effectivel
 immediate changes while retaining visible state feedback. Do not remove progress
 or status information with the animation.
 
+## Skeleton loading
+
+Treat skeleton shapes as decorative. Hide the placeholder group from the
+accessibility tree, such as with `aria-hidden="true"`, and apply
+`aria-busy="true"` to the named region whose content is unavailable. Do not give
+placeholder shapes table, row, grid, grid-cell, list-item, control, value, or
+focus semantics, and do not add them to counts or position metadata.
+
+Provide one visible or programmatic loading status when the region and initiating
+action do not already identify the pending work. Use a status live region only
+when the change needs announcement, such as after a user-initiated request; do
+not announce each skeleton shape or animation cycle. When loaded, empty,
+unavailable, or error content replaces the skeleton, remove the busy state and
+announce only the meaningful resulting change.
+
+Implement shimmer as nonessential CSS motion. Disable the animation under
+`prefers-reduced-motion: reduce` while retaining the static placeholder, busy
+state, and loading status. Under forced colors, preserve enough region structure
+to distinguish unavailable content without requiring authored highlight colors.
+
 ## Text and reflow
 
 Support text enlargement to 200%, user text-spacing overrides, and page reflow at

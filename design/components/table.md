@@ -59,10 +59,14 @@ Use `table-header-background`, `table-row-background`, `table-row-hover`,
 `table-row-selected`, and `table-border`. Focus, validation, and action states use
 their corresponding shared semantic roles.
 
-Loading follows the [`Progress contract`](progress.md). Empty and unavailable
-results follow the [`Empty state contract`](empty-state.md) inside the table
-region and are not represented as data rows. Preserve headers and usable data
-during refresh when possible.
+Loading follows the [`Progress contract`](progress.md) and
+[`Asynchronous feedback pattern`](../patterns/async-feedback.md). Predictable
+initial content may use skeleton rows, but those placeholders are not data rows,
+do not participate in table semantics, and cannot be selected, sorted, counted,
+or paginated. Empty and unavailable results follow the
+[`Empty state contract`](empty-state.md) inside the table region and are not
+represented as data rows. Preserve headers and usable data during refresh rather
+than returning the table to skeleton rows.
 
 ## Behavior
 

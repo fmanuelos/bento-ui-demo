@@ -51,8 +51,8 @@ compact identity reference into profile photography or a decorative hero image.
 
 Support unresolved, image loading, image available, initials fallback, generic
 fallback, and image unavailable states. Loading retains a stable fallback rather
-than replacing identity with an unnamed spinner. A delayed or failed image does
-not repeatedly alternate between image and fallback.
+than replacing identity with an unnamed spinner or skeleton placeholder. A
+delayed or failed image does not repeatedly alternate between image and fallback.
 
 Hover, focus, active, selected, disabled, and busy are not Avatar states. They
 belong to an interactive wrapper or surrounding control. A restricted image uses

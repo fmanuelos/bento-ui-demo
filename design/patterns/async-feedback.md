@@ -43,6 +43,11 @@ durably saved, or conflicted. Apply
 unavailable, retry, verification, and recovery actions retain the correct
 priority.
 
+A skeleton placeholder is an optional presentation of an initial loading state,
+not a separate semantic component or a progress indicator. The affected region,
+operation, and eventual content retain their contracts while the skeleton is
+visible.
+
 ## States and sequence
 
 An operation begins from an idle or usable state, becomes pending, and resolves
@@ -70,6 +75,37 @@ use narrower state names while preserving this sequence.
   reconciliation path without silently discarding later work.
 - Partial success identifies what completed, what did not, and whether retrying
   the remainder is safe.
+
+### Skeleton placeholders
+
+Use a skeleton only for an initial load whose eventual structure is predictable
+and whose delay is perceptible enough that preserving the region's shape helps
+people understand what is unavailable. A skeleton approximates content blocks
+and layout; it never represents actual names, values, metrics, records, controls,
+or completion. Do not expose skeleton rows as selectable items or include them in
+result counts, pagination, sorting, or collection position.
+
+Do not replace safe, usable content with a skeleton during background refresh.
+Retain that content and add proportionate refresh feedback instead. Use a compact
+spinner or progress indicator for a pending control or measurable operation. Use
+the applicable empty, unavailable, or error state after a request resolves
+without content; do not leave a skeleton in place as a generic fallback.
+
+Independent regions may resolve separately. Replace each skeleton with a
+coherent loaded, empty, unavailable, or error region without briefly exposing
+invented content or changing unrelated state. Approximate the final responsive
+structure closely enough to limit disruptive layout movement, but do not encode
+language-specific word lengths, fixed line counts, or left-to-right meaning in
+the placeholder geometry.
+
+Skeleton shapes use existing neutral surface roles such as `surface-sunken` or
+`surface-secondary` when those roles remain distinguishable in every supported
+theme. `text-placeholder` remains reserved for placeholder text, and brand or
+feedback colors do not decorate a neutral loading state. Add dedicated skeleton
+base and highlight roles only when validation shows that existing neutral roles
+cannot preserve the required theme or contrast behavior. A shimmer is optional,
+does not imply progress or direction, and is removed when reduced motion is
+requested.
 
 ## Persistence, interruption, and recovery
 
@@ -125,6 +161,12 @@ effectively immediate under a reduced-motion preference. Status, boundaries, and
 recovery controls remain distinguishable in high-contrast presentation and
 operable with keyboard, touch, and pointer input.
 
+Skeleton shapes are decorative and do not become focus targets, collection
+items, controls, names, values, or repeated announcements. The affected region
+exposes its busy state, and visible or programmatic status identifies the pending
+work when surrounding context is insufficient. Announce the meaningful state
+change once rather than announcing each placeholder or animation cycle.
+
 ## Validation scenarios
 
 Apply the shared matrix and the asynchronous conditions in the
@@ -134,4 +176,8 @@ Apply the shared matrix and the asynchronous conditions in the
 [`Destructive workflow`](../VALIDATION.md#destructive-workflow) scenarios. Include
 out-of-order responses, refresh with usable content, cancellation, timeout,
 offline transition, optimistic rollback, unknown outcome, retry, and partial
-success where applicable.
+success where applicable. When skeletons are used, also test fast completion,
+initial loading, independent region resolution, empty and error outcomes, 200%
+text, narrow layouts, right-to-left presentation, dark and forced-color themes,
+reduced motion, stable focus, and screen-reader output that announces the pending
+region without exposing decorative shapes.

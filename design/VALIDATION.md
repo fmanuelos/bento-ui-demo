@@ -103,9 +103,17 @@ important action, and work needing attention even when some data is unavailable.
   the affected content.
 - Do not present placeholders as real metrics or selectable rows, and do not use
   event feedback as persistent status.
+- When initial loading uses skeletons, verify that they approximate only the
+  unavailable structure, stay outside counts and interaction semantics, resolve
+  independently by region, and transition directly to loaded, empty,
+  unavailable, or error content. Background refresh must preserve usable data.
 - Test unavailable, stale, and oversized metrics; translated labels; multiple
   writing systems; zero and many records; 200% zoom; and theme changes during
   refresh.
+- Test fast completion without distracting placeholder flicker, screen-reader
+  output without repeated shape announcements, and skeleton presentation in
+  dark mode, forced colors, reduced motion, narrow layouts, and right-to-left
+  direction.
 - Preserve scroll, focus, selection, navigation, and freshness state when layout
   or theme changes.
 
@@ -138,6 +146,9 @@ the applicable component contracts.
   pending operation snapshot.
 - Ignore stale asynchronous responses rather than allowing them to reset a newer
   query, focus, selection, or scroll position.
+- If initial results use skeleton rows, verify that the placeholders are not
+  records, managed cells, selectable targets, result counts, or pagination
+  positions. Refreshing existing results must retain the usable rows.
 - Preserve the applied query through no results, partial results, failure,
   offline state, retry, direct entry, and supported Back and Forward navigation.
 - Test 0, 1, 25, 4,286, and unknown totals; duplicate names; 120-character names;

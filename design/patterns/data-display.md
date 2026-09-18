@@ -47,6 +47,14 @@ permission denied, no data yet, no results, filtered empty, failed, and outcome
 unknown states as applicable. Do not present placeholders as real metrics or
 selectable rows.
 
+An initial load may use the skeleton presentation defined by
+[asynchronous feedback](async-feedback.md) when the final data structure is
+predictable. Skeleton values and rows are not records: they do not contribute to
+counts, sorting, pagination, selection, active-item state, or collection
+position. Keep stable headings, labels, filters, and other safe controls visible
+when possible. Show empty, unavailable, or failed content only after the request
+resolves to that state.
+
 - Headers, labels, units, source, scope, and freshness remain associated with the
   displayed values.
 - Sorting, filtering, pagination, and selection expose their current state and
@@ -75,6 +83,11 @@ page, selection, expanded detail, focus, and useful scroll context survive
 background updates and browser navigation according to the task's documented
 state model.
 
+Background refresh retains current or explicitly stale data instead of returning
+the region to skeleton placeholders. Loading one region does not block successful
+regions, and independently loaded regions may resolve without resetting shared
+query, selection, focus, or scroll state.
+
 When a selected or focused record disappears, continue from the nearest logical
 record or collection control and explain a material context change once. If some
 regions fail, keep successful regions usable and place recovery beside the
@@ -94,6 +107,11 @@ decisions.
 Names, numbers, dates, times, units, and currency use the active locale. Columns,
 legends, labels, and actions accommodate expansion and right-to-left presentation
 without reversing chronological, quantitative, or domain-specific meaning.
+
+Skeleton geometry follows the responsive structure rather than imitating exact
+localized text lengths or fabricating plausible values. It may simplify or
+reflow with the eventual presentation as long as it does not create false data
+relationships.
 
 ## Responsive behavior
 
@@ -117,6 +135,10 @@ detail, sorting, filtering, selection, and recovery. Do not require hover to
 discover an action. High-contrast presentation preserves boundaries, focus, and
 non-color distinctions; reduced motion does not remove change or refresh status.
 
+Decorative skeleton shapes do not participate in table, grid, list, chart, or
+other collection semantics and do not enter the focus or managed-navigation
+model. Expose the affected region's pending state without announcing each shape.
+
 Announce user-initiated result-count or context changes once without reading the
 entire collection again. Routine background refresh remains quiet unless it
 changes the current task or invalidates a choice.
@@ -129,4 +151,7 @@ Apply the shared matrix and the
 25, 4,286, and unknown totals; duplicate and 120-character names; missing and
 unavailable values; multiple locales; out-of-order refreshes; selection across
 filtering and pagination; partial bulk results; 200% text; and a six-column table
-at narrow widths.
+at narrow widths. When an initial skeleton is used, verify that it does not
+produce record counts, selectable targets, managed cells, or fake values and
+that empty, error, partial, and background-refresh states replace or avoid it
+correctly.

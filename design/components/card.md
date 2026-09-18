@@ -29,6 +29,11 @@ remains visible independently of any nested control. Loading, empty, and error
 states follow the applicable data-display pattern and
 [`empty-state contract`](empty-state.md).
 
+Predictable initial card content may use the skeleton presentation defined by
+the [`Asynchronous feedback pattern`](../patterns/async-feedback.md). A refresh
+preserves usable card content instead of returning the card to a skeleton, and a
+skeleton never creates a temporary whole-card action or nested control.
+
 ## Behavior
 
 A whole-card action has one destination or action. It must not conflict with
