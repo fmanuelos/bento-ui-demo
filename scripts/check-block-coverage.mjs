@@ -4,6 +4,8 @@ import { dirname, join, resolve } from 'node:path'
 const root = process.cwd()
 const blockDirectory = join(root, 'design/blocks')
 const inventoryPath = join(blockDirectory, 'README.md')
+const docsSource = readFileSync(join(root, 'src/docs/content/library.tsx'), 'utf8')
+const exportsSource = readFileSync(join(root, 'src/components/index.ts'), 'utf8')
 const acceptedStatuses = ['Proposed', 'Draft', 'Complete', 'Deprecated']
 const acceptedClassifications = ['Shared', 'Public Site', 'Application Workspace']
 const requiredHeadings = [
@@ -28,6 +30,21 @@ const inventorySource = readFileSync(inventoryPath, 'utf8')
 const contracts = readdirSync(blockDirectory)
   .filter((file) => file.endsWith('.md') && file !== 'README.md')
   .sort()
+const implementedBlocks = new Map([
+  [
+    'application-navigation.md',
+    { slug: 'application-navigation', implementation: 'NavigationShell' },
+  ],
+  ['empty-state.md', { slug: 'empty-state', implementation: 'EmptyState' }],
+  [
+    'public-site-navigation.md',
+    { slug: 'public-site-navigation', implementation: 'SiteNavigation' },
+  ],
+])
+const blockSlugSource = docsSource.match(/export const blockSlugs = \[([^\]]+)\]/s)?.[1] ?? ''
+const documentedBlockSlugs = new Set(
+  [...blockSlugSource.matchAll(/'([^']+)'/g)].map((match) => match[1]),
+)
 
 function section(source, heading) {
   const marker = `## ${heading}`
@@ -129,6 +146,29 @@ function checkLocalLinks(file, source) {
 
 const entries = inventoryEntries(inventorySource)
 const entriesByFile = new Map()
+
+for (const [contract, { slug, implementation }] of implementedBlocks) {
+  if (!contracts.includes(contract)) {
+    failures.push(`${contract} is mapped as an implemented block but has no block contract`)
+  }
+  if (!documentedBlockSlugs.has(slug)) {
+    failures.push(`${contract} has no block documentation entry for “${slug}”`)
+  }
+
+  const implementationPath = join(root, 'src/components', `${implementation}.tsx`)
+  if (!existsSync(implementationPath)) {
+    failures.push(`${contract} is missing ${implementationPath}`)
+  }
+  if (!exportsSource.includes(`'./${implementation}'`)) {
+    failures.push(`${implementation}.tsx is not exported from src/components/index.ts`)
+  }
+}
+
+for (const slug of documentedBlockSlugs) {
+  if (![...implementedBlocks.values()].some((entry) => entry.slug === slug)) {
+    failures.push(`block documentation entry “${slug}” has no implementation mapping`)
+  }
+}
 
 for (const entry of entries) {
   if (entriesByFile.has(entry.file)) {

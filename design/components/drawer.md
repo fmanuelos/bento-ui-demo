@@ -36,7 +36,8 @@ non-modal dialog requirements only when they are focused dialog tasks.
   clarity.
 
 Temporary navigation may use a modal drawer but continues to follow the
-[`Navigation contract`](navigation.md) for destinations and current location.
+[`Application Navigation block`](../blocks/application-navigation.md) for destinations and current
+location.
 Temporary dataset filters may use a drawer or sheet but continue to follow the
 [`Search, filtering, and results pattern`](../patterns/search-filtering-and-results.md)
 for draft criteria, application, cancellation, and query persistence.

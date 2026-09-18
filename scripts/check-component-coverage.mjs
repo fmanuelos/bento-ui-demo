@@ -3,7 +3,7 @@ import { join } from 'node:path'
 
 const root = process.cwd()
 const contractDirectory = join(root, 'design/components')
-const docsSource = readFileSync(join(root, 'src/docs/content/components.tsx'), 'utf8')
+const docsSource = readFileSync(join(root, 'src/docs/content/library.tsx'), 'utf8')
 const exportsSource = readFileSync(join(root, 'src/components/index.ts'), 'utf8')
 
 const slugOverrides = new Map([['radio', 'radio-group']])
@@ -60,7 +60,13 @@ const contracts = readdirSync(contractDirectory)
   .filter((file) => file.endsWith('.md') && file !== 'README.md')
   .map((file) => file.replace(/\.md$/, ''))
   .sort()
-const documented = new Set([...docsSource.matchAll(/slug: '([^']+)'/g)].map((match) => match[1]))
+const blockSlugSource = docsSource.match(/export const blockSlugs = \[([^\]]+)\]/s)?.[1] ?? ''
+const blockSlugs = new Set([...blockSlugSource.matchAll(/'([^']+)'/g)].map((match) => match[1]))
+const documented = new Set(
+  [...docsSource.matchAll(/slug: '([^']+)'/g)]
+    .map((match) => match[1])
+    .filter((slug) => !blockSlugs.has(slug)),
+)
 const failures = []
 
 for (const contract of contracts) {

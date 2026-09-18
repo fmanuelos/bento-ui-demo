@@ -21,7 +21,7 @@ Do not use event feedback as persistent entity or workflow status; use the
 [`Status badge`](../components/status-badge.md) contract. Keep field validation
 with the affected control through the
 [`Form field`](../components/form-field.md) contract. A static absence of content
-uses the [`Empty state`](../components/empty-state.md) contract even when an
+uses the [`Empty state`](../blocks/empty-state.md) contract even when an
 asynchronous operation revealed that condition.
 
 Do not introduce a busy state for work that completes without a perceptible
@@ -32,7 +32,7 @@ result and any failure still follow this pattern.
 
 [`Progress`](../components/progress.md), [`Alert`](../components/alert.md),
 [`Toast and notification region`](../components/toast.md),
-[`Empty state`](../components/empty-state.md), and
+[`Empty state`](../blocks/empty-state.md), and
 [`Button`](../components/button.md) provide bounded presentation and interaction
 behavior. Forms, data display, and destructive actions apply this pattern to
 their task-specific operations and recovery risks. Apply

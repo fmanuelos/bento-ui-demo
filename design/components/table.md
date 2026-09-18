@@ -64,7 +64,7 @@ Loading follows the [`Progress contract`](progress.md) and
 initial content may use skeleton rows, but those placeholders are not data rows,
 do not participate in table semantics, and cannot be selected, sorted, counted,
 or paginated. Empty and unavailable results follow the
-[`Empty state contract`](empty-state.md) inside the table region and are not
+[`Empty state contract`](../blocks/empty-state.md) inside the table region and are not
 represented as data rows. Preserve headers and usable data during refresh rather
 than returning the table to skeleton rows.
 

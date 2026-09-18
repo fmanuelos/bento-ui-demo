@@ -38,7 +38,7 @@ Select, Checkbox, Radio group, Combobox, and other form controls may provide
 individual criteria. Button and Button Group may apply, reset, or disclose them.
 [`Drawer and sheet`](../components/drawer.md) may contain temporary filters.
 
-[`Empty state`](../components/empty-state.md),
+[`Empty state`](../blocks/empty-state.md),
 [`Pagination`](../components/pagination.md),
 [`Data table`](../components/table.md), and
 [`Data grid`](../components/data-grid.md) present result conditions and data while

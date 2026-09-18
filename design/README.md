@@ -28,12 +28,15 @@ Both files are generated artifacts. Never edit them directly.
 pnpm design:lint
 pnpm migration:check
 pnpm blocks:check
+pnpm components:check
 pnpm design:build
 ```
 
 The repository pins `@google/design.md` 0.4.0. `design:lint` runs that local CLI
 and reports its findings directly. `blocks:check` verifies block inventory
-coverage, maturity, required structure, local links, and validation references.
+coverage, maturity, required structure, local links, validation references, and
+implemented block documentation. `components:check` verifies that every
+component contract has a corresponding documentation entry and implementation.
 `migration:check` verifies the canonical architecture vocabulary, required
 contracts and documentation routes, workspace-token exports and runtime use, and
 the absence of removed names outside the historical migration record.

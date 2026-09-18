@@ -40,8 +40,8 @@ small set of related independent actions. [`Link`](../components/link.md) retain
 destination semantics even when it consumes a Button presentation.
 
 [`Input Group`](../components/input-group.md),
-[`Empty state`](../components/empty-state.md),
-[`Public-site navigation`](../components/site-navigation.md),
+[`Empty state`](../blocks/empty-state.md),
+[`Public-site navigation`](../blocks/public-site-navigation.md),
 [`Dialog and modal`](../components/modal.md), and
 [`Alert dialog`](../components/alert-dialog.md) provide bounded regions in which
 actions may participate. This pattern owns the priority relationships among

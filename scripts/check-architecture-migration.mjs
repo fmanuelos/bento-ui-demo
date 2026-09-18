@@ -84,6 +84,7 @@ const documentationRoutes = [
   ['/docs/experience-modes', 'ExperienceModesPage'],
   ['/docs/templates', 'TemplatesPage'],
   ['/docs/product-domains', 'ProductDomainsPage'],
+  ['/docs/blocks', 'BlockIndexPage'],
 ]
 
 for (const [route, page] of documentationRoutes) {

@@ -41,7 +41,7 @@ restoration policy. Selection commits one value; free-form values are accepted
 only when the variant explicitly allows them.
 Loading presentation follows the [`progress-indicator contract`](progress.md).
 No-results, unavailable, and failed results follow the compact
-[`empty-state contract`](empty-state.md) without becoming selectable options.
+[`empty-state contract`](../blocks/empty-state.md) without becoming selectable options.
 
 ## Responsive behavior
 

@@ -28,9 +28,9 @@ identity, or site-wide locale and preference controls at the end of pages.
 
 Do not use a Site Footer as the primary way to discover essential task
 navigation, as an unbounded sitemap, or as a dumping ground for secondary
-actions. Use [`Site Navigation`](../components/site-navigation.md) for primary
-public navigation and the Navigation Shell for authenticated application
-navigation.
+actions. Use [`Public-site Navigation`](public-site-navigation.md) for primary
+public navigation and [`Application Navigation`](application-navigation.md) for
+authenticated application navigation.
 
 Keep page-specific related content, form submission, status, and recovery near
 the content or operation they affect. A promotional decision region belongs in

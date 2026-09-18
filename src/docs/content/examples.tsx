@@ -628,7 +628,7 @@ export const componentExamples: Record<string, ReactNode> = {
   ),
   toast: <ToastExample />,
   drawer: <DrawerExample />,
-  'site-navigation': (
+  'public-site-navigation': (
     <SiteNavigation
       brand="Bento"
       brandHref="#home"
@@ -856,7 +856,7 @@ export const componentExamples: Record<string, ReactNode> = {
       ]}
     />
   ),
-  navigation: <NavigationExample />,
+  'application-navigation': <NavigationExample />,
   card: (
     <div className="grid gap-scale-4 sm:grid-cols-2">
       <Card

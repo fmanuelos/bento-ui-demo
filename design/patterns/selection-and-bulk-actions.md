@@ -48,7 +48,7 @@ actions. [`Alert dialog`](../components/alert-dialog.md) may confirm a
 consequential operation. [`Progress`](../components/progress.md),
 [`Alert`](../components/alert.md),
 [`Toast and notification region`](../components/toast.md), and
-[`Empty state`](../components/empty-state.md) may communicate operation status
+[`Empty state`](../blocks/empty-state.md) may communicate operation status
 and outcomes through their component contracts.
 
 Apply [search, filtering, and results](search-filtering-and-results.md) to the

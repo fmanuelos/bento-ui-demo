@@ -1,4 +1,4 @@
-import { componentDocs } from './content/components'
+import { blockDocs, componentDocs } from './content/library'
 import { foundationDocs } from './content/foundations'
 
 export type DocsNavigationItem = {
@@ -28,6 +28,15 @@ export const componentNavigation: readonly DocsNavigationItem[] = [...componentD
     slug: component.slug,
     path: `/docs/components/${component.slug}`,
     description: component.summary,
+  }))
+
+export const blockNavigation: readonly DocsNavigationItem[] = [...blockDocs]
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .map((block) => ({
+    title: block.title,
+    slug: block.slug,
+    path: `/docs/blocks/${block.slug}`,
+    description: block.summary,
   }))
 
 export const docsNavigation: readonly DocsNavigationSection[] = [
@@ -76,6 +85,17 @@ export const docsNavigation: readonly DocsNavigationSection[] = [
         description: 'Browse the complete component library.',
       },
       ...componentNavigation,
+    ],
+  },
+  {
+    title: 'Blocks',
+    items: [
+      {
+        title: 'Block index',
+        path: '/docs/blocks',
+        description: 'Browse reusable component and content arrangements.',
+      },
+      ...blockNavigation,
     ],
   },
 ]

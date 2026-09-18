@@ -1,20 +1,20 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { linkStyles } from '../../components'
-import { blockNavigation, componentNavigation } from '../navigation'
 import { CodeBlock } from '../components/CodeBlock'
 import { DocsBackToTop } from '../components/DocsBackToTop'
 import { DocsSection, PageIntro } from '../components/DocsSection'
 import { PropsTable } from '../components/PropsTable'
-import { componentDocsBySlug } from '../content/library'
+import { blockDocsBySlug } from '../content/library'
+import { blockNavigation, componentNavigation } from '../navigation'
 
-export function ComponentPage() {
+export function BlockPage() {
   const { slug } = useParams()
-  const documentation = slug ? componentDocsBySlug.get(slug) : undefined
+  const documentation = slug ? blockDocsBySlug.get(slug) : undefined
   if (!documentation) return <Navigate to="/docs/not-found" replace />
 
   return (
     <>
-      <PageIntro eyebrow="Component" title={documentation.title} summary={documentation.summary} />
+      <PageIntro eyebrow="Block" title={documentation.title} summary={documentation.summary} />
       <DocsSection id="purpose" title="Purpose and recommended use">
         <ul>
           {documentation.useCases.map((item) => (

@@ -27,7 +27,7 @@ A static card has no hover state. An interactive card needs a single clear actio
 visible hover and focus, and the platform semantic that matches its action. Focus
 remains visible independently of any nested control. Loading, empty, and error
 states follow the applicable data-display pattern and
-[`empty-state contract`](empty-state.md).
+[`empty-state contract`](../blocks/empty-state.md).
 
 Predictable initial card content may use the skeleton presentation defined by
 the [`Asynchronous feedback pattern`](../patterns/async-feedback.md). A refresh

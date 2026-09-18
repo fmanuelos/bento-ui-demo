@@ -86,7 +86,7 @@ Loading follows the [`Progress contract`](progress.md) and
 [`Asynchronous feedback pattern`](../patterns/async-feedback.md). Predictable
 initial content may use skeleton rows, but those placeholders remain outside the
 grid semantics, dimensions, selection, active-cell state, and managed navigation.
-Empty and unavailable results follow the [`Empty state contract`](empty-state.md)
+Empty and unavailable results follow the [`Empty state contract`](../blocks/empty-state.md)
 without joining the managed grid navigation. A refresh preserves usable rows
 instead of returning the grid to skeleton placeholders.
 

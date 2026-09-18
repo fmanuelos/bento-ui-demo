@@ -85,7 +85,8 @@ export function DocsLayout() {
                 end={
                   item.path === '/docs' ||
                   item.path === '/docs/foundations' ||
-                  item.path === '/docs/components'
+                  item.path === '/docs/components' ||
+                  item.path === '/docs/blocks'
                 }
                 onClick={closeMobile}
                 className={({ isActive }) =>

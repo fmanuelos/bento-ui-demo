@@ -35,7 +35,7 @@ selection follows the chosen single- or multi-selection model. Type-ahead is
 available for longer lists. Reordering or filtering preserves valid selections.
 Loading presentation follows the [`progress-indicator contract`](progress.md).
 Empty and unavailable content follows the compact
-[`empty-state contract`](empty-state.md) without becoming an option.
+[`empty-state contract`](../blocks/empty-state.md) without becoming an option.
 
 ## Responsive behavior
 

@@ -45,7 +45,7 @@ non-critical save but does not own persistent continuity state.
 [`Dialog and modal`](../components/modal.md),
 [`Alert dialog`](../components/alert-dialog.md), and
 [`Drawer and sheet`](../components/drawer.md) may contain editing or an explicit
-leave decision. The [`Navigation shell`](../components/navigation.md) provides
+leave decision. The [`Application Navigation block`](../blocks/application-navigation.md) provides
 destinations but does not decide whether work can be abandoned.
 
 Apply [forms and validation](forms-and-validation.md) to entered values and

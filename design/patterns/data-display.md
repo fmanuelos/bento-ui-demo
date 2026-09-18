@@ -28,7 +28,7 @@ align in rows and columns.
 [`Data table`](../components/table.md),
 [`Data grid`](../components/data-grid.md), [`Card`](../components/card.md),
 [`Pagination`](../components/pagination.md),
-[`Empty state`](../components/empty-state.md), and
+[`Empty state`](../blocks/empty-state.md), and
 [`Status badge`](../components/status-badge.md) retain their bounded contracts.
 Filters and row actions use their appropriate form and action components.
 

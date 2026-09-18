@@ -72,7 +72,7 @@ becoming a different variant.
 Use [`Card`](../components/card.md) with its statistic-card presentation for each
 measure. Use [`Status badge`](../components/status-badge.md) only for persistent
 operational state and [`Alert`](../components/alert.md) for proportionate group
-feedback. Use [`Empty state`](../components/empty-state.md) only after absence,
+feedback. Use [`Empty state`](empty-state.md) only after absence,
 permissions, offline state, or failure has been distinguished from loading.
 
 Actions follow [`Button`](../components/button.md) or

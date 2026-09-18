@@ -159,11 +159,11 @@ losing task context.
 
 ## Participating components and related patterns
 
-Common dependencies include Navigation Shell, Breadcrumb, Tabs, Button and
-Button Group, Form controls, Card, Data Table, Data Grid, Pagination, Status
-Badge, Alert, Progress, Empty State, Dialog, Drawer, and Popover. Common blocks
-include Page Header, Section Header, Metric Overview, Form Section, and Results
-Toolbar.
+Common component dependencies include Breadcrumb, Tabs, Button and Button Group,
+Form controls, Card, Data Table, Data Grid, Pagination, Status Badge, Alert,
+Progress, Dialog, Drawer, and Popover. Common blocks include Application
+Navigation, Empty State, Page Header, Section Header, Metric Overview, Form
+Section, and Results Toolbar.
 
 Apply Navigation shell, Data display, Search filtering and results, Selection and
 bulk actions, Forms and validation, Task continuity and unsaved work,

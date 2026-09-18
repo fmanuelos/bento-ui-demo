@@ -95,11 +95,11 @@ TypeScript, and the production build.
 On September 18, 2026, both commands passed against the current working tree:
 
 - `pnpm migration:check` verified three canonical modes, seven product domains,
-  four renamed layout tokens, and four architecture documentation routes. It
+  four renamed layout tokens, and five architecture documentation routes. It
   found no removed identifier or deprecated general Dashboard category outside
   this historical record.
-- `pnpm check` passed formatting, migration verification, 9-of-9 block coverage,
-  40-of-40 component coverage, focus-style checks, ESLint, TypeScript, and the
+- `pnpm check` passed formatting, migration verification, 12-of-12 block coverage,
+  37-of-37 component coverage, focus-style checks, ESLint, TypeScript, and the
   production build. DESIGN.md lint reported 0 errors, 129 warnings, and 1
   informational summary.
 

@@ -1,5 +1,5 @@
 import { componentExamples } from './examples'
-import { type ComponentDocumentation, type PropReference } from './types'
+import { type LibraryDocumentation, type PropReference } from './types'
 
 const classNameProp: PropReference = {
   name: 'className',
@@ -7,14 +7,12 @@ const classNameProp: PropReference = {
   description: 'Adds styling at the component boundary without replacing semantic defaults.',
 }
 
-const createDoc = (
-  documentation: Omit<ComponentDocumentation, 'example'>,
-): ComponentDocumentation => ({
+const createDoc = (documentation: Omit<LibraryDocumentation, 'example'>): LibraryDocumentation => ({
   ...documentation,
   example: componentExamples[documentation.slug],
 })
 
-export const componentDocs = [
+const allDocumentation = [
   createDoc({
     slug: 'form-field',
     title: 'Form field',
@@ -461,7 +459,7 @@ export const componentDocs = [
       'Do not move focus simply because content appeared.',
       'Do not collapse inline content on outside activation.',
     ],
-    related: ['accordion', 'site-navigation', 'popover'],
+    related: ['accordion', 'public-site-navigation', 'popover'],
   }),
   createDoc({
     slug: 'accordion',
@@ -583,7 +581,7 @@ export const componentDocs = [
       'Do not simulate a link with a button, role, or click handler on a generic element.',
       'Do not create a disabled link; omit it or render explanatory text.',
     ],
-    related: ['button', 'breadcrumb', 'skip-link', 'back-to-top', 'site-navigation'],
+    related: ['button', 'breadcrumb', 'skip-link', 'back-to-top', 'public-site-navigation'],
   }),
   createDoc({
     slug: 'breadcrumb',
@@ -673,7 +671,7 @@ export const componentDocs = [
       'Do not use Breadcrumb as the only primary navigation.',
       'Do not use menu or menuitem semantics for omitted ancestor links.',
     ],
-    related: ['site-navigation', 'navigation', 'popover', 'dropdown'],
+    related: ['public-site-navigation', 'application-navigation', 'popover', 'dropdown'],
   }),
   createDoc({
     slug: 'pagination',
@@ -915,10 +913,10 @@ export const componentDocs = [
       'Do not lock page scroll for non-modal inspectors.',
       'Do not rely on drag as the only close or resize method.',
     ],
-    related: ['modal', 'alert-dialog', 'popover', 'navigation'],
+    related: ['modal', 'alert-dialog', 'popover', 'application-navigation'],
   }),
   createDoc({
-    slug: 'site-navigation',
+    slug: 'public-site-navigation',
     title: 'Public-site navigation',
     summary:
       'Presents public identity, destinations, current location, and one principal action responsively.',
@@ -966,7 +964,7 @@ export const componentDocs = [
       'Do not hide destinations without an equivalent control.',
       'Do not style the current page as the primary action.',
     ],
-    related: ['link', 'navigation', 'disclosure', 'drawer'],
+    related: ['link', 'application-navigation', 'disclosure', 'drawer'],
   }),
   createDoc({
     slug: 'skip-link',
@@ -1009,7 +1007,7 @@ export const componentDocs = [
       'Do not expose a route to a hidden, inert, or unavailable destination.',
       'Do not label a route only by visual position.',
     ],
-    related: ['navigation', 'site-navigation', 'back-to-top'],
+    related: ['application-navigation', 'public-site-navigation', 'back-to-top'],
   }),
   createDoc({
     slug: 'back-to-top',
@@ -1060,7 +1058,7 @@ export const componentDocs = [
       'Do not use it instead of the initial bypass route.',
       'Do not place important footer content or other persistent controls behind its viewport corner.',
     ],
-    related: ['site-navigation', 'navigation', 'button'],
+    related: ['public-site-navigation', 'application-navigation', 'button'],
   }),
   createDoc({
     slug: 'button',
@@ -1901,7 +1899,7 @@ export const componentDocs = [
       'Do not use automatic activation if panels load slowly.',
       'Keep selection and focus conceptually distinct.',
     ],
-    related: ['navigation'],
+    related: ['application-navigation'],
   }),
   createDoc({
     slug: 'table',
@@ -2188,7 +2186,7 @@ export const componentDocs = [
     related: ['button', 'listbox', 'combobox', 'overlay', 'tooltip', 'popover'],
   }),
   createDoc({
-    slug: 'navigation',
+    slug: 'application-navigation',
     title: 'Navigation shell',
     summary:
       'Provides stable destinations, global utilities, a collapsible desktop sidebar, and modal mobile navigation.',
@@ -2259,7 +2257,15 @@ export const componentDocs = [
       'Do not remove destination names from the accessible tree when collapsed.',
       'Do not place a squeezed persistent sidebar beside a narrow Application Workspace.',
     ],
-    related: ['skip-link', 'tabs', 'button', 'disclosure', 'drawer', 'site-navigation', 'tooltip'],
+    related: [
+      'skip-link',
+      'tabs',
+      'button',
+      'disclosure',
+      'drawer',
+      'public-site-navigation',
+      'tooltip',
+    ],
   }),
   createDoc({
     slug: 'card',
@@ -2317,8 +2323,25 @@ export const componentDocs = [
     ],
     related: ['status-badge', 'table', 'empty-state'],
   }),
-] as const satisfies readonly ComponentDocumentation[]
+] as const satisfies readonly LibraryDocumentation[]
+
+export const blockSlugs = [
+  'empty-state',
+  'public-site-navigation',
+  'application-navigation',
+] as const
+const blockSlugSet = new Set<string>(blockSlugs)
+
+export const componentDocs = allDocumentation.filter(
+  (documentation) => !blockSlugSet.has(documentation.slug),
+)
+
+export const blockDocs = allDocumentation.filter((documentation) =>
+  blockSlugSet.has(documentation.slug),
+)
 
 export const componentDocsBySlug = new Map(
   componentDocs.map((component) => [component.slug, component]),
 )
+
+export const blockDocsBySlug = new Map(blockDocs.map((block) => [block.slug, block]))

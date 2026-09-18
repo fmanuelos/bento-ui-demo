@@ -7,7 +7,7 @@ export type PropReference = {
   description: string
 }
 
-export type ComponentDocumentation = {
+export type LibraryDocumentation = {
   slug: string
   title: string
   summary: string

@@ -13,14 +13,14 @@ and temporary forms.
 
 ## Do not use when
 
-Use [`Public-site navigation`](../components/site-navigation.md) for public-facing
+Use [`Public-site navigation`](../blocks/public-site-navigation.md) for public-facing
 site destinations. Use Breadcrumb for canonical hierarchy, Tabs for local views,
 Pagination for result pages, and Skip link or Back to top for page movement. Do
 not use the shell to represent workflow steps, browser history, or actions.
 
 ## Participating components and related patterns
 
-The [`Navigation shell`](../components/navigation.md) component contract owns the
+The [`Application Navigation block`](../blocks/application-navigation.md) owns the
 bounded navigation regions. [`Skip link`](../components/skip-link.md) provides a
 bypass route. Temporary presentation follows either
 [`Disclosure`](../components/disclosure.md) or the

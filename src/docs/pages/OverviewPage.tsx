@@ -27,10 +27,11 @@ export function OverviewPage() {
           </p>
         </Card>
         <Card compact>
-          <StatusBadge>40 contracts</StatusBadge>
+          <StatusBadge>49 reusable contracts</StatusBadge>
           <h2 className="mt-scale-4 mb-scale-2 text-heading-sm">Built for reuse</h2>
           <p className="m-0 text-body-sm leading-relaxed text-text-secondary">
-            Typed components stay independent of product content and business logic.
+            Typed components and composed blocks stay independent of product content and business
+            logic.
           </p>
         </Card>
       </div>
@@ -119,6 +120,19 @@ export function OverviewPage() {
             <strong className="block text-heading-sm text-text-primary">Browse components</strong>
             <span className="mt-scale-2 block text-body-sm text-text-secondary">
               Live examples, APIs, behavior, and guidance.
+            </span>
+          </Link>
+          <Link
+            className={linkStyles({
+              variant: 'navigation',
+              className:
+                'rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-6 hover:border-border-focus',
+            })}
+            to="/docs/blocks"
+          >
+            <strong className="block text-heading-sm text-text-primary">Browse blocks</strong>
+            <span className="mt-scale-2 block text-body-sm text-text-secondary">
+              Reusable arrangements, live examples, APIs, and composition guidance.
             </span>
           </Link>
         </div>

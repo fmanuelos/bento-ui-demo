@@ -49,7 +49,7 @@ variant contract is approved.
 
 ## Navigation model
 
-Use the [`Public-site navigation`](../components/site-navigation.md) contract for
+Use the [`Public-site navigation`](../blocks/public-site-navigation.md) contract for
 global destinations. Keep identity and the primary destination or action
 available when navigation transforms. Use Breadcrumb only for canonical
 hierarchy, not click history. Long-form pages may add local in-page navigation
@@ -138,10 +138,10 @@ informative and complex media provides an appropriate equivalent.
 
 ## Participating components and related patterns
 
-Common dependencies include Public-site Navigation, Link, Button, Button Group,
-Breadcrumb, Skip Link, Accordion, Alert, Card, and applicable media foundations.
-Common blocks include Hero, Page Header, Section Header, Call to Action, Feature
-Grid, and Site Footer.
+Common component dependencies include Link, Button, Button Group, Breadcrumb,
+Skip Link, Accordion, Alert, Card, and applicable media foundations. Common
+blocks include Public-site Navigation, Hero, Page Header, Section Header, Call to
+Action, Feature Grid, and Site Footer.
 
 Apply action hierarchy, responsive density, asynchronous feedback, forms and
 validation, task continuity, and destructive actions when their conditions are
