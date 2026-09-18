@@ -21,6 +21,7 @@ not applicable, record why rather than marking an entire category as unsupported
 | Navigation        | Meaningful reading order, visible focus, a bypass route, no keyboard trap, and predictable focus restoration   |
 | State             | Relevant loading, empty, partial, stale, offline, permission, validation, success, and failure conditions      |
 | Content integrity | No clipped essential text, inaccessible truncation, color-only meaning, or destructive loss of valid work      |
+| Media             | Decorative, informative, complex, missing, slow, failed, cropped, and motion-sensitive media where applicable  |
 
 ## Scenario checklists
 
@@ -56,6 +57,38 @@ losing their place.
   destinations, unbroken identifiers, RTL, 200% text, and a six-column table.
 - Removing optional media must not remove instructions, meaningful captions, or
   the sequence of the article.
+
+### Images and media
+
+**Outcome:** A user receives the same necessary meaning and can complete the same
+task regardless of whether media loads, can be perceived, or changes presentation.
+
+Apply the shared [`Images and media`](../DESIGN.md#images-and-media) foundation
+and the applicable component or composition contract.
+
+- Classify representative media as decorative, informative, complex, or
+  functional in its actual context. Confirm decorative media is ignored,
+  informative media has a concise non-duplicative equivalent, and complex media
+  has an adjacent explanation or data equivalent.
+- Disable images and test missing, slow, restricted, and failed requests.
+  Essential instructions, status, labels, captions, and recovery remain
+  available; decorative assets disappear cleanly; broken-asset chrome and source
+  filenames do not become fallback content.
+- Test intrinsic dimensions and reserved aspect ratios under slow loading. The
+  page and focused controls remain stable, and late media does not cause a
+  disruptive layout shift or reading-order change.
+- Test narrow, wide, and high-zoom layouts with the approved crops. Subjects,
+  focal areas, embedded labels, and necessary product information remain visible
+  without distortion or page-level horizontal scrolling.
+- Test left-to-right and right-to-left layouts with directional and
+  non-directional media. Only intentionally localized directional assets mirror,
+  and the accessible reading order remains unchanged by visual placement.
+- Test image-only controls, images beside control text, and linked figures. Each
+  interaction exposes one clear name, role, destination or action, and focus
+  target without nested controls or duplicate announcements.
+- Test light, dark, inverse when used, forced colors or high contrast, and reduced
+  motion. Nearby and overlaid text and controls retain contrast, and removing
+  nonessential animation does not remove information or operation.
 
 ### Action hierarchy
 

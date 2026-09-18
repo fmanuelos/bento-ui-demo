@@ -71,6 +71,12 @@ interaction remains governed by Card; add a specialized card contract only when
 a concrete workflow introduces behavior that Card and its composed components do
 not cover.
 
+General-purpose imagery follows the shared
+[`Images and media`](../../DESIGN.md#images-and-media) foundation and the
+platform adapter rather than an Image component contract. Propose a dedicated
+contract only when repeated use establishes owned semantics, states, behavior,
+or composition beyond the native platform medium.
+
 Add a proposed file only when work begins on its normative contract. Move it to
 Draft until every required section and dependency is resolved; move it to
 Complete only after the contract and index agree.

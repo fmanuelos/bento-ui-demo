@@ -1949,6 +1949,7 @@ semantic role or state model.
 | Communicate state or progress | Status Badge for persistent state; Alert or Toast for an event; Progress for ongoing work; Empty State for unavailable content                                              | Feedback, status, loading, validation, and empty data remain separate concepts.                                                          |
 | Organize destinations         | Public-site Navigation or Navigation Shell; Breadcrumb for hierarchical location; Tabs for local views; Pagination for results; Skip Link and Back to Top for page movement | Global navigation, hierarchical location, local view selection, paging, bypass, and in-page movement do not share one interaction model. |
 | Present grouped information   | Card for containment; Data Table for relational reading; Data Grid only for managed cell navigation, selection, or editing                                                  | Visual density does not turn a table into a grid, and a whole card is not interactive without an explicit semantic control.              |
+| Present imagery               | Native platform media following the shared Images and media foundation; Avatar when a compact image represents a person                                                     | A visual treatment does not create an Image component; the containing component or composition continues to own meaning and behavior.    |
 | Represent people              | Avatar; Avatar Group for a compact preview                                                                                                                                  | Identity imagery does not imply presence, selection, or action.                                                                          |
 
 When two candidates appear suitable, compare their user outcome, state model,
@@ -2088,6 +2089,63 @@ unavailable in the current presentation.
 
 Reusable bypass controls follow the
 [`Skip link`](design/components/skip-link.md) contract.
+
+### Images and media
+
+Images, illustrations, screenshots, diagrams, and motion media are shared
+content foundations rather than a general-purpose component. The component or
+composition containing media owns its purpose, state, interaction, and recovery.
+Use a dedicated component contract only when repeated use establishes additional
+semantics, behavior, or composition rules beyond the native platform medium.
+
+Classify each media instance by its purpose in context:
+
+- **Decorative media** adds no information not already available in nearby
+  content. It has no accessible name or description and may be omitted when
+  space, data, motion preferences, or presentation constraints require it.
+- **Informative media** communicates meaning that is not otherwise available. It
+  has a concise equivalent that conveys its purpose without repeating nearby
+  content and remains available wherever removing it would remove meaning.
+- **Complex media**, including detailed diagrams and product screenshots, has a
+  concise identification plus an adjacent explanation or data equivalent when a
+  short alternative cannot communicate the relevant relationships.
+- **Functional media** appears within a control or destination. The owning
+  Button, Link, or other interactive component provides the action semantics,
+  accessible name, states, focus treatment, and target size; the media does not
+  create a nested interaction.
+
+Do not make imagery the only source of instructions, status, eligibility,
+pricing, warnings, or an action's purpose. Avoid essential text embedded in an
+asset. When embedded text is necessary to the content, provide the same words in
+the document, localize both representations, and preserve their reading order.
+A caption supplements or identifies media; it does not replace an alternative
+when the image communicates information that the caption omits.
+
+Preserve intrinsic proportions unless a bounded presentation intentionally
+crops the asset. Cropping preserves the subject, focal area, labels, and product
+information needed in the current context. Reserve a stable region for
+predictable media so loading does not cause disruptive movement. Do not enlarge
+low-resolution assets until their content becomes misleading or illegible.
+
+Loading, unavailable, restricted, and failed media do not expose broken-asset
+chrome or repeatedly alternate with a fallback. Decorative media may disappear
+without a replacement. Informative media retains its equivalent content and, if
+the absence affects the task, exposes a concise localized status or recovery
+action owned by the containing region. Retry behavior follows that region's
+data-loading policy rather than the visual asset alone.
+
+Responsive transformations may simplify or remove decorative media. Informative
+and complex media remain perceivable without requiring page-level horizontal
+scrolling; contain two-dimensional scrolling when the medium itself requires it.
+Mirror directional media only when its meaning and localized asset are intended
+to mirror. Choose culturally and geographically appropriate assets rather than
+assuming that one visual representation is universal.
+
+Media remains understandable in light, dark, inverse, forced-color, and
+high-contrast presentations. Text and controls placed near or over media retain
+their required contrast without depending on an unpredictable part of the asset.
+Reduced-motion preferences remove nonessential parallax, autoplay, animated
+decoration, and media transitions without removing information or controls.
 
 ### Component taxonomy
 

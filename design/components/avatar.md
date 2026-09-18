@@ -16,6 +16,10 @@ Presence, availability, and workflow status are separate meanings. Do not attach
 an unexplained colored dot or reuse the [`Status Badge`](status-badge.md) as part
 of the base avatar.
 
+Person images inherit the shared
+[`Images and media`](../../DESIGN.md#images-and-media) foundation. This contract
+adds identity-specific fallback, naming, sizing, and composition requirements.
+
 ## Anatomy and variants
 
 1. Circular visual container

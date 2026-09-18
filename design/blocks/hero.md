@@ -71,6 +71,10 @@ to the relationship between actions and
 transforms. Participating components retain ownership of their focus, loading,
 disabled, pressed, and other interactive states.
 
+All Hero imagery follows the shared
+[`Images and media`](../../DESIGN.md#images-and-media) foundation. This block
+contract defines only how that media participates in the Hero composition.
+
 ## Content requirements
 
 The heading names the page subject or communicates its primary value without
@@ -87,9 +91,9 @@ actions. Claims, prices, dates, and eligibility conditions must be accurate and
 must not be hidden in media or fine print.
 
 Media supports the message but is not the only source of essential information.
-Decorative artwork may be removed at constrained sizes. Product screenshots and
-other informative media need an equivalent text description when their meaning
-is not already present in nearby copy.
+Decorative artwork may be removed at constrained sizes. Informative media remains
+available according to the shared foundation and in a reading position that
+preserves its relationship to the Hero copy.
 
 ## Layout and semantic token mapping
 
@@ -158,10 +162,9 @@ supplemental context, and informative media coherently. Action purpose is clear
 from its label and context. Focus order follows the same logical sequence and
 every interactive component retains its visible focus treatment.
 
-Decorative images have no accessible name. Informative images have concise
-alternative text that conveys their purpose without repeating nearby prose.
-Complex screenshots or diagrams provide a longer adjacent explanation when a
-short alternative cannot communicate the relevant information.
+Apply the shared media classification without changing the Hero's reading order.
+An adjacent explanation for a complex screenshot or diagram remains associated
+with both that media and the Hero subject.
 
 Text and controls retain required contrast across every supported background,
 including media overlays. Do not depend on a gradient or an unpredictable part
@@ -178,10 +181,10 @@ communicates the region or when another unnamed region would add navigation
 noise.
 
 Use native heading and paragraph elements. Use links for destinations and
-buttons for in-place actions. Render images with meaningful `alt` text or
-`alt=""` when decorative. Reserve intrinsic media dimensions or an aspect ratio
-to reduce layout shift. Background images that carry information require an
-equivalent accessible alternative in the document.
+buttons for in-place actions. Map Hero media through the
+[`web adapter`](../adapters/web.md#images-and-media). Reserve intrinsic media
+dimensions or an aspect ratio that remains appropriate when the split
+composition becomes a single column.
 
 ## Representative example
 

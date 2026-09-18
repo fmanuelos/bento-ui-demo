@@ -80,6 +80,47 @@ Implement shimmer as nonessential CSS motion. Disable the animation under
 state, and loading status. Under forced colors, preserve enough region structure
 to distinguish unavailable content without requiring authored highlight colors.
 
+## Images and media
+
+Use native `img` for raster or vector image resources and `picture` when the
+content requires art direction or format and density alternatives. Use `srcset`
+and `sizes` when they let the browser select an appropriate responsive source;
+the selected source must preserve the same meaning as every other candidate.
+
+Map the media purpose defined in [`DESIGN.md`](../../DESIGN.md#images-and-media)
+to web semantics:
+
+- Give decorative images `alt=""` and do not duplicate their filename, caption,
+  or nearby copy in an accessible name.
+- Give informative images concise `alt` text that communicates the information
+  they contribute in context. When adjacent text already supplies the complete
+  equivalent, use an empty `alt` value rather than announcing it twice.
+- Place a longer explanation for a complex image in the document and associate
+  it when the supported platform mechanism improves discovery. Use `figure` and
+  `figcaption` only when the content is genuinely a self-contained figure with a
+  caption.
+- When an image appears inside a link or button, ensure the control has one clear
+  accessible name. Treat the image as decorative when the control's text or
+  explicit name already communicates the action or destination.
+
+Set intrinsic `width` and `height`, or otherwise reserve the intended aspect
+ratio, to reduce layout shift. Use `object-fit` and `object-position` only when
+the approved crop preserves the required focal area and information. Responsive
+styles must not distort intrinsic proportions or clip embedded labels that the
+content depends on.
+
+Load immediately available, page-leading meaningful media without an avoidable
+lazy-loading delay. Media outside the initial viewport may load lazily when its
+reserved space and equivalent content remain stable. A failed request must not
+leave browser broken-image chrome or expose a source filename as fallback text;
+remove decorative media or replace informative media according to the containing
+region's unavailable-content policy.
+
+CSS background images are decorative. When a background resource communicates
+information, provide the complete equivalent through document content instead.
+Do not place text or controls over an image unless their contrast is preserved
+across every supported asset and responsive crop.
+
 ## Text and reflow
 
 Support text enlargement to 200%, user text-spacing overrides, and page reflow at
