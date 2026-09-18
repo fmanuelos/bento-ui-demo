@@ -6,6 +6,7 @@ import {
   type InputHTMLAttributes,
   type KeyboardEvent,
 } from 'react'
+import { ChevronDownIcon } from '../icons'
 import { FieldFrame } from './internal/Field'
 import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'
@@ -149,16 +150,7 @@ export function Combobox({
           }}
           className="absolute inset-y-0 right-0 grid w-control-height-medium place-items-center rounded-shape-md text-text-secondary"
         >
-          <svg
-            className="size-4"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
-          >
-            <path d="m4 6 4 4 4-4" />
-          </svg>
+          <ChevronDownIcon size="small" />
         </button>
         {open && !disabled && (
           <div

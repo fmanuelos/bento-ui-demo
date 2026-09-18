@@ -1,4 +1,5 @@
 import { forwardRef, useEffect, useId, useRef, type InputHTMLAttributes } from 'react'
+import { CheckIcon } from '../icons'
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> & {
   label: string
@@ -76,16 +77,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
           aria-hidden="true"
         >
           <span data-mixed className="hidden h-0.5 w-2.5 bg-current" />
-          <svg
-            data-checkmark
-            className="hidden size-3.5"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.2"
-          >
-            <path d="m3 8 3 3 7-7" />
-          </svg>
+          <CheckIcon data-checkmark size="small" className="hidden" />
         </span>
         <span className="grid gap-scale-1">
           <span id={labelId} className="font-semibold">

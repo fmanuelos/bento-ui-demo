@@ -7,6 +7,7 @@ import {
   type ReactNode,
   type RefObject,
 } from 'react'
+import { CloseIcon } from '../icons'
 import { Button } from './Button'
 
 export type ModalProps = {
@@ -149,16 +150,7 @@ export function Modal({
             disabled={busy}
             className="-mt-scale-2 -mr-scale-2"
           >
-            <svg
-              className="size-5"
-              viewBox="0 0 20 20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              aria-hidden="true"
-            >
-              <path d="m5 5 10 10M15 5 5 15" />
-            </svg>
+            <CloseIcon />
           </Button>
         )}
       </header>

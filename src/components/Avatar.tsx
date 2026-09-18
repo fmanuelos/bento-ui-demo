@@ -1,4 +1,5 @@
 import { useState, type HTMLAttributes } from 'react'
+import { UserIcon } from '../icons'
 
 export type AvatarSize = 'small' | 'medium' | 'large'
 export type AvatarProps = Omit<HTMLAttributes<HTMLSpanElement>, 'children'> & {
@@ -55,17 +56,7 @@ export function Avatar({
       ) : initials ? (
         <span aria-hidden="true">{initials}</span>
       ) : (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          aria-hidden="true"
-          className="size-1/2"
-        >
-          <circle cx="12" cy="8" r="3.5" />
-          <path d="M5 21a7 7 0 0 1 14 0" />
-        </svg>
+        <UserIcon className="size-1/2" />
       )}
     </span>
   )

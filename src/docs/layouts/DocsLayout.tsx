@@ -1,13 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Button, SkipLink, linkStyles } from '../../components'
+import { CloseIcon, MenuIcon, MoonIcon, SparkleIcon, SunIcon } from '../../icons'
 import { docsNavigation } from '../navigation'
-
-const Spark = () => (
-  <svg className="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2c.7 5.9 4.1 9.3 10 10-5.9.7-9.3 4.1-10 10-.7-5.9-4.1-9.3-10-10 5.9-.7 9.3-4.1 10-10Z" />
-  </svg>
-)
 
 export function DocsLayout() {
   const [darkMode, setDarkMode] = useState(
@@ -124,16 +119,7 @@ export function DocsLayout() {
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(true)}
         >
-          <svg
-            className="size-5"
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
-          >
-            <path d="M3 5h14M3 10h14M3 15h14" />
-          </svg>
+          <MenuIcon />
         </Button>
         <NavLink
           to="/docs"
@@ -144,7 +130,7 @@ export function DocsLayout() {
           })}
         >
           <span className="grid size-7 shrink-0 place-items-center rounded-shape-full bg-action-primary-background-default text-action-primary-foreground">
-            <Spark />
+            <SparkleIcon size="small" />
           </span>
           <span className="truncate">Bento UI</span>
           <span className="hidden text-body-sm font-normal text-text-tertiary sm:inline">Docs</span>
@@ -166,30 +152,7 @@ export function DocsLayout() {
           aria-label={darkMode ? 'Use light mode' : 'Use dark mode'}
           onClick={() => setDarkMode((value) => !value)}
         >
-          {darkMode ? (
-            <svg
-              className="size-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-            </svg>
-          ) : (
-            <svg
-              className="size-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              aria-hidden="true"
-            >
-              <path d="M20 15.4A8.5 8.5 0 0 1 8.6 4a8.5 8.5 0 1 0 11.4 11.4Z" />
-            </svg>
-          )}
+          {darkMode ? <SunIcon /> : <MoonIcon />}
         </Button>
       </header>
       <aside
@@ -225,16 +188,7 @@ export function DocsLayout() {
                   menuButtonRef.current?.focus()
                 }}
               >
-                <svg
-                  className="size-5"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  aria-hidden="true"
-                >
-                  <path d="m5 5 10 10m0-10L5 15" />
-                </svg>
+                <CloseIcon />
               </Button>
             </div>
             {navigation}

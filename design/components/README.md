@@ -74,6 +74,11 @@ platform adapter rather than an Image component contract. Propose a dedicated
 contract only when repeated use establishes owned semantics, states, behavior,
 or composition beyond the native platform medium.
 
+Icons follow the [`Icon system`](../foundations/icons.md) foundation contract.
+They remain visual content within the component that owns interaction, state,
+target size, and naming; do not add an Icon component contract for the shared
+glyph renderer.
+
 Add a proposed file only when work begins on its normative contract. Move it to
 Draft until every required section and dependency is resolved; move it to
 Complete only after the contract and index agree.

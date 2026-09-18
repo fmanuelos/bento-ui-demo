@@ -8,7 +8,8 @@ changing the meaning of the Bento UI design contract.
 Its Markdown body, the [`component contracts`](components/), the
 [`block contracts`](blocks/), the [`experience patterns`](patterns/), and the
 [`experience mode contracts`](experiences/), [`template contracts`](templates/),
-and [`product-domain guidance`](product-domains.md) define intended use. The
+[`foundation contracts`](foundations/), and
+[`product-domain guidance`](product-domains.md) define intended use. The
 [`adapter documentation`](adapters/) translates that contract for specific
 platforms and tools. [`VALIDATION.md`](VALIDATION.md) collects representative
 workflow and adverse-condition checks without redefining design intent. The
@@ -29,6 +30,7 @@ pnpm design:lint
 pnpm migration:check
 pnpm blocks:check
 pnpm components:check
+pnpm icons:check
 pnpm design:build
 ```
 
@@ -40,6 +42,8 @@ component contract has a corresponding documentation entry and implementation.
 `migration:check` verifies the canonical architecture vocabulary, required
 contracts and documentation routes, workspace-token exports and runtime use, and
 the absence of removed names outside the historical migration record.
+`icons:check` verifies that every icon implementation is exported and catalogued
+and prevents unmanaged inline SVG from entering application source.
 
 The format guidance is reviewed against the
 [Google Labs DESIGN.md specification at revision

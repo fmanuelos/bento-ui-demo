@@ -1,4 +1,5 @@
 import { useId, useState, type HTMLAttributes, type ReactNode } from 'react'
+import { CloseIcon, MenuIcon } from '../icons'
 import { Button } from './Button'
 import { linkStyles } from './interactiveStyles'
 
@@ -84,16 +85,7 @@ export function SiteNavigation({
             aria-controls={id}
             onClick={() => setOpen((value) => !value)}
           >
-            <svg
-              className="size-5"
-              viewBox="0 0 20 20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              aria-hidden="true"
-            >
-              {open ? <path d="m5 5 10 10m0-10L5 15" /> : <path d="M3 5h14M3 10h14M3 15h14" />}
-            </svg>
+            {open ? <CloseIcon /> : <MenuIcon />}
           </Button>
         </div>
       </div>

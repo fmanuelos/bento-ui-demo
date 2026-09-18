@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { ChevronDownIcon } from '../icons'
 import { Button, type ButtonProps } from './Button'
 import { OverlaySurface } from './internal/Overlay'
 
@@ -57,18 +58,7 @@ export function Dropdown({
             setOpen(true)
           }
         }}
-        icon={
-          <svg
-            className="size-4"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
-          >
-            <path d="m4 6 4 4 4-4" />
-          </svg>
-        }
+        icon={<ChevronDownIcon size="small" />}
       >
         {label}
       </Button>

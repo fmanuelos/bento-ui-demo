@@ -7,6 +7,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from 'react'
+import { ChevronEndIcon } from '../icons'
 import { Button } from './Button'
 import { linkStyles } from './interactiveStyles'
 import { OverlaySurface, type OverlayPlacement } from './internal/Overlay'
@@ -31,19 +32,7 @@ export type BreadcrumbProps = Omit<HTMLAttributes<HTMLElement>, 'children'> & {
   getOverflowAccessibleLabel?: (hiddenCount: number, expanded: boolean) => string
 }
 
-const defaultSeparator = (
-  <svg
-    className="size-scale-4 rtl:rotate-180"
-    viewBox="0 0 16 16"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="m6 3 5 5-5 5" />
-  </svg>
-)
+const defaultSeparator = <ChevronEndIcon size="small" />
 
 const focusableSelector = [
   'a[href]',

@@ -1,4 +1,5 @@
 import { useEffect, useState, type AnchorHTMLAttributes, type MouseEvent } from 'react'
+import { ArrowUpIcon } from '../icons'
 import { linkStyles } from './interactiveStyles'
 
 export type BackToTopProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'href'> & {
@@ -94,18 +95,7 @@ export function BackToTop({
       })}
       {...props}
     >
-      <svg
-        className="size-4 shrink-0"
-        viewBox="0 0 16 16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="m4 7 4-4 4 4M8 3v10" />
-      </svg>
+      <ArrowUpIcon size="small" />
       <span>{label}</span>
     </a>
   )

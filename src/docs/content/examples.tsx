@@ -45,6 +45,7 @@ import {
   type DataGridSortDirection,
   type TableColumn,
 } from '../../components'
+import { ArrowEndIcon, SearchIcon } from '../../icons'
 
 const people = [
   { value: 'amara', label: 'Amara Chen', description: 'Design' },
@@ -69,34 +70,8 @@ const customers: Customer[] = [
   { id: 'farah', name: 'Farah', plan: 'Basic', status: 'Active', monthlyFee: 19 },
 ]
 
-const ArrowIcon = (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M5 12h14m-6-6 6 6-6 6" />
-  </svg>
-)
-
-const SearchIcon = (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <circle cx="11" cy="11" r="7" />
-    <path d="m16 16 4 4" />
-  </svg>
-)
+const ArrowIcon = <ArrowEndIcon />
+const SearchGlyph = <SearchIcon />
 
 const customerTableColumns: TableColumn<Customer>[] = [
   { id: 'name', header: 'Customer', cell: (customer) => customer.name },
@@ -446,7 +421,7 @@ function InputGroupExample() {
       />
       <InputGroup
         label="Search projects"
-        leadingAddon={SearchIcon}
+        leadingAddon={SearchGlyph}
         type="search"
         placeholder="Search by name or owner"
       />

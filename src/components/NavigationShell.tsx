@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { ChevronStartIcon, CloseIcon, MenuIcon } from '../icons'
 import { Button } from './Button'
 import { SkipLink } from './SkipLink'
 import { linkStyles } from './interactiveStyles'
@@ -138,16 +139,7 @@ export function NavigationShell({
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(true)}
         >
-          <svg
-            className="size-5"
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
-          >
-            <path d="M3 5h14M3 10h14M3 15h14" />
-          </svg>
+          <MenuIcon />
         </Button>
         <div className="min-w-0 flex-1 lg:hidden">{brand}</div>
         <div className="ml-auto">{utilities}</div>
@@ -167,16 +159,10 @@ export function NavigationShell({
             aria-expanded={!collapsed}
             onClick={() => setCollapsed(!collapsed)}
           >
-            <svg
-              className={`size-4 transition-transform ${collapsed ? 'rotate-180' : ''}`}
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              aria-hidden="true"
-            >
-              <path d="m10 3-5 5 5 5" />
-            </svg>
+            <ChevronStartIcon
+              size="small"
+              className={`transition-transform ${collapsed ? 'rotate-180' : ''}`}
+            />
           </Button>
         </div>
         {navigation(false)}
@@ -212,16 +198,7 @@ export function NavigationShell({
                   mobileTriggerRef.current?.focus()
                 }}
               >
-                <svg
-                  className="size-5"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  aria-hidden="true"
-                >
-                  <path d="m5 5 10 10m0-10L5 15" />
-                </svg>
+                <CloseIcon />
               </Button>
             </div>
             {navigation(true)}

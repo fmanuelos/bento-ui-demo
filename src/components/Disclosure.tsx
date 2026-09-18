@@ -1,4 +1,5 @@
 import { useId, useState, type HTMLAttributes, type ReactNode } from 'react'
+import { ChevronDownIcon } from '../icons'
 import { Button, type ButtonProps } from './Button'
 
 export type DisclosureProps = Omit<HTMLAttributes<HTMLDivElement>, 'title'> & {
@@ -45,16 +46,10 @@ export function Disclosure({
       onClick={() => setExpanded(!expanded)}
       className={`w-full justify-between text-left ${buttonProps?.className ?? ''}`}
       icon={
-        <svg
+        <ChevronDownIcon
+          size="small"
           className={`transition-transform motion-reduce:transition-none ${expanded ? 'rotate-180' : ''}`}
-          viewBox="0 0 16 16"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          aria-hidden="true"
-        >
-          <path d="m4 6 4 4 4-4" />
-        </svg>
+        />
       }
     >
       {title}

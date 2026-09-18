@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { type FoundationDocumentation } from './types'
+import { ArrowEndIcon, SearchIcon, iconCatalog, iconMetadata } from '../../icons'
 
 const colorGroups = {
   Brand: [
@@ -530,6 +531,96 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
             Medium is the control default, large groups cards, extra-large is reserved for dialogs
             and feature surfaces, and full is for badges, pills, avatars, and circular controls.
           </p>
+        ),
+      },
+    ],
+  },
+  {
+    path: '/docs/foundations/icons',
+    title: 'Icons',
+    summary:
+      'A compact owned glyph system provides consistent geometry, naming, directionality, accessibility defaults, and lifecycle metadata.',
+    sections: [
+      {
+        title: 'Catalog',
+        body: (
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(11rem,100%),1fr))] gap-scale-3">
+            {iconCatalog.map(({ name, Icon }) => {
+              const metadata = iconMetadata[name]
+              return (
+                <div
+                  key={name}
+                  className="grid min-h-32 place-items-center gap-scale-3 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4 text-center"
+                >
+                  <Icon size="large" />
+                  <span>
+                    <code className="block text-code-sm">{name}</code>
+                    <span className="mt-scale-1 block text-caption text-text-secondary">
+                      {metadata.category}
+                      {metadata.directional ? ' · mirrors in RTL' : ''}
+                    </span>
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        ),
+      },
+      {
+        title: 'Sizes',
+        body: (
+          <div className="flex flex-wrap items-end gap-scale-6 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-6">
+            {(['small', 'medium', 'large'] as const).map((size) => (
+              <span key={size} className="grid justify-items-center gap-scale-2">
+                <SearchIcon size={size} />
+                <code className="text-code-sm">{size}</code>
+              </span>
+            ))}
+          </div>
+        ),
+      },
+      {
+        title: 'Directionality',
+        body: (
+          <div className="grid gap-scale-3 sm:grid-cols-2">
+            <div
+              dir="ltr"
+              className="flex items-center justify-between rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4"
+            >
+              <span>Left to right</span>
+              <ArrowEndIcon />
+            </div>
+            <div
+              dir="rtl"
+              className="flex items-center justify-between rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4"
+            >
+              <span>Right to left</span>
+              <ArrowEndIcon />
+            </div>
+          </div>
+        ),
+      },
+      {
+        title: 'Usage',
+        body: (
+          <ul className="list-disc">
+            <li>
+              Import named glyphs from <code>src/icons</code>; do not author interface SVG at the
+              point of use.
+            </li>
+            <li>
+              Icons are decorative by default. Supply <code>label</code> only when a standalone icon
+              communicates information not repeated in adjacent text.
+            </li>
+            <li>
+              Let the containing component own color, interaction, state, accessible naming, and
+              target size.
+            </li>
+            <li>
+              Use logical Start and End icons for reading-order direction; they mirror automatically
+              in right-to-left layouts.
+            </li>
+          </ul>
         ),
       },
     ],

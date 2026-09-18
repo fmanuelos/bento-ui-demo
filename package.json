@@ -7,9 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "check": "pnpm format:check && pnpm design:lint && pnpm migration:check && pnpm blocks:check && pnpm components:check && pnpm focus:check && pnpm lint && pnpm build",
+    "check": "pnpm format:check && pnpm design:lint && pnpm migration:check && pnpm blocks:check && pnpm components:check && pnpm icons:check && pnpm focus:check && pnpm lint && pnpm build",
     "blocks:check": "node scripts/check-block-coverage.mjs",
     "components:check": "node scripts/check-component-coverage.mjs",
+    "icons:check": "node scripts/check-icon-system.mjs",
     "focus:check": "node scripts/check-focus-styles.mjs",
     "lint": "eslint .",
     "migration:check": "node scripts/check-architecture-migration.mjs",

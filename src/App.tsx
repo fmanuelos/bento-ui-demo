@@ -5,27 +5,7 @@ import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Modal } from './components/Modal'
 import { docsRoutes } from './docs/routes'
-
-const ArrowUpRight = ({ className = 'size-5' }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 20 20"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M5 15 15 5M7 5h8v8" />
-  </svg>
-)
-
-const Spark = ({ className = 'size-5' }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 2c.7 5.9 4.1 9.3 10 10-5.9.7-9.3 4.1-10 10-.7-5.9-4.1-9.3-10-10 5.9-.7 9.3-4.1 10-10Z" />
-  </svg>
-)
+import { ArrowUpRightIcon, CloseIcon, MenuIcon, MoonIcon, SparkleIcon, SunIcon } from './icons'
 
 const labelClasses =
   'text-label-overline font-label-overline leading-label-overline font-semibold tracking-label-overline text-text-secondary uppercase'
@@ -60,7 +40,7 @@ function DemoPage() {
             aria-label="Bento UI home"
           >
             <span className="grid size-7 place-items-center rounded-shape-full bg-brand-background text-brand-on-background">
-              <Spark className="size-4" />
+              <SparkleIcon size="small" />
             </span>
             Bento UI
           </a>
@@ -95,20 +75,7 @@ function DemoPage() {
               aria-controls="mobile-primary-navigation"
               onClick={() => setMobileNavOpen((value) => !value)}
             >
-              <svg
-                className="size-5"
-                viewBox="0 0 20 20"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                aria-hidden="true"
-              >
-                {mobileNavOpen ? (
-                  <path d="m5 5 10 10m0-10L5 15" />
-                ) : (
-                  <path d="M3 5h14M3 10h14M3 15h14" />
-                )}
-              </svg>
+              {mobileNavOpen ? <CloseIcon /> : <MenuIcon />}
             </Button>
             <Button
               variant="ghost"
@@ -117,30 +84,7 @@ function DemoPage() {
               aria-label={darkMode ? 'Use light mode' : 'Use dark mode'}
               onClick={() => setDarkMode((value) => !value)}
             >
-              {darkMode ? (
-                <svg
-                  className="size-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-                </svg>
-              ) : (
-                <svg
-                  className="size-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  aria-hidden="true"
-                >
-                  <path d="M20 15.4A8.5 8.5 0 0 1 8.6 4a8.5 8.5 0 1 0 11.4 11.4Z" />
-                </svg>
-              )}
+              {darkMode ? <SunIcon /> : <MoonIcon />}
             </Button>
             <div
               className="hidden size-control-height-medium place-items-center rounded-shape-full border-2 border-brand-border bg-brand-background text-label-md font-bold text-brand-on-background sm:grid"
@@ -217,7 +161,7 @@ function DemoPage() {
                   variant="secondary"
                   size="large"
                   className="mt-auto max-sm:mt-scale-6"
-                  icon={<ArrowUpRight />}
+                  icon={<ArrowUpRightIcon />}
                   onClick={() => setModalOpen(true)}
                 >
                   {sessionActive ? 'Focus session active' : 'Start a focus session'}
@@ -230,7 +174,7 @@ function DemoPage() {
                 <div className="absolute top-10 right-[-82px] size-[330px] rounded-shape-full border border-border-inverse max-sm:top-0 max-sm:right-[-55px] max-sm:size-[250px]" />
                 <div className="absolute top-[88px] right-[-34px] size-[235px] rounded-shape-full border border-border-inverse max-sm:top-12 max-sm:right-[-7px] max-sm:size-[155px]" />
                 <div className="absolute top-[132px] right-2.5 grid size-[148px] place-items-center rounded-shape-full bg-brand-background-subtle text-brand-foreground ring-12 ring-brand-background-subtle/10 max-sm:top-[68px] max-sm:right-4 max-sm:size-28">
-                  <Spark className="size-12 max-sm:size-9" />
+                  <SparkleIcon className="size-12 max-sm:size-9" />
                 </div>
                 <div className="absolute right-37 bottom-12 grid size-[90px] rotate-[-8deg] place-content-center rounded-shape-full bg-status-info-background text-center text-body-sm leading-none font-bold text-status-info-foreground max-sm:bottom-6 max-sm:left-9">
                   09:30
@@ -250,7 +194,7 @@ function DemoPage() {
                   <h3 className="mt-scale-2 text-heading-md font-semibold">Quiet progress</h3>
                 </div>
                 <Button variant="ghost" size="medium" iconOnly aria-label="Open weekly focus">
-                  <ArrowUpRight />
+                  <ArrowUpRightIcon />
                 </Button>
               </div>
               <div className="relative mx-auto my-scale-6 grid size-[194px] place-items-center rounded-shape-full bg-[conic-gradient(var(--color-chart-positive)_72%,var(--color-status-positive-background)_0)] after:absolute after:size-[154px] after:rounded-shape-full after:bg-surface-primary">
@@ -367,7 +311,7 @@ function DemoPage() {
                 className="absolute right-6 bottom-[74px]"
                 aria-label="Open Field Notes project"
               >
-                <ArrowUpRight />
+                <ArrowUpRightIcon />
               </Button>
             </article>
 
