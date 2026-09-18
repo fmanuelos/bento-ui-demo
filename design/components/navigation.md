@@ -48,8 +48,9 @@ change only after that policy resolves.
 
 Use temporary sidebar navigation in the mobile and tablet ranges. Desktop and
 wide layouts may use persistent navigation when it coexists comfortably with the
-dashboard. Do not squeeze it beside a narrow dashboard. Longer translations,
-zoom, or a constrained container may trigger the temporary form earlier.
+Application Workspace. Do not squeeze it beside a narrow workspace. Longer
+translations, zoom, or a constrained container may trigger the temporary form
+earlier.
 
 Public site navigation keeps primary destinations available through an
 accessible disclosure whenever inline links do not fit and follows the

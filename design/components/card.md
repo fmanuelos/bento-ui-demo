@@ -7,7 +7,7 @@ Contract complete.
 ## Intent
 
 Cards group related content when a boundary improves comprehension. They are not
-the default wrapper for every dashboard region.
+the default wrapper for every Application Workspace region.
 
 ## Anatomy and variants
 

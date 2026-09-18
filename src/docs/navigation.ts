@@ -41,6 +41,31 @@ export const docsNavigation: readonly DocsNavigationSection[] = [
       },
     ],
   },
+  {
+    title: 'Architecture',
+    items: [
+      {
+        title: 'Experience architecture',
+        path: '/docs/architecture',
+        description: 'Understand modes, variants, templates, pages, and domains.',
+      },
+      {
+        title: 'Experience modes',
+        path: '/docs/experience-modes',
+        description: 'Choose Public Site, Focused Flow, or Application Workspace.',
+      },
+      {
+        title: 'Templates',
+        path: '/docs/templates',
+        description: 'Define durable page- and flow-level structures.',
+      },
+      {
+        title: 'Product domains',
+        path: '/docs/product-domains',
+        description: 'Classify the business capability independently from presentation.',
+      },
+    ],
+  },
   { title: 'Foundations', items: foundationNavigation },
   {
     title: 'Components',

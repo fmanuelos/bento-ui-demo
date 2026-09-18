@@ -12,15 +12,22 @@ people a clear next step when one is useful. It combines content, actions, and
 optional media into a responsive composition without creating new semantics for
 the components it contains.
 
-Use a Hero when a page needs a prominent introduction that explains its purpose,
-value, or current context. Do not use a Hero merely to make ordinary content
-larger, to repeat page navigation, or to place promotional content ahead of a
-more important task.
-
 A Hero is a block-level composition, not a component. Its heading, copy, actions,
 and media retain their existing semantic and behavioral ownership. Product data
 loading, campaign targeting, form submission, and multi-step interaction belong
 to the consuming product or an applicable experience pattern.
+
+## Use when
+
+Use a Hero when a page needs a prominent introduction that explains its purpose,
+value, or current context.
+
+## Do not use when
+
+Do not use a Hero merely to make ordinary content larger, to repeat page
+navigation, or to place promotional content ahead of a more important task. Use
+[`Page Header`](page-header.md) when the primary need is page identity,
+orientation, metadata, or task context.
 
 ## Anatomy
 
@@ -215,6 +222,12 @@ Validate the Hero with:
 - Keyboard navigation, visible focus, and logical focus order
 - Light, dark, forced-color, and high-contrast presentations
 - Reduced motion and disabled autoplaying decorative motion
+
+Apply the [`Public landing`](../VALIDATION.md#public-landing),
+[`Images and media`](../VALIDATION.md#images-and-media),
+[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis), and
+[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow)
+scenarios.
 
 The block is ready for shared use when every supported variant preserves content
 hierarchy, action meaning, readable order, and access without redefining its

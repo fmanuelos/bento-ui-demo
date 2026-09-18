@@ -9,7 +9,7 @@ export function OverviewPage() {
       <PageIntro
         eyebrow="Bento UI"
         title="Calm foundations for purposeful work"
-        summary="A semantic design language for public sites, applications, and information-dense operational experiences."
+        summary="A semantic design language for Public Sites, Focused Flows, and Application Workspaces."
       />
       <div className="grid gap-scale-4 sm:grid-cols-3">
         <Card compact>
@@ -64,7 +64,37 @@ export function OverviewPage() {
         </ol>
       </DocsSection>
       <DocsSection id="start" title="Where to start">
-        <div className="grid gap-scale-3 sm:grid-cols-2">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-scale-3">
+          <Link
+            className={linkStyles({
+              variant: 'navigation',
+              className:
+                'rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-6 hover:border-border-focus',
+            })}
+            to="/docs/architecture"
+          >
+            <strong className="block text-heading-sm text-text-primary">
+              Understand the architecture
+            </strong>
+            <span className="mt-scale-2 block text-body-sm text-text-secondary">
+              Modes, variants, templates, product pages, reference pages, and domains.
+            </span>
+          </Link>
+          <Link
+            className={linkStyles({
+              variant: 'navigation',
+              className:
+                'rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-6 hover:border-border-focus',
+            })}
+            to="/docs/experience-modes"
+          >
+            <strong className="block text-heading-sm text-text-primary">
+              Choose an experience mode
+            </strong>
+            <span className="mt-scale-2 block text-body-sm text-text-secondary">
+              Start from the person’s goal, navigation needs, and task continuity.
+            </span>
+          </Link>
           <Link
             className={linkStyles({
               variant: 'navigation',

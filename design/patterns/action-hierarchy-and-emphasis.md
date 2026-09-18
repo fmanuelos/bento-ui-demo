@@ -184,7 +184,7 @@ motion does not change the hierarchy.
 ## Validation scenarios
 
 Apply the shared matrix and every check in
-[`Action hierarchy`](../VALIDATION.md#action-hierarchy). Include Public Site,
+[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis). Include Public Site,
 form, dialog, empty, toolbar, destructive, loading, unavailable, failed, nested,
 and responsive regions. Test more than one independent region on screen, removal
 of optional actions, 60% label expansion, 200% text, right-to-left direction,

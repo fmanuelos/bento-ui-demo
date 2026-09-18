@@ -1128,7 +1128,7 @@ export const componentDocs = [
     mistakes: [
       'Do not use a button for navigation.',
       'Use Link or LinkButton, not the link variant, when activation has a destination.',
-      'Do not use large or extra-large sizing for dashboard toolbars or repeated actions.',
+      'Do not use large or extra-large sizing for Application Workspace toolbars or repeated actions.',
       'Do not remove the label during loading.',
       'Name the destructive outcome instead of relying on red.',
     ],
@@ -2251,13 +2251,13 @@ export const componentDocs = [
       'Mobile navigation moves focus inside, contains it, closes on Escape, and restores the trigger.',
     ],
     responsive:
-      'At mobile and tablet widths the sidebar becomes temporary navigation; at desktop and wide widths it may remain persistent when the dashboard still has sufficient room.',
+      'At mobile and tablet widths the sidebar becomes temporary navigation; at desktop and wide widths it may remain persistent when the Application Workspace still has sufficient room.',
     theme:
       'Sidebar, item, selected, topbar, boundary, and focus roles map directly to navigation tokens.',
     mistakes: [
       'Do not style the current route as a primary action.',
       'Do not remove destination names from the accessible tree when collapsed.',
-      'Do not place a squeezed persistent sidebar beside a narrow dashboard.',
+      'Do not place a squeezed persistent sidebar beside a narrow Application Workspace.',
     ],
     related: ['skip-link', 'tabs', 'button', 'disclosure', 'drawer', 'site-navigation', 'tooltip'],
   }),

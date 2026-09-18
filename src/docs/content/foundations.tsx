@@ -371,7 +371,10 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         title: 'Usage',
         body: (
           <ul className="list-disc">
-            <li>Use body-md for public surfaces and body-sm for readable dashboard content.</li>
+            <li>
+              Use body-md for public surfaces and body-sm for readable Application Workspace
+              content.
+            </li>
             <li>
               Use labels for controls and navigation, captions for metadata, and data roles for
               metrics.
@@ -440,7 +443,28 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
               <code>container-wide</code> supports expansive public-site layouts.
             </li>
             <li>
-              <code>container-dashboard</code> supports dense dashboards.
+              <code>container-workspace</code> supports dense Application Workspaces.
+            </li>
+          </ul>
+        ),
+      },
+      {
+        title: 'Experience layouts',
+        body: (
+          <ul className="list-disc">
+            <li>
+              <strong>Public Site:</strong> Use page padding, readable content widths, and spacious
+              section separation for discovery and reading.
+            </li>
+            <li>
+              <strong>Focused Flow:</strong> Use page padding with a narrow or readable container,
+              one column by default, task-local navigation, and a safe exit where leaving is
+              permitted.
+            </li>
+            <li>
+              <strong>Application Workspace:</strong> Use compact grouping, fluid workspace width,
+              and workspace padding tokens; add persistent navigation only when it fits the task and
+              available space.
             </li>
           </ul>
         ),
@@ -460,9 +484,9 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         title: 'Density and targets',
         body: (
           <p>
-            Small controls belong in dense pointer-oriented tools. Medium controls are the dashboard
-            default; large controls are for forms and touch contexts. Touch layouts preserve the
-            44px minimum target.
+            Small controls belong in dense pointer-oriented tools. Medium controls are the
+            Application Workspace default; large controls are for forms and touch contexts. Touch
+            layouts preserve the 44px minimum target.
           </p>
         ),
       },

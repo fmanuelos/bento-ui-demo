@@ -4,8 +4,11 @@
 
 Use this guide to review Bento UI implementations in representative workflows and
 adverse conditions. It complements the normative rules in [`DESIGN.md`](../DESIGN.md),
-the [`component contracts`](components/), and the [`experience
-patterns`](patterns/); it does not redefine them or prescribe one layout.
+the [`component contracts`](components/), the [`block contracts`](blocks/), and
+the [`experience patterns`](patterns/), [`experience mode contracts`](experiences/),
+[`template contracts`](templates/), and
+[`product-domain guidance`](product-domains.md); it does not redefine them or
+prescribe one layout.
 
 The normative contracts define the required outcomes. This guide defines baseline
 conditions, representative workflows, and cross-cutting stress tests for checking
@@ -13,11 +16,14 @@ whether an implementation preserves those outcomes.
 
 ## How to use this guide
 
-1. Identify every workflow scenario that the change affects.
-2. Apply all relevant baseline environments, states, and invariants to those
+1. Record the experience mode, applicable variant and template, primary and
+   material secondary domains, audience, and authoritative state owner.
+2. Identify every workflow scenario and cross-cutting stress test that the change
+   affects.
+3. Apply all relevant baseline environments, states, and invariants to those
    workflows.
-3. Add every cross-cutting stress test relevant to the content or interaction.
-4. When an individual check is not applicable, explain why rather than marking an
+4. Add every participating component, block, and pattern contract.
+5. When an individual check is not applicable, explain why rather than marking an
    entire category as unsupported.
 
 The scenario checklists emphasize risks that are especially important to a
@@ -27,18 +33,41 @@ workflow. They do not replace the baseline validation requirements.
 
 Several rows can apply to one change.
 
-| Change involves                                               | Apply                                                           |
-| ------------------------------------------------------------- | --------------------------------------------------------------- |
-| Marketing, acquisition, or another first-visit page           | [Public landing](#public-landing)                               |
-| Articles, policies, documentation, or other long-form content | [Public content](#public-content)                               |
-| Metrics or several independently loaded data regions          | [Dashboard overview](#dashboard-overview)                       |
-| Search, filtering, tables, pagination, or bulk operations     | [Data management](#data-management)                             |
-| Entering, editing, validating, or saving user-provided data   | [Form workflow](#form-workflow)                                 |
-| Permanent, broad-scope, or otherwise consequential loss       | [Destructive workflow](#destructive-workflow)                   |
-| Meaningful images, charts, illustrations, video, or animation | [Images and media](#images-and-media)                           |
-| Competing, nested, destructive, or changing actions           | [Action hierarchy and emphasis](#action-hierarchy-and-emphasis) |
+| Change involves                                                      | Apply                                                                                             |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Marketing, acquisition, or another first-visit page                  | [Public landing](#public-landing)                                                                 |
+| Articles, policies, documentation, or other long-form content        | [Public content](#public-content)                                                                 |
+| Authentication, onboarding, checkout, setup, or another bounded task | [Focused Flow](#focused-flow)                                                                     |
+| Persistent or temporary application navigation and recurring work    | [Application Workspace](#application-workspace)                                                   |
+| Metrics or several independently loaded data regions                 | [Dashboard overview](#dashboard-overview), an Application Workspace page scenario                 |
+| Search, filtering, tables, pagination, or bulk operations            | [Data management](#data-management)                                                               |
+| Entering, editing, validating, or saving user-provided data          | [Form workflow](#form-workflow)                                                                   |
+| Permanent, broad-scope, or otherwise consequential loss              | [Destructive workflow](#destructive-workflow)                                                     |
+| Meaningful images, charts, illustrations, video, or animation        | [Images and media](#images-and-media)                                                             |
+| Competing, nested, destructive, or changing actions                  | [Action hierarchy and emphasis](#action-hierarchy-and-emphasis)                                   |
+| A reusable page or section composition                               | [Block composition and reflow](#block-composition-and-reflow)                                     |
+| Selecting a mode or moving between mode boundaries                   | [Experience classification and mode transitions](#experience-classification-and-mode-transitions) |
+| A shared template, product instance, or reference page               | [Template conformance](#template-conformance)                                                     |
+| Adding, changing, or assigning a business capability                 | [Product-domain classification](#product-domain-classification)                                   |
 
 ## Baseline validation
+
+### Classification record
+
+Before rendered validation, record:
+
+- One primary experience mode and the user goal that justifies it.
+- The applicable experience variant and whether it is Proposed or governed by a
+  dedicated contract.
+- The shared template, or why the structure remains product-specific.
+- One primary product domain and only material secondary domains.
+- The audience, permissions, authoritative state, saved boundary, and evidence
+  owner.
+
+Treat this record as validation scope, not supported `DESIGN.md` frontmatter.
+Authentication, route location, team ownership, a sidebar, cards, or visual
+density do not determine the mode. A domain does not determine the mode, variant,
+template, or visual system.
 
 ### Test environments
 
@@ -87,8 +116,12 @@ evidence, and choose a next step without learning application navigation.
 **Use when:** Reviewing a marketing, acquisition, campaign, product-introduction,
 or other first-visit page whose main purpose is orientation and a next action.
 
-**Related contracts:** Apply the relevant navigation, action, disclosure, and
-media contracts.
+**Related contracts:** Apply [`Hero`](blocks/hero.md),
+[`Section Header`](blocks/section-header.md),
+[`Call to Action`](blocks/call-to-action.md),
+[`Feature Grid`](blocks/feature-grid.md), and
+[`Site Footer`](blocks/site-footer.md) when those compositions are present,
+together with the relevant navigation, action, disclosure, and media contracts.
 
 **Critical behaviors:**
 
@@ -121,8 +154,11 @@ losing their place.
 **Use when:** Reviewing an article, policy, guide, documentation page, or another
 long-form document that a visitor may enter at any point.
 
-**Related contracts:** Apply the relevant breadcrumb, link, alert, table, and
-navigation contracts.
+**Related contracts:** Apply [`Page Header`](blocks/page-header.md),
+[`Section Header`](blocks/section-header.md), and
+[`Site Footer`](blocks/site-footer.md) when those compositions are present,
+together with the relevant breadcrumb, link, alert, table, and navigation
+contracts.
 
 **Critical behaviors:**
 
@@ -146,7 +182,136 @@ navigation contracts.
 - Keep focused headings visible below sticky content and return focus predictably
   after in-page navigation.
 
+### Focused Flow
+
+**Outcome:** A person can complete one bounded outcome, understand their current
+state and consequences, and exit, resume, retry, or recover without losing valid
+work.
+
+**Use when:** Reviewing authentication, reauthentication, account recovery,
+onboarding, checkout, application submission, initial setup, or another bounded
+task whose unrelated choices should be reduced.
+
+**Related contracts:** Apply the
+[`Focused Flow`](experiences/focused-flow.md) mode contract together with
+[`Forms and validation`](patterns/forms-and-validation.md),
+[`Task continuity and unsaved work`](patterns/task-continuity.md),
+[`Asynchronous feedback`](patterns/async-feedback.md), and
+[`Action hierarchy and emphasis`](patterns/action-hierarchy-and-emphasis.md).
+Apply destructive-action and temporary-surface contracts when their conditions
+are present.
+
+**Critical behaviors:**
+
+- Keep the task name and current state stable. Present requirements, fields or
+  decisions, validation, consequences, and actions in meaningful reading and
+  focus order.
+- Keep navigation task-local and preserve a safe exit or return when leaving is
+  permitted. Do not expose unrelated global destinations as competing actions.
+- Keep one primary action for the current decision. Back, cancel, save and exit,
+  help, recovery, and destructive commitment retain distinct purposes and
+  emphasis.
+- Show progress only for a stable, meaningful sequence. A one-step flow does not
+  require progress, and a multi-step flow must not promise completion before the
+  authoritative outcome is known.
+- Make Back, Forward, direct entry, reload, surface dismissal, and explicit exit
+  agree with the declared persistence and unsaved-work policy.
+
+**Workflow-specific states:**
+
+- Distinguish initial, editing, validating, submitting, outcome unknown, failed,
+  blocked, completed, expired, and resumed states where applicable.
+- Preserve valid input through validation, recoverable failure, responsive
+  transformation, and reauthentication when policy permits. Prevent duplicate
+  commitment while an outcome is pending or unknown.
+- After session expiry, permission loss, or identity change, verify access and
+  authoritative data before restoring safe retained work.
+- Completion identifies the durable outcome and an accurate next destination;
+  intermediate persistence does not imply final commitment.
+
+**Boundary and adverse cases:**
+
+- Test a valid one-step flow and a meaningful multi-step flow, direct entry to
+  supported and unsupported steps, browser Back and Forward, reload, interruption,
+  save and exit, resumption, expiry, and completion.
+- Test validation above and below the viewport, late validation, slow submission,
+  failure before and after commitment, unknown outcome, network loss, duplicate
+  activation, and recovery without blind resubmission.
+- Test long instructions, 60% label expansion, locale-specific names and
+  addresses, bidirectional text, password managers or autofill where relevant,
+  an on-screen keyboard, 200% text, increased spacing, forced colors, and reduced
+  motion.
+
+**Additional baseline emphasis:**
+
+- Use `container-narrow` or `container-readable` with the applicable page padding,
+  one column by default, and no persistent workspace sidebar. Stack and wrap
+  before content overflows without hiding required guidance or shrinking controls.
+- When launched from a Public Site or Application Workspace, verify the boundary,
+  origin, exit destination, return context, focus restoration, and state owner.
+
+### Application Workspace
+
+**Outcome:** A recurring user can identify their workspace, current location,
+available authorized destinations, and primary task while retaining context
+through navigation, responsive transformation, interruption, and failure.
+
+**Use when:** Reviewing an application shell or page for recurring operational,
+administrative, publishing, analytical, customer, or support work across related
+destinations, records, settings, tools, or data.
+
+**Related contracts:** Apply the
+[`Application Workspace`](experiences/application-workspace.md) mode contract and
+[`Navigation shell`](patterns/navigation-shell.md), together with the applicable
+task, data, form, continuity, asynchronous-feedback, and action contracts.
+
+**Critical behaviors:**
+
+- Preserve workspace identity, current location, authorized destinations, primary
+  task access, and bypass navigation when the shell changes between persistent,
+  collapsed, and temporary presentations.
+- Use `workspace-padding-mobile`, `workspace-padding-tablet`, and
+  `workspace-padding-desktop` at their matching system ranges. Use
+  `container-workspace` when the normal data-heavy width is appropriate; wider
+  tables and analysis surfaces require a task reason.
+- Give the main task or analysis surface width before secondary summaries or
+  inspectors. Density may improve scanning but must not reduce readable text,
+  essential targets, or complete values indiscriminately.
+- Keep navigation, current location, local views, pagination, selection, status,
+  and action priority semantically distinct.
+
+**Workflow-specific states:**
+
+- Preserve applicable route, query, filter, sort, pagination, selection, expanded
+  detail, scroll, and return context through navigation, refresh, failure, and
+  responsive transformation.
+- Test initial loading, background refresh, stale and partial data, offline state,
+  no results, missing permission, changed access, session expiry, and unknown
+  outcomes without redirecting silently to unrelated work.
+- When entering or returning from a Focused Flow, resolve unsaved work and restore
+  the intended origin, focus, and authoritative state.
+
+**Boundary and adverse cases:**
+
+- Test navigation labels expanded by 60%, 200% text, narrow task regions, dense
+  valid data, an on-screen keyboard, right-to-left direction, touch, keyboard,
+  and pointer input.
+- Test a narrow layout that requires temporary navigation and a wide layout where
+  persistent navigation still cannot coexist with the task. Available space and
+  content fit, not a named breakpoint alone, determine the transformation.
+- Test role and permission changes while navigation is open, while editing, and
+  after direct entry to an unavailable destination.
+
+**Additional baseline emphasis:**
+
+- Verify that dashboard remains a specific overview template or page type rather
+  than the label for the complete workspace. Non-dashboard record, editor,
+  settings, and administrative pages retain accurate names and structures.
+
 ### Dashboard overview
+
+**Experience context:** This is a page-level dashboard scenario within
+Application Workspace, not a separate experience mode.
 
 **Outcome:** A returning user can identify current location, freshness, the most
 important action, and work needing attention even when some data is unavailable.
@@ -154,7 +319,10 @@ important action, and work needing attention even when some data is unavailable.
 **Use when:** Reviewing a page composed of metrics, summaries, status regions, or
 several independently loaded data regions.
 
-**Related contracts:** Apply the relevant data-display, asynchronous-feedback,
+**Related contracts:** Apply [`Page Header`](blocks/page-header.md),
+[`Section Header`](blocks/section-header.md), and
+[`Metric Overview`](blocks/metric-overview.md) when those compositions are
+present, together with the relevant data-display, asynchronous-feedback,
 navigation, status, and action contracts.
 
 **Critical behaviors:**
@@ -201,7 +369,11 @@ or actions over one or many records.
 [`Data display`](patterns/data-display.md),
 [`Selection and bulk actions`](patterns/selection-and-bulk-actions.md), and
 [`Asynchronous feedback`](patterns/async-feedback.md) patterns together with the
-applicable component contracts.
+applicable component contracts. Apply
+[`Results Toolbar`](blocks/results-toolbar.md) when query controls, result
+context, and operations form that composition. When metrics summarize the
+current query or record scope, also apply
+[`Metric Overview`](blocks/metric-overview.md).
 
 **Critical behaviors:**
 
@@ -259,7 +431,9 @@ submission.
 [`Forms and validation`](patterns/forms-and-validation.md),
 [`Task continuity and unsaved work`](patterns/task-continuity.md), and
 [`Asynchronous feedback`](patterns/async-feedback.md) patterns together with the
-applicable component contracts.
+applicable component contracts. Apply
+[`Form Section`](blocks/form-section.md) when related fields and guidance form a
+named section within the workflow.
 
 **Critical behaviors:**
 
@@ -344,6 +518,129 @@ When the loss is entered or recovered work, also apply the
 
 ## Cross-cutting stress tests
 
+### Experience classification and mode transitions
+
+**Outcome:** A product uses one coherent primary mode at a time and preserves
+meaning, state, and focus when a journey intentionally crosses a mode boundary.
+
+**Use when:** Selecting or changing an experience mode, embedding a bounded task
+inside another mode, or linking among Public Site, Focused Flow, and Application
+Workspace experiences.
+
+**Related contracts:** Apply the
+[`experience mode index`](experiences/README.md) and the selected
+[`Public Site`](experiences/public-site.md),
+[`Focused Flow`](experiences/focused-flow.md), or
+[`Application Workspace`](experiences/application-workspace.md) contract.
+
+**Classification checks:**
+
+- Justify the primary mode from the current user goal and required navigation,
+  continuity, density, and state model. Authentication, team, route, layout, or
+  visual preference alone is insufficient.
+- Use a variant only when its label improves shared understanding. A Proposed
+  variant inherits only its parent mode until a dedicated contract is approved.
+- Treat dashboard as a workspace overview page or template, never as a mode or
+  general label for authenticated experiences.
+- If two modes appear to coexist, identify an explicit page, flow, dialog, drawer,
+  or other component boundary. Do not blend conflicting navigation and continuity
+  rules implicitly.
+
+**Transition checks:**
+
+- Verify that the source communicates the destination or outcome before entry.
+  Preserve the origin, safe exit, intended return destination, focus restoration,
+  and state ownership required by the task.
+- Exercise direct entry, deep links, reload, Back and Forward, cancellation,
+  completion, interruption, session expiry, permission loss, and an unavailable
+  return destination.
+- Resolve source-page unsaved work before departure. Do not allow a mode change to
+  discard valid work, duplicate commitment, restore stale authority, or move focus
+  without a task reason.
+- At responsive boundaries, verify that a presentation change does not silently
+  change the experience mode, available destinations, or persistence policy.
+
+**Evidence:**
+
+- Record the before-and-after classification, transition trigger, state owner,
+  persistence boundary, entry and exit routes, and observed focus behavior.
+
+### Template conformance
+
+**Outcome:** A reusable template preserves its declared complete-page or flow
+structure across product instances and adverse conditions without absorbing the
+responsibilities of its participating contracts.
+
+**Use when:** Proposing, changing, implementing, or validating a shared template,
+product page or flow-step instance, or reference page.
+
+**Related contracts:** Apply the [`template index`](templates/README.md), its
+declared experience mode, and every named component, block, and experience
+pattern contract.
+
+**Contract checks:**
+
+- Confirm that the template solves a recurring named problem, remains stable
+  across at least two representative uses, and declares one unambiguous primary
+  mode. Shared chrome or visual arrangement alone does not satisfy admission.
+- Verify required and optional regions, meaningful source order, action and
+  permission boundaries, complete-structure states, continuity, content and data
+  requirements, responsive behavior, localization, and accessibility.
+- Remove every optional region independently. No empty wrapper, reserved gap,
+  broken heading sequence, inaccessible destination, or action without a subject
+  may remain.
+- Confirm that product instances supply real content, data, routes, permissions,
+  state, business rules, and domain classification without weakening or silently
+  extending the shared contract.
+
+**Reference-page checks:**
+
+- Exercise representative, minimum-valid, maximum-valid, localized, narrow,
+  wide, loading, empty, partial, stale, offline, error, unauthorized, interrupted,
+  resumed, and accessibility-relevant instances as applicable.
+- Record the template revision and scenario coverage. A screenshot, successful
+  build, or one product instance is evidence but does not independently prove
+  template completeness.
+
+### Product-domain classification
+
+**Outcome:** A page or flow uses a stable business-capability vocabulary without
+allowing organizational ownership or interface structure to create misleading
+domains or visual systems.
+
+**Use when:** Assigning primary or secondary domains, adding or changing a shared
+domain, or reusing a mode, variant, or template across capabilities.
+
+**Related contracts:** Apply the
+[`product-domain guidance`](product-domains.md) and the page or flow's selected
+mode and template contracts.
+
+**Classification checks:**
+
+- Assign the primary domain by asking which business capability the person used
+  or advanced when the experience succeeded.
+- Add a secondary domain only when it materially changes terminology,
+  eligibility, permissions, data, sequence, recovery, policy, or validation.
+  Team contribution, data origin, shared components, and outbound links are not
+  sufficient.
+- Test ambiguous boundaries explicitly: Marketing and Publishing, Identity &
+  Access and Account, Analytics and Administration, Help & Support and
+  Publishing, and Administration and Identity & Access.
+- When two domains appear equally primary, verify that one coherent outcome
+  genuinely requires both; otherwise separate the decisions, pages, steps, or
+  regions.
+
+**System checks:**
+
+- Reuse the same domain across modes only when each experience continues to obey
+  its own navigation, density, permission, continuity, and accessibility rules.
+- Verify that a domain has not automatically created a color family, theme,
+  spacing or layout token, component prefix, mode, variant, template fork,
+  navigation destination, or permission boundary.
+- For a domain addition, rename, merge, split, or removal, record rationale,
+  affected classifications and metadata, migration, navigation implications,
+  validation impact, owner, and review date.
+
 ### Images and media
 
 **Outcome:** A user receives the same necessary meaning and can complete the same
@@ -354,7 +651,9 @@ cropped, responsive, linked, animated, or asynchronously loaded media.
 
 **Related contracts:** Apply the shared
 [`Images and media`](../DESIGN.md#images-and-media) foundation and the applicable
-component or composition contract.
+component or composition contract. Apply [`Hero`](blocks/hero.md) and
+[`Call to Action`](blocks/call-to-action.md), or
+[`Feature Grid`](blocks/feature-grid.md) when media participates in those blocks.
 
 **Critical behaviors:**
 
@@ -403,6 +702,13 @@ destructive, or asynchronously changing actions.
 **Related contracts:** Apply the
 [`Action hierarchy and emphasis`](patterns/action-hierarchy-and-emphasis.md)
 pattern together with every functional pattern that owns the actions' outcomes.
+Apply [`Hero`](blocks/hero.md), [`Page Header`](blocks/page-header.md),
+[`Section Header`](blocks/section-header.md), and
+[`Call to Action`](blocks/call-to-action.md) when their action regions are
+present. Apply [`Feature Grid`](blocks/feature-grid.md),
+[`Form Section`](blocks/form-section.md), and
+[`Results Toolbar`](blocks/results-toolbar.md) when their section or item action
+regions are present.
 
 **Critical behaviors:**
 
@@ -440,13 +746,75 @@ pattern together with every functional pattern that owns the actions' outcomes.
   removal, forced colors, and reduced motion. Purpose and priority must remain
   understandable without relying on color, size, position, or animation alone.
 
+### Block composition and reflow
+
+**Outcome:** A user can understand and operate a reusable composition when
+optional regions, content length, available space, writing direction, state, or
+input capability changes.
+
+**Use when:** Reviewing any shared block contract or an implementation that
+claims conformance with one.
+
+**Related contracts:** Apply the relevant block contract:
+[`Hero`](blocks/hero.md), [`Page Header`](blocks/page-header.md),
+[`Section Header`](blocks/section-header.md),
+[`Call to Action`](blocks/call-to-action.md), or
+[`Metric Overview`](blocks/metric-overview.md),
+[`Feature Grid`](blocks/feature-grid.md), [`Site Footer`](blocks/site-footer.md),
+[`Form Section`](blocks/form-section.md), or
+[`Results Toolbar`](blocks/results-toolbar.md). Apply every participating
+component and experience pattern named by that block.
+
+**Critical behaviors:**
+
+- Verify the required anatomy first, then remove each optional region separately.
+  Remaining content must reflow without empty wrappers, reserved gaps, orphaned
+  headings, or controls that lose their subject.
+- Confirm that the authored reading and focus order preserves the contract's
+  hierarchy in every visual variant. Columns, inline regions, centering, and
+  media placement must not create a contradictory sequence.
+- Check each action against its actual destination or operation. Block-level
+  composition must not change Button, Link, status, media, card, or other
+  participating-component semantics.
+- Apply loading, refresh, unavailable, empty, error, and recovery only where the
+  block or its dependencies declare them. Stable headings and usable peer
+  regions remain available when their contracts require it.
+
+**Responsive and localization conditions:**
+
+- Test immediately before and after every content-driven transformation, not
+  only at the system page ranges. Each region must retain a useful width before
+  columns, inline actions, or media stack.
+- Test heading, description, metadata, value, condition, and action content with
+  at least 60% expansion, 200% text, increased spacing, unbroken valid values,
+  multiple writing systems, and left-to-right and right-to-left direction.
+- Verify that logical alignment, source order, focus order, action priority,
+  metric meaning, and directional media survive writing-direction changes.
+  Locale-aware names, dates, times, numbers, units, and currency remain
+  associated with their labels.
+
+**Boundary and adverse cases:**
+
+- Test the minimum valid anatomy, the complete anatomy, unusually long valid
+  content, absent optional media or metadata, failed asynchronous content, and
+  adjacent blocks with independent headings and primary actions.
+- Test keyboard, pointer, touch, speech, dark and inverse surfaces when used,
+  forced colors or high contrast, reduced motion, slow media, and an on-screen
+  keyboard where actions or forms participate.
+
+**Additional baseline emphasis:**
+
+- Record which block variant, optional regions, participating contracts, and
+  workflow scenario were exercised. Passing one representative page does not
+  demonstrate every variant or supported experience mode.
+
 ## Recording evidence
 
 Keep product-specific evidence in the pull request, issue, release record, or
 other durable review record. Include:
 
 - Product or implementation name and source revision.
-- Applicable scenarios and conditions from the shared matrix.
+- Applicable scenarios and conditions from [baseline validation](#baseline-validation).
 - Browser, operating-system, device, input, assistive-technology, theme, locale,
   and writing-direction coverage.
 - Automated results, manual review notes, and screenshots when they clarify a
@@ -456,5 +824,5 @@ other durable review record. Include:
 
 Parsing, generation, compilation, inventory coverage, or visual inspection alone
 does not demonstrate accessible behavior or user outcomes. Correct recurring
-failures in the shared foundation, component, or pattern; keep genuinely local
-needs in the consuming product.
+failures in the shared foundation, component, block, or pattern; keep genuinely
+local needs in the consuming product.

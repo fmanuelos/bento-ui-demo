@@ -413,9 +413,9 @@
   --spacing-page-padding-mobile: 1rem;
   --spacing-page-padding-tablet: 1.5rem;
   --spacing-page-padding-desktop: 2rem;
-  --spacing-dashboard-padding-mobile: 1rem;
-  --spacing-dashboard-padding-tablet: 1.25rem;
-  --spacing-dashboard-padding-desktop: 1.5rem;
+  --spacing-workspace-padding-mobile: 1rem;
+  --spacing-workspace-padding-tablet: 1.25rem;
+  --spacing-workspace-padding-desktop: 1.5rem;
   --spacing-grid-gutter-mobile: 1rem;
   --spacing-grid-gutter-tablet: 1.25rem;
   --spacing-grid-gutter-desktop: 1.5rem;
@@ -442,5 +442,5 @@
   --spacing-container-content: 60rem;
   --spacing-container-page: 75rem;
   --spacing-container-wide: 90rem;
-  --spacing-container-dashboard: 100rem;
+  --spacing-container-workspace: 100rem;
 }

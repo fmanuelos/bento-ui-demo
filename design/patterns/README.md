@@ -10,6 +10,10 @@ The [pattern language](../../DESIGN.md#pattern-language) distinguishes functiona
 patterns from perceptual patterns without separating them into independent
 systems.
 
+Reusable shared compositions are documented in the
+[`block index`](../blocks/README.md). Product-specific arrangements remain with
+their consuming template or product until reuse justifies promotion.
+
 ## Classifications
 
 - **Functional patterns** coordinate components, content, state, and sequence so
@@ -92,16 +96,17 @@ applicable sections without prescribing an implementation technology.
 
 ## Ownership boundaries
 
-| Concern                         | Normative owner                                                                                                      |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Shared values and principles    | [`DESIGN.md`](../../DESIGN.md) foundations and system contract                                                       |
-| One bounded semantic unit       | A contract in [`design/components/`](../components/)                                                                 |
-| One local arrangement           | A composition documented with its consuming template or product until reuse justifies promotion                      |
-| Cross-component user outcome    | An experience pattern in this directory                                                                              |
-| Page or flow structure          | A template                                                                                                           |
-| Concrete representative content | A reference page                                                                                                     |
-| Platform mechanics              | [`design/adapters/`](../adapters/)                                                                                   |
-| Representative workflow checks  | [`design/VALIDATION.md`](../VALIDATION.md), which tests the normative contract without introducing new design intent |
+| Concern                          | Normative owner                                                                                                      |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Shared values and principles     | [`DESIGN.md`](../../DESIGN.md) foundations and system contract                                                       |
+| One bounded semantic unit        | A contract in [`design/components/`](../components/)                                                                 |
+| One reusable local arrangement   | A contract in [`design/blocks/`](../blocks/)                                                                         |
+| One product-specific arrangement | Its consuming template or product until reuse justifies promotion                                                    |
+| Cross-component user outcome     | An experience pattern in this directory                                                                              |
+| Page or flow structure           | A [template contract](../templates/)                                                                                 |
+| Concrete representative content  | A reference page                                                                                                     |
+| Platform mechanics               | [`design/adapters/`](../adapters/)                                                                                   |
+| Representative workflow checks   | [`design/VALIDATION.md`](../VALIDATION.md), which tests the normative contract without introducing new design intent |
 
 Patterns reference component contracts instead of copying their anatomy,
 individual keyboard commands, token mappings, or platform semantics. When a

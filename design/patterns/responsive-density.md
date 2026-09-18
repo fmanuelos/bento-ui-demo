@@ -99,7 +99,7 @@ regions must not obscure focused content, headings, messages, or recovery action
 at zoom or while an on-screen keyboard is present.
 
 Wide behavior must solve a documented layout problem, such as preserving a
-secondary dashboard panel or exposing additional essential data columns.
+secondary workspace panel or exposing additional essential data columns.
 
 ## Accessibility
 
@@ -120,7 +120,7 @@ the transformation or changing its outcome.
 ## Validation scenarios
 
 Apply every dimension in the
-[`shared validation matrix`](../VALIDATION.md#shared-validation-matrix) to each
+[`baseline validation`](../VALIDATION.md#baseline-validation) to each
 applicable workflow. Include the boundaries immediately above and below each
 system range, content-driven transformation away from a range boundary, 200%
 text, increased spacing, 60% label expansion, RTL, keyboard-only operation,

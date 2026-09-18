@@ -9,8 +9,7 @@ Contract complete.
 Public-site navigation communicates identity, current location, primary
 destinations, and the main conversion or account action without competing with
 page content. It serves public commercial, marketing, and informational pages.
-Use the [`Navigation Shell contract`](navigation.md) for authenticated dashboard
-workspaces.
+Use the [`Navigation Shell contract`](navigation.md) for Application Workspaces.
 
 When destinations do not fit inline, preserve them through the shared
 [`Disclosure contract`](disclosure.md). A modal temporary presentation also

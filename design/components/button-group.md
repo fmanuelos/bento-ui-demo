@@ -45,7 +45,7 @@ when the relationship or purpose would otherwise be unclear.
   are square.
 
 All buttons in one group use the same canonical Button size. Medium is the
-default. Small is permitted for compact Dashboard toolbars and filters when each
+default. Small is permitted for compact Application Workspace toolbars and filters when each
 control still satisfies the Button target-size requirements. Large and
 extra-large groups are reserved for the Public Site contexts already allowed by
 Button.

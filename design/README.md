@@ -5,11 +5,15 @@ packages, commands, generated formats, and runtime structure may change without
 changing the meaning of the Bento UI design contract.
 
 [`DESIGN.md`](../DESIGN.md) is the only hand-edited source of exact token values.
-Its Markdown body, the [`component contracts`](components/), and the
-[`experience patterns`](patterns/) define intended use. The
+Its Markdown body, the [`component contracts`](components/), the
+[`block contracts`](blocks/), the [`experience patterns`](patterns/), and the
+[`experience mode contracts`](experiences/), [`template contracts`](templates/),
+and [`product-domain guidance`](product-domains.md) define intended use. The
 [`adapter documentation`](adapters/) translates that contract for specific
 platforms and tools. [`VALIDATION.md`](VALIDATION.md) collects representative
-workflow and adverse-condition checks without redefining design intent.
+workflow and adverse-condition checks without redefining design intent. The
+[`architecture migration record`](MIGRATION.md) documents the completed
+terminology and layout-token migration and its verification boundary.
 
 ## Generated files
 
@@ -22,11 +26,17 @@ Both files are generated artifacts. Never edit them directly.
 
 ```sh
 pnpm design:lint
+pnpm migration:check
+pnpm blocks:check
 pnpm design:build
 ```
 
 The repository pins `@google/design.md` 0.4.0. `design:lint` runs that local CLI
-and reports its findings directly.
+and reports its findings directly. `blocks:check` verifies block inventory
+coverage, maturity, required structure, local links, and validation references.
+`migration:check` verifies the canonical architecture vocabulary, required
+contracts and documentation routes, workspace-token exports and runtime use, and
+the absence of removed names outside the historical migration record.
 
 The format guidance is reviewed against the
 [Google Labs DESIGN.md specification at revision
@@ -60,12 +70,74 @@ conforms.
 Application implementation inventories belong in application or source-code
 documentation rather than the design-system contract.
 
+## Block documentation
+
+The files in `design/blocks/` describe reusable local compositions of content
+and components. They define stable hierarchy, relationships, transformation, and
+accessibility outcomes without absorbing the semantics, state, or behavior owned
+by participating components and experience patterns.
+
+Use the [`block index`](blocks/README.md) to review admission criteria, contract
+maturity, required structure, ownership boundaries, and validation coverage.
+Keep one-off arrangements in their consuming product or template until repeated
+use demonstrates a stable shared contract.
+
+Block contracts are normative design sources. Runtime block implementations,
+examples, screenshots, and product instances are implementation evidence and do
+not redefine their contracts. Run `pnpm blocks:check` after changing a block
+contract or its inventory; the full `pnpm check` command runs it automatically.
+
+## Experience mode documentation
+
+The files in `design/experiences/` define the mode-level navigation, layout,
+density, continuity, responsive, and accessibility requirements for Public Site,
+Focused Flow, and Application Workspace contexts.
+
+Use the [`experience mode index`](experiences/README.md) to select a mode,
+classify variants independently from product domains, review contract maturity,
+and locate the applicable mode contract. Templates and product pages apply these
+contracts; they do not redefine the mode vocabulary.
+
+Experience contracts are normative design sources. Their Draft status records
+remaining contract and validation work rather than permission for implementations
+to ignore their established requirements.
+
+## Template documentation
+
+The files in `design/templates/` define durable page- and flow-level structures
+that apply one experience mode and coordinate components, blocks, and patterns.
+They remain independent of product-specific content, routes, data, permissions,
+and business rules.
+
+Use the [`template index`](templates/README.md) to review categories, admission
+criteria, required contract structure, classification metadata, ownership
+boundaries, product instantiation, reference-page responsibilities, and
+completion criteria. Keep one-off structures with their consuming product until
+repeated use demonstrates a stable shared contract.
+
+Template contracts are normative design sources. Product pages and flow steps
+are consuming instances; reference pages are design-system validation evidence.
+Neither silently changes the shared template contract.
+
+## Product-domain documentation
+
+[`Product-domain guidance`](product-domains.md) defines the shared names,
+identifiers, scopes, boundaries, assignment rules, and extension policy for
+Marketing, Identity & Access, Publishing, Analytics, Administration, Account,
+and Help & Support.
+
+Domains classify business capability independently of experience modes,
+variants, templates, routes, audiences, and teams. Product implementations own
+their real business rules and content while using the shared classification
+vocabulary consistently.
+
 ## Changing the design system
 
 Use these rules for changes to shared design decisions:
 
-1. Treat `DESIGN.md` and the component and pattern contracts as the normative
-   sources. Runtime code and generated files are implementation evidence.
+1. Treat `DESIGN.md`, the product-domain guidance, and the component, block,
+   experience mode, pattern, and template contracts as the normative sources.
+   Runtime code and generated files are implementation evidence.
 2. Classify a change as a clarification, an additive decision, or a breaking
    decision. Do not hide a change in meaning inside a visual adjustment.
 3. Explain the user or product problem, alternatives considered, affected
@@ -81,6 +153,15 @@ Security, privacy, safety, and accessibility corrections may be expedited when
 retaining old behavior creates material harm, but still require rationale,
 consumer-impact review, migration guidance, and relevant validation.
 
+### Architecture migration
+
+The terminology, classification, validation, documentation, and workspace-token
+migration is complete for this repository. The
+[`architecture migration record`](MIGRATION.md) contains the replacement table,
+verification evidence, compatibility decision, and limits of the completed
+work. Run `pnpm migration:check` after changing architecture vocabulary, layout
+tokens, generated exports, or documentation routes.
+
 ## Validation
 
 Use [`VALIDATION.md`](VALIDATION.md) to test applicable workflows across content,
@@ -93,10 +174,17 @@ record. Evidence is implementation history, not design authority.
 
 The repository currently passes DESIGN.md format validation with the pinned
 tooling. The component inventory and runtime documentation are structurally
-covered, but the repository does not claim complete behavioral or product
-validation. A successful lint, generation, build, inventory check, or visual
-inspection is a prerequisite, not proof of rendered accessibility or user
-outcomes.
+covered. Block governance and its inventory are established, with the current
+block contracts retained as Drafts until shared implementation and validation
+coverage exist. Experience mode governance and the three canonical mode contracts
+are established as Drafts. The repository terminology migration and expanded
+architecture validation are complete and guarded by `migration:check`. Template
+governance is established, but no shared template has yet satisfied admission and
+completion review. The initial product-domain catalog and its classification
+governance are established. The repository does not claim complete behavioral or
+product validation. A successful lint, generation, build, inventory check, or
+visual inspection is a prerequisite, not
+proof of rendered accessibility or user outcomes.
 
 ## Export limitations
 

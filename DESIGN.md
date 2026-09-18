@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Bento UI
-description: A semantic design system for public sites, web applications, and dashboards using the Google Labs DESIGN.md format.
+description: A semantic design system for public sites, focused flows, and application workspaces using the Google Labs DESIGN.md format.
 colors:
   primary: '#155EEF'
 
@@ -485,9 +485,9 @@ spacing:
   page-padding-mobile: 1rem # 16px
   page-padding-tablet: 1.5rem # 24px
   page-padding-desktop: 2rem # 32px
-  dashboard-padding-mobile: 1rem # 16px
-  dashboard-padding-tablet: 1.25rem # 20px
-  dashboard-padding-desktop: 1.5rem # 24px
+  workspace-padding-mobile: 1rem # 16px
+  workspace-padding-tablet: 1.25rem # 20px
+  workspace-padding-desktop: 1.5rem # 24px
 
   grid-gutter-mobile: 1rem # 16px
   grid-gutter-tablet: 1.25rem # 20px
@@ -522,7 +522,7 @@ spacing:
   container-content: 60rem # 960px
   container-page: 75rem # 1200px
   container-wide: 90rem # 1440px
-  container-dashboard: 100rem # 1600px
+  container-workspace: 100rem # 1600px
 
 components:
   button-primary:
@@ -1047,18 +1047,23 @@ components:
 
 ## Overview
 
-Bento UI is a semantic design system for public sites, web applications, and
-dashboards.
+Bento UI is a semantic design system for public sites, focused flows, and
+application workspaces.
 
-Two experience terms are used consistently throughout this document:
+Three canonical experience modes describe the presentation and behavioral
+context of an experience:
 
 - **Public Site** describes public-facing commercial, marketing, and
   informational pages.
-- **Dashboard** describes authenticated, task-oriented, administrative, and
-  data-heavy experiences.
+- **Focused Flow** describes bounded tasks that minimize distraction and guide a
+  person toward a specific outcome.
+- **Application Workspace** describes authenticated, task-oriented,
+  administrative, operational, and data-heavy experiences.
 
-In code and identifiers, use `public-site` and `dashboard` for these experience
-types.
+In code and identifiers, use `public-site`, `focused-flow`, and
+`application-workspace` for these experience modes. Use dashboard as a product
+term only for an actual dashboard page or template, not as the general name for
+an authenticated experience or its layout tokens.
 
 ### Product purpose and audience
 
@@ -1071,14 +1076,65 @@ Public Site visitors may be unfamiliar with the organization or subject. They
 need to understand what is offered, establish trust, find information, and
 identify a sensible next step without learning an application interface first.
 
-Dashboard users are typically returning to an authenticated workspace to monitor
-information or complete a task. They need to orient quickly, scan and compare
-reliably, act with confidence, and recover from interruptions or errors without
-losing context or work.
+Focused Flow participants need to complete a bounded task, understand its current
+state and consequences, and recover from validation, interruption, or error
+without losing valid work. A focused flow may begin from a Public Site or an
+Application Workspace without inheriting unrelated navigation or competing
+tasks.
 
-Products that contain both modes select the mode by surface and user purpose.
-They do not mix editorial spaciousness and operational density arbitrarily within
-one task.
+Application Workspace users are typically returning to an authenticated
+environment to monitor information or complete a task. They need to orient
+quickly, scan and compare reliably, act with confidence, and recover from
+interruptions or errors without losing context or work.
+
+Products that contain more than one mode select the mode by surface and user
+purpose. They do not mix editorial spaciousness, focused progression, and
+operational density arbitrarily within one task.
+
+### Experience architecture
+
+Bento classifies product experiences through related but independent concepts:
+
+`Experience mode → Experience variant → Template → Product page or flow step`
+
+Product domains classify business capability across that hierarchy rather than
+forming another level within it.
+
+| Concept                | Responsibility                                                                                                                                     |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Experience mode**    | Defines the overall presentation and behavioral context, including navigation, density, continuity, and interaction expectations.                  |
+| **Experience variant** | Specializes one mode for a recurring environment or journey without creating a new foundational mode.                                              |
+| **Template**           | Defines a durable page- or flow-level structure, participating patterns, state handling, and responsive behavior without product-specific content. |
+| **Product page**       | Applies real content, data, actions, permissions, routes, and domain language to a template.                                                       |
+| **Flow step**          | Applies one meaningful state or stage of a flow template; a focused flow may contain one step or several.                                          |
+| **Reference page**     | Uses representative and adverse content to validate a template and the design system; it is test evidence rather than a product destination.       |
+| **Product domain**     | Identifies the business capability represented by an experience independently of its mode, variant, or template.                                   |
+
+For example, a customer support request can use the Application Workspace mode,
+the Customer Portal variant, a support-request template, and the Help & Support
+domain. An agent can work with the same domain through the Support Workspace
+variant. The shared domain does not require the two workspaces to use the same
+navigation, permissions, density, or available actions.
+
+Assign one primary domain when a page or flow has a clear business purpose. Add
+secondary domains only when they materially affect its terminology, permissions,
+data, or behavior. Do not create domain-specific visual tokens or redefine shared
+component semantics merely to express product ownership.
+
+The shared product-domain catalog is Marketing, Identity & Access, Publishing,
+Analytics, Administration, Account, and Help & Support. The
+[`product-domain guidance`](design/product-domains.md) defines their scope,
+boundaries, identifiers, assignment rules, and extension policy.
+
+Experience modes and variants classify context; they are not additional levels
+in the composition model. Templates connect that context to the components,
+compositions, and experience patterns needed for a recurring structure. Product
+pages and flow steps are product-owned instances. Reference pages are
+design-system-owned instances created specifically to exercise the contract.
+The [`experience mode contracts`](design/experiences/) define the distinguishing
+requirements for each canonical mode. The
+[`template contracts`](design/templates/) define how reusable page and flow
+structures apply that context.
 
 ### Experience outcomes
 
@@ -1113,7 +1169,7 @@ without feeling imposing and supportive without distracting from the work.
 Primary action tokens establish interactive hierarchy, brand tokens express
 identity, slate neutrals establish visual hierarchy, and semantic feedback and
 status tokens communicate meaning. Public Sites are spacious and content-led.
-Dashboard experiences are compact, structured, and information-led. Density
+Application Workspaces are compact, structured, and information-led. Density
 changes through spacing, grouping, control size, and layout—not indiscriminate
 reductions in text size.
 
@@ -1151,9 +1207,9 @@ short sentences, but retain necessary detail when a decision has consequences.
 4. **Reveal complexity when it becomes useful.** Present the information and
    controls needed for the current decision while keeping advanced capability
    discoverable and context intact.
-5. **One language, context-aware expression.** Public Sites and Dashboards share
-   semantic foundations and behavior while adapting composition, density, and
-   emphasis to their different purposes.
+5. **One language, context-aware expression.** Public Sites, Focused Flows, and
+   Application Workspaces share semantic foundations and behavior while adapting
+   composition, density, and emphasis to their different purposes.
 6. **Preserve continuity through change.** Responsive transformation, loading,
    validation, errors, theme changes, and asynchronous updates retain meaningful
    content, state, focus, selection, and recovery paths.
@@ -1176,7 +1232,7 @@ appropriate native form.
 | Component contracts           | **Strict in intent and behavior; flexible in implementation.** Platforms use suitable native mechanisms.                       |
 | Perceptual expression         | **Consistent in relationship; adaptable in treatment.** Mode, theme, locale, and input capability may change presentation.     |
 | Composition and templates     | **Flexible within contracts.** Products arrange components for their content and tasks without redefining component semantics. |
-| Experience mode               | **Purpose-led.** Public Site and Dashboard expression is selected by surface and user goal, not by team or technology.         |
+| Experience mode               | **Purpose-led.** Public Site, Focused Flow, and Application Workspace are selected by user goal, not by team or technology.    |
 | Product content and data      | **Product-specific.** Content follows Bento voice, resilience, and localization rules while retaining domain accuracy.         |
 | Adapter mechanics             | **Platform-specific and non-normative.** Limitations are documented without weakening or renaming the design contract.         |
 
@@ -1209,14 +1265,28 @@ implement it:
    cross-component requirements.
 3. The specifications in [`design/components/`](design/components/) define
    normative behavior and accessibility that the frontmatter cannot express.
-4. The patterns in [`design/patterns/`](design/patterns/) define reusable
+4. The block contracts in [`design/blocks/`](design/blocks/) define reusable
+   local compositions without redefining their participating components.
+5. The patterns in [`design/patterns/`](design/patterns/) define reusable
    experience-level behavior.
-5. [`design/VALIDATION.md`](design/VALIDATION.md) collects representative workflow
+6. The mode contracts in [`design/experiences/`](design/experiences/) define
+   navigation, layout, density, continuity, and accessibility requirements for
+   Public Site, Focused Flow, and Application Workspace contexts.
+7. The template contracts in [`design/templates/`](design/templates/) define
+   durable page- and flow-level structures without prescribing product-specific
+   content.
+8. [`design/product-domains.md`](design/product-domains.md) defines shared
+   business-capability names, boundaries, identifiers, and classification rules.
+9. [`design/VALIDATION.md`](design/VALIDATION.md) collects representative workflow
    and adverse-condition checks without redefining the system.
-6. [`design/README.md`](design/README.md) defines the repository workflow and
-   lightweight change policy.
-7. The files in [`design/adapters/`](design/adapters/) explain non-normative
-   mappings to particular platforms, frameworks, and tools.
+10. [`design/README.md`](design/README.md) defines the repository workflow and
+    lightweight change policy.
+11. The files in [`design/adapters/`](design/adapters/) explain non-normative
+    mappings to particular platforms, frameworks, and tools.
+
+The [`architecture migration record`](design/MIGRATION.md) is implementation
+history and verification evidence for the current vocabulary and layout-token
+migration. It does not create a parallel design contract.
 
 Within the supported frontmatter groups, semantic color tokens describe purpose,
 such as `text-primary`, `action-primary-background-hover`, and
@@ -1233,22 +1303,24 @@ substitute one semantic role for another.
 This file is Bento UI's portable kernel. A consumer that receives only
 `DESIGN.md` can determine the system's purpose, audiences, brand character,
 experience modes, token values, layout and perceptual rules, composition model,
-functional pattern outcomes, shared state and accessibility requirements,
-component-selection guidance, and design guardrails.
+product-domain catalog, functional pattern outcomes, shared state and
+accessibility requirements, component-selection guidance, and design guardrails.
 
 Repository contracts elaborate the portable kernel. They may narrow or strengthen
-requirements for a component or pattern but must not contradict this file. When
-linked contracts are unavailable, a consumer can evaluate only alignment with
-this kernel. Prefer a native, simpler semantic pattern over inventing behavior
-that the available contract does not define.
+requirements for a component, block, experience mode, template, domain
+classification, or pattern but must not contradict this file. When linked
+contracts are unavailable, a consumer can evaluate only alignment with this
+kernel. Prefer a native, simpler semantic pattern over inventing behavior that
+the available contract does not define.
 
 Keep validation scope explicit. Format validity shows that this file parses under
 the pinned tooling. Kernel alignment requires the output to follow this file.
-Contract validation also covers every applicable component and experience
-pattern. Adapter support requires a declared platform, device, input,
-assistive-technology, theme, and locale matrix. Product validation additionally
-covers the applicable workflows in [`design/VALIDATION.md`](design/VALIDATION.md)
-and records the implementation revision, evidence, and limitations.
+Contract validation also covers every applicable component, block, experience
+mode, and experience pattern. Adapter support requires a declared platform,
+device, input, assistive-technology, theme, and locale matrix. Product validation
+additionally covers the applicable workflows in
+[`design/VALIDATION.md`](design/VALIDATION.md) and records the implementation
+revision, evidence, and limitations.
 
 These scopes do not imply one another. Successful parsing, generation, or
 compilation does not demonstrate rendered behavior or user outcomes. The current
@@ -1258,17 +1330,22 @@ belongs in its durable review or release record.
 
 ### Source of truth
 
-| Concern                              | Authoritative source                                              | Update rule                                                                   |
-| ------------------------------------ | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Exact light- and dark-theme values   | This file's frontmatter                                           | Edit here first.                                                              |
-| System-wide rationale and usage      | This document body                                                | Avoid repeating exact values.                                                 |
-| Component behavior and accessibility | [`design/components/`](design/components/)                        | Update with contract changes.                                                 |
-| Cross-component experience patterns  | [`design/patterns/`](design/patterns/)                            | Keep outcomes independent of implementation technology.                       |
-| Representative workflow validation   | [`design/VALIDATION.md`](design/VALIDATION.md)                    | Test contracts with realistic and adverse conditions without redefining them. |
-| Contribution and change policy       | [`design/README.md`](design/README.md#changing-the-design-system) | Record rationale, migration impact, limitations, and relevant validation.     |
-| Product-specific validation evidence | Pull request, issue, or release record                            | Record scope, revision, environments, results, and known limitations.         |
-| Platform and tool mappings           | [`design/adapters/`](design/adapters/)                            | Treat as non-normative translations of this contract.                         |
-| Repository workflow                  | [`design/README.md`](design/README.md)                            | Keep commands, generated-file policy, and implementation inventory here.      |
+| Concern                              | Authoritative source                                              | Update rule                                                                        |
+| ------------------------------------ | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Exact light- and dark-theme values   | This file's frontmatter                                           | Edit here first.                                                                   |
+| System-wide rationale and usage      | This document body                                                | Avoid repeating exact values.                                                      |
+| Component behavior and accessibility | [`design/components/`](design/components/)                        | Update with contract changes.                                                      |
+| Reusable local compositions          | [`design/blocks/`](design/blocks/)                                | Preserve component and pattern ownership.                                          |
+| Cross-component experience patterns  | [`design/patterns/`](design/patterns/)                            | Keep outcomes independent of implementation technology.                            |
+| Experience mode behavior             | [`design/experiences/`](design/experiences/)                      | Select modes by user purpose and keep domains independent of presentation.         |
+| Reusable page and flow structures    | [`design/templates/`](design/templates/)                          | Apply mode and lower-level contracts without prescribing product content.          |
+| Product-domain classification        | [`design/product-domains.md`](design/product-domains.md)          | Keep capability separate from experience, structure, and organizational ownership. |
+| Representative workflow validation   | [`design/VALIDATION.md`](design/VALIDATION.md)                    | Test contracts with realistic and adverse conditions without redefining them.      |
+| Contribution and change policy       | [`design/README.md`](design/README.md#changing-the-design-system) | Record rationale, migration impact, limitations, and relevant validation.          |
+| Architecture migration evidence      | [`design/MIGRATION.md`](design/MIGRATION.md)                      | Record replacements, repository verification, compatibility, and evidence limits.  |
+| Product-specific validation evidence | Pull request, issue, or release record                            | Record scope, revision, environments, results, and known limitations.              |
+| Platform and tool mappings           | [`design/adapters/`](design/adapters/)                            | Treat as non-normative translations of this contract.                              |
+| Repository workflow                  | [`design/README.md`](design/README.md)                            | Keep commands, generated-file policy, and implementation inventory here.           |
 
 The external file-format contract is the
 [Google Labs DESIGN.md specification at revision
@@ -1525,9 +1602,9 @@ a fallback family or writing system makes tighter tracking less legible.
 - `code-sm` is for inline code, identifiers, and compact technical data.
 - `code-md` is for code blocks, commands, terminal output, and logs.
 
-Use `body-md` by default on public surfaces. `body-sm` may be used for dashboard
-content and tables when readability is preserved. Do not use `body-xs` as a
-general body style.
+Use `body-md` by default on public surfaces. `body-sm` may be used for Application
+Workspace content and tables when readability is preserved. Do not use `body-xs`
+as a general body style.
 
 Use tabular numerals for aligned numeric columns and metrics.
 
@@ -1596,8 +1673,8 @@ needed, and never clip enlarged or translated labels to enforce a fixed bar.
 Use `grid-gutter-mobile` by default, `grid-gutter-tablet` from the tablet range,
 and `grid-gutter-desktop` from the desktop range upward. A public-site grid should
 normally use intrinsic columns with a useful minimum item width. A 12-column grid
-is reserved for complex desktop and wide dashboard composition; it is not
-required for ordinary card groups.
+is reserved for complex desktop and wide Application Workspace composition; it is
+not required for ordinary card groups.
 
 The canonical control-height vocabulary is `tiny`, `small`, `medium`, `large`,
 and `extra-large`. The abbreviated `sm`, `md`, `lg`, and `xl` height names are
@@ -1619,33 +1696,66 @@ equivalent control.
   outgrow readable prose.
 - `container-page` supports general website and application content.
 - `container-wide` supports expansive public-site layouts between page and
-  dashboard widths.
-- `container-dashboard` supports data-heavy dashboards; tables and visualizations
-  may exceed it when the task benefits.
+  Application Workspace widths.
+- `container-workspace` supports data-heavy Application Workspaces; tables and
+  visualizations may exceed it when the task benefits.
 
 Public Sites use `page-padding-mobile`, `page-padding-tablet`, and
 `page-padding-desktop` with the matching system ranges. Section separation uses
 `section-mobile`, `section-tablet`, and `section-desktop`; wide pages retain the
 desktop section and page-padding values.
 
-### Dashboard mode
+### Focused Flow mode
 
-Use dashboard padding, efficient grouping, compact controls, tables, filters, and
-a fluid dashboard. Major groups generally use `scale-6`–`scale-8` separation;
-content within groups generally uses `scale-4`–`scale-6`.
+Use the matching `page-padding-*` token with `container-narrow` for compact
+authentication and account tasks. Use `container-readable` when instructions,
+review content, or form complexity requires more space. Keep the task centered
+within the bounded container without forcing vertical centering; allow room for
+errors, help, status, and content expansion.
 
-Mobile dashboards use `dashboard-padding-mobile`, tablet dashboards use
-`dashboard-padding-tablet`, and both use temporary navigation. Desktop and wide
-dashboards use `dashboard-padding-desktop` and may use the persistent sidebar and
-top-bar dimensions in frontmatter. When navigation and content cannot coexist
-comfortably, replace the persistent sidebar with temporary navigation even if the
-viewport is in a larger range.
+One column is the default. Add columns only when labels, validation, translation,
+zoom, and the meaningful reading and focus order remain clear. Do not shrink text
+or controls, hide required guidance, or split a simple task into artificial steps
+to keep the flow above the fold. Long or multi-step work normally uses a page
+rather than a constrained modal surface.
 
-A 12-column desktop or wide grid is a composition aid for complex dashboards,
-not a fixed device contract. Give tables and primary analysis surfaces width
-before secondary panels. Wide layouts may retain a secondary inspector or expose
-additional essential data columns when the task benefits; adding another card
-column alone does not justify wide-only behavior.
+Keep navigation task-local: provide identity, necessary context, the task name or
+current state, and a safe exit or return where leaving is permitted. Suppress
+unrelated global destinations and competing work. When a flow begins inside a
+Public Site or Application Workspace, make its boundary, state ownership, exit,
+return destination, and focus restoration explicit.
+
+Keep one primary action for the current decision. Back, cancel, save and exit,
+help, and recovery remain available according to the task's risk and persistence
+model. Show progress only for a stable, meaningful sequence; a Focused Flow may
+have one step and is not automatically a wizard. Progress and action labels must
+not claim completion before the authoritative outcome is known.
+
+Define persistence, interruption, and resumption before composing the flow.
+Preserve valid input through validation, recoverable failure, responsive
+transformation, and reauthentication whenever policy permits. Browser history,
+surface dismissal, and explicit exit follow the same unsaved-work policy and
+never silently discard meaningful work.
+
+### Application Workspace mode
+
+Use the `workspace-padding-*` tokens, efficient grouping, compact controls,
+tables, filters, and a fluid workspace. Major groups generally use
+`scale-6`–`scale-8` separation; content within groups generally uses
+`scale-4`–`scale-6`.
+
+Mobile Application Workspaces use `workspace-padding-mobile`, tablet Application
+Workspaces use `workspace-padding-tablet`, and both use temporary navigation.
+Desktop and wide Application Workspaces use `workspace-padding-desktop` and may
+use the persistent sidebar and top-bar dimensions in frontmatter. When
+navigation and content cannot coexist comfortably, replace the persistent
+sidebar with temporary navigation even if the viewport is in a larger range.
+
+A 12-column desktop or wide grid is a composition aid for complex Application
+Workspaces, not a fixed device contract. Give tables and primary analysis
+surfaces width before secondary panels. Wide layouts may retain a secondary
+inspector or expose additional essential data columns when the task benefits;
+adding another card column alone does not justify wide-only behavior.
 
 ### Responsive behavior
 
@@ -1681,7 +1791,25 @@ Public Site defaults:
 - Calls to action wrap before they overflow. Full-width mobile actions are
   optional rather than automatic.
 
-Dashboard defaults:
+Focused Flow defaults:
+
+- Every range uses the matching page padding and a narrow or readable container;
+  one column remains the default.
+- Preserve the task name, current state, instructions, fields, validation,
+  primary action, and permitted exit action. Stack and wrap before content
+  overflows.
+- Do not introduce a persistent sidebar. A task-local header may adapt to fit but
+  must not add unrelated destinations.
+- Progress may become a compact textual form when space is constrained. It must
+  remain understandable without relying only on shape, color, position, or
+  directional symbols.
+- Wider ranges may place closely related fields or review regions side by side
+  only when the relationship is useful and semantic, reading, and focus order
+  remain intact.
+- Temporary surfaces retain at least `scale-4` viewport clearance and stack
+  actions when needed. Move long or multi-step work to a page.
+
+Application Workspace defaults:
 
 - Mobile and tablet layouts use temporary sidebar navigation. Toolbars, filters,
   forms, and panels stack or wrap while keeping the primary action visible.
@@ -1831,14 +1959,14 @@ experiences:
 
 `Foundations → Components → Compositions → Experience patterns → Templates → Reference pages`
 
-| Level                   | Role                                                                                                                              |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Foundations**         | Semantic color, typography, spacing, shape, depth, motion, content, and accessibility decisions shared across the system.         |
-| **Components**          | Bounded semantic units with a defined intent, anatomy, state model, behavior, and accessibility contract.                         |
-| **Compositions**        | Local arrangements of components that solve one part of a task without silently creating new component semantics.                 |
-| **Experience patterns** | Repeatable solutions that coordinate components, content, state, and sequence around a user outcome.                              |
-| **Templates**           | Durable page- or flow-level content structures that provide realistic context without prescribing product-specific content.       |
-| **Reference pages**     | Concrete template instances using representative and adverse content to test the resilience and coherence of the complete system. |
+| Level                   | Role                                                                                                                                         |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Foundations**         | Semantic color, typography, spacing, shape, depth, motion, content, and accessibility decisions shared across the system.                    |
+| **Components**          | Bounded semantic units with a defined intent, anatomy, state model, behavior, and accessibility contract.                                    |
+| **Compositions**        | [Block contracts](design/blocks/) and local arrangements that solve one part of a task without silently creating new component semantics.    |
+| **Experience patterns** | Repeatable solutions that coordinate components, content, state, and sequence around a user outcome.                                         |
+| **Templates**           | [Durable page- or flow-level contracts](design/templates/) that provide realistic context without prescribing product-specific content.      |
+| **Reference pages**     | Design-system-owned template instances using representative and adverse content to test the resilience and coherence of the complete system. |
 
 The levels describe responsibility, not DOM depth, visual size, or a mandatory
 implementation order. Work moves in both directions: foundations and components
@@ -1855,6 +1983,13 @@ Start page-specific work with a template and representative content. Promote a
 solution into the shared system only after its recurring problem and reusable
 contract are understood. Do not create a shared pattern merely because two
 screens look similar.
+
+A product page or flow step is a concrete product-owned template instance with
+real content, data, permissions, routes, and state. It does not become a reference
+page merely because it uses a shared template. A reference page is intentionally
+maintained by the design system as validation evidence and is not design
+authority by itself. The [`template index`](design/templates/) defines admission,
+required contract structure, instantiation boundaries, and completion criteria.
 
 For example, typography and spacing foundations support a text field and button;
 those components form a field-and-action composition; forms and validation
@@ -1916,7 +2051,7 @@ language applied for a purpose.
 | Pattern family                                                                    | Bento expression                                                                                                             |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | [Action hierarchy and emphasis](design/patterns/action-hierarchy-and-emphasis.md) | One purposeful primary action per decision region, with quieter supporting, utility, navigation, and recovery actions.       |
-| Density and rhythm                                                                | A shared spacing vocabulary expressed spaciously for Public Sites and compactly for repeated Dashboard work.                 |
+| Density and rhythm                                                                | A shared spacing vocabulary expressed spaciously for Public Sites and compactly for repeated Application Workspace work.     |
 | Containment and depth                                                             | Tonal surfaces, borders, grouping, and restrained elevation communicate relationships before decoration.                     |
 | State expression                                                                  | Semantic foregrounds, boundaries, labels, icons, and restrained motion communicate state without relying on color alone.     |
 | Identity and voice                                                                | Brand roles, icon treatment, typography, and direct, respectful content make the system trustworthy, purposeful, and humane. |
@@ -1960,11 +2095,12 @@ contracts and dependencies.
 
 ### Validation scenarios
 
-The [`validation guide`](design/VALIDATION.md) covers Public Site, Dashboard,
-data-management, form, and destructive workflows with representative states,
-adverse conditions, and observable outcomes. Use the applicable scenarios to test
-relationships across the complete system and to locate failures at the
-responsible composition level.
+The [`validation guide`](design/VALIDATION.md) covers Public Site, Focused Flow,
+Application Workspace, data-management, form, and destructive workflows, plus
+mode transitions, template conformance, and product-domain classification. It
+uses representative states, adverse conditions, and observable outcomes. Use the
+applicable scenarios to test relationships across the complete system and to
+locate failures at the responsible composition level.
 
 The scenarios validate the design contract; they do not prescribe one visual
 layout, implementation technology, or product-specific content. An implementation
