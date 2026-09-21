@@ -31,7 +31,8 @@ completion.
 The field uses the text-field token mapping. The popup uses the same shared
 dropdown surface and listbox option states as the custom-popup Select. Combobox
 retains editable input and filtering behavior; custom Select retains a
-non-editable trigger and type-ahead navigation.
+non-editable trigger and type-ahead navigation. Both popup variants render one
+primary option label without secondary descriptions.
 
 ## States and behavior
 

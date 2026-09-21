@@ -20,7 +20,7 @@ import {
   findTypeaheadIndex,
 } from './internal/listboxNavigation'
 import { ListboxPopup } from './internal/ListboxPopup'
-import type { ListboxOption } from './Listbox'
+import type { SelectOption } from './Select'
 
 function assignRef<T>(ref: Ref<T> | undefined, value: T | null) {
   if (typeof ref === 'function') ref(value)
@@ -32,7 +32,7 @@ export type CustomSelectProps = Omit<
   'children' | 'value' | 'defaultValue' | 'onChange' | 'name'
 > & {
   label: string
-  options: readonly ListboxOption[]
+  options: readonly SelectOption[]
   value?: string
   defaultValue?: string
   onValueChange?: (value: string) => void
@@ -132,7 +132,7 @@ export const CustomSelect = forwardRef<HTMLButtonElement, CustomSelectProps>(fun
     setOpen(true)
   }
 
-  const commit = (option: ListboxOption) => {
+  const commit = (option: SelectOption) => {
     if (option.disabled) return
     if (value === undefined) setInternalValue(option.value)
     onValueChange?.(option.value)

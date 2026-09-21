@@ -737,9 +737,9 @@ export const componentExamples: Record<string, ReactNode> = {
         placeholder="Choose a status"
         defaultValue="active"
         options={[
-          { value: 'draft', label: 'Draft', description: 'Not yet visible to customers' },
-          { value: 'active', label: 'Active', description: 'Available to customers' },
-          { value: 'archived', label: 'Archived', description: 'Read-only history' },
+          { value: 'draft', label: 'Draft' },
+          { value: 'active', label: 'Active' },
+          { value: 'archived', label: 'Archived' },
         ]}
       />
     </div>

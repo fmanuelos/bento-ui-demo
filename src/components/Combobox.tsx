@@ -16,14 +16,14 @@ import {
   findNextEnabledIndex,
 } from './internal/listboxNavigation'
 import { ListboxPopup } from './internal/ListboxPopup'
-import { type ListboxOption } from './Listbox'
+import type { SelectOption } from './Select'
 
 export type ComboboxProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'value' | 'defaultValue' | 'onChange'
 > & {
   label: string
-  options: readonly ListboxOption[]
+  options: readonly SelectOption[]
   value?: string
   defaultValue?: string
   onValueChange?: (value: string) => void
@@ -98,7 +98,7 @@ export function Combobox({
     setOpen(true)
   }
 
-  const commit = (option: ListboxOption) => {
+  const commit = (option: SelectOption) => {
     if (option.disabled) return
     if (value === undefined) setInternalValue(option.value)
     setQuery(option.label)

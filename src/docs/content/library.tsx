@@ -1408,14 +1408,14 @@ const allDocumentation = [
     importCode: "import { CustomSelect, Select } from '@/components'",
     basicCode: `<CustomSelect
   label="Status"
-  options={[{ value: 'active', label: 'Active', description: 'Available to customers' }]}
+  options={[{ value: 'active', label: 'Active' }]}
 />`,
     props: [
       { name: 'label', type: 'string', description: 'Required visible label.' },
       {
         name: 'options',
-        type: 'readonly SelectOption[] | readonly ListboxOption[]',
-        description: 'Values, labels, optional descriptions, and disabled state.',
+        type: 'readonly SelectOption[]',
+        description: 'Values, primary labels, and optional disabled state.',
       },
       {
         name: 'value / defaultValue',
@@ -1546,8 +1546,8 @@ const allDocumentation = [
       { name: 'label', type: 'string', description: 'Required visible label.' },
       {
         name: 'options',
-        type: 'readonly ListboxOption[]',
-        description: 'Suggestions and selectable values.',
+        type: 'readonly SelectOption[]',
+        description: 'Suggestions with values, primary labels, and optional disabled state.',
       },
       {
         name: 'value / defaultValue',

@@ -1,11 +1,11 @@
 import { useEffect, useRef, type RefObject } from 'react'
-import type { ListboxOption } from '../Listbox'
+import type { SelectOption } from '../Select'
 import { OverlaySurface } from './Overlay'
 
 type ListboxPopupProps = {
   id: string
   label: string
-  options: readonly ListboxOption[]
+  options: readonly SelectOption[]
   open: boolean
   anchorRef: RefObject<HTMLElement | null>
   activeIndex: number
@@ -13,7 +13,7 @@ type ListboxPopupProps = {
   loading?: boolean
   emptyMessage?: string
   onActiveIndexChange: (index: number) => void
-  onSelect: (option: ListboxOption, index: number) => void
+  onSelect: (option: SelectOption, index: number) => void
   onDismiss: () => void
 }
 
@@ -88,17 +88,7 @@ export function ListboxPopup({
                 if (!option.disabled) onSelect(option, index)
               }}
             >
-              <div>{option.label}</div>
-              {option.description ? (
-                <div
-                  className={[
-                    'mt-scale-1 text-body-xs',
-                    option.disabled ? 'text-text-disabled' : 'text-text-secondary',
-                  ].join(' ')}
-                >
-                  {option.description}
-                </div>
-              ) : null}
+              {option.label}
             </div>
           )
         })

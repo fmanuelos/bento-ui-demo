@@ -31,7 +31,8 @@ inherit the button-only tiny, large, or extra-large sizes.
 The native variant uses the platform option presentation. The custom-popup
 variant uses the shared dropdown surface and listbox option states also used by
 Combobox. The two variants share field sizing, validation, and trigger styling;
-only the custom variant owns popup presentation.
+only the custom variant owns popup presentation. Popup options contain one
+primary label and do not render secondary descriptions.
 
 ## States and behavior
 
