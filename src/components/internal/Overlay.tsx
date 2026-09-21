@@ -25,6 +25,8 @@ export type OverlaySurfaceProps = HTMLAttributes<HTMLDivElement> & {
   offset?: number
   restoreFocus?: boolean
   dismissOnOutsideActivation?: boolean
+  dismissOnEscape?: boolean
+  matchAnchorWidth?: boolean
   surface?: 'raised' | 'inverse'
 }
 
@@ -38,6 +40,8 @@ export const OverlaySurface = forwardRef<HTMLDivElement, OverlaySurfaceProps>(
       offset = 4,
       restoreFocus = false,
       dismissOnOutsideActivation = true,
+      dismissOnEscape = true,
+      matchAnchorWidth = false,
       surface = 'raised',
       className = '',
       style,
@@ -77,6 +81,7 @@ export const OverlaySurface = forwardRef<HTMLDivElement, OverlaySurfaceProps>(
         const surface = surfaceRef.current
         if (!anchor || !surface) return
         const anchorRect = anchor.getBoundingClientRect()
+        if (matchAnchorWidth) surface.style.width = `${anchorRect.width}px`
         const surfaceRect = surface.getBoundingClientRect()
         const viewportPadding = 8
         const prefersTop = placement.startsWith('top')
@@ -100,7 +105,7 @@ export const OverlaySurface = forwardRef<HTMLDivElement, OverlaySurfaceProps>(
             viewportPadding,
             Math.min(desiredLeft, window.innerWidth - surfaceRect.width - viewportPadding),
           ),
-          width: 'max-content',
+          width: matchAnchorWidth ? anchorRect.width : 'max-content',
           maxHeight: `calc(100dvh - ${viewportPadding * 2}px)`,
           visibility: 'visible',
         })
@@ -112,12 +117,12 @@ export const OverlaySurface = forwardRef<HTMLDivElement, OverlaySurfaceProps>(
         window.removeEventListener('resize', update)
         document.removeEventListener('scroll', update, true)
       }
-    }, [anchorRef, offset, open, placement])
+    }, [anchorRef, matchAnchorWidth, offset, open, placement])
 
     useEffect(() => {
       if (!open) return
       const handleKeyDown = (event: KeyboardEvent) => {
-        if (event.key !== 'Escape') return
+        if (!dismissOnEscape || event.key !== 'Escape') return
         event.preventDefault()
         event.stopPropagation()
         dismiss()

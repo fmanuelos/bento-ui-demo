@@ -1400,16 +1400,27 @@ const allDocumentation = [
   createDoc({
     slug: 'select',
     title: 'Select',
-    summary: 'Chooses one value from a stable set using the platform-native selection control.',
-    useCases: ['Moderately sized predetermined lists that do not need filtering.'],
-    importCode: "import { Select } from '@/components'",
-    basicCode: `<Select label="Status" options={[{ value: 'active', label: 'Active' }]} />`,
+    summary: 'Chooses one value from a stable set with either a native control or a styled popup.',
+    useCases: [
+      'Native selection for ordinary forms and mobile platform affordances.',
+      'A custom popup when consistent option presentation is a product requirement.',
+    ],
+    importCode: "import { CustomSelect, Select } from '@/components'",
+    basicCode: `<CustomSelect
+  label="Status"
+  options={[{ value: 'active', label: 'Active', description: 'Available to customers' }]}
+/>`,
     props: [
       { name: 'label', type: 'string', description: 'Required visible label.' },
       {
         name: 'options',
-        type: 'readonly SelectOption[]',
-        description: 'Values, labels, and optional disabled state.',
+        type: 'readonly SelectOption[] | readonly ListboxOption[]',
+        description: 'Values, labels, optional descriptions, and disabled state.',
+      },
+      {
+        name: 'value / defaultValue',
+        type: 'string',
+        description: 'Controlled or initial value; CustomSelect reports through onValueChange.',
       },
       {
         name: 'placeholder',
@@ -1428,26 +1439,35 @@ const allDocumentation = [
         description: 'Associated guidance or validation.',
       },
       {
-        name: '…select props',
-        type: 'SelectHTMLAttributes<HTMLSelectElement>',
-        description: 'Forwards native value, defaultValue, onChange, required, and disabled.',
+        name: 'loading / emptyMessage',
+        type: 'boolean / string',
+        description: 'CustomSelect popup feedback when options are loading or unavailable.',
+      },
+      {
+        name: '…native props',
+        type: 'SelectHTMLAttributes | ButtonHTMLAttributes',
+        description: 'Select forwards native select props; CustomSelect forwards trigger props.',
       },
       classNameProp,
     ],
     variants: [
-      'Small and medium native selects.',
-      'Unselected, selected, focus, invalid, and disabled states.',
+      'Native Select and custom-popup CustomSelect, both in small and medium sizes.',
+      'Unselected, selected, focus, invalid, disabled, expanded, loading, and empty states.',
     ],
     accessibility: [
-      'Native select semantics expose name, choices, value, and keyboard behavior.',
+      'Prefer native Select for platform interaction and native constraint validation.',
+      'CustomSelect exposes a select-only combobox, listbox popup, and active descendant.',
+      'Arrow keys skip disabled options; Enter or Space commits; Escape closes; typing searches.',
       'The visible label and descriptions are explicitly related.',
-      'Disabled options remain visible but unavailable.',
     ],
-    responsive: 'The control stays within its container; option rendering follows the platform.',
-    theme: 'Uses semantic field surfaces, validation borders, text, and focus.',
+    responsive:
+      'Both controls stay within their container; the custom popup matches the trigger and scrolls within the viewport.',
+    theme:
+      'Both variants share field tokens; CustomSelect shares popup and option states with Combobox.',
     mistakes: [
       'Use RadioGroup when a short list benefits from simultaneous visibility.',
       'Use Combobox when filtering or text entry is needed.',
+      'Do not replace native Select when native form validation or platform option UI is required.',
       'Do not treat placeholder copy as a valid required value.',
     ],
     related: ['form-field', 'radio-group', 'combobox', 'listbox'],
@@ -1563,11 +1583,12 @@ const allDocumentation = [
     ],
     responsive:
       'The anchored popup uses the field width and scrolls instead of clipping long result sets.',
-    theme: 'Combines text-field tokens with the dropdown surface and listbox states.',
+    theme:
+      'Combines text-field tokens with the same dropdown surface and listbox states as CustomSelect.',
     mistakes: [
       'Do not accept arbitrary input unless the variant explicitly allows it.',
       'Do not announce every arrow-key movement.',
-      'Use Select if editable filtering is unnecessary.',
+      'Use Select or CustomSelect if editable filtering is unnecessary.',
     ],
     related: ['form-field', 'input', 'select', 'listbox', 'overlay', 'progress', 'empty-state'],
   }),

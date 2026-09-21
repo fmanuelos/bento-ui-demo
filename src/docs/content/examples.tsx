@@ -12,6 +12,7 @@ import {
   Card,
   Checkbox,
   Combobox,
+  CustomSelect,
   DataGrid,
   Disclosure,
   Drawer,
@@ -719,14 +720,26 @@ export const componentExamples: Record<string, ReactNode> = {
     </div>
   ),
   select: (
-    <div className="max-w-container-narrow">
+    <div className="grid max-w-container-narrow gap-scale-5">
       <Select
         label="Project status"
+        hint="Native"
         placeholder="Choose a status"
         options={[
           { value: 'draft', label: 'Draft' },
           { value: 'active', label: 'Active' },
           { value: 'archived', label: 'Archived' },
+        ]}
+      />
+      <CustomSelect
+        label="Project status"
+        hint="Custom popup"
+        placeholder="Choose a status"
+        defaultValue="active"
+        options={[
+          { value: 'draft', label: 'Draft', description: 'Not yet visible to customers' },
+          { value: 'active', label: 'Active', description: 'Available to customers' },
+          { value: 'archived', label: 'Archived', description: 'Read-only history' },
         ]}
       />
     </div>

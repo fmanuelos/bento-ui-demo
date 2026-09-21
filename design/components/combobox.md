@@ -20,7 +20,7 @@ result workflow follows the
 ## Anatomy and variants
 
 1. Visible label and optional description
-2. Editable or select-only value field
+2. Editable value field
 3. Optional popup trigger
 4. Listbox or grid popup
 5. Optional helper, loading, empty, or validation message
@@ -28,8 +28,10 @@ result workflow follows the
 Autocomplete behavior is explicitly one of none, list suggestions, or inline
 completion.
 
-The field uses the text-field token mapping. The popup uses the shared dropdown
-surface, and its options use listbox state mappings.
+The field uses the text-field token mapping. The popup uses the same shared
+dropdown surface and listbox option states as the custom-popup Select. Combobox
+retains editable input and filtering behavior; custom Select retains a
+non-editable trigger and type-ahead navigation.
 
 ## States and behavior
 
@@ -58,7 +60,8 @@ announced without repeating every directional movement.
 
 Use the ARIA combobox pattern with an associated listbox or grid popup. Preserve
 native text-field key behavior and expose expanded, controlled, autocomplete, and
-active-descendant relationships as appropriate.
+active-descendant relationships as appropriate. Use the select-only custom
+Select instead when filtering and free-form entry are not available.
 
 ## Example
 
