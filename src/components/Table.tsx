@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
+import { CheckboxIndicator } from './internal/CheckboxIndicator'
 
 export type SortDirection = 'ascending' | 'descending'
 
@@ -99,14 +100,17 @@ export function Table<T>({
                     scope="col"
                     className="h-control-height-medium w-12 border-b border-table-border px-scale-3"
                   >
-                    <input
-                      ref={selectAllRef}
-                      type="checkbox"
-                      aria-label="Select all visible rows"
-                      checked={allVisibleRowsSelected}
-                      onChange={toggleVisibleRows}
-                      className="size-4 accent-action-primary-background-default"
-                    />
+                    <label className="inline-flex cursor-pointer align-middle leading-none">
+                      <input
+                        ref={selectAllRef}
+                        type="checkbox"
+                        aria-label="Select all visible rows"
+                        checked={allVisibleRowsSelected}
+                        onChange={toggleVisibleRows}
+                        className="peer sr-only"
+                      />
+                      <CheckboxIndicator peerControlled />
+                    </label>
                   </th>
                 )}
 
@@ -162,13 +166,16 @@ export function Table<T>({
                   >
                     {selectable && (
                       <td className="border-b border-table-border px-scale-3 py-scale-3">
-                        <input
-                          type="checkbox"
-                          aria-label={`Select ${getRowLabel(row)}`}
-                          checked={isSelected}
-                          onChange={() => toggleRow(rowId)}
-                          className="size-4 accent-action-primary-background-default"
-                        />
+                        <label className="inline-flex cursor-pointer align-middle leading-none">
+                          <input
+                            type="checkbox"
+                            aria-label={`Select ${getRowLabel(row)}`}
+                            checked={isSelected}
+                            onChange={() => toggleRow(rowId)}
+                            className="peer sr-only"
+                          />
+                          <CheckboxIndicator peerControlled />
+                        </label>
                       </td>
                     )}
 

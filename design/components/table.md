@@ -49,6 +49,11 @@ remain a table, and a small editable matrix can require a data grid.
 Supported variants are read-only, sortable, selectable, and actionable. Adding
 one of these behaviors does not by itself turn a table into a data grid.
 
+Selectable tables use native checkbox inputs with the shared visual indicator
+from the [`Checkbox contract`](checkbox.md). Row controls expose checked or
+unchecked state, and the visible-set summary additionally exposes indeterminate
+when only some visible rows are selected.
+
 ## States and semantic tokens
 
 Support hover, selected, sorted, loading, empty, partial, stale, and error states

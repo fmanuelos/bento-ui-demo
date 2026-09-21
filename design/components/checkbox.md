@@ -27,6 +27,30 @@ The Checkbox continues to own only its individual checked or mixed state.
 Use action-primary for selected emphasis, neutral boundaries for unselected state,
 and the global focus and validation roles.
 
+### Shared checkbox indicator
+
+This component is the visual source of truth for every square checked, unchecked,
+or mixed selection indicator. Checkbox groups, selectable tables and data grids,
+and multi-select listboxes reuse this presentation instead of defining local
+checkbox geometry or colors.
+
+- The indicator is `spacing.scale-5` square with a 2px border and
+  `rounded.shape-sm` corners.
+- Unchecked uses `surface-primary` with `border-strong`.
+- Checked and indeterminate use `action-primary-background-default` for the
+  background and border with `action-primary-foreground` for the mark.
+- Checked uses the shared small Check icon. Indeterminate uses a centered
+  horizontal bar; the two marks never appear together.
+- Disabled uses `background-disabled` and `border-disabled` while retaining the
+  applicable checked or mixed mark.
+- When the checkbox itself owns focus, use the global 3px focus ring with its
+  2px offset. When a composite option or grid cell owns focus, that parent draws
+  focus and the indicator does not add a second ring.
+
+Hover, validation, and selected-row or selected-option backgrounds may add
+context without changing this geometry. The checked or mixed mark remains the
+non-color state cue.
+
 ## States and behavior
 
 Support unchecked, checked, indeterminate, hover, focus, invalid, and disabled.
@@ -57,6 +81,12 @@ visual synchronized when activation clears an indeterminate state. Associate an
 individual label explicitly and reference its description and current error from
 the checkbox. Use a fieldset with a legend or an equivalent named group for
 related checkboxes, and associate group-level descriptions and errors.
+
+Components that use native checkbox semantics keep the native input as the state
+and accessibility owner even when it is visually hidden behind the shared
+indicator. A listbox option may reuse the indicator as an `aria-hidden` visual,
+but it must not nest a checkbox input inside an option; `aria-selected` remains
+the option's state.
 
 ## Example
 

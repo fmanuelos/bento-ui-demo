@@ -26,6 +26,10 @@ Use `surface-raised`, `text-primary`, `rounded.shape-md`, and `spacing.scale-2` 
 surface. Options use ghost action roles for hover and focus and selection roles
 for selected state.
 
+Multi-select options use the shared visual indicator from the
+[`Checkbox contract`](checkbox.md). The indicator is presentational: the option,
+not a nested checkbox input, owns selection and interaction.
+
 ## States and behavior
 
 Support closed and open when popup, active option, selected, checked when used for
@@ -52,7 +56,9 @@ options, groups, option availability, and result changes.
 
 Use the ARIA listbox pattern for a custom listbox and implement its managed focus,
 directional navigation, type-ahead, and selection behavior. Use native selection
-controls when they satisfy the task.
+controls when they satisfy the task. Expose multi-selection with
+`aria-multiselectable` and each option's state with `aria-selected`; hide the
+shared checkbox indicator from accessibility APIs.
 
 ## Example
 

@@ -43,6 +43,11 @@ a visible-set summary. [`Data table`](../components/table.md) and
 retaining their distinct navigation models. [`Pagination`](../components/pagination.md)
 changes the visible portion without owning selection.
 
+Every square record-selection control uses the Checkbox contract's shared
+unchecked, checked, indeterminate, focus, and disabled presentation. Components
+retain their own semantics and focus behavior rather than inferring those from
+the shared appearance.
+
 [`Button Group`](../components/button-group.md) may arrange available bulk
 actions. [`Alert dialog`](../components/alert-dialog.md) may confirm a
 consequential operation. [`Progress`](../components/progress.md),

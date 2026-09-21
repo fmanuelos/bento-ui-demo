@@ -62,6 +62,12 @@ Supported variants are read-only navigable, selectable, and editable. Use either
 roving focus on cells or cell descendants, or a focusable grid with an active
 descendant. Do not mix these focus strategies during ordinary navigation.
 
+Selectable grids use the shared visual indicator from the
+[`Checkbox contract`](checkbox.md). Row indicators expose checked or unchecked
+state, and the visible-set summary additionally exposes indeterminate when only
+some visible rows are selected. Reusing the indicator does not change the grid's
+managed-focus model.
+
 Focus, active cell, selection, and unavailable targets follow the shared
 collection model in [`DESIGN.md`](../../DESIGN.md#components).
 
@@ -95,6 +101,11 @@ instead of returning the grid to skeleton placeholders.
 Only one grid tab stop participates in the surrounding page sequence at a time.
 Interactive controls inside a cell do not independently join the grid navigation
 sequence.
+
+When the selection cell owns managed focus, it draws the grid focus treatment
+around the cell and its checkbox indicator does not draw a second focus ring.
+Pointer activation of the indicator and Space on the active selection cell make
+the same selection change.
 
 Entering edit or action mode gives the active cell's content its native input
 behavior. Leaving that mode restores grid navigation. Sorting and filtering

@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState, type KeyboardEvent, type ReactNode } from 'react'
+import { CheckboxIndicator } from './internal/CheckboxIndicator'
 import { Pagination, type PaginationProps } from './Pagination'
 
 const selectionColumnId = '__bento-row-selection__'
@@ -303,19 +304,22 @@ export function DataGrid<T>({
                   className="h-control-height-medium w-12 border-b border-table-border px-scale-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
                 >
                   <span className="sr-only">Select</span>
-                  <input
-                    ref={selectAllRef}
-                    type="checkbox"
-                    tabIndex={-1}
-                    aria-label="Select all visible rows"
-                    checked={allVisibleRowsSelected}
-                    onKeyDown={(event) => event.stopPropagation()}
-                    onChange={() => {
-                      toggleVisibleRows()
-                      focusCell(0, 0)
-                    }}
-                    className="size-4 accent-action-primary-background-default"
-                  />
+                  <label className="inline-flex cursor-pointer align-middle leading-none">
+                    <input
+                      ref={selectAllRef}
+                      type="checkbox"
+                      tabIndex={-1}
+                      aria-label="Select all visible rows"
+                      checked={allVisibleRowsSelected}
+                      onKeyDown={(event) => event.stopPropagation()}
+                      onChange={() => {
+                        toggleVisibleRows()
+                        focusCell(0, 0)
+                      }}
+                      className="peer sr-only"
+                    />
+                    <CheckboxIndicator peerControlled />
+                  </label>
                 </th>
               )}
 
@@ -404,18 +408,21 @@ export function DataGrid<T>({
                       onKeyDown={(event) => handleKeyDown(event, gridRowIndex, 0, rowId)}
                       className="border-b border-table-border px-scale-3 py-scale-3 text-center outline-none focus-visible:ring-3 focus-visible:ring-focus-ring focus-visible:ring-inset"
                     >
-                      <input
-                        type="checkbox"
-                        tabIndex={-1}
-                        aria-label={`Select ${getRowLabel(row)}`}
-                        checked={rowSelected}
-                        onKeyDown={(event) => event.stopPropagation()}
-                        onChange={() => {
-                          toggleRow(rowId)
-                          focusCell(gridRowIndex, 0)
-                        }}
-                        className="size-4 accent-action-primary-background-default"
-                      />
+                      <label className="inline-flex cursor-pointer align-middle leading-none">
+                        <input
+                          type="checkbox"
+                          tabIndex={-1}
+                          aria-label={`Select ${getRowLabel(row)}`}
+                          checked={rowSelected}
+                          onKeyDown={(event) => event.stopPropagation()}
+                          onChange={() => {
+                            toggleRow(rowId)
+                            focusCell(gridRowIndex, 0)
+                          }}
+                          className="peer sr-only"
+                        />
+                        <CheckboxIndicator peerControlled />
+                      </label>
                     </td>
                   )}
 

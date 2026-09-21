@@ -1,4 +1,5 @@
 import { useId, useRef, useState, type KeyboardEvent } from 'react'
+import { CheckboxIndicator } from './internal/CheckboxIndicator'
 
 export type ListboxOption = {
   value: string
@@ -174,12 +175,7 @@ export function Listbox({
                 ].join(' ')}
               >
                 {multiple && (
-                  <span
-                    className={`grid size-4 place-items-center rounded-shape-xs border ${selected ? 'border-action-primary-background-default bg-action-primary-background-default text-action-primary-foreground' : 'border-border-strong'}`}
-                    aria-hidden="true"
-                  >
-                    {selected && '✓'}
-                  </span>
+                  <CheckboxIndicator checked={selected} disabled={disabled || option.disabled} />
                 )}
                 <span className="grid gap-scale-1">
                   <span className="font-semibold">{option.label}</span>
