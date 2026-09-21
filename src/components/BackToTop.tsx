@@ -95,7 +95,7 @@ export function BackToTop({
       })}
       {...props}
     >
-      <ArrowUpIcon size="small" />
+      <ArrowUpIcon size="sm" />
       <span>{label}</span>
     </a>
   )

@@ -40,7 +40,7 @@ function DemoPage() {
             aria-label="Bento UI home"
           >
             <span className="grid size-7 place-items-center rounded-shape-full bg-brand-background text-brand-on-background">
-              <SparkleIcon size="small" />
+              <SparkleIcon size="sm" />
             </span>
             Bento UI
           </a>

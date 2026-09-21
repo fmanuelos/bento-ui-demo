@@ -1531,7 +1531,9 @@ informative icons have a text alternative, and icon-only controls have a
 programmatically determinable name.
 
 Use 16px icons in tiny and small controls, 20px in medium and large controls, and
-24px in extra-large controls. Interface icons use a consistent 1.8px stroke.
+24px in extra-large controls. Outside controls, the icon foundation additionally
+supports 12px for non-interactive compact indicators and 32px for prominent
+standalone emphasis. Interface icons use a consistent 1.8px source-grid stroke.
 Filled icons are reserved for brand marks, simple status shapes, and decorative
 emphasis.
 

@@ -43,16 +43,22 @@ substitute for an official logo.
 
 ## Sizes
 
-| Semantic size | Rendered size | Use                                                                 |
-| ------------- | ------------- | ------------------------------------------------------------------- |
-| Small         | 16px          | Tiny and small controls, compact metadata, and dense utilities      |
-| Medium        | 20px          | Default controls, navigation, fields, and standalone interface use  |
-| Large         | 24px          | Extra-large controls, prominent feedback, and spacious compositions |
+| API key | Display name | Rendered size | Use                                                                       |
+| ------- | ------------ | ------------- | ------------------------------------------------------------------------- |
+| `xs`    | Extra small  | 12px          | Non-interactive indicators, compact metadata, and exceptionally dense UI  |
+| `sm`    | Small        | 16px          | Tiny and small controls, compact metadata, and dense utilities            |
+| `md`    | Medium       | 20px          | Default controls, navigation, fields, and standalone interface use        |
+| `lg`    | Large        | 24px          | Extra-large controls, prominent feedback, and spacious compositions       |
+| `xl`    | Extra large  | 32px          | Prominent standalone emphasis, empty states, and compact feature callouts |
 
-Medium is the standalone default. The containing component chooses the icon size
-when its own size determines the mapping. Consumers do not scale interface icons
-to arbitrary values to create hierarchy; use component emphasis, typography, and
-semantic color instead. Larger pictorial treatment belongs to illustration.
+`md` is the standalone default. API keys are intentionally compact; documentation
+and authoring tools show the corresponding display name and pixel value. The
+containing component chooses the icon size when its own size determines the
+mapping. Consumers do not scale interface icons to arbitrary values to create
+hierarchy; use component emphasis, typography, and semantic color instead. `xs`
+icons never serve as icon-only controls or sole status cues. `xl` icons remain
+simple system glyphs; more detailed or larger pictorial treatment belongs to
+illustration.
 
 ## Color and semantic tokens
 
@@ -129,7 +135,8 @@ space.
 ## Web adapter
 
 The React adapter renders a non-focusable SVG with a `0 0 24 24` view box and
-maps Small, Medium, and Large to the system's 16px, 20px, and 24px spacing roles.
+maps Extra-small through Extra-large to the system's 12px, 16px, 20px, 24px, and
+32px spacing roles.
 Stroke icons set `fill="none"`, `stroke="currentColor"`, a `1.8` stroke width,
 and round line caps and joins. Approved filled icons use `fill="currentColor"`
 without an authored stroke.
@@ -152,7 +159,8 @@ visible label with the Arrow up icon rather than exposing the icon alone.
 
 For every addition or geometry change:
 
-1. Review the glyph at 16px, 20px, and 24px on light, dark, and inverse surfaces.
+1. Review the glyph at 12px, 16px, 20px, 24px, and 32px on light, dark, and
+   inverse surfaces.
 2. Compare optical weight, alignment, and bounds with adjacent catalogued icons.
 3. Verify decorative and informative accessibility output.
 4. Verify logical-direction icons in left-to-right and right-to-left contexts.
@@ -161,3 +169,21 @@ For every addition or geometry change:
 6. Add the icon to the typed catalog and documentation gallery.
 7. Run the icon-system check so unmanaged inline interface SVG does not enter the
    application source.
+
+## Size-key migration record
+
+The size-key migration is complete. The React API uses only `xs`, `sm`, `md`,
+`lg`, and `xl`; former long keys are not retained as aliases because the package
+remains at `0.0.0` and every in-repository consumer migrated atomically.
+
+The exported `iconSizes` object is the single source for each API key's display
+name, pixel value, spacing-token class, and usage guidance. `IconSize` is derived
+from its keys, `iconSizeKeys` provides stable documentation order, and the
+documentation gallery reads the same metadata instead of duplicating labels or
+values. The default changed from `medium` to `md` without changing its rendered
+20px size.
+
+`icons:check` enforces the five approved entries and their 12px, 16px, 20px,
+24px, and 32px progression, rejects legacy long keys on owned icon components,
+and verifies that the gallery consumes the shared metadata. Future size changes
+must update this contract and metadata together and satisfy the validation above.

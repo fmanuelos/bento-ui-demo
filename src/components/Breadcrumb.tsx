@@ -32,7 +32,7 @@ export type BreadcrumbProps = Omit<HTMLAttributes<HTMLElement>, 'children'> & {
   getOverflowAccessibleLabel?: (hiddenCount: number, expanded: boolean) => string
 }
 
-const defaultSeparator = <ChevronEndIcon size="small" />
+const defaultSeparator = <ChevronEndIcon size="sm" />
 
 const focusableSelector = [
   'a[href]',

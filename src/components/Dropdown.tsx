@@ -58,7 +58,7 @@ export function Dropdown({
             setOpen(true)
           }
         }}
-        icon={<ChevronDownIcon size="small" />}
+        icon={<ChevronDownIcon size="sm" />}
       >
         {label}
       </Button>

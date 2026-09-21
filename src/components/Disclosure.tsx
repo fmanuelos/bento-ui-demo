@@ -47,7 +47,7 @@ export function Disclosure({
       className={`w-full justify-between text-left ${buttonProps?.className ?? ''}`}
       icon={
         <ChevronDownIcon
-          size="small"
+          size="sm"
           className={`transition-transform motion-reduce:transition-none ${expanded ? 'rotate-180' : ''}`}
         />
       }

@@ -1,6 +1,13 @@
 /* eslint-disable react-refresh/only-export-components */
 import { type FoundationDocumentation } from './types'
-import { ArrowEndIcon, SearchIcon, iconCatalog, iconMetadata } from '../../icons'
+import {
+  ArrowEndIcon,
+  SearchIcon,
+  iconCatalog,
+  iconMetadata,
+  iconSizeKeys,
+  iconSizes,
+} from '../../icons'
 
 const colorGroups = {
   Brand: [
@@ -552,7 +559,7 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
                   key={name}
                   className="grid min-h-32 place-items-center gap-scale-3 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4 text-center"
                 >
-                  <Icon size="large" />
+                  <Icon size="lg" />
                   <span>
                     <code className="block text-code-sm">{name}</code>
                     <span className="mt-scale-1 block text-caption text-text-secondary">
@@ -570,12 +577,18 @@ export const foundationDocs: readonly FoundationDocumentation[] = [
         title: 'Sizes',
         body: (
           <div className="flex flex-wrap items-end gap-scale-6 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-6">
-            {(['small', 'medium', 'large'] as const).map((size) => (
-              <span key={size} className="grid justify-items-center gap-scale-2">
-                <SearchIcon size={size} />
-                <code className="text-code-sm">{size}</code>
-              </span>
-            ))}
+            {iconSizeKeys.map((size) => {
+              const metadata = iconSizes[size]
+              return (
+                <span key={size} className="grid justify-items-center gap-scale-2 text-center">
+                  <SearchIcon size={size} />
+                  <strong className="text-label-sm">{metadata.label}</strong>
+                  <code className="text-code-sm">
+                    {size} · {metadata.pixels}px
+                  </code>
+                </span>
+              )
+            })}
           </div>
         ),
       },

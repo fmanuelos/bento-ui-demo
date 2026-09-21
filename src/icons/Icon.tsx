@@ -1,6 +1,5 @@
 import { type CSSProperties, type ReactNode } from 'react'
-
-export type IconSize = 'small' | 'medium' | 'large'
+import { iconSizes, type IconSize } from './sizes'
 
 type DataAttributes = {
   [attribute: `data-${string}`]: string | number | boolean | undefined
@@ -18,14 +17,8 @@ type IconPrimitiveProps = IconProps & {
   filled?: boolean
 }
 
-const sizeClasses: Record<IconSize, string> = {
-  small: 'size-scale-4',
-  medium: 'size-scale-5',
-  large: 'size-scale-6',
-}
-
 export function Icon({
-  size = 'medium',
+  size = 'md',
   label,
   filled = false,
   className = '',
@@ -44,7 +37,7 @@ export function Icon({
       role={label ? 'img' : undefined}
       aria-label={label}
       aria-hidden={label ? undefined : true}
-      className={`inline-block shrink-0 ${sizeClasses[size]} ${className}`}
+      className={`inline-block shrink-0 ${iconSizes[size].className} ${className}`}
       {...props}
     >
       {children}

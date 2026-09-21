@@ -77,7 +77,7 @@ export function Alert({
           aria-label={`Dismiss ${typeof title === 'string' ? title : 'alert'}`}
           onClick={dismiss}
         >
-          <CloseIcon size="small" />
+          <CloseIcon size="sm" />
         </Button>
       )}
     </div>

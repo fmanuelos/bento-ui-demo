@@ -150,7 +150,7 @@ export function Combobox({
           }}
           className="absolute inset-y-0 right-0 grid w-control-height-medium place-items-center rounded-shape-md text-text-secondary"
         >
-          <ChevronDownIcon size="small" />
+          <ChevronDownIcon size="sm" />
         </button>
         {open && !disabled && (
           <div

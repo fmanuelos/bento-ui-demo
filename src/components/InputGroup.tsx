@@ -121,7 +121,7 @@ export const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(function
           ))}
         </select>
         <ChevronDownIcon
-          size="small"
+          size="sm"
           className="pointer-events-none absolute top-1/2 right-scale-3 size-4 -translate-y-1/2 text-text-secondary"
         />
       </span>

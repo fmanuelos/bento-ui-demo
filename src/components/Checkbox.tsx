@@ -77,7 +77,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
           aria-hidden="true"
         >
           <span data-mixed className="hidden h-0.5 w-2.5 bg-current" />
-          <CheckIcon data-checkmark size="small" className="hidden" />
+          <CheckIcon data-checkmark size="sm" className="hidden" />
         </span>
         <span className="grid gap-scale-1">
           <span id={labelId} className="font-semibold">

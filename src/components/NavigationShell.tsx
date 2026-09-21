@@ -160,7 +160,7 @@ export function NavigationShell({
             onClick={() => setCollapsed(!collapsed)}
           >
             <ChevronStartIcon
-              size="small"
+              size="sm"
               className={`transition-transform ${collapsed ? 'rotate-180' : ''}`}
             />
           </Button>

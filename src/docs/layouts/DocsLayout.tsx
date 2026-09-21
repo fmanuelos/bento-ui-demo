@@ -130,7 +130,7 @@ export function DocsLayout() {
           })}
         >
           <span className="grid size-7 shrink-0 place-items-center rounded-shape-full bg-action-primary-background-default text-action-primary-foreground">
-            <SparkleIcon size="small" />
+            <SparkleIcon size="sm" />
           </span>
           <span className="truncate">Bento UI</span>
           <span className="hidden text-body-sm font-normal text-text-tertiary sm:inline">Docs</span>
