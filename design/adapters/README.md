@@ -8,7 +8,7 @@ token, state, component, or behavior to fit an implementation limitation.
 | Adapter                 | Scope                                                                                     |
 | ----------------------- | ----------------------------------------------------------------------------------------- |
 | [Web](web.md)           | HTML semantics, ARIA mappings, CSS/SVG mechanisms, user preferences, and browser behavior |
-| [Tailwind](tailwind.md) | Current token export and system-range mapping                                             |
+| [Tailwind](tailwind.md) | Token export, system-range mapping, and recommended lint policy                           |
 
 An adapter documents:
 
