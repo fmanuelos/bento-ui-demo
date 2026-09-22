@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef, useState, type ReactNode } from 'react'
+import { lazy, Suspense, useRef, useState, type ReactNode } from 'react'
 import {
   Accordion,
   Alert,
@@ -47,6 +47,8 @@ import {
   type TableColumn,
 } from '../../components'
 import { ArrowEndIcon, SearchIcon } from '../../icons'
+
+const ChartExamples = lazy(() => import('./chart-examples'))
 
 const people = [
   { value: 'amara', label: 'Amara Chen', description: 'Design' },
@@ -810,6 +812,17 @@ export const componentExamples: Record<string, ReactNode> = {
         },
       ]}
     />
+  ),
+  chart: (
+    <Suspense
+      fallback={
+        <p className="m-0 min-h-block-height-xs text-body-sm text-text-secondary" role="status">
+          Loading chart examples…
+        </p>
+      }
+    >
+      <ChartExamples />
+    </Suspense>
   ),
   table: <TableExample />,
   'data-grid': <DataGridExample />,

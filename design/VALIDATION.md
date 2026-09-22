@@ -40,6 +40,7 @@ Several rows can apply to one change.
 | Authentication, onboarding, checkout, setup, or another bounded task | [Focused Flow](#focused-flow)                                                                     |
 | Persistent or temporary application navigation and recurring work    | [Application Workspace](#application-workspace)                                                   |
 | Metrics or several independently loaded data regions                 | [Dashboard overview](#dashboard-overview), an Application Workspace page scenario                 |
+| Charts, plots, or compact analytical trends                          | [Data visualization](#data-visualization)                                                         |
 | Search, filtering, tables, pagination, or bulk operations            | [Data management](#data-management)                                                               |
 | Entering, editing, validating, or saving user-provided data          | [Form workflow](#form-workflow)                                                                   |
 | Permanent, broad-scope, or otherwise consequential loss              | [Destructive workflow](#destructive-workflow)                                                     |
@@ -323,7 +324,8 @@ several independently loaded data regions.
 [`Section Header`](blocks/section-header.md), and
 [`Metric Overview`](blocks/metric-overview.md) when those compositions are
 present, together with the relevant data-display, asynchronous-feedback,
-navigation, status, and action contracts.
+navigation, status, and action contracts. Apply [`Chart`](components/chart.md)
+and [Data visualization](#data-visualization) only when a chart is present.
 
 **Critical behaviors:**
 
@@ -331,6 +333,9 @@ navigation, status, and action contracts.
   the affected content.
 - Do not present placeholders as real metrics or selectable rows, and do not use
   event feedback as persistent status.
+- Confirm the overview remains complete without a chart unless a documented
+  analytical question requires one. A compact trend does not replace its
+  metric's exact value, comparison, timeframe, or status.
 
 **Workflow-specific states:**
 
@@ -689,6 +694,79 @@ component or composition contract. Apply [`Hero`](blocks/hero.md) and
 - Test light, dark, inverse when used, forced colors or high contrast, and reduced
   motion. Nearby and overlaid text and controls retain contrast, and removing
   nonessential animation does not remove information or operation.
+
+### Data visualization
+
+**Outcome:** A user can understand the represented relationship and inspect
+relevant values without relying on color, hover, animation, or one visual
+presentation for essential meaning.
+
+**Use when:** A workflow contains a chart, plot, compact trend, or another
+analytical graphic governed by the shared Chart contract.
+
+**Related contracts:** Apply [`Chart`](components/chart.md),
+[`Data display`](patterns/data-display.md),
+[`Asynchronous feedback`](patterns/async-feedback.md), and
+[`Responsive density`](patterns/responsive-density.md). Use
+[`Table`](components/table.md) instead when exact row-and-column comparison is
+the primary task, and apply the applicable search, filtering, selection, or
+action patterns when those states change represented data.
+
+**Critical behaviors:**
+
+- Record the analytical question and confirm that a chart materially improves a
+  trend, comparison, distribution, composition, or relationship. Verify that a
+  metric, table, or prose explanation would not serve the task more directly.
+- Confirm the title, purpose, scope, timeframe, units, source, freshness, series,
+  missing-value policy, and material relationship remain understandable without
+  transient inspection detail.
+- Compare the chart and its summary with applied filters and associated metrics.
+  They must use the same authoritative data, aggregation, precision, units, and
+  freshness.
+- Remove color and confirm labels, position, symbols, line styles, patterns, or
+  text preserve every essential distinction. Positive and negative treatment
+  must follow domain meaning rather than visual direction alone.
+- Verify inspection, focus, selection, and filtering remain distinct. Pointer
+  hover cannot commit a selection or become the only route to essential meaning.
+
+**State and interaction conditions:**
+
+- Test zero, negative, fractional, constant, very large, estimated, missing,
+  unavailable, duplicated, irregular, and outlier values. Test one through six
+  series and an attempted seventh series without silently inventing another
+  categorical token.
+- Exercise initial loading, fast completion, background refresh, stale, partial,
+  empty, filtered empty, offline, permission limited, failed, and outcome unknown
+  states. Placeholders remain outside chart and collection semantics, while
+  refresh preserves usable data and inspection state when safe.
+- For inspectable or selectable charts, test keyboard, touch, pointer, and speech
+  input. Entry, internal movement, activation, and exit remain understandable;
+  dense marks do not create an impractical page tab sequence.
+- Remove an inspected or selected value during refresh and verify that focus
+  continues at the nearest logical value or chart-level control and that a
+  material context change is explained once.
+
+**Boundary and adverse cases:**
+
+- Test narrow, wide, and awkward intermediate containers; long series and
+  category names; long units; overlapping marks; dense data; and a layout with no
+  useful legend position. Labels and essential marks do not overlap or clip, and
+  responsive changes do not silently alter aggregation, scope, or series.
+- Test 60% label expansion, 200% text enlargement, increased spacing, multiple
+  writing systems, mixed-direction values, right-to-left presentation, and
+  materially different number, date, time, currency, and unit formats.
+- Test light and dark themes, color removal, common color-vision deficiencies,
+  forced colors, high contrast, reduced motion, and print when supported. Motion
+  removal preserves the current state and relationship.
+- Disable the visual plot or replace it with its fallback. The chart name,
+  purpose, summary, data state, and recovery remain available without duplicate
+  or contradictory announcements.
+
+**Additional baseline emphasis:**
+
+- Confirm charts remain opt-in: the shared contract governs a chart when chosen
+  but does not require one in every Application Workspace, dashboard, Metric
+  Overview, report, or data-bearing region.
 
 ### Action hierarchy and emphasis
 

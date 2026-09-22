@@ -19,14 +19,37 @@ when managed cell navigation, range selection, or inline editing is necessary.
 ## Do not use when
 
 Do not use a data grid solely because a table is large or visually dense. Do not
-use a chart as the only source of essential exact values. Do not use a collection
-component for prose, unrelated card content, or a layout that only happens to
-align in rows and columns.
+use a chart when exact row-and-column comparison is the primary task. Do not use
+a collection component for prose, unrelated card content, or a layout that only
+happens to align in rows and columns.
+
+## Representation selection
+
+Choose the representation from the user's comparison or action rather than from
+the available component inventory:
+
+- Use a metric or [`Metric Overview`](../blocks/metric-overview.md) when a small
+  number of values provides orientation and supports the next task.
+- Use a [`Data table`](../components/table.md) when exact relational values and
+  ordinary page interaction are primary.
+- Use a [`Data grid`](../components/data-grid.md) when the task requires managed
+  two-dimensional navigation, cell editing, or range selection.
+- Use a [`Chart`](../components/chart.md) when visual encoding materially improves
+  understanding of a trend, comparison, distribution, composition, or
+  relationship.
+
+These choices may coexist when they answer different questions, but one does not
+become the default companion for another. Do not add a chart to every metric
+collection, add a table only to reproduce visible labels, or use a visual
+overview to conceal unavailable exact values. When several representations
+describe the same dataset, keep their scope, filters, freshness, formatting, and
+state consistent.
 
 ## Participating components and related patterns
 
 [`Data table`](../components/table.md),
-[`Data grid`](../components/data-grid.md), [`Card`](../components/card.md),
+[`Data grid`](../components/data-grid.md), [`Chart`](../components/chart.md),
+[`Card`](../components/card.md),
 [`Pagination`](../components/pagination.md),
 [`Empty state`](../blocks/empty-state.md), and
 [`Status badge`](../components/status-badge.md) retain their bounded contracts.
@@ -73,8 +96,12 @@ resolves to that state.
   result set, selection, focus, or scroll position.
 - Charts use consistent categorical assignments within one analytical context
   and add labels, shapes, patterns, or line styles for essential distinctions.
-- Essential chart meaning has a text summary or another accessible route to the
-  underlying values.
+- Essential chart meaning has a text summary or another accessible description.
+- A chart and its summary resolve from the same authoritative data and do not
+  disagree about filters, units, missing values, precision, or freshness.
+- Inspection state is separate from selection and filtering. Losing pointer
+  hover does not remove essential information, and a refresh does not silently
+  convert an inspected value into a committed selection or filter.
 
 ## Persistence, interruption, and recovery
 
@@ -108,6 +135,11 @@ Names, numbers, dates, times, units, and currency use the active locale. Columns
 legends, labels, and actions accommodate expansion and right-to-left presentation
 without reversing chronological, quantitative, or domain-specific meaning.
 
+Chart titles name the measured subject rather than the chart geometry. Axis and
+series labels name quantities, categories, and units in domain language. A text
+summary states the chart's purpose and material conclusion without attempting to
+enumerate every mark.
+
 Skeleton geometry follows the responsive structure rather than imitating exact
 localized text lengths or fabricating plausible values. It may simplify or
 reflow with the eventual presentation as long as it does not create false data
@@ -118,6 +150,12 @@ relationships.
 Prioritize columns before using contained horizontal scrolling, stacked records,
 or a dedicated detail view. Preserve information, exact values, actions, reading
 order, query state, and selection when presentation changes.
+
+For charts, adapt to the chart container and content before relying on global
+page ranges. Reduce nonessential tick density, wrap or reposition supporting
+labels, or use a valid alternate orientation before allowing labels or marks to
+overlap. Do not change the represented measure, aggregation, or time interval
+merely to preserve a preferred shape.
 
 Two-dimensional scrolling is acceptable within a named region when the data's
 meaning requires it, but the surrounding page must still reflow. Frozen regions,
@@ -135,6 +173,10 @@ detail, sorting, filtering, selection, and recovery. Do not require hover to
 discover an action. High-contrast presentation preserves boundaries, focus, and
 non-color distinctions; reduced motion does not remove change or refresh status.
 
+Charts expose their name, purpose, scope, units, and material relationships in a
+nonvisual form. Inspectable charts provide equivalent keyboard, touch, pointer,
+and speech access without placing every dense mark in the page tab sequence.
+
 Decorative skeleton shapes do not participate in table, grid, list, chart, or
 other collection semantics and do not enter the focus or managed-navigation
 model. Expose the affected region's pending state without announcing each shape.
@@ -147,7 +189,9 @@ changes the current task or invalidates a choice.
 
 Apply the shared matrix and the
 [`Dashboard overview`](../VALIDATION.md#dashboard-overview) and
-[`Data management`](../VALIDATION.md#data-management) scenarios. Include 0, 1,
+[`Data management`](../VALIDATION.md#data-management) scenarios. Apply
+[`Data visualization`](../VALIDATION.md#data-visualization) whenever a chart is
+present. Include 0, 1,
 25, 4,286, and unknown totals; duplicate and 120-character names; missing and
 unavailable values; multiple locales; out-of-order refreshes; selection across
 filtering and pagination; partial bulk results; 200% text; and a six-column table

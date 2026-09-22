@@ -31,6 +31,12 @@ time-series inspection, or exact row-level comparison. Public Site claims or
 marketing statistics belong to an evidence composition rather than this
 operational block.
 
+A Metric Overview does not include charts by default. Textual values,
+comparisons, targets, timeframes, and status remain the baseline presentation. A
+compact trend may support a metric only when it answers a documented orientation
+question and follows the [`Chart`](../components/chart.md) contract; richer
+analysis remains a separate named region.
+
 ## Anatomy
 
 1. Required section heading
@@ -78,7 +84,9 @@ permissions, offline state, or failure has been distinguished from loading.
 Actions follow [`Button`](../components/button.md) or
 [`Link`](../components/link.md). Progress indicators follow
 [`Progress`](../components/progress.md) and never replace an available exact
-value unless the metric itself measures progress.
+value unless the metric itself measures progress. An optional compact trend
+follows [`Chart`](../components/chart.md), retains a nearby persistent label and
+exact value, and does not turn the complete Metric Overview into a chart region.
 
 Apply [`Data display`](../patterns/data-display.md) to values, scope, freshness,
 availability, and comparison; [`Asynchronous feedback`](../patterns/async-feedback.md)
@@ -114,6 +122,11 @@ Comparisons name their basis and period, such as “12% higher than the previous
 30 days.” Positive or negative color does not determine whether a change is
 desirable; use text and domain meaning. Trends and status must not contradict
 the displayed value or freshness.
+
+When a compact trend is justified, its scope, timeframe, missing values, and
+direction agree with the metric's persistent text. It remains supporting context:
+the metric label, exact value, comparison, and status do not depend on inspecting
+the trend, and the trend does not appear merely to fill unused card space.
 
 Limit the overview to the measures required for orientation and the next task.
 When many metrics are equally important, provide a dedicated analysis or
@@ -250,13 +263,16 @@ Validate the Metric Overview with:
 - Independent cards resolving successfully, out of order, empty, and failed
 - Fast completion without skeleton flicker and reduced-motion skeleton presentation
 - Page, overview, card, whole-card, recovery, and filter actions on the same view
+- The same overview with no charts and with one justified compact trend, confirming that chart presence is optional
 - Narrow and wide containers, 60% text expansion, 200% text, and increased spacing
 - Multiple locales, writing systems, and right-to-left direction
 - Keyboard and screen-reader use, visible focus, dark mode, forced colors, and high contrast
 
 Apply the [`Dashboard overview`](../VALIDATION.md#dashboard-overview),
 [`Data management`](../VALIDATION.md#data-management) when filters or record
-scope apply, [`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow),
+scope apply, [`Data visualization`](../VALIDATION.md#data-visualization) when a
+compact trend is present,
+[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow),
 and the baseline asynchronous and responsive conditions. The block is ready for
 shared use when values, scope, freshness, partial availability, and recovery
 remain understandable without placeholder data or visual inference.

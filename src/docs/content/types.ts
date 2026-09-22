@@ -10,6 +10,7 @@ export type PropReference = {
 export type LibraryDocumentation = {
   slug: string
   title: string
+  status?: 'Draft' | 'Complete'
   summary: string
   useCases: readonly string[]
   importCode: string

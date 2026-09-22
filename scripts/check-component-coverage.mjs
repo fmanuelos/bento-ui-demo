@@ -58,8 +58,14 @@ const implementationFiles = new Map([
 
 const contracts = readdirSync(contractDirectory)
   .filter((file) => file.endsWith('.md') && file !== 'README.md')
-  .map((file) => file.replace(/\.md$/, ''))
-  .sort()
+  .map((file) => {
+    const slug = file.replace(/\.md$/, '')
+    const source = readFileSync(join(contractDirectory, file), 'utf8')
+    const statusSection = source.match(/## Status\s+([\s\S]*?)(?=\n## |$)/i)?.[1] ?? ''
+    return { slug, draft: /\bdraft\b/i.test(statusSection) }
+  })
+  .sort((a, b) => a.slug.localeCompare(b.slug))
+const contractSlugs = contracts.map(({ slug }) => slug)
 const blockSlugSource = docsSource.match(/export const blockSlugs = \[([^\]]+)\]/s)?.[1] ?? ''
 const blockSlugs = new Set([...blockSlugSource.matchAll(/'([^']+)'/g)].map((match) => match[1]))
 const documented = new Set(
@@ -69,14 +75,14 @@ const documented = new Set(
 )
 const failures = []
 
-for (const contract of contracts) {
+for (const { slug: contract, draft } of contracts) {
   const slug = slugOverrides.get(contract) ?? contract
   if (!documented.has(slug))
     failures.push(`${contract}.md has no documentation entry for “${slug}”`)
 
   const implementation = implementationFiles.get(contract)
   if (!implementation) {
-    failures.push(`${contract}.md has no implementation mapping`)
+    if (!draft) failures.push(`${contract}.md has no implementation mapping`)
     continue
   }
   const implementationPath = join(root, 'src/components', `${implementation}.tsx`)
@@ -91,7 +97,9 @@ for (const contract of contracts) {
 }
 
 for (const slug of documented) {
-  if (!contracts.includes([...slugOverrides].find(([, value]) => value === slug)?.[0] ?? slug)) {
+  if (
+    !contractSlugs.includes([...slugOverrides].find(([, value]) => value === slug)?.[0] ?? slug)
+  ) {
     failures.push(`documentation entry “${slug}” has no design contract`)
   }
 }
@@ -101,6 +109,6 @@ if (failures.length) {
   process.exitCode = 1
 } else {
   console.log(
-    `Component coverage is complete: ${contracts.length} contracts, ${documented.size} docs entries.`,
+    `Component coverage is complete: ${contracts.length} contracts (${contracts.filter(({ draft }) => draft).length} Draft), ${documented.size} docs entries.`,
   )
 }

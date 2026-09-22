@@ -10,7 +10,7 @@ export function ComponentIndexPage() {
       <PageIntro
         eyebrow="Library"
         title="Components"
-        summary="Every component defined by the design contract is implemented once in the production library and rendered here directly."
+        summary="Browse production components and clearly marked Draft contracts with representative adapter examples."
       />
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-scale-3">
         {componentNavigation.map((component) => (

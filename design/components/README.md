@@ -55,6 +55,7 @@ status outside this technology-neutral contract index.
 | [Tabs](tabs.md)                                    | Frontmatter and prose             | Complete        | Collection model                                                                                    |
 | [Data table](table.md)                             | Frontmatter and prose             | Complete        | Data display; Search, filtering, and results; Selection and bulk actions                            |
 | [Data grid](data-grid.md)                          | Prose and contract                | Complete        | Collection, Data display; Search, filtering, and results; Selection and bulk actions                |
+| [Chart](chart.md)                                  | Semantic color roles and prose    | Draft           | Data display; Asynchronous feedback; Responsive density; Table when exact comparison is primary     |
 | [Status badge](status-badge.md)                    | Frontmatter and prose             | Complete        | Shared state model; Task continuity and unsaved work                                                |
 | [Alert](alert.md)                                  | Frontmatter and prose             | Complete        | Asynchronous feedback; Task continuity and unsaved work                                             |
 | [Popup surface and dropdown patterns](dropdown.md) | Frontmatter and prose             | Complete        | Overlay, collection model                                                                           |
@@ -62,11 +63,13 @@ status outside this technology-neutral contract index.
 
 ## Proposed contracts
 
-No additional component contract is currently scheduled. Container remains a
-layout foundation in DESIGN.md rather than a component contract. Whole-card
-interaction remains governed by Card; add a specialized card contract only when
-a concrete workflow introduces behavior that Card and its composed components do
-not cover.
+Chart is the only current Draft addition. Its contract is opt-in and does not
+make charts default Application Workspace, dashboard, Metric Overview, or data
+display content. No additional component contract is currently scheduled.
+Container remains a layout foundation in DESIGN.md rather than a component
+contract. Whole-card interaction remains governed by Card; add a specialized
+card contract only when a concrete workflow introduces behavior that Card and
+its composed components do not cover.
 
 General-purpose imagery follows the shared
 [`Images and media`](../../DESIGN.md#images-and-media) foundation and the
@@ -131,6 +134,7 @@ represent honestly.
 | Avatars                   | Avatar, Avatar Group                                                      | Image fallback, identity exposure, ordering, overlap, and overflow behavior                                     |
 | Navigation and tabs       | Link, Breadcrumb, Skip link, Tabs                                         | Destination semantics, hierarchical location, focus, current state, bypass navigation, and managed tab behavior |
 | Table                     | Data table, Data grid, Pagination                                         | Sorting, selection, loading, paging, empty, stale, error, editing, and managed grid behavior                    |
+| Charts                    | Chart                                                                     | Representation choice, axes, series, inspection, summaries, data states, and responsive transformation          |
 | Alerts and badges         | Alert, Toast and notification region, Status badge                        | Announcement, queueing, dismissal, dynamic status, and distinction between feedback and status                  |
 | Dropdown surface          | Overlay, Popup and dropdown patterns, Listbox, Combobox, Tooltip, Popover | Placement, focus, selection, dismissal, active item, viewport fit, and transformation                           |
 | Disclosure                | Disclosure, Accordion                                                     | Expansion, heading structure, group policy, focus, and panel relationships                                      |

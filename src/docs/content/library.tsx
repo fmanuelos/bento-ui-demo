@@ -1923,6 +1923,82 @@ const allDocumentation = [
     related: ['application-navigation'],
   }),
   createDoc({
+    slug: 'chart',
+    title: 'Chart',
+    status: 'Draft',
+    summary:
+      'Presents quantitative relationships with a Recharts web adapter while the Bento chart contract remains Draft.',
+    useCases: [
+      'Show trends over ordered intervals, compare categories, explain part-to-whole composition, or inspect relationships between two measures.',
+      'Use a compact trend only when a persistent metric benefits from recent context; charts are not the default treatment for cards or dashboards.',
+    ],
+    importCode: "import { LineChart, Line, XAxis, YAxis } from 'recharts'",
+    basicCode: `<figure aria-labelledby="response-title">
+  <figcaption id="response-title">Median response time</figcaption>
+  <LineChart responsive accessibilityLayer data={data}>
+    <XAxis dataKey="date" />
+    <YAxis label={{ value: 'Milliseconds', angle: -90 }} />
+    <Line dataKey="milliseconds" stroke="var(--color-chart-series-1)" />
+  </LineChart>
+  <p>Response time fell from 236 ms to 182 ms.</p>
+</figure>`,
+    props: [
+      {
+        name: 'data',
+        type: 'readonly object[]',
+        description:
+          'Uses stable, explicit records; missing observations remain missing instead of becoming zero.',
+      },
+      {
+        name: 'responsive / accessibilityLayer',
+        type: 'boolean',
+        defaultValue: 'true',
+        description:
+          'Lets the chart fit its container and enables Recharts keyboard and screen-reader support.',
+      },
+      {
+        name: 'XAxis / YAxis',
+        type: 'Recharts axis configuration',
+        description:
+          'Names quantitative axes, includes units, and preserves a truthful scale and zero baseline where required.',
+      },
+      {
+        name: 'Line / Bar / Scatter',
+        type: 'Recharts graphical elements',
+        description:
+          'Maps each documented family to semantic Bento chart color roles without encoding meaning by color alone.',
+      },
+      {
+        name: 'summary',
+        type: 'Bento prose composition',
+        description:
+          'States the material conclusion outside the graphic so hover is never the only access path to essential meaning.',
+      },
+    ],
+    variants: [
+      'Line for ordered trends, horizontal bar for category comparison, stacked bar for composition, and scatter for relationships.',
+      'Compact trends supplement a persistent metric and keep the current value visible.',
+      'Static presentation by default; inspectable and selectable behavior is added only when the task requires it.',
+    ],
+    accessibility: [
+      'Every example has a visible title, context, prose summary, labelled axes, and units.',
+      'Recharts accessibilityLayer supports keyboard and assistive-technology inspection without replacing the surrounding semantic content.',
+      'Series remain distinguishable through labels, position, line shape, or ordering in addition to color.',
+      'Animation is disabled in documentation examples so meaning never depends on motion.',
+    ],
+    responsive:
+      'Charts resize with their bounded container; category labels and summaries remain available when the plot becomes compact.',
+    theme:
+      'The adapter maps Recharts visual properties to chart series, gridline, axis, semantic text, surface, and border CSS variables.',
+    mistakes: [
+      'Do not add a chart when a number, sentence, or table answers the question more directly.',
+      'Do not truncate meaningful category labels, hide units, or imply missing values are zero.',
+      'Do not rely on color, hover, or an animated reveal as the only way to understand the data.',
+      'Do not treat this Draft adapter as a stable Bento production component API.',
+    ],
+    related: ['table', 'data-grid', 'card'],
+  }),
+  createDoc({
     slug: 'table',
     title: 'Table',
     summary: 'Best for simple presentation, reports, and small datasets.',

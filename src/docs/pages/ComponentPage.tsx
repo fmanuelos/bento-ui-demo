@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { linkStyles } from '../../components'
+import { linkStyles, StatusBadge } from '../../components'
 import { blockNavigation, componentNavigation } from '../navigation'
 import { CodeBlock } from '../components/CodeBlock'
 import { DocsBackToTop } from '../components/DocsBackToTop'
@@ -15,6 +15,13 @@ export function ComponentPage() {
   return (
     <>
       <PageIntro eyebrow="Component" title={documentation.title} summary={documentation.summary} />
+      {documentation.status ? (
+        <div className="mt-scale-4">
+          <StatusBadge variant={documentation.status === 'Draft' ? 'warning' : 'positive'}>
+            {documentation.status}
+          </StatusBadge>
+        </div>
+      ) : null}
       <DocsSection id="purpose" title="Purpose and recommended use">
         <ul>
           {documentation.useCases.map((item) => (

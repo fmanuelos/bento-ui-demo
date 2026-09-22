@@ -1577,12 +1577,44 @@ preserve disabled, focused, selected, and invalid distinctions.
 
 ### Data visualization
 
+Charts are optional analytical representations, not default workspace content.
+Choose a chart only when position, length, shape, or another visual encoding makes
+a trend, comparison, distribution, composition, or relationship easier to
+understand. Use a metric for orientation around a small number of important
+values, a table for exact relational comparison, and a data grid for managed
+record work. Do not add a chart merely because the source contains numeric data.
+
+When a chart is appropriate, its visible title, scope, timeframe, units, source,
+and freshness provide enough context to interpret the representation. Essential
+meaning remains available through labels, a text summary, or another accessible
+description that does not depend on hover. A chart does not replace the data
+state, asynchronous feedback, filtering, or recovery behavior owned by the
+applicable experience patterns.
+
 Use `chart-series-1` through `chart-series-6` consistently within an analytical
 context. Reserve `chart-positive` and `chart-negative` for genuine quantitative
-meaning.
+meaning rather than general increase, decrease, or decoration. Use
+`chart-gridline` and `chart-axis` for quiet chart structure. Do not create a new
+series color solely because a chart contains more than six categories; first
+reduce the comparison, label directly, group intentionally, or choose a
+representation that remains distinguishable.
 
 Do not rely on color alone. Use labels, direct annotation, shapes, line styles,
-or patterns for essential distinctions.
+or patterns for essential distinctions. Axes expose their measured quantity and
+unit. Legends appear only when direct labeling is impractical, and their order
+matches the represented series or categories.
+
+Charts respond to their available container, content, locale, text size, and
+input capability rather than a chart-specific device breakpoint. Simplify ticks,
+move or wrap a legend, prioritize direct labels, or provide a more suitable
+alternate presentation before shrinking essential text or marks. Preserve the
+represented meaning, summary, active filters, focus, and inspection state when
+the presentation changes.
+
+The technology-neutral [`Chart`](design/components/chart.md) contract defines
+bounded chart behavior when a chart is chosen. Its presence does not require a
+chart in an Application Workspace, dashboard, Metric Overview, or any other
+composition.
 
 ## Typography
 
@@ -2298,6 +2330,11 @@ decoration, and media transitions without removing information or controls.
   An interactive data grid adds managed cell focus and grid commands as a
   composite control. Record count and visual density do not determine the
   pattern; do not use the terms interchangeably.
+- A chart is an optional analytical representation for a trend, comparison,
+  distribution, composition, or relationship. It does not replace a table or
+  data grid, become a default companion to metrics, or introduce a chart-specific
+  workspace mode. The Chart contract governs it only when the representation is
+  justified by the task.
 - A dialog is a focused task surface. A modal dialog is its blocking variant;
   alert dialogs, drawers, sheets, and temporary navigation reuse dialog behavior
   only when their semantics and modality match.
@@ -2389,7 +2426,9 @@ decoration, and media transitions without removing information or controls.
 - Dialogs manage initial focus, contain focus when modal, support an appropriate
   dismissal action, restore focus, and prevent background interaction while
   modal.
-- Essential chart information has a text summary or accessible alternative.
+- Charts follow the shared [`Chart`](design/components/chart.md) contract when
+  chosen. Essential chart information has a text summary or accessible
+  alternative, and exact values remain available without pointer hover.
 
 ### Experience patterns
 
