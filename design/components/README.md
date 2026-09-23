@@ -20,11 +20,12 @@ status outside this technology-neutral contract index.
 
 ## Current contracts
 
-| Component or foundation                            | DESIGN.md coverage                | Contract status | Depends on                                                                                          |
+| Component                                          | DESIGN.md coverage                | Contract status | Depends on                                                                                          |
 | -------------------------------------------------- | --------------------------------- | --------------- | --------------------------------------------------------------------------------------------------- |
 | [Form field](form-field.md)                        | Shared prose and semantic roles   | Complete        | Forms-and-validation pattern                                                                        |
 | [Overlay foundation](overlay.md)                   | Shared prose and dropdown style   | Complete        | Elevation and shared state model                                                                    |
 | [Progress indicators and spinner](progress.md)     | Shared prose and async pattern    | Complete        | Asynchronous-feedback pattern                                                                       |
+| [Icons](icons.md)                                  | Shared prose and semantic roles   | Complete        | Semantic color, directionality, accessibility baseline                                              |
 | [Avatar](avatar.md)                                | Frontmatter and shared prose      | Complete        | Shared state and identity rules                                                                     |
 | [Avatar Group](avatar-group.md)                    | Shared prose and contract         | Complete        | Avatar, Popover when expandable                                                                     |
 | [Tooltip](tooltip.md)                              | Shared prose and layer ordering   | Complete        | Overlay                                                                                             |
@@ -77,10 +78,10 @@ platform adapter rather than an Image component contract. Propose a dedicated
 contract only when repeated use establishes owned semantics, states, behavior,
 or composition beyond the native platform medium.
 
-Icons follow the [`Icon system`](../foundations/icons.md) foundation contract.
-They remain visual content within the component that owns interaction, state,
-target size, and naming; do not add an Icon component contract for the shared
-glyph renderer.
+The [`Icon component family`](icons.md) owns the shared glyph renderer, catalog,
+sizing, directionality, and accessibility defaults. Icons remain visual content
+within the component that owns interaction, state, target size, and accessible
+naming.
 
 Add a proposed file only when work begins on its normative contract. Move it to
 Draft until every required section and dependency is resolved; move it to

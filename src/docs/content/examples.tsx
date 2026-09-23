@@ -46,7 +46,14 @@ import {
   type DataGridSortDirection,
   type TableColumn,
 } from '../../components'
-import { ArrowEndIcon, SearchIcon } from '../../icons'
+import {
+  ArrowEndIcon,
+  SearchIcon,
+  iconCatalog,
+  iconMetadata,
+  iconSizeKeys,
+  iconSizes,
+} from '../../components/icons'
 
 const ChartExamples = lazy(() => import('./chart-examples'))
 
@@ -487,6 +494,60 @@ function CheckboxExample() {
 }
 
 export const componentExamples: Record<string, ReactNode> = {
+  icons: (
+    <div className="grid gap-scale-6">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(11rem,100%),1fr))] gap-scale-3">
+        {iconCatalog.map(({ name, Icon }) => {
+          const metadata = iconMetadata[name]
+          return (
+            <div
+              key={name}
+              className="grid min-h-32 place-items-center gap-scale-3 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4 text-center"
+            >
+              <Icon size="lg" />
+              <span>
+                <code className="block text-code-sm">{name}</code>
+                <span className="mt-scale-1 block text-caption text-text-secondary">
+                  {metadata.category}
+                  {metadata.directional ? ' · mirrors in RTL' : ''}
+                </span>
+              </span>
+            </div>
+          )
+        })}
+      </div>
+      <div className="flex flex-wrap items-end gap-scale-6 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-6">
+        {iconSizeKeys.map((size) => {
+          const metadata = iconSizes[size]
+          return (
+            <span key={size} className="grid justify-items-center gap-scale-2 text-center">
+              <SearchIcon size={size} />
+              <strong className="text-label-sm">{metadata.label}</strong>
+              <code className="text-code-sm">
+                {size} · {metadata.pixels}px
+              </code>
+            </span>
+          )
+        })}
+      </div>
+      <div className="grid gap-scale-3 sm:grid-cols-2">
+        <div
+          dir="ltr"
+          className="flex items-center justify-between rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4"
+        >
+          <span>Left to right</span>
+          <ArrowEndIcon />
+        </div>
+        <div
+          dir="rtl"
+          className="flex items-center justify-between rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-4"
+        >
+          <span>Right to left</span>
+          <ArrowEndIcon />
+        </div>
+      </div>
+    </div>
+  ),
   'form-field': (
     <div className="max-w-container-narrow">
       <Input

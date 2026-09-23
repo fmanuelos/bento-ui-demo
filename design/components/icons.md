@@ -1,23 +1,24 @@
-# Icon system
+# Icon component family
 
 ## Status
 
-Foundation contract complete.
+Component contract complete.
 
 ## Intent
 
-The Bento UI icon system provides a small, coherent set of interface glyphs for
+The Bento UI Icon component family provides a small, coherent set of interface glyphs for
 actions, navigation, feedback, system controls, and familiar objects. Icons
 support recognition and hierarchy; they do not replace essential labels,
 component semantics, or product-specific illustration.
 
-The icon system owns glyph geometry, names, sizes, directionality, visual style,
-accessibility defaults, metadata, and lifecycle. Components continue to own
-interaction, state, accessible names, target size, and semantic color.
+The Icon component family owns glyph geometry, names, sizes, directionality,
+visual style, accessibility defaults, metadata, and lifecycle. Components that
+contain an icon continue to own interaction, state, accessible names, target
+size, and semantic color.
 
 ## Boundary
 
-An icon is a visual foundation, not an interactive control. It never accepts an
+An Icon is a non-interactive visual component, not a control. It never accepts
 activation behavior or becomes focusable. Buttons, links, form controls, status
 components, and navigation components own the behavior of any icon they contain.
 

@@ -5,7 +5,14 @@ import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Modal } from './components/Modal'
 import { docsRoutes } from './docs/routes'
-import { ArrowUpRightIcon, CloseIcon, MenuIcon, MoonIcon, SparkleIcon, SunIcon } from './icons'
+import {
+  ArrowUpRightIcon,
+  CloseIcon,
+  MenuIcon,
+  MoonIcon,
+  SparkleIcon,
+  SunIcon,
+} from './components/icons'
 
 const labelClasses =
   'text-label-overline font-label-overline leading-label-overline font-semibold tracking-label-overline text-text-secondary uppercase'

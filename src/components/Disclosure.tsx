@@ -1,5 +1,5 @@
 import { useId, useState, type HTMLAttributes, type ReactNode } from 'react'
-import { ChevronDownIcon } from '../icons'
+import { ChevronDownIcon } from './icons'
 import { Button, type ButtonProps } from './Button'
 
 export type DisclosureProps = Omit<HTMLAttributes<HTMLDivElement>, 'title'> & {

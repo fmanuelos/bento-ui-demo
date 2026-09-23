@@ -20,6 +20,7 @@ export const docsRoutes = (
     <Route path="templates" element={<TemplatesPage />} />
     <Route path="product-domains" element={<ProductDomainsPage />} />
     <Route path="foundations" element={<FoundationPage />} />
+    <Route path="foundations/icons" element={<Navigate to="/docs/components/icons" replace />} />
     <Route path="foundations/:foundation" element={<FoundationPage />} />
     <Route path="components" element={<ComponentIndexPage />} />
     <Route

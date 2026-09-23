@@ -7,7 +7,7 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from 'react'
-import { ChevronEndIcon } from '../icons'
+import { ChevronEndIcon } from './icons'
 import { Button } from './Button'
 import { linkStyles } from './interactiveStyles'
 import { OverlaySurface, type OverlayPlacement } from './internal/Overlay'

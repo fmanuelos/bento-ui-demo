@@ -1,5 +1,5 @@
 import { useId, useState, type HTMLAttributes, type ReactNode } from 'react'
-import { CloseIcon, MenuIcon } from '../icons'
+import { CloseIcon, MenuIcon } from './icons'
 import { Button } from './Button'
 import { linkStyles } from './interactiveStyles'
 

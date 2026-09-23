@@ -5,7 +5,7 @@ import {
   type ReactNode,
   type SelectHTMLAttributes,
 } from 'react'
-import { ChevronDownIcon } from '../icons'
+import { ChevronDownIcon } from './icons'
 import { Button, type ButtonProps } from './Button'
 import { FieldFrame, type FieldSize, type FieldStatus } from './internal/Field'
 import { getFieldDescriptionIds } from './internal/fieldA11y'

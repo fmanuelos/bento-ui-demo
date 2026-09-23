@@ -1,5 +1,5 @@
 import { useEffect, useState, type AnchorHTMLAttributes, type MouseEvent } from 'react'
-import { ArrowUpIcon } from '../icons'
+import { ArrowUpIcon } from './icons'
 import { linkStyles } from './interactiveStyles'
 
 export type BackToTopProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'href'> & {

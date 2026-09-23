@@ -1,5 +1,5 @@
 import { useState, type HTMLAttributes } from 'react'
-import { UserIcon } from '../icons'
+import { UserIcon } from './icons'
 
 export type AvatarSize = 'small' | 'medium' | 'large'
 export type AvatarProps = Omit<HTMLAttributes<HTMLSpanElement>, 'children'> & {

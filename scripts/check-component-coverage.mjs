@@ -9,6 +9,7 @@ const exportsSource = readFileSync(join(root, 'src/components/index.ts'), 'utf8'
 const slugOverrides = new Map([['radio', 'radio-group']])
 
 const implementationFiles = new Map([
+  ['icons', 'icons/Icon'],
   ['form-field', 'internal/Field'],
   ['overlay', 'internal/Overlay'],
   ['alert-dialog', 'AlertDialog'],
@@ -56,6 +57,8 @@ const implementationFiles = new Map([
   ]),
 ])
 
+const exportPaths = new Map([['icons', 'icons']])
+
 const contracts = readdirSync(contractDirectory)
   .filter((file) => file.endsWith('.md') && file !== 'README.md')
   .map((file) => {
@@ -91,7 +94,8 @@ for (const { slug: contract, draft } of contracts) {
   } catch {
     failures.push(`${contract}.md is missing ${implementationPath}`)
   }
-  if (!implementation.startsWith('internal/') && !exportsSource.includes(`'./${implementation}'`)) {
+  const exportPath = exportPaths.get(contract) ?? implementation
+  if (!implementation.startsWith('internal/') && !exportsSource.includes(`'./${exportPath}'`)) {
     failures.push(`${implementation}.tsx is not exported from src/components/index.ts`)
   }
 }

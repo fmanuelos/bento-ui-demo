@@ -7,7 +7,7 @@ import {
   type ReactNode,
   type RefObject,
 } from 'react'
-import { CloseIcon } from '../icons'
+import { CloseIcon } from './icons'
 import { Button } from './Button'
 
 export type ModalProps = {

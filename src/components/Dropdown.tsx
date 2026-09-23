@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
-import { ChevronDownIcon } from '../icons'
+import { ChevronDownIcon } from './icons'
 import { Button, type ButtonProps } from './Button'
 import { OverlaySurface } from './internal/Overlay'
 

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
-import { ChevronStartIcon, CloseIcon, MenuIcon } from '../icons'
+import { ChevronStartIcon, CloseIcon, MenuIcon } from './icons'
 import { Button } from './Button'
 import { SkipLink } from './SkipLink'
 import { linkStyles } from './interactiveStyles'

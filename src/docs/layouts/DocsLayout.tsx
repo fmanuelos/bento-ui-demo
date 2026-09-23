@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Button, SkipLink, linkStyles } from '../../components'
-import { CloseIcon, MenuIcon, MoonIcon, SparkleIcon, SunIcon } from '../../icons'
+import { CloseIcon, MenuIcon, MoonIcon, SparkleIcon, SunIcon } from '../../components/icons'
 import { docsNavigation } from '../navigation'
 
 export function DocsLayout() {

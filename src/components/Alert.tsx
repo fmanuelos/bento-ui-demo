@@ -5,7 +5,7 @@ import {
   DangerCircleIcon,
   InfoCircleIcon,
   WarningTriangleIcon,
-} from '../icons'
+} from './icons'
 import { Button } from './Button'
 
 export type AlertVariant = 'success' | 'warning' | 'danger' | 'info'

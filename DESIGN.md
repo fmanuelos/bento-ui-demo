@@ -1511,7 +1511,7 @@ positive status.
 Icons inherit the semantic foreground of their context unless they communicate a
 distinct semantic meaning. The normative drawing, naming, directionality,
 accessibility, lifecycle, and validation rules are defined by the
-[`Icon system`](design/foundations/icons.md) foundation contract.
+[`Icon component family`](design/components/icons.md) contract.
 
 - Icons beside text inherit that text color.
 - Standalone neutral icons use `text-primary`, `text-secondary`, or

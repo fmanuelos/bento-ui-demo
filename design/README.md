@@ -8,7 +8,7 @@ changing the meaning of the Bento UI design contract.
 Its Markdown body, the [`component contracts`](components/), the
 [`block contracts`](blocks/), the [`experience patterns`](patterns/), and the
 [`experience mode contracts`](experiences/), [`template contracts`](templates/),
-[`foundation contracts`](foundations/), and
+the foundation rules in `DESIGN.md`, and
 [`product-domain guidance`](product-domains.md) define intended use. The
 [`adapter documentation`](adapters/) translates that contract for specific
 platforms and tools. [`VALIDATION.md`](VALIDATION.md) collects representative

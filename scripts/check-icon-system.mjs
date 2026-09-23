@@ -3,12 +3,12 @@ import { extname, join, relative } from 'node:path'
 
 const root = process.cwd()
 const sourceDirectory = join(root, 'src')
-const iconDirectory = join(sourceDirectory, 'icons')
+const iconDirectory = join(sourceDirectory, 'components/icons')
 const iconIndex = readFileSync(join(iconDirectory, 'index.ts'), 'utf8')
 const catalog = readFileSync(join(iconDirectory, 'catalog.ts'), 'utf8')
 const iconSource = readFileSync(join(iconDirectory, 'Icon.tsx'), 'utf8')
 const sizeSource = readFileSync(join(iconDirectory, 'sizes.ts'), 'utf8')
-const foundationDocs = readFileSync(join(sourceDirectory, 'docs/content/foundations.tsx'), 'utf8')
+const componentDocs = readFileSync(join(sourceDirectory, 'docs/content/examples.tsx'), 'utf8')
 const failures = []
 
 const requiredSizes = [
@@ -32,7 +32,7 @@ for (const path of sourceFiles(sourceDirectory)) {
   const source = readFileSync(path, 'utf8')
   if (source.includes('<svg')) {
     failures.push(
-      `${relative(root, path)} contains inline SVG; add an owned glyph under src/icons instead`,
+      `${relative(root, path)} contains inline SVG; add an owned glyph under src/components/icons instead`,
     )
   }
   const longSizeMatch = source.match(
@@ -61,10 +61,10 @@ for (const size of requiredSizes) {
 }
 
 if (!iconSource.includes("size = 'md'")) failures.push('The default icon size must be md')
-if (!foundationDocs.includes('iconSizeKeys.map'))
-  failures.push('The foundation gallery must render from iconSizeKeys')
-if (!foundationDocs.includes('iconSizes[size]'))
-  failures.push('The foundation gallery must display shared iconSizes metadata')
+if (!componentDocs.includes('iconSizeKeys.map'))
+  failures.push('The component gallery must render from iconSizeKeys')
+if (!componentDocs.includes('iconSizes[size]'))
+  failures.push('The component gallery must display shared iconSizes metadata')
 
 const glyphFiles = readdirSync(iconDirectory)
   .filter((file) => file.endsWith('Icon.tsx') && file !== 'Icon.tsx')
@@ -74,10 +74,10 @@ for (const file of glyphFiles) {
   const exportPath = `./${file.replace(/\.tsx$/, '')}`
   const componentName = file.replace(/\.tsx$/, '')
   if (!iconIndex.includes(`'${exportPath}'`)) {
-    failures.push(`${file} is not exported from src/icons/index.ts`)
+    failures.push(`${file} is not exported from src/components/icons/index.ts`)
   }
   if (!catalog.includes(`import { ${componentName} } from '${exportPath}'`)) {
-    failures.push(`${file} is not imported by src/icons/catalog.ts`)
+    failures.push(`${file} is not imported by src/components/icons/catalog.ts`)
   }
   if (!catalog.includes(`Icon: ${componentName}`)) {
     failures.push(`${file} has no catalog entry`)

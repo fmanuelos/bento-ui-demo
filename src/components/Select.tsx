@@ -1,5 +1,5 @@
 import { forwardRef, useId, type ReactNode, type SelectHTMLAttributes } from 'react'
-import { ChevronDownIcon } from '../icons'
+import { ChevronDownIcon } from './icons'
 import { FieldFrame, type FieldSize, type FieldStatus } from './internal/Field'
 import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'

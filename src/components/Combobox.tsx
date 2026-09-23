@@ -6,7 +6,7 @@ import {
   type InputHTMLAttributes,
   type KeyboardEvent,
 } from 'react'
-import { ChevronDownIcon } from '../icons'
+import { ChevronDownIcon } from './icons'
 import { FieldFrame } from './internal/Field'
 import { getFieldDescriptionIds } from './internal/fieldA11y'
 import { fieldControlBase, fieldStatusClasses } from './internal/fieldStyles'

@@ -14,6 +14,53 @@ const createDoc = (documentation: Omit<LibraryDocumentation, 'example'>): Librar
 
 const allDocumentation = [
   createDoc({
+    slug: 'icons',
+    title: 'Icons',
+    status: 'Complete',
+    summary:
+      'Renders a compact owned glyph family with consistent geometry, sizing, directionality, accessibility defaults, and lifecycle metadata.',
+    useCases: [
+      'Support recognition in actions, navigation, feedback, system controls, and familiar interface objects.',
+    ],
+    importCode: "import { SearchIcon } from '@/components'",
+    basicCode: `<SearchIcon size="md" />`,
+    props: [
+      {
+        name: 'size',
+        type: "'xs' | 'sm' | 'md' | 'lg' | 'xl'",
+        defaultValue: "'md'",
+        description: 'Selects one of the five system-aligned rendered sizes.',
+      },
+      {
+        name: 'label',
+        type: 'string',
+        description:
+          'Creates a standalone image semantic; omit when the icon is decorative or already named by its containing component.',
+      },
+      classNameProp,
+    ],
+    variants: [
+      'Named outline glyphs and approved filled glyphs.',
+      'Logical Start and End glyphs mirror automatically in right-to-left presentation.',
+      'Icons have no interactive, focused, pressed, selected, loading, or disabled state of their own.',
+    ],
+    accessibility: [
+      'Decorative icons are excluded from the accessibility tree by default.',
+      'A labelled standalone icon uses an image role and concise accessible name.',
+      'Icons never receive keyboard focus; the containing component owns interaction and target size.',
+    ],
+    responsive:
+      'Use only the supported size scale; containing components select the size when their own responsive sizing determines it.',
+    theme:
+      'Every glyph uses currentColor and inherits semantic foreground, disabled, inverse, and forced-color treatment from its context.',
+    mistakes: [
+      'Do not use an unexplained icon where a visible label is necessary.',
+      'Do not add a second RTL transform to a logical-direction glyph.',
+      'Do not author one-off interface SVG at the point of use.',
+    ],
+    related: ['button', 'link', 'status-badge', 'alert'],
+  }),
+  createDoc({
     slug: 'form-field',
     title: 'Form field',
     summary:
