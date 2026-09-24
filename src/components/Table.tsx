@@ -82,7 +82,7 @@ export function Table<T>({
         : null
 
   return (
-    <section className={className} aria-busy={loading || undefined}>
+    <section className={`min-w-0 ${className}`} aria-busy={loading || undefined}>
       {toolbar && (
         <div className="mb-scale-3 flex flex-wrap items-end justify-between gap-scale-3">
           {toolbar}

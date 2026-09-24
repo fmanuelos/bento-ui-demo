@@ -68,16 +68,59 @@ type Customer = {
   name: string
   plan: 'Basic' | 'Pro'
   status: 'Active' | 'Paused'
+  renewalDate: string
   monthlyFee: number
 }
 
 const customers: Customer[] = [
-  { id: 'ana', name: 'Ana', plan: 'Pro', status: 'Active', monthlyFee: 49 },
-  { id: 'ben', name: 'Ben', plan: 'Basic', status: 'Paused', monthlyFee: 19 },
-  { id: 'chen', name: 'Chen', plan: 'Pro', status: 'Active', monthlyFee: 49 },
-  { id: 'diego', name: 'Diego', plan: 'Basic', status: 'Active', monthlyFee: 19 },
-  { id: 'ellis', name: 'Ellis', plan: 'Pro', status: 'Paused', monthlyFee: 49 },
-  { id: 'farah', name: 'Farah', plan: 'Basic', status: 'Active', monthlyFee: 19 },
+  {
+    id: 'ana',
+    name: 'Ana',
+    plan: 'Pro',
+    status: 'Active',
+    renewalDate: '2026-10-15',
+    monthlyFee: 49,
+  },
+  {
+    id: 'ben',
+    name: 'Ben',
+    plan: 'Basic',
+    status: 'Paused',
+    renewalDate: '2026-11-02',
+    monthlyFee: 19,
+  },
+  {
+    id: 'chen',
+    name: 'Chen',
+    plan: 'Pro',
+    status: 'Active',
+    renewalDate: '2026-10-28',
+    monthlyFee: 49,
+  },
+  {
+    id: 'diego',
+    name: 'Diego',
+    plan: 'Basic',
+    status: 'Active',
+    renewalDate: '2026-11-12',
+    monthlyFee: 19,
+  },
+  {
+    id: 'ellis',
+    name: 'Ellis',
+    plan: 'Pro',
+    status: 'Paused',
+    renewalDate: '2026-10-21',
+    monthlyFee: 49,
+  },
+  {
+    id: 'farah',
+    name: 'Farah',
+    plan: 'Basic',
+    status: 'Active',
+    renewalDate: '2026-11-08',
+    monthlyFee: 19,
+  },
 ]
 
 const ArrowIcon = <ArrowEndIcon />
@@ -86,6 +129,28 @@ const SearchGlyph = <SearchIcon />
 const customerTableColumns: TableColumn<Customer>[] = [
   { id: 'name', header: 'Customer', cell: (customer) => customer.name },
   { id: 'plan', header: 'Plan', cell: (customer) => customer.plan },
+  {
+    id: 'status',
+    header: 'Status',
+    cell: (customer) => (
+      <StatusBadge variant={customer.status === 'Active' ? 'positive' : 'neutral'}>
+        {customer.status}
+      </StatusBadge>
+    ),
+  },
+  {
+    id: 'renewal-date',
+    header: 'Renewal date',
+    cell: (customer) => (
+      <time className="whitespace-nowrap" dateTime={customer.renewalDate}>
+        {new Date(`${customer.renewalDate}T00:00:00`).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        })}
+      </time>
+    ),
+  },
   {
     id: 'monthly-fee',
     header: 'Monthly fee',

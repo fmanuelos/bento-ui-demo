@@ -98,6 +98,10 @@ Prefer, in order: prioritizing essential columns, contained horizontal scrolling
 stacked records, or a dedicated detail view. Do not compress every desktop
 column until the content becomes unreadable.
 
+When retained columns exceed the available inline size, keep overflow inside the
+table boundary so the table scrolls horizontally without forcing page overflow.
+Every column must remain reachable with touch, pointer, and keyboard input.
+
 Allow headers, values, and actions to grow for translated text. Keep numeric
 columns consistently aligned according to locale, and provide access to every
 essential value without relying on truncation.
