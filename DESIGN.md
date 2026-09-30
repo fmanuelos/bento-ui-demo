@@ -44,7 +44,7 @@ colors:
   border-strong: '#64748B'
   border-inverse: '#475569'
   border-disabled: '#E2E8F0'
-  border-focus: '#84ADFF'
+  border-focus: '#2970FF'
   border-accent: '#B2CCFF'
   border-success: '#75E0A7'
   border-warning: '#FEC84B'
@@ -143,7 +143,7 @@ colors:
 
   selection-background: '#D1E0FF'
   selection-foreground: '#0F172A'
-  focus-ring: '#84ADFF'
+  focus-ring: '#2970FF'
   focus-ring-offset: '#FFFFFF'
 
   chart-series-1: '#155EEF'
