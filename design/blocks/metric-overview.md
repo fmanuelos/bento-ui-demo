@@ -268,11 +268,11 @@ Validate the Metric Overview with:
 - Multiple locales, writing systems, and right-to-left direction
 - Keyboard and screen-reader use, visible focus, dark mode, forced colors, and high contrast
 
-Apply the [`Dashboard overview`](../VALIDATION.md#dashboard-overview),
-[`Data management`](../VALIDATION.md#data-management) when filters or record
-scope apply, [`Data visualization`](../VALIDATION.md#data-visualization) when a
+Apply the [`Dashboard overview`](../verification/workflows.md#dashboard-overview),
+[`Data management`](../verification/workflows.md#data-management) when filters or record
+scope apply, [`Data visualization`](../verification/stress-tests.md#data-visualization) when a
 compact trend is present,
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow),
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow),
 and the baseline asynchronous and responsive conditions. The block is ready for
 shared use when values, scope, freshness, partial availability, and recovery
 remain understandable without placeholder data or visual inference.

@@ -210,11 +210,11 @@ Validate the Section Header with:
 - Locale-aware values, multiple writing systems, and right-to-left direction
 - Keyboard and touch operation, forced colors, high contrast, and reduced motion
 
-Apply the applicable [`Public landing`](../VALIDATION.md#public-landing),
-[`Public content`](../VALIDATION.md#public-content), or
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview) workflow,
-[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis),
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow),
+Apply the applicable [`Public landing`](../verification/workflows.md#public-landing),
+[`Public content`](../verification/workflows.md#public-content), or
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview) workflow,
+[`Action hierarchy`](../verification/stress-tests.md#action-hierarchy-and-emphasis),
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow),
 and the baseline responsive and accessibility conditions. The block is ready for
 shared use when its heading and local action scope remain clear in every
 supported composition and the following region retains its own state and

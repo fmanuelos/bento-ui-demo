@@ -173,15 +173,15 @@ Responsive density according to the task.
 ## Validation scenarios
 
 Apply the shared baseline and relevant scenarios in
-[`VALIDATION.md`](../VALIDATION.md), especially
-[`Application Workspace`](../VALIDATION.md#application-workspace),
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview),
-[`Data management`](../VALIDATION.md#data-management),
-[`Form workflow`](../VALIDATION.md#form-workflow),
-[`Destructive workflow`](../VALIDATION.md#destructive-workflow), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow).
+[`verification guide`](../verification/README.md), especially
+[`Application Workspace`](../verification/workflows.md#application-workspace),
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview),
+[`Data management`](../verification/workflows.md#data-management),
+[`Form workflow`](../verification/workflows.md#form-workflow),
+[`Destructive workflow`](../verification/workflows.md#destructive-workflow), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow).
 Apply
-[`Experience classification and mode transitions`](../VALIDATION.md#experience-classification-and-mode-transitions)
+[`Experience classification and mode transitions`](../verification/stress-tests.md#experience-classification-and-mode-transitions)
 when a task enters or returns from another mode.
 Treat Dashboard overview as a page-level scenario within Application Workspace.
 Include direct entry, Back and Forward, navigation transformation, partial

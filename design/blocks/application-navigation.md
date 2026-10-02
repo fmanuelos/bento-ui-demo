@@ -149,9 +149,9 @@ Drawer while a Skip Link continues to target the primary task.
 ## Validation scenarios
 
 Apply the shared matrix and the checks in
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview),
-[`Data management`](../VALIDATION.md#data-management), and
-[`Block composition`](../VALIDATION.md#block-composition-and-reflow). Include
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview),
+[`Data management`](../verification/workflows.md#data-management), and
+[`Block composition`](../verification/stress-tests.md#block-composition-and-reflow). Include
 persistent, collapsed, temporary, direct-entry, current-route, long-label, RTL,
 200% zoom, high-contrast, reduced-motion, bypass, modal-focus, unsaved-work,
 session-expiry, and permission-loss cases with the Navigation Shell pattern.

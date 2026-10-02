@@ -120,7 +120,7 @@ the transformation or changing its outcome.
 ## Validation scenarios
 
 Apply every dimension in the
-[`baseline validation`](../VALIDATION.md#baseline-validation) to each
+[`baseline validation`](../verification/baseline.md#baseline-validation) to each
 applicable workflow. Include the boundaries immediately above and below each
 system range, content-driven transformation away from a range boundary, 200%
 text, increased spacing, 60% label expansion, RTL, keyboard-only operation,

@@ -188,8 +188,8 @@ transitions without delaying state changes or obscuring operation progress.
 ## Validation scenarios
 
 Apply the shared matrix and the selection and bulk-operation checks in
-[`Data management`](../VALIDATION.md#data-management) and
-[`Destructive workflow`](../VALIDATION.md#destructive-workflow). Include 0, 1,
+[`Data management`](../verification/workflows.md#data-management) and
+[`Destructive workflow`](../verification/workflows.md#destructive-workflow). Include 0, 1,
 all visible, and many cross-page selections; a whole-query selection with exact
 and unknown totals; exclusions; sorting and filtering; a changed query; removed
 or newly unauthorized records; mixed eligibility; duplicate names; partial and

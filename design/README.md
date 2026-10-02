@@ -11,7 +11,7 @@ Its Markdown body, the [`component contracts`](components/), the
 the foundation rules in `DESIGN.md`, and
 [`product-domain guidance`](product-domains.md) define intended use. The
 [`adapter documentation`](adapters/) translates that contract for specific
-platforms and tools. [`VALIDATION.md`](VALIDATION.md) collects representative
+platforms and tools. [`verification guide`](verification/README.md) collects representative
 workflow and adverse-condition checks without redefining design intent. The
 [`architecture migration record`](MIGRATION.md) documents the completed
 terminology and layout-token migration and its verification boundary.
@@ -171,7 +171,7 @@ tokens, generated exports, or documentation routes.
 
 ## Validation
 
-Use [`VALIDATION.md`](VALIDATION.md) to test applicable workflows across content,
+Use [`verification guide`](verification/README.md) to test applicable workflows across content,
 state, layout, input, accessibility preferences, themes, locales, and writing
 directions. Record the implementation revision, environments, results, and known
 limitations in the pull request, issue, release record, or another durable review

@@ -175,9 +175,9 @@ save and restoration transitions without delaying the underlying operation.
 ## Validation scenarios
 
 Apply the shared matrix and the continuity checks in
-[`Form workflow`](../VALIDATION.md#form-workflow),
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview), and
-[`Destructive workflow`](../VALIDATION.md#destructive-workflow). Include manual
+[`Form workflow`](../verification/workflows.md#form-workflow),
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview), and
+[`Destructive workflow`](../verification/workflows.md#destructive-workflow). Include manual
 save, autosave, Save draft, edits during a pending save, late responses, failure
 and retry, offline entry, device-only recovery, queued synchronization, reload,
 Back and Forward, task closure, responsive transformation, session expiry,

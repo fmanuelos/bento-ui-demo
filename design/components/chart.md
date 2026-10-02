@@ -295,10 +295,10 @@ Validate each governed family and interaction variant with:
 - Long category and series names, long units, overlapping marks, dense data, and
   a chart with no useful legend position
 
-Apply the [`Dashboard overview`](../VALIDATION.md#dashboard-overview) when the
+Apply the [`Dashboard overview`](../verification/workflows.md#dashboard-overview) when the
 chart appears in a dashboard,
-[`Data management`](../VALIDATION.md#data-management) when filters or record
-scope apply, [`Data visualization`](../VALIDATION.md#data-visualization), and the
+[`Data management`](../verification/workflows.md#data-management) when filters or record
+scope apply, [`Data visualization`](../verification/stress-tests.md#data-visualization), and the
 baseline asynchronous, responsive, media, and accessibility conditions. The
 contract remains Draft until representative implementations demonstrate that
 these outcomes work without making charts default workspace content.

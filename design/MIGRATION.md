@@ -124,7 +124,7 @@ through generated output to the current runtime consumer. It does not prove:
 - That consumers outside this repository have completed their migration.
 
 Those claims require the applicable scenarios in
-[`VALIDATION.md`](VALIDATION.md), product-specific evidence, and the maturity
+[`verification guide`](verification/README.md), product-specific evidence, and the maturity
 rules in the relevant contract index.
 
 ## Future changes

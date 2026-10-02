@@ -1277,7 +1277,7 @@ implement it:
    content.
 8. [`design/product-domains.md`](design/product-domains.md) defines shared
    business-capability names, boundaries, identifiers, and classification rules.
-9. [`design/VALIDATION.md`](design/VALIDATION.md) collects representative workflow
+9. [`design/verification/README.md`](design/verification/README.md) collects representative workflow
    and adverse-condition checks without redefining the system.
 10. [`design/README.md`](design/README.md) defines the repository workflow and
     lightweight change policy.
@@ -1319,7 +1319,7 @@ Contract validation also covers every applicable component, block, experience
 mode, and experience pattern. Adapter support requires a declared platform,
 device, input, assistive-technology, theme, and locale matrix. Product validation
 additionally covers the applicable workflows in
-[`design/VALIDATION.md`](design/VALIDATION.md) and records the implementation
+[`design/verification/README.md`](design/verification/README.md) and records the implementation
 revision, evidence, and limitations.
 
 These scopes do not imply one another. Successful parsing, generation, or
@@ -1340,7 +1340,7 @@ belongs in its durable review or release record.
 | Experience mode behavior             | [`design/experiences/`](design/experiences/)                      | Select modes by user purpose and keep domains independent of presentation.         |
 | Reusable page and flow structures    | [`design/templates/`](design/templates/)                          | Apply mode and lower-level contracts without prescribing product content.          |
 | Product-domain classification        | [`design/product-domains.md`](design/product-domains.md)          | Keep capability separate from experience, structure, and organizational ownership. |
-| Representative workflow validation   | [`design/VALIDATION.md`](design/VALIDATION.md)                    | Test contracts with realistic and adverse conditions without redefining them.      |
+| Representative workflow validation   | [`design/verification/README.md`](design/verification/README.md)  | Test contracts with realistic and adverse conditions without redefining them.      |
 | Contribution and change policy       | [`design/README.md`](design/README.md#changing-the-design-system) | Record rationale, migration impact, limitations, and relevant validation.          |
 | Architecture migration evidence      | [`design/MIGRATION.md`](design/MIGRATION.md)                      | Record replacements, repository verification, compatibility, and evidence limits.  |
 | Product-specific validation evidence | Pull request, issue, or release record                            | Record scope, revision, environments, results, and known limitations.              |
@@ -2131,7 +2131,7 @@ contracts and dependencies.
 
 ### Validation scenarios
 
-The [`validation guide`](design/VALIDATION.md) covers Public Site, Focused Flow,
+The [`verification guide`](design/verification/README.md) covers Public Site, Focused Flow,
 Application Workspace, data-management, form, and destructive workflows, plus
 mode transitions, template conformance, and product-domain classification. It
 uses representative states, adverse conditions, and observable outcomes. Use the

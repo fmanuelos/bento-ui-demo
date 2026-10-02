@@ -204,10 +204,10 @@ Validate the Feature Grid with:
 - Long valid words, 60% expansion, 200% text, multiple writing systems, and RTL
 - Keyboard, pointer, touch, speech, forced colors, dark mode, and reduced motion
 
-Apply [`Public landing`](../VALIDATION.md#public-landing),
-[`Images and media`](../VALIDATION.md#images-and-media),
-[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow).
+Apply [`Public landing`](../verification/workflows.md#public-landing),
+[`Images and media`](../verification/stress-tests.md#images-and-media),
+[`Action hierarchy`](../verification/stress-tests.md#action-hierarchy-and-emphasis), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow).
 The block is ready for shared use when each feature remains distinct, comparable,
 and understandable across supported presentations without relying on its media
 or grid position.

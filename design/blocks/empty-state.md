@@ -136,9 +136,9 @@ no projects instead explains the starting condition and offers “Create project
 ## Validation scenarios
 
 Apply the shared matrix and the checks in
-[`Data management`](../VALIDATION.md#data-management),
-[`Form workflow`](../VALIDATION.md#form-workflow), and
-[`Block composition`](../VALIDATION.md#block-composition-and-reflow). Include
+[`Data management`](../verification/workflows.md#data-management),
+[`Form workflow`](../verification/workflows.md#form-workflow), and
+[`Block composition`](../verification/stress-tests.md#block-composition-and-reflow). Include
 no-data, no-results, filtered, unavailable, error, retrying, resolved, compact,
 spacious, long-copy, translated, RTL, high-zoom, high-contrast, and announced
 result cases.

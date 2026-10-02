@@ -171,18 +171,18 @@ mappings owned by lower-level contracts.
 
 ## Ownership boundaries
 
-| Concern                                                     | Normative owner                            |
-| ----------------------------------------------------------- | ------------------------------------------ |
-| Shared values and architecture vocabulary                   | [`DESIGN.md`](../../DESIGN.md)             |
-| Mode-level context, navigation, density, and continuity     | An experience contract in this directory   |
-| One bounded semantic or interactive unit                    | A [component contract](../components/)     |
-| One reusable local arrangement                              | A [block contract](../blocks/)             |
-| Cross-component outcome, sequence, or recovery              | An [experience pattern](../patterns/)      |
-| Complete page or flow structure                             | A [template contract](../templates/)       |
-| Real content, data, permissions, routes, and business rules | The consuming product page or flow step    |
-| Representative adverse template instance                    | A reference page                           |
-| Platform mechanics                                          | An [adapter](../adapters/)                 |
-| Representative workflow checks                              | [`design/VALIDATION.md`](../VALIDATION.md) |
+| Concern                                                     | Normative owner                                              |
+| ----------------------------------------------------------- | ------------------------------------------------------------ |
+| Shared values and architecture vocabulary                   | [`DESIGN.md`](../../DESIGN.md)                               |
+| Mode-level context, navigation, density, and continuity     | An experience contract in this directory                     |
+| One bounded semantic or interactive unit                    | A [component contract](../components/)                       |
+| One reusable local arrangement                              | A [block contract](../blocks/)                               |
+| Cross-component outcome, sequence, or recovery              | An [experience pattern](../patterns/)                        |
+| Complete page or flow structure                             | A [template contract](../templates/)                         |
+| Real content, data, permissions, routes, and business rules | The consuming product page or flow step                      |
+| Representative adverse template instance                    | A reference page                                             |
+| Platform mechanics                                          | An [adapter](../adapters/)                                   |
+| Representative workflow checks                              | [`design/verification/README.md`](../verification/README.md) |
 
 ## Definition of complete
 

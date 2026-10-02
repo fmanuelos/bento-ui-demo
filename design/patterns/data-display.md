@@ -188,9 +188,9 @@ changes the current task or invalidates a choice.
 ## Validation scenarios
 
 Apply the shared matrix and the
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview) and
-[`Data management`](../VALIDATION.md#data-management) scenarios. Apply
-[`Data visualization`](../VALIDATION.md#data-visualization) whenever a chart is
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview) and
+[`Data management`](../verification/workflows.md#data-management) scenarios. Apply
+[`Data visualization`](../verification/stress-tests.md#data-visualization) whenever a chart is
 present. Include 0, 1,
 25, 4,286, and unknown totals; duplicate and 120-character names; missing and
 unavailable values; multiple locales; out-of-order refreshes; selection across

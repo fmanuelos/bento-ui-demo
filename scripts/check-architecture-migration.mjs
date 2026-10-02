@@ -21,7 +21,6 @@ const designSource = read('DESIGN.md')
 const experienceIndex = read('design/experiences/README.md')
 const templateIndex = read('design/templates/README.md')
 const domainGuidance = read('design/product-domains.md')
-const validationGuide = read('design/VALIDATION.md')
 const repositoryGuide = read('design/README.md')
 const migrationRecord = read('design/MIGRATION.md')
 const navigationSource = read('src/docs/navigation.ts')
@@ -68,15 +67,25 @@ for (const [name, identifier] of domains) {
   requireText('design/product-domains.md', domainGuidance, `\`${identifier}\``)
 }
 
-for (const heading of [
-  '### Classification record',
-  '### Focused Flow',
-  '### Application Workspace',
-  '### Experience classification and mode transitions',
-  '### Template conformance',
-  '### Product-domain classification',
-]) {
-  requireText('design/VALIDATION.md', validationGuide, heading)
+const verificationSections = new Map([
+  ['README.md', ['# Verification guide', '## Applicability index']],
+  ['baseline.md', ['## Classification record']],
+  ['workflows.md', ['## Focused Flow', '## Application Workspace']],
+  [
+    'stress-tests.md',
+    [
+      '## Experience classification and mode transitions',
+      '## Template conformance',
+      '## Product-domain classification',
+    ],
+  ],
+  ['evidence.md', ['# Recording evidence']],
+])
+
+for (const [file, headings] of verificationSections) {
+  const path = `design/verification/${file}`
+  const source = read(path)
+  for (const heading of headings) requireText(path, source, heading)
 }
 
 const documentationRoutes = [

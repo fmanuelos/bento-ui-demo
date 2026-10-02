@@ -170,10 +170,10 @@ change once rather than announcing each placeholder or animation cycle.
 ## Validation scenarios
 
 Apply the shared matrix and the asynchronous conditions in the
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview),
-[`Data management`](../VALIDATION.md#data-management),
-[`Form workflow`](../VALIDATION.md#form-workflow), and
-[`Destructive workflow`](../VALIDATION.md#destructive-workflow) scenarios. Include
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview),
+[`Data management`](../verification/workflows.md#data-management),
+[`Form workflow`](../verification/workflows.md#form-workflow), and
+[`Destructive workflow`](../verification/workflows.md#destructive-workflow) scenarios. Include
 out-of-order responses, refresh with usable content, cancellation, timeout,
 offline transition, optimistic rollback, unknown outcome, retry, and partial
 success where applicable. When skeletons are used, also test fast completion,

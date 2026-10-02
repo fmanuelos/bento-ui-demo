@@ -221,10 +221,10 @@ Validate the Page Header with:
 - Locale-aware dates and names, multiple writing systems, and right-to-left direction
 - Keyboard and touch operation, visible focus, forced colors, and reduced motion
 
-Apply the [`Public content`](../VALIDATION.md#public-content),
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview),
-[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow)
+Apply the [`Public content`](../verification/workflows.md#public-content),
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview),
+[`Action hierarchy`](../verification/stress-tests.md#action-hierarchy-and-emphasis), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow)
 validation scenarios.
 The block is ready for shared use when page identity, context, status, metadata,
 and action scope remain clear in every supported mode without redefining its

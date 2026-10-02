@@ -172,7 +172,7 @@ result transitions without delaying the query or hiding its completion.
 ## Validation scenarios
 
 Apply the shared matrix and every search and query check in
-[`Data management`](../VALIDATION.md#data-management). Include an empty query,
+[`Data management`](../verification/workflows.md#data-management). Include an empty query,
 one and many criteria, fixed constraints, individual removal, scoped clear-all,
 immediate and staged application, no data, no results, exact and unknown totals,
 slow and out-of-order responses, failure and retry, offline and stale results,

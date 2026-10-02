@@ -268,10 +268,10 @@ DESIGN.md frontmatter groups and must not be added to the frontmatter of
 ## Validation
 
 Apply the shared baseline and
-[`Product-domain classification`](VALIDATION.md#product-domain-classification)
+[`Product-domain classification`](verification/stress-tests.md#product-domain-classification)
 when assigning a primary or secondary domain or changing the shared catalog.
 Apply
-[`Experience classification and mode transitions`](VALIDATION.md#experience-classification-and-mode-transitions)
+[`Experience classification and mode transitions`](verification/stress-tests.md#experience-classification-and-mode-transitions)
 when the same capability appears across modes or a journey crosses their
 boundaries. Record ambiguous boundary decisions and the material reason for each
 secondary domain in the durable review evidence.
@@ -292,16 +292,16 @@ exposing restricted information.
 
 ## Ownership boundaries
 
-| Concern                                                    | Normative owner                                                        |
-| ---------------------------------------------------------- | ---------------------------------------------------------------------- |
-| Shared domain names, identifiers, and classification rules | This guidance                                                          |
-| Experience behavior and presentation                       | An [experience mode contract](experiences/)                            |
-| Complete reusable page or flow structure                   | A [template contract](templates/)                                      |
-| Component, block, and pattern semantics                    | Their respective contracts                                             |
-| Real business rules, data, policy, and domain content      | The consuming product                                                  |
-| Domain-specific route and navigation labels                | The consuming product within shared navigation and content rules       |
-| Exact semantic token values                                | [`DESIGN.md`](../DESIGN.md) frontmatter                                |
-| Representative workflow checks                             | [`design/VALIDATION.md`](VALIDATION.md) plus product-specific evidence |
+| Concern                                                    | Normative owner                                                                          |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Shared domain names, identifiers, and classification rules | This guidance                                                                            |
+| Experience behavior and presentation                       | An [experience mode contract](experiences/)                                              |
+| Complete reusable page or flow structure                   | A [template contract](templates/)                                                        |
+| Component, block, and pattern semantics                    | Their respective contracts                                                               |
+| Real business rules, data, policy, and domain content      | The consuming product                                                                    |
+| Domain-specific route and navigation labels                | The consuming product within shared navigation and content rules                         |
+| Exact semantic token values                                | [`DESIGN.md`](../DESIGN.md) frontmatter                                                  |
+| Representative workflow checks                             | [`design/verification/README.md`](verification/README.md) plus product-specific evidence |
 
 ## Classification review
 

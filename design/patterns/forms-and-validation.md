@@ -121,7 +121,7 @@ spacing, and reduced motion.
 ## Validation scenarios
 
 Apply the shared matrix and every check in the
-[`Form workflow`](../VALIDATION.md#form-workflow). Include errors above and below
+[`Form workflow`](../verification/workflows.md#form-workflow). Include errors above and below
 the viewport, cross-field and conditional errors, maximum valid content, 60%
 label expansion, 200% text, an on-screen keyboard, stale validation responses,
 autosave failure, offline submission, session expiry, retry, server conflict,

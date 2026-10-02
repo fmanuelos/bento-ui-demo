@@ -207,9 +207,9 @@ Validate the Site Footer with:
 - 60% expansion, 200% text, multiple writing systems, RTL, and legal variations
 - Keyboard, touch, speech, landmark navigation, forced colors, and reduced motion
 
-Apply [`Public landing`](../VALIDATION.md#public-landing),
-[`Public content`](../VALIDATION.md#public-content), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow).
+Apply [`Public landing`](../verification/workflows.md#public-landing),
+[`Public content`](../verification/workflows.md#public-content), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow).
 The block is ready for shared use when supporting navigation, preferences, and
 required legal information remain findable and operable without competing with
 the page's primary purpose.

@@ -213,9 +213,9 @@ Validate the Form Section with:
 - 60% expansion, 200% text, on-screen keyboard, locale variation, and RTL
 - Keyboard, touch, speech, screen reader, forced colors, and reduced motion
 
-Apply [`Form workflow`](../VALIDATION.md#form-workflow),
-[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow).
+Apply [`Form workflow`](../verification/workflows.md#form-workflow),
+[`Action hierarchy`](../verification/stress-tests.md#action-hierarchy-and-emphasis), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow).
 The block is ready for shared use when field grouping, requirements, messages,
 edits, and section actions remain correctly scoped through validation, reflow,
 interruption, and recovery.

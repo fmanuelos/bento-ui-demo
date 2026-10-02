@@ -236,10 +236,11 @@ for (const contract of contracts) {
 
   if (statuses[0] === 'Complete') {
     const validation = section(source, 'Validation scenarios')
-    if (!/\]\(\.\.\/VALIDATION\.md#[^)]+\)/.test(validation)) {
-      failures.push(`${contract} is Complete but has no linked validation-guide scenario`)
+    const scenarioLink = /\]\(\.\.\/verification\/(?:workflows|stress-tests)\.md#[^)]+\)/
+    if (!scenarioLink.test(validation)) {
+      failures.push(`${contract} is Complete but has no linked verification-guide scenario`)
     }
-    if (!entry?.validation.includes('../VALIDATION.md#')) {
+    if (!scenarioLink.test(entry?.validation ?? '')) {
       failures.push(`${contract} is Complete but its inventory row has no validation coverage link`)
     }
   }

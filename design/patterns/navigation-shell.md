@@ -110,9 +110,9 @@ reduced without changing navigation state.
 ## Validation scenarios
 
 Apply the shared matrix and the navigation checks in
-[`Public landing`](../VALIDATION.md#public-landing),
-[`Public content`](../VALIDATION.md#public-content), and
-[`Dashboard overview`](../VALIDATION.md#dashboard-overview), selecting the
+[`Public landing`](../verification/workflows.md#public-landing),
+[`Public content`](../verification/workflows.md#public-content), and
+[`Dashboard overview`](../verification/workflows.md#dashboard-overview), selecting the
 public-site or application-navigation contract as appropriate. Include direct
 entry, Back and Forward, temporary navigation, user collapse, viewport changes,
 long labels, 60% expansion, RTL, loading destinations, unsaved work, session

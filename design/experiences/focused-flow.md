@@ -169,10 +169,10 @@ persistence, interruption, and recovery across the task.
 ## Validation scenarios
 
 Apply the shared baseline and the dedicated
-[`Focused Flow`](../VALIDATION.md#focused-flow) scenario, plus
-[`Form workflow`](../VALIDATION.md#form-workflow),
-[`Destructive workflow`](../VALIDATION.md#destructive-workflow), and
-[`Action hierarchy and emphasis`](../VALIDATION.md#action-hierarchy-and-emphasis)
+[`Focused Flow`](../verification/workflows.md#focused-flow) scenario, plus
+[`Form workflow`](../verification/workflows.md#form-workflow),
+[`Destructive workflow`](../verification/workflows.md#destructive-workflow), and
+[`Action hierarchy and emphasis`](../verification/stress-tests.md#action-hierarchy-and-emphasis)
 as applicable. Also apply
-[`Experience classification and mode transitions`](../VALIDATION.md#experience-classification-and-mode-transitions)
+[`Experience classification and mode transitions`](../verification/stress-tests.md#experience-classification-and-mode-transitions)
 when the flow starts within or returns to another mode.

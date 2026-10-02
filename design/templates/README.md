@@ -277,21 +277,21 @@ Google DESIGN.md frontmatter groups and must not be added to the frontmatter of
 
 ## Ownership boundaries
 
-| Concern                                                     | Normative owner                                    |
-| ----------------------------------------------------------- | -------------------------------------------------- |
-| Shared values and composition model                         | [`DESIGN.md`](../../DESIGN.md)                     |
-| Mode-level navigation, density, and continuity              | An [experience mode contract](../experiences/)     |
-| One bounded semantic or interactive unit                    | A [component contract](../components/)             |
-| One reusable local arrangement                              | A [block contract](../blocks/)                     |
-| Cross-component outcome, sequence, or recovery              | An [experience pattern](../patterns/)              |
-| Complete reusable page or flow structure                    | A template contract in this directory              |
-| Real content, data, routes, permissions, and business rules | The consuming product page or flow step            |
-| Representative and adverse system-validation content        | A reference page governed by its template contract |
-| Platform mechanics                                          | An [adapter](../adapters/)                         |
-| Representative workflow checks                              | [`design/VALIDATION.md`](../VALIDATION.md)         |
+| Concern                                                     | Normative owner                                              |
+| ----------------------------------------------------------- | ------------------------------------------------------------ |
+| Shared values and composition model                         | [`DESIGN.md`](../../DESIGN.md)                               |
+| Mode-level navigation, density, and continuity              | An [experience mode contract](../experiences/)               |
+| One bounded semantic or interactive unit                    | A [component contract](../components/)                       |
+| One reusable local arrangement                              | A [block contract](../blocks/)                               |
+| Cross-component outcome, sequence, or recovery              | An [experience pattern](../patterns/)                        |
+| Complete reusable page or flow structure                    | A template contract in this directory                        |
+| Real content, data, routes, permissions, and business rules | The consuming product page or flow step                      |
+| Representative and adverse system-validation content        | A reference page governed by its template contract           |
+| Platform mechanics                                          | An [adapter](../adapters/)                                   |
+| Representative workflow checks                              | [`design/verification/README.md`](../verification/README.md) |
 
 Apply the shared baseline and
-[`Template conformance`](../VALIDATION.md#template-conformance) whenever a
+[`Template conformance`](../verification/stress-tests.md#template-conformance) whenever a
 template is proposed, changed, implemented, instantiated, or exercised through a
 reference page. Add every workflow and cross-cutting scenario required by its
 declared mode, content, state, actions, and domains.

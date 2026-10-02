@@ -223,10 +223,10 @@ Validate the Hero with:
 - Light, dark, forced-color, and high-contrast presentations
 - Reduced motion and disabled autoplaying decorative motion
 
-Apply the [`Public landing`](../VALIDATION.md#public-landing),
-[`Images and media`](../VALIDATION.md#images-and-media),
-[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow)
+Apply the [`Public landing`](../verification/workflows.md#public-landing),
+[`Images and media`](../verification/stress-tests.md#images-and-media),
+[`Action hierarchy`](../verification/stress-tests.md#action-hierarchy-and-emphasis), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow)
 scenarios.
 
 The block is ready for shared use when every supported variant preserves content

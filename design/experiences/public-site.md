@@ -150,13 +150,13 @@ present. Each dependency retains its own semantic and behavioral ownership.
 ## Validation scenarios
 
 Apply the shared baseline and relevant scenarios in
-[`VALIDATION.md`](../VALIDATION.md), especially
-[`Public landing`](../VALIDATION.md#public-landing),
-[`Public content`](../VALIDATION.md#public-content),
-[`Images and media`](../VALIDATION.md#images-and-media), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow).
+[`verification guide`](../verification/README.md), especially
+[`Public landing`](../verification/workflows.md#public-landing),
+[`Public content`](../verification/workflows.md#public-content),
+[`Images and media`](../verification/stress-tests.md#images-and-media), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow).
 Apply
-[`Experience classification and mode transitions`](../VALIDATION.md#experience-classification-and-mode-transitions)
+[`Experience classification and mode transitions`](../verification/stress-tests.md#experience-classification-and-mode-transitions)
 when a destination enters another mode.
 Include direct entry, navigation transformation, long and missing content, failed
 media, unavailable regions, 200% text, 60% expansion, RTL, theme changes, and

@@ -143,8 +143,8 @@ available.
 ## Validation scenarios
 
 Apply the shared matrix and the checks in
-[`Public landing`](../VALIDATION.md#public-landing),
-[`Public content`](../VALIDATION.md#public-content), and
-[`Block composition`](../VALIDATION.md#block-composition-and-reflow). Include
+[`Public landing`](../verification/workflows.md#public-landing),
+[`Public content`](../verification/workflows.md#public-content), and
+[`Block composition`](../verification/stress-tests.md#block-composition-and-reflow). Include
 inline, disclosure, modal, sticky, current-route, long-label, 60% expansion, RTL,
 200% zoom, high-contrast, reduced-motion, loading, and duplicate-action cases.

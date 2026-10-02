@@ -123,7 +123,7 @@ increased text sizes.
 ## Validation scenarios
 
 Apply the shared matrix and every check in the
-[`Destructive workflow`](../VALIDATION.md#destructive-workflow). Include reversible
+[`Destructive workflow`](../verification/workflows.md#destructive-workflow). Include reversible
 and permanent actions, similar and long object names, permission and policy
 blocks, dependent records, network loss before and after commitment, duplicate
 activation, partial bulk results, undo expiration, browser navigation, and focus

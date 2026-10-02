@@ -226,9 +226,9 @@ Validate the Results Toolbar with:
 - 60% expansion, 200% text, multiple locales and writing systems, and RTL
 - Keyboard, touch, speech, screen reader, forced colors, and reduced motion
 
-Apply [`Data management`](../VALIDATION.md#data-management),
-[`Action hierarchy`](../VALIDATION.md#action-hierarchy-and-emphasis), and
-[`Block composition and reflow`](../VALIDATION.md#block-composition-and-reflow).
+Apply [`Data management`](../verification/workflows.md#data-management),
+[`Action hierarchy`](../verification/stress-tests.md#action-hierarchy-and-emphasis), and
+[`Block composition and reflow`](../verification/stress-tests.md#block-composition-and-reflow).
 The block is ready for shared use when the applied query, result scope,
 selection, and available operations remain trustworthy through reflow,
 asynchronous change, and recovery.
