@@ -119,6 +119,10 @@ spacing, and density roles from [`DESIGN.md`](../../DESIGN.md). Keep labels,
 guidance, controls, units, messages, and actions within a readable line length
 and a visibly coherent section.
 
+The containing form owns spacing between sections and form-level actions.
+Maintain a visible gap between the final field, including any feedback, and the
+submission actions using shared spacing tokens.
+
 Use the shared layout grid for genuinely related side-by-side fields only when
 each retains a useful width and their logical order is clear. Do not use columns
 to imply a relationship that labels and grouping do not establish. Long or
@@ -191,6 +195,10 @@ Use `fieldset` and `legend` when native form controls form one semantic group,
 especially radio buttons or related checkboxes. Use a `section` associated with
 a heading when broader form content and several independently grouped controls
 share one topic. Do not use `fieldset` solely as a styling wrapper.
+
+Prefer a grid or flex container with `gap` for spacing between sections and
+form-level actions. Section margin resets must not cancel the containing form's
+spacing.
 
 Preserve stable control identifiers, `label` associations, and description and
 error references. Use live-region behavior only for settled messages that need

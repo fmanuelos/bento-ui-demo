@@ -135,7 +135,7 @@ function Setup({ project }: { project: boolean }) {
             event.preventDefault()
             dispatch({ type: 'review' })
           }}
-          className="space-y-scale-5"
+          className="grid gap-scale-5"
         >
           {state.error && (
             <div
@@ -214,7 +214,9 @@ function Setup({ project }: { project: boolean }) {
               }
             />
           </FormSection>
-          <Button type="submit">Review configuration</Button>
+          <Button type="submit" className="justify-self-start">
+            Review configuration
+          </Button>
         </form>
       )}
       {state.phase === 'review' && (
