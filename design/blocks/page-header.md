@@ -2,8 +2,9 @@
 
 ## Status
 
-Draft until representative Public Site and Application Workspace implementations
-and their validation coverage are established.
+Draft. Focused Flow scope is defined; broader variant and mode review remains
+open. Runtime availability and validation evidence are tracked separately in the
+[implementation record](../verification/focused-flow-evidence.md).
 
 ## Intent
 
@@ -17,7 +18,7 @@ existing contracts and state ownership.
 
 ## Use when
 
-Supported modes are Public Site and Application Workspace.
+Supported modes: Public Site; Focused Flow; Application Workspace.
 
 Use a Page Header when a page needs clear identity or task context before its
 primary content. It may introduce a public article, a settings page, a record
@@ -53,7 +54,7 @@ must not move them before the page identity in reading or focus order.
 - **Content-led:** Gives the heading, description, provenance, and freshness a
   readable measure for articles, policies, guides, and informational pages.
 - **Task-oriented:** Keeps the heading, operational status, metadata, and
-  page-level actions compact for Application Workspace work.
+  page-level actions compact for Application Workspace work and bounded Focused Flow tasks.
 
 These variants adapt emphasis and density without changing the Page Header's
 meaning. Breadcrumb presence, action count, and status presence are optional
@@ -77,7 +78,8 @@ to page and nearby section actions,
 [`Responsive density`](../patterns/responsive-density.md) to transformation, and
 [`Asynchronous feedback`](../patterns/async-feedback.md) when metadata, status,
 or actions depend on asynchronous work. Page navigation outside the block
-follows the applicable Public Site or Application Workspace navigation contract.
+follows the applicable experience-mode navigation contract. Focused Flow uses
+task-local return and exit paths governed by its template.
 
 ## Content requirements
 
@@ -102,6 +104,11 @@ essential, provide a readable label where possible and preserve access to the
 full value.
 
 ## Layout and semantic token mapping
+
+In [Focused Flow](../experiences/focused-flow.md), use `container-narrow` or
+`container-readable`, page-padding roles, and ordinary group spacing. Keep one
+column until content benefits from additional width. Do not add persistent
+workspace navigation or competing page actions.
 
 Use the container, page-padding, grid-gutter, and experience-mode spacing roles
 defined in [`DESIGN.md`](../../DESIGN.md#layout). Public Site presentations use
@@ -194,6 +201,11 @@ required.
 
 ## Representative example
 
+A login page uses “Sign in” as its stable page heading with concise account
+context. A registration page uses “Create your account” while fields and errors
+change below it. The final form action stays with the form; the header does not
+repeat it. Neither header needs a breadcrumb or global navigation.
+
 An Application Workspace project page uses a task-oriented Page Header with:
 
 - The breadcrumb “Projects / Website migration”
@@ -208,6 +220,12 @@ title, and actions stack after the metadata. The publication action remains the
 only page-level primary action.
 
 ## Validation scenarios
+
+Also validate the [Authentication](../templates/authentication.md) and
+[Registration](../templates/registration.md) reference uses in Focused Flow.
+Apply [Focused Flow](../verification/workflows.md#focused-flow), including failed
+submission, safe interruption, autofill, password managers, text expansion, RTL,
+keyboard focus, and return context.
 
 Validate the Page Header with:
 

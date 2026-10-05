@@ -4,17 +4,44 @@ import { CodeBlock } from '../components/CodeBlock'
 import { DocsBackToTop } from '../components/DocsBackToTop'
 import { DocsSection, PageIntro } from '../components/DocsSection'
 import { PropsTable } from '../components/PropsTable'
+import { ContractLoader } from '../components/ContractContent'
+import { blockCatalogBySlug, focusedFlowEvidenceUrl } from '../content/contracts'
 import { blockDocsBySlug } from '../content/library'
 import { blockNavigation, componentNavigation } from '../navigation'
 
 export function BlockPage() {
   const { slug } = useParams()
   const documentation = slug ? blockDocsBySlug.get(slug) : undefined
-  if (!documentation) return <Navigate to="/docs/not-found" replace />
+  const contract = slug ? blockCatalogBySlug.get(slug) : undefined
+  if (!contract) return <Navigate to="/docs/not-found" replace />
+  const availability = (
+    <div className="rounded-shape-md border border-border-secondary bg-surface-secondary p-scale-4 text-body-sm text-text-secondary">
+      <p className="m-0">
+        Contract: {contract.status} · {contract.implementation ? 'Implemented' : 'Contract only'}
+      </p>
+      <p className="mt-scale-2 mb-0">Supported modes: {contract.modes.join(', ')}</p>
+      <p className="mt-scale-2 mb-0">
+        Validation: {contract.implementation?.validation ?? 'Not recorded'}.{' '}
+        <a className={linkStyles()} href={focusedFlowEvidenceUrl}>
+          Read evidence and limitations
+        </a>
+      </p>
+    </div>
+  )
+  if (!documentation)
+    return (
+      <>
+        <PageIntro eyebrow="Block contract" title={contract.title} summary={contract.summary} />
+        {availability}
+        <ContractLoader key={contract.path} sourcePath={contract.path} />
+        <DocsBackToTop />
+      </>
+    )
 
   return (
     <>
       <PageIntro eyebrow="Block" title={documentation.title} summary={documentation.summary} />
+      {availability}
       <DocsSection id="purpose" title="Purpose and recommended use">
         <ul>
           {documentation.useCases.map((item) => (
@@ -81,6 +108,14 @@ export function BlockPage() {
           })}
         </div>
       </DocsSection>
+      <details className="rounded-shape-md border border-border-secondary p-scale-4">
+        <summary className="cursor-pointer text-label-md font-semibold">
+          Read the full design contract
+        </summary>
+        <div className="mt-scale-5">
+          <ContractLoader key={contract.path} sourcePath={contract.path} />
+        </div>
+      </details>
       <DocsBackToTop />
     </>
   )

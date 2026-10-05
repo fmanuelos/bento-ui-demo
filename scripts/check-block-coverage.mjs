@@ -1,3 +1,4 @@
+import { readBlockCatalog } from './block-catalog.mjs'
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 
@@ -26,24 +27,31 @@ const requiredHeadings = [
 ]
 
 const failures = []
+const generatedCatalog = JSON.parse(
+  readFileSync(join(root, 'src/docs/content/block-catalog.json'), 'utf8'),
+)
+if (JSON.stringify(generatedCatalog) !== JSON.stringify(readBlockCatalog(root))) {
+  failures.push('Block catalog is stale; run pnpm blocks:catalog after editing contract metadata')
+}
 const inventorySource = readFileSync(inventoryPath, 'utf8')
 const contracts = readdirSync(blockDirectory)
   .filter((file) => file.endsWith('.md') && file !== 'README.md')
   .sort()
-const implementedBlocks = new Map([
-  [
-    'application-navigation.md',
-    { slug: 'application-navigation', implementation: 'NavigationShell' },
-  ],
-  ['empty-state.md', { slug: 'empty-state', implementation: 'EmptyState' }],
-  [
-    'public-site-navigation.md',
-    { slug: 'public-site-navigation', implementation: 'SiteNavigation' },
-  ],
-])
+const implementationCatalog = JSON.parse(
+  readFileSync(join(root, 'src/docs/content/block-implementations.json'), 'utf8'),
+)
+const implementedBlocks = new Map(
+  Object.entries(implementationCatalog).map(([slug, value]) => [
+    `${slug}.md`,
+    { slug, implementation: value.component },
+  ]),
+)
+const focusedDocsSource = readFileSync(join(root, 'src/docs/content/focused-blocks.tsx'), 'utf8')
 const blockSlugSource = docsSource.match(/export const blockSlugs = \[([^\]]+)\]/s)?.[1] ?? ''
 const documentedBlockSlugs = new Set(
-  [...blockSlugSource.matchAll(/'([^']+)'/g)].map((match) => match[1]),
+  [...blockSlugSource.matchAll(/'([^']+)'/g)]
+    .map((match) => match[1])
+    .concat([...focusedDocsSource.matchAll(/slug: '([^']+)'/g)].map((match) => match[1])),
 )
 
 function section(source, heading) {
@@ -198,6 +206,31 @@ for (const contract of contracts) {
   const source = readFileSync(contractPath, 'utf8')
 
   if (!entry) failures.push(`${contract} is missing from the block inventory`)
+
+  const modeLine = section(source, 'Use when').match(/^Supported modes: (.+)\.$/m)?.[1]
+  const modes = modeLine?.split('; ') ?? []
+  const knownModes = acceptedClassifications.filter((mode) => mode !== 'Shared')
+  if (
+    !modes.length ||
+    modes.some((mode) => !knownModes.includes(mode)) ||
+    new Set(modes).size !== modes.length
+  ) {
+    failures.push(`${contract} must declare unique canonical Supported modes in Use when`)
+  }
+  const expectedClassification = modes.length > 1 ? 'Shared' : modes[0]
+  if (entry && entry.classification !== expectedClassification) {
+    failures.push(
+      `${contract} mode declaration does not match inventory classification ${entry.classification}`,
+    )
+  }
+  if (modes.includes('Focused Flow')) {
+    const validation = section(source, 'Validation scenarios')
+    if (!/workflows\.md#(?:focused-flow|review-and-completion)/.test(validation)) {
+      failures.push(
+        `${contract} declares Focused Flow but has no applicable workflow validation link`,
+      )
+    }
+  }
 
   const title = source.match(/^# (.+) block$/m)?.[1]
   if (!title) failures.push(`${contract} must begin with “# <name> block”`)

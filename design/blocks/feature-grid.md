@@ -19,6 +19,8 @@ foundation retain their existing semantics and behavior.
 
 ## Use when
 
+Supported modes: Public Site.
+
 Use a Feature Grid on a Public Site when three or more short, related items share
 one scope and parallel content structure, and scanning the collection helps a
 visitor understand an offer before choosing a next step.

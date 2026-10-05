@@ -14,7 +14,7 @@ new interactive role.
 
 ## Use when
 
-Supported modes are Public Site and Application Workspace.
+Supported modes: Public Site; Application Workspace.
 
 Use this block after the containing collection or page has determined why content
 cannot be presented. It may appear compactly inside a bounded collection or

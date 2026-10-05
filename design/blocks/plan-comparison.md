@@ -15,6 +15,8 @@ product owns prices, eligibility, recommendations, billing, and purchase rules.
 
 ## Use when
 
+Supported modes: Public Site; Application Workspace.
+
 Use in Public Site for a public pricing section and in Application Workspace
 for account upgrades when two or more plans share a meaningful basis of
 comparison. Classification is Shared across those two modes.

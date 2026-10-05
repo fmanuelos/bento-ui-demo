@@ -72,6 +72,10 @@ programmatically determinable relationships. The visible label is included in th
 accessible name. Input purpose is exposed when the platform supports it. Status
 changes are announced without interrupting entry unnecessarily.
 
+When a form focuses a submission error summary, avoid duplicating that
+announcement in each field. The web implementation permits `announceError=false`
+for that case while keeping visible errors and their programmatic associations.
+
 ### Web adapter
 
 Use the appropriate native input type and `autocomplete` value. Associate the

@@ -19,7 +19,7 @@ to the consuming product or an applicable experience pattern.
 
 ## Use when
 
-Supported mode is Public Site.
+Supported modes: Public Site.
 
 Use a Hero when a page needs a prominent introduction that explains its purpose,
 value, or current context.

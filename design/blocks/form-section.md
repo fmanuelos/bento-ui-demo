@@ -2,9 +2,9 @@
 
 ## Status
 
-Draft until representative Public Site and Application Workspace implementations
-validate field grouping, section-level guidance, validation relationships,
-progressive disclosure, and responsive action placement.
+Draft. Focused Flow scope is defined; broader variant and mode review remains
+open. Runtime availability and validation evidence are tracked separately in the
+[implementation record](../verification/focused-flow-evidence.md).
 
 ## Intent
 
@@ -19,7 +19,7 @@ asynchronous patterns own the complete task sequence.
 
 ## Use when
 
-Supported modes are Public Site and Application Workspace.
+Supported modes: Public Site; Focused Flow; Application Workspace.
 
 Use a Form Section when a form contains a meaningful group of related inputs
 that benefits from a visible heading, optional explanation, and a stable
@@ -109,6 +109,11 @@ Removal language names the group and explains meaningful loss before commitment.
 
 ## Layout and semantic token mapping
 
+In [Focused Flow](../experiences/focused-flow.md), use `container-narrow` or
+`container-readable`, page-padding roles, and ordinary group spacing. Keep one
+column until content benefits from additional width. Do not add persistent
+workspace navigation or competing page actions.
+
 Use the applicable Public Site or Application Workspace container, readable-width, grid,
 spacing, and density roles from [`DESIGN.md`](../../DESIGN.md). Keep labels,
 guidance, controls, units, messages, and actions within a readable line length
@@ -194,6 +199,12 @@ group names without making position the only identity.
 
 ## Representative example
 
+A registration form groups email and password under “Account details”; an
+onboarding form groups name and contact fields under “Your details.” The legend
+names the group while each field keeps its own label and errors. Submission,
+recovery, cancellation, and verification belong to the containing template. A
+simple login may compose labelled controls directly without an extra section.
+
 An account form contains a Form Section titled “Notification preferences” with
 a description of how account and service messages differ. It contains a Switch
 for product updates, a Checkbox group for digest topics, a Select for frequency,
@@ -205,6 +216,12 @@ notification appears beside that action without marking the preference fields
 invalid, and changing layout does not discard unsaved selections.
 
 ## Validation scenarios
+
+Also validate the [Authentication](../templates/authentication.md) and
+[Registration](../templates/registration.md) reference uses in Focused Flow.
+Apply [Focused Flow](../verification/workflows.md#focused-flow), including failed
+submission, safe interruption, autofill, password managers, text expansion, RTL,
+keyboard focus, and return context.
 
 Validate the Form Section with:
 

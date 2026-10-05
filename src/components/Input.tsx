@@ -8,6 +8,7 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   hint?: string
   helperText?: string
   error?: string
+  announceError?: boolean
   status?: FieldStatus
   size?: FieldSize
   variant?: 'default' | 'search'
@@ -20,6 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     hint,
     helperText,
     error,
+    announceError = true,
     status = error ? 'invalid' : 'default',
     size = 'medium',
     variant = 'default',
@@ -44,6 +46,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       hint={hint}
       description={helperText}
       error={error}
+      announceError={announceError}
       status={status}
       required={required}
     >

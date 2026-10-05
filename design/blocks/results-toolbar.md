@@ -20,6 +20,8 @@ surface retain their own semantics and state.
 
 ## Use when
 
+Supported modes: Application Workspace.
+
 Use a Results Toolbar in an Application Workspace when a table, data grid, list,
 or other results region needs two or more of search, filters, applied-criteria
 summary, sort, view choice, refresh, result count, selection context, or scoped

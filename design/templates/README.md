@@ -98,6 +98,17 @@ Candidate names describe possible admission scope, not approved contracts. Add a
 template file and inventory entry only after its repeated structure and outcome
 satisfy the admission criteria.
 
+## Current contracts
+
+| Template                            | Mode         | Contract maturity | Representative uses                     |
+| ----------------------------------- | ------------ | ----------------- | --------------------------------------- |
+| [Authentication](authentication.md) | Focused Flow | Draft             | Login; reauthentication                 |
+| [Registration](registration.md)     | Focused Flow | Draft             | Self-service creation; invited creation |
+
+These admitted drafts define initial reusable structures. Their reference pages
+use simulated operations; real provider integration and broader validation remain
+separate in the [implementation record](../verification/focused-flow-evidence.md).
+
 ## Admission criteria
 
 Create a shared template contract only when all of the following are true:

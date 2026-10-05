@@ -18,7 +18,7 @@ state, freshness, loading, failure, and recovery behavior.
 
 ## Use when
 
-Supported mode is Application Workspace.
+Supported modes: Application Workspace.
 
 Use a Metric Overview near the beginning of a dashboard view when several
 high-value measures summarize the same operational scope and comparison across

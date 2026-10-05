@@ -16,6 +16,8 @@ product owns claim verification, publication rights, accuracy, and source upkeep
 
 ## Use when
 
+Supported modes: Public Site.
+
 Use in Public Site when an attributable customer quotation or outcome materially
 supports understanding of an offer. Examples include a testimonial on a landing
 page and an attributed result on a product page. These uses share the same

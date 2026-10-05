@@ -15,6 +15,8 @@ identity, ordering rules, access, retention, and completeness.
 
 ## Use when
 
+Supported modes: Application Workspace.
+
 Use in Application Workspace for a publishing record's history, support-case
 updates, or comparable events about an identified subject. Chronological context
 must contribute to understanding the record.

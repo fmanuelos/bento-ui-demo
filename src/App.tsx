@@ -4,6 +4,7 @@ import { BackToTop } from './components/BackToTop'
 import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Modal } from './components/Modal'
+import { AuthReferencePage } from './examples/AuthReferencePage'
 import { docsRoutes } from './docs/routes'
 import {
   ArrowUpRightIcon,
@@ -404,6 +405,11 @@ export default function App() {
   return (
     <Routes>
       {docsRoutes}
+      <Route
+        path="/examples/authentication"
+        element={<AuthReferencePage kind="authentication" />}
+      />
+      <Route path="/examples/registration" element={<AuthReferencePage kind="registration" />} />
       <Route path="/" element={<DemoPage />} />
       <Route path="*" element={<DemoPage />} />
     </Routes>

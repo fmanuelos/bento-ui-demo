@@ -11,6 +11,7 @@ export type FieldFrameProps = {
   description?: string
   helperText?: string
   error?: string
+  announceError?: boolean
   status?: FieldStatus
   required?: boolean
   busy?: boolean
@@ -31,6 +32,7 @@ export function FieldFrame({
   description,
   helperText,
   error,
+  announceError = true,
   status = error ? 'invalid' : 'default',
   required,
   busy = false,
@@ -72,7 +74,7 @@ export function FieldFrame({
       {error && (
         <p
           id={`${id}-message`}
-          role="alert"
+          role={announceError ? 'alert' : undefined}
           className={`m-0 text-body-xs font-normal ${statusTextClasses[messageStatus]}`}
         >
           {error}

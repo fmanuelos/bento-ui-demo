@@ -2,8 +2,9 @@
 
 ## Status
 
-Draft until representative Public Site and Application Workspace implementations
-and their validation coverage are established.
+Draft. Focused Flow scope is defined; broader variant and mode review remains
+open. Runtime availability and validation evidence are tracked separately in the
+[implementation record](../verification/focused-flow-evidence.md).
 
 ## Intent
 
@@ -14,7 +15,7 @@ follows without creating a new heading, action, or navigation component.
 
 ## Use when
 
-Supported modes are Public Site and Application Workspace.
+Supported modes: Public Site; Focused Flow; Application Workspace.
 
 Use a Section Header before a meaningful content, feature, form, collection, or
 data region when a heading alone does not provide enough context or when a local
@@ -102,6 +103,11 @@ higher-level primary commitment for the same task.
 
 ## Layout and semantic token mapping
 
+In [Focused Flow](../experiences/focused-flow.md), use `container-narrow` or
+`container-readable`, page-padding roles, and ordinary group spacing. Keep one
+column until content benefits from additional width. Do not add persistent
+workspace navigation or competing page actions.
+
 Align the Section Header with the container and grid of the content it
 introduces. Use the applicable Public Site section spacing or Application
 Workspace group spacing from [`DESIGN.md`](../../DESIGN.md#layout). The containing section owns
@@ -185,6 +191,11 @@ structure already communicate the relationship.
 
 ## Representative example
 
+In a registration flow, “Before you begin” names required account guidance. In
+onboarding, “What happens next” introduces verification expectations. Use ordinary
+headings when no supporting context is needed; do not duplicate a Form Section
+legend or the page heading.
+
 An Application Workspace projects page introduces its recent-project collection with:
 
 - The `h2` “Recent projects”
@@ -198,6 +209,12 @@ metadata without changing source order. Loading, empty, and failed collection
 states appear below the stable header and retain their own contracts.
 
 ## Validation scenarios
+
+Also validate the [Authentication](../templates/authentication.md) and
+[Registration](../templates/registration.md) reference uses in Focused Flow.
+Apply [Focused Flow](../verification/workflows.md#focused-flow), including failed
+submission, safe interruption, autofill, password managers, text expansion, RTL,
+keyboard focus, and return context.
 
 Validate the Section Header with:
 

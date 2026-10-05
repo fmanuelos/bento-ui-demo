@@ -15,6 +15,8 @@ The product owns record identity, authority, permissions, and editing behavior.
 
 ## Use when
 
+Supported modes: Application Workspace.
+
 Use in Application Workspace for customer profile details, support-case details,
 or another record whose attributes need named groups and scoped actions. The
 record must be identifiable from the containing page or the block heading.

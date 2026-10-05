@@ -1,0 +1,18 @@
+{
+  "empty-state": { "component": "EmptyState", "validation": "Not recorded" },
+  "public-site-navigation": { "component": "SiteNavigation", "validation": "Not recorded" },
+  "application-navigation": { "component": "NavigationShell", "validation": "Not recorded" },
+  "page-header": { "component": "PageHeader", "validation": "Partial — see Focused Flow evidence" },
+  "section-header": {
+    "component": "SectionHeader",
+    "validation": "Partial — see Focused Flow evidence"
+  },
+  "form-section": {
+    "component": "FormSection",
+    "validation": "Partial — see Focused Flow evidence"
+  },
+  "completion-summary": {
+    "component": "CompletionSummary",
+    "validation": "Partial — see Focused Flow evidence"
+  }
+}

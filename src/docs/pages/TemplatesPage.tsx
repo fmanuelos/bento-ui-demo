@@ -1,4 +1,4 @@
-import { Card, StatusBadge } from '../../components'
+import { Card, Link, StatusBadge } from '../../components'
 import { DocsBackToTop } from '../components/DocsBackToTop'
 import { DocsSection, PageIntro } from '../components/DocsSection'
 
@@ -35,11 +35,26 @@ export function TemplatesPage() {
       <div className="rounded-shape-lg border border-border-warning bg-feedback-warning-background p-scale-4 text-feedback-warning-foreground">
         <StatusBadge variant="warning">Governance established</StatusBadge>
         <p className="mt-scale-3 mb-0 text-body-sm leading-relaxed">
-          The names below are candidate scopes. No shared template has completed admission and
-          reference-page validation yet.
+          Authentication and Registration now have Draft contracts and simulated reference pages.
+          Broader provider and accessibility validation remains outstanding; other names below are
+          candidate scopes.
         </p>
       </div>
 
+      <DocsSection id="current" title="Current template contracts">
+        <div className="grid gap-scale-4 sm:grid-cols-2">
+          <Card>
+            <h3 className="mt-0 text-heading-sm font-semibold">Authentication</h3>
+            <p>Login and reauthentication in Focused Flow.</p>
+            <Link href="/docs/templates/authentication">Read contract and open references</Link>
+          </Card>
+          <Card>
+            <h3 className="mt-0 text-heading-sm font-semibold">Registration</h3>
+            <p>Self-service and invited account creation in Focused Flow.</p>
+            <Link href="/docs/templates/registration">Read contract and open references</Link>
+          </Card>
+        </div>
+      </DocsSection>
       <DocsSection id="categories" title="Template categories">
         <div className="grid gap-scale-3 lg:grid-cols-3">
           {templateCategories.map((category) => (

@@ -20,6 +20,8 @@ pattern contracts.
 
 ## Use when
 
+Supported modes: Public Site.
+
 Use a Site Footer on a Public Site when visitors need persistent access to
 supporting site destinations, legal or policy information, organizational
 identity, or site-wide locale and preference controls at the end of pages.

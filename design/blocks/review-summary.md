@@ -15,6 +15,8 @@ validation, persistence, final action, and commitment state.
 
 ## Use when
 
+Supported modes: Focused Flow; Application Workspace.
+
 Use in Focused Flow for application review and in Application Workspace for
 publishing-change review when checking grouped information reduces consequential
 mistakes. These are the block's supported modes; classification is Shared.

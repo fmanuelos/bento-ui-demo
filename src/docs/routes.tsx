@@ -10,6 +10,7 @@ import { FoundationPage } from './pages/FoundationPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { OverviewPage } from './pages/OverviewPage'
 import { ProductDomainsPage } from './pages/ProductDomainsPage'
+import { TemplatePage } from './pages/TemplatePage'
 import { TemplatesPage } from './pages/TemplatesPage'
 
 export const docsRoutes = (
@@ -18,6 +19,7 @@ export const docsRoutes = (
     <Route path="architecture" element={<ArchitecturePage />} />
     <Route path="experience-modes" element={<ExperienceModesPage />} />
     <Route path="templates" element={<TemplatesPage />} />
+    <Route path="templates/:slug" element={<TemplatePage />} />
     <Route path="product-domains" element={<ProductDomainsPage />} />
     <Route path="foundations" element={<FoundationPage />} />
     <Route path="foundations/icons" element={<Navigate to="/docs/components/icons" replace />} />

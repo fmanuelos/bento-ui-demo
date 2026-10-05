@@ -15,6 +15,8 @@ ranking, permissions, destinations, and content retrieval.
 
 ## Use when
 
+Supported modes: Public Site; Application Workspace.
+
 Use in Public Site for related guides or help articles and in Application
 Workspace for resources relevant to the current task. Classification is Shared
 across those modes. Each item must have a useful destination and an explainable

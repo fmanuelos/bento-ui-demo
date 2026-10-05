@@ -2,9 +2,9 @@
 
 ## Status
 
-Draft. Application receipt and completed-import examples define the intended
-scope. Durable-outcome, partial-result, and return-navigation validation remains
-outstanding; these are not implemented or tested examples.
+Draft. Review of receipt and partial-result scope remains open. A shared runtime
+is available; validation evidence and limitations are recorded separately in the
+[implementation record](../verification/focused-flow-evidence.md).
 
 ## Intent
 
@@ -14,6 +14,8 @@ outcome, details, expectations, and actions. The product and asynchronous patter
 determine the authoritative outcome and whether the operation is complete.
 
 ## Use when
+
+Supported modes: Focused Flow; Application Workspace.
 
 Use in Focused Flow after a confirmed application submission and in Application
 Workspace after a finished operation such as a data import. Classification is

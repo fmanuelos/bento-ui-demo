@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "activity-history",
+    "path": "/design/blocks/activity-history.md",
+    "title": "Activity History",
+    "status": "Draft",
+    "modes": ["Application Workspace"],
+    "summary": "Activity History groups events about one subject so people can understand what happened, who or what caused it, and when. The block owns event relationships, visible ordering, and local detail arrangement. The product owns event authority, identity, ordering rules, access, retention, and completeness."
+  },
+  {
+    "slug": "application-navigation",
+    "path": "/design/blocks/application-navigation.md",
+    "title": "Application Navigation",
+    "status": "Draft",
+    "modes": ["Application Workspace"],
+    "summary": "Application Navigation arranges persistent and temporary workspace destinations, identity, global utilities, and a bypass route around the primary task. It communicates location without presenting navigation as an in-place action."
+  },
+  {
+    "slug": "call-to-action",
+    "path": "/design/blocks/call-to-action.md",
+    "title": "Call to Action",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "A Call to Action gives people a focused next step after enough context has been provided to understand the decision. It combines a concise proposition, supporting explanation, and a limited action group in one clearly scoped Public Site region."
+  },
+  {
+    "slug": "completion-summary",
+    "path": "/design/blocks/completion-summary.md",
+    "title": "Completion Summary",
+    "status": "Draft",
+    "modes": ["Focused Flow", "Application Workspace"],
+    "summary": "Completion Summary explains a confirmed task outcome, its useful reference information, and what can happen next. It owns the local relationship among outcome, details, expectations, and actions. The product and asynchronous patterns determine the authoritative outcome and whether the operation is complete."
+  },
+  {
+    "slug": "customer-evidence",
+    "path": "/design/blocks/customer-evidence.md",
+    "title": "Customer Evidence",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "Customer Evidence connects a customer statement or reported outcome to its attribution, source context, and qualifications so a visitor can assess the claim. The block owns those content relationships and their reflow. The consuming product owns claim verification, publication rights, accuracy, and source upkeep."
+  },
+  {
+    "slug": "empty-state",
+    "path": "/design/blocks/empty-state.md",
+    "title": "Empty State",
+    "status": "Draft",
+    "modes": ["Public Site", "Application Workspace"],
+    "summary": "The Empty State block explains why expected content is absent and presents a realistic next step. It distinguishes a legitimate empty collection from loading, filtering, failure, lost connectivity, and lack of permission without creating a new interactive role."
+  },
+  {
+    "slug": "feature-grid",
+    "path": "/design/blocks/feature-grid.md",
+    "title": "Feature Grid",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "A Feature Grid presents a concise set of peer capabilities, benefits, or service attributes so a visitor can scan and compare the offer. It composes repeated content items without implying that every item is interactive or that equal visual size means equal importance."
+  },
+  {
+    "slug": "form-section",
+    "path": "/design/blocks/form-section.md",
+    "title": "Form Section",
+    "status": "Draft",
+    "modes": ["Public Site", "Focused Flow", "Application Workspace"],
+    "summary": "A Form Section groups related fields and guidance under one meaningful heading so a user can understand and complete one coherent part of a larger data-entry task. It composes established field, message, and action components without owning their validation, submission, persistence, or recovery behavior."
+  },
+  {
+    "slug": "hero",
+    "path": "/design/blocks/hero.md",
+    "title": "Hero",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "A Hero introduces the primary subject of a page or major page section and gives people a clear next step when one is useful. It combines content, actions, and optional media into a responsive composition without creating new semantics for the components it contains."
+  },
+  {
+    "slug": "metric-overview",
+    "path": "/design/blocks/metric-overview.md",
+    "title": "Metric Overview",
+    "status": "Draft",
+    "modes": ["Application Workspace"],
+    "summary": "A Metric Overview helps a returning user scan a small set of related measures, understand their scope and freshness, and identify which value may need attention. It composes statistic cards and contextual information without turning placeholder values, visual prominence, or color into data meaning."
+  },
+  {
+    "slug": "page-header",
+    "path": "/design/blocks/page-header.md",
+    "title": "Page Header",
+    "status": "Draft",
+    "modes": ["Public Site", "Focused Flow", "Application Workspace"],
+    "summary": "A Page Header orients people at the beginning of a page by naming the page, placing it in context, and exposing the page-level information and actions needed to begin. It combines document structure, optional navigation, metadata, status, and actions without changing the semantics of those parts."
+  },
+  {
+    "slug": "plan-comparison",
+    "path": "/design/blocks/plan-comparison.md",
+    "title": "Plan Comparison",
+    "status": "Draft",
+    "modes": ["Public Site", "Application Workspace"],
+    "summary": "Plan Comparison arranges comparable offers so a person can understand their prices, capabilities, limitations, and available next steps. It owns the relationships among comparison context, plans, attributes, and actions. The product owns prices, eligibility, recommendations, billing, and purchase rules."
+  },
+  {
+    "slug": "public-site-navigation",
+    "path": "/design/blocks/public-site-navigation.md",
+    "title": "Public-site Navigation",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "Public-site Navigation arranges identity, primary destinations, current location, and the principal conversion or account action without competing with page content. It provides a stable public-site header composition while its Links, Buttons, disclosures, and temporary surfaces retain their own semantics."
+  },
+  {
+    "slug": "record-details",
+    "path": "/design/blocks/record-details.md",
+    "title": "Record Details",
+    "status": "Draft",
+    "modes": ["Application Workspace"],
+    "summary": "Record Details presents grouped facts about one existing record so a person can inspect its attributes and find an appropriate local action. It owns the relationship among the section heading, label-value groups, context, and actions. The product owns record identity, authority, permissions, and editing behavior."
+  },
+  {
+    "slug": "related-content",
+    "path": "/design/blocks/related-content.md",
+    "title": "Related Content",
+    "status": "Draft",
+    "modes": ["Public Site", "Application Workspace"],
+    "summary": "Related Content presents a small, coherent collection of destinations that help a person continue from their current subject or task. The block owns section context, item relationships, and reflow. The consuming product owns relevance, ranking, permissions, destinations, and content retrieval."
+  },
+  {
+    "slug": "results-toolbar",
+    "path": "/design/blocks/results-toolbar.md",
+    "title": "Results Toolbar",
+    "status": "Draft",
+    "modes": ["Application Workspace"],
+    "summary": "A Results Toolbar arranges the controls and context used to search, refine, sort, refresh, select, and act on one results region. It keeps the applied query, result scope, and available operations understandable without absorbing the workflow behavior owned by search, data-display, selection, and asynchronous patterns."
+  },
+  {
+    "slug": "review-summary",
+    "path": "/design/blocks/review-summary.md",
+    "title": "Review Summary",
+    "status": "Draft",
+    "modes": ["Focused Flow", "Application Workspace"],
+    "summary": "Review Summary arranges the information a person must check before a pending commitment. It groups answers or proposed changes with correction routes and material consequences. The containing workflow owns the reviewed snapshot, validation, persistence, final action, and commitment state."
+  },
+  {
+    "slug": "section-header",
+    "path": "/design/blocks/section-header.md",
+    "title": "Section Header",
+    "status": "Draft",
+    "modes": ["Public Site", "Focused Flow", "Application Workspace"],
+    "summary": "A Section Header introduces a distinct region within a page, names its contents, and optionally provides concise context, metadata, or a region-level action. It creates a stable relationship between a section heading and the content that follows without creating a new heading, action, or navigation component."
+  },
+  {
+    "slug": "site-footer",
+    "path": "/design/blocks/site-footer.md",
+    "title": "Site Footer",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "A Site Footer gives visitors a predictable end-of-page region for supporting destinations, organizational identity, legal information, and durable site-wide preferences. It composes several established controls and navigation groups without becoming a second primary navigation system or a container for unrelated content."
+  }
+]

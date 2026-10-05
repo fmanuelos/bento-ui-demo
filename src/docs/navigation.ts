@@ -1,4 +1,5 @@
-import { blockDocs, componentDocs } from './content/library'
+import { blockCatalog } from './content/contracts'
+import { componentDocs } from './content/library'
 import { foundationDocs } from './content/foundations'
 
 export type DocsNavigationItem = {
@@ -30,7 +31,7 @@ export const componentNavigation: readonly DocsNavigationItem[] = [...componentD
     description: component.summary,
   }))
 
-export const blockNavigation: readonly DocsNavigationItem[] = [...blockDocs]
+export const blockNavigation: readonly DocsNavigationItem[] = [...blockCatalog]
   .sort((a, b) => a.title.localeCompare(b.title))
   .map((block) => ({
     title: block.title,

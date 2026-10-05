@@ -1,3 +1,4 @@
+import { focusedBlockDocs } from './focused-blocks'
 import { componentExamples } from './examples'
 import { type LibraryDocumentation, type PropReference } from './types'
 
@@ -1265,6 +1266,13 @@ const allDocumentation = [
     importCode: "import { Input } from '@/components'",
     basicCode: `<Input label="Project name" helperText="Visible to your team." />`,
     props: [
+      {
+        name: 'announceError',
+        type: 'boolean',
+        defaultValue: 'true',
+        description:
+          'Set false when the form focuses an error summary, to avoid duplicate live announcements. Field error associations remain intact.',
+      },
       { name: 'label', type: 'string', description: 'Required visible and accessible label.' },
       {
         name: 'size',
@@ -2480,9 +2488,10 @@ export const componentDocs = allDocumentation.filter(
   (documentation) => !blockSlugSet.has(documentation.slug),
 )
 
-export const blockDocs = allDocumentation.filter((documentation) =>
-  blockSlugSet.has(documentation.slug),
-)
+export const blockDocs = [
+  ...allDocumentation.filter((documentation) => blockSlugSet.has(documentation.slug)),
+  ...focusedBlockDocs,
+]
 
 export const componentDocsBySlug = new Map(
   componentDocs.map((component) => [component.slug, component]),

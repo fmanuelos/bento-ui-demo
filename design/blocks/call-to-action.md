@@ -17,7 +17,7 @@ unrelated business objective.
 
 ## Use when
 
-Supported mode is Public Site.
+Supported modes: Public Site.
 
 Use a Call to Action near the conclusion of explanatory, feature, comparison, or
 campaign content when one destination or action appropriately advances the
