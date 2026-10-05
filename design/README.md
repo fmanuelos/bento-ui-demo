@@ -192,8 +192,10 @@ were added. See the [setup, status, and content record](verification/setup-statu
 Checkout adds one-time digital purchase and recurring service references, supported
 by Order Summary. No payment provider is connected. See the
 [checkout record](verification/checkout-evidence.md) for model, browser, and integration
-boundaries. File Upload, Date Input, and Code Block remain conditional; the admitted
-references do not require them.
+boundaries. File Upload, Date Input, and Code Block now have Draft contracts, exported
+implementations, and application/setup/technical-guide references. See the
+[input/content record](verification/input-content-evidence.md). The component
+inventory contains 42 contracts, including four Drafts.
 Keep proposal lists in the template README or outside the contract directory;
 every other Markdown file in that directory is treated as a contract.
 

@@ -15,6 +15,139 @@ const createDoc = (documentation: Omit<LibraryDocumentation, 'example'>): Librar
 
 const allDocumentation = [
   createDoc({
+    slug: 'file-upload',
+    title: 'File Upload',
+    status: 'Draft',
+    summary: 'Select files, understand constraints, and manage per-file upload outcomes.',
+    useCases: ['An attachment-bearing service application and the gallery attachment example.'],
+    importCode: "import { FileUpload } from '@/components'",
+    basicCode: '<FileUpload label="Attachments" constraints={constraints} {...uploads} />',
+    props: [
+      {
+        name: 'constraints',
+        type: 'FileConstraints',
+        description:
+          'Allowed extension/MIME pairs, maxBytes and maxFiles; keep policy fixed for the mounted controller.',
+      },
+      {
+        name: 'items / onSelect / onUpload / onCancel / onRemove',
+        type: 'UploadItem[] / callbacks',
+        description:
+          'Controlled files and transport actions. useFileUploads supplies a local controller; transport owns authoritative upload completion.',
+      },
+      {
+        name: 'required / disabled / error / announceError',
+        type: 'boolean / boolean / string / boolean',
+        description:
+          'Requirement and accessible feedback. Use announceError=false when a form error summary is focused.',
+      },
+    ],
+    variants: [
+      'Single or multiple file selection. Drag and drop, folder selection and remote deletion are outside this adapter.',
+    ],
+    accessibility: [
+      'Native labelled file input; full filenames, textual status, named actions, and feedback on meaningful status changes.',
+      'Removal and cancellation return focus to the file control. Progress updates are not repeatedly announced.',
+    ],
+    responsive:
+      'Wrap labels and feedback at narrow widths and 200% text; retain source order and support RTL.',
+    theme: 'Uses existing semantic type, surface, border, feedback and focus tokens.',
+    mistakes: [
+      'Selecting a file does not upload it. Validate contents on the server and require a transport receipt before treating an attachment as complete.',
+      'Removing or cancelling locally does not prove remote deletion. Saved drafts must require file reselection.',
+    ],
+    related: ['form-field', 'button', 'progress'],
+  }),
+  createDoc({
+    slug: 'date-input',
+    title: 'Date Input',
+    status: 'Draft',
+    summary: 'Enter a calendar date with explicit bounds and native browser interaction.',
+    useCases: ['Preferred service start date and optional project target launch date.'],
+    importCode: "import { DateInput } from '@/components'",
+    basicCode:
+      '<DateInput label="Start date" value={date} onValueChange={setDate} min="2026-10-01" />',
+    props: [
+      {
+        name: 'value / onValueChange',
+        type: 'string / (value, badInput) => void',
+        description:
+          'Canonical YYYY-MM-DD or empty string. Propagate badInput when the browser exposes incomplete entry.',
+      },
+      {
+        name: 'min / max / required',
+        type: 'string / string / boolean',
+        description:
+          'Inclusive valid calendar-date bounds and explicit requirement. Revalidate when constraints change.',
+      },
+      {
+        name: 'error / helperText / readOnly / disabled',
+        type: 'Input props',
+        description: 'Uses the shared form-field relationships; touched values show local errors.',
+      },
+    ],
+    variants: [
+      'Native date input, small and medium sizes inherited from Input. No custom calendar, time or recurrence editor.',
+    ],
+    accessibility: [
+      'Visible label, browser locale entry format, native keyboard/picker behavior, and associated errors.',
+      'Store and compare date-only values without timezone conversion. Review text can be localized separately.',
+    ],
+    responsive:
+      'Wrap labels and feedback at narrow widths and 200% text; retain source order and support RTL.',
+    theme: 'Uses existing semantic type, surface, border, feedback and focus tokens.',
+    mistakes: [
+      'Preserve native partial-input validity and revalidate at submission; an incomplete optional date is not an empty date.',
+      'Do not parse ambiguous locale strings or shift calendar dates through local time zones.',
+    ],
+    related: ['input', 'form-field', 'form-section'],
+  }),
+  createDoc({
+    slug: 'code-block',
+    title: 'Code Block',
+    status: 'Draft',
+    summary: 'Read and copy a named, language-labelled snippet without executing it.',
+    useCases: ['Documentation code examples and technical-guide configuration/request snippets.'],
+    importCode: "import { CodeBlock } from '@/components'",
+    basicCode: '<CodeBlock label="Configuration" language="JSON" code={source} />',
+    props: [
+      {
+        name: 'code / label / language',
+        type: 'string / string / string',
+        description:
+          'Literal source, accessible snippet name, and visible language. Defaults: Example code and Plain text.',
+      },
+      {
+        name: 'wrap',
+        type: 'boolean',
+        description:
+          'Default false: preserve lines in a locally scrollable, keyboard-focusable region. True wraps without changing copied text.',
+      },
+      {
+        name: 'copyText',
+        type: '(text: string) => Promise<void>',
+        description:
+          'Optional clipboard adapter; default uses the browser Clipboard API. Failures show manual-copy guidance.',
+      },
+    ],
+    variants: [
+      'Plain source display, optional wrapping. No execution, editing, syntax highlighting or line numbers.',
+    ],
+    accessibility: [
+      'Semantic pre/code, visible language, named scroll region and Copy button.',
+      'Copying, success and failure are announced without moving focus; stale requests and timers are cleaned up.',
+    ],
+    responsive:
+      'Wrap labels and feedback at narrow widths and 200% text; retain source order and support RTL.',
+    theme: 'Uses existing semantic type, surface, border, feedback and focus tokens.',
+    mistakes: [
+      'Announce success only after the clipboard write resolves and preserve manual selection when copying fails.',
+      'Keep source literal, label its language, and contain long lines without changing copied whitespace.',
+    ],
+    related: ['button', 'contents-navigation'],
+  }),
+
+  createDoc({
     slug: 'icons',
     title: 'Icons',
     status: 'Complete',

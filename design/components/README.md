@@ -61,10 +61,16 @@ status outside this technology-neutral contract index.
 | [Alert](alert.md)                                  | Frontmatter and prose             | Complete        | Asynchronous feedback; Task continuity and unsaved work                                             |
 | [Popup surface and dropdown patterns](dropdown.md) | Frontmatter and prose             | Complete        | Overlay, collection model                                                                           |
 | [Card](card.md)                                    | Frontmatter and prose             | Complete        | Data-display pattern when data-bearing                                                              |
+| [File Upload](file-upload.md)                      | Shared prose and semantic roles   | Draft           | Form field; Button; Progress; Forms and validation; Asynchronous feedback                           |
+| [Date Input](date-input.md)                        | Shared Input and field roles      | Draft           | Input; Form field; Forms and validation                                                             |
+| [Code Block](code-block.md)                        | Shared code typography and roles  | Draft           | Button; Asynchronous feedback; Responsive density                                                   |
 
 ## Proposed contracts
 
-Chart is the only current Draft addition. Its contract is opt-in and does not
+Chart, File Upload, Date Input, and Code Block are current Draft additions.
+The three input/content components have reference implementations and partial
+validation in the [implementation record](../verification/input-content-evidence.md).
+Chart remains opt-in. Its contract does not
 make charts default Application Workspace, dashboard, Metric Overview, or data
 display content. No additional component contract is currently scheduled.
 Container remains a layout foundation in DESIGN.md rather than a component

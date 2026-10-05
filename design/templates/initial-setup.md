@@ -123,3 +123,8 @@ names. Apply [Focused Flow](../verification/workflows.md#focused-flow),
 [Template conformance](../verification/stress-tests.md#template-conformance), and
 [baseline validation](../verification/baseline.md). Record limitations separately
 from model tests and browser observations in the implementation record.
+
+The project reference additionally uses [Date Input](../components/date-input.md)
+for an optional target launch date. This is planning metadata; creation still
+starts immediately. Validate date-only bounds before review and preserve the date
+through correction and retry. See the [input/content evidence](../verification/input-content-evidence.md).

@@ -53,10 +53,10 @@ export function BlockPage() {
         </ul>
       </DocsSection>
       <DocsSection id="import" title="Import">
-        <CodeBlock code={documentation.importCode} label="Import" />
+        <CodeBlock code={documentation.importCode} label="Import" language="TypeScript" />
       </DocsSection>
       <DocsSection id="usage" title="Basic usage">
-        <CodeBlock code={documentation.basicCode} />
+        <CodeBlock code={documentation.basicCode} language="TSX" />
       </DocsSection>
       <DocsSection id="examples" title="Live example" preview>
         {documentation.example}

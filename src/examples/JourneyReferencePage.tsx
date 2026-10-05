@@ -8,12 +8,17 @@ import {
   FlowStepNavigation,
   FormSection,
   Input,
+  DateInput,
+  FileUpload,
+  useFileUploads,
   Link,
   PageHeader,
   ReviewSummary,
   Select,
   SkipLink,
 } from '../components'
+import { attachmentConstraints, simulateUpload, failUpload } from './upload-demo'
+import { formatCalendarDate } from '../components/date-input-model'
 import {
   initialJourney,
   journeyReducer,
@@ -37,8 +42,18 @@ export function JourneyReferencePage({ kind }: { kind: JourneyKind }) {
   return <JourneyReference key={`${kind}-${context}`} kind={kind} context={context} />
 }
 function JourneyReference({ kind, context }: { kind: JourneyKind; context: string }) {
+  const service = kind === 'application' && context === 'service'
+  const [uploadFailure, setUploadFailure] = useState(false)
+  const uploads = useFileUploads(attachmentConstraints, uploadFailure ? failUpload : simulateUpload)
+  const attachmentsReady =
+    uploads.items.length > 0 && uploads.items.every((item) => item.status === 'uploaded')
   const key = `bento-example-${kind}-${context}`
-  const [state, setState] = useState(() => initialJourney(kind))
+  const [storedState, setState] = useState(() => initialJourney(kind, service))
+  const state = {
+    ...storedState,
+    attachmentsReady,
+    reached: service && !attachmentsReady ? Math.min(storedState.reached, 1) : storedState.reached,
+  }
   const [draft, setDraft] = useState(() => {
     try {
       return restoreJourney(sessionStorage.getItem(key), kind, context, Date.now())
@@ -65,10 +80,11 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
   })
   const dirty =
     state.status !== 'complete' &&
-    signature !== saved &&
-    (state.step > 0 ||
-      state.skipped ||
-      JSON.stringify(state.values) !== JSON.stringify(initialJourney(kind).values))
+    (uploads.items.length > 0 ||
+      (signature !== saved &&
+        (state.step > 0 ||
+          state.skipped ||
+          JSON.stringify(state.values) !== JSON.stringify(initialJourney(kind, service).values))))
   const onboarding = kind === 'onboarding'
   const title = onboarding
     ? 'Set up your profile'
@@ -77,7 +93,9 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
       : 'Apply for membership'
   const steps = ['Your details', onboarding ? 'Preferences' : 'Application details', 'Review']
   const dispatch = (action: JourneyAction) =>
-    setState((previous) => journeyReducer(previous, action))
+    setState((previous) =>
+      journeyReducer({ ...previous, attachmentsReady, reached: state.reached }, action),
+    )
   useEffect(() => {
     document.title = `${title} — Bento UI reference`
   }, [title])
@@ -120,14 +138,16 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
     setNotice(message)
     setNoticeSnapshot(snapshot)
   }
-  function saveDraft() {
+  function saveDraft(now: number) {
     if (state.status === 'failed') dispatch({ type: 'go', step: state.step })
     try {
-      sessionStorage.setItem(key, saveJourney(state, context, Date.now()))
+      sessionStorage.setItem(key, saveJourney(state, context, now))
       setSaved(signature)
       setDraft(null)
       showNotice(
-        'Sample draft saved in this tab for one hour. It is not stored on a server.',
+        service
+          ? 'Sample draft saved for one hour. Files and upload receipts are not saved; reselect and upload them after restoring.'
+          : 'Sample draft saved in this tab for one hour. It is not stored on a server.',
         signature,
       )
     } catch {
@@ -156,7 +176,10 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
     </Button>
   )
   return (
-    <div dir={direction} className="min-h-screen bg-background-primary text-text-primary">
+    <div
+      dir={direction}
+      className="min-h-screen bg-background-primary text-text-primary [&_button]:h-auto [&_button]:min-h-control-height-medium [&_button]:max-w-full [&_button]:py-scale-2 [&_button]:whitespace-normal"
+    >
       <SkipLink targetId="journey-content">Skip to task</SkipLink>
       <aside
         aria-label="Reference preview controls"
@@ -166,9 +189,23 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
           <p className="m-0 text-body-sm">
             Reference preview · Use sample values. No account, application, or message is created.
             Explicitly saved drafts remain in this browser tab for one hour.
+            {service &&
+              ' Uploads are simulated locally. Files are never sent or saved; use sample documents. Date bounds are fixed demo dates.'}
           </p>
           <div className="flex flex-wrap gap-scale-4">
             <ReferenceAppearanceControls />
+            {service && (
+              <Select
+                label="Upload scenario"
+                value={uploadFailure ? 'failed' : 'success'}
+                disabled={blocked || uploads.items.some((item) => item.status === 'uploading')}
+                onChange={(event) => setUploadFailure(event.target.value === 'failed')}
+                options={[
+                  { value: 'success', label: 'Success' },
+                  { value: 'failed', label: 'Failure' },
+                ]}
+              />
+            )}
             <Select
               label="Simulated submission outcome"
               value={outcome}
@@ -254,6 +291,7 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
                   )
                   return
                 }
+                uploads.reset()
                 setState(restored)
                 requestAnimationFrame(() => headingRef.current?.focus())
                 setSaved(
@@ -265,7 +303,9 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
                 )
                 setDraft(null)
                 showNotice(
-                  'Sample draft restored. Review the values before continuing.',
+                  service
+                    ? 'Draft restored. Review the date and reselect/upload your supporting document; no files were restored.'
+                    : 'Sample draft restored. Review the values before continuing.',
                   JSON.stringify({
                     values: restored.values,
                     step: restored.step,
@@ -405,6 +445,34 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
                     />
                   ) : (
                     <>
+                      {service && (
+                        <>
+                          <DateInput
+                            id="journey-startDate"
+                            label="Preferred service start date"
+                            required
+                            value={state.values.startDate}
+                            min="2026-10-01"
+                            max="2027-12-31"
+                            error={state.errors.startDate}
+                            announceError={false}
+                            onValueChange={(value, badInput) =>
+                              dispatch({ type: 'date', value, badInput })
+                            }
+                            helperText="Sample dates: October 1, 2026 through December 31, 2027. This is a preference, not a confirmed appointment."
+                          />
+                          <FileUpload
+                            id="journey-attachments"
+                            label="Supporting documents"
+                            required
+                            constraints={attachmentConstraints}
+                            {...uploads}
+                            error={state.errors.attachments}
+                            announceError={false}
+                            description="At least one completed upload is required. Local simulation only; removing a file detaches it from this sample application."
+                          />
+                        </>
+                      )}
                       <Select
                         label="Applying as"
                         value={state.values.audience}
@@ -464,6 +532,22 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
                             },
                           ]
                         : [
+                            ...(service
+                              ? [
+                                  {
+                                    id: 'date',
+                                    label: 'Preferred start date',
+                                    value: formatCalendarDate(state.values.startDate),
+                                  },
+                                  {
+                                    id: 'attachments',
+                                    label: 'Supporting documents',
+                                    value: uploads.items
+                                      .map((item) => `${item.name} (${item.status})`)
+                                      .join(', '),
+                                  },
+                                ]
+                              : []),
                             {
                               id: 'audience',
                               label: 'Applicant type',
@@ -531,7 +615,12 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
                       Skip preferences
                     </Button>
                   )}
-                  <Button type="button" variant="ghost" disabled={blocked} onClick={saveDraft}>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    disabled={blocked}
+                    onClick={() => saveDraft(Date.now())}
+                  >
                     Save sample draft
                   </Button>
                 </div>

@@ -7,12 +7,14 @@ import {
   FlowStepNavigation,
   FormSection,
   Input,
+  DateInput,
   Link,
   PageHeader,
   Progress,
   ReviewSummary,
   Select,
 } from '../components'
+import { formatCalendarDate, validateDate } from '../components/date-input-model'
 import { BatchReferenceFrame } from './BatchReferenceFrame'
 import { initialSetup, setupReducer, type SetupOutcome } from './setup-model'
 
@@ -31,7 +33,9 @@ function Setup({ project }: { project: boolean }) {
   const exitButton = useRef<HTMLButtonElement>(null)
   const navigate = useNavigate()
   const kind = project ? 'project' : 'organization'
-  const dirty = state.phase !== 'complete' && (!!state.name || state.phase !== 'configure')
+  const dirty =
+    state.phase !== 'complete' &&
+    (!!state.name || !!state.targetDate || state.phase !== 'configure')
   useEffect(() => {
     if (state.phase !== 'pending') return
     const timer = window.setTimeout(
@@ -142,7 +146,19 @@ function Setup({ project }: { project: boolean }) {
               className="space-y-scale-2"
             >
               <p>{state.error}</p>
-              <Link href="#setup-name">Check resource name</Link>
+              <Link
+                href={
+                  validateDate(state.targetDate ?? '', {
+                    min: '2026-10-01',
+                    max: '2027-12-31',
+                    badInput: state.dateBadInput,
+                  })
+                    ? '#setup-target-date'
+                    : '#setup-name'
+                }
+              >
+                Check configuration
+              </Link>
             </div>
           )}
           <FormSection
@@ -155,12 +171,37 @@ function Setup({ project }: { project: boolean }) {
               maxLength={80}
               value={state.name}
               required
-              error={state.error ? 'A name is required (maximum 80 characters).' : undefined}
+              error={
+                state.error && !state.name.trim()
+                  ? 'A name is required (maximum 80 characters).'
+                  : undefined
+              }
               announceError={false}
               onChange={(event) =>
                 dispatch({ type: 'edit', field: 'name', value: event.target.value })
               }
             />
+            {project && (
+              <DateInput
+                id="setup-target-date"
+                label="Target launch date (optional)"
+                value={state.targetDate ?? ''}
+                min="2026-10-01"
+                max="2027-12-31"
+                error={
+                  state.error
+                    ? validateDate(state.targetDate ?? '', {
+                        min: '2026-10-01',
+                        max: '2027-12-31',
+                        badInput: state.dateBadInput,
+                      })
+                    : undefined
+                }
+                announceError={false}
+                helperText="Planning date only; provisioning still starts immediately. Sample bounds: October 1, 2026 to December 31, 2027."
+                onValueChange={(value, badInput) => dispatch({ type: 'date', value, badInput })}
+              />
+            )}
             <Select
               label="Hosting region"
               value={state.region}
@@ -186,6 +227,15 @@ function Setup({ project }: { project: boolean }) {
                 title: `New ${kind}`,
                 values: [
                   { id: 'name', label: 'Name', value: state.name },
+                  ...(project
+                    ? [
+                        {
+                          id: 'target-date',
+                          label: 'Target launch date (planning only)',
+                          value: formatCalendarDate(state.targetDate ?? ''),
+                        },
+                      ]
+                    : []),
                   {
                     id: 'region',
                     label: 'Hosting region',

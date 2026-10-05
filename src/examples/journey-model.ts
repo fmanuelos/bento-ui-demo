@@ -1,12 +1,17 @@
+import { validateDate } from '../components/date-input-model.ts'
 export type JourneyKind = 'onboarding' | 'application'
 export type JourneyValues = {
   name: string
   audience: 'individual' | 'organization'
   organization: string
   preference: string
+  startDate: string
 }
 export type JourneyState = {
   kind: JourneyKind
+  service: boolean
+  attachmentsReady: boolean
+  dateBadInput: boolean
   values: JourneyValues
   step: number
   reached: number
@@ -16,16 +21,21 @@ export type JourneyState = {
 }
 export type JourneyAction =
   | { type: 'edit'; field: keyof JourneyValues; value: string }
+  | { type: 'attachments'; ready: boolean }
+  | { type: 'date'; value: string; badInput: boolean }
   | { type: 'next' }
   | { type: 'skip' }
   | { type: 'go'; step: number }
   | { type: 'submit' }
   | { type: 'resolve'; outcome: 'success' | 'failed' | 'unknown' }
   | { type: 'reconcile' }
-export function initialJourney(kind: JourneyKind): JourneyState {
+export function initialJourney(kind: JourneyKind, service = false): JourneyState {
   return {
     kind,
-    values: { name: '', audience: 'individual', organization: '', preference: '' },
+    service: kind === 'application' && service,
+    attachmentsReady: false,
+    dateBadInput: false,
+    values: { name: '', audience: 'individual', organization: '', preference: '', startDate: '' },
     step: 0,
     reached: 0,
     skipped: false,
@@ -44,6 +54,17 @@ export function validateJourney(state: JourneyState, all = false) {
     !state.values.organization.trim()
   )
     errors.organization = 'Enter the organization name.'
+  if (state.service && (all || state.step === 1)) {
+    const dateError = validateDate(state.values.startDate, {
+      required: true,
+      min: '2026-10-01',
+      max: '2027-12-31',
+      badInput: state.dateBadInput,
+    })
+    if (dateError) errors.startDate = dateError
+    if (!state.attachmentsReady)
+      errors.attachments = 'Upload the supporting document and remove unfinished or rejected files.'
+  }
   return errors
 }
 export function journeyReducer(state: JourneyState, action: JourneyAction): JourneyState {
@@ -54,6 +75,21 @@ export function journeyReducer(state: JourneyState, action: JourneyAction): Jour
   if (action.type === 'reconcile')
     return state.status === 'unknown' ? { ...state, status: 'complete' } : state
   if (['pending', 'unknown', 'complete'].includes(state.status)) return state
+  if (action.type === 'attachments')
+    return {
+      ...state,
+      attachmentsReady: action.ready,
+      reached: Math.min(state.reached, state.step),
+      errors: {},
+    }
+  if (action.type === 'date')
+    return {
+      ...state,
+      values: { ...state.values, startDate: action.value },
+      dateBadInput: action.badInput,
+      reached: Math.min(state.reached, state.step),
+      errors: {},
+    }
   if (action.type === 'edit') {
     if (action.field === 'audience' && !['individual', 'organization'].includes(action.value))
       return state
@@ -77,7 +113,7 @@ export function journeyReducer(state: JourneyState, action: JourneyAction): Jour
     return state.kind === 'onboarding' && state.step === 1
       ? {
           ...state,
-          values: { ...state.values, preference: '' },
+          values: { ...state.values, preference: '', startDate: '' },
           step: 2,
           reached: 2,
           skipped: true,
@@ -99,7 +135,7 @@ export function journeyReducer(state: JourneyState, action: JourneyAction): Jour
 }
 export function saveJourney(state: JourneyState, context: string, now: number) {
   return JSON.stringify({
-    version: 1,
+    version: 2,
     context,
     expires: now + 60 * 60 * 1000,
     kind: state.kind,
@@ -118,7 +154,7 @@ export function restoreJourney(
     const draft = JSON.parse(raw ?? 'null')
     if (
       !draft ||
-      draft.version !== 1 ||
+      ![1, 2].includes(draft.version) ||
       draft.kind !== kind ||
       draft.context !== context ||
       !Number.isFinite(draft.expires) ||
@@ -135,20 +171,23 @@ export function restoreJourney(
       !['individual', 'organization'].includes(audience)
     )
       return null
+    const startDate = draft.version === 1 ? '' : draft.values.startDate
+    if (typeof startDate !== 'string' || startDate.length > 10) return null
     const state = {
-      ...initialJourney(kind),
+      ...initialJourney(kind, context === 'service'),
       values: {
         name,
         audience,
         organization: audience === 'organization' ? organization : '',
         preference,
+        startDate,
       },
       skipped: kind === 'onboarding' && draft.skipped === true,
     }
     const errors = validateJourney(state, true)
     const step = errors.name
       ? 0
-      : errors.organization
+      : Object.keys(errors).length > 0
         ? 1
         : [0, 1, 2].includes(draft.step)
           ? draft.step

@@ -14,7 +14,9 @@ contracts and 23 block contracts; 14 blocks have runtime implementations.
 File Upload, Date Input, and Code Block are not added: no admitted reference
 requires attachments, scheduling, or executable instructions. Introducing those
 components needs a concrete consumer and independent contract/validation scope.
-No new primitive component or payment-provider dependency is introduced here.
+No new primitive component or payment-provider dependency is introduced in this
+checkout batch. File Upload, Date Input, and Code Block were subsequently admitted
+for other references in the [input/content batch](input-content-evidence.md).
 
 ## Payment and recovery boundaries
 

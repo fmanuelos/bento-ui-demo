@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import { FileUploadExample, DateInputExample, CodeBlockExample } from './new-component-examples'
 import { lazy, Suspense, useRef, useState, type ReactNode } from 'react'
 import {
   Accordion,
@@ -559,6 +560,9 @@ function CheckboxExample() {
 }
 
 export const componentExamples: Record<string, ReactNode> = {
+  'file-upload': <FileUploadExample />,
+  'date-input': <DateInputExample />,
+  'code-block': <CodeBlockExample />,
   icons: (
     <div className="grid gap-scale-6">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(11rem,100%),1fr))] gap-scale-3">

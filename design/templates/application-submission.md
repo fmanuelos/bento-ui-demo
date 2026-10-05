@@ -30,7 +30,7 @@ identity proof need explicitly scoped contracts or product integrations.
 - Applicable candidate variant: Application Flow.
 - Domains: Account for membership; Help & Support for the service-request example. Consumers classify their actual capability.
 - Audience: applicants eligible to enter the consuming product's application process.
-- Excluded scope: payment, attachments, identity proof, and approval decisions.
+- Excluded scope: payment, identity proof, and approval decisions.
 
 ## Regions and hierarchy
 
@@ -125,5 +125,13 @@ Apply [Focused Flow](../verification/workflows.md#focused-flow),
 [Form workflow](../verification/workflows.md#form-workflow),
 [Review and completion](../verification/workflows.md#review-and-completion),
 [Template conformance](../verification/stress-tests.md#template-conformance), and
-[baseline validation](../verification/baseline.md). Attachments remain a later
-scope decision requiring a File Upload contract before inclusion.
+[baseline validation](../verification/baseline.md). The service context now uses [File Upload](../components/file-upload.md) for required
+supporting documents and [Date Input](../components/date-input.md) for a preferred
+start date. These are draft components with [partial evidence](../verification/input-content-evidence.md).
+At least one successful upload and a valid date are required before review and
+submission. Unfinished or rejected files must be removed or resolved. The reference
+never reads or transmits file contents. Saving a draft retains the canonical date,
+but no File objects, filenames, or upload receipts; restoring requires reselection
+and renewed upload. Version 1 drafts migrate to an empty date. Dates express a
+preference, not a confirmed appointment. Production products own upload transport,
+server validation, remote detachment/deletion, retention, and date eligibility.

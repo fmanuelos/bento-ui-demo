@@ -130,3 +130,9 @@ when related resources participate,
 [Template conformance](../verification/stress-tests.md#template-conformance), and
 [baseline validation](../verification/baseline.md). Record actual reading,
 anchor-navigation, responsive, localized, and accessibility results.
+
+The technical context `/examples/public-content?context=technical` demonstrates
+[Code Block](../components/code-block.md) with JSON configuration and HTTP request
+examples. Copying is not execution. A denied-copy control exercises manual-copy
+feedback; long lines scroll within their code region. See the
+[input/content evidence](../verification/input-content-evidence.md).

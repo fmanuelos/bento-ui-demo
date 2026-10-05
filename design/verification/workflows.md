@@ -686,3 +686,34 @@ with a one-time digital purchase and a recurring service order.
 - Check narrow layouts, long labels, 200% text, RTL, localized currencies, themes,
   forced colors, reduced motion, and screen-reader feedback. Apply the
   [baseline](baseline.md). Record simulation limits separately from provider evidence.
+
+## Attachment and date entry
+
+Exercise [File Upload](../components/file-upload.md) and
+[Date Input](../components/date-input.md) in the service application, and date
+entry in project setup. Apply the [baseline](baseline.md).
+
+- Check allowed types, empty/oversized/duplicate files, count limits, selected versus
+  uploaded status, per-file errors, retry, cancellation, removal, and late callbacks.
+- Verify required attachments block commitment until completed. Restore a saved
+  draft: retain the date, require file reselection, and never restore a fake receipt.
+- Validate partial, impossible, leap-day, required/optional and inclusive-boundary
+  dates; changing bounds requires revalidation. Check localized display and no
+  timezone day shift. A planning date never silently schedules provisioning.
+- Check error-summary links, keyboard/native file selection, focus after removal,
+  accessible status updates, native date behavior, RTL, enlarged text, and themes.
+- Record transport/server, browser-native picker, and assistive-technology limits.
+
+## Technical guide reading
+
+Exercise [Code Block](../components/code-block.md) in API documentation and the
+Public Content technical guide. Apply [Public content](#public-content) and the
+[baseline](baseline.md).
+
+- Identify each snippet by title and language. Render source literally, preserving
+  whitespace and special characters. Copy must exactly match source, without labels.
+- Exercise successful, denied, and unavailable clipboard writes, pending duplicate
+  clicks, retry, content replacement, and unmount during copying.
+- Keep focus on Copy, announce outcomes once, and retain manual selection on failure.
+- Scroll long lines by keyboard within the snippet at narrow widths and 200% text;
+  verify no document-wide overflow, RTL surrounding content, and both themes.

@@ -106,7 +106,7 @@ export function ArchitecturePage() {
           Record each concern independently. A domain does not determine the mode, and a route,
           audience, or owning team does not determine either one.
         </p>
-        <CodeBlock code={classificationExample} label="Example product metadata" />
+        <CodeBlock code={classificationExample} label="Example product metadata" language="YAML" />
       </DocsSection>
 
       <DocsSection id="continue" title="Continue with the architecture">

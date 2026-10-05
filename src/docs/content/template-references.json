@@ -39,7 +39,7 @@
     ]
   },
   "application-submission": {
-    "note": "Simulated examples only. No account, application, purchase, or message is created. Flow drafts are explicitly saved in this tab for one hour. Broader integration and accessibility validation remains outstanding.",
+    "note": "Simulated submission and uploads only. Files are never read or sent. Service applications require a preferred date and completed supporting-document upload. Saved drafts retain dates for one hour but never files or receipts; restore requires reselection.",
     "references": [
       {
         "label": "Open application submission reference",
@@ -100,6 +100,10 @@
       {
         "label": "Open versioned policy reference",
         "href": "/examples/public-content?context=policy"
+      },
+      {
+        "label": "Open technical guide reference",
+        "href": "/examples/public-content?context=technical"
       }
     ]
   },
