@@ -4,6 +4,12 @@ import { BackToTop } from './components/BackToTop'
 import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Modal } from './components/Modal'
+import { JourneyReferencePage } from './examples/JourneyReferencePage'
+import { CheckoutReferencePage } from './examples/CheckoutReferencePage'
+import { InitialSetupReferencePage } from './examples/InitialSetupReferencePage'
+import { PublicStatusReferencePage } from './examples/PublicStatusReferencePage'
+import { PublicContentReferencePage } from './examples/PublicContentReferencePage'
+import { ComparisonReferencePage } from './examples/ComparisonReferencePage'
 import { AuthReferencePage } from './examples/AuthReferencePage'
 import { docsRoutes } from './docs/routes'
 import {
@@ -410,6 +416,19 @@ export default function App() {
         element={<AuthReferencePage kind="authentication" />}
       />
       <Route path="/examples/registration" element={<AuthReferencePage kind="registration" />} />
+      <Route
+        path="/examples/account-onboarding"
+        element={<JourneyReferencePage kind="onboarding" />}
+      />
+      <Route
+        path="/examples/application-submission"
+        element={<JourneyReferencePage kind="application" />}
+      />
+      <Route path="/examples/comparison" element={<ComparisonReferencePage />} />
+      <Route path="/examples/checkout" element={<CheckoutReferencePage />} />
+      <Route path="/examples/initial-setup" element={<InitialSetupReferencePage />} />
+      <Route path="/examples/public-status" element={<PublicStatusReferencePage />} />
+      <Route path="/examples/public-content" element={<PublicContentReferencePage />} />
       <Route path="/" element={<DemoPage />} />
       <Route path="*" element={<DemoPage />} />
     </Routes>

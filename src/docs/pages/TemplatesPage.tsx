@@ -7,12 +7,12 @@ const templateCategories = [
   {
     mode: 'Public Site',
     kind: 'Page templates',
-    candidates: 'Comparison, help article, public status overview',
+    candidates: 'Public search results',
   },
   {
     mode: 'Focused Flow',
     kind: 'Flow templates',
-    candidates: 'Onboarding, checkout, application submission, initial setup',
+    candidates: 'Branching troubleshooting (requires admission review)',
   },
   {
     mode: 'Application Workspace',

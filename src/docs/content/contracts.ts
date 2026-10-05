@@ -12,8 +12,8 @@ const sourceUrls = import.meta.glob<string>(['/design/**/*.md', '/DESIGN.md'], {
   query: '?url',
   import: 'default',
 })
-type Implementation = { component: string; validation: string }
-const implementationMap: Record<string, Implementation> = implementations
+type Implementation = { component: string; validation: string; evidence?: string }
+const implementationMap: Record<string, Implementation | undefined> = implementations
 const sourceCache = new Map<string, Promise<string>>()
 export function loadContract(path: string) {
   if (!sourceCache.has(path)) {
@@ -29,10 +29,19 @@ export function loadContract(path: string) {
   }
   return sourceCache.get(path)!
 }
-export const blockCatalog = catalog.map((block) => ({
-  ...block,
-  implementation: implementationMap[block.slug],
-}))
+export const blockCatalog = catalog.map((block) => {
+  const implementation = implementationMap[block.slug]
+  return {
+    ...block,
+    implementation: implementation
+      ? {
+          ...implementation,
+          evidenceUrl:
+            sourceUrls[implementation.evidence ?? '/design/verification/focused-flow-evidence.md'],
+        }
+      : undefined,
+  }
+})
 export const blockCatalogBySlug = new Map(blockCatalog.map((block) => [block.slug, block]))
 
 type TemplateReferences = {

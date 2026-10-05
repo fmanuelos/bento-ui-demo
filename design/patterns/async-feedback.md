@@ -167,6 +167,15 @@ exposes its busy state, and visible or programmatic status identifies the pendin
 work when surrounding context is insufficient. Announce the meaningful state
 change once rather than announcing each placeholder or animation cycle.
 
+## Commitments across steps
+
+Associate a final operation with the reviewed snapshot and task identity. Prevent
+repeated activation while pending and prevent an uncertain outcome from becoming
+a new submission by navigating Back or reopening review. Reconcile first with an
+authoritative result or explicitly safe retry policy. Cancelling a local timer or
+leaving a surface does not prove cancellation of server work. Ignore late responses
+for an abandoned task or superseded identity.
+
 ## Validation scenarios
 
 Apply the shared matrix and the asynchronous conditions in the

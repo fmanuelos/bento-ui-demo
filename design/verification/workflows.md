@@ -640,3 +640,49 @@ When the loss is entered or recovered work, also apply the
 
 - Verify that the action, object, scope, permanence, safe alternative, and
   recovery remain understandable without color, position, or assumed context.
+
+## Public status
+
+Exercise the [Public Status Overview](../templates/public-status-overview.md) with
+one service and a portfolio. Check [Service Status Summary](../blocks/service-status-summary.md)
+and [Activity History](../blocks/activity-history.md) together.
+
+- Confirm service coverage, exact snapshot time and timezone, and source authority.
+- Exercise operational, degraded, disruption, maintenance, unknown, partial,
+  loading, stale, and failed data. No missing or stale report may imply all-clear.
+- Separate maintenance windows, current conditions, and incident chronology.
+  A missing incident history cannot establish service availability.
+- Preserve useful safe values during refresh, reject superseded responses, and
+  keep focus and reading position. Isolate independently failing history requests.
+- Publish only public descriptions; private responders and diagnostics never
+  appear in DOM text, accessible labels, or expanded details.
+- Verify known and unknown timestamps, stable IDs, explicit event order, and
+  coverage. New updates do not unexpectedly move the current reading position.
+- Exercise keyboard, narrow widths, long labels, RTL, 200% text, theme changes,
+  forced colors, reduced motion, and screen-reader announcements.
+- Record provider, subscription, live-refresh, and accessibility limits separately
+  from simulated snapshot evidence. Apply the [baseline](baseline.md).
+
+## Checkout
+
+Exercise [Checkout](../templates/checkout.md) and [Order Summary](../blocks/order-summary.md)
+with a one-time digital purchase and a recurring service order.
+
+- Confirm item identity, quantity, currency, subtotal, discounts, taxes, fees,
+  total due now, and renewal amounts. Check rounding under supported currencies.
+- Correct quantity and refresh a changed quote. Prior acknowledgement clears;
+  expired or unavailable quotes cannot submit. Missing amounts are never zero.
+- Submit only the reviewed server quote. Lock pending duplicates, preserve the
+  submitted snapshot, and verify durable provider idempotency independently.
+- Exercise decline, additional verification, provider return, cancellation, lost
+  responses, unknown outcomes, unresolved checks, and authoritative unpaid recovery.
+  A browser return alone never confirms payment. Check the existing attempt first.
+- Confirm that fulfillment recovery after payment does not charge again. Receipts
+  and success wording match the authoritative payment and fulfillment outcome.
+- Test late and duplicate responses, reload, redirects, Back, departure, quote
+  expiry, permission changes, and guest/authenticated recovery to the correct order.
+- Keep payment secrets out of drafts, URLs, and logs. Validate secure provider
+  entry, keyboard focus, accessible errors, and return behavior with that provider.
+- Check narrow layouts, long labels, 200% text, RTL, localized currencies, themes,
+  forced colors, reduced motion, and screen-reader feedback. Apply the
+  [baseline](baseline.md). Record simulation limits separately from provider evidence.

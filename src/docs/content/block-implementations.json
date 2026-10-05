@@ -1,8 +1,20 @@
 {
-  "empty-state": { "component": "EmptyState", "validation": "Not recorded" },
-  "public-site-navigation": { "component": "SiteNavigation", "validation": "Not recorded" },
-  "application-navigation": { "component": "NavigationShell", "validation": "Not recorded" },
-  "page-header": { "component": "PageHeader", "validation": "Partial — see Focused Flow evidence" },
+  "empty-state": {
+    "component": "EmptyState",
+    "validation": "Not recorded"
+  },
+  "public-site-navigation": {
+    "component": "SiteNavigation",
+    "validation": "Not recorded"
+  },
+  "application-navigation": {
+    "component": "NavigationShell",
+    "validation": "Not recorded"
+  },
+  "page-header": {
+    "component": "PageHeader",
+    "validation": "Partial — see Focused Flow evidence"
+  },
   "section-header": {
     "component": "SectionHeader",
     "validation": "Partial — see Focused Flow evidence"
@@ -14,5 +26,40 @@
   "completion-summary": {
     "component": "CompletionSummary",
     "validation": "Partial — see Focused Flow evidence"
+  },
+  "flow-step-navigation": {
+    "component": "FlowStepNavigation",
+    "validation": "Partial — see broader journeys evidence",
+    "evidence": "/design/verification/broader-journeys-evidence.md"
+  },
+  "review-summary": {
+    "component": "ReviewSummary",
+    "validation": "Partial — see broader journeys evidence",
+    "evidence": "/design/verification/broader-journeys-evidence.md"
+  },
+  "plan-comparison": {
+    "component": "PlanComparison",
+    "validation": "Partial — see broader journeys evidence",
+    "evidence": "/design/verification/broader-journeys-evidence.md"
+  },
+  "contents-navigation": {
+    "component": "ContentsNavigation",
+    "validation": "Partial — see setup, status, and content evidence",
+    "evidence": "/design/verification/setup-status-content-evidence.md"
+  },
+  "service-status-summary": {
+    "component": "ServiceStatusSummary",
+    "validation": "Partial — see setup, status, and content evidence",
+    "evidence": "/design/verification/setup-status-content-evidence.md"
+  },
+  "activity-history": {
+    "component": "ActivityHistory",
+    "validation": "Partial — see setup, status, and content evidence",
+    "evidence": "/design/verification/setup-status-content-evidence.md"
+  },
+  "order-summary": {
+    "component": "OrderSummary",
+    "validation": "Partial — see checkout evidence",
+    "evidence": "/design/verification/checkout-evidence.md"
   }
 }

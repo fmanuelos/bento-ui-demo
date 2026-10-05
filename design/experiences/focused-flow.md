@@ -66,6 +66,17 @@ dialog, drawer, or another task surface through the applicable component
 contract. Closing the surface follows the same interruption and unsaved-work
 rules as leaving by navigation.
 
+## Step eligibility and branching
+
+A step has a stable identity independent of its displayed position. Declare
+required and optional steps, permitted skips, prerequisites, and entry conditions.
+A direct entry or restored draft revalidates prerequisites before exposing a later
+step. Changing a branch explains which dependent answers are cleared or retained
+and invalidates affected review readiness. Never silently submit hidden obsolete
+answers. Step navigation presents eligibility supplied by the flow; it does not
+establish authority. Internal Back, browser history, and reload have explicit,
+possibly different behavior communicated by the product.
+
 ## Layout and density
 
 Apply the [`Focused Flow mode`](../../DESIGN.md#focused-flow-mode) layout rules.

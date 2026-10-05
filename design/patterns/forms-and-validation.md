@@ -91,6 +91,15 @@ expansion, locale-aware formatting, pluralization, and right-to-left presentatio
 Validation must not depend on English punctuation, capitalization, name order, or
 formats that contradict the active locale.
 
+## Multi-step validation
+
+Validate the active branch at Continue and all applicable requirements before final
+commitment. Returning to correct an earlier answer preserves unrelated valid work.
+A prerequisite change invalidates dependent validation and review snapshots. Explain
+consequential clearing before the choice; hidden fields do not retain submission
+eligibility merely because they were previously valid. Optional-step Skip names
+what is omitted and which entered values will be retained or cleared.
+
 ## Responsive behavior
 
 Labels, help, errors, values, and actions wrap without clipping. Logical

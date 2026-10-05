@@ -10,7 +10,15 @@ const root = process.cwd()
 const inventory = readFileSync(join(root, 'design/templates/README.md'), 'utf8')
 const source = (slug) => readFileSync(join(root, `design/templates/${slug}.md`), 'utf8')
 
-for (const slug of ['authentication', 'product-landing', 'public-content', 'record-collection']) {
+for (const slug of [
+  'authentication',
+  'product-landing',
+  'public-content',
+  'public-status-overview',
+  'initial-setup',
+  'checkout',
+  'record-collection',
+]) {
   test(`${slug} accepts its own mode and workflows`, () => {
     assert.deepEqual(validateTemplateSource(source(slug), slug, inventory), [])
   })

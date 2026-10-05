@@ -1,5 +1,13 @@
 [
   {
+    "slug": "account-onboarding",
+    "path": "/design/templates/account-onboarding.md",
+    "title": "Account Onboarding",
+    "status": "Draft",
+    "mode": "Focused Flow",
+    "summary": "Help a newly registered person complete necessary profile setup and optional preferences, with a clear distinction between account creation and readiness to continue."
+  },
+  {
     "slug": "account-recovery",
     "path": "/design/templates/account-recovery.md",
     "title": "Account Recovery",
@@ -8,12 +16,44 @@
     "summary": "Help people regain access through an authorized password-reset process with clear request, reset, failure, and completion boundaries."
   },
   {
+    "slug": "application-submission",
+    "path": "/design/templates/application-submission.md",
+    "title": "Application Submission",
+    "status": "Draft",
+    "mode": "Focused Flow",
+    "summary": "Help people prepare, correct, and submit an application once, retain recoverable work, and distinguish a confirmed receipt from an approval decision."
+  },
+  {
     "slug": "authentication",
     "path": "/design/templates/authentication.md",
     "title": "Authentication",
     "status": "Draft",
     "mode": "Focused Flow",
     "summary": "Provide a bounded task for establishing or renewing access while preserving the intended destination and any safely recoverable work."
+  },
+  {
+    "slug": "checkout",
+    "path": "/design/templates/checkout.md",
+    "title": "Checkout",
+    "status": "Draft",
+    "mode": "Focused Flow",
+    "summary": "Help people review an order and its complete monetary commitment, submit payment once, and understand the confirmed payment and fulfillment outcome."
+  },
+  {
+    "slug": "comparison",
+    "path": "/design/templates/comparison.md",
+    "title": "Comparison",
+    "status": "Draft",
+    "mode": "Public Site",
+    "summary": "Help visitors compare plans or service offers on a consistent basis, understand qualifications, and choose an eligible next step."
+  },
+  {
+    "slug": "initial-setup",
+    "path": "/design/templates/initial-setup.md",
+    "title": "Initial Setup",
+    "status": "Draft",
+    "mode": "Focused Flow",
+    "summary": "Help an authorized person configure and provision a new resource, understand which operations completed, and recover unfinished work without duplicate creation."
   },
   {
     "slug": "product-landing",
@@ -30,6 +70,14 @@
     "status": "Draft",
     "mode": "Public Site",
     "summary": "Help visitors read, understand, and navigate a durable public information resource with clear identity, hierarchy, provenance, and related destinations."
+  },
+  {
+    "slug": "public-status-overview",
+    "path": "/design/templates/public-status-overview.md",
+    "title": "Public Status Overview",
+    "status": "Draft",
+    "mode": "Public Site",
+    "summary": "Help visitors understand the reported availability of named public services, affected scope, freshness, and published incident or maintenance information."
   },
   {
     "slug": "record-collection",

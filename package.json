@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "check": "pnpm format:check && pnpm design:lint && pnpm migration:check && pnpm blocks:check && pnpm templates:check && pnpm test:templates && pnpm test:auth && pnpm components:check && pnpm icons:check && pnpm focus:check && pnpm lint && pnpm build",
+    "check": "pnpm format:check && pnpm design:lint && pnpm migration:check && pnpm blocks:check && pnpm templates:check && pnpm test:templates && pnpm test:auth && pnpm test:journeys && pnpm test:setup-status && pnpm test:checkout && pnpm components:check && pnpm icons:check && pnpm focus:check && pnpm lint && pnpm build",
     "blocks:check": "node scripts/check-block-coverage.mjs",
     "components:check": "node scripts/check-component-coverage.mjs",
     "icons:check": "node scripts/check-icon-system.mjs",
@@ -25,7 +25,10 @@
     "test:auth": "node --test scripts/auth-model.test.mjs",
     "blocks:catalog": "node scripts/sync-block-catalog.mjs",
     "templates:catalog": "node scripts/sync-template-catalog.mjs",
-    "test:templates": "node --test scripts/template-catalog.test.mjs"
+    "test:templates": "node --test scripts/template-catalog.test.mjs",
+    "test:journeys": "node --test scripts/journey-model.test.mjs",
+    "test:setup-status": "node --test scripts/setup-status-model.test.mjs",
+    "test:checkout": "node --test scripts/checkout-model.test.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "5.3.0",

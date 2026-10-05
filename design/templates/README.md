@@ -99,22 +99,42 @@ its repeated structure and outcome satisfy the admission criteria.
 
 ## Current contracts
 
-| Template                                  | Mode                  | Contract maturity | Representative uses                              |
-| ----------------------------------------- | --------------------- | ----------------- | ------------------------------------------------ |
-| [Authentication](authentication.md)       | Focused Flow          | Draft             | Login; reauthentication                          |
-| [Registration](registration.md)           | Focused Flow          | Draft             | Self-service creation; invited creation          |
-| [Account Recovery](account-recovery.md)   | Focused Flow          | Draft             | Forgotten password; expired reset-link recovery  |
-| [Product Landing](product-landing.md)     | Public Site           | Draft             | Product introduction; service introduction       |
-| [Public Content](public-content.md)       | Public Site           | Draft             | Informational article; policy page               |
-| [Record Collection](record-collection.md) | Application Workspace | Draft             | Article library; support queue                   |
-| [Record Detail](record-detail.md)         | Application Workspace | Draft             | Article record; support case                     |
-| [Settings](settings.md)                   | Application Workspace | Draft             | Personal preferences; organization configuration |
+| Template                                            | Mode                  | Contract maturity | Representative uses                                       |
+| --------------------------------------------------- | --------------------- | ----------------- | --------------------------------------------------------- |
+| [Authentication](authentication.md)                 | Focused Flow          | Draft             | Login; reauthentication                                   |
+| [Registration](registration.md)                     | Focused Flow          | Draft             | Self-service creation; invited creation                   |
+| [Account Recovery](account-recovery.md)             | Focused Flow          | Draft             | Forgotten password; expired reset-link recovery           |
+| [Product Landing](product-landing.md)               | Public Site           | Draft             | Product introduction; service introduction                |
+| [Public Content](public-content.md)                 | Public Site           | Draft             | Informational article; policy page                        |
+| [Record Collection](record-collection.md)           | Application Workspace | Draft             | Article library; support queue                            |
+| [Record Detail](record-detail.md)                   | Application Workspace | Draft             | Article record; support case                              |
+| [Settings](settings.md)                             | Application Workspace | Draft             | Personal preferences; organization configuration          |
+| [Account Onboarding](account-onboarding.md)         | Focused Flow          | Draft             | Individual setup; invited-user setup                      |
+| [Application Submission](application-submission.md) | Focused Flow          | Draft             | Membership application; service application               |
+| [Comparison](comparison.md)                         | Public Site           | Draft             | Subscription plans; recurring service packages            |
+| [Initial Setup](initial-setup.md)                   | Focused Flow          | Draft             | Organization provisioning; project provisioning           |
+| [Public Status Overview](public-status-overview.md) | Public Site           | Draft             | Single-service status; multi-service status               |
+| [Checkout](checkout.md)                             | Focused Flow          | Draft             | One-time digital purchase; recurring service subscription |
 
 Authentication and Registration have simulated reference pages with partial
 validation in the [Focused Flow implementation record](../verification/focused-flow-evidence.md).
-The six additional drafts specify representative uses and validation requirements;
+Account Recovery, Product Landing, Record Collection, Record Detail, and Settings
+specify representative uses and validation requirements;
 interactive reference pages and behavioral validation remain outstanding. Their
 admission establishes a shared draft structure, not validated product reuse.
+
+Onboarding, Application Submission, and Comparison have simulated references; see
+the [broader journeys record](../verification/broader-journeys-evidence.md) for scope
+and remaining validation.
+
+Initial Setup, Public Status Overview, and Public Content have simulated setup,
+status, guide, and policy references; see the
+[setup, status, and content record](../verification/setup-status-content-evidence.md).
+Help Article reuses Public Content while its outcome remains static reading.
+
+Checkout has digital-purchase and recurring-subscription simulations with an
+Order Summary implementation; see the [checkout record](../verification/checkout-evidence.md).
+No payment provider is connected.
 
 The [repository workflow](../README.md#template-documentation) describes catalog
 generation and independent reference availability. Contract maturity remains

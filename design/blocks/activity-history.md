@@ -3,6 +3,8 @@
 ## Status
 
 Draft. Publishing history and support-case updates establish the intended scope.
+A bounded runtime and public incident reference are recorded in the
+[setup and status record](../verification/setup-status-content-evidence.md).
 Validation of chronological order, partial history, permissions, and refresh
 continuity remains outstanding. Examples are design scenarios, not test evidence.
 
@@ -15,11 +17,13 @@ identity, ordering rules, access, retention, and completeness.
 
 ## Use when
 
-Supported modes: Application Workspace.
+Supported modes: Application Workspace; Public Site.
 
 Use in Application Workspace for a publishing record's history, support-case
 updates, or comparable events about an identified subject. Chronological context
-must contribute to understanding the record.
+must contribute to understanding the record. In Public Site, use for published
+updates about one identified incident. The ordered event structure is unchanged;
+public publication policy replaces workspace access rules.
 
 ## Do not use when
 
@@ -77,11 +81,14 @@ Relative time has a persistent or keyboard-accessible exact equivalent, never
 hover-only information. The product defines stable ordering for equal, late,
 corrected, and unknown timestamps; do not infer causal order from display order.
 State when history is filtered, partial, or limited by retention. No visible
-events does not prove that no events occurred.
+events does not prove that no events occurred. Public incident history exposes only
+approved public descriptions; omit private actors, diagnostics, and internal links.
+An empty history never establishes operational service conditions.
 
 ## Layout and semantic token mapping
 
-Use [Application Workspace](../../DESIGN.md#application-workspace-mode) layout,
+Use the containing [Application Workspace](../../DESIGN.md#application-workspace-mode)
+or [Public Site](../../DESIGN.md#public-site-mode) layout,
 group spacing, heading and body type, secondary text, border, status, and focus
 roles. Give event text room before reserving avatar or timestamp columns.
 Connectors and markers are optional decoration using existing border roles;
@@ -134,6 +141,9 @@ behavior follows the asynchronous pattern and actual update needs.
   events, and “Load older events.” A coverage note explains that only the last
   90 days are available. A failed older-events request preserves visible updates.
 
+- A public incident shows published investigation and mitigation updates, exact
+  timestamps, a stable incident identity, and coverage; private responders are omitted.
+
 These design examples share event relationships without asserting that their
 retention or access rules are universal.
 
@@ -144,7 +154,8 @@ unknown actors or times, delayed events, grouped dates, partial coverage, loadin
 failed older-event retrieval, stale refresh, permissions changing, and expanded
 detail retained during new-event arrival.
 
-Apply [Record inspection and history](../verification/workflows.md#record-inspection-and-history),
+Apply [Public status](../verification/workflows.md#public-status) for incident updates,
+[Record inspection and history](../verification/workflows.md#record-inspection-and-history),
 [Block composition and reflow](../verification/stress-tests.md#block-composition-and-reflow),
 and the [baseline](../verification/baseline.md). Include long translated content,
 RTL, 200% text, light and dark themes, keyboard, touch, screen readers, forced

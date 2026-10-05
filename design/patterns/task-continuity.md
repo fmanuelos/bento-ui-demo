@@ -119,6 +119,16 @@ Expiration is communicated before work becomes unrecoverable when practical. Do
 not restore another person's draft, a draft from an unauthorized account, or
 values whose meaning cannot be migrated safely.
 
+## Step and draft restoration
+
+Save a versioned task identity, permitted values, and a recoverable position rather
+than treating interface status as durable authority. Restoration validates owner,
+context, schema, expiry, current permissions, and active prerequisites. A restored
+pending flag cannot establish submission; a saved draft cannot establish completion.
+Changes after an explicit save remain unsaved. Storage failure preserves current
+work and does not claim a draft exists. Clear or invalidate obsolete saved drafts
+after authoritative completion. Products define recovery when that cleanup fails.
+
 ## Content and localization
 
 Use status language that matches the actual state: “Unsaved changes,” “Saving,”

@@ -2,7 +2,10 @@
   "authentication": {
     "note": "These reference screens simulate outcomes. They do not establish a session or connect to an identity provider. Provider and broader accessibility validation remain outstanding.",
     "references": [
-      { "label": "Open login reference", "href": "/examples/authentication" },
+      {
+        "label": "Open login reference",
+        "href": "/examples/authentication"
+      },
       {
         "label": "Open reauthentication reference",
         "href": "/examples/authentication?context=reauthentication"
@@ -12,10 +15,104 @@
   "registration": {
     "note": "These reference screens simulate outcomes. They do not create accounts, send messages, or validate invitations. Provider and broader accessibility validation remain outstanding.",
     "references": [
-      { "label": "Open registration reference", "href": "/examples/registration" },
+      {
+        "label": "Open registration reference",
+        "href": "/examples/registration"
+      },
       {
         "label": "Open invited registration reference",
         "href": "/examples/registration?context=invitation"
+      }
+    ]
+  },
+  "account-onboarding": {
+    "note": "Simulated examples only. No account, application, purchase, or message is created. Flow drafts are explicitly saved in this tab for one hour. Broader integration and accessibility validation remains outstanding.",
+    "references": [
+      {
+        "label": "Open account onboarding reference",
+        "href": "/examples/account-onboarding"
+      },
+      {
+        "label": "Open invited-user onboarding reference",
+        "href": "/examples/account-onboarding?context=invited"
+      }
+    ]
+  },
+  "application-submission": {
+    "note": "Simulated examples only. No account, application, purchase, or message is created. Flow drafts are explicitly saved in this tab for one hour. Broader integration and accessibility validation remains outstanding.",
+    "references": [
+      {
+        "label": "Open application submission reference",
+        "href": "/examples/application-submission"
+      },
+      {
+        "label": "Open service application reference",
+        "href": "/examples/application-submission?context=service"
+      }
+    ]
+  },
+  "comparison": {
+    "note": "Fictional offers and simulated availability. Selection starts no checkout and creates no purchase or subscription.",
+    "references": [
+      {
+        "label": "Open comparison reference",
+        "href": "/examples/comparison"
+      },
+      {
+        "label": "Open service-package comparison reference",
+        "href": "/examples/comparison?context=services"
+      }
+    ]
+  },
+  "initial-setup": {
+    "note": "Simulated provisioning in memory only. No remote resource is created. Reload resets the preview; checking an unknown result returns fixed simulated success.",
+    "references": [
+      {
+        "label": "Open organization setup reference",
+        "href": "/examples/initial-setup"
+      },
+      {
+        "label": "Open project setup reference",
+        "href": "/examples/initial-setup?context=project"
+      }
+    ]
+  },
+  "public-status-overview": {
+    "note": "Fictional fixed snapshots, not live monitoring. No real incident, refresh request, or notification service.",
+    "references": [
+      {
+        "label": "Open single-service status reference",
+        "href": "/examples/public-status"
+      },
+      {
+        "label": "Open multi-service status reference",
+        "href": "/examples/public-status?context=multi"
+      }
+    ]
+  },
+  "public-content": {
+    "note": "Static fictional reading examples. Help Article reuses Public Content; no interactive task or real policy is implemented.",
+    "references": [
+      {
+        "label": "Open procedural guide reference",
+        "href": "/examples/public-content"
+      },
+      {
+        "label": "Open versioned policy reference",
+        "href": "/examples/public-content?context=policy"
+      }
+    ]
+  },
+  "checkout": {
+    "note": "Simulated payments only. No payment information is collected and no charge, order, or subscription is created. State resets on reload. Production provider integration and durable recovery remain outstanding.",
+    "references": [
+      {
+        "label": "Open digital purchase checkout reference",
+        "href": "/examples/checkout"
+      },
+      {
+        "label": "Open subscription checkout reference",
+        "href": "/examples/checkout?context=subscription"
       }
     ]
   }

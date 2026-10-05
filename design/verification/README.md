@@ -62,3 +62,6 @@ Several rows can apply to one change.
 | Selecting a mode or moving between mode boundaries                   | [Experience classification and mode transitions](stress-tests.md#experience-classification-and-mode-transitions) |
 | A shared template, product instance, or reference page               | [Template conformance](stress-tests.md#template-conformance)                                                     |
 | Adding, changing, or assigning a business capability                 | [Product-domain classification](stress-tests.md#product-domain-classification)                                   |
+
+Checkout additionally uses the [payment and order workflow](workflows.md#checkout)
+and its [implementation record](checkout-evidence.md).

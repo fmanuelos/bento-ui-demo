@@ -4,7 +4,7 @@
     "path": "/design/blocks/activity-history.md",
     "title": "Activity History",
     "status": "Draft",
-    "modes": ["Application Workspace"],
+    "modes": ["Application Workspace", "Public Site"],
     "summary": "Activity History groups events about one subject so people can understand what happened, who or what caused it, and when. The block owns event relationships, visible ordering, and local detail arrangement. The product owns event authority, identity, ordering rules, access, retention, and completeness."
   },
   {
@@ -32,6 +32,14 @@
     "summary": "Completion Summary explains a confirmed task outcome, its useful reference information, and what can happen next. It owns the local relationship among outcome, details, expectations, and actions. The product and asynchronous patterns determine the authoritative outcome and whether the operation is complete."
   },
   {
+    "slug": "contents-navigation",
+    "path": "/design/blocks/contents-navigation.md",
+    "title": "Contents Navigation",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "Help readers move among substantive sections of one document using a named list of links that matches the document's heading structure."
+  },
+  {
     "slug": "customer-evidence",
     "path": "/design/blocks/customer-evidence.md",
     "title": "Customer Evidence",
@@ -56,6 +64,14 @@
     "summary": "A Feature Grid presents a concise set of peer capabilities, benefits, or service attributes so a visitor can scan and compare the offer. It composes repeated content items without implying that every item is interactive or that equal visual size means equal importance."
   },
   {
+    "slug": "flow-step-navigation",
+    "path": "/design/blocks/flow-step-navigation.md",
+    "title": "Flow Step Navigation",
+    "status": "Draft",
+    "modes": ["Focused Flow"],
+    "summary": "Show a task's meaningful step sequence, current position, and available return paths without owning validation, eligibility, persistence, or commitment."
+  },
+  {
     "slug": "form-section",
     "path": "/design/blocks/form-section.md",
     "title": "Form Section",
@@ -78,6 +94,14 @@
     "status": "Draft",
     "modes": ["Application Workspace"],
     "summary": "A Metric Overview helps a returning user scan a small set of related measures, understand their scope and freshness, and identify which value may need attention. It composes statistic cards and contextual information without turning placeholder values, visual prominence, or color into data meaning."
+  },
+  {
+    "slug": "order-summary",
+    "path": "/design/blocks/order-summary.md",
+    "title": "Order Summary",
+    "status": "Draft",
+    "modes": ["Focused Flow"],
+    "summary": "Group an order's items, quantities, adjustments, payable total, and recurring commitments so people can understand the monetary scope before acting."
   },
   {
     "slug": "page-header",
@@ -142,6 +166,14 @@
     "status": "Draft",
     "modes": ["Public Site", "Focused Flow", "Application Workspace"],
     "summary": "A Section Header introduces a distinct region within a page, names its contents, and optionally provides concise context, metadata, or a region-level action. It creates a stable relationship between a section heading and the content that follows without creating a new heading, action, or navigation component."
+  },
+  {
+    "slug": "service-status-summary",
+    "path": "/design/blocks/service-status-summary.md",
+    "title": "Service Status Summary",
+    "status": "Draft",
+    "modes": ["Public Site"],
+    "summary": "Group named service conditions with their coverage and freshness so visitors can understand what a reported status does and does not establish."
   },
   {
     "slug": "site-footer",

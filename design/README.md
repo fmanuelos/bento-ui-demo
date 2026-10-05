@@ -34,6 +34,7 @@ pnpm templates:catalog
 pnpm templates:check
 pnpm test:templates
 pnpm test:auth
+pnpm test:journeys
 pnpm components:check
 pnpm icons:check
 pnpm design:build
@@ -120,7 +121,9 @@ rejects stale metadata. Runtime availability remains separately authored in
 contracts across all three modes, generated
 catalog freshness, local links and anchors, and declared reference routes;
 `test:templates` exercises catalog and validation regressions. `test:auth` checks
-the simulated credential-validation and outcome model.
+the simulated credential-validation and outcome model. `test:journeys` checks
+step prerequisites, skipped preferences, branch invalidation, duplicate commitment,
+unknown outcomes, and sample-draft restoration.
 
 ## Experience mode documentation
 
@@ -172,9 +175,25 @@ Reference links and outcome limitations are separately authored in
 The gallery shows contract-only entries without reference links. The two existing
 account references remain simulated. Six additional drafts cover Record
 Collection, Record Detail, Settings, Product Landing, Public Content, and Account
-Recovery. Their interactive references and behavioral validation remain outstanding.
+Recovery. Public Content now has guide and policy references; the other five
+remain contract-only. Complete behavioral validation remains outstanding.
 See the [catalog implementation record](verification/template-catalog-evidence.md)
 for the checks performed and their limits.
+Account Onboarding, Application Submission, and Comparison add two simulated
+reference contexts each. Flow Step Navigation, Review Summary, and the offer-summary
+presentation of Plan Comparison now have runtime implementations. See the
+[broader journeys record](verification/broader-journeys-evidence.md) for their
+validation and integration limits.
+Initial Setup and Public Status Overview add organization/project and single/multiple
+service references. Contents Navigation and Service Status Summary are implemented,
+and Activity History now has a runtime supporting public incident updates and
+workspace history. Help Article reuses Public Content; no new primitive components
+were added. See the [setup, status, and content record](verification/setup-status-content-evidence.md).
+Checkout adds one-time digital purchase and recurring service references, supported
+by Order Summary. No payment provider is connected. See the
+[checkout record](verification/checkout-evidence.md) for model, browser, and integration
+boundaries. File Upload, Date Input, and Code Block remain conditional; the admitted
+references do not require them.
 Keep proposal lists in the template README or outside the contract directory;
 every other Markdown file in that directory is treated as a contract.
 
@@ -235,7 +254,7 @@ The repository currently passes DESIGN.md format validation with the pinned
 tooling. The component inventory and runtime documentation are structurally
 covered. Block governance and its inventory are established, with the current
 block contracts retained as Drafts pending their remaining design review.
-Runtime availability and validation evidence are tracked independently. The block inventory now contains 19 contracts, including seven
+Runtime availability and validation evidence are tracked independently. The block inventory now contains 23 contracts, including seven
 Draft additions for record details, review, completion, history, related content,
 plan comparison, and customer evidence. Each addition records two representative
 design uses and linked workflow checks; these are not claims of implemented or
@@ -244,8 +263,10 @@ as two or more explicitly named modes. Experience mode governance and the three
 canonical mode contracts are established as Drafts. The repository terminology
 migration and expanded architecture validation are complete and guarded by
 `migration:check`. Template
-governance includes eight Draft contracts across all three modes. Authentication
-and Registration have simulated reference pages; the other six are contract-only.
+governance includes fourteen Draft contracts across all three modes. Authentication,
+Registration, Account Onboarding, Application Submission, Comparison, Initial Setup,
+Public Status Overview, Public Content, and Checkout have simulated reference pages;
+the other five are contract-only.
 Complete provider and accessibility validation remains open. The initial product-domain catalog and its classification
 governance are established. The repository does not claim complete behavioral or
 product validation. A successful lint, generation, build, inventory check, or

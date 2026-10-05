@@ -2,10 +2,10 @@
 
 ## Status
 
-Draft. Informational articles and policy pages define the initial scope.
-Interactive reference pages, translated examples, and behavioral validation
-remain outstanding. Procedural help can use this contract only while its complete
-structure and outcome remain equivalent to reading a content destination.
+Draft. Informational articles, static procedural guides, and policy pages share
+the reading structure. Guide and versioned-policy references are implemented;
+complete accessibility and publication-system validation remain outstanding. See
+the [scope decision and implementation record](../verification/setup-status-content-evidence.md).
 
 ## Intent
 
@@ -14,7 +14,7 @@ resource with clear identity, hierarchy, provenance, and related destinations.
 
 ## Use when
 
-Use for an informational article and a policy page with a title, structured body,
+Use for an informational article, a static procedural guide, and a policy page with a title, structured body,
 applicable publication metadata, and supporting navigation. Short content may
 omit a contents list and related resources without changing the reading outcome.
 
@@ -38,7 +38,7 @@ a separate contract when its structure or state model materially differs.
 1. [Public-site Navigation](../blocks/public-site-navigation.md) and a main-content bypass.
 2. Optional parent navigation or breadcrumb when the hierarchy is meaningful.
 3. [Page Header](../blocks/page-header.md) with title, introductory context, and applicable metadata.
-4. Optional labelled contents navigation linked to real section headings.
+4. Optional [Contents Navigation](../blocks/contents-navigation.md) linked to real section headings.
 5. Structured article body with headings, paragraphs, lists, and applicable media or tables.
 6. Optional [Related Content](../blocks/related-content.md) after primary reading content.
 7. [Site Footer](../blocks/site-footer.md).
@@ -115,9 +115,14 @@ consumer-owned and require an explicit separate commitment boundary.
 
 ## Reference pages and validation
 
-Plan a long informational article and a versioned policy page with contents
-navigation, missing optional metadata, wide tables, broken media, archived
-content, and translated text. These references are not implemented.
+Open `/examples/public-content` for the guide and
+`/examples/public-content?context=policy` for the versioned policy. Both exercise
+Contents Navigation, archived and unavailable content, and optional-media failure.
+The guide omits optional publication metadata. Static prerequisites, instructions,
+expected results, and support links preserve the reading outcome, so a separate
+Help Article contract is not admitted. Branching troubleshooting or interactive
+acknowledgement requires a separate review. Wide tables, real translations, and
+publication-service integration remain outstanding.
 
 Apply [Public content](../verification/workflows.md#public-content),
 [Related content discovery](../verification/workflows.md#related-content-discovery)

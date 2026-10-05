@@ -22,7 +22,10 @@ export function BlockPage() {
       <p className="mt-scale-2 mb-0">Supported modes: {contract.modes.join(', ')}</p>
       <p className="mt-scale-2 mb-0">
         Validation: {contract.implementation?.validation ?? 'Not recorded'}.{' '}
-        <a className={linkStyles()} href={focusedFlowEvidenceUrl}>
+        <a
+          className={linkStyles()}
+          href={contract.implementation?.evidenceUrl ?? focusedFlowEvidenceUrl}
+        >
           Read evidence and limitations
         </a>
       </p>

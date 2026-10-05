@@ -19,7 +19,10 @@ export const templateHeadings = [
 ]
 
 const modes = {
-  'Public Site': { file: 'public-site', workflows: ['public-landing', 'public-content'] },
+  'Public Site': {
+    file: 'public-site',
+    workflows: ['public-landing', 'public-content', 'public-status'],
+  },
   'Focused Flow': { file: 'focused-flow', workflows: ['focused-flow'] },
   'Application Workspace': { file: 'application-workspace', workflows: ['application-workspace'] },
 }
