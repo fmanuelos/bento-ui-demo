@@ -14,6 +14,8 @@ Buttons, disclosures, and temporary surfaces retain their own semantics.
 
 ## Use when
 
+Supported mode is Public Site.
+
 Use this block for commercial, marketing, documentation, and informational sites
 whose primary destinations recur across pages. Use the
 [`Application Navigation block`](application-navigation.md) for authenticated,

@@ -15,7 +15,9 @@ or other first-visit page whose main purpose is orientation and a next action.
 **Related contracts:** Apply [`Hero`](../blocks/hero.md),
 [`Section Header`](../blocks/section-header.md),
 [`Call to Action`](../blocks/call-to-action.md),
-[`Feature Grid`](../blocks/feature-grid.md), and
+[`Feature Grid`](../blocks/feature-grid.md),
+[`Plan Comparison`](../blocks/plan-comparison.md),
+[`Customer Evidence`](../blocks/customer-evidence.md), and
 [`Site Footer`](../blocks/site-footer.md) when those compositions are present,
 together with the relevant navigation, action, disclosure, and media contracts.
 
@@ -55,6 +57,9 @@ long-form document that a visitor may enter at any point.
 [`Site Footer`](../blocks/site-footer.md) when those compositions are present,
 together with the relevant breadcrumb, link, alert, table, and navigation
 contracts.
+
+When contextual destinations follow the content, also apply
+[Related content discovery](#related-content-discovery).
 
 **Critical behaviors:**
 
@@ -96,6 +101,9 @@ task whose unrelated choices should be reduced.
 [`Action hierarchy and emphasis`](../patterns/action-hierarchy-and-emphasis.md).
 Apply destructive-action and temporary-surface contracts when their conditions
 are present.
+
+For pre-commitment review and confirmed outcomes, also apply
+[Review and completion](#review-and-completion).
 
 **Critical behaviors:**
 
@@ -335,6 +343,10 @@ applicable component contracts. Apply
 [`Form Section`](../blocks/form-section.md) when related fields and guidance form a
 named section within the workflow.
 
+Use [Review and completion](#review-and-completion) when the task presents a
+[Review Summary](../blocks/review-summary.md) or
+[Completion Summary](../blocks/completion-summary.md).
+
 **Critical behaviors:**
 
 - Give every field a persistent visible label and the necessary programmatic
@@ -369,6 +381,219 @@ named section within the workflow.
 
 - Preserve valid values, messages, task context, and a safe continuation across
   responsive transformations, interruption, failure, and recovery.
+
+## Record inspection and history
+
+**Outcome:** A person can inspect current record facts and understand related
+events without confusing current state, partial history, or missing information.
+
+**Use when:** Reviewing a profile, support case, publishing record, or another
+Application Workspace record with grouped attributes or chronological events.
+
+**Related contracts:** Apply [Record Details](../blocks/record-details.md),
+[Activity History](../blocks/activity-history.md),
+[Data display](../patterns/data-display.md),
+[Task continuity](../patterns/task-continuity.md), and
+[Asynchronous feedback](../patterns/async-feedback.md) as applicable.
+
+**Critical behaviors:**
+
+- Identify each fact's label, value, availability, and local action without
+  relying on columns. Keep page identity and page-wide actions in their own scope.
+- Distinguish historical event outcomes from the current record state. Name
+  chronological order and explain filtered, retained, or partial history.
+- Return from local editing to the correct record and updated facts, preserving
+  useful history context. Preserve focus and expanded detail during refresh.
+- Associate actor, action, subject, and timestamp; provide an exact time route
+  without hover and define stable ordering for equal or unknown timestamps.
+
+**Workflow-specific states:**
+
+- Exercise initial loading, current, stale, partial, missing, offline, failed,
+  and permission-limited data. Do not render placeholders as facts or events.
+- Remove restricted values, actors, and event detail after access changes,
+  including hidden and accessible content. Resolve focus when controls disappear.
+- Fail an older-events request while leaving current history usable. Deliver
+  late and duplicate events without duplication, causal claims, or scroll jumps.
+
+**Boundary and adverse cases:**
+
+- Test both Record Details examples and both Activity History examples, minimal
+  and complete anatomy, zero and many events, unknown actors or times, long
+  identifiers and addresses, timezone changes, duplicate names, and retention gaps.
+
+**Additional baseline emphasis:**
+
+- Keep label-value and event relationships intact at 200% text, 60% expansion,
+  RTL, and narrow widths. Verify keyboard, touch, screen-reader, light and dark
+  theme, forced-color, and reduced-motion behavior.
+
+## Review and completion
+
+**Outcome:** A person can check a pending commitment, correct information, and
+understand the confirmed outcome without losing work or submitting twice.
+
+**Use when:** Reviewing application submission, publication changes, import
+results, or similar tasks in Focused Flow and Application Workspace.
+
+**Related contracts:** Apply [Review Summary](../blocks/review-summary.md),
+[Completion Summary](../blocks/completion-summary.md),
+[Forms and validation](../patterns/forms-and-validation.md),
+[Task continuity](../patterns/task-continuity.md), and
+[Asynchronous feedback](../patterns/async-feedback.md). Apply
+[Destructive actions](../patterns/destructive-actions.md) when warranted.
+
+**Critical behaviors:**
+
+- Keep labelled answers, proposed changes, corrections, and material consequences
+  associated. The containing workflow owns one appropriate final action.
+- Correct an answer and return without losing unrelated work. Recompute dependent
+  answers and consequences, and ensure commitment refers to the reviewed scope.
+- Distinguish received, processed, approved, partially completed, failed, and
+  unknown outcomes. Saving a draft or queueing a request must not imply completion.
+- Preserve confirmed results when an optional receipt or result download fails.
+  Describe remaining work and the next responsible party when necessary.
+
+**Workflow-specific states:**
+
+- Test incomplete review, stale authority, permission changes, interrupted
+  corrections, pending submission, failure before and after commitment, unknown
+  outcome, and terminal partial results.
+- Reload, navigate Back and Forward, and directly open a result. Follow the
+  product's retrieval policy without submitting again or inventing success.
+- Verify that completion focus and announcements communicate the outcome once,
+  and that partial retries cannot repeat successful consequential operations.
+
+**Boundary and adverse cases:**
+
+- Cover both representative uses of each block and both supported modes. Include
+  no correction actions, no useful continuation, masked answers, long references,
+  missing optional answers, blocked requirements, and changed dependent values.
+
+**Additional baseline emphasis:**
+
+- Keep consequences and complete values visible at narrow widths, 200% text,
+  60% expansion, and RTL. Check keyboard, touch, screen readers, both themes,
+  forced colors, and reduced motion, including a transition from review to result.
+
+## Related content discovery
+
+**Outcome:** A person can understand why destinations are relevant and follow
+them without losing access to the current task's essential instructions.
+
+**Use when:** Reviewing related public articles or contextual workspace resources.
+
+**Related contracts:** Apply [Related Content](../blocks/related-content.md),
+[Link](../components/link.md), [Card](../components/card.md) when used, and
+[Asynchronous feedback](../patterns/async-feedback.md).
+
+**Critical behaviors:**
+
+- Identify each destination and its relationship to the current subject. Keep
+  required instructions in the task rather than only in optional resources.
+- Provide distinct link names and one focus target per destination within an
+  item. Do not nest controls in whole-card links.
+- Omit empty sections and use an ordinary contextual link for a single resource.
+  Remove restricted titles and summaries under the product's disclosure policy.
+
+**Workflow-specific states:**
+
+- Exercise loading, partial failure, failed media, unavailable destinations,
+  refreshed ranking, and access changes without fabricating resources or moving
+  focus unexpectedly. Remove a focused item and verify predictable continuation.
+
+**Boundary and adverse cases:**
+
+- Test both supported modes, two through the supported maximum number of items,
+  zero and one item, duplicate titles, long summaries, mixed languages, and each
+  optional region removed independently.
+
+**Additional baseline emphasis:**
+
+- Preserve source order, complete labels, metadata, and targets through 60%
+  expansion, 200% text, RTL, narrow layouts, theme changes, forced colors,
+  keyboard, touch, screen readers, and reduced motion.
+
+## Plan selection
+
+**Outcome:** A person can compare applicable offers, understand the actual price
+and limitations, and enter the correct next step for their chosen plan.
+
+**Use when:** Reviewing public pricing or account upgrade comparisons.
+
+**Related contracts:** Apply [Plan Comparison](../blocks/plan-comparison.md),
+[Table](../components/table.md) when used,
+[Data display](../patterns/data-display.md),
+[Asynchronous feedback](../patterns/async-feedback.md), and
+[Action hierarchy](../patterns/action-hierarchy-and-emphasis.md).
+
+**Critical behaviors:**
+
+- Compare consistent attributes and units. Preserve currency, period, quantity
+  basis, actual billed total, commitment, limitations, and next-action meaning.
+- Keep current, selected, and recommended plans distinguishable. Verify the
+  rationale for a recommendation and at most one primary action in the decision.
+- Change billing basis and verify prices, qualifications, selection context,
+  and destination agree. Never commit a combination of old and new offer data.
+- Confirm that the purchase flow supplies final charge and effective-date review;
+  a comparison is not itself proof of a completed subscription change.
+
+**Workflow-specific states:**
+
+- Exercise loading, refresh, partial price failure, stale offers, unavailable
+  plans, changed eligibility, changed prices, and out-of-order responses. Unknown
+  price is not free, and selecting an offer must not silently authorize purchase.
+
+**Boundary and adverse cases:**
+
+- Test both modes and both variants with two and several plans, zero or one
+  offer, free and quote-based plans, annual totals with monthly equivalents,
+  long qualifications, current usage beyond limits, and selection becoming invalid.
+
+**Additional baseline emphasis:**
+
+- Preserve table associations or equivalent labelled stacked offers at 200% text,
+  60% expansion, and narrow widths. Include long currency formats, RTL, keyboard,
+  touch, screen readers, light and dark themes, forced colors, and reduced motion.
+
+## Customer evidence assessment
+
+**Outcome:** A visitor can interpret a customer claim with its attribution,
+source context, and qualifications even when media is absent.
+
+**Use when:** Reviewing customer quotations or reported outcomes on public pages.
+
+**Related contracts:** Apply [Customer Evidence](../blocks/customer-evidence.md),
+[Link](../components/link.md), and
+[Images and media](../../DESIGN.md#images-and-media).
+
+**Critical behaviors:**
+
+- Distinguish a direct quote, paraphrase, and reported measure. Verify real
+  publication content against the product's approved source and attribution.
+- Keep customer identity, relevant role or organization, timeframe, measurement
+  basis, and material limitations associated with the claim they qualify.
+- Remove portraits and logos and confirm that attribution remains complete.
+  Verify that a broken source or withdrawn claim triggers the product's review
+  policy rather than retaining an unsupported endorsement.
+
+**Workflow-specific states:**
+
+- Exercise missing media, loading, partial failure, changed sources, withdrawn
+  permission, stale claims, and no valid evidence. Placeholders and illustrative
+  examples must never appear as published testimony or customer results.
+
+**Boundary and adverse cases:**
+
+- Cover both variants and representative uses, one and several items, long
+  quotations, translated quotations, anonymized attribution, nearby qualifiers,
+  and optional source links or media removed independently.
+
+**Additional baseline emphasis:**
+
+- Keep claims and qualifications readable together at narrow widths, 200% text,
+  60% expansion, and RTL. Check semantic quotation and attribution with screen
+  readers, keyboard, touch, both themes, forced colors, and reduced motion.
 
 ## Destructive workflow
 

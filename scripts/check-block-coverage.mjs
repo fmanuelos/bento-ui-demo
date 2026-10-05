@@ -7,7 +7,7 @@ const inventoryPath = join(blockDirectory, 'README.md')
 const docsSource = readFileSync(join(root, 'src/docs/content/library.tsx'), 'utf8')
 const exportsSource = readFileSync(join(root, 'src/components/index.ts'), 'utf8')
 const acceptedStatuses = ['Proposed', 'Draft', 'Complete', 'Deprecated']
-const acceptedClassifications = ['Shared', 'Public Site', 'Application Workspace']
+const acceptedClassifications = ['Shared', 'Public Site', 'Focused Flow', 'Application Workspace']
 const requiredHeadings = [
   'Status',
   'Intent',

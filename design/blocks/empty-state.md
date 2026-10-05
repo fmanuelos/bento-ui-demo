@@ -14,6 +14,8 @@ new interactive role.
 
 ## Use when
 
+Supported modes are Public Site and Application Workspace.
+
 Use this block after the containing collection or page has determined why content
 cannot be presented. It may appear compactly inside a bounded collection or
 spaciously when absence is the page's primary content.
@@ -24,6 +26,9 @@ Do not show Empty State before an initial request completes. Use
 [`Progress`](../components/progress.md) while work is underway and
 [`Alert`](../components/alert.md) when a message must remain near otherwise usable
 content. Do not use generic encouragement merely to fill space.
+
+Use [Completion Summary](completion-summary.md) for a confirmed task outcome;
+successful completion and absence of expected content have different purposes.
 
 ## Anatomy
 

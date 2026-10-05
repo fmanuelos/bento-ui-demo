@@ -17,6 +17,8 @@ existing contracts and state ownership.
 
 ## Use when
 
+Supported modes are Public Site and Application Workspace.
+
 Use a Page Header when a page needs clear identity or task context before its
 primary content. It may introduce a public article, a settings page, a record
 detail, or a dashboard view.

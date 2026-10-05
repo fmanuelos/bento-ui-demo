@@ -137,9 +137,11 @@ cropped, responsive, linked, animated, or asynchronously loaded media.
 
 **Related contracts:** Apply the shared
 [`Images and media`](../../DESIGN.md#images-and-media) foundation and the applicable
-component or composition contract. Apply [`Hero`](../blocks/hero.md) and
-[`Call to Action`](../blocks/call-to-action.md), or
-[`Feature Grid`](../blocks/feature-grid.md) when media participates in those blocks.
+component or composition contract. Apply [`Hero`](../blocks/hero.md),
+[`Call to Action`](../blocks/call-to-action.md),
+[`Feature Grid`](../blocks/feature-grid.md),
+[`Related Content`](../blocks/related-content.md), or
+[`Customer Evidence`](../blocks/customer-evidence.md) when media participates in those blocks.
 
 **Critical behaviors:**
 
@@ -317,11 +319,18 @@ claims conformance with one.
 **Related contracts:** Apply the relevant block contract:
 [`Hero`](../blocks/hero.md), [`Page Header`](../blocks/page-header.md),
 [`Section Header`](../blocks/section-header.md),
-[`Call to Action`](../blocks/call-to-action.md), or
+[`Call to Action`](../blocks/call-to-action.md),
 [`Metric Overview`](../blocks/metric-overview.md),
 [`Feature Grid`](../blocks/feature-grid.md), [`Site Footer`](../blocks/site-footer.md),
-[`Form Section`](../blocks/form-section.md), or
-[`Results Toolbar`](../blocks/results-toolbar.md). Apply every participating
+[`Form Section`](../blocks/form-section.md),
+[`Results Toolbar`](../blocks/results-toolbar.md),
+[`Record Details`](../blocks/record-details.md),
+[`Review Summary`](../blocks/review-summary.md),
+[`Completion Summary`](../blocks/completion-summary.md),
+[`Activity History`](../blocks/activity-history.md),
+[`Related Content`](../blocks/related-content.md),
+[`Plan Comparison`](../blocks/plan-comparison.md), or
+[`Customer Evidence`](../blocks/customer-evidence.md). Apply every participating
 component and experience pattern named by that block.
 
 **Critical behaviors:**
@@ -329,6 +338,10 @@ component and experience pattern named by that block.
 - Verify the required anatomy first, then remove each optional region separately.
   Remaining content must reflow without empty wrappers, reserved gaps, orphaned
   headings, or controls that lose their subject.
+- Verify every mode named in the block's Use when section. Shared means two or
+  more declared modes, not automatic support for every mode. Exercise both
+  representative uses for each of the seven new Draft contracts and record
+  remaining implementation evidence separately from the design examples.
 - Confirm that the authored reading and focus order preserves the contract's
   hierarchy in every visual variant. Columns, inline regions, centering, and
   media placement must not create a contradictory sequence.

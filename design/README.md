@@ -94,6 +94,17 @@ examples, screenshots, and product instances are implementation evidence and do
 not redefine their contracts. Run `pnpm blocks:check` after changing a block
 contract or its inventory; the full `pnpm check` command runs it automatically.
 
+The seven additional Draft contracts address recurring gaps in record inspection,
+task review and completion, event history, contextual resources, offer comparison,
+and attributed customer evidence. This is an additive contract change. Existing
+blocks retain their purposes and supported modes; named cross-links explain the
+boundaries. Extending Feature Grid, Metric Overview, or Empty State to cover these
+needs would change their essential content relationships. Keeping them as local
+compositions also avoids prescribing complete pages or duplicating workflow state
+ownership. No runtime consumer or token migration is required. Their two design
+examples per contract establish intended reuse; rendered validation and shared
+implementations remain future work tracked separately from contract maturity.
+
 ## Experience mode documentation
 
 The files in `design/experiences/` define the mode-level navigation, layout,
@@ -183,9 +194,15 @@ The repository currently passes DESIGN.md format validation with the pinned
 tooling. The component inventory and runtime documentation are structurally
 covered. Block governance and its inventory are established, with the current
 block contracts retained as Drafts until shared implementation and validation
-coverage exist. Experience mode governance and the three canonical mode contracts
-are established as Drafts. The repository terminology migration and expanded
-architecture validation are complete and guarded by `migration:check`. Template
+coverage exist. The block inventory now contains 19 contracts, including seven
+Draft additions for record details, review, completion, history, related content,
+plan comparison, and customer evidence. Each addition records two representative
+design uses and linked workflow checks; these are not claims of implemented or
+validated reuse. Block classification supports Focused Flow and defines Shared
+as two or more explicitly named modes. Experience mode governance and the three
+canonical mode contracts are established as Drafts. The repository terminology
+migration and expanded architecture validation are complete and guarded by
+`migration:check`. Template
 governance is established, but no shared template has yet satisfied admission and
 completion review. The initial product-domain catalog and its classification
 governance are established. The repository does not claim complete behavioral or

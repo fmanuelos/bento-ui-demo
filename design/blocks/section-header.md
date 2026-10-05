@@ -14,6 +14,8 @@ follows without creating a new heading, action, or navigation component.
 
 ## Use when
 
+Supported modes are Public Site and Application Workspace.
+
 Use a Section Header before a meaningful content, feature, form, collection, or
 data region when a heading alone does not provide enough context or when a local
 action needs a clear scope.

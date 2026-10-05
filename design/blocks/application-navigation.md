@@ -13,6 +13,8 @@ communicates location without presenting navigation as an in-place action.
 
 ## Use when
 
+Supported mode is Application Workspace.
+
 Use this block for authenticated, administrative, operational, analytical, or
 other recurring workspaces where primary destinations persist across related
 pages. Apply the

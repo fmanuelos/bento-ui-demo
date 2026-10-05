@@ -19,6 +19,8 @@ asynchronous patterns own the complete task sequence.
 
 ## Use when
 
+Supported modes are Public Site and Application Workspace.
+
 Use a Form Section when a form contains a meaningful group of related inputs
 that benefits from a visible heading, optional explanation, and a stable
 relationship to section-specific status or actions. Use multiple sections when
@@ -34,6 +36,10 @@ multi-step sequence, navigation, persistence, and recovery model.
 Form-level submission, cancellation, error summaries, unsaved-work warnings,
 and final destructive commitment belong to the containing form and applicable
 experience patterns. Do not repeat them in every section.
+
+Use [Review Summary](review-summary.md) to arrange answers before commitment and
+[Completion Summary](completion-summary.md) to explain a confirmed outcome.
+Those blocks do not transfer submission ownership to a Form Section.
 
 ## Anatomy
 

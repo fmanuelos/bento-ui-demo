@@ -50,6 +50,11 @@ Several rows can apply to one change.
 | Charts, plots, or compact analytical trends                          | [Data visualization](stress-tests.md#data-visualization)                                                         |
 | Search, filtering, tables, pagination, or bulk operations            | [Data management](workflows.md#data-management)                                                                  |
 | Entering, editing, validating, or saving user-provided data          | [Form workflow](workflows.md#form-workflow)                                                                      |
+| Inspecting record facts or chronological events                      | [Record inspection and history](workflows.md#record-inspection-and-history)                                      |
+| Checking a pending commitment or interpreting its confirmed result   | [Review and completion](workflows.md#review-and-completion)                                                      |
+| Contextual guides, resources, or related destinations                | [Related content discovery](workflows.md#related-content-discovery)                                              |
+| Public pricing or account upgrade comparisons                        | [Plan selection](workflows.md#plan-selection)                                                                    |
+| Attributed customer quotations or reported outcomes                  | [Customer evidence assessment](workflows.md#customer-evidence-assessment)                                        |
 | Permanent, broad-scope, or otherwise consequential loss              | [Destructive workflow](workflows.md#destructive-workflow)                                                        |
 | Meaningful images, charts, illustrations, video, or animation        | [Images and media](stress-tests.md#images-and-media)                                                             |
 | Competing, nested, destructive, or changing actions                  | [Action hierarchy and emphasis](stress-tests.md#action-hierarchy-and-emphasis)                                   |

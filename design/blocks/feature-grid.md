@@ -34,6 +34,10 @@ in its consuming page until repeated use establishes a stable contract.
 Do not make every item a card-shaped link solely to create a larger target. An
 item is interactive only when it has a real destination or bounded action.
 
+Use [Plan Comparison](plan-comparison.md) for comparable offers and their prices,
+[Related Content](related-content.md) for contextual destinations, and
+[Customer Evidence](customer-evidence.md) for attributed claims and outcomes.
+
 ## Anatomy
 
 1. Required section heading

@@ -18,6 +18,8 @@ state, freshness, loading, failure, and recovery behavior.
 
 ## Use when
 
+Supported mode is Application Workspace.
+
 Use a Metric Overview near the beginning of a dashboard view when several
 high-value measures summarize the same operational scope and comparison across
 them supports the next task.
@@ -27,9 +29,9 @@ them supports the next task.
 Do not use a Metric Overview for unrelated numbers, decorative counters,
 complete analytical exploration, or a large record set. Use a table, chart, or
 dedicated analysis surface when relationships require axes, many categories,
-time-series inspection, or exact row-level comparison. Public Site claims or
-marketing statistics belong to an evidence composition rather than this
-operational block.
+time-series inspection, or exact row-level comparison. Attributed Public Site
+customer claims or marketing outcomes belong to
+[Customer Evidence](customer-evidence.md) rather than this operational block.
 
 A Metric Overview does not include charts by default. Textual values,
 comparisons, targets, timeframes, and status remain the baseline presentation. A
