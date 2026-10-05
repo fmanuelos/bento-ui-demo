@@ -277,6 +277,11 @@ representative and adverse content to test the template, participating contracts
 and mode rules. Reference pages are validation evidence; they are not canonical
 product content, required route structures, or visual snapshots to reproduce.
 
+In each contract's Reference pages and validation section, name the scenarios and
+required behavior to validate. Maintain demo URLs in
+[`template-references.json`](../../src/docs/content/template-references.json),
+which supplies the documentation's reference links.
+
 Maintain enough reference instances to cover materially different states rather
 than creating one idealized example. A product screenshot does not become a
 reference page unless the design system adopts and maintains it for that purpose.

@@ -147,7 +147,7 @@ checkout needs them, assess and define their own contracts before adding them.
 
 ## Reference pages and validation
 
-Open `/examples/checkout` and `/examples/checkout?context=subscription`.
+Validate one-time digital purchases and recurring service subscriptions.
 Exercise quantity correction, first-payment versus renewal amounts, quote changes,
 expiry, unavailable offers, duplicate prevention, decline, verification cancellation,
 provider return, unresolved checks, confirmed-unpaid recovery, fulfillment delay,

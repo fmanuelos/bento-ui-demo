@@ -115,8 +115,7 @@ consumer-owned and require an explicit separate commitment boundary.
 
 ## Reference pages and validation
 
-Open `/examples/public-content` for the guide and
-`/examples/public-content?context=policy` for the versioned policy. Both exercise
+Validate procedural guides and versioned policies. Both exercise
 Contents Navigation, archived and unavailable content, and optional-media failure.
 The guide omits optional publication metadata. Static prerequisites, instructions,
 expected results, and support links preserve the reading outcome, so a separate
@@ -131,7 +130,7 @@ when related resources participate,
 [baseline validation](../verification/baseline.md). Record actual reading,
 anchor-navigation, responsive, localized, and accessibility results.
 
-The technical context `/examples/public-content?context=technical` demonstrates
+The technical-guide reference demonstrates
 [Code Block](../components/code-block.md) with JSON configuration and HTTP request
 examples. Copying is not execution. A denied-copy control exercises manual-copy
 feedback; long lines scroll within their code region. See the

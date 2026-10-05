@@ -114,8 +114,7 @@ entry descriptions; their success does not establish a real profile or membershi
 
 ## Reference pages and validation
 
-Open `/examples/account-onboarding` and
-`/examples/account-onboarding?context=invited`. Exercise required input, skip,
+Validate individual and invited-user onboarding. Exercise required input, skip,
 correction, explicit draft save and resume, expiry, failed submission, duplicate
 activation, unknown result reconciliation, and confirmed completion.
 

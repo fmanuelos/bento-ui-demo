@@ -122,8 +122,7 @@ Reference previews use sample values and simulated results without network calls
 
 ## Reference pages and validation
 
-Open `/examples/registration` for self-service or
-`/examples/registration?context=invitation` for the invitation context. Exercise
+Validate self-service and invited registration. Exercise
 missing and malformed values, the displayed sample password rule, submission
 failure with retained input, duplicate activation, interrupted submission,
 intentional exit, confirmed creation, and verification-required completion.

@@ -113,8 +113,7 @@ They do not implement a real session or an authentication service.
 
 ## Reference pages and validation
 
-Open `/examples/authentication` for login or
-`/examples/authentication?context=reauthentication` for renewal. Exercise required
+Validate login and reauthentication for session renewal. Exercise required
 and malformed input, successful continuation, rejected credentials, service
 failure, pending duplicate activation, exit during a pending request, password
 reveal, reload, and safe return. Reload starts a fresh reference task; no sample

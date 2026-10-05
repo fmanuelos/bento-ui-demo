@@ -115,8 +115,7 @@ retaining separate entry descriptions and draft contexts.
 
 ## Reference pages and validation
 
-Open `/examples/application-submission` and
-`/examples/application-submission?context=service`. Exercise required fields,
+Validate membership and service applications. Exercise required fields,
 organization branch validation, correction and dependent-value clearing, draft
 save and resume, interrupted pending work, service failure, duplicate submission,
 unknown outcome, and receipt distinct from approval.

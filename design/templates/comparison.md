@@ -109,7 +109,7 @@ exercise subscription and service packages without real monetary operations.
 
 ## Reference pages and validation
 
-Open `/examples/comparison` and `/examples/comparison?context=services`.
+Validate subscription-plan and recurring-service-package comparisons.
 Exercise billing-basis changes, selection clearing, loading without prices,
 independent offer unavailability, stale-price refresh, narrow layouts, and RTL.
 

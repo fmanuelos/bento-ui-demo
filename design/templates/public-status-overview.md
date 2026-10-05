@@ -112,7 +112,7 @@ does not require a monitoring provider, notification service, or chart component
 
 ## Reference pages and validation
 
-Open `/examples/public-status` and `/examples/public-status?context=multi`.
+Validate single-service and multi-service status overviews.
 Exercise all scenario controls, stale and incomplete coverage, multiple service
 conditions, maintenance, and public incident ordering. Apply
 [Public status](../verification/workflows.md#public-status),

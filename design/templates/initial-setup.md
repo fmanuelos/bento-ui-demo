@@ -116,7 +116,7 @@ server after departure; resume must read authoritative state before retrying.
 
 ## Reference pages and validation
 
-Open `/examples/initial-setup` and `/examples/initial-setup?context=project`.
+Validate organization and project provisioning.
 Exercise required input, correction, duplicate prevention, failure before creation,
 partial creation and retry, unknown outcome and checking, exit, reload, and long
 names. Apply [Focused Flow](../verification/workflows.md#focused-flow),
