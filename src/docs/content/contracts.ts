@@ -1,5 +1,7 @@
 import catalog from './block-catalog.json'
 import implementations from './block-implementations.json'
+import templates from './template-catalog.json'
+import templateReferences from './template-references.json'
 
 const sources = import.meta.glob<string>(['/design/blocks/*.md', '/design/templates/*.md'], {
   query: '?raw',
@@ -32,6 +34,19 @@ export const blockCatalog = catalog.map((block) => ({
   implementation: implementationMap[block.slug],
 }))
 export const blockCatalogBySlug = new Map(blockCatalog.map((block) => [block.slug, block]))
+
+type TemplateReferences = {
+  note: string
+  references: { label: string; href: string }[]
+}
+const referenceMap: Record<string, TemplateReferences | undefined> = templateReferences
+export const templateCatalog = templates.map((template) => ({
+  ...template,
+  reference: referenceMap[template.slug],
+}))
+export const templateCatalogBySlug = new Map(
+  templateCatalog.map((template) => [template.slug, template]),
+)
 
 /** Resolve authored links without assuming Markdown files are served at runtime. */
 export function contractLink(target: string, sourcePath: string) {

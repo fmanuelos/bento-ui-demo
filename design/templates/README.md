@@ -52,7 +52,7 @@ exists, an adapter implements it, or a reference page has passed validation.
 
 Page templates support content-led discovery, comprehension, comparison, trust,
 and navigation under the [Public Site](../experiences/public-site.md) contract.
-Candidate templates include:
+Examples include:
 
 - Product or service landing page.
 - Public content or article page.
@@ -64,8 +64,7 @@ Candidate templates include:
 
 Flow templates define a bounded task, its meaningful states or steps,
 persistence, commitment, exit, and recovery under the
-[Focused Flow](../experiences/focused-flow.md) contract. Candidate templates
-include:
+[Focused Flow](../experiences/focused-flow.md) contract. Examples include:
 
 - Authentication and reauthentication.
 - Account recovery.
@@ -82,7 +81,7 @@ artificial steps merely to match another flow.
 Workspace templates support recurring work across related destinations, records,
 settings, or data under the
 [Application Workspace](../experiences/application-workspace.md) contract.
-Candidate templates include:
+Examples include:
 
 - Workspace overview or dashboard.
 - Record collection.
@@ -94,20 +93,34 @@ Candidate templates include:
 A dashboard is an overview template centered on metrics, summaries, status, or
 attention. It is not the general name for every authenticated template.
 
-Candidate names describe possible admission scope, not approved contracts. Add a
-template file and inventory entry only after its repeated structure and outcome
-satisfy the admission criteria.
+The current inventory below distinguishes admitted contracts from possible
+structures in these categories. Add a template file and inventory entry only after
+its repeated structure and outcome satisfy the admission criteria.
 
 ## Current contracts
 
-| Template                            | Mode         | Contract maturity | Representative uses                     |
-| ----------------------------------- | ------------ | ----------------- | --------------------------------------- |
-| [Authentication](authentication.md) | Focused Flow | Draft             | Login; reauthentication                 |
-| [Registration](registration.md)     | Focused Flow | Draft             | Self-service creation; invited creation |
+| Template                                  | Mode                  | Contract maturity | Representative uses                              |
+| ----------------------------------------- | --------------------- | ----------------- | ------------------------------------------------ |
+| [Authentication](authentication.md)       | Focused Flow          | Draft             | Login; reauthentication                          |
+| [Registration](registration.md)           | Focused Flow          | Draft             | Self-service creation; invited creation          |
+| [Account Recovery](account-recovery.md)   | Focused Flow          | Draft             | Forgotten password; expired reset-link recovery  |
+| [Product Landing](product-landing.md)     | Public Site           | Draft             | Product introduction; service introduction       |
+| [Public Content](public-content.md)       | Public Site           | Draft             | Informational article; policy page               |
+| [Record Collection](record-collection.md) | Application Workspace | Draft             | Article library; support queue                   |
+| [Record Detail](record-detail.md)         | Application Workspace | Draft             | Article record; support case                     |
+| [Settings](settings.md)                   | Application Workspace | Draft             | Personal preferences; organization configuration |
 
-These admitted drafts define initial reusable structures. Their reference pages
-use simulated operations; real provider integration and broader validation remain
-separate in the [implementation record](../verification/focused-flow-evidence.md).
+Authentication and Registration have simulated reference pages with partial
+validation in the [Focused Flow implementation record](../verification/focused-flow-evidence.md).
+The six additional drafts specify representative uses and validation requirements;
+interactive reference pages and behavioral validation remain outstanding. Their
+admission establishes a shared draft structure, not validated product reuse.
+
+The [repository workflow](../README.md#template-documentation) describes catalog
+generation and independent reference availability. Contract maturity remains
+owned by each contract's Status section. See the
+[catalog implementation record](../verification/template-catalog-evidence.md) for
+structural checks, documentation observations, and remaining validation.
 
 ## Admission criteria
 

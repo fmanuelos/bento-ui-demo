@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "account-recovery",
+    "path": "/design/templates/account-recovery.md",
+    "title": "Account Recovery",
+    "status": "Draft",
+    "mode": "Focused Flow",
+    "summary": "Help people regain access through an authorized password-reset process with clear request, reset, failure, and completion boundaries."
+  },
+  {
+    "slug": "authentication",
+    "path": "/design/templates/authentication.md",
+    "title": "Authentication",
+    "status": "Draft",
+    "mode": "Focused Flow",
+    "summary": "Provide a bounded task for establishing or renewing access while preserving the intended destination and any safely recoverable work."
+  },
+  {
+    "slug": "product-landing",
+    "path": "/design/templates/product-landing.md",
+    "title": "Product Landing",
+    "status": "Draft",
+    "mode": "Public Site",
+    "summary": "Help visitors understand a product or service, assess relevant evidence, and choose a clearly described next action."
+  },
+  {
+    "slug": "public-content",
+    "path": "/design/templates/public-content.md",
+    "title": "Public Content",
+    "status": "Draft",
+    "mode": "Public Site",
+    "summary": "Help visitors read, understand, and navigate a durable public information resource with clear identity, hierarchy, provenance, and related destinations."
+  },
+  {
+    "slug": "record-collection",
+    "path": "/design/templates/record-collection.md",
+    "title": "Record Collection",
+    "status": "Draft",
+    "mode": "Application Workspace",
+    "summary": "Help people find, compare, select, and act on a collection of records while preserving their query and their place when inspecting an individual record."
+  },
+  {
+    "slug": "record-detail",
+    "path": "/design/templates/record-detail.md",
+    "title": "Record Detail",
+    "status": "Draft",
+    "mode": "Application Workspace",
+    "summary": "Help people understand one record, its current state and history, and the actions they can take while retaining a meaningful path back to related work."
+  },
+  {
+    "slug": "registration",
+    "path": "/design/templates/registration.md",
+    "title": "Registration",
+    "status": "Draft",
+    "mode": "Focused Flow",
+    "summary": "Collect only the information needed to create an account, explain material requirements before commitment, and identify whether the account is active or still awaiting verification."
+  },
+  {
+    "slug": "settings",
+    "path": "/design/templates/settings.md",
+    "title": "Settings",
+    "status": "Draft",
+    "mode": "Application Workspace",
+    "summary": "Help people review and change persistent preferences or configuration with clear save boundaries, understandable consequences, and protection for unsaved work."
+  }
+]

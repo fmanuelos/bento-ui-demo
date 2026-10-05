@@ -1,25 +1,23 @@
 import { Card, Link, StatusBadge } from '../../components'
 import { DocsBackToTop } from '../components/DocsBackToTop'
 import { DocsSection, PageIntro } from '../components/DocsSection'
+import { templateCatalog } from '../content/contracts'
 
 const templateCategories = [
   {
     mode: 'Public Site',
     kind: 'Page templates',
-    candidates:
-      'Product or service landing, public content, comparison, help article, public status overview',
+    candidates: 'Comparison, help article, public status overview',
   },
   {
     mode: 'Focused Flow',
     kind: 'Flow templates',
-    candidates:
-      'Authentication, account recovery, onboarding, checkout, application submission, initial setup',
+    candidates: 'Onboarding, checkout, application submission, initial setup',
   },
   {
     mode: 'Application Workspace',
     kind: 'Workspace templates',
-    candidates:
-      'Workspace overview or dashboard, record collection, record detail, editor, settings, administrative management',
+    candidates: 'Workspace overview, content editor, access management',
   },
 ] as const
 
@@ -33,29 +31,44 @@ export function TemplatesPage() {
       />
 
       <div className="rounded-shape-lg border border-border-warning bg-feedback-warning-background p-scale-4 text-feedback-warning-foreground">
-        <StatusBadge variant="warning">Governance established</StatusBadge>
+        <StatusBadge variant="warning">Contract and reference coverage</StatusBadge>
         <p className="mt-scale-3 mb-0 text-body-sm leading-relaxed">
-          Authentication and Registration now have Draft contracts and simulated reference pages.
-          Broader provider and accessibility validation remains outstanding; other names below are
-          candidate scopes.
+          {templateCatalog.length} contracts across three experience modes. Contract maturity and
+          interactive reference availability are tracked separately. Reference screens provide
+          partial evidence; they do not establish complete behavioral or accessibility validation.
         </p>
       </div>
 
-      <DocsSection id="current" title="Current template contracts">
-        <div className="grid gap-scale-4 sm:grid-cols-2">
-          <Card>
-            <h3 className="mt-0 text-heading-sm font-semibold">Authentication</h3>
-            <p>Login and reauthentication in Focused Flow.</p>
-            <Link href="/docs/templates/authentication">Read contract and open references</Link>
-          </Card>
-          <Card>
-            <h3 className="mt-0 text-heading-sm font-semibold">Registration</h3>
-            <p>Self-service and invited account creation in Focused Flow.</p>
-            <Link href="/docs/templates/registration">Read contract and open references</Link>
-          </Card>
-        </div>
-      </DocsSection>
-      <DocsSection id="categories" title="Template categories">
+      {templateCategories.map((category) => (
+        <DocsSection
+          key={category.mode}
+          id={category.mode.toLowerCase().replaceAll(' ', '-')}
+          title={`${category.mode} templates`}
+        >
+          <div className="grid gap-scale-4 sm:grid-cols-2">
+            {templateCatalog
+              .filter((template) => template.mode === category.mode)
+              .map((template) => (
+                <Card key={template.slug}>
+                  <div className="flex flex-wrap items-center gap-scale-2">
+                    <StatusBadge variant={template.status === 'Draft' ? 'warning' : 'neutral'}>
+                      {template.status}
+                    </StatusBadge>
+                    <span className="text-body-sm text-text-secondary">
+                      {template.reference ? 'References available' : 'Contract only'}
+                    </span>
+                  </div>
+                  <h3 className="mt-scale-3 text-heading-sm font-semibold">{template.title}</h3>
+                  <p>{template.summary}</p>
+                  <Link href={`/docs/templates/${template.slug}`}>
+                    Read {template.title} contract
+                  </Link>
+                </Card>
+              ))}
+          </div>
+        </DocsSection>
+      ))}
+      <DocsSection id="categories" title="Future template candidates">
         <div className="grid gap-scale-3 lg:grid-cols-3">
           {templateCategories.map((category) => (
             <Card compact key={category.mode}>

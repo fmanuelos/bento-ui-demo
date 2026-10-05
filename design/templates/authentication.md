@@ -20,8 +20,8 @@ The reference page demonstrates both contexts with simulated outcomes.
 
 ## Do not use when
 
-Use [Registration](registration.md) to create an account. Account recovery,
-identity verification, provider selection, and multi-factor challenges need
+Use [Registration](registration.md) to create an account. [Account Recovery](account-recovery.md) defines password-reset recovery.
+Identity verification, provider selection, and multi-factor challenges need
 explicitly defined steps when required; do not represent them as generic login
 errors or add nonfunctional provider buttons.
 

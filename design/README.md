@@ -30,7 +30,9 @@ pnpm design:lint
 pnpm migration:check
 pnpm blocks:catalog
 pnpm blocks:check
+pnpm templates:catalog
 pnpm templates:check
+pnpm test:templates
 pnpm test:auth
 pnpm components:check
 pnpm icons:check
@@ -114,9 +116,11 @@ The documentation gallery uses the generated `src/docs/content/block-catalog.jso
 for names, modes, maturity, and summaries, loading full contracts only on demand.
 Run `pnpm blocks:catalog` after changing those contract fields; `blocks:check`
 rejects stale metadata. Runtime availability remains separately authored in
-`src/docs/content/block-implementations.json`. `templates:check` checks the two
-Focused Flow contracts and reference routes; `test:auth` checks the simulated
-credential-validation and outcome model.
+`src/docs/content/block-implementations.json`. `templates:check` checks template
+contracts across all three modes, generated
+catalog freshness, local links and anchors, and declared reference routes;
+`test:templates` exercises catalog and validation regressions. `test:auth` checks
+the simulated credential-validation and outcome model.
 
 ## Experience mode documentation
 
@@ -149,6 +153,30 @@ repeated use demonstrates a stable shared contract.
 Template contracts are normative design sources. Product pages and flow steps
 are consuming instances; reference pages are design-system validation evidence.
 Neither silently changes the shared template contract.
+
+The gallery reads generated `src/docs/content/template-catalog.json` metadata.
+Run `pnpm templates:catalog` after changing titles, Status, Intent, Classification,
+or the set of template files. Use `# Name template`, begin Status with a maturity
+word, and declare one `Primary mode:` list item in Classification, linking the
+canonical mode name to its experience contract and ending with a period. Existing
+contracts demonstrate the exact syntax. Keep all 14 required sections in the
+documented order.
+`templates:check` rejects stale catalog data and invalid mode/workflow combinations.
+Public Site contracts link Public landing or Public content as appropriate;
+Focused Flow and Application Workspace contracts link their respective mode
+workflows plus task-specific checks. Every contract links the baseline and
+Template conformance checks.
+
+Reference links and outcome limitations are separately authored in
+`src/docs/content/template-references.json`; only add links to implemented routes.
+The gallery shows contract-only entries without reference links. The two existing
+account references remain simulated. Six additional drafts cover Record
+Collection, Record Detail, Settings, Product Landing, Public Content, and Account
+Recovery. Their interactive references and behavioral validation remain outstanding.
+See the [catalog implementation record](verification/template-catalog-evidence.md)
+for the checks performed and their limits.
+Keep proposal lists in the template README or outside the contract directory;
+every other Markdown file in that directory is treated as a contract.
 
 ## Product-domain documentation
 
@@ -216,8 +244,9 @@ as two or more explicitly named modes. Experience mode governance and the three
 canonical mode contracts are established as Drafts. The repository terminology
 migration and expanded architecture validation are complete and guarded by
 `migration:check`. Template
-governance includes Draft Authentication and Registration contracts with simulated
-reference pages; complete provider and accessibility validation remains open. The initial product-domain catalog and its classification
+governance includes eight Draft contracts across all three modes. Authentication
+and Registration have simulated reference pages; the other six are contract-only.
+Complete provider and accessibility validation remains open. The initial product-domain catalog and its classification
 governance are established. The repository does not claim complete behavioral or
 product validation. A successful lint, generation, build, inventory check, or
 visual inspection is a prerequisite, not

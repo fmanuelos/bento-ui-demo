@@ -22,7 +22,7 @@ understandable result. The reference page demonstrates both entry contexts.
 ## Do not use when
 
 Use [Authentication](authentication.md) for existing accounts. Detailed profile
-onboarding, account recovery, payment, and organizational approval are separate
+onboarding, [account recovery](account-recovery.md), payment, and organizational approval are separate
 steps only when their requirements justify them. Do not require a review screen
 for a small account form solely to reuse Review Summary.
 
