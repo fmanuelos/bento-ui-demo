@@ -27,7 +27,7 @@ export function ComparisonReferencePage() {
       <SkipLink targetId="comparison-content">Skip to comparison</SkipLink>
       <aside
         aria-label="Reference preview controls"
-        className="space-y-scale-3 border-b border-border-secondary bg-surface-secondary p-scale-4"
+        className="grid gap-scale-3 border-b border-border-secondary bg-surface-secondary p-scale-4"
       >
         <p className="m-0 text-body-sm">
           Reference preview · Fictional USD offers. Selection creates no purchase or subscription.

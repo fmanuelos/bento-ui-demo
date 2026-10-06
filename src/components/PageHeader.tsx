@@ -30,7 +30,7 @@ export function PageHeader({
   const headingId = `${id ?? generatedId}-heading`
   const Heading = `h${headingLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return (
-    <header id={id} className={`min-w-0 space-y-scale-3 ${className}`} {...props}>
+    <header id={id} className={`grid min-w-0 grid-cols-1 gap-scale-3 ${className}`} {...props}>
       {context && <div className="text-body-sm text-text-secondary">{context}</div>}
       <Heading
         id={headingId}

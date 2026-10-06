@@ -11,7 +11,7 @@ export function ContentsNavigation({ label = 'On this page', items }: ContentsNa
   return (
     <nav
       aria-label={label}
-      className="space-y-scale-3 rounded-shape-md border border-border-secondary p-scale-4"
+      className="grid grid-cols-1 gap-scale-3 rounded-shape-md border border-border-secondary p-scale-4"
     >
       <p className="m-0 font-semibold">{label}</p>
       <ol className="m-0 list-decimal space-y-scale-2 ps-scale-6">

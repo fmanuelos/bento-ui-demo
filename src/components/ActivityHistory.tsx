@@ -28,7 +28,7 @@ export function ActivityHistory({
   const id = useId()
   const Heading = `h${headingLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return (
-    <section aria-labelledby={id} className="space-y-scale-4">
+    <section aria-labelledby={id} className="grid grid-cols-1 gap-scale-4">
       <Heading id={id} className="m-0 text-heading-md font-semibold break-words">
         {title}
       </Heading>
@@ -37,17 +37,19 @@ export function ActivityHistory({
       {events.length ? (
         <ol className="m-0 list-decimal space-y-scale-5 ps-scale-6">
           {events.map((event) => (
-            <li key={event.id} className="space-y-scale-2 break-words">
-              <p className="m-0 font-semibold">{event.description}</p>
-              <p className="m-0 text-body-sm text-text-secondary">
-                {event.timestamp ? (
-                  <time dateTime={event.timestamp.dateTime}>{event.timestamp.label}</time>
-                ) : (
-                  'Time unknown'
-                )}
-                {event.actor && <> · {event.actor}</>}
-              </p>
-              {event.detail}
+            <li key={event.id} className="break-words">
+              <div className="grid grid-cols-1 gap-scale-2">
+                <p className="m-0 font-semibold">{event.description}</p>
+                <p className="m-0 text-body-sm text-text-secondary">
+                  {event.timestamp ? (
+                    <time dateTime={event.timestamp.dateTime}>{event.timestamp.label}</time>
+                  ) : (
+                    'Time unknown'
+                  )}
+                  {event.actor && <> · {event.actor}</>}
+                </p>
+                {event.detail}
+              </div>
             </li>
           ))}
         </ol>

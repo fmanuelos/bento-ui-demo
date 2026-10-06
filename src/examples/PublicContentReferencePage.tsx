@@ -234,7 +234,11 @@ export function PublicContentReferencePage() {
               }))}
             />
             {sections.map((section) => (
-              <section key={section.id} aria-labelledby={section.id} className="space-y-scale-3">
+              <section
+                key={section.id}
+                aria-labelledby={section.id}
+                className="grid grid-cols-1 gap-scale-3"
+              >
                 <h2
                   id={section.id}
                   tabIndex={-1}

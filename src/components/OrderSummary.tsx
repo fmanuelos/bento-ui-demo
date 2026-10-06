@@ -38,7 +38,7 @@ export function OrderSummary({
   return (
     <section
       aria-labelledby={id}
-      className="space-y-scale-4 rounded-shape-md border border-border-secondary p-scale-4 break-words"
+      className="grid grid-cols-1 gap-scale-4 rounded-shape-md border border-border-secondary p-scale-4 break-words [&>button]:justify-self-start"
     >
       <Heading id={id} className="m-0 text-heading-md font-semibold">
         {title}
@@ -56,7 +56,7 @@ export function OrderSummary({
             {items.map((item) => (
               <li
                 key={item.id}
-                className="space-y-scale-2 border-b border-border-secondary pb-scale-4"
+                className="grid grid-cols-1 gap-scale-2 border-b border-border-secondary pb-scale-4"
               >
                 <p className="m-0 font-semibold">{item.name}</p>
                 <dl className="m-0 grid gap-scale-2">

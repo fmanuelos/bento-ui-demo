@@ -25,7 +25,7 @@ export function ReviewSummary({
   const id = useId()
   const Heading = `h${headingLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return (
-    <section aria-labelledby={id} className="space-y-scale-5">
+    <section aria-labelledby={id} className="grid grid-cols-1 gap-scale-5">
       <Heading id={id} className="m-0 text-heading-md font-semibold break-words text-text-primary">
         {title}
       </Heading>
@@ -34,7 +34,7 @@ export function ReviewSummary({
           key={group.id}
           role="group"
           aria-labelledby={`${id}-${group.id}`}
-          className="space-y-scale-2 border-b border-border-secondary pb-scale-4"
+          className="grid grid-cols-1 gap-scale-2 border-b border-border-secondary pb-scale-4 [&>button]:justify-self-start"
         >
           <p id={`${id}-${group.id}`} className="m-0 font-semibold text-text-primary">
             {group.title}

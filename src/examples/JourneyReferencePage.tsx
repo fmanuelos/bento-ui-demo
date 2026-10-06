@@ -185,7 +185,7 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
         aria-label="Reference preview controls"
         className="border-b border-border-secondary bg-surface-secondary p-scale-4"
       >
-        <div className="mx-auto max-w-container-page space-y-scale-3">
+        <div className="mx-auto grid max-w-container-page gap-scale-3">
           <p className="m-0 text-body-sm">
             Reference preview · Use sample values. No account, application, or message is created.
             Explicitly saved drafts remain in this browser tab for one hour.
@@ -415,7 +415,12 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
                 </ul>
               </div>
             )}
-            <form aria-label={title} noValidate onSubmit={submit} className="space-y-scale-5">
+            <form
+              aria-label={title}
+              noValidate
+              onSubmit={submit}
+              className="grid grid-cols-1 gap-scale-5"
+            >
               {state.step === 0 && (
                 <FormSection title="Profile details">
                   <Input
@@ -584,7 +589,11 @@ function JourneyReference({ kind, context }: { kind: JourneyKind; context: strin
                         : notice}
               </div>
               {state.status === 'unknown' ? (
-                <Button type="button" onClick={() => dispatch({ type: 'reconcile' })}>
+                <Button
+                  type="button"
+                  className="justify-self-start"
+                  onClick={() => dispatch({ type: 'reconcile' })}
+                >
                   Check simulated result
                 </Button>
               ) : (

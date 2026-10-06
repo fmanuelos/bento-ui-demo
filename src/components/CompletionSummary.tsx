@@ -33,7 +33,7 @@ export function CompletionSummary({
     <section
       id={id}
       aria-labelledby={headingId}
-      className={`min-w-0 space-y-scale-5 ${className}`}
+      className={`grid min-w-0 grid-cols-1 gap-scale-5 ${className}`}
       {...props}
     >
       <Heading

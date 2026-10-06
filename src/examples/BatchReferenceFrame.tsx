@@ -27,7 +27,7 @@ export function BatchReferenceFrame({
       <SkipLink targetId="reference-main">Skip to main content</SkipLink>
       <aside
         aria-label="Reference preview controls"
-        className="space-y-scale-3 border-b border-border-secondary bg-surface-secondary p-scale-4"
+        className="grid gap-scale-3 border-b border-border-secondary bg-surface-secondary p-scale-4"
       >
         <p className="m-0 text-body-sm">Reference preview · {note}</p>
         <div className="flex flex-wrap items-end gap-scale-4">
@@ -54,7 +54,7 @@ export function BatchReferenceFrame({
       <main
         id="reference-main"
         tabIndex={-1}
-        className="mx-auto max-w-container-readable space-y-scale-8 px-page-padding-mobile py-scale-8 sm:px-page-padding-tablet"
+        className="mx-auto grid max-w-container-readable grid-cols-1 gap-scale-8 px-page-padding-mobile py-scale-8 sm:px-page-padding-tablet [&>button]:justify-self-start"
       >
         {children}
       </main>

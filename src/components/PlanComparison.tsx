@@ -33,7 +33,10 @@ export function PlanComparison({
   const id = useId()
   const Heading = `h${headingLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return (
-    <section aria-labelledby={id} className="space-y-scale-5">
+    <section
+      aria-labelledby={id}
+      className="grid grid-cols-1 gap-scale-5 [&>button]:justify-self-start"
+    >
       <Heading id={id} className="m-0 text-heading-md font-semibold break-words text-text-primary">
         {title}
       </Heading>
@@ -44,7 +47,7 @@ export function PlanComparison({
         {plans.map((plan) => (
           <li
             key={plan.id}
-            className="min-w-0 space-y-scale-4 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-5"
+            className="grid min-w-0 grid-cols-1 content-start gap-scale-4 rounded-shape-lg border border-border-secondary bg-surface-primary p-scale-5"
           >
             <p className="m-0 text-heading-sm font-semibold break-words text-text-primary">
               {plan.name}

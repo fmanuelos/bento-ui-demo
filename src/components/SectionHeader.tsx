@@ -31,7 +31,7 @@ export function SectionHeader({
       className={`min-w-0 ${layout === 'inline' ? 'flex flex-wrap items-start justify-between gap-scale-4' : 'space-y-scale-3'} ${layout === 'centered' ? 'text-center' : ''} ${className}`}
       {...props}
     >
-      <div className="min-w-0 space-y-scale-2">
+      <div className="grid min-w-0 grid-cols-1 gap-scale-2">
         {eyebrow && <p className="m-0 text-label-sm text-text-secondary">{eyebrow}</p>}
         <Heading
           id={headingId ?? generatedId}

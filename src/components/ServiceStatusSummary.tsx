@@ -40,7 +40,7 @@ export function ServiceStatusSummary({
   const id = useId()
   const Heading = `h${headingLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   return (
-    <section aria-labelledby={id} className="space-y-scale-4">
+    <section aria-labelledby={id} className="grid grid-cols-1 gap-scale-4">
       <Heading id={id} className="m-0 text-heading-md font-semibold break-words">
         {title}
       </Heading>
@@ -52,7 +52,7 @@ export function ServiceStatusSummary({
           {services.map((service) => (
             <li
               key={service.id}
-              className="space-y-scale-2 rounded-shape-md border border-border-secondary p-scale-4 break-words"
+              className="grid grid-cols-1 gap-scale-2 rounded-shape-md border border-border-secondary p-scale-4 break-words [&>span]:justify-self-start"
             >
               <p className="m-0 font-semibold">{service.name}</p>
               <StatusBadge variant={variants[service.condition]}>
